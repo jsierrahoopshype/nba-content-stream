@@ -1,0 +1,203 @@
+{
+  "_meta": {
+    "description": "Stub canonical player list for Phase 1 plumbing. Replaced in Phase 4 with full dump from HoopsHype rumors archive.",
+    "schema": "Each key is the canonical slug. 'name' is display name. 'aliases' is array of additional regex-matchable forms (case-insensitive, word-boundary matched).",
+    "version": "1-stub",
+    "last_updated": "2026-05-21"
+  },
+  "lebron-james": {
+    "name": "LeBron James",
+    "team": "los-angeles-lakers",
+    "aliases": ["LeBron", "King James", "LBJ"]
+  },
+  "stephen-curry": {
+    "name": "Stephen Curry",
+    "team": "golden-state-warriors",
+    "aliases": ["Steph Curry", "Steph", "Chef Curry"]
+  },
+  "kevin-durant": {
+    "name": "Kevin Durant",
+    "team": "houston-rockets",
+    "aliases": ["KD", "Durant", "Easy Money Sniper"]
+  },
+  "giannis-antetokounmpo": {
+    "name": "Giannis Antetokounmpo",
+    "team": "milwaukee-bucks",
+    "aliases": ["Giannis", "Greek Freak", "Antetokounmpo"]
+  },
+  "nikola-jokic": {
+    "name": "Nikola Jokic",
+    "team": "denver-nuggets",
+    "aliases": ["Jokic", "Joker", "Nikola Jokić"]
+  },
+  "luka-doncic": {
+    "name": "Luka Doncic",
+    "team": "los-angeles-lakers",
+    "aliases": ["Luka", "Luka Dončić", "Doncic", "Luka Magic"]
+  },
+  "joel-embiid": {
+    "name": "Joel Embiid",
+    "team": "philadelphia-76ers",
+    "aliases": ["Embiid", "The Process", "JoJo"]
+  },
+  "jayson-tatum": {
+    "name": "Jayson Tatum",
+    "team": "boston-celtics",
+    "aliases": ["Tatum", "JT"]
+  },
+  "shai-gilgeous-alexander": {
+    "name": "Shai Gilgeous-Alexander",
+    "team": "oklahoma-city-thunder",
+    "aliases": ["SGA", "Shai", "Gilgeous-Alexander"]
+  },
+  "victor-wembanyama": {
+    "name": "Victor Wembanyama",
+    "team": "san-antonio-spurs",
+    "aliases": ["Wemby", "Wembanyama", "Victor"]
+  },
+  "anthony-edwards": {
+    "name": "Anthony Edwards",
+    "team": "minnesota-timberwolves",
+    "aliases": ["Ant", "Ant-Man", "Edwards"]
+  },
+  "anthony-davis": {
+    "name": "Anthony Davis",
+    "team": "dallas-mavericks",
+    "aliases": ["AD", "The Brow", "Davis"]
+  },
+  "kawhi-leonard": {
+    "name": "Kawhi Leonard",
+    "team": "los-angeles-clippers",
+    "aliases": ["Kawhi", "The Klaw", "Leonard"]
+  },
+  "paul-george": {
+    "name": "Paul George",
+    "team": "philadelphia-76ers",
+    "aliases": ["PG", "PG13", "George"]
+  },
+  "james-harden": {
+    "name": "James Harden",
+    "team": "los-angeles-clippers",
+    "aliases": ["Harden", "The Beard"]
+  },
+  "damian-lillard": {
+    "name": "Damian Lillard",
+    "team": "portland-trail-blazers",
+    "aliases": ["Dame", "Dame Time", "Lillard", "Dame D.O.L.L.A."]
+  },
+  "devin-booker": {
+    "name": "Devin Booker",
+    "team": "phoenix-suns",
+    "aliases": ["Booker", "Book", "D-Book"]
+  },
+  "jimmy-butler": {
+    "name": "Jimmy Butler",
+    "team": "golden-state-warriors",
+    "aliases": ["Jimmy", "Jimmy Buckets", "Butler"]
+  },
+  "donovan-mitchell": {
+    "name": "Donovan Mitchell",
+    "team": "cleveland-cavaliers",
+    "aliases": ["Spida", "Mitchell", "Spida Mitchell"]
+  },
+  "trae-young": {
+    "name": "Trae Young",
+    "team": "atlanta-hawks",
+    "aliases": ["Trae", "Ice Trae"]
+  },
+  "ja-morant": {
+    "name": "Ja Morant",
+    "team": "memphis-grizzlies",
+    "aliases": ["Ja", "Morant"]
+  },
+  "zion-williamson": {
+    "name": "Zion Williamson",
+    "team": "new-orleans-pelicans",
+    "aliases": ["Zion", "Williamson"]
+  },
+  "tyrese-haliburton": {
+    "name": "Tyrese Haliburton",
+    "team": "indiana-pacers",
+    "aliases": ["Haliburton", "Hali", "Tyrese"]
+  },
+  "jamal-murray": {
+    "name": "Jamal Murray",
+    "team": "denver-nuggets",
+    "aliases": ["Jamal", "Blue Arrow"]
+  },
+  "dejounte-murray": {
+    "name": "Dejounte Murray",
+    "team": "new-orleans-pelicans",
+    "aliases": ["Dejounte"]
+  },
+  "karl-anthony-towns": {
+    "name": "Karl-Anthony Towns",
+    "team": "new-york-knicks",
+    "aliases": ["KAT", "Towns", "Karl Anthony Towns"]
+  },
+  "jalen-brunson": {
+    "name": "Jalen Brunson",
+    "team": "new-york-knicks",
+    "aliases": ["Brunson", "JB"]
+  },
+  "jaylen-brown": {
+    "name": "Jaylen Brown",
+    "team": "boston-celtics",
+    "aliases": ["JB", "Jaylen"]
+  },
+  "darius-garland": {
+    "name": "Darius Garland",
+    "team": "cleveland-cavaliers",
+    "aliases": ["DG", "Garland"]
+  },
+  "cade-cunningham": {
+    "name": "Cade Cunningham",
+    "team": "detroit-pistons",
+    "aliases": ["Cade", "Cunningham"]
+  },
+  "paolo-banchero": {
+    "name": "Paolo Banchero",
+    "team": "orlando-magic",
+    "aliases": ["Paolo", "Banchero"]
+  },
+  "scottie-barnes": {
+    "name": "Scottie Barnes",
+    "team": "toronto-raptors",
+    "aliases": ["Scottie", "Barnes"]
+  },
+  "chet-holmgren": {
+    "name": "Chet Holmgren",
+    "team": "oklahoma-city-thunder",
+    "aliases": ["Chet", "Holmgren"]
+  },
+  "jalen-williams": {
+    "name": "Jalen Williams",
+    "team": "oklahoma-city-thunder",
+    "aliases": ["J-Dub", "JDub", "Jalen Williams"]
+  },
+  "franz-wagner": {
+    "name": "Franz Wagner",
+    "team": "orlando-magic",
+    "aliases": ["Franz", "Wagner"]
+  },
+  "alperen-sengun": {
+    "name": "Alperen Sengun",
+    "team": "houston-rockets",
+    "aliases": ["Sengun", "Alperen", "Şengün", "Baby Jokic"]
+  },
+  "lamelo-ball": {
+    "name": "LaMelo Ball",
+    "team": "charlotte-hornets",
+    "aliases": ["LaMelo", "Melo Ball"]
+  },
+  "domantas-sabonis": {
+    "name": "Domantas Sabonis",
+    "team": "sacramento-kings",
+    "aliases": ["Sabonis", "Domas"]
+  },
+  "deaaron-fox": {
+    "name": "De'Aaron Fox",
+    "team": "san-antonio-spurs",
+    "aliases": ["De'Aaron Fox", "Fox", "Swipa"]
+  }
+}

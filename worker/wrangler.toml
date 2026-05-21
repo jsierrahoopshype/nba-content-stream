@@ -1,0 +1,30 @@
+name = "nba-content-stream-api"
+main = "src/index.js"
+compatibility_date = "2025-05-21"
+compatibility_flags = ["nodejs_compat"]
+
+# Cron triggers for any Worker-side scheduled tasks (none in v1)
+# [triggers]
+# crons = []
+
+# R2 bucket binding for the cold-tier archive
+[[r2_buckets]]
+binding = "ARCHIVE"
+bucket_name = "nba-content-stream-archive"
+# preview_bucket_name = "nba-content-stream-archive-preview"  # uncomment if/when you add a preview bucket
+
+# Optional: KV namespace for caching frequent player/team page queries
+# [[kv_namespaces]]
+# binding = "CACHE"
+# id = "PASTE_KV_NAMESPACE_ID_AFTER_wrangler_kv_namespace_create"
+
+# Environment variables (non-secret defaults). Add secrets via `wrangler secret put`.
+[vars]
+CORS_ORIGIN = "https://jsierrahoopshype.github.io"
+ALLOWED_API_KEY_HEADER = "X-API-Key"
+RATE_LIMIT_PER_MIN = "60"
+
+# Routes are configured via Cloudflare dashboard after first deploy, or uncomment:
+# routes = [
+#   { pattern = "nba-content-stream-api.thejorgesierra.workers.dev/*" }
+# ]

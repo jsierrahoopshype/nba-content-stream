@@ -1,0 +1,188 @@
+{
+  "_meta": {
+    "description": "Canonical team list. All 30 NBA teams with common aliases.",
+    "schema": "Each key is the canonical slug. 'name' is full team name. 'aliases' is array of short names, nicknames, and city-only references.",
+    "version": "1",
+    "last_updated": "2026-05-21"
+  },
+  "atlanta-hawks": {
+    "name": "Atlanta Hawks",
+    "city": "Atlanta",
+    "abbr": "ATL",
+    "aliases": ["Hawks", "ATL"]
+  },
+  "boston-celtics": {
+    "name": "Boston Celtics",
+    "city": "Boston",
+    "abbr": "BOS",
+    "aliases": ["Celtics", "Cs", "BOS"]
+  },
+  "brooklyn-nets": {
+    "name": "Brooklyn Nets",
+    "city": "Brooklyn",
+    "abbr": "BKN",
+    "aliases": ["Nets", "BKN"]
+  },
+  "charlotte-hornets": {
+    "name": "Charlotte Hornets",
+    "city": "Charlotte",
+    "abbr": "CHA",
+    "aliases": ["Hornets", "CHA"]
+  },
+  "chicago-bulls": {
+    "name": "Chicago Bulls",
+    "city": "Chicago",
+    "abbr": "CHI",
+    "aliases": ["Bulls", "CHI"]
+  },
+  "cleveland-cavaliers": {
+    "name": "Cleveland Cavaliers",
+    "city": "Cleveland",
+    "abbr": "CLE",
+    "aliases": ["Cavs", "Cavaliers", "CLE"]
+  },
+  "dallas-mavericks": {
+    "name": "Dallas Mavericks",
+    "city": "Dallas",
+    "abbr": "DAL",
+    "aliases": ["Mavs", "Mavericks", "DAL"]
+  },
+  "denver-nuggets": {
+    "name": "Denver Nuggets",
+    "city": "Denver",
+    "abbr": "DEN",
+    "aliases": ["Nuggets", "Nugs", "DEN"]
+  },
+  "detroit-pistons": {
+    "name": "Detroit Pistons",
+    "city": "Detroit",
+    "abbr": "DET",
+    "aliases": ["Pistons", "DET"]
+  },
+  "golden-state-warriors": {
+    "name": "Golden State Warriors",
+    "city": "San Francisco",
+    "abbr": "GSW",
+    "aliases": ["Warriors", "Dubs", "GSW", "Golden State"]
+  },
+  "houston-rockets": {
+    "name": "Houston Rockets",
+    "city": "Houston",
+    "abbr": "HOU",
+    "aliases": ["Rockets", "HOU"]
+  },
+  "indiana-pacers": {
+    "name": "Indiana Pacers",
+    "city": "Indianapolis",
+    "abbr": "IND",
+    "aliases": ["Pacers", "IND"]
+  },
+  "los-angeles-clippers": {
+    "name": "LA Clippers",
+    "city": "Los Angeles",
+    "abbr": "LAC",
+    "aliases": ["Clippers", "Clips", "LAC", "LA Clippers"]
+  },
+  "los-angeles-lakers": {
+    "name": "Los Angeles Lakers",
+    "city": "Los Angeles",
+    "abbr": "LAL",
+    "aliases": ["Lakers", "LAL", "LA Lakers"]
+  },
+  "memphis-grizzlies": {
+    "name": "Memphis Grizzlies",
+    "city": "Memphis",
+    "abbr": "MEM",
+    "aliases": ["Grizzlies", "Grizz", "MEM"]
+  },
+  "miami-heat": {
+    "name": "Miami Heat",
+    "city": "Miami",
+    "abbr": "MIA",
+    "aliases": ["Heat", "MIA"]
+  },
+  "milwaukee-bucks": {
+    "name": "Milwaukee Bucks",
+    "city": "Milwaukee",
+    "abbr": "MIL",
+    "aliases": ["Bucks", "MIL"]
+  },
+  "minnesota-timberwolves": {
+    "name": "Minnesota Timberwolves",
+    "city": "Minneapolis",
+    "abbr": "MIN",
+    "aliases": ["Wolves", "Timberwolves", "T-Wolves", "MIN"]
+  },
+  "new-orleans-pelicans": {
+    "name": "New Orleans Pelicans",
+    "city": "New Orleans",
+    "abbr": "NOP",
+    "aliases": ["Pelicans", "Pels", "NOP", "NO"]
+  },
+  "new-york-knicks": {
+    "name": "New York Knicks",
+    "city": "New York",
+    "abbr": "NYK",
+    "aliases": ["Knicks", "NY Knicks", "NYK"]
+  },
+  "oklahoma-city-thunder": {
+    "name": "Oklahoma City Thunder",
+    "city": "Oklahoma City",
+    "abbr": "OKC",
+    "aliases": ["Thunder", "OKC"]
+  },
+  "orlando-magic": {
+    "name": "Orlando Magic",
+    "city": "Orlando",
+    "abbr": "ORL",
+    "aliases": ["Magic", "ORL"]
+  },
+  "philadelphia-76ers": {
+    "name": "Philadelphia 76ers",
+    "city": "Philadelphia",
+    "abbr": "PHI",
+    "aliases": ["Sixers", "76ers", "Philly", "PHI"]
+  },
+  "phoenix-suns": {
+    "name": "Phoenix Suns",
+    "city": "Phoenix",
+    "abbr": "PHX",
+    "aliases": ["Suns", "PHX"]
+  },
+  "portland-trail-blazers": {
+    "name": "Portland Trail Blazers",
+    "city": "Portland",
+    "abbr": "POR",
+    "aliases": ["Blazers", "Trail Blazers", "POR"]
+  },
+  "sacramento-kings": {
+    "name": "Sacramento Kings",
+    "city": "Sacramento",
+    "abbr": "SAC",
+    "aliases": ["Kings", "SAC"]
+  },
+  "san-antonio-spurs": {
+    "name": "San Antonio Spurs",
+    "city": "San Antonio",
+    "abbr": "SAS",
+    "aliases": ["Spurs", "SAS", "San Antonio"]
+  },
+  "toronto-raptors": {
+    "name": "Toronto Raptors",
+    "city": "Toronto",
+    "abbr": "TOR",
+    "aliases": ["Raptors", "Raps", "TOR"]
+  },
+  "utah-jazz": {
+    "name": "Utah Jazz",
+    "city": "Salt Lake City",
+    "abbr": "UTA",
+    "aliases": ["Jazz", "UTA"]
+  },
+  "washington-wizards": {
+    "name": "Washington Wizards",
+    "city": "Washington",
+    "abbr": "WAS",
+    "aliases": ["Wizards", "Wiz", "WAS"]
+  }
+}

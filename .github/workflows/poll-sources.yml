@@ -1,0 +1,97 @@
+name: Poll sources
+
+on:
+  schedule:
+    # Every 15 minutes
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+    inputs:
+      source:
+        description: "Specific source to poll (leave blank for all)"
+        required: false
+        type: choice
+        options:
+          - all
+          - youtube
+          - substack
+          - bluesky
+          - reddit
+          - google-news
+        default: all
+
+# Prevent overlapping runs
+concurrency:
+  group: poll-sources
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          # Phase 2 will populate requirements.txt
+          if [ -f scripts/requirements.txt ]; then
+            pip install -r scripts/requirements.txt
+          else
+            echo "No requirements.txt yet (Phase 1 stub)"
+          fi
+
+      # ----- Phase 2 will add steps here, one per source -----
+      # - name: Poll YouTube
+      #   if: ${{ github.event.inputs.source == 'all' || github.event.inputs.source == 'youtube' || github.event_name == 'schedule' }}
+      #   env:
+      #     YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+      #   run: python scripts/poll_youtube.py
+      #
+      # - name: Poll Substack
+      #   if: ${{ github.event.inputs.source == 'all' || github.event.inputs.source == 'substack' || github.event_name == 'schedule' }}
+      #   run: python scripts/poll_substack.py
+      #
+      # - name: Poll Bluesky
+      #   if: ${{ github.event.inputs.source == 'all' || github.event.inputs.source == 'bluesky' || github.event_name == 'schedule' }}
+      #   run: python scripts/poll_bluesky.py
+      #
+      # - name: Poll Reddit
+      #   if: ${{ github.event.inputs.source == 'all' || github.event.inputs.source == 'reddit' || github.event_name == 'schedule' }}
+      #   env:
+      #     REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+      #     REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+      #   run: python scripts/poll_reddit.py
+      #
+      # - name: Poll Google News
+      #   if: ${{ github.event.inputs.source == 'all' || github.event.inputs.source == 'google-news' || github.event_name == 'schedule' }}
+      #   run: python scripts/poll_google_news.py
+      #
+      # - name: Rebuild indexes
+      #   run: python scripts/rebuild_indexes.py
+
+      - name: Phase 1 placeholder
+        run: |
+          echo "Phase 1 plumbing stub. Source pollers added in Phase 2."
+          echo "Will poll 5 sources here every 15 minutes."
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain data/)" ]; then
+            git add data/
+            git commit -m "data: poll cycle $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          else
+            echo "No data changes this cycle."
+          fi

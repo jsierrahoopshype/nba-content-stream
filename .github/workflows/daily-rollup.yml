@@ -1,0 +1,70 @@
+name: Daily rollup to R2
+
+on:
+  schedule:
+    # 23:55 UTC daily
+    - cron: "55 23 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (don't upload to R2 or prune repo)"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  rollup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          if [ -f scripts/requirements.txt ]; then
+            pip install -r scripts/requirements.txt
+          else
+            echo "No requirements.txt yet (Phase 1 stub)"
+          fi
+
+      # ----- Phase 6 will add steps here -----
+      # - name: Upload shards older than 30 days to R2
+      #   env:
+      #     R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+      #     R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      #     R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      #     R2_BUCKET: nba-content-stream-archive
+      #     DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+      #   run: python scripts/rollup_to_r2.py
+      #
+      # - name: Prune hot tier (keep last 30 days)
+      #   if: ${{ github.event.inputs.dry_run != 'true' }}
+      #   run: python scripts/prune_hot_tier.py
+
+      - name: Phase 1 placeholder
+        run: |
+          echo "Phase 1 plumbing stub. Rollup logic added in Phase 6."
+          echo "Will move shards >30 days old from data/ to R2 here."
+
+      - name: Commit pruning
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain data/)" ]; then
+            git add data/
+            git commit -m "rollup: prune hot tier $(date -u +%Y-%m-%d)"
+            git push
+          else
+            echo "Nothing to prune."
+          fi
