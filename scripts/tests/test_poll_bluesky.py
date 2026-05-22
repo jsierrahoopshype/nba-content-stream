@@ -1,10 +1,17 @@
 """Tests for `scripts.poll_bluesky`.
 
-Builds FeedViewPost-shaped fixtures with SimpleNamespace so tests don't
-need a live atproto client. Covers the filter (reposts/replies), the
-post→item mapping (id, url, media type, quote-post flag, engagement,
-entity detection), the collect_items loop (per-reporter fetch errors,
---since cutoff), and the dry-run CLI path.
+Fixtures are plain dicts matching the public AppView's JSON for
+`app.bsky.feed.getAuthorFeed` (lexicon: `app.bsky.feed.defs#feedViewPost`),
+so the same shape the production code sees from
+https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed. Tests cover:
+
+- The host guard (URL goes to public.api.bsky.app, NOT bsky.social).
+- 401 from the AppView is logged and counted as a fetch_error, not crashing.
+- The filter (reposts/replies dropped, top-level + quote-posts kept).
+- Mapping a feedViewPost → item (id, url, media type, quote flag,
+  engagement, entity detection, ISO normalization).
+- Per-reporter fetch error isolation and the `--since` cutoff.
+- Dry-run skips shard write; non-dry-run writes + dedupes on re-run.
 """
 
 from __future__ import annotations
@@ -13,31 +20,44 @@ from types import SimpleNamespace
 from unittest.mock import patch
 
 import pytest
+import requests
 
 from scripts import poll_bluesky
 from scripts.lib import shards
 from scripts.lib.canonical import load_canonical
 from scripts.lib.shards import load_shard, validate_item
 from scripts.poll_bluesky import (
+    APPVIEW_BASE_URL,
+    GET_AUTHOR_FEED_PATH,
     _actor_for,
     _at_uri_to_id,
-    _public_url,
     _has_repost_reason,
     _is_quote_post,
     _is_reply,
+    _public_url,
     collect_items,
+    fetch_author_feed,
     map_post_to_item,
     should_include,
 )
 
 
 # ---------------------------------------------------------------------------
-# Fixture builders
+# Fixture builders (plain dicts, matching the AppView JSON shape)
 # ---------------------------------------------------------------------------
 
 
-def _author(handle="reporter.bsky.social", display_name="Reporter", did="did:plc:r1"):
-    return SimpleNamespace(handle=handle, display_name=display_name, did=did)
+def _author(
+    handle="reporter.bsky.social",
+    display_name="Reporter",
+    did="did:plc:r1",
+) -> dict:
+    return {
+        "$type": "app.bsky.actor.defs#profileViewBasic",
+        "did": did,
+        "handle": handle,
+        "displayName": display_name,
+    }
 
 
 def _record(
@@ -45,8 +65,17 @@ def _record(
     created_at="2026-05-21T14:30:00Z",
     reply=None,
     embed=None,
-):
-    return SimpleNamespace(text=text, created_at=created_at, reply=reply, embed=embed)
+) -> dict:
+    record: dict = {
+        "$type": "app.bsky.feed.post",
+        "text": text,
+        "createdAt": created_at,
+    }
+    if reply is not None:
+        record["reply"] = reply
+    if embed is not None:
+        record["embed"] = embed
+    return record
 
 
 def _post(
@@ -60,43 +89,142 @@ def _post(
     repost_count=3,
     reply_count=1,
     quote_count=0,
-):
-    return SimpleNamespace(
-        uri=uri,
-        cid=cid,
-        author=author or _author(),
-        record=record or _record(),
-        embed=embed,
-        indexed_at=indexed_at,
-        like_count=like_count,
-        repost_count=repost_count,
-        reply_count=reply_count,
-        quote_count=quote_count,
-    )
+) -> dict:
+    post: dict = {
+        "$type": "app.bsky.feed.defs#postView",
+        "uri": uri,
+        "cid": cid,
+        "author": author if author is not None else _author(),
+        "record": record if record is not None else _record(),
+        "indexedAt": indexed_at,
+        "likeCount": like_count,
+        "repostCount": repost_count,
+        "replyCount": reply_count,
+        "quoteCount": quote_count,
+    }
+    if embed is not None:
+        post["embed"] = embed
+    return post
 
 
-def _feed_view(post=None, reason=None, reply=None):
-    return SimpleNamespace(post=post or _post(), reason=reason, reply=reply)
+def _feed_view(post=None, reason=None) -> dict:
+    fv: dict = {
+        "$type": "app.bsky.feed.defs#feedViewPost",
+        "post": post if post is not None else _post(),
+    }
+    if reason is not None:
+        fv["reason"] = reason
+    return fv
 
 
-def _repost_reason():
-    return SimpleNamespace(py_type="app.bsky.feed.defs#reasonRepost")
+def _repost_reason() -> dict:
+    return {
+        "$type": "app.bsky.feed.defs#reasonRepost",
+        "by": _author("reposter.bsky.social", "Reposter", "did:plc:other"),
+        "indexedAt": "2026-05-21T14:35:00Z",
+    }
 
 
-def _record_embed():
-    return SimpleNamespace(py_type="app.bsky.embed.record#view")
+def _record_embed_view() -> dict:
+    return {"$type": "app.bsky.embed.record#view", "record": {}}
 
 
-def _images_embed():
-    return SimpleNamespace(py_type="app.bsky.embed.images#view")
+def _images_embed_view() -> dict:
+    return {"$type": "app.bsky.embed.images#view", "images": []}
 
 
-def _reply_ref():
-    # Real ReplyRef has parent/root strong refs; only presence matters.
-    return SimpleNamespace(
-        parent=SimpleNamespace(uri="x", cid="y"),
-        root=SimpleNamespace(uri="x", cid="y"),
-    )
+def _reply_ref() -> dict:
+    return {
+        "parent": {"uri": "at://x/app.bsky.feed.post/p", "cid": "c1"},
+        "root": {"uri": "at://x/app.bsky.feed.post/r", "cid": "c2"},
+    }
+
+
+# ---------------------------------------------------------------------------
+# Fake HTTP session used by fetch_author_feed tests
+# ---------------------------------------------------------------------------
+
+
+class _FakeResp:
+    def __init__(self, status: int, payload: dict | None = None):
+        self.status_code = status
+        self._payload = payload or {}
+
+    def raise_for_status(self) -> None:
+        if self.status_code >= 400:
+            raise requests.HTTPError(
+                f"{self.status_code} from fake",
+                response=SimpleNamespace(status_code=self.status_code),
+            )
+
+    def json(self) -> dict:
+        return self._payload
+
+
+class _FakeSession:
+    """Captures the last GET URL/params; returns a configured response."""
+
+    def __init__(self, response: _FakeResp):
+        self.response = response
+        self.last_url: str | None = None
+        self.last_params: dict | None = None
+
+    def get(self, url, params=None, timeout=None):
+        self.last_url = url
+        self.last_params = params
+        return self.response
+
+
+# ---------------------------------------------------------------------------
+# Endpoint host guard — the regression test for the 401 bug
+# ---------------------------------------------------------------------------
+
+
+def test_fetch_author_feed_targets_public_appview_not_bsky_social():
+    """If this ever flips back to bsky.social we get auth-walled (401)."""
+    session = _FakeSession(_FakeResp(200, {"feed": []}))
+    fetch_author_feed(session, "did:plc:abc", limit=50)
+
+    assert session.last_url is not None
+    assert session.last_url.startswith("https://public.api.bsky.app/")
+    assert "bsky.social" not in session.last_url
+    # And the exact path
+    assert session.last_url == APPVIEW_BASE_URL + GET_AUTHOR_FEED_PATH
+
+
+def test_fetch_author_feed_sends_no_replies_filter():
+    session = _FakeSession(_FakeResp(200, {"feed": []}))
+    fetch_author_feed(session, "did:plc:abc", limit=25)
+    assert session.last_params == {
+        "actor": "did:plc:abc",
+        "filter": "posts_no_replies",
+        "limit": "25",
+    }
+
+
+def test_fetch_author_feed_raises_on_401():
+    """A 401 must bubble up so collect_items records a fetch error."""
+    session = _FakeSession(_FakeResp(401))
+    with pytest.raises(requests.HTTPError):
+        fetch_author_feed(session, "did:plc:abc", limit=50)
+
+
+def test_collect_items_treats_401_as_fetch_error(vocab=None):
+    """End-to-end: a reporter whose AppView call 401s is skipped, not fatal.
+
+    Guards against regressing to the authenticated bsky.social endpoint.
+    """
+    players, teams = load_canonical()
+
+    def fetcher(actor, limit):
+        # Simulate what fetch_author_feed does when the AppView returns 401.
+        raise requests.HTTPError("401 Client Error: Unauthorized")
+
+    reporters = [{"handle": "r.bsky.social", "did": "did:plc:r1"}]
+    items, stats = collect_items(reporters, fetcher, players, teams, None, 50)
+    assert items == []
+    assert stats["fetch_errors"] == 1
+    assert stats["kept"] == 0
 
 
 # ---------------------------------------------------------------------------
@@ -107,7 +235,6 @@ def _reply_ref():
 def test_at_uri_to_id_url_encodes_path():
     out = _at_uri_to_id("at://did:plc:abc123/app.bsky.feed.post/3kxyz")
     assert out.startswith("bs-")
-    # All special chars must be encoded so the id is safe in filenames/URLs.
     assert ":" not in out
     assert "/" not in out
     assert out == "bs-did%3Aplc%3Aabc123%2Fapp.bsky.feed.post%2F3kxyz"
@@ -127,24 +254,20 @@ def test_public_url_uses_handle_and_rkey():
 
 
 def test_actor_for_prefers_did():
-    rec = {"handle": "x.bsky.social", "did": "did:plc:abc"}
-    assert _actor_for(rec) == "did:plc:abc"
+    assert _actor_for({"handle": "x.bsky.social", "did": "did:plc:abc"}) == "did:plc:abc"
 
 
 def test_actor_for_falls_back_to_handle_when_did_none():
-    rec = {"handle": "x.bsky.social", "did": None}
-    assert _actor_for(rec) == "x.bsky.social"
+    assert _actor_for({"handle": "x.bsky.social", "did": None}) == "x.bsky.social"
 
 
 def test_actor_for_falls_back_when_did_missing_key():
     # Override-added reporters have no 'did' key at all.
-    rec = {"handle": "added.bsky.social"}
-    assert _actor_for(rec) == "added.bsky.social"
+    assert _actor_for({"handle": "added.bsky.social"}) == "added.bsky.social"
 
 
 def test_actor_for_falls_back_when_did_malformed():
-    rec = {"handle": "x.bsky.social", "did": "not-a-did"}
-    assert _actor_for(rec) == "x.bsky.social"
+    assert _actor_for({"handle": "x.bsky.social", "did": "not-a-did"}) == "x.bsky.social"
 
 
 # ---------------------------------------------------------------------------
@@ -169,10 +292,9 @@ def test_should_include_drops_replies():
 
 
 def test_should_include_keeps_quote_posts():
-    # Quote-post has embed of record type but no reply, no repost reason.
-    fv = _feed_view(post=_post(embed=_record_embed()))
+    fv = _feed_view(post=_post(embed=_record_embed_view()))
     assert should_include(fv) is True
-    assert _is_quote_post(fv.post) is True
+    assert _is_quote_post(fv["post"]) is True
 
 
 # ---------------------------------------------------------------------------
@@ -188,9 +310,7 @@ def vocab():
 def test_map_post_produces_valid_item(vocab):
     players, teams = vocab
     fv = _feed_view()
-    item = map_post_to_item(
-        fv, {"handle": "reporter.bsky.social"}, players, teams
-    )
+    item = map_post_to_item(fv, {"handle": "reporter.bsky.social"}, players, teams)
     assert validate_item(item) == []
     assert item["source"] == "bluesky"
     assert item["id"].startswith("bs-")
@@ -205,69 +325,49 @@ def test_map_post_detects_entities(vocab):
     players, teams = vocab
     fv = _feed_view(
         post=_post(
-            record=_record(
-                text="LeBron James and the Lakers got the win tonight."
-            )
+            record=_record(text="LeBron James and the Lakers got the win tonight.")
         )
     )
-    item = map_post_to_item(
-        fv, {"handle": "reporter.bsky.social"}, players, teams
-    )
+    item = map_post_to_item(fv, {"handle": "reporter.bsky.social"}, players, teams)
     assert "lebron-james" in item["players"]
     assert "los-angeles-lakers" in item["teams"]
 
 
 def test_map_post_image_embed_sets_media_image(vocab):
     players, teams = vocab
-    fv = _feed_view(post=_post(embed=_images_embed()))
-    item = map_post_to_item(
-        fv, {"handle": "reporter.bsky.social"}, players, teams
-    )
+    fv = _feed_view(post=_post(embed=_images_embed_view()))
+    item = map_post_to_item(fv, {"handle": "reporter.bsky.social"}, players, teams)
     assert item["media"]["type"] == "image"
 
 
 def test_map_post_quote_post_flagged(vocab):
     players, teams = vocab
-    fv = _feed_view(post=_post(embed=_record_embed()))
-    item = map_post_to_item(
-        fv, {"handle": "reporter.bsky.social"}, players, teams
-    )
+    fv = _feed_view(post=_post(embed=_record_embed_view()))
+    item = map_post_to_item(fv, {"handle": "reporter.bsky.social"}, players, teams)
     assert item.get("is_quote_post") is True
 
 
 def test_map_post_published_at_normalized_to_z(vocab):
     players, teams = vocab
-    fv = _feed_view(
-        post=_post(record=_record(created_at="2026-05-21T14:30:00.000Z"))
-    )
-    item = map_post_to_item(
-        fv, {"handle": "reporter.bsky.social"}, players, teams
-    )
+    fv = _feed_view(post=_post(record=_record(created_at="2026-05-21T14:30:00.000Z")))
+    item = map_post_to_item(fv, {"handle": "reporter.bsky.social"}, players, teams)
     assert item["published_at"] == "2026-05-21T14:30:00Z"
 
 
 def test_map_post_body_excerpt_full_text(vocab):
     players, teams = vocab
     fv = _feed_view(post=_post(record=_record(text="short post")))
-    item = map_post_to_item(
-        fv, {"handle": "reporter.bsky.social"}, players, teams
-    )
+    item = map_post_to_item(fv, {"handle": "reporter.bsky.social"}, players, teams)
     # Bluesky posts are short; body_excerpt is the full text.
     assert item["body_excerpt"] == "short post"
 
 
 def test_map_post_uses_reporter_record_when_author_missing_display(vocab):
-    """If the live post strips display_name, the reporter record fills it."""
+    """If the live post strips displayName, the reporter record fills it."""
     players, teams = vocab
-    fv = _feed_view(
-        post=_post(
-            author=SimpleNamespace(
-                handle="reporter.bsky.social",
-                display_name=None,
-                did="did:plc:r1",
-            )
-        )
-    )
+    author = _author()
+    author.pop("displayName")
+    fv = _feed_view(post=_post(author=author))
     item = map_post_to_item(
         fv,
         {"handle": "reporter.bsky.social", "display_name": "The Reporter"},
@@ -287,15 +387,14 @@ def test_collect_items_drops_reposts_and_replies(vocab):
     feed = [
         _feed_view(),  # keep
         _feed_view(reason=_repost_reason()),  # drop (repost)
-        _feed_view(post=_post(record=_record(reply=_reply_ref()))),  # drop
+        _feed_view(post=_post(record=_record(reply=_reply_ref()))),  # drop (reply)
         _feed_view(post=_post(uri="at://did:plc:r1/app.bsky.feed.post/3kq2")),
     ]
     reporters = [{"handle": "reporter.bsky.social", "did": "did:plc:r1"}]
 
-    def fetcher(actor, limit):
-        return feed
-
-    items, stats = collect_items(reporters, fetcher, players, teams, None, 50)
+    items, stats = collect_items(
+        reporters, lambda actor, limit: feed, players, teams, None, 50
+    )
     assert stats["kept"] == 2
     assert stats["dropped_filter"] == 2
     assert stats["posts_seen"] == 4
@@ -313,12 +412,9 @@ def test_collect_items_respects_since_cutoff(vocab):
         ),
     ]
 
-    def fetcher(actor, limit):
-        return feed
-
     items, stats = collect_items(
         [{"handle": "r.bsky.social", "did": "did:plc:r1"}],
-        fetcher,
+        lambda actor, limit: feed,
         players,
         teams,
         since_iso="2026-05-21T00:00:00Z",
@@ -371,7 +467,7 @@ def test_collect_items_uses_did_when_present(vocab):
 
 
 # ---------------------------------------------------------------------------
-# End-to-end via run() (dry-run path)
+# End-to-end via run()
 # ---------------------------------------------------------------------------
 
 
@@ -387,14 +483,12 @@ def test_run_dry_run_does_not_write_shard(tmp_path, monkeypatch, capsys, vocab):
     monkeypatch.setattr(poll_bluesky, "OVERRIDES_PATH", overrides_path)
 
     feed = [_feed_view()]
-    fake_client = SimpleNamespace(
-        get_author_feed=lambda actor, filter, limit: SimpleNamespace(feed=feed)
-    )
+    fake_fetcher = lambda actor, limit: feed  # noqa: E731
 
     with patch("scripts.lib.sources._fetch_with_retry", return_value=csv_text):
         rc = poll_bluesky.run(
             ["--dry-run", "--since", "2026-05-01T00:00:00Z"],
-            client=fake_client,
+            feed_fetcher=fake_fetcher,
         )
 
     assert rc == 0
@@ -427,22 +521,20 @@ def test_run_writes_shard_and_dedupes(tmp_path, monkeypatch, vocab):
         _feed_view(
             post=_post(
                 uri="at://did:plc:r1/app.bsky.feed.post/3ktwo",
-                record=_record(text="Celtics tonight.", created_at="2026-05-21T11:00:00Z"),
+                record=_record(
+                    text="Celtics tonight.", created_at="2026-05-21T11:00:00Z"
+                ),
             )
         ),
     ]
-    fake_client = SimpleNamespace(
-        get_author_feed=lambda actor, filter, limit: SimpleNamespace(feed=feed)
-    )
+    fake_fetcher = lambda actor, limit: feed  # noqa: E731
 
     with patch("scripts.lib.sources._fetch_with_retry", return_value=csv_text):
-        # First run: 2 items appended.
         rc1 = poll_bluesky.run(
-            ["--since", "2026-05-01T00:00:00Z"], client=fake_client
+            ["--since", "2026-05-01T00:00:00Z"], feed_fetcher=fake_fetcher
         )
-        # Second run: 0 appended (dedup by id).
         rc2 = poll_bluesky.run(
-            ["--since", "2026-05-01T00:00:00Z"], client=fake_client
+            ["--since", "2026-05-01T00:00:00Z"], feed_fetcher=fake_fetcher
         )
 
     assert rc1 == 0 and rc2 == 0
@@ -456,7 +548,7 @@ def test_run_writes_shard_and_dedupes(tmp_path, monkeypatch, vocab):
     assert len(set(ids)) == 2
 
 
-def test_run_reporter_filter_narrows_to_one(tmp_path, monkeypatch, capsys, vocab):
+def test_run_reporter_filter_narrows_to_one(tmp_path, monkeypatch, vocab):
     monkeypatch.setattr(shards, "DATA_DIR", tmp_path)
     csv_text = (
         "Handle,Display Name,DID\n"
@@ -469,15 +561,14 @@ def test_run_reporter_filter_narrows_to_one(tmp_path, monkeypatch, capsys, vocab
 
     actors_called: list[str] = []
 
-    def fake_get_feed(actor, filter, limit):
+    def fake_fetcher(actor, limit):
         actors_called.append(actor)
-        return SimpleNamespace(feed=[])
-
-    fake_client = SimpleNamespace(get_author_feed=fake_get_feed)
+        return []
 
     with patch("scripts.lib.sources._fetch_with_retry", return_value=csv_text):
         rc = poll_bluesky.run(
-            ["--dry-run", "--reporter", "b.bsky.social"], client=fake_client
+            ["--dry-run", "--reporter", "b.bsky.social"],
+            feed_fetcher=fake_fetcher,
         )
 
     assert rc == 0

@@ -4,14 +4,11 @@
 # RSS parsing (Reddit, Google News, Substack)
 feedparser==6.0.11
 
-# HTTP client (all pollers)
+# HTTP client (all pollers, including Bluesky via the public AppView XRPC)
 requests==2.32.3
 
 # Robust date parsing (RSS pubDate, ISO strings, datetimes)
 python-dateutil==2.9.0.post0
-
-# Bluesky AT Protocol client
-atproto==0.0.55
 
 # Test runner (dev)
 pytest==8.3.4
