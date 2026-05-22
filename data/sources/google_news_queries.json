@@ -1,0 +1,50 @@
+{
+  "_meta": {
+    "description": "Google News RSS query config. Topic queries run every cycle; player/team queries rotate so we don't hammer Google with one request per entity. publisher_whitelist gates which sources land in the shard.",
+    "last_updated": "2026-05-22"
+  },
+  "topic_queries": [
+    "NBA trade rumors",
+    "NBA injury",
+    "NBA news",
+    "NBA free agency",
+    "NBA contract extension"
+  ],
+  "entity_queries": {
+    "enabled": true,
+    "comment": "Player/team queries are generated from canonical lists at runtime. To avoid 400+ queries every 15 min, a rotating SUBSET runs each cycle — see poll_google_news rotation logic. With players_per_cycle=25 against ~39 canonical players, every player is queried roughly every other cycle; with teams_per_cycle=10 against 30 canonical teams, every team is queried every ~3 cycles. As the player canonical list grows, expect ~4-hour coverage per player.",
+    "players_per_cycle": 25,
+    "teams_per_cycle": 10
+  },
+  "publisher_whitelist": {
+    "tier1": [
+      "ESPN",
+      "The Athletic",
+      "Yahoo Sports",
+      "HoopsHype",
+      "Bleacher Report",
+      "Sports Illustrated",
+      "NBA.com",
+      "Forbes"
+    ],
+    "tier2": [
+      "The Ringer",
+      "USA Today",
+      "Associated Press",
+      "Reuters",
+      "CBS Sports",
+      "NBC Sports",
+      "The Guardian",
+      "Cleveland.com",
+      "Boston Globe",
+      "Chicago Tribune",
+      "NJ.com",
+      "New York Post",
+      "Sporting News",
+      "ClutchPoints",
+      "Hoops Rumors"
+    ],
+    "match_mode": "fuzzy",
+    "comment": "fuzzy = case-insensitive substring match in either direction. So 'ESPN.com' matches 'ESPN' and 'AP' matches 'Associated Press' only if AP appears as a substring (it doesn't, so AP-tagged publishers need a literal whitelist entry). Publishers matching neither tier are dropped."
+  }
+}
