@@ -1,0 +1,9 @@
+{
+  "_meta": {
+    "description": "Local add/remove for the Bluesky reporter list. Live list comes from cdechoch/nba-buzz HF Space. 'add' = reporters to include beyond the live list. 'remove' = reporters to exclude even if in the live list.",
+    "format": "{ \"add\": [\"handle.bsky.social\"], \"remove\": [\"handle.bsky.social\"] }",
+    "last_updated": "2026-05-22"
+  },
+  "add": [],
+  "remove": []
+}
