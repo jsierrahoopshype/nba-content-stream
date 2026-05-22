@@ -14,11 +14,13 @@ exported for the common cases.
 from __future__ import annotations
 
 import ast
+import csv
+import io
 import json
 import logging
 import time
 from pathlib import Path
-from typing import Callable, List
+from typing import Any, Callable, Dict, List
 
 import requests
 
@@ -83,6 +85,43 @@ def parse_json_object_keys(text: str) -> List[str]:
     if not isinstance(data, dict):
         raise ValueError("expected a JSON object")
     return list(data.keys())
+
+
+def parse_bluesky_csv(text: str) -> List[Dict[str, str | None]]:
+    """Parse the cdechoch/nba-buzz reporter CSV into a list of records.
+
+    Expected columns (case-insensitive, spaces normalized to underscores):
+    `Handle`, `Display Name`, `DID`. Uses csv.DictReader because display
+    names contain quoted commas and emojis. Each row becomes a dict with
+    keys `handle`, `display_name`, `did`. Whitespace is stripped from
+    every field. Rows with an empty handle are skipped silently. A
+    missing or blank DID becomes `None` (the poller falls back to the
+    handle as the AT Protocol actor).
+    """
+    reader = csv.DictReader(io.StringIO(text))
+    if reader.fieldnames is None:
+        raise ValueError("CSV has no header row")
+
+    header_map: Dict[str, str] = {}
+    for field in reader.fieldnames:
+        key = field.strip().lower().replace(" ", "_")
+        header_map[field] = key
+
+    out: List[Dict[str, str | None]] = []
+    for raw_row in reader:
+        row = {header_map[k]: (v or "").strip() for k, v in raw_row.items() if k in header_map}
+        handle = row.get("handle", "")
+        if not handle:
+            continue
+        did = row.get("did") or None
+        out.append(
+            {
+                "handle": handle,
+                "display_name": row.get("display_name", "") or handle,
+                "did": did,
+            }
+        )
+    return out
 
 
 def parse_lines(text: str) -> List[str]:
@@ -173,6 +212,71 @@ def load_effective_list(
             continue
         seen.add(entry)
         out.append(entry)
+
+    if not out:
+        raise SourcesError(
+            f"{name}: effective list is empty "
+            f"(live_ok={live_ok}, adds={len(adds)}, removes={len(removes)})"
+        )
+
+    logger.info(
+        "%s: live=%d +adds=%d -removes=%d final=%d",
+        name,
+        len(live),
+        len(adds),
+        len(removes),
+        len(out),
+    )
+    return out
+
+
+def load_effective_records(
+    name: str,
+    live_url: str,
+    parser: Callable[[str], List[Dict[str, Any]]],
+    overrides_path: Path,
+    key_field: str = "handle",
+) -> List[Dict[str, Any]]:
+    """Records variant of `load_effective_list` for sources like Bluesky.
+
+    The parser returns a list of dicts (e.g. each Bluesky reporter has
+    handle/display_name/did). The overrides JSON still uses bare-string
+    `add` and `remove` lists — a human editing the file only knows the
+    handle, not the DID — so add/remove match against `record[key_field]`.
+
+    Added entries are stub records with only `key_field` populated; the
+    poller should fall back gracefully when other fields are missing
+    (e.g. for Bluesky, fall back to the handle when DID is None).
+    """
+    adds, removes = _load_overrides(overrides_path)
+    remove_set = set(removes)
+
+    try:
+        raw = _fetch_with_retry(live_url)
+        live = parser(raw)
+        live_ok = True
+    except Exception as exc:
+        logger.warning(
+            "%s: live fetch failed (%s); falling back to overrides.add only",
+            name,
+            exc,
+        )
+        live = []
+        live_ok = False
+
+    seen: set[str] = set()
+    out: List[Dict[str, Any]] = []
+    for record in live:
+        key = record.get(key_field)
+        if not isinstance(key, str) or key in remove_set or key in seen:
+            continue
+        seen.add(key)
+        out.append(record)
+    for key in adds:
+        if key in remove_set or key in seen:
+            continue
+        seen.add(key)
+        out.append({key_field: key})
 
     if not out:
         raise SourcesError(

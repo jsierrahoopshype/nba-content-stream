@@ -13,11 +13,15 @@ from scripts.lib import sources
 from scripts.lib.sources import (
     SourcesError,
     load_effective_list,
+    load_effective_records,
+    parse_bluesky_csv,
     parse_json_array,
     parse_json_object_keys,
     parse_lines,
     parse_python_list_literal,
 )
+
+FIXTURES = Path(__file__).parent / "fixtures"
 
 
 # ---------------------------------------------------------------------------
@@ -119,6 +123,83 @@ bob.bsky.social
 
 
 # ---------------------------------------------------------------------------
+# parse_bluesky_csv
+# ---------------------------------------------------------------------------
+
+
+@pytest.fixture(scope="module")
+def bluesky_csv_text() -> str:
+    return (FIXTURES / "bluesky_handles.csv").read_text(encoding="utf-8")
+
+
+def test_bluesky_csv_excludes_header_row(bluesky_csv_text):
+    rows = parse_bluesky_csv(bluesky_csv_text)
+    assert len(rows) == 6
+    assert all("handle" in r and "display_name" in r and "did" in r for r in rows)
+
+
+def test_bluesky_csv_handles_quoted_comma_in_display_name(bluesky_csv_text):
+    rows = parse_bluesky_csv(bluesky_csv_text)
+    shap = next(r for r in rows if r["handle"] == "shapalicious.bsky.social")
+    # Comma inside the quoted display name must be preserved, not treated
+    # as a column delimiter.
+    assert shap["display_name"] == "Jake Shapiro, but spooky 🎃"
+    assert shap["did"] == "did:plc:shapiro555aaa666bbb777ccc"
+
+
+def test_bluesky_csv_preserves_emoji(bluesky_csv_text):
+    rows = parse_bluesky_csv(bluesky_csv_text)
+    shap = next(r for r in rows if r["handle"] == "shapalicious.bsky.social")
+    assert "🎃" in shap["display_name"]
+
+
+def test_bluesky_csv_preserves_custom_domain_handles(bluesky_csv_text):
+    rows = parse_bluesky_csv(bluesky_csv_text)
+    handles = [r["handle"] for r in rows]
+    # Bare custom domains must NOT get .bsky.social appended.
+    assert "pablo.show" in handles
+    assert "nba.com" in handles
+    assert "shrikhalpada.dev" in handles
+    assert "pablo.show.bsky.social" not in handles
+
+
+def test_bluesky_csv_captures_did(bluesky_csv_text):
+    rows = parse_bluesky_csv(bluesky_csv_text)
+    nuggets = next(r for r in rows if r["handle"] == "nuggets.bsky.social")
+    assert nuggets["did"] == "did:plc:kdvkohfy7btmsdkg5mwuzjbw"
+    nba = next(r for r in rows if r["handle"] == "nba.com")
+    assert nba["did"] == "did:plc:nbaplcdid111222333444555"
+
+
+def test_bluesky_csv_missing_did_is_none(bluesky_csv_text):
+    rows = parse_bluesky_csv(bluesky_csv_text)
+    zach = next(r for r in rows if r["handle"] == "zachlowe.bsky.social")
+    assert zach["did"] is None
+
+
+def test_bluesky_csv_skips_blank_handle_rows():
+    text = (
+        "Handle,Display Name,DID\n"
+        ",Empty Handle,did:plc:x\n"
+        "real.bsky.social,Real,did:plc:y\n"
+    )
+    rows = parse_bluesky_csv(text)
+    assert [r["handle"] for r in rows] == ["real.bsky.social"]
+
+
+def test_bluesky_csv_strips_whitespace_from_fields():
+    text = "Handle,Display Name,DID\n  alice.bsky.social ,  Alice  ,  did:plc:a  \n"
+    rows = parse_bluesky_csv(text)
+    assert rows == [
+        {
+            "handle": "alice.bsky.social",
+            "display_name": "Alice",
+            "did": "did:plc:a",
+        }
+    ]
+
+
+# ---------------------------------------------------------------------------
 # load_effective_list
 # ---------------------------------------------------------------------------
 
@@ -211,6 +292,109 @@ def test_effective_list_live_fail_empty_adds_raises(overrides_path: Path):
         with pytest.raises(SourcesError):
             load_effective_list(
                 "bluesky", "https://x/", parse_json_array, overrides_path
+            )
+
+
+# ---------------------------------------------------------------------------
+# load_effective_records (dict-based, e.g. Bluesky reporters)
+# ---------------------------------------------------------------------------
+
+
+def test_effective_records_merges_live_adds_removes(overrides_path: Path):
+    _write_overrides(
+        overrides_path,
+        add=["added.bsky.social"],
+        remove=["nba.com"],
+    )
+    csv_text = (FIXTURES / "bluesky_handles.csv").read_text()
+
+    with patch.object(sources, "_fetch_with_retry", return_value=csv_text):
+        out = load_effective_records(
+            "bluesky",
+            "https://x/handles.csv",
+            parse_bluesky_csv,
+            overrides_path,
+        )
+
+    handles = [r["handle"] for r in out]
+    assert "nba.com" not in handles  # removed
+    assert "nuggets.bsky.social" in handles
+    assert "added.bsky.social" in handles  # appended from overrides.add
+
+
+def test_effective_records_added_entry_is_stub_with_only_key(
+    overrides_path: Path,
+):
+    _write_overrides(overrides_path, add=["fresh.bsky.social"], remove=[])
+    csv_text = (FIXTURES / "bluesky_handles.csv").read_text()
+
+    with patch.object(sources, "_fetch_with_retry", return_value=csv_text):
+        out = load_effective_records(
+            "bluesky",
+            "https://x/handles.csv",
+            parse_bluesky_csv,
+            overrides_path,
+        )
+
+    stub = next(r for r in out if r["handle"] == "fresh.bsky.social")
+    # User adding a reporter only knows the handle, not the DID — stub
+    # has no `did` key, so the poller falls back to the handle as actor.
+    assert "did" not in stub
+
+
+def test_effective_records_dedupes_by_key_field(overrides_path: Path):
+    # Adding a handle already present in live shouldn't create a duplicate.
+    _write_overrides(overrides_path, add=["nuggets.bsky.social"], remove=[])
+    csv_text = (FIXTURES / "bluesky_handles.csv").read_text()
+
+    with patch.object(sources, "_fetch_with_retry", return_value=csv_text):
+        out = load_effective_records(
+            "bluesky",
+            "https://x/handles.csv",
+            parse_bluesky_csv,
+            overrides_path,
+        )
+
+    handles = [r["handle"] for r in out]
+    assert handles.count("nuggets.bsky.social") == 1
+    # And the live record (with full fields) wins over the stub.
+    nuggets = next(r for r in out if r["handle"] == "nuggets.bsky.social")
+    assert nuggets.get("did") == "did:plc:kdvkohfy7btmsdkg5mwuzjbw"
+
+
+def test_effective_records_live_fail_falls_back_to_adds(
+    overrides_path: Path, caplog
+):
+    _write_overrides(overrides_path, add=["fallback.bsky.social"], remove=[])
+
+    def boom(url, timeout=10.0):
+        raise requests.ConnectionError("network down")
+
+    with patch.object(sources, "_fetch_with_retry", side_effect=boom):
+        with caplog.at_level("WARNING"):
+            out = load_effective_records(
+                "bluesky",
+                "https://x/handles.csv",
+                parse_bluesky_csv,
+                overrides_path,
+            )
+
+    assert [r["handle"] for r in out] == ["fallback.bsky.social"]
+
+
+def test_effective_records_empty_raises(overrides_path: Path):
+    _write_overrides(overrides_path, add=[], remove=[])
+
+    def boom(url, timeout=10.0):
+        raise requests.ConnectionError("network down")
+
+    with patch.object(sources, "_fetch_with_retry", side_effect=boom):
+        with pytest.raises(SourcesError):
+            load_effective_records(
+                "bluesky",
+                "https://x/handles.csv",
+                parse_bluesky_csv,
+                overrides_path,
             )
 
 
