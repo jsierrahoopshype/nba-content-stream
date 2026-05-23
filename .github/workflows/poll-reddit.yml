@@ -1,0 +1,68 @@
+name: Poll Reddit
+
+# Reddit runs on its own slower cadence (hourly, 5 min past the hour)
+# for two reasons:
+#   1. top/.rss?t=day doesn't change meaningfully every 15 min — it's
+#      the top posts of the LAST 24 HOURS, so a 15-min poll mostly
+#      re-fetches the same items.
+#   2. Reddit rate-limits GitHub Actions datacenter IPs aggressively.
+#      Hourly is well inside what we've seen tolerated even from DC.
+#
+# The cron offset (5 past the hour) keeps Reddit commits from colliding
+# with the top-of-hour poll-sources.yml run. Both workflows share the
+# `shard-commit` concurrency group, so if a collision does happen the
+# later one queues until the earlier finishes.
+
+on:
+  schedule:
+    - cron: "5 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: shard-commit
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Poll Reddit
+        continue-on-error: true
+        run: python -m scripts.poll_reddit --since-hours 24
+
+      - name: Commit and push new shards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "No data changes this cycle."
+            exit 0
+          fi
+          git commit -m "data: reddit poll $(date -u +%Y-%m-%dT%H:%MZ)"
+          for attempt in 1 2 3; do
+            if git pull --rebase origin "$GITHUB_REF_NAME" && git push; then
+              exit 0
+            fi
+            echo "push attempt $attempt failed; retrying"
+            sleep $((attempt * 5))
+          done
+          echo "push failed after 3 attempts"
+          exit 1
