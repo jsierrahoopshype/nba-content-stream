@@ -64,6 +64,8 @@ jobs:
         run: python -m scripts.poll_google_news --since-hours 24
 
       - name: Commit and push new shards
+        env:
+          BRANCH: ${{ github.ref_name }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -78,7 +80,7 @@ jobs:
           # still have moved between checkout and push (e.g. someone
           # merged to main). Rebase onto remote before pushing.
           for attempt in 1 2 3; do
-            if git pull --rebase origin "$GITHUB_REF_NAME" && git push; then
+            if git pull --rebase origin "$BRANCH" && git push; then
               exit 0
             fi
             echo "push attempt $attempt failed; retrying"

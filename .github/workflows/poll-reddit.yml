@@ -2,7 +2,7 @@ name: Poll Reddit
 
 # Reddit runs on its own slower cadence (hourly, 5 min past the hour)
 # for two reasons:
-#   1. top/.rss?t=day doesn't change meaningfully every 15 min — it's
+#   1. top/.rss?t=day doesn't change meaningfully every 15 min - it's
 #      the top posts of the LAST 24 HOURS, so a 15-min poll mostly
 #      re-fetches the same items.
 #   2. Reddit rate-limits GitHub Actions datacenter IPs aggressively.
@@ -48,6 +48,8 @@ jobs:
         run: python -m scripts.poll_reddit --since-hours 24
 
       - name: Commit and push new shards
+        env:
+          BRANCH: ${{ github.ref_name }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -58,7 +60,7 @@ jobs:
           fi
           git commit -m "data: reddit poll $(date -u +%Y-%m-%dT%H:%MZ)"
           for attempt in 1 2 3; do
-            if git pull --rebase origin "$GITHUB_REF_NAME" && git push; then
+            if git pull --rebase origin "$BRANCH" && git push; then
               exit 0
             fi
             echo "push attempt $attempt failed; retrying"
