@@ -1,0 +1,10 @@
+{
+  "_meta": {
+    "description": "Reddit RSS poller config. r/nba only for v1. Per DESIGN.md 4.4: the top/day feed IS the quality gate (no manual upvote scoring), we store only a short excerpt of selftext (never comment text), and every item links back to the reddit thread URL.",
+    "last_updated": "2026-05-22"
+  },
+  "subreddits": ["nba"],
+  "feeds": ["top/.rss?t=day", "hot/.rss"],
+  "excerpt_max_chars": 280,
+  "comment": "feeds are relative to https://www.reddit.com/r/{subreddit}/. top/.rss?t=day is the primary quality gate; hot/.rss is included for freshness. Items are deduped across feeds by Reddit post id (the t3_ fullname)."
+}
