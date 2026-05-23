@@ -573,3 +573,143 @@ def test_run_reporter_filter_narrows_to_one(tmp_path, monkeypatch, vocab):
 
     assert rc == 0
     assert actors_called == ["did:plc:b"]
+
+
+# ---------------------------------------------------------------------------
+# --since / --since-hours CLI parity with the other pollers
+# ---------------------------------------------------------------------------
+
+
+def _single_reporter_csv() -> str:
+    return (
+        "Handle,Display Name,DID\n"
+        "reporter.bsky.social,The Reporter,did:plc:r1\n"
+    )
+
+
+def _setup_run_env(tmp_path, monkeypatch) -> None:
+    """Wire DATA_DIR + an empty overrides file for a run() invocation."""
+    monkeypatch.setattr(shards, "DATA_DIR", tmp_path)
+    overrides_path = tmp_path / "bluesky_overrides.json"
+    overrides_path.write_text('{"add": [], "remove": []}')
+    monkeypatch.setattr(poll_bluesky, "OVERRIDES_PATH", overrides_path)
+
+
+def test_run_accepts_since_hours_flag(tmp_path, monkeypatch, vocab):
+    """The flag the GH Actions workflow passes (--since-hours 24) must parse."""
+    _setup_run_env(tmp_path, monkeypatch)
+    fake_fetcher = lambda actor, limit: []  # noqa: E731
+    with patch(
+        "scripts.lib.sources._fetch_with_retry",
+        return_value=_single_reporter_csv(),
+    ):
+        rc = poll_bluesky.run(
+            ["--dry-run", "--since-hours", "24"],
+            feed_fetcher=fake_fetcher,
+        )
+    assert rc == 0
+
+
+def test_since_hours_computes_cutoff_in_the_past(tmp_path, monkeypatch, vocab):
+    """--since-hours N → cutoff is now() - N hours (UTC)."""
+    _setup_run_env(tmp_path, monkeypatch)
+
+    # Build two posts: one inside the window, one outside.
+    from datetime import datetime, timedelta, timezone
+
+    now = datetime.now(timezone.utc)
+    inside = (now - timedelta(hours=1)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    outside = (now - timedelta(hours=48)).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    feed = [
+        _feed_view(
+            post=_post(
+                uri="at://did:plc:r1/app.bsky.feed.post/inside",
+                record=_record(created_at=inside),
+            )
+        ),
+        _feed_view(
+            post=_post(
+                uri="at://did:plc:r1/app.bsky.feed.post/outside",
+                record=_record(created_at=outside),
+            )
+        ),
+    ]
+
+    with patch(
+        "scripts.lib.sources._fetch_with_retry",
+        return_value=_single_reporter_csv(),
+    ):
+        rc = poll_bluesky.run(
+            ["--since-hours", "24"], feed_fetcher=lambda a, l: feed
+        )
+    assert rc == 0
+
+    from scripts.lib.utils import today_utc_date
+
+    shard = load_shard("bluesky", today_utc_date())
+    # Only the inside-window post lands; --since-hours 24 drops the 48h-old one.
+    ids = [it["id"] for it in shard["items"]]
+    assert any("inside" in i for i in ids)
+    assert not any("outside" in i for i in ids)
+
+
+def test_since_and_since_hours_are_mutually_exclusive(
+    tmp_path, monkeypatch, capsys, vocab
+):
+    """Passing both must fail at argparse (exit 2)."""
+    _setup_run_env(tmp_path, monkeypatch)
+    with pytest.raises(SystemExit) as excinfo:
+        poll_bluesky.run(
+            [
+                "--dry-run",
+                "--since",
+                "2026-05-01T00:00:00Z",
+                "--since-hours",
+                "24",
+            ],
+            feed_fetcher=lambda a, l: [],
+        )
+    assert excinfo.value.code == 2
+    err = capsys.readouterr().err
+    assert "--since" in err and "--since-hours" in err
+
+
+def test_default_when_neither_flag_given_is_24h(tmp_path, monkeypatch, vocab):
+    """Neither flag → 24h-ago cutoff. Same default as the other pollers."""
+    _setup_run_env(tmp_path, monkeypatch)
+
+    from datetime import datetime, timedelta, timezone
+
+    now = datetime.now(timezone.utc)
+    inside = (now - timedelta(hours=1)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    outside = (now - timedelta(hours=48)).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    feed = [
+        _feed_view(
+            post=_post(
+                uri="at://did:plc:r1/app.bsky.feed.post/inside",
+                record=_record(created_at=inside),
+            )
+        ),
+        _feed_view(
+            post=_post(
+                uri="at://did:plc:r1/app.bsky.feed.post/outside",
+                record=_record(created_at=outside),
+            )
+        ),
+    ]
+
+    with patch(
+        "scripts.lib.sources._fetch_with_retry",
+        return_value=_single_reporter_csv(),
+    ):
+        rc = poll_bluesky.run([], feed_fetcher=lambda a, l: feed)
+    assert rc == 0
+
+    from scripts.lib.utils import today_utc_date
+
+    shard = load_shard("bluesky", today_utc_date())
+    ids = [it["id"] for it in shard["items"]]
+    assert any("inside" in i for i in ids)
+    assert not any("outside" in i for i in ids)

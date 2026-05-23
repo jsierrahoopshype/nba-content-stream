@@ -12,9 +12,11 @@ Pipeline:
   4. Map each post to a shard item per `docs/SHARD_FORMAT.md` and append
      to `data/bluesky/{today-utc}.json` via `shards.append_items`.
 
-CLI:
+CLI (--since and --since-hours are mutually exclusive):
   --since ISO     Only keep posts whose record.createdAt >= this UTC
-                  timestamp. Default: 24h ago.
+                  timestamp.
+  --since-hours N Only keep posts published in the last N hours.
+                  Default when neither flag is given: 24.
   --limit N       Max posts to fetch per reporter (AppView caps at 100).
                   Default: 50.
   --dry-run       Print the items that would be written, don't touch
@@ -341,20 +343,37 @@ def collect_items(
 # ---------------------------------------------------------------------------
 
 
-def _default_since() -> str:
-    """24h before now, ISO 8601 UTC with Z suffix."""
-    return parse_to_iso(datetime.now(timezone.utc) - timedelta(hours=24))
+def _default_since_iso(hours: int = 24) -> str:
+    """`hours` before now, ISO 8601 UTC with Z suffix.
+
+    Matches `poll_google_news._default_since_iso` and
+    `poll_reddit._default_since_iso` so the cutoff semantics are
+    identical across all three pollers.
+    """
+    return parse_to_iso(datetime.now(timezone.utc) - timedelta(hours=hours))
 
 
 def _build_arg_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         description="Poll Bluesky reporters into today's shard."
     )
-    p.add_argument(
+    # --since (ISO timestamp) and --since-hours (int N) are two ways to
+    # spell the same cutoff. The other pollers (Google News, Reddit) only
+    # accept --since-hours, and the GH Actions workflow calls all three
+    # the same way; --since stays for backward compat and ad-hoc local use.
+    since_group = p.add_mutually_exclusive_group()
+    since_group.add_argument(
         "--since",
         default=None,
         help="Only keep posts at or after this UTC ISO timestamp. "
-        "Default: 24h ago.",
+        "Mutually exclusive with --since-hours.",
+    )
+    since_group.add_argument(
+        "--since-hours",
+        type=int,
+        default=None,
+        help="Only keep posts published in the last N hours. "
+        "Mutually exclusive with --since. Default when neither is given: 24.",
     )
     p.add_argument(
         "--limit",
@@ -411,7 +430,12 @@ def run(
             logger.error("no reporter matches --reporter %s", args.reporter)
             return 2
 
-    since_iso = parse_to_iso(args.since) if args.since else _default_since()
+    if args.since is not None:
+        since_iso = parse_to_iso(args.since)
+    elif args.since_hours is not None:
+        since_iso = _default_since_iso(args.since_hours)
+    else:
+        since_iso = _default_since_iso(24)
     logger.info(
         "polling %d reporters, since=%s, limit=%d",
         len(reporters),
