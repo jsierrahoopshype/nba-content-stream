@@ -99,7 +99,7 @@ Every item must include the required fields. Optional fields appear where applic
 | `media` | object | `type` and `duration_seconds`. |
 | `engagement` | object | Source-specific metrics. |
 | `extraction` | object | Present only when Gemini extraction ran. |
-| `top_comments` | array | Reddit-only. Up to 3 highest-scored comments. |
+| `top_comments` | array | Deprecated — never populated. Removed by the Reddit privacy rule (DESIGN.md 4.4); see Reddit variation below. |
 
 ## Source-specific variations
 
@@ -125,9 +125,10 @@ Every item must include the required fields. Optional fields appear where applic
 
 ### Reddit (r/nba)
 - `media.type` = `"text"`.
-- `body_excerpt` = post body (selftext) if any, else first top comment.
-- `engagement.score` (can be negative), `.comments` (count) present.
-- Optional `top_comments` array: up to 3 comments as `{author, score, text}`.
+- `body_excerpt` = the **original poster's selftext only**, capped at 280 characters. **Omitted entirely** for link posts (no selftext). We never read or store comment text — see DESIGN.md 4.4 for the privacy rationale.
+- `engagement` block present but all fields are `null`: Reddit's public RSS doesn't expose live scores or comment counts. (A future v2 might enrich these via the public `.json` endpoint; out of scope for v1.)
+- No `top_comments` array. The earlier proposal to include up to 3 top comments was retired by the same privacy rule.
+- `url` MUST be the Reddit thread URL (the `/comments/<id>/` link), never a deep-linked external article. The poller enforces this and drops entries it can't safely link back to a thread.
 - No `extraction` block.
 
 ### Google News

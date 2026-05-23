@@ -51,7 +51,6 @@ import re
 import sys
 import time
 from datetime import datetime, timedelta, timezone
-from html import unescape
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional, Tuple
 
@@ -61,7 +60,7 @@ import requests
 from scripts.lib import shards
 from scripts.lib.canonical import detect_entities, load_canonical
 from scripts.lib.shards import append_items, validate_item
-from scripts.lib.utils import parse_to_iso, today_utc_date, utc_now_iso
+from scripts.lib.utils import parse_to_iso, strip_html, today_utc_date, utc_now_iso
 
 logger = logging.getLogger("poll_reddit")
 
@@ -107,24 +106,9 @@ def load_config(path: Path = CONFIG_PATH) -> dict:
 # ---------------------------------------------------------------------------
 
 
-_TAG_RE = re.compile(r"<[^>]+>")
-_WS_RE = re.compile(r"\s+")
 # Reddit wraps selftext between these comment markers (SC = SelfContent).
 # When the markers are absent the post is a link post (no selftext).
 _SC_RE = re.compile(r"<!--\s*SC_OFF\s*-->(.*?)<!--\s*SC_ON\s*-->", re.DOTALL)
-
-
-def strip_html(text: str) -> str:
-    """Strip tags, decode entities, collapse whitespace.
-
-    Cheap regex strip. Reddit content uses a small set of inline tags
-    (a, p, em, strong, blockquote, br) so this is fine.
-    """
-    if not text:
-        return ""
-    no_tags = _TAG_RE.sub(" ", text)
-    decoded = unescape(no_tags)
-    return _WS_RE.sub(" ", decoded).strip()
 
 
 def extract_selftext(content_html: str) -> Optional[str]:

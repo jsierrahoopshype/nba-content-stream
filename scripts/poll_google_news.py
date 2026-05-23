@@ -60,7 +60,6 @@ import re
 import sys
 import time
 from datetime import datetime, timedelta, timezone
-from html import unescape
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional, Tuple
 from urllib.parse import quote_plus
@@ -71,7 +70,7 @@ import requests
 from scripts.lib import shards
 from scripts.lib.canonical import detect_entities, load_canonical
 from scripts.lib.shards import append_items, validate_item
-from scripts.lib.utils import parse_to_iso, today_utc_date, utc_now_iso
+from scripts.lib.utils import parse_to_iso, strip_html, today_utc_date, utc_now_iso
 
 logger = logging.getLogger("poll_google_news")
 
@@ -259,18 +258,10 @@ def split_headline_publisher(title: str) -> Tuple[str, str]:
     return headline, publisher
 
 
-_TAG_RE = re.compile(r"<[^>]+>")
+# `_WS_RE` is also used by `_normalize_for_dedup` below; kept local so
+# this module doesn't reach into a private name in lib.utils.
 _WS_RE = re.compile(r"\s+")
 _HREF_RE = re.compile(r'<a\s+[^>]*href=["\']([^"\']+)["\']', re.IGNORECASE)
-
-
-def strip_html(text: str) -> str:
-    """Strip HTML tags and collapse whitespace. HTML entities decoded."""
-    if not text:
-        return ""
-    no_tags = _TAG_RE.sub(" ", text)
-    decoded = unescape(no_tags)
-    return _WS_RE.sub(" ", decoded).strip()
 
 
 def extract_real_url(description_html: str) -> Optional[str]:

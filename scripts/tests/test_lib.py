@@ -23,7 +23,7 @@ from scripts.lib.shards import (
     shard_path,
     validate_item,
 )
-from scripts.lib.utils import parse_to_iso, today_utc_date, utc_now_iso
+from scripts.lib.utils import parse_to_iso, strip_html, today_utc_date, utc_now_iso
 
 
 # ---------------------------------------------------------------------------
@@ -342,3 +342,25 @@ def test_parse_to_iso_accepts_datetime():
 
 def test_parse_to_iso_z_suffix_already():
     assert parse_to_iso("2026-05-21T14:30:00Z") == "2026-05-21T14:30:00Z"
+
+
+# ---------------------------------------------------------------------------
+# strip_html (promoted from poll_google_news / poll_reddit copies)
+# ---------------------------------------------------------------------------
+
+
+def test_strip_html_removes_tags_and_decodes_entities():
+    assert strip_html("<p>Wemby&apos;s rise</p>") == "Wemby's rise"
+
+
+def test_strip_html_collapses_whitespace_to_single_spaces():
+    assert strip_html("<p>line1</p>\n  <p>line2</p>") == "line1 line2"
+
+
+def test_strip_html_empty_inputs_return_empty_string():
+    assert strip_html("") == ""
+    assert strip_html(None) == ""  # type: ignore[arg-type]
+
+
+def test_strip_html_preserves_unicode():
+    assert strip_html("<p>Giannis 🦌 dunks</p>") == "Giannis 🦌 dunks"

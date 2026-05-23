@@ -1,15 +1,21 @@
-"""Small datetime helpers shared by all pollers.
+"""Small helpers shared by all pollers.
 
-Every shard field that holds a timestamp is ISO 8601 UTC with a `Z` suffix
-(e.g. `2026-05-21T15:30:00Z`). These helpers normalize whatever a source
-hands us (RSS pubDate strings, ISO strings with offsets, naive datetimes)
-into that single canonical form.
+Date helpers: every shard field that holds a timestamp is ISO 8601 UTC
+with a `Z` suffix (e.g. `2026-05-21T15:30:00Z`). `parse_to_iso`
+normalizes whatever a source hands us (RSS pubDate strings, ISO strings
+with offsets, naive datetimes) into that single canonical form.
+
+HTML helper: `strip_html` removes tags, decodes entities, and collapses
+whitespace. Used by RSS pollers that need the plaintext of an HTML
+description/content payload.
 """
 
 from __future__ import annotations
 
 import logging
+import re
 from datetime import datetime, timezone
+from html import unescape
 from typing import Union
 
 from dateutil import parser as dateutil_parser
@@ -54,3 +60,24 @@ def parse_to_iso(value: DateInput) -> str:
         dt = dt.astimezone(timezone.utc)
 
     return dt.strftime(_ISO_FORMAT)
+
+
+_TAG_RE = re.compile(r"<[^>]+>")
+_WS_RE = re.compile(r"\s+")
+
+
+def strip_html(text: str) -> str:
+    """Strip HTML tags, decode entities, collapse whitespace to single spaces.
+
+    Cheap regex-based — not a full HTML parser. Good enough for RSS
+    description/content payloads, which typically only use a small set
+    of inline tags (a, p, br, em, strong, blockquote). The output is
+    safe to embed in a JSON shard as `body_excerpt`.
+
+    Returns an empty string for None or empty input.
+    """
+    if not text:
+        return ""
+    no_tags = _TAG_RE.sub(" ", text)
+    decoded = unescape(no_tags)
+    return _WS_RE.sub(" ", decoded).strip()
