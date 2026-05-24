@@ -2,26 +2,14 @@
   "_meta": {
     "description": "Substack publications polled via public RSS ({subdomain}.substack.com/feed). Raw feed: title + excerpt + link + entity tags, no AI. Free posts give full-ish content in RSS; paid posts give preview only. We store only a short excerpt (capped at 280 chars) either way and always link back to the original post.",
     "last_updated": "2026-05-24",
-    "validation_status": "UNVERIFIED — the sandbox that built this PR cannot reach *.substack.com (network policy blocks the host). Every entry below is a candidate from the Phase 2 task spec; Jorge needs to validate each feed locally before going live and prune any that 404 or return non-RSS. See the PR description for the failed validation attempts and the discovery candidates that couldn't be confirmed."
+    "validation_status": "Verified working feeds only. Currently just The Stein Line (confirmed live, NBA content, entity tagging validated against the dry-run output). Jorge will add more publications after verifying their subdomains locally — add an entry with slug/name/feed and the poller picks it up next cycle. Verify with: curl -sI https://{slug}.substack.com/feed | head -1 (expect HTTP/2 200), then a quick dry-run to confirm NBA content and entity tagging."
   },
   "publications": [
     {
       "slug": "marcstein",
       "name": "The Stein Line (Marc Stein)",
       "feed": "https://marcstein.substack.com/feed",
-      "validation": "unverified — sandbox cannot reach substack.com"
-    },
-    {
-      "slug": "haberstroh",
-      "name": "Tom Haberstroh",
-      "feed": "https://haberstroh.substack.com/feed",
-      "validation": "unverified — sandbox cannot reach substack.com"
-    },
-    {
-      "slug": "noisenarrative",
-      "name": "(verify) Howard Beck / The Insider",
-      "feed": "https://noisenarrative.substack.com/feed",
-      "validation": "unverified — sandbox cannot reach substack.com; slug speculative"
+      "validation": "verified 2026-05-24 — live, NBA content, entity tagging working"
     }
   ]
 }
