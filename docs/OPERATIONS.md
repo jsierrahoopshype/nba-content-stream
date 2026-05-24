@@ -10,24 +10,32 @@ contract see `SHARD_FORMAT.md`.
 |---|---|---|
 | `.github/workflows/poll-sources.yml` | every 15 min (`*/15 * * * *`) | Bluesky reporters + Google News RSS + Substack publications |
 | `.github/workflows/poll-reddit.yml`  | hourly, 5 min past (`5 * * * *`) | r/nba top/.rss?t=day + hot/.rss |
+| `.github/workflows/poll-youtube.yml` | hourly, 10 min past (`10 * * * *`) | YouTube uploads from the nba-podcast-stream channel list |
 | `.github/workflows/daily-rollup.yml` | 23:55 UTC daily | Hot → cold tier rollup (Phase 6) |
 
 Both poll workflows share the `shard-commit` concurrency group, so
 they never push to `data/` simultaneously. Each appends to the per-day
 shard file and commits as `github-actions[bot]`.
 
-**Secrets**: none. All four sources are keyless public reads
-(Bluesky public AppView, Google News RSS, Reddit RSS, Substack public
-RSS feeds). If you ever see a workflow asking for a secret, that's a
-bug — file an issue.
+**Secrets**: only one — `YOUTUBE_API_KEY`, used by `poll-youtube.yml`.
+Bluesky / Google News / Reddit / Substack are all keyless public reads.
+If any other workflow asks for a secret, that's a bug — file an issue.
+
+The YouTube key is stored as a repo secret (`Settings → Secrets and
+variables → Actions → YOUTUBE_API_KEY`). To rotate: paste the new
+value into the same secret; no code change needed. To verify the key
+is working, run the YouTube workflow via `Run workflow` and check the
+`stats:` line — `channel_errors == 0` and `quota_units_estimate > 0`
+means the key is live.
 
 ## Going live
 
 1. Open the **Actions** tab on GitHub.
 2. Find `Poll sources` in the sidebar. If the banner says "This
    scheduled workflow is disabled", click **Enable workflow**.
-3. Repeat for `Poll Reddit`.
-4. Watch the next two cycles run end-to-end (≤ 30 min wait).
+3. Repeat for `Poll Reddit` and `Poll YouTube`.
+4. Confirm `YOUTUBE_API_KEY` is set in `Settings → Secrets and variables → Actions` (required by `Poll YouTube` only).
+5. Watch the next two cycles run end-to-end (≤ 30 min wait).
 
 ## Manually triggering a run
 
@@ -77,6 +85,22 @@ stats: {'publications': 3, 'entries_seen': 8, 'dropped_since': 2,
   If a specific feed errors repeatedly, prune it from
   `data/sources/substack_publications.json`. Substack is raw RSS with
   no AI processing — there's no "extraction" line to watch for here.
+
+**YouTube** (`scripts.poll_youtube`):
+```
+stats: {'channels': 57, 'videos_seen': 120, 'dropped_since': 60,
+        'deduped': 0, 'kept': 60, 'channel_errors': 0,
+        'quota_units_estimate': 58}
+```
+- `quota_units_estimate` is the rough YouTube Data API quota cost of
+  the cycle. Steady state is `channels + uncached_channels / 50`
+  (channels.list batches up to 50 IDs at a time, cached after first
+  resolution). 24h ≈ `57 * 24 = 1,368 units` — well under the 10K
+  default quota. If this number creeps up unexpectedly, something is
+  busting the cache (`data/sources/youtube_channel_cache.json`).
+- `channel_errors > 0` for a few channels is fine (a private/deleted
+  channel surfaces here). All channels erroring with the same error
+  suggests an API key issue — check the secret.
 
 **Reddit** (`scripts.poll_reddit`):
 ```
