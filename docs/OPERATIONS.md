@@ -8,7 +8,7 @@ contract see `SHARD_FORMAT.md`.
 
 | Workflow file | Cadence | What it polls |
 |---|---|---|
-| `.github/workflows/poll-sources.yml` | every 15 min (`*/15 * * * *`) | Bluesky reporters + Google News RSS |
+| `.github/workflows/poll-sources.yml` | every 15 min (`*/15 * * * *`) | Bluesky reporters + Google News RSS + Substack publications |
 | `.github/workflows/poll-reddit.yml`  | hourly, 5 min past (`5 * * * *`) | r/nba top/.rss?t=day + hot/.rss |
 | `.github/workflows/daily-rollup.yml` | 23:55 UTC daily | Hot → cold tier rollup (Phase 6) |
 
@@ -16,9 +16,10 @@ Both poll workflows share the `shard-commit` concurrency group, so
 they never push to `data/` simultaneously. Each appends to the per-day
 shard file and commits as `github-actions[bot]`.
 
-**Secrets**: none. All three sources are keyless public reads
-(Bluesky public AppView, Google News RSS, Reddit RSS). If you ever
-see a workflow asking for a secret, that's a bug — file an issue.
+**Secrets**: none. All four sources are keyless public reads
+(Bluesky public AppView, Google News RSS, Reddit RSS, Substack public
+RSS feeds). If you ever see a workflow asking for a secret, that's a
+bug — file an issue.
 
 ## Going live
 
@@ -66,6 +67,16 @@ stats: {'queries': 40, 'entries_seen': 1500, 'dropped_whitelist': 900,
 - `query_errors` should be 0 or 1 (transient Google blip). Persistently
   high counts suggest Google is rate-limiting; consider raising
   `INTER_QUERY_SLEEP_SEC` in the poller.
+
+**Substack** (`scripts.poll_substack`):
+```
+stats: {'publications': 3, 'entries_seen': 8, 'dropped_since': 2,
+        'deduped': 0, 'kept': 6, 'feed_errors': 0}
+```
+- `feed_errors` should be 0 unless a publication moved or shut down.
+  If a specific feed errors repeatedly, prune it from
+  `data/sources/substack_publications.json`. Substack is raw RSS with
+  no AI processing — there's no "extraction" line to watch for here.
 
 **Reddit** (`scripts.poll_reddit`):
 ```

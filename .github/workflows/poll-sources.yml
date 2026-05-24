@@ -1,9 +1,10 @@
 name: Poll sources
 
-# Bluesky + Google News on a 15-minute cron. Reddit runs on its own
-# slower schedule from poll-reddit.yml (DC IPs get 429'd by Reddit if
-# we hammer top/day every 15 min, and the top/day feed doesn't change
-# that fast anyway).
+# Bluesky + Google News + Substack on a 15-minute cron. Reddit runs on
+# its own slower schedule from poll-reddit.yml (DC IPs get 429'd by
+# Reddit if we hammer top/day every 15 min, and the top/day feed
+# doesn't change that fast anyway). Substack posts are infrequent but
+# the 15-min cadence is cheap and means new posts surface promptly.
 #
 # Both workflows share the `shard-commit` concurrency group so they
 # never push to data/ simultaneously and force a git race. Inside this
@@ -16,13 +17,14 @@ on:
   workflow_dispatch:
     inputs:
       source:
-        description: "Source to poll (all, bluesky, google-news)"
+        description: "Source to poll (all, bluesky, google-news, substack)"
         required: false
         type: choice
         options:
           - all
           - bluesky
           - google-news
+          - substack
         default: all
 
 concurrency:
@@ -62,6 +64,11 @@ jobs:
         if: ${{ github.event_name == 'schedule' || github.event.inputs.source == 'all' || github.event.inputs.source == 'google-news' }}
         continue-on-error: true
         run: python -m scripts.poll_google_news --since-hours 24
+
+      - name: Poll Substack
+        if: ${{ github.event_name == 'schedule' || github.event.inputs.source == 'all' || github.event.inputs.source == 'substack' }}
+        continue-on-error: true
+        run: python -m scripts.poll_substack --since-hours 24
 
       - name: Commit and push new shards
         env:
