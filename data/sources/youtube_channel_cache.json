@@ -2,5 +2,286 @@
   "_meta": {
     "description": "Cache of YouTube channel resolution: channel_id -> {uploads_playlist_id, channel_title, resolved_at}. Populated by poll_youtube.py via channels.list (batched up to 50 IDs per call, 1 quota unit per batch). Committed so we don't burn quota re-resolving every cycle. Entries here are kept indefinitely for v1; refresh manually by deleting an entry (or the whole `cache` block) and the next cycle re-resolves on demand."
   },
-  "cache": {}
+  "cache": {
+    "UCBcs-QN0f0DkeCU_pDHTYtA": {
+      "uploads_playlist_id": "UUBcs-QN0f0DkeCU_pDHTYtA",
+      "channel_title": "Jovan Buha",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCxclESttS8hoRMd6cIYGgeA": {
+      "uploads_playlist_id": "UUxclESttS8hoRMd6cIYGgeA",
+      "channel_title": "Ball in the Family Podcast with Lonzo & Gelo Ball",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UC2ozVs4pg2K3uFLw6-0ayCQ": {
+      "uploads_playlist_id": "UU2ozVs4pg2K3uFLw6-0ayCQ",
+      "channel_title": "ALL THE SMOKE",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UC4uXDQzZG_WNeIyJQEsZcNA": {
+      "uploads_playlist_id": "UU4uXDQzZG_WNeIyJQEsZcNA",
+      "channel_title": "Straight to Cam | Cameron Brink & Sydel Curry-Lee",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCODlrQzQGttxpYglzmoOaEA": {
+      "uploads_playlist_id": "UUODlrQzQGttxpYglzmoOaEA",
+      "channel_title": "Above The Rim with DH 12",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UC5VYF0LHox2_7Ql2pKihqCQ": {
+      "uploads_playlist_id": "UU5VYF0LHox2_7Ql2pKihqCQ",
+      "channel_title": "Jared McCain",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCUqIXubCV7gcDJ-QZrdYRbw": {
+      "uploads_playlist_id": "UUUqIXubCV7gcDJ-QZrdYRbw",
+      "channel_title": "Thanalysis Show",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UC7HDMexhX9XlWqa8Y1n1SJQ": {
+      "uploads_playlist_id": "UU7HDMexhX9XlWqa8Y1n1SJQ",
+      "channel_title": "Derrick White",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UC1N15bwJCPFHjEsun1epfmw": {
+      "uploads_playlist_id": "UU1N15bwJCPFHjEsun1epfmw",
+      "channel_title": "Roommates Show",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UC4p0nlqdUlocfv--48-15Lg": {
+      "uploads_playlist_id": "UU4p0nlqdUlocfv--48-15Lg",
+      "channel_title": "Catch12 ",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCwr3hqUDuO4D4szLkjeVlrA": {
+      "uploads_playlist_id": "UUwr3hqUDuO4D4szLkjeVlrA",
+      "channel_title": "Trae Young",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCrlL3lECKmzkcYK8S6cW2Eg": {
+      "uploads_playlist_id": "UUrlL3lECKmzkcYK8S6cW2Eg",
+      "channel_title": "DwyaneWade",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCrUJ2hRTGLEaozZZ8cp5u0A": {
+      "uploads_playlist_id": "UUrUJ2hRTGLEaozZZ8cp5u0A",
+      "channel_title": "The OGs ",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCelmZalfinXZQP7dXw0ZauQ": {
+      "uploads_playlist_id": "UUelmZalfinXZQP7dXw0ZauQ",
+      "channel_title": "Jaylen Brown",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCZv6u7QVz-c8UoiJOMb2oyg": {
+      "uploads_playlist_id": "UUZv6u7QVz-c8UoiJOMb2oyg",
+      "channel_title": "Nigel Hayes-Davis",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCYYTsni8rBjKzBPGu3-Q8LA": {
+      "uploads_playlist_id": "UUYYTsni8rBjKzBPGu3-Q8LA",
+      "channel_title": "Stacey King's Gimme The Hot Sauce Podcast",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCqwKvfByZqmdC2jaFcUPcvQ": {
+      "uploads_playlist_id": "UUqwKvfByZqmdC2jaFcUPcvQ",
+      "channel_title": "Out The Mud Podcast",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCIlXFWq4v1CymTFBBgQ589Q": {
+      "uploads_playlist_id": "UUIlXFWq4v1CymTFBBgQ589Q",
+      "channel_title": "Hoopin' N Hollerin'",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCbPY1Efha9VPRBYW2x1M16A": {
+      "uploads_playlist_id": "UUbPY1Efha9VPRBYW2x1M16A",
+      "channel_title": "The Old Man and The Three",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCBNqqomXKPSWvcQDXOkRvRA": {
+      "uploads_playlist_id": "UUBNqqomXKPSWvcQDXOkRvRA",
+      "channel_title": "The Draymond Green Show",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCllPn98H4a079UMrahK7hhw": {
+      "uploads_playlist_id": "UUllPn98H4a079UMrahK7hhw",
+      "channel_title": "Kyrie LIVE",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UC_RyUOQqh3W77giXrbGKVGg": {
+      "uploads_playlist_id": "UU_RyUOQqh3W77giXrbGKVGg",
+      "channel_title": "Kyle Kuzma",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCU50K9xm-5_qbzwjMRr9A8w": {
+      "uploads_playlist_id": "UUU50K9xm-5_qbzwjMRr9A8w",
+      "channel_title": "To The Baha",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCa9W_cPwwbDlwBwHOd1YWoQ": {
+      "uploads_playlist_id": "UUa9W_cPwwbDlwBwHOd1YWoQ",
+      "channel_title": "KG Certified ",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCalFuU3MOWE39CS6SbfOUgA": {
+      "uploads_playlist_id": "UUalFuU3MOWE39CS6SbfOUgA",
+      "channel_title": "Jalen Williams",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCAvjYgmwadC682OoC4Cc6TQ": {
+      "uploads_playlist_id": "UUAvjYgmwadC682OoC4Cc6TQ",
+      "channel_title": "The Arena",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCVKTjJgaohHuJTtNjXCKazw": {
+      "uploads_playlist_id": "UUVKTjJgaohHuJTtNjXCKazw",
+      "channel_title": "Danny Green x Inside the Green Room",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCFEiKlkFpJBISr1paTLW8Vg": {
+      "uploads_playlist_id": "UUFEiKlkFpJBISr1paTLW8Vg",
+      "channel_title": "Anthony Edwards",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCwZo_mDI4fOIp-g18kinGBw": {
+      "uploads_playlist_id": "UUwZo_mDI4fOIp-g18kinGBw",
+      "channel_title": "Run It Back on FanDuel TV",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCqbroTPGO_SaLJB_TI4zztg": {
+      "uploads_playlist_id": "UUqbroTPGO_SaLJB_TI4zztg",
+      "channel_title": "On The Haus Podcast",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UC_MXNS3qkraCAEebdScjAPA": {
+      "uploads_playlist_id": "UU_MXNS3qkraCAEebdScjAPA",
+      "channel_title": "Podcast P with Paul George",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCIuKoa1AIiLTiXo0v69gTRg": {
+      "uploads_playlist_id": "UUIuKoa1AIiLTiXo0v69gTRg",
+      "channel_title": "Run Your Race",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UC3ZStupBLNVY4wVVOn7-e3w": {
+      "uploads_playlist_id": "UU3ZStupBLNVY4wVVOn7-e3w",
+      "channel_title": "Curious Mike",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCIOXmaExi4DjLHGyGvnu3bw": {
+      "uploads_playlist_id": "UUIOXmaExi4DjLHGyGvnu3bw",
+      "channel_title": "The Big Podcast with Shaq",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UC6L_LBqoKZXFa4WxHox5iCw": {
+      "uploads_playlist_id": "UU6L_LBqoKZXFa4WxHox5iCw",
+      "channel_title": "Mind the Game",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCBIPGMEJ72kaL9QHw3xUvuw": {
+      "uploads_playlist_id": "UUBIPGMEJ72kaL9QHw3xUvuw",
+      "channel_title": "The Dawg Talk Podcast",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCuhRRUv5bBdVRU6uExsd24w": {
+      "uploads_playlist_id": "UUuhRRUv5bBdVRU6uExsd24w",
+      "channel_title": "Straight Game Podcast ",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCd6K_nXCeWBk8YDwja0PPZg": {
+      "uploads_playlist_id": "UUd6K_nXCeWBk8YDwja0PPZg",
+      "channel_title": "Tyler Herro",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCSes4X8uDrpc4X46hJKjejg": {
+      "uploads_playlist_id": "UUSes4X8uDrpc4X46hJKjejg",
+      "channel_title": "Road Trippin' Show",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCuJ6CSQLBNb0nUvOn-s4aSA": {
+      "uploads_playlist_id": "UUuJ6CSQLBNb0nUvOn-s4aSA",
+      "channel_title": "Gil's Arena",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCIhTfcMzbR5wyNeh57ju0ug": {
+      "uploads_playlist_id": "UUIhTfcMzbR5wyNeh57ju0ug",
+      "channel_title": "Damian Lillard",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCfHG9GrqjYaEdPkrRi9LiBA": {
+      "uploads_playlist_id": "UUfHG9GrqjYaEdPkrRi9LiBA",
+      "channel_title": "DeMar DeRozan",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCLqzKYd1tST9lRPbEUoH5Hg": {
+      "uploads_playlist_id": "UULqzKYd1tST9lRPbEUoH5Hg",
+      "channel_title": "Knuckleheads Podcast",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCoA3lm9UTWDWK8Z1kcoWQcA": {
+      "uploads_playlist_id": "UUoA3lm9UTWDWK8Z1kcoWQcA",
+      "channel_title": "Club 520 Podcast",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCB_4C2Gl7Zfg4uBXk_AcWwA": {
+      "uploads_playlist_id": "UUB_4C2Gl7Zfg4uBXk_AcWwA",
+      "channel_title": "Boardroom",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UC-Ovj3qDVxBAOWX3kwzOVRw": {
+      "uploads_playlist_id": "UU-Ovj3qDVxBAOWX3kwzOVRw",
+      "channel_title": "No Fouls Given",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCf5fcEALUCA53oUW3mc8tiQ": {
+      "uploads_playlist_id": "UUf5fcEALUCA53oUW3mc8tiQ",
+      "channel_title": "Victor Oladipo",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCemwSsWl4rg313rUCBcDiJw": {
+      "uploads_playlist_id": "UUemwSsWl4rg313rUCBcDiJw",
+      "channel_title": "Point Game Podcast with Isaiah Thomas",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCvy0Lw9TcvSAQnTzj62aOUA": {
+      "uploads_playlist_id": "UUvy0Lw9TcvSAQnTzj62aOUA",
+      "channel_title": "Rogue Bogues",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UC-bJU7MdQ4NW7zUbKChPp6Q": {
+      "uploads_playlist_id": "UU-bJU7MdQ4NW7zUbKChPp6Q",
+      "channel_title": "NBA Front Office",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCNGuP7AKOZ9yi7x5SDiCOjg": {
+      "uploads_playlist_id": "UUNGuP7AKOZ9yi7x5SDiCOjg",
+      "channel_title": "AJ Dybantsa",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCT3wF21Qx0d0HmuiCzji8Lg": {
+      "uploads_playlist_id": "UUT3wF21Qx0d0HmuiCzji8Lg",
+      "channel_title": "7PM in Brooklyn with Carmelo Anthony",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCS5fdgvuA-fCPZQsk0unKnw": {
+      "uploads_playlist_id": "UUS5fdgvuA-fCPZQsk0unKnw",
+      "channel_title": "The Zach Lowe Show",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCU1d7JjFkXlvXeFoHez44AQ": {
+      "uploads_playlist_id": "UUU1d7JjFkXlvXeFoHez44AQ",
+      "channel_title": "The Bench Seat",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCA95kYjGqDgRziNA7sJZBag": {
+      "uploads_playlist_id": "UUA95kYjGqDgRziNA7sJZBag",
+      "channel_title": "Richard A. Jefferson",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    },
+    "UCCGJZrHsGPYXlZx7WeO1P-w": {
+      "uploads_playlist_id": "UUCGJZrHsGPYXlZx7WeO1P-w",
+      "channel_title": "Yossi Gozlan",
+      "resolved_at": "2026-05-25T19:55:56Z"
+    }
+  }
 }
