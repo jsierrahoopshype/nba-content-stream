@@ -70,6 +70,17 @@ jobs:
         continue-on-error: true
         run: python -m scripts.poll_substack --since-hours 24
 
+      # Regenerate data/index/ from the freshly-polled shards so the
+      # frontend reads consistent indexes against the latest content.
+      # Only on this 15-min workflow; poll-reddit and poll-youtube
+      # commit their own shards, and the next poll-sources cycle (≤15
+      # min later) rebuilds indexes including their items. We accept
+      # the resulting ≤15-min index lag for Reddit/YouTube items in
+      # exchange for not running the rebuild three times per cycle.
+      - name: Rebuild indexes
+        continue-on-error: true
+        run: python -m scripts.build_indexes
+
       - name: Commit and push new shards
         env:
           BRANCH: ${{ github.ref_name }}
