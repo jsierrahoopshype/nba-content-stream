@@ -1,0 +1,31 @@
+{
+  "kind": "youtube#channelListResponse",
+  "items": [
+    {
+      "kind": "youtube#channel",
+      "id": "UCfakeOGsShow0000000001",
+      "snippet": {
+        "title": "TheOGsShow",
+        "description": "The OGs Show with Matt Barnes and Stephen Jackson."
+      },
+      "contentDetails": {
+        "relatedPlaylists": {
+          "uploads": "UUfakeOGsShow0000000001"
+        }
+      }
+    },
+    {
+      "kind": "youtube#channel",
+      "id": "UCfakeRingerNBA0000000002",
+      "snippet": {
+        "title": "The Ringer NBA Show",
+        "description": "Ringer NBA podcasts and video."
+      },
+      "contentDetails": {
+        "relatedPlaylists": {
+          "uploads": "UUfakeRingerNBA0000000002"
+        }
+      }
+    }
+  ]
+}

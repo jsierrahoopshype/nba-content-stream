@@ -1,0 +1,6 @@
+{
+  "_meta": {
+    "description": "Cache of YouTube channel resolution: channel_id -> {uploads_playlist_id, channel_title, resolved_at}. Populated by poll_youtube.py via channels.list (batched up to 50 IDs per call, 1 quota unit per batch). Committed so we don't burn quota re-resolving every cycle. Entries here are kept indefinitely for v1; refresh manually by deleting an entry (or the whole `cache` block) and the next cycle re-resolves on demand."
+  },
+  "cache": {}
+}

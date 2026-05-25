@@ -1,0 +1,79 @@
+{
+  "kind": "youtube#playlistItemListResponse",
+  "items": [
+    {
+      "kind": "youtube#playlistItem",
+      "snippet": {
+        "publishedAt": "2026-05-21T14:30:00Z",
+        "channelId": "UCfakeOGsShow0000000001",
+        "title": "LeBron James and the Lakers' offseason plan",
+        "description": "Matt and Stephen break down the Lakers' summer with LeBron James and Anthony Davis at the center of every decision. Full episode below.",
+        "thumbnails": {
+          "default": {"url": "https://i.ytimg.com/vi/abc111/default.jpg"},
+          "medium":  {"url": "https://i.ytimg.com/vi/abc111/mqdefault.jpg"},
+          "high":    {"url": "https://i.ytimg.com/vi/abc111/hqdefault.jpg"},
+          "standard":{"url": "https://i.ytimg.com/vi/abc111/sddefault.jpg"},
+          "maxres":  {"url": "https://i.ytimg.com/vi/abc111/maxresdefault.jpg"}
+        },
+        "channelTitle": "TheOGsShow",
+        "resourceId": {"kind": "youtube#video", "videoId": "abc111"}
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "snippet": {
+        "publishedAt": "2026-05-21T15:00:00Z",
+        "channelId": "UCfakeOGsShow0000000001",
+        "title": "Deep dive: Celtics defensive scheme explained",
+        "description": "On this episode we go deep on the Boston Celtics defensive scheme that broke the Cleveland Cavaliers in the second half of Game 4. Jaylen Brown and Jrue Holiday were the linchpins. Joe Mazzulla had the team switching everything from minute 18 onward and the result was an offensive rating collapse from 118 to 84. We walk through every possession in the third quarter, every screen navigation, every recovery, and the specific reads the guards made on Donovan Mitchell. This is the kind of half that turns a series and the kind of breakdown that helps you see the chess match unfolding in real time. Subscribe for more long-form NBA breakdowns and join the conversation in the comments.",
+        "thumbnails": {
+          "high": {"url": "https://i.ytimg.com/vi/abc222/hqdefault.jpg"}
+        },
+        "channelTitle": "TheOGsShow",
+        "resourceId": {"kind": "youtube#video", "videoId": "abc222"}
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "snippet": {
+        "publishedAt": "2026-05-21T16:00:00Z",
+        "channelId": "UCfakeOGsShow0000000001",
+        "title": "Quick hit episode",
+        "description": "",
+        "thumbnails": {
+          "default": {"url": "https://i.ytimg.com/vi/abc333/default.jpg"}
+        },
+        "channelTitle": "TheOGsShow",
+        "resourceId": {"kind": "youtube#video", "videoId": "abc333"}
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "snippet": {
+        "publishedAt": "2026-05-14T09:00:00Z",
+        "channelId": "UCfakeOGsShow0000000001",
+        "title": "Old episode from last week",
+        "description": "Was filed before the deadline passed.",
+        "thumbnails": {
+          "default": {"url": "https://i.ytimg.com/vi/abc444/default.jpg"}
+        },
+        "channelTitle": "TheOGsShow",
+        "resourceId": {"kind": "youtube#video", "videoId": "abc444"}
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "snippet": {
+        "publishedAt": "2026-05-21T17:30:00Z",
+        "channelId": "UCfakeOGsShow0000000001",
+        "title": "Wemby 🦄 is the future of the Spurs",
+        "description": "Victor Wembanyama and the San Antonio Spurs are recalibrating their timeline.",
+        "thumbnails": {
+          "high": {"url": "https://i.ytimg.com/vi/abc555/hqdefault.jpg"}
+        },
+        "channelTitle": "TheOGsShow",
+        "resourceId": {"kind": "youtube#video", "videoId": "abc555"}
+      }
+    }
+  ]
+}
