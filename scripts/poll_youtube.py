@@ -43,6 +43,7 @@ import argparse
 import json
 import logging
 import os
+import re
 import sys
 import time
 from datetime import datetime, timedelta, timezone
@@ -141,6 +142,24 @@ ChannelsFetcher = Callable[[List[str]], Dict[str, Any]]
 PlaylistItemsFetcher = Callable[[str, int], Dict[str, Any]]
 
 
+_KEY_REDACT_RE = re.compile(r"([?&])key=[^&\s]+")
+
+
+def _raise_for_status_safe(resp: requests.Response) -> None:
+    """Like `resp.raise_for_status()` but scrubs `key=...` from the message.
+
+    `requests.HTTPError`'s `__str__` includes the full URL it failed on,
+    which for YouTube Data API calls contains the API key as a query
+    param. Logging the exception (even at WARNING) would leak the key.
+    We catch, rewrite the message, and re-raise.
+    """
+    try:
+        resp.raise_for_status()
+    except requests.HTTPError as exc:
+        scrubbed = _KEY_REDACT_RE.sub(r"\1key=REDACTED", str(exc))
+        raise requests.HTTPError(scrubbed) from None
+
+
 def make_channels_fetcher(
     session: requests.Session, api_key: str
 ) -> ChannelsFetcher:
@@ -156,7 +175,7 @@ def make_channels_fetcher(
         resp = session.get(
             f"{YOUTUBE_API_BASE}/channels", params=params, timeout=15
         )
-        resp.raise_for_status()
+        _raise_for_status_safe(resp)
         return resp.json()
 
     return fetch
@@ -177,7 +196,7 @@ def make_playlist_items_fetcher(
         resp = session.get(
             f"{YOUTUBE_API_BASE}/playlistItems", params=params, timeout=15
         )
-        resp.raise_for_status()
+        _raise_for_status_safe(resp)
         return resp.json()
 
     return fetch
@@ -371,14 +390,21 @@ def collect_items(
     items_by_id: Dict[str, dict] = {}
     ingested_at = utc_now_iso()
 
+    total = len(channel_ids)
     for i, channel_id in enumerate(channel_ids):
         if i > 0 and sleep_sec > 0:
             time.sleep(sleep_sec)
         entry = resolved.get(channel_id)
         if not entry:
             stats["channel_errors"] += 1
-            logger.warning("channel %s did not resolve (missing from API response)", channel_id)
+            logger.warning(
+                "[%d/%d] %s did not resolve (missing from API response)",
+                i + 1,
+                total,
+                channel_id,
+            )
             continue
+        channel_title = entry.get("channel_title") or channel_id
         try:
             payload = playlist_items_fetcher(
                 entry["uploads_playlist_id"], max_per_channel
@@ -387,9 +413,10 @@ def collect_items(
         except Exception as exc:
             stats["channel_errors"] += 1
             logger.warning(
-                "playlistItems.list failed for %s (%s): %s",
-                channel_id,
-                entry.get("channel_title"),
+                "[%d/%d] %s playlistItems.list failed: %s",
+                i + 1,
+                total,
+                channel_title,
                 exc,
             )
             continue
@@ -408,9 +435,11 @@ def collect_items(
             errs = validate_item(item)
             if errs:
                 logger.warning(
-                    "dropping invalid item %s from %s: %s",
+                    "[%d/%d] %s dropping invalid item %s: %s",
+                    i + 1,
+                    total,
+                    channel_title,
                     item.get("id"),
-                    channel_id,
                     errs,
                 )
                 continue
@@ -420,10 +449,14 @@ def collect_items(
             items_by_id[item["id"]] = item
             kept_for_channel += 1
 
-        logger.debug(
-            "youtube %s (%s) -> kept %d",
-            channel_id,
-            entry.get("channel_title"),
+        # Bumped from DEBUG to INFO so a non-verbose run shows steady
+        # progress instead of looking frozen during the ~60-90s 57-channel
+        # walk. One line per channel = 57 lines per cycle — fine.
+        logger.info(
+            "[%d/%d] %s -> kept %d",
+            i + 1,
+            total,
+            channel_title,
             kept_for_channel,
         )
         stats["kept"] += kept_for_channel
@@ -496,6 +529,13 @@ def run(
         level=logging.DEBUG if args.verbose else logging.INFO,
         format="%(asctime)s %(levelname)s %(name)s: %(message)s",
     )
+    # urllib3 (and the requests it sits under) dumps full request URLs at
+    # DEBUG, which on this poller would include `?...&key=<API_KEY>`. Pin
+    # those loggers to WARNING regardless of `-v` so we never log a URL
+    # with the key. (Errors still surface via our own log lines, which
+    # go through `_raise_for_status_safe` to scrub the key.)
+    for noisy in ("urllib3", "urllib3.connectionpool", "requests.packages.urllib3"):
+        logging.getLogger(noisy).setLevel(logging.WARNING)
 
     # API key required for real calls; tests inject the fetchers and skip this.
     if channels_fetcher is None or playlist_items_fetcher is None:
@@ -522,14 +562,25 @@ def run(
     players_dict, teams_dict = load_canonical()
     cache = load_channel_cache(cache_path)
     since_iso = _default_since_iso(args.since_hours)
+    cached_count = sum(1 for cid in channels if cid in cache)
     logger.info(
         "polling %d channel(s), since=%s (%dh), max_per_channel=%d, cached=%d",
         len(channels),
         since_iso,
         args.since_hours,
         args.max_per_channel,
-        sum(1 for cid in channels if cid in cache),
+        cached_count,
     )
+    if cached_count < len(channels):
+        # The cold-cache resolve is ~2 channels.list batches (1 unit each)
+        # plus 57 sequential playlistItems.list calls. Total wall time is
+        # network-bound, typically ~60-90s. Without this heads-up the run
+        # looks frozen.
+        logger.info(
+            "cold cache for %d channel(s); resolving up front, "
+            "this run may take ~60-90s",
+            len(channels) - cached_count,
+        )
 
     if channels_fetcher is None or playlist_items_fetcher is None:
         session = session or _make_session()

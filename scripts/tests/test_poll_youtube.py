@@ -625,3 +625,220 @@ def test_run_channel_override_filters(
     assert rc == 0
     # Only one playlistItems.list call, for the requested channel.
     assert seen_playlists == [UPLOADS_ID]
+
+
+# ---------------------------------------------------------------------------
+# Security: API key must never appear in logs (Issue 1 from PR #8 review)
+# ---------------------------------------------------------------------------
+
+
+_FAKE_KEY = "AIzaTESTfakekey_THIS_SHOULD_NEVER_APPEAR_IN_LOGS"
+
+
+def test_raise_for_status_safe_scrubs_key_from_exception_message():
+    """`raise_for_status_safe` must not leak `key=...` in the HTTPError str."""
+    from scripts.poll_youtube import _raise_for_status_safe
+
+    resp = requests.models.Response()
+    resp.status_code = 404
+    resp.url = (
+        f"https://www.googleapis.com/youtube/v3/channels?key={_FAKE_KEY}&id=UC123"
+    )
+    with pytest.raises(requests.HTTPError) as excinfo:
+        _raise_for_status_safe(resp)
+
+    msg = str(excinfo.value)
+    assert _FAKE_KEY not in msg
+    assert "key=REDACTED" in msg
+
+
+def test_api_key_does_not_appear_in_logs_even_on_failure(
+    tmp_path, monkeypatch, caplog, channels_response
+):
+    """End-to-end: a run that hits a 404 on playlistItems must not log the key.
+
+    This is the regression test for the leak that bit us on the first
+    live dry-run. We construct a real `make_playlist_items_fetcher`
+    bound to a fake Session whose 404 response carries the key in the
+    URL, and run the full pipeline at DEBUG. The key string must not
+    appear in any captured log record.
+    """
+    from scripts.lib import sources
+
+    overrides_path, cache_path = _setup_run_env(tmp_path, monkeypatch)
+    fake_app_py = f"CHANNELS = ['{CHANNEL_ID}']"
+
+    class _FakeSession:
+        def get(self, url, params=None, timeout=None):
+            r = requests.models.Response()
+            # channels.list succeeds with the fixture; playlistItems.list
+            # 404s, and the 404 URL contains the key — exactly the leak
+            # path that bit the first live run.
+            if "/channels" in url:
+                r.status_code = 200
+                r._content = json.dumps(channels_response).encode()
+                r.url = f"{url}?key={_FAKE_KEY}"
+                return r
+            r.status_code = 404
+            qs = "&".join(f"{k}={v}" for k, v in (params or {}).items())
+            r.url = f"{url}?{qs}"
+            return r
+
+    fake_session = _FakeSession()
+
+    with patch.object(sources, "_fetch_with_retry", return_value=fake_app_py):
+        with caplog.at_level("DEBUG"):
+            rc = poll_youtube.run(
+                ["--since-hours", "999", "-v"],
+                session=fake_session,
+                api_key=_FAKE_KEY,
+                overrides_path=overrides_path,
+                cache_path=cache_path,
+                sleep_sec=0,
+            )
+
+    # The run "succeeded" in the sense that not every channel failed
+    # (channels.list worked); but playlistItems failed, raising the
+    # scrubbed HTTPError. What matters: the fake key never appears in
+    # any captured log message.
+    leaked_records = [
+        (rec.name, rec.levelname, rec.message)
+        for rec in caplog.records
+        if _FAKE_KEY in rec.message or _FAKE_KEY in str(rec.args)
+    ]
+    assert leaked_records == [], (
+        f"API key leaked into {len(leaked_records)} log record(s): "
+        f"{leaked_records[:3]}"
+    )
+    # And the run executed something (so caplog isn't trivially empty).
+    assert any("polling" in rec.message for rec in caplog.records)
+    # Sanity: the scrubbed token IS in the logs somewhere on the
+    # warning path, confirming the scrub fired.
+    assert any("REDACTED" in rec.message for rec in caplog.records), (
+        "expected the scrubbed 'key=REDACTED' substitution to appear "
+        "in the WARNING path for the failing playlistItems call"
+    )
+
+
+def test_urllib3_logger_is_quieted_to_warning(
+    tmp_path, monkeypatch, channels_response, playlist_items_response
+):
+    """`-v` must not turn urllib3 DEBUG back on (it would re-leak the URL)."""
+    from scripts.lib import sources
+
+    overrides_path, cache_path = _setup_run_env(tmp_path, monkeypatch)
+    fake_app_py = f"CHANNELS = ['{CHANNEL_ID}']"
+
+    with patch.object(sources, "_fetch_with_retry", return_value=fake_app_py):
+        poll_youtube.run(
+            ["--dry-run", "-v", "--since-hours", "999"],
+            channels_fetcher=lambda ids: channels_response,
+            playlist_items_fetcher=lambda p, n: playlist_items_response,
+            overrides_path=overrides_path,
+            cache_path=cache_path,
+            sleep_sec=0,
+        )
+
+    import logging as _logging
+
+    for name in ("urllib3", "urllib3.connectionpool", "requests.packages.urllib3"):
+        assert _logging.getLogger(name).level >= _logging.WARNING, (
+            f"{name} logger is at {_logging.getLogger(name).level}, "
+            "which is below WARNING — urllib3 DEBUG would leak the URL"
+        )
+
+
+# ---------------------------------------------------------------------------
+# UX: cold-cache heads-up + per-channel INFO progress (Issue 2)
+# ---------------------------------------------------------------------------
+
+
+def test_cold_cache_emits_heads_up_log(
+    tmp_path, monkeypatch, caplog, channels_response, playlist_items_response
+):
+    """First run with no cache must log a heads-up about the ~60-90s wait."""
+    from scripts.lib import sources
+
+    overrides_path, cache_path = _setup_run_env(tmp_path, monkeypatch)
+    fake_app_py = f"CHANNELS = ['{CHANNEL_ID}']"
+
+    with patch.object(sources, "_fetch_with_retry", return_value=fake_app_py):
+        with caplog.at_level("INFO"):
+            poll_youtube.run(
+                ["--dry-run", "--since-hours", "999"],
+                channels_fetcher=lambda ids: channels_response,
+                playlist_items_fetcher=lambda p, n: playlist_items_response,
+                overrides_path=overrides_path,
+                cache_path=cache_path,
+                sleep_sec=0,
+            )
+
+    joined = " ".join(rec.message for rec in caplog.records)
+    assert "cold cache" in joined
+    assert "60-90s" in joined
+
+
+def test_warm_cache_skips_heads_up_log(
+    tmp_path, monkeypatch, caplog, playlist_items_response
+):
+    """When all channels are cached, the heads-up line must NOT appear."""
+    from scripts.lib import sources
+
+    overrides_path, cache_path = _setup_run_env(tmp_path, monkeypatch)
+    # Pre-warm the cache with the test channel.
+    cache_path.write_text(
+        json.dumps(
+            {
+                "_meta": {},
+                "cache": {
+                    CHANNEL_ID: {
+                        "uploads_playlist_id": UPLOADS_ID,
+                        "channel_title": "TheOGsShow",
+                        "resolved_at": "2026-05-01T00:00:00Z",
+                    }
+                },
+            }
+        )
+    )
+    fake_app_py = f"CHANNELS = ['{CHANNEL_ID}']"
+
+    with patch.object(sources, "_fetch_with_retry", return_value=fake_app_py):
+        with caplog.at_level("INFO"):
+            poll_youtube.run(
+                ["--dry-run", "--since-hours", "999"],
+                channels_fetcher=lambda ids: {"items": []},
+                playlist_items_fetcher=lambda p, n: playlist_items_response,
+                overrides_path=overrides_path,
+                cache_path=cache_path,
+                sleep_sec=0,
+            )
+
+    joined = " ".join(rec.message for rec in caplog.records)
+    assert "cold cache" not in joined
+
+
+def test_per_channel_progress_logged_at_info(
+    tmp_path, monkeypatch, caplog, channels_response, playlist_items_response
+):
+    """Per-channel progress must be visible WITHOUT -v (i.e. at INFO)."""
+    from scripts.lib import sources
+
+    overrides_path, cache_path = _setup_run_env(tmp_path, monkeypatch)
+    fake_app_py = f"CHANNELS = ['{CHANNEL_ID}']"
+
+    with patch.object(sources, "_fetch_with_retry", return_value=fake_app_py):
+        with caplog.at_level("INFO"):
+            poll_youtube.run(
+                ["--dry-run", "--since-hours", "999"],
+                channels_fetcher=lambda ids: channels_response,
+                playlist_items_fetcher=lambda p, n: playlist_items_response,
+                overrides_path=overrides_path,
+                cache_path=cache_path,
+                sleep_sec=0,
+            )
+
+    info_records = [r.message for r in caplog.records if r.levelname == "INFO"]
+    # One total channel, expect "[1/1] TheOGsShow -> kept N"
+    assert any("[1/1]" in m and "TheOGsShow" in m for m in info_records), (
+        f"expected per-channel progress at INFO, got: {info_records}"
+    )
