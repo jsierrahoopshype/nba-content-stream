@@ -1,8 +1,662 @@
 {
-  "_meta": {
-    "description": "Trending Now index. Regenerated every 15 min by the polling cycle. Populated by Phase 3 trending detector.",
-    "version": "1",
-    "generated_at": null
+  "generated_at": "2026-05-26T14:21:56Z",
+  "window_hours": 72,
+  "weights": {
+    "youtube": 1.3,
+    "substack": 1.3,
+    "google-news": 1.1,
+    "bluesky": 1.0,
+    "reddit": 1.0
   },
-  "items": []
+  "count": 40,
+  "items": [
+    {
+      "id": "bs-did%3Aplc%3Afqsmj7o5mbb7n7oav2kkjuid%2Fapp.bsky.feed.post%2F3mmr6t3xxec24",
+      "source": "bluesky",
+      "published_at": "2026-05-26T14:20:23Z",
+      "title": "This is WILD 😅",
+      "url": "https://bsky.app/profile/nbastat.bsky.social/post/3mmr6t3xxec24",
+      "author": "NBA Stat",
+      "thumbnail": null,
+      "body_excerpt": "This is WILD 😅\n\n(via YahooSports)\n#NBA",
+      "players": [],
+      "teams": [],
+      "trending_score": 0.3468
+    },
+    {
+      "id": "gn-0cd2bca36021fc1c",
+      "source": "google-news",
+      "published_at": "2026-05-26T14:11:27Z",
+      "title": "Report: These Three NBA Teams Have 'Legitimate Trade Interest' In Celtics' Jaylen Brown",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPSWo2cEJyOWN6TlRMWmVZRnRSMXFmZTRvLTV4M0dORkNtZGltTU85NWppc1VfTHVhTjE5NTVEY0dHdE1FMXFkRV83OVlfWXVtQzhkRENncllzdVhITGt3ZE5TSDVSSmFvbExfbWlkRGVfTHJXYkRGWkZidVUyZjdFRlFpd1VxVVRh?oc=5",
+      "author": "Yahoo Sports Canada",
+      "thumbnail": null,
+      "body_excerpt": "Report: These Three NBA Teams Have 'Legitimate Trade Interest' In Celtics' Jaylen Brown Yahoo Sports Canada",
+      "players": [
+        "jaylen-brown"
+      ],
+      "teams": [
+        "boston-celtics"
+      ],
+      "trending_score": 0.343
+    },
+    {
+      "id": "bs-did%3Aplc%3Arrh5me656wmncolysevqhc4y%2Fapp.bsky.feed.post%2F3mmr6dr2hb22g",
+      "source": "bluesky",
+      "published_at": "2026-05-26T14:11:48Z",
+      "title": "New: This week's Sixers mailbag is live!",
+      "url": "https://bsky.app/profile/adamaaronson.bsky.social/post/3mmr6dr2hb22g",
+      "author": "Adam Aaronson",
+      "thumbnail": null,
+      "body_excerpt": "New: This week's Sixers mailbag is live!\n\nStart out by evaluating a creative – IMO, realistic – trade proposal landing the Sixers a lottery pick next month.\n\nThen: should anyone feel differently about the Jared McCain trade based on the 2026 NBA Playoffs?\n\nwww.phillyvoice.com/sixers-news-...",
+      "players": [],
+      "teams": [
+        "philadelphia-76ers"
+      ],
+      "trending_score": 0.3131
+    },
+    {
+      "id": "gn-3d5b27967bfe13ba",
+      "source": "google-news",
+      "published_at": "2026-05-26T14:03:00Z",
+      "title": "“So I'm like, ‘If he's hitting seven threes against …",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPQ1JtenFtS3VHZF81ejhWbnJyQ1B1UU1UMEhOMGlNSWExbGw0V1hYSnBvRFJJWVJQQTBGTUlwR2l5NkMzaVdxbFBOVFducG1hU1F3LXVLbjVuVTFUUjFINGtyd2d3NzZqbjg3Skg5TGNwWVVGR19kc2owZlh0UnlXZEdESXVXdjN6REE4MzM1Z1ZnYXowbUh1YVh3aENoejR6NkFxaFNjckU1UGJpM1NiQnNuSmRTaWFzU1lzeA?oc=5",
+      "author": "HoopsHype",
+      "thumbnail": null,
+      "body_excerpt": "“So I'm like, ‘If he's hitting seven threes against … HoopsHype",
+      "players": [],
+      "teams": [],
+      "trending_score": 0.3122
+    },
+    {
+      "id": "gn-c2b151f669808b95",
+      "source": "google-news",
+      "published_at": "2026-05-26T14:00:01Z",
+      "title": "The Pros and Cons in Blazers Trade For Celtics Star Jaylen Brown",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOczQyblpTcEwwNXJ1Vlk1YXdZcXpHUlFyLXlINnlGN1FGa0c0OW5KUEFYUlk2cTZ2dDJWQXdJay1RbWpyN0ItUkhkZDBsLUU3X2xmdm9XWXRla3BKbDRCYlBLZ1JyMWtReWdWM0k0QWJWV3lhdW9Md0lrMldHdkJpZS1fdHZVcWVKMXc?oc=5",
+      "author": "Sports Illustrated",
+      "thumbnail": null,
+      "body_excerpt": "The Pros and Cons in Blazers Trade For Celtics Star Jaylen Brown Sports Illustrated",
+      "players": [
+        "jaylen-brown"
+      ],
+      "teams": [
+        "boston-celtics",
+        "portland-trail-blazers"
+      ],
+      "trending_score": 0.3024
+    },
+    {
+      "id": "gn-d6e6bb6e199f7565",
+      "source": "google-news",
+      "published_at": "2026-05-26T13:58:30Z",
+      "title": "Starting 5: Knicks seal NBA Finals trip; Spurs, Thunder set for Game 5",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9fNWdPaUdBcllsdUlBaXhWTDZDSHJUZ2lRNWRwMlhYazc3TWpMZTJzdEVMbENWc2RmM2JMUVhuNU9RdWtub2NUd3RNVVVOTktCY1JtaGNhVTI3ejA?oc=5",
+      "author": "NBA",
+      "thumbnail": null,
+      "body_excerpt": "Starting 5: Knicks seal NBA Finals trip; Spurs, Thunder set for Game 5 NBA",
+      "players": [],
+      "teams": [
+        "new-york-knicks",
+        "oklahoma-city-thunder",
+        "san-antonio-spurs"
+      ],
+      "trending_score": 0.2976
+    },
+    {
+      "id": "gn-65fe066117ae0284",
+      "source": "google-news",
+      "published_at": "2026-05-26T13:58:26Z",
+      "title": "Watch Ben Stiller's Courtside Video of Jalen Brunson, KAT as Knicks Clinched NBA Finals Spot",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPVGwyei00bTF6MGlCbFBXS1pnS2JvdmUzVEMyZGppdkFtYms0TTlNUHdiY1BiWDh3N3VuWUJkaWkwYk5kRzE0TnktRkFZVjlWd3pZaEQ0Ry1ydW45MDNiRzRCR2ZpN0VfUG9YNm8tX3k2b2dOcU1GaDcwVDVSVWQxMnh3cW4tcDhSM2NFUFBIOERhLVBoNXpIanRibWRQbG1vQzFKanVoYVlkTnBZSGJTXzg0MmtoVWNfNVRLNTF5QW5XUVlmc2pzeA?oc=5",
+      "author": "Bleacher Report",
+      "thumbnail": null,
+      "body_excerpt": "Watch Ben Stiller's Courtside Video of Jalen Brunson, KAT as Knicks Clinched NBA Finals Spot Bleacher Report",
+      "players": [
+        "jalen-brunson",
+        "karl-anthony-towns"
+      ],
+      "teams": [
+        "new-york-knicks"
+      ],
+      "trending_score": 0.2974
+    },
+    {
+      "id": "bs-did%3Aplc%3Apg3zlnog4fdtsy4yu6nh46fi%2Fapp.bsky.feed.post%2F3mmr63m3noc23",
+      "source": "bluesky",
+      "published_at": "2026-05-26T14:07:15Z",
+      "title": "The second half of an early offseason Grizzlies Mailbag: Trading Ja Morant and other offseason issues dailymemphian.com/subscriber/s...",
+      "url": "https://bsky.app/profile/chrisherrington.bsky.social/post/3mmr63m3noc23",
+      "author": "Chris Herrington",
+      "thumbnail": null,
+      "body_excerpt": "The second half of an early offseason Grizzlies Mailbag: Trading Ja Morant and other offseason issues dailymemphian.com/subscriber/s...",
+      "players": [
+        "ja-morant"
+      ],
+      "teams": [
+        "memphis-grizzlies"
+      ],
+      "trending_score": 0.2973
+    },
+    {
+      "id": "bs-did%3Aplc%3A7uahugigvixjvxd5s2hidpad%2Fapp.bsky.feed.post%2F3mmr5x5gesk2d",
+      "source": "bluesky",
+      "published_at": "2026-05-26T14:04:45Z",
+      "title": "Caitlin Clark going through drills at practice today.",
+      "url": "https://bsky.app/profile/tonyreast.bsky.social/post/3mmr5x5gesk2d",
+      "author": "Tony East",
+      "thumbnail": null,
+      "body_excerpt": "Caitlin Clark going through drills at practice today.",
+      "players": [],
+      "teams": [],
+      "trending_score": 0.2893
+    },
+    {
+      "id": "gn-71a1db393fc0937c",
+      "source": "google-news",
+      "published_at": "2026-05-26T13:55:22Z",
+      "title": "Two Ways The Atlanta Hawks Can Benefit From The Cavaliers Being Swept By New York",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQQVRWbUdEWnRwYjJIUU8wa3cwTmI4djJqUHVadnJFWmhBSmNVQklCLTVWWVBaY2lBN0xkbXhCcXNPYlJwcUY3d19pTHVPYWgtNHd1Z3ZOWUM1ZGdtb0hYYUp4eFM5MldIbzlWU3JodzlzbnN0ZE01TThfV2dYUGFTUVJzR0tnZGVxam1Oa1l6dU5lY3RXVnJabDlWQlQ3MUc4Q1pJUWI2QXNaU0lOeV8tN3VnTFBFUm9RWWFNaGxJUEZEbkZ2dmpN?oc=5",
+      "author": "Sports Illustrated",
+      "thumbnail": null,
+      "body_excerpt": "Two Ways The Atlanta Hawks Can Benefit From The Cavaliers Being Swept By New York Sports Illustrated",
+      "players": [],
+      "teams": [
+        "atlanta-hawks",
+        "cleveland-cavaliers"
+      ],
+      "trending_score": 0.2881
+    },
+    {
+      "id": "bs-did%3Aplc%3Atraer34gkcgums7iiflbjiab%2Fapp.bsky.feed.post%2F3mmr5u5jbil2i",
+      "source": "bluesky",
+      "published_at": "2026-05-26T14:03:04Z",
+      "title": "Should the Mavs stick with Dereck Lively & Daniel Gafford or find an upgrade at Center?",
+      "url": "https://bsky.app/profile/nickvanexit.bsky.social/post/3mmr5u5jbil2i",
+      "author": "Nick Angstadt",
+      "thumbnail": null,
+      "body_excerpt": "Should the Mavs stick with Dereck Lively & Daniel Gafford or find an upgrade at Center?",
+      "players": [],
+      "teams": [
+        "dallas-mavericks"
+      ],
+      "trending_score": 0.284
+    },
+    {
+      "id": "gn-dc8bdde3f489bad3",
+      "source": "google-news",
+      "published_at": "2026-05-26T13:53:41Z",
+      "title": "New York Knicks NBA Finals Jerseys Just Dropped Online",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPMlEzSGltRzdEZjNaQWtvYUVkVDdvQnBvZGxOOE9MdlJZdzZkOGpnR3dCczFzOGtRc0lfM2hGN29PSS1kaUk0TDF4SGo1ODdvSVRUdUxTQ19yUWJLNFhwTXk3VkF2MTNZRFhuekFRNUFGbmhfOGdCNWVZbmRYazloSWRiaVVxQjhhal9rSDVSalhiU1lYQVE?oc=5",
+      "author": "Sports Illustrated",
+      "thumbnail": null,
+      "body_excerpt": "New York Knicks NBA Finals Jerseys Just Dropped Online Sports Illustrated",
+      "players": [],
+      "teams": [
+        "new-york-knicks"
+      ],
+      "trending_score": 0.2832
+    },
+    {
+      "id": "bs-did%3Aplc%3Arldxxd4625riymt4b5bwbmpf%2Fapp.bsky.feed.post%2F3mmr5sfxdal2n",
+      "source": "bluesky",
+      "published_at": "2026-05-26T14:02:06Z",
+      "title": "The New York Knicks' margins of victory in the Eastern Conference Finals:",
+      "url": "https://bsky.app/profile/statitudes.com/post/3mmr5sfxdal2n",
+      "author": "Justin Kubatko",
+      "thumbnail": null,
+      "body_excerpt": "The New York Knicks' margins of victory in the Eastern Conference Finals:\n\n✅ +11 PTS\n✅ +16 PTS\n✅ +13 PTS\n✅ +37 PTS\n\nThey are the first team in NBA conference or division finals history to record four double-digit wins in a series sweep.\n\nRead, share, subscribe ⬇️\nopen.substack.com/pub/statitud...",
+      "players": [],
+      "teams": [
+        "new-york-knicks"
+      ],
+      "trending_score": 0.2811
+    },
+    {
+      "id": "bs-did%3Aplc%3Azvgi4eon2fvlemnmaqnmayuk%2Fapp.bsky.feed.post%2F3mmr5l7wu6k2f",
+      "source": "bluesky",
+      "published_at": "2026-05-26T13:58:05Z",
+      "title": "Part 1 of my conversation with @keithsmithnba.bsky.social eithSmithNBA breaking down the Celtics' offseason options, cap space, trade options, and why flexibility is key for Boston’s summer. Dive deep into the numbers, strategy, and potential upgrades ahead",
+      "url": "https://bsky.app/profile/johnkaralis.com/post/3mmr5l7wu6k2f",
+      "author": "John Karalis",
+      "thumbnail": null,
+      "body_excerpt": "Part 1 of my conversation with @keithsmithnba.bsky.social eithSmithNBA breaking down the Celtics' offseason options, cap space, trade options, and why flexibility is key for Boston’s summer. Dive deep into the numbers, strategy, and potential upgrades ahead\n\nWatch & Listen: linktr.ee/lockedoncelt...",
+      "players": [],
+      "teams": [
+        "boston-celtics"
+      ],
+      "trending_score": 0.2694
+    },
+    {
+      "id": "gn-cb3ca5ab317d35fa",
+      "source": "google-news",
+      "published_at": "2026-05-26T13:44:29Z",
+      "title": "Timothée Chalamet finally got his Knicks moment, including a Jalen Brunson heart-to-heart",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPRDFtU2VKN2RUZEtfenVoR1pqeXV2NFNYV3BtalhGRm5nTzh0bmJnNTJuaEIxQ0JsTzZxeHJKQ3JzMEtIaGRka2FLLTVWSFlIZXBJZXdELW9QNlFSWFp0STRvMDVxckh3Wk9GUERhU1BqMEFCcEJROThCcVZkcUw0Nl9rbw?oc=5",
+      "author": "Yahoo Sports Canada",
+      "thumbnail": null,
+      "body_excerpt": "Timothée Chalamet finally got his Knicks moment, including a Jalen Brunson heart-to-heart Yahoo Sports Canada",
+      "players": [
+        "jalen-brunson"
+      ],
+      "teams": [
+        "new-york-knicks"
+      ],
+      "trending_score": 0.2588
+    },
+    {
+      "id": "bs-did%3Aplc%3A4xpj3xjxsxxcuh3ghaulzdqu%2Fapp.bsky.feed.post%2F3mmr56l4zps2v",
+      "source": "bluesky",
+      "published_at": "2026-05-26T13:51:01Z",
+      "title": "(shouts to the security guard who saw me getting the Heisman from another security guard, took pity and pointed me to a different spot to get onto the court, there are real MVPs everywhere if you only have eyes to see them)",
+      "url": "https://bsky.app/profile/yourmandevine.bsky.social/post/3mmr56l4zps2v",
+      "author": "Dan Devine",
+      "thumbnail": null,
+      "body_excerpt": "(shouts to the security guard who saw me getting the Heisman from another security guard, took pity and pointed me to a different spot to get onto the court, there are real MVPs everywhere if you only have eyes to see them)",
+      "players": [],
+      "teams": [],
+      "trending_score": 0.2507
+    },
+    {
+      "id": "gn-ff63ea4316a3dbe4",
+      "source": "google-news",
+      "published_at": "2026-05-26T13:34:29Z",
+      "title": "Could Ja Morant and Anthony Edwards share a backcourt in Minnesota",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNRjFDam9yaTMzbVRHYXEyOXJIOU5uQUhoTXlxaWZ4OUczUXhZRENlMUVBUUpUd2c3Y19kQm1STnItdWhBR29NY09oVHgyZmIydDE4OC1naW1SclZ2VjdxZDRJdUhHTEJXNVJuczl6RTRhVEV5T3U1dEJlN1pLblBfcWFDYzZiUzA?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Could Ja Morant and Anthony Edwards share a backcourt in Minnesota Yahoo Sports",
+      "players": [
+        "anthony-edwards",
+        "ja-morant"
+      ],
+      "teams": [],
+      "trending_score": 0.2359
+    },
+    {
+      "id": "bs-did%3Aplc%3Arp37sibktdgd5iwyl3nfdzou%2Fapp.bsky.feed.post%2F3mmr4rk37cs2x",
+      "source": "bluesky",
+      "published_at": "2026-05-26T13:43:43Z",
+      "title": "An all-WCWS edition of Mussatto’s Minutes: www.oklahoman.com/story/sports...",
+      "url": "https://bsky.app/profile/joemussatto.bsky.social/post/3mmr4rk37cs2x",
+      "author": "Joe Mussatto",
+      "thumbnail": null,
+      "body_excerpt": "An all-WCWS edition of Mussatto’s Minutes: www.oklahoman.com/story/sports...",
+      "players": [],
+      "teams": [],
+      "trending_score": 0.2335
+    },
+    {
+      "id": "bs-did%3Aplc%3A635cuwuwdmeaqrubnkorrcjj%2Fapp.bsky.feed.post%2F3mmr4pujkik2n",
+      "source": "bluesky",
+      "published_at": "2026-05-26T13:42:47Z",
+      "title": "James Harden, Donovan Mitchell Express Desire To Return To Cavs Next Season https://basketball.realgm.com/wiretap/285800/James-Harden-Donovan-Mitchell-Express-Desire-To-Return-To-Cavs-Next-Season",
+      "url": "https://bsky.app/profile/realgmnba.bsky.social/post/3mmr4pujkik2n",
+      "author": "RealGM",
+      "thumbnail": null,
+      "body_excerpt": "James Harden, Donovan Mitchell Express Desire To Return To Cavs Next Season https://basketball.realgm.com/wiretap/285800/James-Harden-Donovan-Mitchell-Express-Desire-To-Return-To-Cavs-Next-Season",
+      "players": [
+        "donovan-mitchell",
+        "james-harden",
+        "lebron-james"
+      ],
+      "teams": [
+        "cleveland-cavaliers"
+      ],
+      "trending_score": 0.2315
+    },
+    {
+      "id": "bs-did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao%2Fapp.bsky.feed.post%2F3mmr4mtfw2s22",
+      "source": "bluesky",
+      "published_at": "2026-05-26T13:41:05Z",
+      "title": "Highest Net Rating Per Series",
+      "url": "https://bsky.app/profile/hoopinformatics.bsky.social/post/3mmr4mtfw2s22",
+      "author": "Hoop Informatics",
+      "thumbnail": null,
+      "body_excerpt": "Highest Net Rating Per Series\n\n+27.7 Knicks vs Sixers\n+20.1 Knicks vs Cavs\n+19.7 Knicks vs Hawks\n+17.8 Thunder vs Lakers\n+17.1 Thunder vs Suns\n+17.0 Spurs vs Wolves\n+12.5 Spurs vs Blazers\n+5.4 Wolves vs Nuggets\n+4.5 Pistons vs Magic\n+3.0 Cavs vs Pistons\n+2.3 Lakers vs Rockets\n+1.7 Cavs vs Raptors",
+      "players": [],
+      "teams": [
+        "atlanta-hawks",
+        "cleveland-cavaliers",
+        "denver-nuggets",
+        "detroit-pistons",
+        "houston-rockets",
+        "los-angeles-lakers",
+        "minnesota-timberwolves",
+        "new-york-knicks",
+        "oklahoma-city-thunder",
+        "orlando-magic",
+        "philadelphia-76ers",
+        "phoenix-suns",
+        "portland-trail-blazers",
+        "san-antonio-spurs",
+        "toronto-raptors"
+      ],
+      "trending_score": 0.2278
+    },
+    {
+      "id": "bs-did%3Aplc%3Aozrhqae34vzv6mso2hsym65i%2Fapp.bsky.feed.post%2F3mmr4kkrxu22x",
+      "source": "bluesky",
+      "published_at": "2026-05-26T13:39:49Z",
+      "title": "Pistons report card full of A's as warp-speed ascension continues",
+      "url": "https://bsky.app/profile/omarisankofa.bsky.social/post/3mmr4kkrxu22x",
+      "author": "Omari Sankofa II",
+      "thumbnail": null,
+      "body_excerpt": "Pistons report card full of A's as warp-speed ascension continues\n\nwww.freep.com/story/sports...",
+      "players": [],
+      "teams": [
+        "detroit-pistons"
+      ],
+      "trending_score": 0.2252
+    },
+    {
+      "id": "bs-did%3Aplc%3Amtfaxzqle5h6stf7y6tmuxf7%2Fapp.bsky.feed.post%2F3mmr4hvxuc22r",
+      "source": "bluesky",
+      "published_at": "2026-05-26T13:38:20Z",
+      "title": "Column: It’s time to be bold, Cleveland",
+      "url": "https://bsky.app/profile/sichrismannix.bsky.social/post/3mmr4hvxuc22r",
+      "author": "Chris Mannix",
+      "thumbnail": null,
+      "body_excerpt": "Column: It’s time to be bold, Cleveland\n\nIt’s time to call LeBron James www.si.com/nba/playoffs...",
+      "players": [
+        "lebron-james"
+      ],
+      "teams": [],
+      "trending_score": 0.2221
+    },
+    {
+      "id": "bs-did%3Aplc%3Afqsmj7o5mbb7n7oav2kkjuid%2Fapp.bsky.feed.post%2F3mmr4gzxpjs24",
+      "source": "bluesky",
+      "published_at": "2026-05-26T13:37:51Z",
+      "title": "The Dallas Mavericks have basically lost:",
+      "url": "https://bsky.app/profile/nbastat.bsky.social/post/3mmr4gzxpjs24",
+      "author": "NBA Stat",
+      "thumbnail": null,
+      "body_excerpt": "The Dallas Mavericks have basically lost:\n\nLuka Doncic\nJalen Brunson\n\nFOR\n\nMax Christie\nAJ Johnson\nPick #30 in the 2026 draft (via Oklahoma City)\n2029 first-round 1st (via Lakers)\n2030 first-round pick (via Golden State)\nThree future second-round picks (via Washington)\n\n#NBA",
+      "players": [
+        "jalen-brunson",
+        "luka-doncic"
+      ],
+      "teams": [
+        "dallas-mavericks",
+        "golden-state-warriors",
+        "los-angeles-lakers"
+      ],
+      "trending_score": 0.2211
+    },
+    {
+      "id": "bs-did%3Aplc%3A7uahugigvixjvxd5s2hidpad%2Fapp.bsky.feed.post%2F3mmr47bopcc2g",
+      "source": "bluesky",
+      "published_at": "2026-05-26T13:33:30Z",
+      "title": "Today, a deep dive into Kam Jones summer. An odd contract reality and an odd fit for the Pacers in the short term. Is there a long term worth the challenges? Well...",
+      "url": "https://bsky.app/profile/tonyreast.bsky.social/post/3mmr47bopcc2g",
+      "author": "Tony East",
+      "thumbnail": null,
+      "body_excerpt": "Today, a deep dive into Kam Jones summer. An odd contract reality and an odd fit for the Pacers in the short term. Is there a long term worth the challenges? Well...\n\nListen: locked-on-pacers-daily-podcast-on-the-indiana-pacers.simplecast.com\nWatch: www.youtube.com/watch?v=N8mr...",
+      "players": [],
+      "teams": [
+        "indiana-pacers"
+      ],
+      "trending_score": 0.2126
+    },
+    {
+      "id": "bs-did%3Aplc%3Akq5obb3xiadd6jum34eeif4u%2Fapp.bsky.feed.post%2F3mmr466i2ks2o",
+      "source": "bluesky",
+      "published_at": "2026-05-26T13:32:54Z",
+      "title": "NCAA deadline to thin NBA draft field as Heat key in on No. 13 (with a mock front-runner). www.sun-sentinel.com/2026/05/26/n... Heat's Adam Simon, \"I think overall, this is a pretty deep draft, it’s a good draft.\"",
+      "url": "https://bsky.app/profile/irawinderman.bsky.social/post/3mmr466i2ks2o",
+      "author": "Ira Winderman",
+      "thumbnail": null,
+      "body_excerpt": "NCAA deadline to thin NBA draft field as Heat key in on No. 13 (with a mock front-runner). www.sun-sentinel.com/2026/05/26/n... Heat's Adam Simon, \"I think overall, this is a pretty deep draft, it’s a good draft.\"",
+      "players": [],
+      "teams": [
+        "miami-heat",
+        "new-orleans-pelicans"
+      ],
+      "trending_score": 0.2115
+    },
+    {
+      "id": "bs-did%3Aplc%3A7blpgonoxxs3ofjq7vcmup6x%2Fapp.bsky.feed.post%2F3mmr44263fc2c",
+      "source": "bluesky",
+      "published_at": "2026-05-26T13:31:42Z",
+      "title": "The Knicks are averaging 17.7 2nd chance points per game and 53.3 points in the paint per game in the playoffs. Both of those figures are the most by a team to reach the NBA Finals since at least 1997 (earliest season for which comprehensive play-by-play is available)",
+      "url": "https://bsky.app/profile/sportinfo247.bsky.social/post/3mmr44263fc2c",
+      "author": "Mike Lynch",
+      "thumbnail": null,
+      "body_excerpt": "The Knicks are averaging 17.7 2nd chance points per game and 53.3 points in the paint per game in the playoffs. Both of those figures are the most by a team to reach the NBA Finals since at least 1997 (earliest season for which comprehensive play-by-play is available)",
+      "players": [],
+      "teams": [
+        "new-york-knicks"
+      ],
+      "trending_score": 0.2092
+    },
+    {
+      "id": "gn-cff312313701a2ab",
+      "source": "google-news",
+      "published_at": "2026-05-26T13:19:20Z",
+      "title": "Jalen Brunson's Roman Reigns-Inspired Handshake With Knicks Trainer Shown in Video After ECF Win",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOc1N4V0JPMUZDWi1XbjdnZHJrUGg2eXh0RExlUjVYd05RZFVIWEthdTdyTWh1UWJVVDBVbG9tRGFMZERVVmNPbzRvV2RYRjkxSmt1Yjg1YkdOVzNHREVmdWZSNXp2Y05pMmxNMlBxZm0yQ1p0MEladmZjbUY0YzdiTndvd2tXeFRxMEx5dVk1LVRSdVd2em53WDgtYkFsOVdWWVg2WnVKWTNsX0tLUmpERG9uUlBaU2V3cVVqWnFiOGJfZ1p0QVpLV3NBSkE?oc=5",
+      "author": "Bleacher Report",
+      "thumbnail": null,
+      "body_excerpt": "Jalen Brunson's Roman Reigns-Inspired Handshake With Knicks Trainer Shown in Video After ECF Win Bleacher Report",
+      "players": [
+        "jalen-brunson"
+      ],
+      "teams": [
+        "new-york-knicks"
+      ],
+      "trending_score": 0.2072
+    },
+    {
+      "id": "bs-did%3Aplc%3Afqsmj7o5mbb7n7oav2kkjuid%2Fapp.bsky.feed.post%2F3mmr3vvppdc24",
+      "source": "bluesky",
+      "published_at": "2026-05-26T13:28:16Z",
+      "title": "For the first time ever, a Filipino American player will win an NBA Championship",
+      "url": "https://bsky.app/profile/nbastat.bsky.social/post/3mmr3vvppdc24",
+      "author": "NBA Stat",
+      "thumbnail": null,
+      "body_excerpt": "For the first time ever, a Filipino American player will win an NBA Championship\n\nWith Knicks now in NBA Finals & Thunder vs Spurs locked at 2-2, we’re sure that 1 of these Filipino Americans will win a ring:\n> Jordan Clarkson, Knicks\n> Jared McCain, Thunder\n> Dylan Harper, Spurs\n\n(via JBond)\n#NBA",
+      "players": [],
+      "teams": [
+        "new-york-knicks",
+        "oklahoma-city-thunder",
+        "san-antonio-spurs"
+      ],
+      "trending_score": 0.2031
+    },
+    {
+      "id": "bs-did%3Aplc%3Apgok625ocobq7t3decm3o5vu%2Fapp.bsky.feed.post%2F3mmr3tdf3s52q",
+      "source": "bluesky",
+      "published_at": "2026-05-26T13:26:50Z",
+      "title": "Remember when the Knicks won the Eastern Conference Finals? That was crazy.",
+      "url": "https://bsky.app/profile/jadubin5.bsky.social/post/3mmr3tdf3s52q",
+      "author": "Jared Dubin",
+      "thumbnail": null,
+      "body_excerpt": "Remember when the Knicks won the Eastern Conference Finals? That was crazy.",
+      "players": [],
+      "teams": [
+        "new-york-knicks",
+        "washington-wizards"
+      ],
+      "trending_score": 0.2006
+    },
+    {
+      "id": "bs-did%3Aplc%3Arrh5me656wmncolysevqhc4y%2Fapp.bsky.feed.post%2F3mmr3qixpt22l",
+      "source": "bluesky",
+      "published_at": "2026-05-26T13:25:15Z",
+      "title": "New: Sixers year-in-review continues today with birthday boy Dominick Barlow, whose age-22 season was a major breakthrough.",
+      "url": "https://bsky.app/profile/adamaaronson.bsky.social/post/3mmr3qixpt22l",
+      "author": "Adam Aaronson",
+      "thumbnail": null,
+      "body_excerpt": "New: Sixers year-in-review continues today with birthday boy Dominick Barlow, whose age-22 season was a major breakthrough.\n\nWhat makes Barlow a rotation-caliber big moving forward and the key step which would give him even more upward mobility with the Sixers:\nwww.phillyvoice.com/sixers-news-...",
+      "players": [],
+      "teams": [
+        "philadelphia-76ers",
+        "washington-wizards"
+      ],
+      "trending_score": 0.1979
+    },
+    {
+      "id": "bs-did%3Aplc%3Aq3fi25au634c4yojnysqzlrj%2Fapp.bsky.feed.post%2F3mmr3iiqook2u",
+      "source": "bluesky",
+      "published_at": "2026-05-26T13:20:46Z",
+      "title": "Wrote about a little ol' team called the New York Knicks. www.teamziller.com/knicks-nba-f...",
+      "url": "https://bsky.app/profile/teamziller.bsky.social/post/3mmr3iiqook2u",
+      "author": "Tom Ziller",
+      "thumbnail": null,
+      "body_excerpt": "Wrote about a little ol' team called the New York Knicks. www.teamziller.com/knicks-nba-f...",
+      "players": [],
+      "teams": [
+        "new-york-knicks"
+      ],
+      "trending_score": 0.1906
+    },
+    {
+      "id": "gn-03682d7d4ada3428",
+      "source": "google-news",
+      "published_at": "2026-05-26T13:08:46Z",
+      "title": "The Thunder and Spurs Look Unbeatable. NBA GMs Disagree.",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPdFRQMjB5Vjd1ZjFsMnpUTmZsSG1PdWF1NGoyNGRxd003azBGcWcyMHdaOFFtVm5JVkNnSnNvZWRUaGE1NWRiX1E5V3k1TUkyZUxob2dBV25UMXZERUctbkd0TWtMUlhMZFFiaFhBczU2a1ZSSVdWT2hsNFJSV2JrcHFqR2lhNkl6MVRaY2hFaGN6Zzduc3kyWTcxZ0Y1RGZ1Zm5CZE92bVpxcXc?oc=5",
+      "author": "The Ringer",
+      "thumbnail": null,
+      "body_excerpt": "The Thunder and Spurs Look Unbeatable. NBA GMs Disagree. The Ringer",
+      "players": [],
+      "teams": [
+        "oklahoma-city-thunder",
+        "san-antonio-spurs"
+      ],
+      "trending_score": 0.1904
+    },
+    {
+      "id": "bs-did%3Aplc%3Afqsmj7o5mbb7n7oav2kkjuid%2Fapp.bsky.feed.post%2F3mmr3cvzh2k24",
+      "source": "bluesky",
+      "published_at": "2026-05-26T13:17:39Z",
+      "title": "November 10th, 2023:",
+      "url": "https://bsky.app/profile/nbastat.bsky.social/post/3mmr3cvzh2k24",
+      "author": "NBA Stat",
+      "thumbnail": null,
+      "body_excerpt": "November 10th, 2023:\nMavericks announcer Brian Dameris eviscerates James Harden.\n\nStill good today.\n\n(via @mrbuckbucknba.bsky.social)\n#NBA",
+      "players": [
+        "james-harden",
+        "lebron-james"
+      ],
+      "teams": [
+        "dallas-mavericks"
+      ],
+      "trending_score": 0.1858
+    },
+    {
+      "id": "gn-77f54c1418fbe60c",
+      "source": "google-news",
+      "published_at": "2026-05-26T13:01:23Z",
+      "title": "Full injury report for Tuesday's Spurs vs. Thunder Game 5 matchup",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNYlFzRmFoNHl0cDV1dXdmTzR2ODdhV2Z6c1J6MzE0MnBOdFdJQm5USFQxRmFLMFpsQ0xMRWVmcURvdkwxbWFmemRyZklKekJiR3dDeHU5NGMyY3N6aGdCbk5LelZmTC1nUXYxWWcyd3NOd1VkS2RKOW1vWWNscERwcEJzbWxKMmlBdlE?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Full injury report for Tuesday's Spurs vs. Thunder Game 5 matchup Yahoo Sports",
+      "players": [],
+      "teams": [
+        "oklahoma-city-thunder",
+        "san-antonio-spurs"
+      ],
+      "trending_score": 0.18
+    },
+    {
+      "id": "gn-c108eb995e71d690",
+      "source": "google-news",
+      "published_at": "2026-05-26T13:00:04Z",
+      "title": "Cade Cunningham’s All-NBA Award Gives Oklahoma State Latest Recruiting Edge",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOaFVYZk5hSlFVYmg5Y2JzbkZfWEdZNVlTeWMwZnJ0YkxQZUtTY053RkpCd0JHX3dvTWI4c2N2N0c0N1NCMF9PaTdxRkw4cnZNdWhzUUR0UXNnR3ZYNndoa1MyRG03Q3FVZ1VnVm1ZaVRZMTRtYjdTamF5TU15V3NUTVBjUjJZNXl1TnIxQXU5WWttakhacDJLNWpMcGZINnVkV2h1ZUNWcTZ4bkVfQWZROW1QTVprMXBWZ1Br?oc=5",
+      "author": "Sports Illustrated",
+      "thumbnail": null,
+      "body_excerpt": "Cade Cunningham’s All-NBA Award Gives Oklahoma State Latest Recruiting Edge Sports Illustrated",
+      "players": [
+        "cade-cunningham"
+      ],
+      "teams": [],
+      "trending_score": 0.1782
+    },
+    {
+      "id": "gn-591f0eb921fddbec",
+      "source": "google-news",
+      "published_at": "2026-05-26T13:00:03Z",
+      "title": "This Paul George Trade Could Transform the Nuggets' Roster",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNMEF3NGl1OTJjRm5OakM4TW9TanpuRmNfM05NX3NTQkZiVVF1dmw2UWR1eW1ROTFJNUNZRHZoaG1fRndEUHNoWmp1ZTdzY2loUzVlaTdtZFU0VDFqMERrNkV5ZWJfQW1RTW9yYnpBdkhLWnZUa2Vad21KUjRDbGduOUNqUHlZTXpQNzBWTDBWM203RHhyLTMzeQ?oc=5",
+      "author": "Sports Illustrated",
+      "thumbnail": null,
+      "body_excerpt": "This Paul George Trade Could Transform the Nuggets' Roster Sports Illustrated",
+      "players": [
+        "paul-george"
+      ],
+      "teams": [
+        "denver-nuggets"
+      ],
+      "trending_score": 0.1782
+    },
+    {
+      "id": "bs-did%3Aplc%3Avcumvue2gcsxexermtdg6cr7%2Fapp.bsky.feed.post%2F3mmr2xbpylk2l",
+      "source": "bluesky",
+      "published_at": "2026-05-26T13:11:08Z",
+      "title": "During their run to the Finals in 1999, the Knicks outscored their opponents by a total of:",
+      "url": "https://bsky.app/profile/tommybeernba.bsky.social/post/3mmr2xbpylk2l",
+      "author": "Tommy Beer",
+      "thumbnail": null,
+      "body_excerpt": "During their run to the Finals in 1999, the Knicks outscored their opponents by a total of:\n15 points over the first three rounds of the playoffs.",
+      "players": [],
+      "teams": [
+        "new-york-knicks"
+      ],
+      "trending_score": 0.1763
+    },
+    {
+      "id": "gn-69a7f074437ce6a6",
+      "source": "google-news",
+      "published_at": "2026-05-26T12:56:15Z",
+      "title": "Windhorst Reveals NBA Insiders' Thoughts on Knicks' Chances in Finals vs. Thunder or Spurs",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQeEZYelBlbVhrTlc4UGFRZ3BvRVhvd1V3X1VkdlJTNXZtZDFmOHVOYnozSzEzbEhHZXVaZTh1YkRZSTF3YmFBdklOaEpjaGRYWUtzc0N0bEY5WENoMTB1WkZ1MW1SVF9HZmVaekVnMENTTHRnQVBQMm9HckVGZEtibnF0Rjk3U3ZCRnVyZUNnZGFXY1UyZmIzeThqd3JzdTFlNEVUZU96TTc1YVZqTW5iUV8yUWJoN2YxenhxQWpBdzB3dGVw?oc=5",
+      "author": "Bleacher Report",
+      "thumbnail": null,
+      "body_excerpt": "Windhorst Reveals NBA Insiders' Thoughts on Knicks' Chances in Finals vs. Thunder or Spurs Bleacher Report",
+      "players": [],
+      "teams": [
+        "new-york-knicks",
+        "oklahoma-city-thunder",
+        "san-antonio-spurs"
+      ],
+      "trending_score": 0.1733
+    },
+    {
+      "id": "bs-did%3Aplc%3Arldxxd4625riymt4b5bwbmpf%2Fapp.bsky.feed.post%2F3mmr2swkuxw2e",
+      "source": "bluesky",
+      "published_at": "2026-05-26T13:08:42Z",
+      "title": "The Knicks have four 30-point wins in the 2026 NBA Playoffs, tying the 2025 Thunder for the most such wins in a single postseason.",
+      "url": "https://bsky.app/profile/statitudes.com/post/3mmr2swkuxw2e",
+      "author": "Justin Kubatko",
+      "thumbnail": null,
+      "body_excerpt": "The Knicks have four 30-point wins in the 2026 NBA Playoffs, tying the 2025 Thunder for the most such wins in a single postseason.\n\nThey are the first team to record three series-clinching wins by 30 or more points in a single postseason.\n\nRead, share, subscribe ⬇️\nopen.substack.com/pub/statitud...",
+      "players": [],
+      "teams": [
+        "new-york-knicks",
+        "oklahoma-city-thunder"
+      ],
+      "trending_score": 0.173
+    },
+    {
+      "id": "gn-5dcc295dbc245500",
+      "source": "google-news",
+      "published_at": "2026-05-26T12:56:00Z",
+      "title": "Donovan Mitchell gives blunt apology to Cavs fans after sweep: 'That's [expletive]'",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOVHJOd1VoQVloREU1eEtZOUUxTVBEekFCUzFURmRWcW1PRjl5UXhTVzlrcFktR1RsWHBfRFhpeTlfcXYtTDdBNVdteGE4dDFZQ1BGSG9IUEpsSzM5TUFJT05FSlFxWWp2alFoRUxDc002ckdLdy03RXEyOFExUVl1WjlHZVhQNi0tQW1rLXN6S2k5SmJ4alhubHRKWk43dS1jdU5zXzFpa25oMzlzc1VzV21vbGFHQll2TG5j?oc=5",
+      "author": "USA Today",
+      "thumbnail": null,
+      "body_excerpt": "Donovan Mitchell gives blunt apology to Cavs fans after sweep: 'That's [expletive]' USA Today",
+      "players": [
+        "donovan-mitchell"
+      ],
+      "teams": [
+        "cleveland-cavaliers"
+      ],
+      "trending_score": 0.173
+    }
+  ]
 }
