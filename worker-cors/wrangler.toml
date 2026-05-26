@@ -1,0 +1,9 @@
+name = "nba-content-stream-cors"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+# No bindings needed — this Worker is a pure pass-through proxy.
+# No secrets, no KV, no R2, no Durable Objects.
+
+[observability]
+enabled = true

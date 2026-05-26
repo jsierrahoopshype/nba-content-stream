@@ -1,311 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NBA Content Stream — HoopsMatic</title>
-  <meta name="description" content="Real-time NBA content from YouTube, Substack, Bluesky, Reddit, and Google News. A HoopsMatic feature." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏀%3C/text%3E%3C/svg%3E" />
-
-  <style>
-    :root {
-      --bg: #0a0a0b;
-      --bg-elevated: #131316;
-      --fg: #f4f4f5;
-      --fg-muted: #a1a1aa;
-      --fg-dim: #52525b;
-      --accent: #f97316;
-      --accent-glow: rgba(249, 115, 22, 0.15);
-      --border: #27272a;
-      --youtube: #ff0000;
-      --substack: #ff6719;
-      --bluesky: #1185fe;
-      --reddit: #ff4500;
-      --news: #4285f4;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html, body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
-      font-feature-settings: "ss01", "cv01";
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.5;
-      min-height: 100vh;
-    }
-
-    body {
-      background:
-        radial-gradient(ellipse at top, var(--accent-glow), transparent 50%),
-        radial-gradient(ellipse at bottom right, rgba(17, 133, 254, 0.08), transparent 50%),
-        var(--bg);
-      background-attachment: fixed;
-    }
-
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 4rem 1.5rem 6rem;
-    }
-
-    .crumb {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--fg-dim);
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      margin-bottom: 2.5rem;
-    }
-    .crumb a { color: var(--fg-muted); text-decoration: none; }
-    .crumb a:hover { color: var(--fg); }
-
-    .hero { margin-bottom: 4rem; }
-    .hero-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      padding: 0.35rem 0.85rem;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--fg-muted);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
-    .pulse {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 0 0 var(--accent-glow);
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.5); }
-      70% { box-shadow: 0 0 0 12px rgba(249, 115, 22, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
-    }
-
-    h1 {
-      font-size: clamp(2.25rem, 5vw, 3.5rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.05;
-      margin-bottom: 1rem;
-    }
-    h1 .accent { color: var(--accent); }
-
-    .lede {
-      font-size: 1.15rem;
-      color: var(--fg-muted);
-      max-width: 580px;
-    }
-
-    section { margin-bottom: 3.5rem; }
-    h2 {
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--fg-dim);
-      margin-bottom: 1.25rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .sources {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 0.75rem;
-    }
-    .source {
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1rem;
-      transition: all 0.2s ease;
-    }
-    .source:hover {
-      border-color: var(--fg-dim);
-      transform: translateY(-2px);
-    }
-    .source-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-    .source-name { font-size: 1rem; font-weight: 600; color: var(--fg); }
-    .source-detail { font-size: 0.8rem; color: var(--fg-muted); margin-top: 0.25rem; }
-    .src-youtube .source-label { color: var(--youtube); }
-    .src-substack .source-label { color: var(--substack); }
-    .src-bluesky .source-label { color: var(--bluesky); }
-    .src-reddit .source-label { color: var(--reddit); }
-    .src-news .source-label { color: var(--news); }
-
-    .phases { display: flex; flex-direction: column; gap: 0.5rem; }
-    .phase {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      gap: 1rem;
-      align-items: center;
-      padding: 0.85rem 1rem;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-    }
-    .phase-num {
-      width: 28px; height: 28px;
-      border-radius: 50%;
-      background: var(--border);
-      color: var(--fg-muted);
-      display: grid; place-items: center;
-      font-size: 0.8rem;
-      font-weight: 700;
-    }
-    .phase.done .phase-num { background: var(--accent); color: var(--bg); }
-    .phase.active .phase-num {
-      background: transparent;
-      border: 2px solid var(--accent);
-      color: var(--accent);
-    }
-    .phase-title { font-size: 0.95rem; font-weight: 500; }
-    .phase-status {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--fg-dim);
-    }
-    .phase.done .phase-status { color: var(--accent); }
-
-    footer {
-      margin-top: 5rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border);
-      color: var(--fg-dim);
-      font-size: 0.8rem;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    footer a { color: var(--fg-muted); text-decoration: none; }
-    footer a:hover { color: var(--fg); }
-
-    @media (max-width: 480px) {
-      .container { padding: 2.5rem 1.25rem 4rem; }
-      .sources { grid-template-columns: repeat(2, 1fr); }
-      .phase { grid-template-columns: auto 1fr; }
-      .phase-status { grid-column: 2; padding-left: 0; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NBA News, Buzz &amp; Mentions — NBA Content Stream · HoopsMatic</title>
+<meta name="description" content="The freshest NBA news, podcast mentions, reporter posts, and headlines — pulled from Bluesky, Google News, Reddit, Substack, and YouTube. Updated continuously by HoopsMatic.">
+<meta property="og:title" content="NBA Content Stream · HoopsMatic">
+<meta property="og:description" content="Continuously-updated NBA news, podcasts, and reporter chatter across Bluesky, Google News, Reddit, Substack, and YouTube.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-  <div class="container">
+<div class="container">
 
-    <div class="crumb">
-      <a href="https://hoopsmatic.com">HoopsMatic</a>
-      <span>/</span>
-      <span>NBA Content Stream</span>
-    </div>
-
-    <header class="hero">
-      <div class="hero-status">
-        <span class="pulse"></span>
-        <span>Phase 1 · Plumbing</span>
-      </div>
-      <h1>NBA <span class="accent">Content</span> Stream</h1>
-      <p class="lede">
-        Every NBA quote, post, and headline from every place that matters,
-        flowing into one feed. YouTube, Substack, Bluesky, Reddit, Google News.
-        Pulled every fifteen minutes. Sorted by player, team, and what's hot.
-      </p>
-    </header>
-
-    <section>
-      <h2>Sources</h2>
-      <div class="sources">
-        <div class="source src-youtube">
-          <div class="source-label">YouTube</div>
-          <div class="source-name">Podcasts</div>
-          <div class="source-detail">~30 channels, quote extraction</div>
-        </div>
-        <div class="source src-substack">
-          <div class="source-label">Substack</div>
-          <div class="source-name">Newsletters</div>
-          <div class="source-detail">Insider columns, RSS</div>
-        </div>
-        <div class="source src-bluesky">
-          <div class="source-label">Bluesky</div>
-          <div class="source-name">Reporters</div>
-          <div class="source-detail">Live posts, AT Proto</div>
-        </div>
-        <div class="source src-reddit">
-          <div class="source-label">Reddit</div>
-          <div class="source-name">r/nba</div>
-          <div class="source-detail">Top posts of the day</div>
-        </div>
-        <div class="source src-news">
-          <div class="source-label">Google News</div>
-          <div class="source-name">Wire</div>
-          <div class="source-detail">Whitelisted publishers</div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Roadmap</h2>
-      <div class="phases">
-        <div class="phase done">
-          <div class="phase-num">1</div>
-          <div class="phase-title">Plumbing — repo, workflows, Worker skeleton</div>
-          <div class="phase-status">Done</div>
-        </div>
-        <div class="phase active">
-          <div class="phase-num">2</div>
-          <div class="phase-title">Source ingestion — 5 pollers, Gemini extraction</div>
-          <div class="phase-status">Next</div>
-        </div>
-        <div class="phase">
-          <div class="phase-num">3</div>
-          <div class="phase-title">Frontend — feed, filters, player/team pages</div>
-          <div class="phase-status">Soon</div>
-        </div>
-        <div class="phase">
-          <div class="phase-num">4</div>
-          <div class="phase-title">Backfill — archive imports, canonical player list</div>
-          <div class="phase-status">Soon</div>
-        </div>
-        <div class="phase">
-          <div class="phase-num">5</div>
-          <div class="phase-title">Video pipeline — heatmap, velocity, weekly wave</div>
-          <div class="phase-status">Soon</div>
-        </div>
-        <div class="phase">
-          <div class="phase-num">6</div>
-          <div class="phase-title">Launch — tuning, R2 rollup, public release</div>
-          <div class="phase-status">Soon</div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div>HoopsMatic · NBA Content Stream</div>
-      <div>
-        <a href="https://github.com/jsierrahoopshype/nba-content-stream">GitHub</a>
-        ·
-        <a href="https://hoopsmatic.com">HoopsMatic</a>
-      </div>
-    </footer>
-
+  <div class="tabs">
+    <a href="index.html" class="active">Feed</a>
+    <a href="players.html">Players</a>
+    <a href="teams.html">Teams</a>
   </div>
+
+  <div class="hdr">
+    <h1>NBA Content Stream</h1>
+    <span class="brand">HoopsMatic · NBA Content Stream</span>
+  </div>
+  <p class="subtitle">
+    Every NBA podcast drop, reporter post, headline, and Substack across the league —
+    pulled from Bluesky, Google News, Reddit, Substack, and YouTube. Refreshes every
+    fifteen minutes; click a player or team to see their feed.
+  </p>
+
+  <div class="controls">
+    <div class="search-row">
+      <div class="search-group">
+        <label>Search player or team</label>
+        <input type="text" id="q" placeholder="e.g. Wemby, Lakers, SGA…" autocomplete="off">
+        <div class="suggest" id="suggest"></div>
+      </div>
+    </div>
+    <div class="pills" id="pills"></div>
+  </div>
+
+  <div class="trending-wrap" id="trending-wrap">
+    <div class="trending-label">Trending now</div>
+    <div class="trending" id="trending"></div>
+  </div>
+
+  <div class="summary" id="summary">loading…</div>
+  <div class="feed" id="feed"></div>
+  <div class="empty" id="empty" style="display:none">No items match those filters.</div>
+
+  <div class="foot">
+    Archive refreshes every 15 minutes via GitHub Actions; the live layer merges fresh items in the browser on page open.<br>
+    Sources: Bluesky reporters · r/nba (top of day) · curated YouTube podcast channels · Google News (whitelisted publishers) · curated Substack writers.<br>
+    No engagement scoring; trending = source weight × recency.
+  </div>
+</div>
+
+<script src="assets/config.js"></script>
+<script src="assets/tagger.js"></script>
+<script src="assets/common.js"></script>
+<script src="assets/feed.js"></script>
 </body>
 </html>

@@ -15,7 +15,27 @@ contract see `SHARD_FORMAT.md`.
 
 Both poll workflows share the `shard-commit` concurrency group, so
 they never push to `data/` simultaneously. Each appends to the per-day
-shard file and commits as `github-actions[bot]`.
+shard file and commits as `github-actions[bot]`. `poll-sources.yml`
+also rebuilds `data/index/` and regenerates the per-entity HTML pages
+under `players/` and `teams/` after each poll cycle.
+
+## Frontend (Phase 3)
+
+Static site under the repo root, served from GitHub Pages:
+
+| File / dir | Role |
+|---|---|
+| `index.html` | Unified feed (reads `data/index/feed.json`, lives merges Bluesky / Reddit / Google News). |
+| `players.html`, `teams.html` | Directory grids from `manifest.json`. |
+| `players/{slug}.html`, `teams/{slug}.html` | Pre-rendered per-entity pages with SEO baked in. Regenerated each cycle by `scripts/prerender_pages.py`. |
+| `sitemap.xml` | All pages, regenerated each cycle. |
+| `assets/styles.css`, `assets/*.js` | Vanilla HTML/CSS/JS, no framework. |
+| `worker-cors/` | Cloudflare Worker that proxies Reddit / Google News / Substack RSS so the browser can live-merge them. Allowlist-only. Deploy with `wrangler deploy` from `worker-cors/`. |
+
+After deploying the Worker, paste the deployed URL into
+`assets/config.js` (`CORS_PROXY_URL`). Until then the Reddit / Google
+News / Substack live-merge silently fails — the archived items from
+the index files still render fine.
 
 **Secrets**: only one — `YOUTUBE_API_KEY`, used by `poll-youtube.yml`.
 Bluesky / Google News / Reddit / Substack are all keyless public reads.

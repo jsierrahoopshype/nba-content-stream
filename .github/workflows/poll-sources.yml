@@ -81,13 +81,25 @@ jobs:
         continue-on-error: true
         run: python -m scripts.build_indexes
 
+      # Regenerate the per-player and per-team HTML pages + sitemap so
+      # GitHub Pages serves the latest counts in the SEO meta + the
+      # baked-in entity-hero. The JS still hydrates the cards client-
+      # side from data/index/{players,teams}/{slug}.json on load.
+      - name: Pre-render entity pages
+        continue-on-error: true
+        run: python -m scripts.prerender_pages
+
       - name: Commit and push new shards
         env:
           BRANCH: ${{ github.ref_name }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Stage just the things this workflow produces. Explicit paths
+          # so we never commit a stray .pyc, IDE file, or hand-edited
+          # asset accidentally.
           git add data/
+          git add players/ teams/ sitemap.xml 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "No data changes this cycle."
             exit 0
