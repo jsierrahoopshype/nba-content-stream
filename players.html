@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Players — NBA Content Stream · HoopsMatic</title>
+<meta name="description" content="Browse every NBA player with recent content in the HoopsMatic stream. News, podcasts, reporter posts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="container">
+  <div class="tabs">
+    <a href="index.html">Feed</a>
+    <a href="players.html" class="active">Players</a>
+    <a href="teams.html">Teams</a>
+  </div>
+  <div class="hdr">
+    <h1>Players</h1>
+    <span class="brand">HoopsMatic · NBA Content Stream</span>
+  </div>
+  <p class="subtitle">Every player with at least one recent mention. Sorted by volume; click for the full stream.</p>
+
+  <div class="controls">
+    <div class="search-row">
+      <div class="search-group">
+        <label>Search player or team</label>
+        <input type="text" id="q" placeholder="e.g. Wemby, SGA…" autocomplete="off">
+        <div class="suggest" id="suggest"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="summary" id="summary">loading…</div>
+  <div class="dir-grid" id="grid"></div>
+</div>
+
+<script src="assets/config.js"></script>
+<script src="assets/common.js"></script>
+<script>
+(async function () {
+  const ncs = window.NCS;
+  const manifest = await fetch("data/index/manifest.json").then((r) => r.json());
+  ncs.attachSearch(
+    document.getElementById("q"),
+    document.getElementById("suggest"),
+    manifest,
+    ""
+  );
+  const grid = document.getElementById("grid");
+  const frag = document.createDocumentFragment();
+  for (const p of manifest.players) {
+    const div = document.createElement("div");
+    div.className = "dir-card";
+    div.innerHTML = `<a href="players/${ncs.escapeHtml(p.slug)}.html">${ncs.escapeHtml(p.name)}</a><span class="count">${p.count}</span>`;
+    frag.appendChild(div);
+  }
+  grid.appendChild(frag);
+  document.getElementById("summary").innerHTML = `<strong>${manifest.players.length}</strong> players with content`;
+})();
+</script>
+</body>
+</html>
