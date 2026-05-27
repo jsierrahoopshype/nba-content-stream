@@ -24,11 +24,15 @@ window.NCS_CONFIG = {
     substack: 10,   // per publication feed
   },
 
-  // The Bluesky reporters list lives in the nba-buzz HF Space; we
-  // proxy it through the same CORS Worker for browser fetches. (Same
-  // file the poll_bluesky.py poller uses.)
-  BLUESKY_HANDLES_URL:
-    "https://huggingface.co/spaces/cdechoch/nba-buzz/raw/main/bluesky_handles.csv",
+  // The Bluesky reporters list, committed in this repo and served by
+  // GitHub Pages alongside the rest of the site. Loaded same-origin —
+  // no CORS, no Worker, no HuggingFace dependency. The server-side
+  // poller still pulls the live HF CSV (it runs from GitHub Actions
+  // and has no CORS constraint), so this committed copy is a snapshot
+  // for the browser; it may drift slightly from HF over time. A future
+  // enhancement could have poll_bluesky.py commit a refreshed copy
+  // each cycle to keep them in sync; for v1 a snapshot is fine.
+  BLUESKY_HANDLES_URL: "data/sources/bluesky_handles.csv",
 
   // Where Bluesky's public AppView lives (CORS-friendly, no proxy needed).
   BLUESKY_APPVIEW_BASE: "https://public.api.bsky.app",

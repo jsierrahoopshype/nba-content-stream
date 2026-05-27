@@ -23,6 +23,12 @@ const ALLOWED_HOSTS = new Set([
   "reddit.com",
   "old.reddit.com",
   "news.google.com",
+  // huggingface.co is here as belt-and-suspenders for the Bluesky
+  // reporter list. The frontend now loads that CSV same-origin from a
+  // committed snapshot, so this entry is only used if some future code
+  // path proxies an HF request. Keeping it permitted prevents another
+  // silent live-fetch death like the one PR #X fixed.
+  "huggingface.co",
 ]);
 
 // substack is *.substack.com — exact match doesn't suffice. Suffix match.

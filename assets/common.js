@@ -335,22 +335,21 @@
     return fetch(C.CORS_PROXY_URL + "?url=" + encodeURIComponent(url));
   }
 
-  // --- Bluesky (direct, no proxy needed) ---
+  // --- Bluesky (handles same-origin, AppView direct) ---
   async function fetchBlueskyHandles(maxHandles) {
-    // The reporter list CSV needs the CORS proxy because Hugging Face
-    // doesn't emit CORS headers either. If the proxy is down or not
-    // deployed, we silently skip Bluesky live-merge.
-    if (!C.CORS_PROXY_URL) return [];
+    // Loaded same-origin from the committed snapshot at
+    // data/sources/bluesky_handles.csv. No CORS, no Worker, no
+    // HuggingFace dependency. This is exactly the file format the
+    // poll_bluesky.py poller consumes server-side.
     try {
-      const resp = await _corsProxyFetch(C.BLUESKY_HANDLES_URL);
+      const resp = await fetch(C.BLUESKY_HANDLES_URL);
       if (!resp.ok) return [];
       const text = await resp.text();
       const lines = text.trim().split("\n");
       const handles = [];
-      // Skip header.
+      // Skip header. We only read the first column, so display names
+      // with quoted commas in column 2 don't affect parsing.
       for (let i = 1; i < lines.length && handles.length < maxHandles; i++) {
-        // Crude CSV — handle is the first field. Display names with
-        // quoted commas are fine because we only read column 0.
         const first = lines[i].split(",")[0].trim();
         if (first) handles.push(first);
       }
@@ -436,9 +435,50 @@
       const published = e.getElementsByTagNameNS("http://www.w3.org/2005/Atom", "published")[0]?.textContent || "";
       const authorName =
         e.getElementsByTagNameNS("http://www.w3.org/2005/Atom", "author")[0]?.getElementsByTagNameNS("http://www.w3.org/2005/Atom", "name")[0]?.textContent || "";
-      out.push({ title, id, link, published, author: authorName });
+      const content =
+        e.getElementsByTagNameNS("http://www.w3.org/2005/Atom", "content")[0]?.textContent || "";
+      out.push({ title, id, link, published, author: authorName, content });
     }
     return out;
+  }
+
+  // Mirrors poll_reddit.extract_selftext + cap_excerpt: only the OP's
+  // selftext between Reddit's <!-- SC_OFF --> ... <!-- SC_ON --> markers,
+  // HTML-stripped, capped at 280 chars at a word boundary. Link posts
+  // (no SC markers) get null and the card omits body_excerpt entirely.
+  // Without this, the raw <content> from Atom would carry the full post
+  // body, comment links, score tables, and "submitted by" boilerplate.
+  const _REDDIT_SC_RE = /<!--\s*SC_OFF\s*-->([\s\S]*?)<!--\s*SC_ON\s*-->/;
+  const _HTML_TAG_RE = /<[^>]+>/g;
+  const _WS_RE_JS = /\s+/g;
+  const REDDIT_EXCERPT_MAX = 280;
+
+  function _decodeEntities(s) {
+    // The DOMParser already decoded most things, but Reddit's nested
+    // content was HTML-encoded inside the Atom <content> CDATA. Decode
+    // by routing through a textarea, which is the canonical no-lib way.
+    const ta = document.createElement("textarea");
+    ta.innerHTML = s;
+    return ta.value;
+  }
+
+  function _redditExcerpt(contentHtml) {
+    if (!contentHtml) return null;
+    // Reddit double-encodes the content (entities inside Atom CDATA).
+    // Decode once so the SC_OFF marker matches.
+    const decoded = _decodeEntities(contentHtml);
+    const m = _REDDIT_SC_RE.exec(decoded);
+    if (!m) return null;  // link post — no selftext
+    const inner = m[1];
+    const stripped = _decodeEntities(inner.replace(_HTML_TAG_RE, " "))
+      .replace(_WS_RE_JS, " ")
+      .trim();
+    if (!stripped) return null;
+    if (stripped.length <= REDDIT_EXCERPT_MAX) return stripped;
+    let cut = stripped.slice(0, REDDIT_EXCERPT_MAX);
+    const lastSpace = cut.lastIndexOf(" ");
+    if (lastSpace > REDDIT_EXCERPT_MAX * 0.6) cut = cut.slice(0, lastSpace);
+    return cut.replace(/\s+$/, "") + "…";
   }
 
   async function redditLiveItems(maxPosts) {
@@ -455,6 +495,7 @@
         if (!post_id) continue;
         const handle = e.author.replace(/^\/u\//, "");
         const tags = tagger.detectEntitiesSync(e.title);
+        const excerpt = _redditExcerpt(e.content);
         out.push({
           id: `rd-${post_id}`,
           source: "reddit",
@@ -463,7 +504,7 @@
           url: e.link, // already a reddit thread URL
           author: handle,
           thumbnail: null,
-          body_excerpt: null,
+          body_excerpt: excerpt, // null for link posts; ≤280 for selfposts
           players: tags.players,
           teams: tags.teams,
           _live: true,

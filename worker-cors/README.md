@@ -13,9 +13,15 @@ re-emits with `Access-Control-Allow-Origin: *`.
 - `www.reddit.com`, `reddit.com`, `old.reddit.com`
 - `news.google.com`
 - `*.substack.com`
+- `huggingface.co`
 
 Any other host gets a 403. Without this allowlist the Worker would be
 an open proxy.
+
+`huggingface.co` is here as belt-and-suspenders for the Bluesky
+reporter list. The frontend loads that CSV same-origin from a committed
+snapshot (`data/sources/bluesky_handles.csv`), so the Worker entry is
+only exercised by potential future code paths that proxy HF.
 
 ## Routes
 
