@@ -118,12 +118,89 @@ def _is_quote_post(post: dict) -> bool:
     return "app.bsky.embed.record" in _embed_type(post.get("embed"))
 
 
+def _extract_embed(post: dict) -> Tuple[dict, Optional[str]]:
+    """Return `(media_dict, thumbnail_url)` for the post's embed.
+
+    Walks Bluesky's embed view types — images, external (link card),
+    video, and recordWithMedia (which wraps one of the above plus a
+    quote). Returns a `media` dict shaped for the shard plus a
+    top-level `thumbnail` URL for the frontend's uniform handling.
+
+    The poster's own attached media only — we never rehost video bytes,
+    never scrape external pages. The URLs returned point at Bluesky's
+    public CDN (which serves the poster's content with the poster's
+    attribution intact).
+    """
+    embed = post.get("embed") or {}
+    py_type = _embed_type(embed)
+    # recordWithMedia wraps a quoted record + a sibling media view. The
+    # media view is what we render; the inner record stays as the
+    # is_quote_post flag.
+    if "recordWithMedia" in py_type:
+        inner = embed.get("media") or {}
+        return _extract_view(inner)
+    return _extract_view(embed)
+
+
+def _extract_view(view: dict) -> Tuple[dict, Optional[str]]:
+    """Resolve a single embed view into `(media_dict, thumbnail_url)`."""
+    py_type = _embed_type(view)
+    if "app.bsky.embed.images" in py_type:
+        images = []
+        for img in view.get("images") or []:
+            url = img.get("fullsize") or img.get("thumb")
+            if not url:
+                continue
+            images.append({"url": url, "alt": img.get("alt") or ""})
+        if images:
+            return (
+                {"type": "image", "images": images},
+                images[0]["url"],
+            )
+        return {"type": "image"}, None
+    if "app.bsky.embed.external" in py_type:
+        ext = view.get("external") or {}
+        thumb = ext.get("thumb")
+        return (
+            {
+                "type": "link",
+                "uri": ext.get("uri") or "",
+                "title": ext.get("title") or "",
+                "description": ext.get("description") or "",
+                "thumb": thumb,
+            },
+            thumb,
+        )
+    if "app.bsky.embed.video" in py_type:
+        thumb = view.get("thumbnail")
+        return (
+            {
+                "type": "video",
+                "thumbnail": thumb,
+                "playlist": view.get("playlist"),  # HLS .m3u8 if Bluesky exposes it
+            },
+            thumb,
+        )
+    return {"type": "text"}, None
+
+
 def _has_image_embed(post: dict) -> bool:
-    return "app.bsky.embed.images" in _embed_type(post.get("embed"))
+    """Kept for backward-compat with the existing test that asserts image typing."""
+    py_type = _embed_type(post.get("embed"))
+    if "app.bsky.embed.images" in py_type:
+        return True
+    if "recordWithMedia" in py_type:
+        inner_type = _embed_type((post.get("embed") or {}).get("media"))
+        return "app.bsky.embed.images" in inner_type
+    return False
 
 
 def _media_type(post: dict) -> str:
-    """`image` if the post has image attachments, else `text`."""
+    """`image` if the post has image attachments, else `text`.
+
+    Kept for the existing test that pins this behavior. New code paths
+    go through `_extract_embed` for the richer shape.
+    """
     if _has_image_embed(post):
         return "image"
     return "text"
@@ -186,6 +263,8 @@ def map_post_to_item(
 
     title = text.split("\n", 1)[0][:280] if text else "(no text)"
 
+    media, thumbnail = _extract_embed(post)
+
     item: dict = {
         "id": _at_uri_to_id(post["uri"]),
         "source": "bluesky",
@@ -199,7 +278,7 @@ def map_post_to_item(
             "url": f"https://bsky.app/profile/{handle}",
         },
         "body_excerpt": text,
-        "media": {"type": _media_type(post)},
+        "media": media,
         "engagement": {
             "likes": post.get("likeCount"),
             "reposts": post.get("repostCount"),
@@ -207,6 +286,8 @@ def map_post_to_item(
         "players": player_slugs,
         "teams": team_slugs,
     }
+    if thumbnail:
+        item["thumbnail"] = thumbnail
     if _is_quote_post(post):
         item["is_quote_post"] = True
     return item

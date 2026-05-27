@@ -130,14 +130,14 @@ def load_all_items(data_dir: Optional[Path] = None) -> List[dict]:
 def _compact_item(item: dict) -> dict:
     """Strip a full shard item down to the fields the frontend renders.
 
-    Drops the engagement block (all-null on Reddit, partial elsewhere
-    and not used in v1), the matched_query debug field, the
-    google_url duplicate, the ingested_at internal timestamp, and the
-    media duration that doesn't exist anyway. Keeps the players/teams
-    arrays so cards can render clickable tags for OTHER entities.
+    Drops the engagement block, matched_query debug field, google_url
+    duplicate, and ingested_at internal timestamp. Keeps `media` so
+    Bluesky's richer embed info (image array, external-link card,
+    video thumbnail) flows through to the frontend. Keeps the
+    players/teams arrays so cards can render clickable cross-tags.
     """
     author = item.get("author") or {}
-    return {
+    out = {
         "id": item["id"],
         "source": item["source"],
         "published_at": item["published_at"],
@@ -149,6 +149,10 @@ def _compact_item(item: dict) -> dict:
         "players": list(item.get("players") or []),
         "teams": list(item.get("teams") or []),
     }
+    media = item.get("media")
+    if isinstance(media, dict) and media.get("type") and media.get("type") != "text":
+        out["media"] = media
+    return out
 
 
 # ---------------------------------------------------------------------------

@@ -240,6 +240,52 @@ def test_map_entry_falls_back_to_google_url_when_no_anchor(vocab):
     assert item["url"] == item["google_url"]
 
 
+def test_map_entry_extracts_media_content_thumbnail(vocab):
+    """RSS <media:content url=...> -> item.thumbnail (preferred over media:thumbnail)."""
+    players, teams = vocab
+    xml = (
+        b'<?xml version="1.0"?>'
+        b'<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">'
+        b"<channel><item>"
+        b"<title>Lakers land star - ESPN</title>"
+        b"<link>https://news.google.com/rss/articles/CBM</link>"
+        b"<pubDate>Thu, 21 May 2026 14:30:00 GMT</pubDate>"
+        b'<media:content url="https://espn.com/big.jpg" medium="image" width="800"/>'
+        b'<media:thumbnail url="https://espn.com/thumb.jpg" width="150"/>'
+        b"</item></channel></rss>"
+    )
+    e = feedparser.parse(xml).entries[0]
+    item = map_entry_to_item(e, "Lakers", players, teams)
+    assert item is not None
+    # media:content (larger) wins over media:thumbnail.
+    assert item["thumbnail"] == "https://espn.com/big.jpg"
+
+
+def test_map_entry_falls_back_to_media_thumbnail(vocab):
+    """When only media:thumbnail is present, use it."""
+    players, teams = vocab
+    xml = (
+        b'<?xml version="1.0"?>'
+        b'<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">'
+        b"<channel><item>"
+        b"<title>Lakers land star - ESPN</title>"
+        b"<link>https://news.google.com/rss/articles/CBM</link>"
+        b"<pubDate>Thu, 21 May 2026 14:30:00 GMT</pubDate>"
+        b'<media:thumbnail url="https://espn.com/thumb.jpg" width="150"/>'
+        b"</item></channel></rss>"
+    )
+    e = feedparser.parse(xml).entries[0]
+    item = map_entry_to_item(e, "Lakers", players, teams)
+    assert item["thumbnail"] == "https://espn.com/thumb.jpg"
+
+
+def test_map_entry_no_media_no_thumbnail(feed, vocab):
+    """Fixture entries have no media tags -> no thumbnail field."""
+    players, teams = vocab
+    item = map_entry_to_item(feed.entries[0], "LeBron James", players, teams)
+    assert "thumbnail" not in item
+
+
 def test_map_entry_omits_body_excerpt_when_description_empty(vocab):
     players, teams = vocab
     raw_feed = feedparser.parse(

@@ -325,6 +325,25 @@ def _entry_published_iso(entry) -> Optional[str]:
         return None
 
 
+def _extract_thumbnail(entry) -> Optional[str]:
+    """Return an RSS-provided image URL, or None.
+
+    Google News sometimes attaches `<media:content>` or
+    `<media:thumbnail>` to entries; feedparser surfaces them as
+    `entry.media_content` / `entry.media_thumbnail` (each a list of
+    dicts with a `url` key). We use whichever is present, preferring
+    `media:content` (typically the larger / hero image). We never
+    fetch the article page itself — that's publisher copyright.
+    """
+    for field in ("media_content", "media_thumbnail"):
+        items = entry.get(field)
+        if isinstance(items, list) and items:
+            url = items[0].get("url")
+            if isinstance(url, str) and url.startswith(("http://", "https://")):
+                return url
+    return None
+
+
 def _entry_publisher(entry, headline_publisher: str) -> str:
     """Prefer the title-derived publisher; fall back to the `<source>` tag."""
     if headline_publisher:
@@ -361,6 +380,7 @@ def map_entry_to_item(
     real_url = extract_real_url(description_html)
     url = real_url or google_url
     body_excerpt = strip_html(description_html)[:280] if description_html else ""
+    thumbnail = _extract_thumbnail(entry)
 
     player_slugs, team_slugs = detect_entities(headline, players_dict, teams_dict)
 
@@ -384,6 +404,8 @@ def map_entry_to_item(
     }
     if body_excerpt:
         item["body_excerpt"] = body_excerpt
+    if thumbnail:
+        item["thumbnail"] = thumbnail
     return item
 
 

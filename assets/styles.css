@@ -211,6 +211,90 @@ input[type=text]:focus,select:focus{
 .card .thumb{ float:right; width:6rem; height:4rem; object-fit:cover;
               border-radius:6px; margin:0 0 .4rem .8rem }
 
+/* --- per-source media variants --- */
+
+/* Bluesky: text as body, author already in the .top byline */
+.card-bluesky .bsky-text{
+  font-size:.92rem; line-height:1.45; color:var(--text); margin-bottom:.3rem;
+}
+.card-bluesky .bsky-text a{ color:var(--text); text-decoration:none }
+.card-bluesky .bsky-text a:hover{ color:var(--accent) }
+
+.bsky-images{ display:block; margin:.4rem 0; }
+.bsky-images img{
+  display:block; max-width:100%; max-height:24rem;
+  border-radius:8px; object-fit:cover;
+}
+.bsky-images.grid{
+  display:grid; grid-template-columns:1fr 1fr; gap:.3rem;
+  max-height:18rem; overflow:hidden;
+}
+.bsky-images.grid img{ width:100%; height:9rem; }
+
+.bsky-video{
+  position:relative; display:block; margin:.4rem 0;
+  border-radius:8px; overflow:hidden; max-width:100%;
+}
+.bsky-video img{ display:block; width:100%; max-height:22rem; object-fit:cover }
+.bsky-video .play-hint{
+  position:absolute; left:.5rem; bottom:.5rem;
+  padding:.25rem .55rem; border-radius:4px;
+  background:rgba(0,0,0,.72); color:#fff;
+  font-family:'JetBrains Mono',monospace; font-size:.7rem; font-weight:600;
+}
+
+.bsky-extcard{
+  display:flex; gap:.6rem; align-items:stretch; margin:.4rem 0;
+  border:1px solid var(--border); border-radius:8px; overflow:hidden;
+  text-decoration:none; color:var(--text); background:var(--bg);
+}
+.bsky-extcard:hover{ border-color:var(--accent); text-decoration:none }
+.bsky-extcard img{
+  flex:0 0 auto; width:6.5rem; height:5rem; object-fit:cover;
+}
+.bsky-extcard .ext-meta{ padding:.5rem .65rem; min-width:0 }
+.bsky-extcard .ext-title{
+  font-size:.86rem; font-weight:600; line-height:1.35;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.bsky-extcard .ext-desc{
+  font-size:.74rem; color:var(--text-secondary); margin-top:.15rem;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.bsky-extcard .ext-host{
+  font-family:'JetBrains Mono',monospace; font-size:.62rem;
+  color:var(--text-secondary); text-transform:uppercase;
+  letter-spacing:.06em; margin-top:.3rem;
+}
+
+/* YouTube: full-width 16:9 lazy embed. Click the poster to swap in the iframe. */
+.yt-embed{
+  position:relative; margin:.5rem 0; width:100%; aspect-ratio:16/9;
+  background:#000; border-radius:8px; overflow:hidden;
+}
+.yt-embed .yt-poster{
+  display:block; width:100%; height:100%; object-fit:cover; cursor:pointer;
+}
+.yt-embed .yt-play{
+  position:absolute; inset:0; margin:auto; display:flex;
+  align-items:center; justify-content:center; width:68px; height:48px;
+  background:transparent; border:none; cursor:pointer; padding:0;
+  transition:transform .15s ease;
+}
+.yt-embed .yt-play:hover{ transform:scale(1.08) }
+.yt-embed iframe{
+  position:absolute; inset:0; width:100%; height:100%; border:0;
+}
+
+/* Reddit / Google News / Substack: small right-floated thumb */
+.rss-thumb{ display:inline-block }
+.rss-thumb img{
+  float:right; width:6.5rem; height:4.5rem; object-fit:cover;
+  border-radius:6px; margin:0 0 .4rem .8rem;
+}
+
 .empty{
   text-align:center; padding:3rem 1rem; color:var(--text-secondary);
   font-family:'JetBrains Mono',monospace; font-size:.85rem;
