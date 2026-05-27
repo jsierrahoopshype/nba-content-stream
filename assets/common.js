@@ -58,6 +58,96 @@
     return `<div class="tags">${parts.join("")}</div>`;
   }
 
+  // --- 48h media window helper ---
+  // All non-YouTube media (Bluesky images, Reddit thumb, GN image,
+  // Bluesky external-card thumb) is only rendered for items published
+  // within the last 48h. Older items are text-only — this keeps the
+  // archive lightweight and avoids long-tail link-card thumbnails
+  // potentially going stale.
+  const MEDIA_WINDOW_MS = 48 * 3600 * 1000;
+  function withinMediaWindow(publishedAt) {
+    if (!publishedAt) return false;
+    const t = new Date(publishedAt).getTime();
+    if (Number.isNaN(t)) return false;
+    return Date.now() - t < MEDIA_WINDOW_MS;
+  }
+
+  function ytVideoIdFromItem(item) {
+    // Item id is `yt-{videoId}` per SHARD_FORMAT.md.
+    const m = /^yt-([A-Za-z0-9_\-]{6,})$/.exec(item.id || "");
+    return m ? m[1] : null;
+  }
+
+  function renderYoutubeEmbed(item, fresh) {
+    // Lazy iframe: show the thumbnail with a play button overlay;
+    // swap in the iframe on first click. Sanctioned official embed
+    // — youtube.com/embed/{id} — counts views for the creator. We
+    // ALWAYS render the YouTube embed regardless of age (the user
+    // owns it, click-to-load is bandwidth-cheap).
+    const vid = ytVideoIdFromItem(item);
+    if (!vid) return "";
+    const poster = item.thumbnail || `https://i.ytimg.com/vi/${vid}/hqdefault.jpg`;
+    return `
+      <div class="yt-embed" data-vid="${escapeHtml(vid)}">
+        <img class="yt-poster" src="${escapeHtml(poster)}" alt="" loading="lazy">
+        <button class="yt-play" aria-label="Play video">
+          <svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.5 7.7a8.4 8.4 0 0 0-5.9-5.9C55.4 0 34 0 34 0S12.6 0 7.4 1.8a8.4 8.4 0 0 0-5.9 5.9C0 12.9 0 24 0 24s0 11.1 1.5 16.3a8.4 8.4 0 0 0 5.9 5.9C12.6 48 34 48 34 48s21.4 0 26.6-1.8a8.4 8.4 0 0 0 5.9-5.9C68 35.1 68 24 68 24s0-11.1-1.5-16.3z" fill="#f00"/><path d="M27 34 45 24 27 14z" fill="#fff"/></svg>
+        </button>
+      </div>
+    `;
+  }
+
+  function renderBlueskyMedia(item) {
+    if (!withinMediaWindow(item.published_at)) return "";
+    const media = item.media || {};
+    if (media.type === "image" && Array.isArray(media.images) && media.images.length) {
+      // Show up to 4 thumbnails in a small grid for multi-image posts.
+      const shown = media.images.slice(0, 4);
+      const cls = shown.length > 1 ? "bsky-images grid" : "bsky-images";
+      return (
+        `<div class="${cls}">` +
+        shown.map((img) =>
+          `<a href="${escapeHtml(item.url)}" target="_blank" rel="noopener"><img src="${escapeHtml(img.url)}" alt="${escapeHtml(img.alt || "")}" loading="lazy"></a>`
+        ).join("") +
+        `</div>`
+      );
+    }
+    if (media.type === "video" && media.thumbnail) {
+      // We don't try to play Bluesky video inline (HLS would need a
+      // player lib). Show the thumbnail as a poster that opens the
+      // bsky.app post on click.
+      return `<a class="bsky-video" href="${escapeHtml(item.url)}" target="_blank" rel="noopener"><img src="${escapeHtml(media.thumbnail)}" alt="" loading="lazy"><span class="play-hint">▶ Play on Bluesky</span></a>`;
+    }
+    if (media.type === "link" && media.uri) {
+      const thumbHtml = media.thumb
+        ? `<img src="${escapeHtml(media.thumb)}" alt="" loading="lazy">`
+        : "";
+      const host = (() => {
+        try { return new URL(media.uri).hostname.replace(/^www\./, ""); }
+        catch { return ""; }
+      })();
+      return `
+        <a class="bsky-extcard" href="${escapeHtml(media.uri)}" target="_blank" rel="noopener">
+          ${thumbHtml}
+          <div class="ext-meta">
+            <div class="ext-title">${escapeHtml(media.title || media.uri)}</div>
+            ${media.description ? `<div class="ext-desc">${escapeHtml(media.description)}</div>` : ""}
+            <div class="ext-host">${escapeHtml(host)}</div>
+          </div>
+        </a>
+      `;
+    }
+    return "";
+  }
+
+  function renderSmallThumb(item) {
+    // Reddit + Google News + Substack: small preview thumb if RSS gave
+    // us one and item is within the 48h media window.
+    if (!item.thumbnail) return "";
+    if (!withinMediaWindow(item.published_at)) return "";
+    return `<a class="rss-thumb" href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener"><img src="${escapeHtml(item.thumbnail)}" alt="" loading="lazy"></a>`;
+  }
+
   function renderCard(item, options) {
     const opts = options || {};
     const pathPrefix = opts.pathPrefix || "";
@@ -66,16 +156,39 @@
     const liveFlag = item._live
       ? `<span class="live-flag">LIVE</span>`
       : "";
-    const thumb = item.thumbnail
-      ? `<img class="thumb" src="${escapeHtml(item.thumbnail)}" alt="" loading="lazy">`
-      : "";
+    const author = item.author || "";
+    const titleText = item.title || "(no title)";
     const excerpt = item.body_excerpt
       ? `<div class="excerpt">${escapeHtml(item.body_excerpt)}</div>`
       : "";
-    const author = item.author || "";
+
+    let bodyHtml = "";
+    if (source === "bluesky") {
+      // Bluesky pattern: author display name is the byline, the post
+      // text is the body. The "title" on a Bluesky shard is just the
+      // first 280 chars of text — render it as paragraph-style body,
+      // not as a headline link.
+      bodyHtml = `
+        <div class="bsky-text"><a href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener">${escapeHtml(titleText)}</a></div>
+        ${renderBlueskyMedia(item)}
+      `;
+    } else if (source === "youtube") {
+      bodyHtml = `
+        <div class="title"><a href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener">${escapeHtml(titleText)}</a></div>
+        ${renderYoutubeEmbed(item, withinMediaWindow(item.published_at))}
+        ${excerpt}
+      `;
+    } else {
+      // Reddit, Google News, Substack — link-out headline + small thumb.
+      bodyHtml = `
+        <div class="title"><a href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener">${escapeHtml(titleText)}</a></div>
+        ${renderSmallThumb(item)}
+        ${excerpt}
+      `;
+    }
 
     const card = document.createElement("article");
-    card.className = "card";
+    card.className = "card card-" + source;
     card.dataset.source = source;
     card.dataset.id = item.id;
     card.innerHTML = `
@@ -87,11 +200,21 @@
         <span class="author">${escapeHtml(author)}</span>
         <span class="when">${escapeHtml(relativeTime(item.published_at))}</span>
       </div>
-      ${thumb}
-      <div class="title"><a href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener">${escapeHtml(item.title || "(no title)")}</a></div>
-      ${excerpt}
+      ${bodyHtml}
       ${manifestSlugs ? entityTagsHtml(item, pathPrefix, manifestSlugs) : ""}
     `;
+
+    // Wire the YouTube play button to swap thumb -> iframe.
+    const playBtn = card.querySelector(".yt-play");
+    if (playBtn) {
+      playBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const wrap = playBtn.closest(".yt-embed");
+        const vid = wrap.dataset.vid;
+        wrap.innerHTML =
+          `<iframe src="https://www.youtube.com/embed/${encodeURIComponent(vid)}?autoplay=1&rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
+      });
+    }
     return card;
   }
 
@@ -432,14 +555,25 @@
     for (const r of batches) {
       if (r.status === "fulfilled") out.push(...r.value);
     }
-    // Normalize published_at to ISO Z form best-effort.
-    for (const it of out) {
-      if (it.published_at && !/Z$/.test(it.published_at)) {
-        const d = new Date(it.published_at);
-        if (!isNaN(d.getTime())) it.published_at = d.toISOString().replace(/\.\d{3}Z$/, "Z");
-      }
-    }
+    // Normalize EVERY published_at to the canonical ISO Z form
+    // (YYYY-MM-DDTHH:MM:SSZ). Bluesky's record.createdAt has fractional
+    // milliseconds like "2026-05-27T14:30:00.123Z"; lexicographic
+    // comparison against archive items in "2026-05-27T14:30:00Z" form
+    // puts the live item BELOW the archive one (because "." < "Z"),
+    // which was the production bug — fresh live items were getting
+    // sorted under hours-old archive items. Force one format here so
+    // mergeItems' string sort orders them correctly.
+    for (const it of out) it.published_at = canonicalIsoZ(it.published_at);
     return out;
+  }
+
+  // Single-source-of-truth normalizer used by liveMerge + mergeItems.
+  function canonicalIsoZ(value) {
+    if (!value) return value;
+    if (/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(value)) return value;
+    const d = new Date(value);
+    if (isNaN(d.getTime())) return value;
+    return d.toISOString().replace(/\.\d{3}Z$/, "Z");
   }
 
   // ---------------------------------------------------------------------
@@ -449,17 +583,20 @@
   function mergeItems(archiveItems, liveItems) {
     const seen = new Set();
     const out = [];
+    // Live first so they win id ties; both arrays' published_at is
+    // canonicalized to the same string format before sort so the
+    // lexicographic comparison reflects real chronological order.
     for (const it of (liveItems || [])) {
       if (!it || !it.id) continue;
       if (seen.has(it.id)) continue;
       seen.add(it.id);
-      out.push(it);
+      out.push({ ...it, published_at: canonicalIsoZ(it.published_at) });
     }
     for (const it of (archiveItems || [])) {
       if (!it || !it.id) continue;
       if (seen.has(it.id)) continue;
       seen.add(it.id);
-      out.push(it);
+      out.push({ ...it, published_at: canonicalIsoZ(it.published_at) });
     }
     out.sort((a, b) => (b.published_at || "").localeCompare(a.published_at || ""));
     return out;

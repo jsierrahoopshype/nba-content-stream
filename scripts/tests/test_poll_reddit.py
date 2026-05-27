@@ -228,6 +228,39 @@ def test_map_entry_valid_selfpost(top_feed, vocab):
     assert "LeBron James" in item["body_excerpt"]
 
 
+def test_map_entry_extracts_media_thumbnail_when_present(vocab):
+    """Reddit RSS <media:thumbnail url="..."/> -> item.thumbnail."""
+    players, teams = vocab
+    xml = (
+        b'<?xml version="1.0" encoding="UTF-8"?>'
+        b'<feed xmlns="http://www.w3.org/2005/Atom" '
+        b'xmlns:media="http://search.yahoo.com/mrss/">'
+        b"<entry>"
+        b"<author><name>/u/x</name></author>"
+        b"<id>t3_abc</id>"
+        b'<link href="https://www.reddit.com/r/nba/comments/abc/title/"/>'
+        b"<published>2026-05-27T14:30:00+00:00</published>"
+        b"<title>Wemby block</title>"
+        b'<media:thumbnail url="https://b.thumbs.redditmedia.com/thumb.jpg" '
+        b'width="140" height="140"/>'
+        b"</entry></feed>"
+    )
+    e = feedparser.parse(xml).entries[0]
+    item = map_entry_to_item(e, "nba", players, teams, 280)
+    assert item is not None
+    assert item.get("thumbnail") == "https://b.thumbs.redditmedia.com/thumb.jpg"
+    # url stays the reddit thread — thumbnail does not change the
+    # privacy posture.
+    assert item["url"].startswith("https://www.reddit.com/r/nba/comments/abc")
+
+
+def test_map_entry_no_media_no_thumbnail(top_feed, vocab):
+    """An entry with no media:thumbnail must NOT have a thumbnail field."""
+    players, teams = vocab
+    item = map_entry_to_item(top_feed.entries[0], "nba", players, teams, 280)
+    assert "thumbnail" not in item
+
+
 def test_map_entry_link_post_omits_body_excerpt(top_feed, vocab):
     """Highlights post — no selftext → no body_excerpt key at all."""
     players, teams = vocab

@@ -260,6 +260,23 @@ def _entry_content_html(entry) -> str:
     return entry.get("summary") or entry.get("description") or ""
 
 
+def _extract_thumbnail(entry) -> Optional[str]:
+    """Return the Reddit RSS thumbnail URL if present, else None.
+
+    Reddit r/nba RSS attaches a small preview image at
+    `<media:thumbnail url="..."/>` for link posts and image posts;
+    feedparser surfaces it as `entry.media_thumbnail = [{'url': ...}]`.
+    We store only the thumbnail URL — never full v.redd.it / i.redd.it
+    media, per DESIGN.md 4.4. The card still links back to the thread.
+    """
+    thumbs = entry.get("media_thumbnail")
+    if isinstance(thumbs, list) and thumbs:
+        url = thumbs[0].get("url")
+        if isinstance(url, str) and url.startswith(("http://", "https://")):
+            return url
+    return None
+
+
 def map_entry_to_item(
     entry,
     subreddit: str,
@@ -295,6 +312,7 @@ def map_entry_to_item(
 
     content_html = _entry_content_html(entry)
     selftext = extract_selftext(content_html)
+    thumbnail = _extract_thumbnail(entry)
 
     player_slugs, team_slugs = detect_entities(title, players_dict, teams_dict)
 
@@ -323,6 +341,8 @@ def map_entry_to_item(
     }
     if selftext:
         item["body_excerpt"] = cap_excerpt(selftext, excerpt_max_chars)
+    if thumbnail:
+        item["thumbnail"] = thumbnail
     return item
 
 

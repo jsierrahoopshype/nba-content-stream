@@ -129,8 +129,49 @@ def _record_embed_view() -> dict:
     return {"$type": "app.bsky.embed.record#view", "record": {}}
 
 
-def _images_embed_view() -> dict:
-    return {"$type": "app.bsky.embed.images#view", "images": []}
+def _images_embed_view(images=None) -> dict:
+    return {
+        "$type": "app.bsky.embed.images#view",
+        "images": images
+        if images is not None
+        else [
+            {
+                "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:x/abc123@jpeg",
+                "fullsize": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:x/abc123@jpeg",
+                "alt": "a photo of the game",
+            }
+        ],
+    }
+
+
+def _external_embed_view() -> dict:
+    return {
+        "$type": "app.bsky.embed.external#view",
+        "external": {
+            "uri": "https://espn.com/nba/story/123",
+            "title": "Lakers land star",
+            "description": "blah blah",
+            "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:y/ext@jpeg",
+        },
+    }
+
+
+def _video_embed_view() -> dict:
+    return {
+        "$type": "app.bsky.embed.video#view",
+        "cid": "vidcid1",
+        "playlist": "https://video.bsky.app/playlist.m3u8",
+        "thumbnail": "https://video.bsky.app/thumb.jpg",
+        "aspectRatio": {"width": 1280, "height": 720},
+    }
+
+
+def _record_with_media_view(media_view) -> dict:
+    return {
+        "$type": "app.bsky.embed.recordWithMedia#view",
+        "record": {"record": {}},
+        "media": media_view,
+    }
 
 
 def _reply_ref() -> dict:
@@ -338,6 +379,68 @@ def test_map_post_image_embed_sets_media_image(vocab):
     fv = _feed_view(post=_post(embed=_images_embed_view()))
     item = map_post_to_item(fv, {"handle": "reporter.bsky.social"}, players, teams)
     assert item["media"]["type"] == "image"
+
+
+def test_map_post_image_embed_extracts_image_urls(vocab):
+    """Image embed: media.images carries url+alt and thumbnail is hoisted."""
+    players, teams = vocab
+    fv = _feed_view(post=_post(embed=_images_embed_view()))
+    item = map_post_to_item(fv, {"handle": "reporter.bsky.social"}, players, teams)
+    assert item["media"]["type"] == "image"
+    imgs = item["media"]["images"]
+    assert len(imgs) == 1
+    assert imgs[0]["url"].endswith("@jpeg")
+    assert imgs[0]["alt"] == "a photo of the game"
+    # Top-level thumbnail mirrors the first image so the frontend can
+    # use a single field across all sources.
+    assert item["thumbnail"] == imgs[0]["url"]
+
+
+def test_map_post_external_card_extracts_link_card(vocab):
+    """External link card: media.type=link with uri/title/thumb."""
+    players, teams = vocab
+    fv = _feed_view(post=_post(embed=_external_embed_view()))
+    item = map_post_to_item(fv, {"handle": "reporter.bsky.social"}, players, teams)
+    assert item["media"]["type"] == "link"
+    assert item["media"]["uri"] == "https://espn.com/nba/story/123"
+    assert item["media"]["title"] == "Lakers land star"
+    assert item["thumbnail"].endswith("ext@jpeg")
+
+
+def test_map_post_video_embed_extracts_thumbnail_and_playlist(vocab):
+    """Video embed: thumbnail + HLS playlist, no rehosted video bytes."""
+    players, teams = vocab
+    fv = _feed_view(post=_post(embed=_video_embed_view()))
+    item = map_post_to_item(fv, {"handle": "reporter.bsky.social"}, players, teams)
+    assert item["media"]["type"] == "video"
+    assert item["media"]["thumbnail"] == "https://video.bsky.app/thumb.jpg"
+    assert item["media"]["playlist"] == "https://video.bsky.app/playlist.m3u8"
+    assert item["thumbnail"] == "https://video.bsky.app/thumb.jpg"
+
+
+def test_map_post_recordWithMedia_unwraps_inner_media(vocab):
+    """A quote-post with an attached image: extract the inner image embed.
+
+    The poster quoted another post AND attached their own image. The
+    image is the poster's; render it. is_quote_post is also true.
+    """
+    players, teams = vocab
+    fv = _feed_view(
+        post=_post(embed=_record_with_media_view(_images_embed_view()))
+    )
+    item = map_post_to_item(fv, {"handle": "reporter.bsky.social"}, players, teams)
+    assert item["media"]["type"] == "image"
+    assert len(item["media"]["images"]) == 1
+    assert item.get("is_quote_post") is True
+
+
+def test_map_post_no_embed_stays_text(vocab):
+    """Plain text post: media.type=text and no thumbnail field."""
+    players, teams = vocab
+    fv = _feed_view()  # no embed
+    item = map_post_to_item(fv, {"handle": "reporter.bsky.social"}, players, teams)
+    assert item["media"]["type"] == "text"
+    assert "thumbnail" not in item
 
 
 def test_map_post_quote_post_flagged(vocab):
