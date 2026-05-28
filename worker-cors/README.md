@@ -14,6 +14,11 @@ re-emits with `Access-Control-Allow-Origin: *`.
 - `news.google.com`
 - `*.substack.com`
 - `huggingface.co`
+- The custom-domain Substacks listed in
+  `data/sources/substack_publications.json` (truehoop.com,
+  houseofstrauss.com, thirdapron.com, fieldhousefiles.com, …). Both
+  bare and `www.` variants are listed because publications configure
+  DNS differently.
 
 Any other host gets a 403. Without this allowlist the Worker would be
 an open proxy.
@@ -22,6 +27,12 @@ an open proxy.
 reporter list. The frontend loads that CSV same-origin from a committed
 snapshot (`data/sources/bluesky_handles.csv`), so the Worker entry is
 only exercised by potential future code paths that proxy HF.
+
+When adding new custom-domain Substacks to
+`data/sources/substack_publications.json`, also add their hostname
+here AND redeploy with `wrangler deploy`. Without the allowlist entry
+the browser live-fetch returns 403; the server-side poller is
+unaffected (it runs from GitHub Actions, no CORS gate).
 
 ## Routes
 

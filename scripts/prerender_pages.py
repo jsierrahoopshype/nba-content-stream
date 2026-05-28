@@ -98,6 +98,8 @@ def _render_page(kind: str, slug: str, name: str, count: int) -> str:
 <meta name="description" content="{description}">
 <meta name="ncs-entity" data-kind="{kind}" data-slug="{html.escape(slug)}">
 <link rel="canonical" href="{og_url}">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
 <meta property="og:title" content="{safe_name} — NBA Content Stream">
 <meta property="og:description" content="{description}">
 <meta property="og:type" content="profile">

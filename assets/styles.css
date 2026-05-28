@@ -189,6 +189,19 @@ input[type=text]:focus,select:focus{
   background:var(--green-dim); color:var(--green);
   padding:.1rem .35rem; border-radius:3px; font-weight:600;
 }
+/* Bluesky byline avatar: small circular author photo from AppView. */
+.card .byline-avatar{
+  width:1.25rem; height:1.25rem; border-radius:50%; object-fit:cover;
+  display:inline-block; vertical-align:middle;
+  background:var(--surface-hover); /* placeholder while loading */
+}
+/* Outlet favicon for Reddit / Google News / Substack cards. Small
+   square, lighter weight than the avatar; falls back to nothing on 404
+   (the onerror handler in renderCard hides the img). */
+.card .byline-favicon{
+  width:1rem; height:1rem; border-radius:3px; object-fit:contain;
+  display:inline-block; vertical-align:middle;
+}
 .card .author{ color:var(--text-secondary); font-weight:500 }
 .card .when{ color:var(--text-secondary); margin-left:auto }
 .card .title{
