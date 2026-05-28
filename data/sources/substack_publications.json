@@ -1,15 +1,129 @@
 {
   "_meta": {
-    "description": "Substack publications polled via public RSS ({subdomain}.substack.com/feed). Raw feed: title + excerpt + link + entity tags, no AI. Free posts give full-ish content in RSS; paid posts give preview only. We store only a short excerpt (capped at 280 chars) either way and always link back to the original post.",
-    "last_updated": "2026-05-24",
-    "validation_status": "Verified working feeds only. Currently just The Stein Line (confirmed live, NBA content, entity tagging validated against the dry-run output). The phase-3-live-layer-tuning PR was supposed to import ~23 publications from Jorge's nba_substack_newsletters.csv but that file wasn't present in the build sandbox; the expansion is deferred to a follow-up PR (or a manual edit) once the CSV is available. Verify any added entry with: curl -sI https://{slug}.substack.com/feed | head -1 (expect HTTP/2 200), then a quick dry-run to confirm NBA content and entity tagging."
+    "description": "Substack publications polled via public RSS ({URL}/feed). Raw feed: title + excerpt + link + entity tags, no AI. Free posts give full-ish content in RSS; paid posts give preview only. We store only a short excerpt (capped at 280 chars) either way and always link back to the original post.",
+    "last_updated": "2026-05-28",
+    "validation_status": "20 publications curated by Jorge. Marc Stein verified earlier; the other 19 are pending local validation. Custom-domain Substacks (truehoop.com, houseofstrauss.com, etc.) need a matching entry in the CORS Worker allowlist for the BROWSER live-fetch to reach them — handled in the same PR (worker-cors/src/index.js). The server-side poll_substack.py poller is uncostrained by CORS, so it picks these up immediately. Validate locally with: `python -m scripts.poll_substack --dry-run --since-hours 168 -v` and prune any feed that 404s."
   },
   "publications": [
     {
       "slug": "marcstein",
-      "name": "The Stein Line (Marc Stein)",
+      "name": "The Stein Line",
       "feed": "https://marcstein.substack.com/feed",
       "validation": "verified 2026-05-24 — live, NBA content, entity tagging working"
+    },
+    {
+      "slug": "truehoop",
+      "name": "TrueHoop",
+      "feed": "https://www.truehoop.com/feed",
+      "validation": "unverified — custom-domain Substack, needs Worker allowlist + local dry-run check"
+    },
+    {
+      "slug": "tomthefinder",
+      "name": "The Finder",
+      "feed": "https://www.tomthefinder.com/feed",
+      "validation": "unverified"
+    },
+    {
+      "slug": "houseofstrauss",
+      "name": "House of Strauss",
+      "feed": "https://www.houseofstrauss.com/feed",
+      "validation": "unverified"
+    },
+    {
+      "slug": "roycewebb",
+      "name": "5x5",
+      "feed": "https://www.roycewebb.com/feed",
+      "validation": "unverified"
+    },
+    {
+      "slug": "teamziller",
+      "name": "Good Morning It's Basketball",
+      "feed": "https://www.teamziller.com/feed",
+      "validation": "unverified"
+    },
+    {
+      "slug": "lastnightinbasketball",
+      "name": "Last Night In Basketball",
+      "feed": "https://www.lastnightinbasketball.com/feed",
+      "validation": "unverified"
+    },
+    {
+      "slug": "basketballintelligence",
+      "name": "Basketball Intelligence",
+      "feed": "https://www.basketballintelligence.net/feed",
+      "validation": "unverified"
+    },
+    {
+      "slug": "thirdapron",
+      "name": "Third Apron",
+      "feed": "https://www.thirdapron.com/feed",
+      "validation": "unverified"
+    },
+    {
+      "slug": "statitudes",
+      "name": "Statitudes",
+      "feed": "https://www.statitudes.com/feed",
+      "validation": "unverified"
+    },
+    {
+      "slug": "basketballfeelings",
+      "name": "Basketball Feelings",
+      "feed": "https://basketballfeelings.substack.com/feed",
+      "validation": "unverified"
+    },
+    {
+      "slug": "noceilingsnba",
+      "name": "No Ceilings",
+      "feed": "https://www.noceilingsnba.com/feed",
+      "validation": "unverified"
+    },
+    {
+      "slug": "nbabigboard",
+      "name": "NBA Big Board",
+      "feed": "https://www.nbabigboard.com/feed",
+      "validation": "unverified"
+    },
+    {
+      "slug": "edemirnba",
+      "name": "Ersin's NBA Draft Newsletter",
+      "feed": "https://edemirnba.substack.com/feed",
+      "validation": "unverified"
+    },
+    {
+      "slug": "draftstack",
+      "name": "Draftstack",
+      "feed": "https://draftstack.substack.com/feed",
+      "validation": "unverified"
+    },
+    {
+      "slug": "subtsakalidis",
+      "name": "SubTsakalidis",
+      "feed": "https://subtsakalidis.substack.com/feed",
+      "validation": "unverified"
+    },
+    {
+      "slug": "fieldhousefiles",
+      "name": "Fieldhouse Files",
+      "feed": "https://www.fieldhousefiles.com/feed",
+      "validation": "unverified"
+    },
+    {
+      "slug": "dubshub",
+      "name": "The Dubs Hub",
+      "feed": "https://dubshub.substack.com/feed",
+      "validation": "unverified"
+    },
+    {
+      "slug": "byderekjames",
+      "name": "By Derek James",
+      "feed": "https://byderekjames.substack.com/feed",
+      "validation": "unverified"
+    },
+    {
+      "slug": "zachdraft",
+      "name": "Zach's Draft Substack",
+      "feed": "https://zachdraft.substack.com/feed",
+      "validation": "unverified"
     }
   ]
 }

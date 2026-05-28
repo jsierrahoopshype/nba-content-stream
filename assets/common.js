@@ -148,6 +148,42 @@
     return `<a class="rss-thumb" href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener"><img src="${escapeHtml(item.thumbnail)}" alt="" loading="lazy"></a>`;
   }
 
+  // --- Byline icon: Bluesky avatar (Fix 3) or outlet favicon (Fix 4) ---
+
+  function _itemHostname(item) {
+    try {
+      const u = new URL(item.url || "");
+      return u.hostname.replace(/^www\./, "");
+    } catch {
+      return "";
+    }
+  }
+
+  function bylineIconHtml(item) {
+    // Bluesky cards: use the post author's avatar (the user's identity).
+    // Live items carry author_avatar from the AppView response; archive
+    // items don't have it yet (poller doesn't capture). Render an
+    // <img> when available; nothing otherwise — no fallback image, the
+    // existing text byline is the fallback.
+    if (item.source === "bluesky") {
+      if (item.author_avatar) {
+        return `<img class="byline-avatar" src="${escapeHtml(item.author_avatar)}" alt="" loading="lazy" onerror="this.style.display='none'">`;
+      }
+      return "";
+    }
+    // YouTube cards already have a thumbnail in the body; skip the
+    // byline icon to avoid double-imagery.
+    if (item.source === "youtube") return "";
+    // Reddit / Google News / Substack: outlet favicon via Google's
+    // free favicon service. Works for any reachable origin, no API
+    // key. onerror hides the img element if the favicon 404s, leaving
+    // just the text source badge.
+    const host = _itemHostname(item);
+    if (!host) return "";
+    const src = `https://www.google.com/s2/favicons?domain=${encodeURIComponent(host)}&sz=32`;
+    return `<img class="byline-favicon" src="${escapeHtml(src)}" alt="" loading="lazy" onerror="this.style.display='none'">`;
+  }
+
   function renderCard(item, options) {
     const opts = options || {};
     const pathPrefix = opts.pathPrefix || "";
@@ -161,6 +197,7 @@
     const excerpt = item.body_excerpt
       ? `<div class="excerpt">${escapeHtml(item.body_excerpt)}</div>`
       : "";
+    const bylineIcon = bylineIconHtml(item);
 
     let bodyHtml = "";
     if (source === "bluesky") {
@@ -197,6 +234,7 @@
           <span class="dot"></span>${escapeHtml(source)}
         </span>
         ${liveFlag}
+        ${bylineIcon}
         <span class="author">${escapeHtml(author)}</span>
         <span class="when">${escapeHtml(relativeTime(item.published_at))}</span>
       </div>
@@ -427,6 +465,14 @@
           title: text.split("\n")[0].slice(0, 280) || "(no text)",
           url: `https://bsky.app/profile/${handle}/post/${rkey}`,
           author: author.displayName || handle,
+          // The AppView exposes a CDN URL at author.avatar. Captured
+          // here so renderCard's bylineIconHtml shows a small circular
+          // avatar next to the byline. Archive items don't carry this
+          // yet — future enhancement: extend poll_bluesky.py to store
+          // author.avatar so archived Bluesky cards also get the
+          // avatar. For now, live cards get avatars, archive cards
+          // fall back to the text byline.
+          author_avatar: author.avatar || null,
           thumbnail: null,
           body_excerpt: text.length > 80 ? text : null,
           players: tags.players,

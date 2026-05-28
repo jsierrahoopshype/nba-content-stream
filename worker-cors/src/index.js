@@ -29,6 +29,23 @@ const ALLOWED_HOSTS = new Set([
   // path proxies an HF request. Keeping it permitted prevents another
   // silent live-fetch death like the one PR #X fixed.
   "huggingface.co",
+  // Custom-domain Substacks. *.substack.com (in ALLOWED_SUFFIXES below)
+  // covers the subdomain-style publications; everything below is a
+  // Substack served from the publication's own apex/www. domain. Both
+  // bare and www. are listed because Substack serves either depending
+  // on how the publication configured DNS.
+  "www.truehoop.com",                  "truehoop.com",
+  "www.tomthefinder.com",              "tomthefinder.com",
+  "www.houseofstrauss.com",            "houseofstrauss.com",
+  "www.roycewebb.com",                 "roycewebb.com",
+  "www.teamziller.com",                "teamziller.com",
+  "www.lastnightinbasketball.com",     "lastnightinbasketball.com",
+  "www.basketballintelligence.net",    "basketballintelligence.net",
+  "www.thirdapron.com",                "thirdapron.com",
+  "www.statitudes.com",                "statitudes.com",
+  "www.noceilingsnba.com",             "noceilingsnba.com",
+  "www.nbabigboard.com",               "nbabigboard.com",
+  "www.fieldhousefiles.com",           "fieldhousefiles.com",
 ]);
 
 // substack is *.substack.com — exact match doesn't suffice. Suffix match.
