@@ -341,6 +341,10 @@
     // data/sources/bluesky_handles.csv. No CORS, no Worker, no
     // HuggingFace dependency. This is exactly the file format the
     // poll_bluesky.py poller consumes server-side.
+    //
+    // `maxHandles` is a soft cap; passing Infinity (or omitting it)
+    // returns every row.
+    const cap = maxHandles == null ? Infinity : maxHandles;
     try {
       const resp = await fetch(C.BLUESKY_HANDLES_URL);
       if (!resp.ok) return [];
@@ -349,7 +353,7 @@
       const handles = [];
       // Skip header. We only read the first column, so display names
       // with quoted commas in column 2 don't affect parsing.
-      for (let i = 1; i < lines.length && handles.length < maxHandles; i++) {
+      for (let i = 1; i < lines.length && handles.length < cap; i++) {
         const first = lines[i].split(",")[0].trim();
         if (first) handles.push(first);
       }
@@ -380,15 +384,27 @@
 
   async function bskyLiveItems(maxPosts) {
     const out = [];
-    // Pull a small subset of reporters for the live edge. We don't
-    // want to fire 375 author-feed requests on every pageload. Pick
-    // the first N handles in the CSV (which is roughly the priority
-    // order Jorge curates).
-    const handlesLimit = 12; // tuneable; 12 handles * a few posts each
-    const handles = await fetchBlueskyHandles(handlesLimit);
-    const perHandle = Math.max(2, Math.ceil((maxPosts || 30) / Math.max(1, handles.length)));
-    // Fire them in parallel.
-    const feeds = await Promise.all(handles.map((h) => fetchBlueskyAuthor(h, perHandle)));
+    // Poll EVERY handle in the committed CSV. The CSV is sorted
+    // alphabetically (not by activity), so any sub-sample biases the
+    // live feed to whatever reporters happen to be near the top of
+    // the alphabet rather than whoever just posted. Bluesky's public
+    // AppView has no per-IP rate limit at this scale, HTTP/2
+    // multiplexes the requests, and at ~165 handles the wall time
+    // is a couple of seconds.
+    //
+    // To stay polite-ish (and avoid creating 165 simultaneous open
+    // sockets on slow connections), batch into chunks of 50 and run
+    // each batch with Promise.all. The whole run is still well under
+    // 5s for the current 164-handle list.
+    const handles = await fetchBlueskyHandles();
+    const perHandle = 3;  // each reporter contributes up to 3 recent posts
+    const feeds = [];
+    const BATCH = 50;
+    for (let i = 0; i < handles.length; i += BATCH) {
+      const slice = handles.slice(i, i + BATCH);
+      const batch = await Promise.all(slice.map((h) => fetchBlueskyAuthor(h, perHandle)));
+      feeds.push(...batch);
+    }
     const tagger = window.NCS_Tagger;
     await tagger.ready();
     for (const feed of feeds) {
@@ -418,6 +434,13 @@
           _live: true,
         });
       }
+    }
+    // Sort newest-first and cap. `maxPosts` is now a soft ceiling on
+    // the final pool rather than a per-handle budget; the cap protects
+    // against an edge case where every reporter posted a lot at once.
+    if (maxPosts && out.length > maxPosts) {
+      out.sort((a, b) => (b.published_at || "").localeCompare(a.published_at || ""));
+      return out.slice(0, maxPosts);
     }
     return out;
   }
@@ -582,15 +605,121 @@
     return out;
   }
 
+  // --- Substack (via CORS proxy) ---
+
+  const _SUBSTACK_POST_SLUG_RE = /\/p\/([a-z0-9][a-z0-9\-]*)/i;
+  const _SUBSTACK_EXCERPT_MAX = 280;
+
+  function _substackPostSlugFromLink(link) {
+    if (!link) return null;
+    const m = _SUBSTACK_POST_SLUG_RE.exec(link);
+    return m ? m[1].toLowerCase() : null;
+  }
+
+  function _substackItemId(publicationSlug, link) {
+    if (!link) return null;
+    const postSlug = _substackPostSlugFromLink(link);
+    if (postSlug) return `ss-${publicationSlug}-${postSlug}`;
+    // Fallback: djb2 hash of the link (server uses sha1; client can't
+    // without a lib, and the collision space is per-publication so
+    // 32 bits is plenty for dedup).
+    let h = 5381;
+    for (let i = 0; i < link.length; i++) h = ((h << 5) + h + link.charCodeAt(i)) >>> 0;
+    return `ss-${publicationSlug}-${h.toString(16).padStart(8, "0")}`;
+  }
+
+  // Mirrors poll_substack._entry_excerpt: prefer the longer payload
+  // (content:encoded -> description), strip HTML, cap at 280 chars at
+  // a word boundary with an ellipsis.
+  function _substackExcerpt(descriptionHtml) {
+    if (!descriptionHtml) return "";
+    // Substack RSS encodes the HTML body. DOMParser already gave us
+    // the decoded textContent in _parseRssFeed, but `description` is
+    // the inner HTML. Strip tags + collapse whitespace + decode entities.
+    const stripped = _decodeEntities(descriptionHtml.replace(_HTML_TAG_RE, " "))
+      .replace(_WS_RE_JS, " ")
+      .trim();
+    if (!stripped) return "";
+    if (stripped.length <= _SUBSTACK_EXCERPT_MAX) return stripped;
+    let cut = stripped.slice(0, _SUBSTACK_EXCERPT_MAX);
+    const lastSpace = cut.lastIndexOf(" ");
+    if (lastSpace > _SUBSTACK_EXCERPT_MAX * 0.6) cut = cut.slice(0, lastSpace);
+    return cut.replace(/\s+$/, "") + "…";
+  }
+
+  async function _loadSubstackPublications() {
+    try {
+      const resp = await fetch("data/sources/substack_publications.json");
+      if (!resp.ok) return [];
+      const blob = await resp.json();
+      const list = blob.publications || [];
+      // Skip _meta-only entries and anything missing slug/feed.
+      return list.filter((p) => p && p.slug && p.feed);
+    } catch {
+      return [];
+    }
+  }
+
+  async function substackLiveItems(maxItems) {
+    if (!C.CORS_PROXY_URL) return [];
+    const pubs = await _loadSubstackPublications();
+    if (!pubs.length) return [];
+    const tagger = window.NCS_Tagger;
+    await tagger.ready();
+    // Fire publication feeds in parallel — small handful, no need to batch.
+    const results = await Promise.allSettled(
+      pubs.map(async (pub) => {
+        const resp = await _corsProxyFetch(pub.feed);
+        if (!resp.ok) return [];
+        const xml = await resp.text();
+        const entries = _parseRssFeed(xml);
+        const out = [];
+        for (const e of entries) {
+          const link = e.link;
+          if (!link || !e.title) continue;
+          const itemId = _substackItemId(pub.slug, link);
+          if (!itemId) continue;
+          const excerpt = _substackExcerpt(e.description || "");
+          const detectText = excerpt ? `${e.title}\n${excerpt}` : e.title;
+          const tags = tagger.detectEntitiesSync(detectText);
+          out.push({
+            id: itemId,
+            source: "substack",
+            published_at: e.pubDate,
+            title: e.title.trim(),
+            url: link,
+            author: pub.name,
+            thumbnail: null,
+            body_excerpt: excerpt || null,
+            players: tags.players,
+            teams: tags.teams,
+            _live: true,
+          });
+        }
+        return out;
+      })
+    );
+    let out = [];
+    for (const r of results) if (r.status === "fulfilled") out.push(...r.value);
+    if (maxItems && out.length > maxItems) {
+      out.sort((a, b) => (b.published_at || "").localeCompare(a.published_at || ""));
+      out = out.slice(0, maxItems);
+    }
+    return out;
+  }
+
   // --- Live merge orchestrator ---
   async function liveMerge(opts) {
     if (!C.LIVE_MERGE_ENABLED) return [];
     const limits = C.LIVE_MERGE_LIMITS || {};
-    const wanted = opts && opts.sources ? opts.sources : ["bluesky", "reddit", "google-news"];
+    const wanted = opts && opts.sources
+      ? opts.sources
+      : ["bluesky", "reddit", "google-news", "substack"];
     const tasks = [];
     if (wanted.indexOf("bluesky") >= 0) tasks.push(bskyLiveItems(limits.bluesky));
     if (wanted.indexOf("reddit") >= 0) tasks.push(redditLiveItems(limits.reddit));
     if (wanted.indexOf("google-news") >= 0) tasks.push(googleNewsLiveItems(limits.googleNews));
+    if (wanted.indexOf("substack") >= 0) tasks.push(substackLiveItems(limits.substack));
     const batches = await Promise.allSettled(tasks);
     const out = [];
     for (const r of batches) {
