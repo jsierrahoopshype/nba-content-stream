@@ -16,12 +16,16 @@ window.NCS_CONFIG = {
   // Set to false to skip live merges entirely.
   LIVE_MERGE_ENABLED: true,
 
-  // How many items each live-merge call asks for.
+  // How many items each live-merge call asks for. These are SOFT
+  // ceilings on the final pool per source, not per-feed budgets —
+  // Bluesky polls every reporter in the CSV (~164 handles × ~3
+  // recent posts each) and then this cap is the upper bound on what
+  // lands in the unified feed.
   LIVE_MERGE_LIMITS: {
-    bluesky: 30,    // per Bluesky-reporter "trending" handles, search is broad
+    bluesky: 250,   // ~164 reporters × ~3 posts = ~500 pre-filter; keep top 250
     reddit: 25,     // top of day
     googleNews: 15, // per topic query
-    substack: 10,   // per publication feed
+    substack: 30,   // per publication feed × N pubs
   },
 
   // The Bluesky reporters list, committed in this repo and served by
