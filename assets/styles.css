@@ -166,15 +166,18 @@ input[type=text]:focus,select:focus{
   padding:.8rem .9rem; transition:.15s; position:relative;
 }
 .card:hover{ border-color:var(--accent) }
+/* Fix A: content hierarchy. Top row is meta — quiet, monospace, low
+   contrast. The headline/post body below it is what the eye lands on. */
 .card .top{
-  display:flex; align-items:center; gap:.5rem; flex-wrap:wrap;
-  font-size:.68rem; color:var(--text-secondary); margin-bottom:.4rem;
+  display:flex; align-items:center; gap:.45rem; flex-wrap:wrap;
+  font-size:.6rem; color:var(--text-secondary); margin-bottom:.45rem;
   font-family:'JetBrains Mono',monospace; text-transform:uppercase;
+  opacity:.85;
 }
 .card .src-badge{
-  display:inline-flex; align-items:center; gap:.3rem;
-  padding:.15rem .45rem; border-radius:4px; font-weight:700;
-  letter-spacing:.04em;
+  display:inline-flex; align-items:center; gap:.25rem;
+  padding:.08rem .35rem; border-radius:3px; font-weight:600;
+  letter-spacing:.04em; font-size:.58rem;
 }
 .card .src-badge .dot{
   display:inline-block; width:.45rem; height:.45rem; border-radius:50%;
@@ -202,10 +205,13 @@ input[type=text]:focus,select:focus{
   width:1rem; height:1rem; border-radius:3px; object-fit:contain;
   display:inline-block; vertical-align:middle;
 }
-.card .author{ color:var(--text-secondary); font-weight:500 }
-.card .when{ color:var(--text-secondary); margin-left:auto }
+.card .author{ color:var(--text-secondary); font-weight:400; font-size:.62rem }
+.card .when{ color:var(--text-secondary); margin-left:auto; font-weight:400; font-size:.6rem }
+/* Fix A: headline is now the visual anchor — bigger, heavier, fully
+   inked, with comfortable line-height. */
 .card .title{
-  font-size:.95rem; font-weight:600; line-height:1.35; margin-bottom:.3rem;
+  font-size:1.05rem; font-weight:650; line-height:1.38;
+  margin-bottom:.35rem; letter-spacing:-.005em;
 }
 .card .title a{ color:var(--text); text-decoration:none }
 .card .title a:hover{ color:var(--accent) }
@@ -226,12 +232,42 @@ input[type=text]:focus,select:focus{
 
 /* --- per-source media variants --- */
 
-/* Bluesky: text as body, author already in the .top byline */
-.card-bluesky .bsky-text{
-  font-size:.92rem; line-height:1.45; color:var(--text); margin-bottom:.3rem;
+/* Fix B: Bluesky body reads like a tweet — avatar on the left,
+   "Author Name: post text..." flowing inline next to it. The meta row
+   above has only source + LIVE + timestamp; the author lives down here
+   as a bold inline byline. */
+.bsky-body{
+  display:flex; align-items:flex-start; gap:.6rem;
+  margin-bottom:.3rem;
 }
-.card-bluesky .bsky-text a{ color:var(--text); text-decoration:none }
-.card-bluesky .bsky-text a:hover{ color:var(--accent) }
+.bsky-avatar{
+  width:2.4rem; height:2.4rem; border-radius:50%; object-fit:cover;
+  flex:0 0 auto; background:var(--surface-hover);
+  display:block;
+}
+.bsky-avatar-placeholder{ display:inline-block }
+.bsky-body-text{
+  flex:1 1 auto; min-width:0;
+  font-size:1rem; line-height:1.45; color:var(--text);
+}
+.bsky-body-text .bsky-author{
+  font-weight:650; color:var(--text); text-decoration:none;
+}
+.bsky-body-text .bsky-author:hover{ color:var(--accent) }
+.bsky-body-text .bsky-author-sep{ color:var(--text); margin-right:.25rem }
+.bsky-body-text .bsky-text{
+  color:var(--text); word-wrap:break-word; overflow-wrap:break-word;
+  white-space:pre-wrap;
+}
+/* Fix E: inline URLs are linkified — render as accent-color underlines
+   so they're discoverable without yelling. */
+.bsky-body-text .inline-url,
+.card .inline-url{
+  color:var(--accent); text-decoration:none;
+  word-break:break-all; /* don't overflow on huge URLs */
+}
+.bsky-body-text .inline-url:hover,
+.card .inline-url:hover{ text-decoration:underline }
 
 .bsky-images{ display:block; margin:.4rem 0; }
 .bsky-images img{
@@ -280,6 +316,46 @@ input[type=text]:focus,select:focus{
   font-family:'JetBrains Mono',monospace; font-size:.62rem;
   color:var(--text-secondary); text-transform:uppercase;
   letter-spacing:.06em; margin-top:.3rem;
+}
+
+/* Fix C: Bluesky live external link card. The poster attached a link
+   preview in their post (article URL with metadata); render it as a
+   bordered, rounded preview box matching the media-vote-tracker card
+   style. Click anywhere on the box opens the external URL.
+   Same visual shape as .bsky-extcard above (which is the archive
+   equivalent rendered from item.media.type=link) but built from
+   the live item.linkCard captured in bskyLiveItems(). */
+.bsky-linkcard{
+  display:flex; gap:.7rem; align-items:stretch; margin:.5rem 0;
+  border:1px solid var(--border); border-radius:10px; overflow:hidden;
+  text-decoration:none; color:var(--text); background:var(--bg);
+  transition:.15s;
+}
+.bsky-linkcard:hover{ border-color:var(--accent); text-decoration:none }
+.bsky-linkcard .lc-thumb{
+  flex:0 0 auto; width:7.5rem; height:6rem; object-fit:cover;
+  background:var(--surface-hover);
+}
+.bsky-linkcard .lc-meta{ padding:.55rem .7rem; min-width:0; display:flex;
+  flex-direction:column; gap:.2rem; }
+.bsky-linkcard .lc-title{
+  font-size:.92rem; font-weight:600; line-height:1.35; color:var(--text);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.bsky-linkcard .lc-desc{
+  font-size:.78rem; color:var(--text-secondary); line-height:1.4;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.bsky-linkcard .lc-host{
+  font-family:'JetBrains Mono',monospace; font-size:.62rem;
+  color:var(--text-secondary); text-transform:uppercase;
+  letter-spacing:.06em; margin-top:auto;
+}
+@media(max-width:600px){
+  .bsky-linkcard{ flex-direction:column }
+  .bsky-linkcard .lc-thumb{ width:100%; height:9rem; }
 }
 
 /* YouTube: full-width 16:9 lazy embed. Click the poster to swap in the iframe. */
