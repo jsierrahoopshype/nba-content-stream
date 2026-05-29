@@ -110,6 +110,57 @@ def test_empty_text_returns_empty_lists(vocab):
 
 
 # ---------------------------------------------------------------------------
+# Regression: short all-caps aliases must not match common English words.
+#
+# A user reported Bluesky cards with random "Game 7" posts tagged with
+# new-orleans-pelicans and washington-wizards. Root cause: the Pelicans
+# carried `NO` as an alias and the Wizards carried `WAS`, both two/three
+# letter all-caps strings. The tagger is case-insensitive word-boundary,
+# so any sentence containing "no" or "was" tagged those teams. Both
+# aliases removed; these tests pin the fix.
+# ---------------------------------------------------------------------------
+
+
+def test_common_word_was_does_not_tag_wizards(vocab):
+    players, teams = vocab
+    for text in [
+        "This was always going to Game 7",
+        "Thunder-Spurs Game 1 was an all-time classic",
+        "Neemias Queta was a top-10 center in the regular season",
+    ]:
+        _, team_slugs = detect_entities(text, players, teams)
+        assert "washington-wizards" not in team_slugs, (
+            f"regression: 'was' in {text!r} tagged washington-wizards"
+        )
+
+
+def test_common_word_no_does_not_tag_pelicans(vocab):
+    players, teams = vocab
+    for text in [
+        "I have no idea what is happening",
+        "There is no clear front-runner this year",
+        "He said no to the deal",
+    ]:
+        _, team_slugs = detect_entities(text, players, teams)
+        assert "new-orleans-pelicans" not in team_slugs, (
+            f"regression: 'no' in {text!r} tagged new-orleans-pelicans"
+        )
+
+
+def test_long_aliases_for_pelicans_and_wizards_still_work(vocab):
+    """Removing NO/WAS must not break the real-name and -ish aliases."""
+    players, teams = vocab
+    _, t1 = detect_entities("Pelicans win in OT", players, teams)
+    assert "new-orleans-pelicans" in t1
+    _, t2 = detect_entities("NOP picked up the option", players, teams)
+    assert "new-orleans-pelicans" in t2
+    _, t3 = detect_entities("The Wizards traded for him", players, teams)
+    assert "washington-wizards" in t3
+    _, t4 = detect_entities("Wiz fans expecting a quiet offseason", players, teams)
+    assert "washington-wizards" in t4
+
+
+# ---------------------------------------------------------------------------
 # disambiguation
 # ---------------------------------------------------------------------------
 

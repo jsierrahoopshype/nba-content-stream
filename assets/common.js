@@ -184,6 +184,62 @@
     return `<img class="byline-favicon" src="${escapeHtml(src)}" alt="" loading="lazy" onerror="this.style.display='none'">`;
   }
 
+  // Fix E: linkify bare http(s) URLs in plain text. Conservative regex —
+  // must start with http:// or https://. Returns innerHTML-safe markup;
+  // callers must NOT also escape the result.
+  const _URL_RE = /\bhttps?:\/\/[^\s<>()"']+[^\s<>()"',.;:!?]/g;
+  function linkifyEscaped(plain) {
+    if (!plain) return "";
+    const escaped = escapeHtml(plain);
+    return escaped.replace(_URL_RE, (m) =>
+      `<a class="inline-url" href="${m}" target="_blank" rel="noopener noreferrer">${m}</a>`
+    );
+  }
+
+  // Fix D: Bluesky image grid for live items (server media goes through
+  // renderBlueskyMedia from item.media). Up to 4 images, 48h-gated.
+  function renderBlueskyImagesLive(item) {
+    if (!item.images || !item.images.length) return "";
+    if (!withinMediaWindow(item.published_at)) return "";
+    const shown = item.images.slice(0, 4);
+    const cls = shown.length > 1 ? "bsky-images grid" : "bsky-images";
+    return (
+      `<div class="${cls}">` +
+      shown
+        .map(
+          (img) =>
+            `<a href="${escapeHtml(item.url)}" target="_blank" rel="noopener"><img src="${escapeHtml(img.url)}" alt="${escapeHtml(img.alt)}" loading="lazy"></a>`
+        )
+        .join("") +
+      `</div>`
+    );
+  }
+
+  // Fix C: Bluesky external link-card preview (rich box: thumb +
+  // title + description + domain). 48h-gated.
+  function renderBlueskyLinkCard(item) {
+    const lc = item.linkCard;
+    if (!lc || !lc.uri) return "";
+    if (!withinMediaWindow(item.published_at)) return "";
+    const host = (() => {
+      try { return new URL(lc.uri).hostname.replace(/^www\./, ""); }
+      catch { return ""; }
+    })();
+    const thumbHtml = lc.thumb
+      ? `<img class="lc-thumb" src="${escapeHtml(lc.thumb)}" alt="" loading="lazy" onerror="this.style.display='none'">`
+      : "";
+    return `
+      <a class="bsky-linkcard" href="${escapeHtml(lc.uri)}" target="_blank" rel="noopener noreferrer">
+        ${thumbHtml}
+        <div class="lc-meta">
+          <div class="lc-title">${escapeHtml(lc.title || lc.uri)}</div>
+          ${lc.description ? `<div class="lc-desc">${escapeHtml(lc.description)}</div>` : ""}
+          <div class="lc-host">${escapeHtml(host)}</div>
+        </div>
+      </a>
+    `;
+  }
+
   function renderCard(item, options) {
     const opts = options || {};
     const pathPrefix = opts.pathPrefix || "";
@@ -199,17 +255,54 @@
       : "";
     const bylineIcon = bylineIconHtml(item);
 
+    let topRowHtml = "";
     let bodyHtml = "";
     if (source === "bluesky") {
-      // Bluesky pattern: author display name is the byline, the post
-      // text is the body. The "title" on a Bluesky shard is just the
-      // first 280 chars of text — render it as paragraph-style body,
-      // not as a headline link.
+      // Fix B: Bluesky's body reads like a tweet — `Author Name: post
+      // body` as one inline block, avatar bigger and to the left of
+      // the body. The meta row keeps just the source + LIVE + time;
+      // the author moves into the body byline.
+      //
+      // Use record.text for the body if present; the "title" field is
+      // just the first line truncated. Linkify URLs in the body.
+      const bodyText = item.text || item.title || "";
+      topRowHtml = `
+        <div class="top">
+          <span class="src-badge src-${escapeHtml(source)}">
+            <span class="dot"></span>${escapeHtml(source)}
+          </span>
+          ${liveFlag}
+          <span class="when">${escapeHtml(relativeTime(item.published_at))}</span>
+        </div>
+      `;
+      const avatarHtml = item.author_avatar
+        ? `<img class="bsky-avatar" src="${escapeHtml(item.author_avatar)}" alt="" loading="lazy" onerror="this.style.display='none'">`
+        : `<span class="bsky-avatar bsky-avatar-placeholder" aria-hidden="true"></span>`;
+      const linkedText = linkifyEscaped(bodyText);
       bodyHtml = `
-        <div class="bsky-text"><a href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener">${escapeHtml(titleText)}</a></div>
+        <div class="bsky-body">
+          ${avatarHtml}
+          <div class="bsky-body-text">
+            <a class="bsky-author" href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener">${escapeHtml(author)}</a><span class="bsky-author-sep">:</span>
+            <span class="bsky-text">${linkedText}</span>
+          </div>
+        </div>
         ${renderBlueskyMedia(item)}
+        ${renderBlueskyImagesLive(item)}
+        ${renderBlueskyLinkCard(item)}
       `;
     } else if (source === "youtube") {
+      topRowHtml = `
+        <div class="top">
+          <span class="src-badge src-${escapeHtml(source)}">
+            <span class="dot"></span>${escapeHtml(source)}
+          </span>
+          ${liveFlag}
+          ${bylineIcon}
+          <span class="author">${escapeHtml(author)}</span>
+          <span class="when">${escapeHtml(relativeTime(item.published_at))}</span>
+        </div>
+      `;
       bodyHtml = `
         <div class="title"><a href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener">${escapeHtml(titleText)}</a></div>
         ${renderYoutubeEmbed(item, withinMediaWindow(item.published_at))}
@@ -217,6 +310,17 @@
       `;
     } else {
       // Reddit, Google News, Substack — link-out headline + small thumb.
+      topRowHtml = `
+        <div class="top">
+          <span class="src-badge src-${escapeHtml(source)}">
+            <span class="dot"></span>${escapeHtml(source)}
+          </span>
+          ${liveFlag}
+          ${bylineIcon}
+          <span class="author">${escapeHtml(author)}</span>
+          <span class="when">${escapeHtml(relativeTime(item.published_at))}</span>
+        </div>
+      `;
       bodyHtml = `
         <div class="title"><a href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener">${escapeHtml(titleText)}</a></div>
         ${renderSmallThumb(item)}
@@ -229,15 +333,7 @@
     card.dataset.source = source;
     card.dataset.id = item.id;
     card.innerHTML = `
-      <div class="top">
-        <span class="src-badge src-${escapeHtml(source)}">
-          <span class="dot"></span>${escapeHtml(source)}
-        </span>
-        ${liveFlag}
-        ${bylineIcon}
-        <span class="author">${escapeHtml(author)}</span>
-        <span class="when">${escapeHtml(relativeTime(item.published_at))}</span>
-      </div>
+      ${topRowHtml}
       ${bodyHtml}
       ${manifestSlugs ? entityTagsHtml(item, pathPrefix, manifestSlugs) : ""}
     `;
@@ -457,12 +553,55 @@
         const handle = author.handle || "";
         const rkey = (post.uri || "").split("/").pop();
         const text = record.text || "";
+        // Tag ONLY the post text. Embed metadata (link card title,
+        // description, image alt text) describes the LINKED article,
+        // not the poster's own words — concatenating it would cause
+        // false attributions (e.g. a Pelicans article linked from a
+        // post about Game 7 would falsely tag the post as being
+        // "about" the Pelicans). The post text is authoritative.
         const tags = tagger.detectEntitiesSync(text);
+
+        // Bluesky embed shapes from the public AppView. We render:
+        //   app.bsky.embed.images#view       -> grid of poster's images
+        //   app.bsky.embed.external#view     -> link-card preview
+        //   app.bsky.embed.recordWithMedia   -> inner .media is one of above
+        // Capture whichever is present (the inner shape for
+        // recordWithMedia) so renderCard can build the rich preview.
+        const embed = post.embed || {};
+        const embedType = embed.$type || "";
+        const mediaView = embedType.includes("recordWithMedia")
+          ? (embed.media || {})
+          : embed;
+        const mediaViewType = mediaView.$type || "";
+        let images = null;
+        let linkCard = null;
+        if (mediaViewType.includes("app.bsky.embed.images")) {
+          images = (mediaView.images || [])
+            .map((im) => ({
+              url: im.fullsize || im.thumb || "",
+              alt: im.alt || "",
+            }))
+            .filter((im) => im.url);
+        } else if (mediaViewType.includes("app.bsky.embed.external")) {
+          const ext = mediaView.external || {};
+          if (ext.uri) {
+            linkCard = {
+              uri: ext.uri,
+              title: ext.title || "",
+              description: ext.description || "",
+              thumb: ext.thumb || null,
+            };
+          }
+        }
+
         out.push({
           id: _atUriToId(post.uri),
           source: "bluesky",
           published_at: record.createdAt || post.indexedAt,
           title: text.split("\n")[0].slice(0, 280) || "(no text)",
+          // Full post text for the body, regardless of length. Bluesky
+          // posts max out at 300 graphemes anyway.
+          text: text,
           url: `https://bsky.app/profile/${handle}/post/${rkey}`,
           author: author.displayName || handle,
           // The AppView exposes a CDN URL at author.avatar. Captured
@@ -473,6 +612,8 @@
           // avatar. For now, live cards get avatars, archive cards
           // fall back to the text byline.
           author_avatar: author.avatar || null,
+          images: images,
+          linkCard: linkCard,
           thumbnail: null,
           body_excerpt: text.length > 80 ? text : null,
           players: tags.players,
