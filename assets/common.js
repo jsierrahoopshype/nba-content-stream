@@ -159,6 +159,38 @@
     }
   }
 
+  // Fix A3: link the outlet name to its homepage. We pick the
+  // hostname's apex (e.g. espn.com) and build https://<host>. Returns
+  // null if the URL is unparseable; the caller falls back to plain text.
+  function _outletHomepageUrl(item) {
+    const host = _itemHostname(item);
+    if (!host) return null;
+    return `https://${host}`;
+  }
+
+  // Fix A6: initials-avatar fallback for non-Bluesky cards with no
+  // media. Generates a small circular block with one or two letters
+  // derived from the outlet name or the first tagged entity. Color is
+  // a muted source-tinted background. Skipped entirely if the card
+  // already has rich media (a thumbnail, YouTube embed, etc.) to
+  // avoid double-imagery.
+  function _initialsFromAuthor(s) {
+    if (!s) return "·";
+    const tokens = s.replace(/[^\w\s]/g, " ").trim().split(/\s+/).filter(Boolean);
+    if (!tokens.length) return "·";
+    if (tokens.length === 1) return tokens[0].slice(0, 2).toUpperCase();
+    return (tokens[0][0] + tokens[tokens.length - 1][0]).toUpperCase();
+  }
+  function initialsAvatarHtml(item) {
+    if (item.source === "bluesky") return "";
+    if (item.source === "youtube") return "";
+    // Don't add the initials avatar if the card already shows a
+    // thumbnail — would compete visually.
+    if (item.thumbnail) return "";
+    const initials = escapeHtml(_initialsFromAuthor(item.author));
+    return `<div class="initials-avatar src-tint-${escapeHtml(item.source)}" aria-hidden="true">${initials}</div>`;
+  }
+
   function bylineIconHtml(item) {
     // Bluesky cards: use the post author's avatar (the user's identity).
     // Live items carry author_avatar from the AppView response; archive
@@ -184,9 +216,9 @@
     return `<img class="byline-favicon" src="${escapeHtml(src)}" alt="" loading="lazy" onerror="this.style.display='none'">`;
   }
 
-  // Fix E: linkify bare http(s) URLs in plain text. Conservative regex —
-  // must start with http:// or https://. Returns innerHTML-safe markup;
-  // callers must NOT also escape the result.
+  // Fix E (previous PR): linkify bare http(s) URLs in plain text.
+  // Conservative regex — must start with http:// or https://. Returns
+  // innerHTML-safe markup; callers must NOT also escape the result.
   const _URL_RE = /\bhttps?:\/\/[^\s<>()"']+[^\s<>()"',.;:!?]/g;
   function linkifyEscaped(plain) {
     if (!plain) return "";
@@ -194,6 +226,85 @@
     return escaped.replace(_URL_RE, (m) =>
       `<a class="inline-url" href="${m}" target="_blank" rel="noopener noreferrer">${m}</a>`
     );
+  }
+
+  // Fix B2: regex fallback for @-mentions. The handle pattern matches
+  // {label}.bsky.social or any *.{tld} the AppView shows on Bluesky
+  // (custom domains like @marc.bsky.team). Restricted to alphanumerics,
+  // dots, and dashes so it doesn't slurp punctuation. Only used when
+  // record.facets isn't available.
+  const _MENTION_RE = /@([a-z0-9](?:[a-z0-9.\-]*[a-z0-9])?\.[a-z][a-z0-9.\-]*[a-z])/gi;
+  function linkifyMentionsEscaped(linkedHtml) {
+    // linkedHtml is the OUTPUT of linkifyEscaped — it may contain
+    // existing <a class="inline-url"> tags for URLs. We only want to
+    // wrap @mentions in spans that are NOT already inside an anchor.
+    // Cheap and good enough: split on existing anchor tags, transform
+    // only the non-anchor segments. This avoids accidentally wrapping
+    // an @-sign that's part of a URL's query string.
+    return linkedHtml.replace(
+      /(<a [^>]*>[\s\S]*?<\/a>)|([^<]+)/g,
+      (_, anchor, plain) => {
+        if (anchor) return anchor;
+        return plain.replace(
+          _MENTION_RE,
+          (full, handle) =>
+            `<a class="inline-mention" href="https://bsky.app/profile/${handle}" target="_blank" rel="noopener noreferrer">@${handle}</a>`
+        );
+      }
+    );
+  }
+
+  // Fix B2 (preferred path): use Bluesky's record.facets to render
+  // @mentions and #tags with the canonical did/uri the server gives us.
+  // Falls through to URL + regex-mention linkify when no usable mention
+  // facet is found.
+  function renderBlueskyRichText(text, facets) {
+    if (!text) return "";
+    const linkedUrls = linkifyEscaped(text);
+    const mentionFacets = (facets || []).filter((f) =>
+      (f.features || []).some((feat) =>
+        (feat.$type || "").includes("richtext.facet#mention")
+      )
+    );
+    if (!mentionFacets.length) {
+      // No facets — fall back to the regex-based mention linkifier.
+      return linkifyMentionsEscaped(linkedUrls);
+    }
+    // Facets carry byteStart/byteEnd into the UTF-8 text. Easiest correct
+    // approach: walk facets sorted by byteStart, slice the original UTF-8
+    // text via TextEncoder/TextDecoder, build the HTML piecewise.
+    const enc = new TextEncoder();
+    const dec = new TextDecoder();
+    const bytes = enc.encode(text);
+    const ranges = mentionFacets
+      .map((f) => {
+        const feat = (f.features || []).find((x) =>
+          (x.$type || "").includes("richtext.facet#mention")
+        );
+        return {
+          start: f.index.byteStart,
+          end: f.index.byteEnd,
+          did: feat && feat.did ? feat.did : "",
+        };
+      })
+      .filter((r) => r.did && r.end > r.start)
+      .sort((a, b) => a.start - b.start);
+
+    let out = "";
+    let cursor = 0;
+    for (const r of ranges) {
+      // Plain segment before this mention.
+      const before = dec.decode(bytes.slice(cursor, r.start));
+      out += linkifyEscaped(before);
+      // Mention segment.
+      const mentionText = dec.decode(bytes.slice(r.start, r.end)); // e.g. "@johnhollinger.bsky.social"
+      out += `<a class="inline-mention" href="https://bsky.app/profile/${escapeHtml(r.did)}" target="_blank" rel="noopener noreferrer">${escapeHtml(mentionText)}</a>`;
+      cursor = r.end;
+    }
+    // Trailing plain segment.
+    const trailing = dec.decode(bytes.slice(cursor));
+    out += linkifyEscaped(trailing);
+    return out;
   }
 
   // Fix D: Bluesky image grid for live items (server media goes through
@@ -213,6 +324,64 @@
         .join("") +
       `</div>`
     );
+  }
+
+  // Fix B1: render a quoted post inline. Bordered, slightly indented
+  // box that looks like a tweet quote — distinct from the linkCard
+  // (which is an external article preview). Includes the quoted
+  // author, text (rich-text processed), and any images/linkCard inside
+  // the quoted post. Whole box is clickable to the quoted post URL.
+  function renderQuotedPost(qp) {
+    if (!qp) return "";
+    if (qp.missing) {
+      return `<div class="bsky-quoted bsky-quoted-missing">[quoted post unavailable]</div>`;
+    }
+    const avatarHtml = qp.author_avatar
+      ? `<img class="bsky-quoted-avatar" src="${escapeHtml(qp.author_avatar)}" alt="" loading="lazy" onerror="this.style.display='none'">`
+      : `<span class="bsky-quoted-avatar bsky-quoted-avatar-placeholder" aria-hidden="true"></span>`;
+    const handleLine = qp.author_handle
+      ? `<span class="bsky-quoted-handle">@${escapeHtml(qp.author_handle)}</span>`
+      : "";
+    // Rich-text the quoted post's text too (URLs + regex-mention fallback;
+    // we don't have the quoted post's facets here, so no canonical did
+    // links inside the quote — acceptable for v1).
+    const textHtml = linkifyMentionsEscaped(linkifyEscaped(qp.text || ""));
+    // Quoted images: render a compact grid if present and within window.
+    let mediaHtml = "";
+    if (qp.images && qp.images.length) {
+      const shown = qp.images.slice(0, 4);
+      const cls = shown.length > 1 ? "bsky-quoted-images grid" : "bsky-quoted-images";
+      mediaHtml += `<div class="${cls}">` + shown.map((img) =>
+        `<img src="${escapeHtml(img.url)}" alt="${escapeHtml(img.alt)}" loading="lazy">`
+      ).join("") + `</div>`;
+    }
+    // Quoted linkCard inside a quote: render a compact one-line preview.
+    if (qp.linkCard && qp.linkCard.uri) {
+      const lc = qp.linkCard;
+      let host = "";
+      try { host = new URL(lc.uri).hostname.replace(/^www\./, ""); } catch {}
+      mediaHtml += `
+        <div class="bsky-quoted-linkcard">
+          <span class="qlc-title">${escapeHtml(lc.title || lc.uri)}</span>
+          <span class="qlc-host">${escapeHtml(host)}</span>
+        </div>
+      `;
+    }
+    const wrapperOpen = qp.url
+      ? `<a class="bsky-quoted" href="${escapeHtml(qp.url)}" target="_blank" rel="noopener noreferrer">`
+      : `<div class="bsky-quoted">`;
+    const wrapperClose = qp.url ? `</a>` : `</div>`;
+    return `
+      ${wrapperOpen}
+        <div class="bsky-quoted-head">
+          ${avatarHtml}
+          <span class="bsky-quoted-author">${escapeHtml(qp.author)}</span>
+          ${handleLine}
+        </div>
+        <div class="bsky-quoted-text">${textHtml}</div>
+        ${mediaHtml}
+      ${wrapperClose}
+    `;
   }
 
   // Fix C: Bluesky external link-card preview (rich box: thumb +
@@ -264,47 +433,50 @@
       // the author moves into the body byline.
       //
       // Use record.text for the body if present; the "title" field is
-      // just the first line truncated. Linkify URLs in the body.
+      // just the first line truncated. Linkify URLs + @mentions.
       const bodyText = item.text || item.title || "";
       topRowHtml = `
         <div class="top">
-          <span class="src-badge src-${escapeHtml(source)}">
-            <span class="dot"></span>${escapeHtml(source)}
-          </span>
+          ${sourceBadgeHtml(source)}
           ${liveFlag}
-          <span class="when">${escapeHtml(relativeTime(item.published_at))}</span>
+          ${timestampHtml(item)}
         </div>
       `;
-      const avatarHtml = item.author_avatar
+      // Fix A2: avatar + author both link to bsky.app/profile/{handle}.
+      // The handle is captured separately from the display name; falls
+      // back to the post URL for archive items that don't have it.
+      const profileUrl = item.author_handle
+        ? `https://bsky.app/profile/${item.author_handle}`
+        : (item.url || "#");
+      const avatarImg = item.author_avatar
         ? `<img class="bsky-avatar" src="${escapeHtml(item.author_avatar)}" alt="" loading="lazy" onerror="this.style.display='none'">`
         : `<span class="bsky-avatar bsky-avatar-placeholder" aria-hidden="true"></span>`;
-      const linkedText = linkifyEscaped(bodyText);
+      const linkedText = renderBlueskyRichText(bodyText, item.facets);
       bodyHtml = `
         <div class="bsky-body">
-          ${avatarHtml}
+          <a class="bsky-avatar-link" href="${escapeHtml(profileUrl)}" target="_blank" rel="noopener noreferrer">${avatarImg}</a>
           <div class="bsky-body-text">
-            <a class="bsky-author" href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener">${escapeHtml(author)}</a><span class="bsky-author-sep">:</span>
+            <a class="bsky-author" href="${escapeHtml(profileUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(author)}</a><span class="bsky-author-sep">:</span>
             <span class="bsky-text">${linkedText}</span>
           </div>
         </div>
         ${renderBlueskyMedia(item)}
         ${renderBlueskyImagesLive(item)}
         ${renderBlueskyLinkCard(item)}
+        ${renderQuotedPost(item.quotedPost)}
       `;
     } else if (source === "youtube") {
       topRowHtml = `
         <div class="top">
-          <span class="src-badge src-${escapeHtml(source)}">
-            <span class="dot"></span>${escapeHtml(source)}
-          </span>
+          ${sourceBadgeHtml(source)}
           ${liveFlag}
           ${bylineIcon}
-          <span class="author">${escapeHtml(author)}</span>
-          <span class="when">${escapeHtml(relativeTime(item.published_at))}</span>
+          ${outletAuthorHtml(item)}
+          ${timestampHtml(item)}
         </div>
       `;
       bodyHtml = `
-        <div class="title"><a href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener">${escapeHtml(titleText)}</a></div>
+        <div class="title"><a href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener noreferrer">${escapeHtml(titleText)}</a></div>
         ${renderYoutubeEmbed(item, withinMediaWindow(item.published_at))}
         ${excerpt}
       `;
@@ -312,20 +484,30 @@
       // Reddit, Google News, Substack — link-out headline + small thumb.
       topRowHtml = `
         <div class="top">
-          <span class="src-badge src-${escapeHtml(source)}">
-            <span class="dot"></span>${escapeHtml(source)}
-          </span>
+          ${sourceBadgeHtml(source)}
           ${liveFlag}
           ${bylineIcon}
-          <span class="author">${escapeHtml(author)}</span>
-          <span class="when">${escapeHtml(relativeTime(item.published_at))}</span>
+          ${outletAuthorHtml(item)}
+          ${timestampHtml(item)}
         </div>
       `;
-      bodyHtml = `
-        <div class="title"><a href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener">${escapeHtml(titleText)}</a></div>
-        ${renderSmallThumb(item)}
-        ${excerpt}
-      `;
+      // Fix A6: initials avatar when the card has no thumbnail.
+      const initials = initialsAvatarHtml(item);
+      bodyHtml = initials
+        ? `
+          <div class="card-body-with-avatar">
+            ${initials}
+            <div class="card-body-main">
+              <div class="title"><a href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener noreferrer">${escapeHtml(titleText)}</a></div>
+              ${excerpt}
+            </div>
+          </div>
+        `
+        : `
+          <div class="title"><a href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener noreferrer">${escapeHtml(titleText)}</a></div>
+          ${renderSmallThumb(item)}
+          ${excerpt}
+        `;
     }
 
     const card = document.createElement("article");
@@ -349,7 +531,40 @@
           `<iframe src="https://www.youtube.com/embed/${encodeURIComponent(vid)}?autoplay=1&rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
       });
     }
+    // Fix A1: source badge filters the feed to that source on click.
+    const badge = card.querySelector(".src-badge[data-clickable]");
+    if (badge) {
+      badge.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (window.NCS && typeof window.NCS._setSourceOnly === "function") {
+          window.NCS._setSourceOnly(badge.dataset.source);
+        }
+      });
+    }
     return card;
+  }
+
+  // Fix A1: badge is a button-styled span that calls _setSourceOnly.
+  function sourceBadgeHtml(source) {
+    return `<span class="src-badge src-${escapeHtml(source)}" data-clickable data-source="${escapeHtml(source)}" role="button" tabindex="0" title="Filter feed to ${escapeHtml(source)} only"><span class="dot"></span>${escapeHtml(source)}</span>`;
+  }
+
+  // Fix A3: outlet/channel name links to its homepage when derivable.
+  function outletAuthorHtml(item) {
+    const author = item.author || "";
+    if (!author) return "";
+    const url = _outletHomepageUrl(item);
+    if (!url) return `<span class="author">${escapeHtml(author)}</span>`;
+    return `<a class="author" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" title="Open ${escapeHtml(_itemHostname(item))}">${escapeHtml(author)}</a>`;
+  }
+
+  // Fix A4: timestamp links to the original post/article.
+  function timestampHtml(item) {
+    const when = relativeTime(item.published_at);
+    if (!item.url) {
+      return `<span class="when">${escapeHtml(when)}</span>`;
+    }
+    return `<a class="when" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer" title="Open original">${escapeHtml(when)}</a>`;
   }
 
   // ---------------------------------------------------------------------
@@ -440,6 +655,23 @@
       onChange(state);
     }
 
+    // Fix A1: expose a single-source setter so a card's source badge can
+    // narrow the filter to that source on click. Mirrors the effect of
+    // clicking the source pill, but as a programmatic call. Multiple
+    // attached pill-sets are not expected on one page; if they were,
+    // the last one wins, which is fine.
+    window.NCS = window.NCS || {};
+    window.NCS._setSourceOnly = function (source) {
+      state.clear();
+      state.add(source);
+      sync();
+      // Scroll the pill bar into view so the user can see what changed.
+      const el = pills[source];
+      if (el && el.scrollIntoView) {
+        el.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+      }
+    };
+
     allPill.addEventListener("click", () => {
       if (state.size === sources.length) {
         state.clear();
@@ -516,6 +748,68 @@
     return "bs-" + encodeURIComponent(path);
   }
 
+  // Build a public bsky.app URL for an AT-URI quoted record. The URI
+  // shape is at://<did>/app.bsky.feed.post/<rkey>; the public viewer
+  // accepts either the did or the handle as the profile segment.
+  function _quotedPostUrl(quotedUri, handleFallback) {
+    if (!quotedUri || !quotedUri.startsWith("at://")) return "";
+    const rest = quotedUri.slice(5); // strip at://
+    const parts = rest.split("/");
+    if (parts.length < 3) return "";
+    const did = parts[0];
+    const rkey = parts[parts.length - 1];
+    const profile = handleFallback || did;
+    return `https://bsky.app/profile/${profile}/post/${rkey}`;
+  }
+
+  // Fix B1: extract the quoted post payload from a record#view, in
+  // either its standalone or recordWithMedia form. Returns a normalized
+  // object the renderer consumes, or a {missing: true} sentinel for the
+  // viewNotFound/viewBlocked variants so the renderer can show a
+  // placeholder instead of crashing.
+  function _extractQuotedPost(recordView) {
+    if (!recordView) return null;
+    const t = recordView.$type || "";
+    if (t.includes("viewNotFound") || t.includes("viewBlocked") || t.includes("viewDetached")) {
+      return { missing: true };
+    }
+    const author = recordView.author || {};
+    const value = recordView.value || {};
+    const text = value.text || "";
+    // Quoted-post embeds are nested in recordView.embeds (an array of
+    // view objects). Walk it for images / external link card.
+    let images = null;
+    let linkCard = null;
+    for (const e of recordView.embeds || []) {
+      const et = e.$type || "";
+      if (!images && et.includes("app.bsky.embed.images")) {
+        images = (e.images || [])
+          .map((im) => ({ url: im.fullsize || im.thumb || "", alt: im.alt || "" }))
+          .filter((im) => im.url);
+      } else if (!linkCard && et.includes("app.bsky.embed.external")) {
+        const ext = e.external || {};
+        if (ext.uri) {
+          linkCard = {
+            uri: ext.uri,
+            title: ext.title || "",
+            description: ext.description || "",
+            thumb: ext.thumb || null,
+          };
+        }
+      }
+    }
+    return {
+      author: author.displayName || author.handle || "",
+      author_handle: author.handle || "",
+      author_avatar: author.avatar || null,
+      text: text,
+      timestamp: value.createdAt || recordView.indexedAt || null,
+      url: _quotedPostUrl(recordView.uri, author.handle),
+      images: images,
+      linkCard: linkCard,
+    };
+  }
+
   async function bskyLiveItems(maxPosts) {
     const out = [];
     // Poll EVERY handle in the committed CSV. The CSV is sorted
@@ -562,16 +856,17 @@
         const tags = tagger.detectEntitiesSync(text);
 
         // Bluesky embed shapes from the public AppView. We render:
-        //   app.bsky.embed.images#view       -> grid of poster's images
-        //   app.bsky.embed.external#view     -> link-card preview
-        //   app.bsky.embed.recordWithMedia   -> inner .media is one of above
-        // Capture whichever is present (the inner shape for
-        // recordWithMedia) so renderCard can build the rich preview.
+        //   app.bsky.embed.images#view             -> grid of poster's images
+        //   app.bsky.embed.external#view           -> link-card preview
+        //   app.bsky.embed.record#view             -> quote-post (no media)
+        //   app.bsky.embed.recordWithMedia#view    -> quote + media
+        //   app.bsky.embed.record#viewNotFound     -> deleted/blocked quoted
+        // For recordWithMedia: media lives in embed.media; the quoted
+        // record lives in embed.record.record.
         const embed = post.embed || {};
         const embedType = embed.$type || "";
-        const mediaView = embedType.includes("recordWithMedia")
-          ? (embed.media || {})
-          : embed;
+        const isRecordWithMedia = embedType.includes("recordWithMedia");
+        const mediaView = isRecordWithMedia ? (embed.media || {}) : embed;
         const mediaViewType = mediaView.$type || "";
         let images = null;
         let linkCard = null;
@@ -594,6 +889,19 @@
           }
         }
 
+        // Fix B1: quote post. Either a record-only embed (the post is
+        // just a quote with no media) or recordWithMedia (quote + media).
+        // The shape changes slightly between the two: in record#view
+        // the quoted record is in embed.record; in recordWithMedia#view
+        // it's in embed.record.record.
+        let quotedPost = null;
+        const recordView = isRecordWithMedia
+          ? (embed.record && embed.record.record) || null
+          : (embedType.includes("app.bsky.embed.record") ? embed.record : null);
+        if (recordView) {
+          quotedPost = _extractQuotedPost(recordView);
+        }
+
         out.push({
           id: _atUriToId(post.uri),
           source: "bluesky",
@@ -602,8 +910,16 @@
           // Full post text for the body, regardless of length. Bluesky
           // posts max out at 300 graphemes anyway.
           text: text,
+          // Fix B2: facets carry the canonical did for each @mention so
+          // we can build https://bsky.app/profile/<did> links without
+          // guessing. Falls back to regex linkify if facets is absent.
+          facets: record.facets || null,
           url: `https://bsky.app/profile/${handle}/post/${rkey}`,
           author: author.displayName || handle,
+          // Fix A2: store the actual handle separately from the display
+          // name. The body byline links to bsky.app/profile/{handle},
+          // and the display name can be anything.
+          author_handle: handle,
           // The AppView exposes a CDN URL at author.avatar. Captured
           // here so renderCard's bylineIconHtml shows a small circular
           // avatar next to the byline. Archive items don't carry this
@@ -614,6 +930,7 @@
           author_avatar: author.avatar || null,
           images: images,
           linkCard: linkCard,
+          quotedPost: quotedPost,
           thumbnail: null,
           body_excerpt: text.length > 80 ? text : null,
           players: tags.players,
