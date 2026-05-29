@@ -205,8 +205,26 @@ input[type=text]:focus,select:focus{
   width:1rem; height:1rem; border-radius:3px; object-fit:contain;
   display:inline-block; vertical-align:middle;
 }
-.card .author{ color:var(--text-secondary); font-weight:400; font-size:.62rem }
-.card .when{ color:var(--text-secondary); margin-left:auto; font-weight:400; font-size:.6rem }
+/* Fix A1: source badge is clickable. Pointer cursor + subtle hover so
+   discoverability is obvious without screaming. */
+.card .src-badge[data-clickable]{ cursor:pointer; transition:opacity .15s }
+.card .src-badge[data-clickable]:hover{ opacity:.7 }
+.card .src-badge[data-clickable]:focus-visible{
+  outline:2px solid var(--accent); outline-offset:2px;
+}
+/* Fix A3: outlet/channel name is now an <a>; keep the muted look. */
+.card .author{
+  color:var(--text-secondary); font-weight:400; font-size:.62rem;
+  text-decoration:none;
+}
+a.author:hover{ color:var(--text); text-decoration:underline }
+/* Fix A4: timestamp links to the original post; keep the muted look
+   and put a subtle underline on hover so the affordance is visible. */
+.card .when{
+  color:var(--text-secondary); margin-left:auto;
+  font-weight:400; font-size:.6rem; text-decoration:none;
+}
+a.when:hover{ color:var(--text); text-decoration:underline }
 /* Fix A: headline is now the visual anchor — bigger, heavier, fully
    inked, with comfortable line-height. */
 .card .title{
@@ -269,16 +287,23 @@ input[type=text]:focus,select:focus{
 .bsky-body-text .inline-url:hover,
 .card .inline-url:hover{ text-decoration:underline }
 
+/* Fix A5: single image renders at natural aspect ratio (capped tall);
+   grid uses aspect-ratio:1 per cell so the bottom row isn't clipped by
+   the previous overflow:hidden + fixed max-height combination. */
 .bsky-images{ display:block; margin:.4rem 0; }
+.bsky-images a{ display:block }
 .bsky-images img{
-  display:block; max-width:100%; max-height:24rem;
-  border-radius:8px; object-fit:cover;
+  display:block; max-width:100%; max-height:28rem;
+  border-radius:8px; object-fit:contain;
+  background:var(--surface-hover);
 }
 .bsky-images.grid{
-  display:grid; grid-template-columns:1fr 1fr; gap:.3rem;
-  max-height:18rem; overflow:hidden;
+  display:grid; grid-template-columns:1fr 1fr; gap:.35rem;
 }
-.bsky-images.grid img{ width:100%; height:9rem; }
+.bsky-images.grid img{
+  width:100%; height:auto; aspect-ratio:1/1; object-fit:cover;
+  max-height:none;
+}
 
 .bsky-video{
   position:relative; display:block; margin:.4rem 0;
@@ -382,6 +407,106 @@ input[type=text]:focus,select:focus{
 .rss-thumb img{
   float:right; width:6.5rem; height:4.5rem; object-fit:cover;
   border-radius:6px; margin:0 0 .4rem .8rem;
+}
+
+/* Fix A2: avatar link wrapper on Bluesky cards keeps the image inline
+   without underline artifacts. The hover lightens the avatar slightly. */
+.bsky-avatar-link{
+  display:flex; flex:0 0 auto; text-decoration:none;
+}
+.bsky-avatar-link:hover .bsky-avatar{ opacity:.85 }
+/* Fix B2: linked @-mentions in Bluesky body + quoted post text. Same
+   accent color as inline URLs but bolder weight to mark the identity. */
+.inline-mention{
+  color:var(--accent); text-decoration:none; font-weight:500;
+}
+.inline-mention:hover{ text-decoration:underline }
+
+/* Fix A6: initials-avatar fallback for non-Bluesky cards with no
+   thumbnail. Renders as a small circular block to the left of the
+   headline; source-tinted background, source-tinted ink. The
+   card-body-with-avatar wrapper keeps the headline + excerpt aligned
+   to the right of the avatar. */
+.card-body-with-avatar{
+  display:flex; align-items:flex-start; gap:.7rem;
+}
+.card-body-main{ flex:1 1 auto; min-width:0 }
+.initials-avatar{
+  flex:0 0 auto; width:2.4rem; height:2.4rem; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'DM Sans',sans-serif; font-weight:700; font-size:.85rem;
+  letter-spacing:.02em; user-select:none;
+}
+.initials-avatar.src-tint-reddit     { background:rgba(255,69,0,.14);    color:var(--src-reddit) }
+.initials-avatar.src-tint-google-news{ background:rgba(26,115,232,.14);  color:var(--src-google-news) }
+.initials-avatar.src-tint-substack   { background:rgba(255,103,25,.14);  color:var(--src-substack) }
+
+/* Fix B1: quoted-post inline box. Bordered, slightly inset, lighter
+   surface; readable but visually subordinate to the parent post. The
+   whole box is a clickable <a> that opens the quoted post on bsky.app. */
+.bsky-quoted{
+  display:block; margin:.5rem 0;
+  border:1px solid var(--border); border-radius:10px;
+  padding:.6rem .7rem;
+  background:var(--bg);
+  text-decoration:none; color:var(--text);
+  transition:.15s;
+}
+.bsky-quoted:hover{ border-color:var(--accent); text-decoration:none }
+.bsky-quoted-missing{
+  font-family:'JetBrains Mono',monospace; font-size:.7rem;
+  color:var(--text-secondary); padding:.5rem .7rem; font-style:italic;
+}
+.bsky-quoted-head{
+  display:flex; align-items:center; gap:.4rem; margin-bottom:.3rem;
+}
+.bsky-quoted-avatar{
+  width:1.4rem; height:1.4rem; border-radius:50%; object-fit:cover;
+  display:block; background:var(--surface-hover);
+  flex:0 0 auto;
+}
+.bsky-quoted-avatar-placeholder{ display:inline-block }
+.bsky-quoted-author{
+  font-weight:650; font-size:.8rem; color:var(--text);
+}
+.bsky-quoted-handle{
+  font-size:.7rem; color:var(--text-secondary);
+  font-family:'JetBrains Mono',monospace;
+}
+.bsky-quoted-text{
+  font-size:.85rem; line-height:1.4; color:var(--text);
+  white-space:pre-wrap; word-wrap:break-word; overflow-wrap:break-word;
+}
+.bsky-quoted-images{
+  display:block; margin:.4rem 0 0;
+}
+.bsky-quoted-images img{
+  display:block; max-width:100%; max-height:14rem;
+  border-radius:6px; object-fit:contain; background:var(--surface-hover);
+}
+.bsky-quoted-images.grid{
+  display:grid; grid-template-columns:1fr 1fr; gap:.25rem;
+}
+.bsky-quoted-images.grid img{
+  width:100%; height:auto; aspect-ratio:1/1; object-fit:cover;
+  max-height:none;
+}
+.bsky-quoted-linkcard{
+  margin-top:.35rem; padding:.35rem .5rem;
+  border:1px solid var(--border); border-radius:6px;
+  background:var(--surface);
+  display:flex; align-items:center; gap:.5rem;
+  font-size:.72rem;
+}
+.bsky-quoted-linkcard .qlc-title{
+  font-weight:600; color:var(--text);
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  flex:1 1 auto; min-width:0;
+}
+.bsky-quoted-linkcard .qlc-host{
+  font-family:'JetBrains Mono',monospace; font-size:.62rem;
+  color:var(--text-secondary); text-transform:uppercase;
+  letter-spacing:.05em;
 }
 
 .empty{
