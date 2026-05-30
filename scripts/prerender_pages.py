@@ -141,6 +141,9 @@ def _render_page(kind: str, slug: str, name: str, count: int) -> str:
     <div id="chart"></div>
   </div>
 
+  <!-- Fix 5: trending nav rail populated client-side from manifest.json -->
+  <nav class="nav-rail" id="nav-rail" aria-label="Trending players and teams"></nav>
+
   <div class="summary" id="summary">loading…</div>
   <div class="feed" id="feed"></div>
   <div class="empty" id="empty" style="display:none">No mentions in the rolling window.</div>

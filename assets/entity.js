@@ -118,6 +118,36 @@
   // Bootstrap
   // ---------------------------------------------------------------------
 
+  // Fix 5: trending players + teams nav rail. Rendered client-side
+  // from manifest.json so we don't have to re-bake all 68 entity HTML
+  // files every cycle. Each pill is a link to that entity's page.
+  function renderNavRail(manifest) {
+    const railEl = document.getElementById("nav-rail");
+    if (!railEl) return;
+    // Manifest already lists players + teams sorted by content count
+    // desc. Take the top N of each excluding the current entity so the
+    // user always sees other places to jump to.
+    const TOP_N = 8;
+    const players = (manifest.players || [])
+      .filter((p) => !(KIND === "player" && p.slug === SLUG))
+      .slice(0, TOP_N);
+    const teams = (manifest.teams || [])
+      .filter((t) => !(KIND === "team" && t.slug === SLUG))
+      .slice(0, TOP_N);
+    const renderPill = (e, kind) =>
+      `<a class="rail-pill rail-pill-${kind}" href="../${kind}s/${ncs.escapeHtml(e.slug)}.html">${ncs.escapeHtml(e.name)}<span class="rail-count">${e.count}</span></a>`;
+    railEl.innerHTML = `
+      <div class="rail-section">
+        <div class="rail-label">Trending players</div>
+        <div class="rail-pills">${players.map((p) => renderPill(p, "player")).join("")}</div>
+      </div>
+      <div class="rail-section">
+        <div class="rail-label">Trending teams</div>
+        <div class="rail-pills">${teams.map((t) => renderPill(t, "team")).join("")}</div>
+      </div>
+    `;
+  }
+
   async function loadArchive() {
     const idxKey = KIND === "player" ? "players" : "teams";
     const [manifest, entityIdx] = await Promise.all([
@@ -132,6 +162,7 @@
       render();
     });
     renderChart(ARCHIVE_ITEMS);
+    renderNavRail(manifest);
     render();
   }
 

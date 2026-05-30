@@ -8,6 +8,38 @@
 
   const C = window.NCS_CONFIG || {};
 
+  // Fix 4: avatar cache for Bluesky cards.
+  //
+  // Root cause: archive Bluesky items (the ones in data/index/*.json)
+  // don't carry author_avatar — the server-side poll_bluesky.py
+  // doesn't capture it and build_indexes._compact_item doesn't pass
+  // anything like it through. Live items DO carry the avatar from
+  // post.author.avatar. On the main feed the live items mask the
+  // archive gap, but on entity pages most cards are archive-filtered
+  // and very few live items match the entity, so the gap is visible.
+  //
+  // The cache is keyed by bluesky handle (the bsky.social-style
+  // identifier we can extract from item.url even for archive items).
+  // bskyLiveItems writes (handle -> avatar_url) for every reporter
+  // seen on each pageload. renderCard reads it as a fallback when
+  // item.author_avatar is missing. After live merge completes,
+  // entity.js re-renders, and archive cards pick up cached avatars.
+  if (!window.NCS_AvatarCache) window.NCS_AvatarCache = new Map();
+  function _cacheBskyAvatar(handle, url) {
+    if (handle && url) window.NCS_AvatarCache.set(handle, url);
+  }
+  function _lookupBskyAvatar(handle) {
+    return handle ? window.NCS_AvatarCache.get(handle) || null : null;
+  }
+  // Extract handle from a Bluesky post URL — works on both live and
+  // archive items because both carry the public bsky.app URL.
+  const _BSKY_HANDLE_FROM_URL_RE = /https?:\/\/bsky\.app\/profile\/([^/]+)\/post\//;
+  function _handleFromBskyUrl(url) {
+    if (!url) return "";
+    const m = _BSKY_HANDLE_FROM_URL_RE.exec(url);
+    return m ? m[1] : "";
+  }
+
   // ---------------------------------------------------------------------
   // Time formatting
   // ---------------------------------------------------------------------
@@ -260,50 +292,62 @@
   // facet is found.
   function renderBlueskyRichText(text, facets) {
     if (!text) return "";
-    const linkedUrls = linkifyEscaped(text);
-    const mentionFacets = (facets || []).filter((f) =>
-      (f.features || []).some((feat) =>
-        (feat.$type || "").includes("richtext.facet#mention")
-      )
-    );
-    if (!mentionFacets.length) {
-      // No facets — fall back to the regex-based mention linkifier.
-      return linkifyMentionsEscaped(linkedUrls);
+    // Build a unified facet range list. Each entry has {start, end,
+    // kind, target} where kind is "mention"|"link" and target is the
+    // did (for mentions) or the canonical URI (for links). #link
+    // facets are critical for posts where Bluesky displays a truncated
+    // URL ("youtu.be/w-U3...") that doesn't match the bare-URL regex —
+    // without the facet, those segments stay un-clickable. We process
+    // mentions and links in the same byte-range pass.
+    const ranges = [];
+    for (const f of facets || []) {
+      const feats = f.features || [];
+      const mention = feats.find((x) => (x.$type || "").includes("richtext.facet#mention"));
+      const link = feats.find((x) => (x.$type || "").includes("richtext.facet#link"));
+      if (mention && mention.did && f.index && f.index.byteEnd > f.index.byteStart) {
+        ranges.push({
+          start: f.index.byteStart, end: f.index.byteEnd,
+          kind: "mention", target: mention.did,
+        });
+      } else if (link && link.uri && f.index && f.index.byteEnd > f.index.byteStart) {
+        ranges.push({
+          start: f.index.byteStart, end: f.index.byteEnd,
+          kind: "link", target: link.uri,
+        });
+      }
     }
-    // Facets carry byteStart/byteEnd into the UTF-8 text. Easiest correct
-    // approach: walk facets sorted by byteStart, slice the original UTF-8
-    // text via TextEncoder/TextDecoder, build the HTML piecewise.
+    if (!ranges.length) {
+      // No usable facets — regex-only path: linkify bare URLs first,
+      // then linkify @mentions in the still-plain segments.
+      return linkifyMentionsEscaped(linkifyEscaped(text));
+    }
+    // Sort and walk the byte ranges, slicing the original UTF-8 text
+    // with TextEncoder/Decoder so multibyte chars don't break indices.
+    ranges.sort((a, b) => a.start - b.start);
     const enc = new TextEncoder();
     const dec = new TextDecoder();
     const bytes = enc.encode(text);
-    const ranges = mentionFacets
-      .map((f) => {
-        const feat = (f.features || []).find((x) =>
-          (x.$type || "").includes("richtext.facet#mention")
-        );
-        return {
-          start: f.index.byteStart,
-          end: f.index.byteEnd,
-          did: feat && feat.did ? feat.did : "",
-        };
-      })
-      .filter((r) => r.did && r.end > r.start)
-      .sort((a, b) => a.start - b.start);
-
     let out = "";
     let cursor = 0;
     for (const r of ranges) {
-      // Plain segment before this mention.
+      if (r.start < cursor) continue; // skip overlapping/malformed
+      // Plain segment before this facet: still pass through the
+      // URL + mention regex linkify so any plain URLs not in the
+      // facet list also get caught.
       const before = dec.decode(bytes.slice(cursor, r.start));
-      out += linkifyEscaped(before);
-      // Mention segment.
-      const mentionText = dec.decode(bytes.slice(r.start, r.end)); // e.g. "@johnhollinger.bsky.social"
-      out += `<a class="inline-mention" href="https://bsky.app/profile/${escapeHtml(r.did)}" target="_blank" rel="noopener noreferrer">${escapeHtml(mentionText)}</a>`;
+      out += linkifyMentionsEscaped(linkifyEscaped(before));
+      const segment = dec.decode(bytes.slice(r.start, r.end));
+      if (r.kind === "mention") {
+        out += `<a class="inline-mention" href="https://bsky.app/profile/${escapeHtml(r.target)}" target="_blank" rel="noopener noreferrer">${escapeHtml(segment)}</a>`;
+      } else {
+        // #link facet — segment is the display text (potentially
+        // truncated with an ellipsis); target is the canonical URI.
+        out += `<a class="inline-url" href="${escapeHtml(r.target)}" target="_blank" rel="noopener noreferrer">${escapeHtml(segment)}</a>`;
+      }
       cursor = r.end;
     }
-    // Trailing plain segment.
     const trailing = dec.decode(bytes.slice(cursor));
-    out += linkifyEscaped(trailing);
+    out += linkifyMentionsEscaped(linkifyEscaped(trailing));
     return out;
   }
 
@@ -324,6 +368,35 @@
         .join("") +
       `</div>`
     );
+  }
+
+  // Fix 1: Bluesky native video. Render the thumbnail with a play
+  // overlay; click opens the post on bsky.app where Bluesky's own
+  // HLS player handles playback. We do NOT load an HLS library or
+  // try to stream .m3u8 client-side. 48h gated.
+  function renderBlueskyVideoLive(item) {
+    const v = item.video;
+    if (!v || (!v.thumbnail && !v.playlist)) return "";
+    if (!withinMediaWindow(item.published_at)) return "";
+    // Aspect ratio: prefer Bluesky's reported value; fall back to 16/9.
+    let aspect = "16 / 9";
+    if (v.aspectRatio && v.aspectRatio.width && v.aspectRatio.height) {
+      aspect = `${v.aspectRatio.width} / ${v.aspectRatio.height}`;
+    }
+    // Thumbnail: prefer the AppView's still; if missing, show a black
+    // placeholder rather than failing.
+    const thumbAttr = v.thumbnail
+      ? `src="${escapeHtml(v.thumbnail)}"`
+      : `src=""`;
+    return `
+      <a class="bsky-video-link" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer" style="aspect-ratio:${aspect};">
+        <img class="bsky-video-poster" ${thumbAttr} alt="${escapeHtml(v.alt || "")}" loading="lazy" onerror="this.style.display='none'">
+        <span class="bsky-video-play" aria-hidden="true">
+          <svg viewBox="0 0 60 60" width="48" height="48"><circle cx="30" cy="30" r="29" fill="rgba(0,0,0,.55)"/><path d="M24 18 L42 30 L24 42 Z" fill="#fff"/></svg>
+        </span>
+        <span class="bsky-video-hint">▶ Play on Bluesky</span>
+      </a>
+    `;
   }
 
   // Fix B1: render a quoted post inline. Bordered, slightly indented
@@ -435,21 +508,37 @@
       // Use record.text for the body if present; the "title" field is
       // just the first line truncated. Linkify URLs + @mentions.
       const bodyText = item.text || item.title || "";
+      // Fix 3: explicit attribution link in the meta row of every
+      // Bluesky card. Same target as the timestamp (the post URL) but
+      // with literal "View on Bluesky →" text so attribution is
+      // unambiguous and discoverable. Other sources don't need the
+      // equivalent because their headline IS the click-through.
+      const viewOnBluesky = item.url
+        ? `<a class="view-on-source" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">View on Bluesky →</a>`
+        : "";
       topRowHtml = `
         <div class="top">
           ${sourceBadgeHtml(source)}
           ${liveFlag}
           ${timestampHtml(item)}
+          ${viewOnBluesky}
         </div>
       `;
       // Fix A2: avatar + author both link to bsky.app/profile/{handle}.
-      // The handle is captured separately from the display name; falls
-      // back to the post URL for archive items that don't have it.
-      const profileUrl = item.author_handle
-        ? `https://bsky.app/profile/${item.author_handle}`
+      // The handle is captured separately on live items; for archive
+      // items we extract it from the public bsky.app URL.
+      const bskyHandle = item.author_handle || _handleFromBskyUrl(item.url);
+      const profileUrl = bskyHandle
+        ? `https://bsky.app/profile/${bskyHandle}`
         : (item.url || "#");
-      const avatarImg = item.author_avatar
-        ? `<img class="bsky-avatar" src="${escapeHtml(item.author_avatar)}" alt="" loading="lazy" onerror="this.style.display='none'">`
+      // Fix 4: archive items don't carry author_avatar. Fall back to
+      // the handle-keyed avatar cache populated by bskyLiveItems on
+      // this pageload. The cache is empty on first render and fills
+      // during liveMerge; entity.js re-renders afterwards so the
+      // archive cards pick up the avatars then.
+      const avatarUrl = item.author_avatar || _lookupBskyAvatar(bskyHandle);
+      const avatarImg = avatarUrl
+        ? `<img class="bsky-avatar" src="${escapeHtml(avatarUrl)}" alt="" loading="lazy" onerror="this.style.display='none'">`
         : `<span class="bsky-avatar bsky-avatar-placeholder" aria-hidden="true"></span>`;
       const linkedText = renderBlueskyRichText(bodyText, item.facets);
       bodyHtml = `
@@ -462,6 +551,7 @@
         </div>
         ${renderBlueskyMedia(item)}
         ${renderBlueskyImagesLive(item)}
+        ${renderBlueskyVideoLive(item)}
         ${renderBlueskyLinkCard(item)}
         ${renderQuotedPost(item.quotedPost)}
       `;
@@ -870,6 +960,7 @@
         const mediaViewType = mediaView.$type || "";
         let images = null;
         let linkCard = null;
+        let video = null;
         if (mediaViewType.includes("app.bsky.embed.images")) {
           images = (mediaView.images || [])
             .map((im) => ({
@@ -885,6 +976,22 @@
               title: ext.title || "",
               description: ext.description || "",
               thumb: ext.thumb || null,
+            };
+          }
+        } else if (mediaViewType.includes("app.bsky.embed.video")) {
+          // Fix 1: Bluesky native video. The AppView's video#view shape:
+          //   { cid, playlist (HLS m3u8), thumbnail, aspectRatio, alt? }
+          // We capture the thumbnail + aspect-ratio for rendering, and
+          // the playlist URL strictly for reference — we do NOT play
+          // HLS inline (no hls.js dependency). Click-through to bsky.app
+          // is the legal/sanctioned path; Bluesky's own player handles
+          // playback.
+          if (mediaView.thumbnail || mediaView.playlist) {
+            video = {
+              thumbnail: mediaView.thumbnail || null,
+              playlist: mediaView.playlist || null,
+              aspectRatio: mediaView.aspectRatio || null,
+              alt: mediaView.alt || "",
             };
           }
         }
@@ -930,6 +1037,7 @@
           author_avatar: author.avatar || null,
           images: images,
           linkCard: linkCard,
+          video: video,
           quotedPost: quotedPost,
           thumbnail: null,
           body_excerpt: text.length > 80 ? text : null,
@@ -937,6 +1045,10 @@
           teams: tags.teams,
           _live: true,
         });
+        // Fix 4: stash this reporter's avatar in the cache so any
+        // ARCHIVE Bluesky cards from the same handle (which lack
+        // author_avatar) can fall back to it during renderCard.
+        _cacheBskyAvatar(handle, author.avatar);
       }
     }
     // Sort newest-first and cap. `maxPosts` is now a soft ceiling on
