@@ -151,8 +151,8 @@
     // Cluster C: preload canonical alongside index files. Sets
     // window.NCS_Canonical synchronously available to visualAvatarHtml.
     const [manifest, entityIdx] = await Promise.all([
-      fetch("../data/index/manifest.json").then((r) => r.json()),
-      fetch(`../data/index/${idxKey}/${SLUG}.json`).then((r) => r.json()),
+      fetch(window.NCS_dataUrl("data/index/manifest.json")).then((r) => r.json()),
+      fetch(window.NCS_dataUrl(`data/index/${idxKey}/${SLUG}.json`)).then((r) => r.json()),
       ncs.loadCanonical(),
     ]);
     MANIFEST_SLUGS = ncs.manifestSlugSets(manifest);

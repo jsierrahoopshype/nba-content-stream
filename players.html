@@ -44,7 +44,7 @@
 <script>
 (async function () {
   const ncs = window.NCS;
-  const manifest = await fetch("data/index/manifest.json").then((r) => r.json());
+  const manifest = await fetch(window.NCS_dataUrl("data/index/manifest.json")).then((r) => r.json());
   ncs.attachSearch(
     document.getElementById("q"),
     document.getElementById("suggest"),

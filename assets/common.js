@@ -313,13 +313,9 @@
         return null;
       };
       const players =
-        (await fetchJson("data/canonical/players.json")) ||
-        (await fetchJson("../data/canonical/players.json")) ||
-        {};
+        (await fetchJson(window.NCS_dataUrl("data/canonical/players.json"))) || {};
       const teams =
-        (await fetchJson("data/canonical/teams.json")) ||
-        (await fetchJson("../data/canonical/teams.json")) ||
-        {};
+        (await fetchJson(window.NCS_dataUrl("data/canonical/teams.json"))) || {};
       window.NCS_Canonical = { players, teams };
       return window.NCS_Canonical;
     })();
@@ -343,11 +339,18 @@
     return `https://a.espncdn.com/i/teamlogos/nba/500/${abbrev}.png`;
   }
 
+  // ESPN-hosted NBA league logo. Used as a generic-NBA fallback when
+  // a card has no tagged player or team — better than bare initials
+  // when we have no idea who the story is about.
+  const NBA_LEAGUE_LOGO_URL = "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png";
+
   // Cluster C: visual integration. For a non-Bluesky non-YouTube card
   // with NO thumbnail, prefer (in order):
   //   1. first tagged player's headshot
   //   2. first tagged team's ESPN logo
-  //   3. the initials-avatar fallback (existing behavior)
+  //   3. NBA league logo (generic-NBA fallback)
+  //   4. the initials-avatar fallback (existing behavior, only if the
+  //      league logo also errors)
   // onerror chains gracefully — if the headshot image 404s, the
   // browser hides the img; we still show the initials underneath
   // (rendered into the same slot via a wrapper).
@@ -394,8 +397,9 @@
       const url = teamLogoUrl(firstTeam);
       if (url) return _imgWithFallback(url, initialsHtml, "visual-avatar visual-team-logo");
     }
-    // Nothing tagged — initials only.
-    return initialsHtml;
+    // Nothing tagged — show the generic NBA league logo. Initials
+    // remain the final fallback if the league logo also fails.
+    return _imgWithFallback(NBA_LEAGUE_LOGO_URL, initialsHtml, "visual-avatar visual-league-logo");
   }
 
   function bylineIconHtml(item) {
@@ -996,7 +1000,7 @@
     // returns every row.
     const cap = maxHandles == null ? Infinity : maxHandles;
     try {
-      const resp = await fetch(C.BLUESKY_HANDLES_URL);
+      const resp = await fetch(window.NCS_dataUrl(C.BLUESKY_HANDLES_URL));
       if (!resp.ok) return [];
       const text = await resp.text();
       const lines = text.trim().split("\n");
@@ -1485,7 +1489,7 @@
 
   async function _loadSubstackPublications() {
     try {
-      const resp = await fetch("data/sources/substack_publications.json");
+      const resp = await fetch(window.NCS_dataUrl("data/sources/substack_publications.json"));
       if (!resp.ok) return [];
       const blob = await resp.json();
       const list = blob.publications || [];

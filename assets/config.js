@@ -30,14 +30,36 @@ window.NCS_CONFIG = {
 
   // The Bluesky reporters list, committed in this repo and served by
   // GitHub Pages alongside the rest of the site. Loaded same-origin —
-  // no CORS, no Worker, no HuggingFace dependency. The server-side
-  // poller still pulls the live HF CSV (it runs from GitHub Actions
-  // and has no CORS constraint), so this committed copy is a snapshot
-  // for the browser; it may drift slightly from HF over time. A future
-  // enhancement could have poll_bluesky.py commit a refreshed copy
-  // each cycle to keep them in sync; for v1 a snapshot is fine.
+  // no CORS, no Worker, no HuggingFace dependency. Path is relative to
+  // the site root; resolved through dataUrl() so it works on every
+  // page (root, /players/{slug}.html, project-pages subpath, etc).
   BLUESKY_HANDLES_URL: "data/sources/bluesky_handles.csv",
 
   // Where Bluesky's public AppView lives (CORS-friendly, no proxy needed).
   BLUESKY_APPVIEW_BASE: "https://public.api.bsky.app",
+};
+
+// Derive a site base path so the same JS works on:
+//   - root deploy:      https://example.com/
+//   - subpath deploy:   https://example.com/nba-content-stream/
+//   - any nested page:  /players/{slug}.html, /teams/{slug}.html
+// Without this, a fetch of "data/foo.json" from /players/lebron.html
+// resolves as /players/data/foo.json → 404. Storing an absolute base
+// and prefixing every data path makes fetches work regardless of which
+// page the user is on.
+window.NCS_CONFIG.SITE_BASE = (function () {
+  const path =
+    (typeof window !== "undefined" && window.location && window.location.pathname) || "/";
+  const match = path.match(/^\/([^\/]+)\//);
+  if (match && match[1] !== "players" && match[1] !== "teams") {
+    return "/" + match[1];
+  }
+  return "";
+})();
+
+// Build an absolute-from-root URL for a repo-relative data path.
+// `relativePath` should NOT have a leading slash ("data/foo.json").
+window.NCS_dataUrl = function (relativePath) {
+  const rel = String(relativePath || "").replace(/^\/+/, "");
+  return window.NCS_CONFIG.SITE_BASE + "/" + rel;
 };
