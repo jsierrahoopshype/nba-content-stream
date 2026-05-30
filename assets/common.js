@@ -989,6 +989,57 @@
     return fetch(C.CORS_PROXY_URL + "?url=" + encodeURIComponent(url));
   }
 
+  // Paced batch helper. Splits `items` into chunks of `batchSize`, runs
+  // `fetchFn(item)` in parallel within a chunk, then waits `betweenMs`
+  // before starting the next chunk. Individual failures are swallowed
+  // (returned as null and filtered out) so one slow/broken handle or
+  // feed doesn't poison the whole batch.
+  //
+  // Why pacing matters even though JS Promises are concurrent: firing
+  // 164 fetches at once forces the OS DNS resolver to look up
+  // public.api.bsky.app 164 times in parallel; on home connections
+  // this overruns the resolver cache and most lookups fail with
+  // net::ERR_NAME_NOT_RESOLVED. Likewise, 19 simultaneous Substack
+  // feed fetches through the Worker trip 429s either at CF or at
+  // Substack. Pacing chunks ~250-500ms apart keeps DNS warm and
+  // request rates under the rate limiters.
+  async function pacedBatchFetch(items, batchSize, betweenMs, fetchFn, traceLabel) {
+    const out = [];
+    let succeeded = 0;
+    let failed = 0;
+    for (let i = 0; i < items.length; i += batchSize) {
+      const batch = items.slice(i, i + batchSize);
+      const results = await Promise.all(
+        batch.map((item) =>
+          Promise.resolve()
+            .then(() => fetchFn(item))
+            .catch(() => null)
+        )
+      );
+      for (const r of results) {
+        if (r === null || r === undefined) failed++;
+        else {
+          succeeded++;
+          out.push(r);
+        }
+      }
+      if (traceLabel && window.NCS_DEBUG) {
+        console.debug(traceLabel, {
+          chunk: Math.floor(i / batchSize) + 1,
+          totalChunks: Math.ceil(items.length / batchSize),
+          sent: Math.min(i + batchSize, items.length),
+          total: items.length,
+          succeeded,
+          failed,
+        });
+      }
+      if (i + batchSize < items.length) {
+        await new Promise((r) => setTimeout(r, betweenMs));
+      }
+    }
+    return out;
+  }
+
   // --- Bluesky (handles same-origin, AppView direct) ---
   async function fetchBlueskyHandles(maxHandles) {
     // Loaded same-origin from the committed snapshot at
@@ -1104,24 +1155,24 @@
     // Poll EVERY handle in the committed CSV. The CSV is sorted
     // alphabetically (not by activity), so any sub-sample biases the
     // live feed to whatever reporters happen to be near the top of
-    // the alphabet rather than whoever just posted. Bluesky's public
-    // AppView has no per-IP rate limit at this scale, HTTP/2
-    // multiplexes the requests, and at ~165 handles the wall time
-    // is a couple of seconds.
+    // the alphabet rather than whoever just posted.
     //
-    // To stay polite-ish (and avoid creating 165 simultaneous open
-    // sockets on slow connections), batch into chunks of 50 and run
-    // each batch with Promise.all. The whole run is still well under
-    // 5s for the current 164-handle list.
+    // Chunk size 20 with a 250ms gap between chunks keeps the local
+    // DNS resolver from being asked to look up
+    // public.api.bsky.app 164 times in the same tick — that overran
+    // the resolver on home networks and most fetches failed with
+    // net::ERR_NAME_NOT_RESOLVED. Total wall time at ~8 chunks
+    // × 250ms is ~2s of staggered requests, still well under what a
+    // user would notice on page open.
     const handles = await fetchBlueskyHandles();
     const perHandle = 3;  // each reporter contributes up to 3 recent posts
-    const feeds = [];
-    const BATCH = 50;
-    for (let i = 0; i < handles.length; i += BATCH) {
-      const slice = handles.slice(i, i + BATCH);
-      const batch = await Promise.all(slice.map((h) => fetchBlueskyAuthor(h, perHandle)));
-      feeds.push(...batch);
-    }
+    const feeds = await pacedBatchFetch(
+      handles,
+      20,
+      250,
+      (h) => fetchBlueskyAuthor(h, perHandle),
+      "[NCS-BLUESKY-BATCH]"
+    );
     const tagger = window.NCS_Tagger;
     await tagger.ready();
     // Fix 2 (avatar coverage): walk every fetched feed BEFORE the
@@ -1506,41 +1557,49 @@
     if (!pubs.length) return [];
     const tagger = window.NCS_Tagger;
     await tagger.ready();
-    // Fire publication feeds in parallel — small handful, no need to batch.
-    const results = await Promise.allSettled(
-      pubs.map(async (pub) => {
-        const resp = await _corsProxyFetch(pub.feed);
-        if (!resp.ok) return [];
-        const xml = await resp.text();
-        const entries = _parseRssFeed(xml);
-        const out = [];
-        for (const e of entries) {
-          const link = e.link;
-          if (!link || !e.title) continue;
-          const itemId = _substackItemId(pub.slug, link);
-          if (!itemId) continue;
-          const excerpt = _substackExcerpt(e.description || "");
-          const detectText = excerpt ? `${e.title}\n${excerpt}` : e.title;
-          const tags = tagger.detectEntitiesSync(detectText);
-          out.push({
-            id: itemId,
-            source: "substack",
-            published_at: e.pubDate,
-            title: e.title.trim(),
-            url: link,
-            author: pub.name,
-            thumbnail: null,
-            body_excerpt: excerpt || null,
-            players: tags.players,
-            teams: tags.teams,
-            _live: true,
-          });
-        }
-        return out;
-      })
+    // 19 simultaneous Worker requests to .substack.com feeds tripped
+    // 429 rate limits at either CF or Substack and most feeds came
+    // back empty. Chunks of 4 with a 500ms gap keep the burst under
+    // the limiters; total wall time at ~5 chunks × 500ms is ~2.5s.
+    const fetchOne = async (pub) => {
+      const resp = await _corsProxyFetch(pub.feed);
+      if (!resp.ok) return [];
+      const xml = await resp.text();
+      const entries = _parseRssFeed(xml);
+      const out = [];
+      for (const e of entries) {
+        const link = e.link;
+        if (!link || !e.title) continue;
+        const itemId = _substackItemId(pub.slug, link);
+        if (!itemId) continue;
+        const excerpt = _substackExcerpt(e.description || "");
+        const detectText = excerpt ? `${e.title}\n${excerpt}` : e.title;
+        const tags = tagger.detectEntitiesSync(detectText);
+        out.push({
+          id: itemId,
+          source: "substack",
+          published_at: e.pubDate,
+          title: e.title.trim(),
+          url: link,
+          author: pub.name,
+          thumbnail: null,
+          body_excerpt: excerpt || null,
+          players: tags.players,
+          teams: tags.teams,
+          _live: true,
+        });
+      }
+      return out;
+    };
+    const perPubResults = await pacedBatchFetch(
+      pubs,
+      4,
+      500,
+      fetchOne,
+      "[NCS-SUBSTACK-BATCH]"
     );
     let out = [];
-    for (const r of results) if (r.status === "fulfilled") out.push(...r.value);
+    for (const items of perPubResults) out.push(...items);
     if (maxItems && out.length > maxItems) {
       out.sort((a, b) => (b.published_at || "").localeCompare(a.published_at || ""));
       out = out.slice(0, maxItems);
