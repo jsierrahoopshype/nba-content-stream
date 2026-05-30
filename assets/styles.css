@@ -29,12 +29,12 @@ body{
   background:var(--bg); color:var(--text); min-height:100vh;
   line-height:1.5; -webkit-font-smoothing:antialiased;
 }
-.container{ max-width:1100px; margin:0 auto; padding:1.5rem 1.5rem 4rem }
+.container{ max-width:1100px; margin:0 auto; padding:1.1rem 1.5rem 4rem }
 a{ color:var(--accent); text-decoration:none }
 a:hover{ text-decoration:underline }
 
 /* -------- nav tabs (matches Media Vote Tracker) -------- */
-.tabs{display:flex; gap:.3rem; margin-bottom:1rem; flex-wrap:wrap}
+.tabs{display:flex; gap:.3rem; margin-bottom:.7rem; flex-wrap:wrap}
 .tabs a{
   font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:600;
   padding:.4rem .8rem; border:1px solid var(--border); border-radius:8px;
@@ -45,23 +45,29 @@ a:hover{ text-decoration:underline }
 
 /* -------- header -------- */
 .hdr{display:flex; align-items:baseline; justify-content:space-between;
-     gap:1rem; margin-bottom:.35rem; flex-wrap:wrap}
-.hdr h1{ font-size:1.4rem; font-weight:700; letter-spacing:-.03em }
+     gap:1rem; margin-bottom:.25rem; flex-wrap:wrap}
+.hdr h1{ font-size:1.3rem; font-weight:700; letter-spacing:-.03em }
 .hdr .brand{
   font-family:'JetBrains Mono',monospace; font-size:.7rem;
   color:var(--text-secondary); text-transform:uppercase; letter-spacing:.08em;
 }
-.subtitle{ color:var(--text-secondary); font-size:.9rem;
-           margin-bottom:1.25rem; max-width:60rem }
+.subtitle{ color:var(--text-secondary); font-size:.82rem; line-height:1.4;
+           margin-bottom:.6rem; max-width:46rem }
 
 /* -------- search + filter bar -------- */
+/* Polish-7 (network-burst PR follow-up): compact the main-feed header
+   so the first card sits above the fold on standard laptops.
+   Controls is now a two-column grid on desktop — search input on the
+   left, source-filter pills inline on the right. Stacks back to a
+   single column on mobile via the @media block. */
 .controls{
   position:sticky; top:0; z-index:100; background:var(--bg);
-  padding:.6rem 0 .9rem; margin-bottom:.5rem;
+  padding:.5rem 0 .65rem; margin-bottom:.4rem;
   border-bottom:1px solid var(--border);
+  display:grid; grid-template-columns:1fr auto; gap:.7rem; align-items:end;
 }
-.search-row{display:grid; grid-template-columns:2fr auto; gap:.6rem; align-items:end}
-.search-group{display:flex; flex-direction:column; gap:.3rem; min-width:0; position:relative}
+.search-row{display:grid; grid-template-columns:1fr; gap:.6rem; align-items:end}
+.search-group{display:flex; flex-direction:column; gap:.2rem; min-width:0; position:relative}
 .search-group label{
   font-size:.62rem; color:var(--text-secondary); text-transform:uppercase;
   letter-spacing:.06em; font-weight:600;
@@ -100,11 +106,21 @@ input[type=text]:focus,select:focus{
   color:var(--text-secondary); margin-left:.5rem;
 }
 
-/* source pills */
-.pills{display:flex; gap:.3rem; flex-wrap:wrap; margin-top:.5rem}
+/* source pills — single horizontal row on desktop (inline with the
+   search input), single horizontal scroll row on mobile. nowrap is
+   what keeps the .controls grid alignment from breaking when pills
+   would otherwise wrap to two lines on narrower desktops. */
+.pills{
+  display:flex; gap:.3rem; flex-wrap:nowrap; margin-top:0;
+  overflow-x:auto; padding-bottom:.15rem; max-width:100%;
+  -webkit-overflow-scrolling:touch;
+}
+.pills::-webkit-scrollbar{ height:4px }
+.pills::-webkit-scrollbar-thumb{ background:var(--border); border-radius:2px }
 .pill{
-  font-family:'JetBrains Mono',monospace; font-size:.65rem; font-weight:600;
-  padding:.3rem .7rem; border:1px solid var(--border); border-radius:999px;
+  flex:0 0 auto;
+  font-family:'JetBrains Mono',monospace; font-size:.62rem; font-weight:600;
+  padding:.25rem .6rem; border:1px solid var(--border); border-radius:999px;
   background:var(--surface); color:var(--text-secondary); cursor:pointer;
   text-transform:uppercase; letter-spacing:.05em; user-select:none;
   transition:.15s;
@@ -117,7 +133,7 @@ input[type=text]:focus,select:focus{
 }
 
 .summary{
-  font-size:.74rem; color:var(--text-secondary); margin:.5rem 0 .9rem;
+  font-size:.7rem; color:var(--text-secondary); margin:.25rem 0 .55rem;
   font-family:'JetBrains Mono',monospace;
 }
 .summary strong{ color:var(--text); font-weight:600 }
@@ -128,42 +144,54 @@ input[type=text]:focus,select:focus{
 }
 @keyframes pulse{ 0%,100%{opacity:1} 50%{opacity:.4} }
 
-/* -------- trending strip -------- */
-.trending-wrap{ margin:0 0 1rem; }
+/* -------- trending strip --------
+   Polish-7: tightened so the strip lands at ~80px tall instead of
+   ~120px. Smaller card padding, smaller title font, 2-line clamp
+   (down from 3), tighter wrap margins. */
+.trending-wrap{ margin:0 0 .55rem; }
 .trending-label{
-  font-family:'JetBrains Mono',monospace; font-size:.65rem; font-weight:600;
+  font-family:'JetBrains Mono',monospace; font-size:.6rem; font-weight:600;
   text-transform:uppercase; letter-spacing:.08em; color:var(--text-secondary);
-  margin-bottom:.4rem;
+  margin-bottom:.25rem;
 }
 .trending{
-  display:flex; gap:.6rem; overflow-x:auto; padding-bottom:.5rem;
+  display:flex; gap:.5rem; overflow-x:auto; padding-bottom:.35rem;
   scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
 }
-.trending::-webkit-scrollbar{ height:6px }
+.trending::-webkit-scrollbar{ height:5px }
 .trending::-webkit-scrollbar-thumb{ background:var(--border); border-radius:3px }
 .trend-card{
-  flex:0 0 min(20rem, 80vw); scroll-snap-align:start;
-  background:var(--surface); border:1px solid var(--border); border-radius:12px;
-  padding:.7rem .9rem; transition:.15s; cursor:pointer;
+  flex:0 0 min(17rem, 78vw); scroll-snap-align:start;
+  background:var(--surface); border:1px solid var(--border); border-radius:10px;
+  padding:.5rem .7rem; transition:.15s; cursor:pointer;
 }
 .trend-card:hover{ border-color:var(--accent) }
 .trend-card .meta{
-  display:flex; align-items:center; gap:.4rem; font-size:.65rem;
-  color:var(--text-secondary); margin-bottom:.35rem;
+  display:flex; align-items:center; gap:.35rem; font-size:.58rem;
+  color:var(--text-secondary); margin-bottom:.22rem;
   font-family:'JetBrains Mono',monospace; text-transform:uppercase;
 }
 .trend-card .title{
-  font-size:.88rem; font-weight:600; color:var(--text);
-  display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical;
+  font-size:.8rem; font-weight:600; color:var(--text); line-height:1.32;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
   overflow:hidden;
 }
 .trend-card a{ color:inherit; text-decoration:none }
 
 /* -------- feed cards -------- */
-.feed{display:grid; gap:.6rem; grid-template-columns:1fr}
+.feed{display:grid; gap:.6rem; grid-template-columns:minmax(0,1fr)}
 .card{
   background:var(--surface); border:1px solid var(--border); border-radius:12px;
   padding:.8rem .9rem; transition:.15s; position:relative;
+  /* min-width:0 lets the card actually shrink inside the grid track
+     (grid children default to min-width:auto, which on mobile lets a
+     long URL or unbreakable token in a Bluesky post push the whole
+     card wider than the viewport — that's the horizontal-clip bug
+     reported on the polish-7 screenshot). overflow-wrap:anywhere on
+     this and the inner text containers gives the browser permission
+     to break inside long tokens when needed. */
+  min-width:0;
+  overflow-wrap:anywhere;
 }
 .card:hover{ border-color:var(--accent) }
 /* Fix A: content hierarchy. Top row is meta — quiet, monospace, low
@@ -285,8 +313,8 @@ a.when:hover{ color:var(--text); text-decoration:underline }
 .bsky-body-text .bsky-author:hover{ color:var(--accent) }
 .bsky-body-text .bsky-author-sep{ color:var(--text); margin-right:.25rem }
 .bsky-body-text .bsky-text{
-  color:var(--text); word-wrap:break-word; overflow-wrap:break-word;
-  white-space:pre-wrap;
+  color:var(--text); word-wrap:break-word; overflow-wrap:anywhere;
+  word-break:break-word; white-space:pre-wrap;
 }
 /* Fix E: inline URLs are linkified — render as accent-color underlines
    so they're discoverable without yelling. */
@@ -360,12 +388,20 @@ a.when:hover{ color:var(--text); text-decoration:underline }
   display:flex; gap:.6rem; align-items:stretch; margin:.4rem 0;
   border:1px solid var(--border); border-radius:8px; overflow:hidden;
   text-decoration:none; color:var(--text); background:var(--bg);
+  max-width:100%;
 }
 .bsky-extcard:hover{ border-color:var(--accent); text-decoration:none }
 .bsky-extcard img{
   flex:0 0 auto; width:6.5rem; height:5rem; object-fit:cover;
 }
-.bsky-extcard .ext-meta{ padding:.5rem .65rem; min-width:0 }
+.bsky-extcard .ext-meta{ padding:.5rem .65rem; min-width:0; flex:1 1 auto }
+/* Polish-7: stack on narrow viewports for parity with .bsky-linkcard.
+   The horizontal layout pushed text past the right edge on phone
+   widths — the 6.5rem thumb left no room for legible meta. */
+@media(max-width:600px){
+  .bsky-extcard{ flex-direction:column }
+  .bsky-extcard img{ width:100%; height:9rem }
+}
 .bsky-extcard .ext-title{
   font-size:.86rem; font-weight:600; line-height:1.35;
   display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
@@ -541,7 +577,8 @@ a.when:hover{ color:var(--text); text-decoration:underline }
 }
 .bsky-quoted-text{
   font-size:.85rem; line-height:1.4; color:var(--text);
-  white-space:pre-wrap; word-wrap:break-word; overflow-wrap:break-word;
+  white-space:pre-wrap; word-wrap:break-word; overflow-wrap:anywhere;
+  word-break:break-word;
 }
 .bsky-quoted-images{
   display:block; margin:.4rem 0 0;
@@ -720,16 +757,16 @@ a.when:hover{ color:var(--text); text-decoration:underline }
 
 /* -------- mobile -------- */
 @media(max-width:760px){
-  .container{ padding:1rem 1rem 3rem }
+  .container{ padding:.8rem 1rem 3rem }
   .subtitle{ display:none }
-  .tabs{ margin-bottom:.6rem }
+  .tabs{ margin-bottom:.5rem }
   .tabs a{ padding:.3rem .65rem; font-size:.68rem }
-  .hdr h1{ font-size:1.15rem }
+  .hdr h1{ font-size:1.1rem }
   .hdr .brand{ display:none }
-  .controls{ padding:.4rem 0 .6rem }
-  .search-row{ grid-template-columns:1fr }
+  /* Mobile: collapse the two-column grid so search input stretches
+     full width and pills wrap below in their own scroll row. */
+  .controls{ padding:.4rem 0 .55rem; grid-template-columns:1fr; gap:.4rem }
   input[type=text],select{ padding:.4rem .6rem; font-size:.85rem }
-  .pills{ overflow-x:auto; flex-wrap:nowrap; padding-bottom:.3rem }
   .pill{ flex-shrink:0 }
   .card{ padding:.7rem .8rem }
   .card .thumb{ width:4.5rem; height:3rem }
