@@ -30,7 +30,7 @@
     <div class="avatar" style="background:#3b82f6">MB</div>
     <div>
       <div class="name">Milwaukee Bucks</div>
-      <div class="sub">Team · 54 mentions in the rolling window</div>
+      <div class="sub">Team · 56 mentions in the rolling window</div>
     </div>
   </div>
 
@@ -45,13 +45,17 @@
     <div class="pills" id="pills"></div>
   </div>
 
-  <div class="chart-wrap">
-    <div class="chart-label">Mentions, last 14 days</div>
-    <div id="chart"></div>
+  <!-- Header row: chart left, trending rail right. Collapses to stacked
+       on mobile via .header-row media query. Keeps the entity header
+       under ~130px on standard laptops so the first card lands above
+       the fold. -->
+  <div class="header-row">
+    <div class="chart-wrap">
+      <div class="chart-label">Mentions, last 14 days</div>
+      <div id="chart"></div>
+    </div>
+    <nav class="nav-rail" id="nav-rail" aria-label="Trending players and teams"></nav>
   </div>
-
-  <!-- Fix 5: trending nav rail populated client-side from manifest.json -->
-  <nav class="nav-rail" id="nav-rail" aria-label="Trending players and teams"></nav>
 
   <div class="summary" id="summary">loading…</div>
   <div class="feed" id="feed"></div>
