@@ -219,12 +219,23 @@ input[type=text]:focus,select:focus{
 }
 a.author:hover{ color:var(--text); text-decoration:underline }
 /* Fix A4: timestamp links to the original post; keep the muted look
-   and put a subtle underline on hover so the affordance is visible. */
+   and put a subtle underline on hover so the affordance is visible.
+   margin-left:auto moved to .meta-right (Fix 1 P-3-polish-5) so the
+   timestamp + View-on-Bluesky link travel as one right-anchored
+   group instead of orphan-wrapping on narrow viewports. */
 .card .when{
-  color:var(--text-secondary); margin-left:auto;
+  color:var(--text-secondary);
   font-weight:400; font-size:.6rem; text-decoration:none;
 }
 a.when:hover{ color:var(--text); text-decoration:underline }
+/* Right-anchored meta group: timestamp + View on Bluesky stay
+   together. Use margin-left:auto on the wrapper so flex layout pushes
+   the whole group to the right edge in one move; gap keeps the items
+   visually separated. */
+.card .top .meta-right{
+  display:inline-flex; align-items:center; gap:.45rem;
+  margin-left:auto;
+}
 /* Fix A: headline is now the visual anchor — bigger, heavier, fully
    inked, with comfortable line-height. */
 .card .title{
@@ -469,6 +480,25 @@ a.when:hover{ color:var(--text); text-decoration:underline }
 .initials-avatar.src-tint-google-news{ background:rgba(26,115,232,.14);  color:var(--src-google-news) }
 .initials-avatar.src-tint-substack   { background:rgba(255,103,25,.14);  color:var(--src-substack) }
 
+/* Cluster C: player headshot or team logo in the visual-avatar slot
+   (same dimensions and position as the initials fallback). The
+   img-fallback-wrap layers the img over an initially-hidden initials
+   block; if the image 404s the inline onerror swaps display. */
+.img-fallback-wrap{
+  flex:0 0 auto; width:2.4rem; height:2.4rem; display:inline-block;
+  position:relative;
+}
+.visual-avatar{
+  width:2.4rem; height:2.4rem; border-radius:50%;
+  object-fit:cover; display:block;
+  background:var(--surface-hover);
+}
+.visual-team-logo{ object-fit:contain; padding:.15rem; background:var(--surface) }
+.img-fallback-content{
+  position:absolute; inset:0; width:100%; height:100%;
+}
+.img-fallback-content .initials-avatar{ width:100%; height:100%; }
+
 /* Fix B1: quoted-post inline box. Bordered, slightly inset, lighter
    surface; readable but visually subordinate to the parent post. The
    whole box is a clickable <a> that opens the quoted post on bsky.app. */
@@ -565,17 +595,20 @@ a.when:hover{ color:var(--text); text-decoration:underline }
   letter-spacing:.06em; margin-top:.15rem;
 }
 
-/* mini-chart */
-.chart-wrap{ margin:0 0 1rem }
+/* mini-chart — compacted in Cluster C: the entity-page header was
+   eating the whole above-the-fold area (chart + 2 rail rows + summary).
+   Smaller chart + tighter rail rows below land the first card well
+   within the viewport on standard laptops. */
+.chart-wrap{ margin:0 0 .6rem }
 .chart-label{
-  font-family:'JetBrains Mono',monospace; font-size:.6rem;
+  font-family:'JetBrains Mono',monospace; font-size:.56rem;
   color:var(--text-secondary); text-transform:uppercase;
-  letter-spacing:.06em; margin-bottom:.3rem; font-weight:600;
+  letter-spacing:.06em; margin-bottom:.2rem; font-weight:600;
 }
 .chart-wrap svg{
-  display:block; width:100%; height:80px;
-  background:var(--surface); border:1px solid var(--border); border-radius:8px;
-  padding:.4rem .5rem; overflow:visible;
+  display:block; width:100%; height:60px;
+  background:var(--surface); border:1px solid var(--border); border-radius:6px;
+  padding:.25rem .4rem; overflow:visible;
 }
 .chart-wrap svg rect.bar{ fill:var(--accent); opacity:.85 }
 .chart-wrap svg rect.bar:hover{ opacity:1 }
@@ -599,27 +632,31 @@ a.when:hover{ color:var(--text); text-decoration:underline }
    with momentum. Desktop: same — fits within the existing single-column
    layout without forcing a sidebar, which would complicate the chart
    + feed positioning. */
-.nav-rail{ margin:0 0 1rem }
-.rail-section{ margin-bottom:.5rem }
+/* Fix 3: nav rail compacted — smaller pills + tighter vertical
+   spacing so the entire entity header (avatar + chart + rail + summary)
+   fits in ~250-280px on a standard laptop, leaving the first card
+   above the fold. */
+.nav-rail{ margin:0 0 .6rem }
+.rail-section{ margin-bottom:.3rem }
 .rail-section:last-child{ margin-bottom:0 }
 .rail-label{
-  font-family:'JetBrains Mono',monospace; font-size:.6rem; font-weight:600;
+  font-family:'JetBrains Mono',monospace; font-size:.55rem; font-weight:600;
   color:var(--text-secondary); text-transform:uppercase;
-  letter-spacing:.06em; margin-bottom:.3rem;
+  letter-spacing:.06em; margin-bottom:.15rem;
 }
 .rail-pills{
-  display:flex; gap:.4rem; overflow-x:auto; padding-bottom:.4rem;
+  display:flex; gap:.3rem; overflow-x:auto; padding-bottom:.25rem;
   scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
 }
-.rail-pills::-webkit-scrollbar{ height:6px }
-.rail-pills::-webkit-scrollbar-thumb{ background:var(--border); border-radius:3px }
+.rail-pills::-webkit-scrollbar{ height:4px }
+.rail-pills::-webkit-scrollbar-thumb{ background:var(--border); border-radius:2px }
 .rail-pill{
   flex:0 0 auto; scroll-snap-align:start;
-  display:inline-flex; align-items:center; gap:.4rem;
-  padding:.35rem .7rem; border-radius:999px;
+  display:inline-flex; align-items:center; gap:.3rem;
+  padding:.2rem .5rem; border-radius:999px;
   background:var(--surface); border:1px solid var(--border);
   color:var(--text); text-decoration:none;
-  font-size:.78rem; font-weight:600; transition:.15s;
+  font-size:.7rem; font-weight:600; transition:.15s;
   white-space:nowrap;
 }
 .rail-pill:hover{
@@ -630,10 +667,11 @@ a.when:hover{ color:var(--text); text-decoration:underline }
 }
 .rail-pill-team:hover{ background:var(--accent); color:#fff }
 .rail-count{
-  font-family:'JetBrains Mono',monospace; font-size:.64rem; font-weight:500;
+  font-family:'JetBrains Mono',monospace; font-size:.58rem; font-weight:500;
   color:var(--text-secondary);
 }
 .rail-pill-team .rail-count{ color:inherit; opacity:.75 }
+.summary{ margin:.3rem 0 .6rem }
 
 /* -------- directory grid (players.html, teams.html) -------- */
 .dir-grid{

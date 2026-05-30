@@ -188,3 +188,24 @@ jq '.items[0]' data/google-news/$(date -u +%Y-%m-%d).json
 `data/sources/google_news_state.json`, set `player_cursor` and
 `team_cursor` to 0, commit. Next cycle starts from the top of the
 canonical lists.
+
+**Refresh the player canonical** (do this when the NBA roster turns
+over, ~once per season + at the trade deadline): the canonical is
+generated from the `jsierrahoopshype/nba-headshots` repo's
+`players/metadata/active.json`. To pull the latest:
+
+```bash
+curl -L -o /tmp/nbah-active.json \
+  https://raw.githubusercontent.com/jsierrahoopshype/nba-headshots/main/players/metadata/active.json
+python -m scripts.build_players_canonical
+# Re-tag the archive against the refreshed canonical:
+python -m scripts.build_indexes
+python -m scripts.prerender_pages
+git add data/ players/ teams/ sitemap.xml
+git commit -m "data: refresh player canonical from nba-headshots"
+```
+
+The build_players_canonical script preserves curated short-form
+aliases (Wemby, SGA, KD, JB, ...) from the previous canonical when
+the slug carries over. New rookies start with just `full_name` as
+the alias; add nicknames manually after they show up in posts.

@@ -223,6 +223,155 @@
     return `<div class="initials-avatar src-tint-${escapeHtml(item.source)}" aria-hidden="true">${initials}</div>`;
   }
 
+  // Cluster C: headshot + team-logo URL helpers.
+  //
+  // Player headshots live in the nba-headshots repo, at
+  // players/headshots/face/{filename}, where {filename} is the EXACT
+  // filename stored by upstream (e.g. "203999-nikola-joki.png"). The
+  // file is keyed by NBA-ID + upstream slug, NOT our cleaner slug,
+  // because the upstream slugify dropped diacritics; we store the
+  // raw filename verbatim under canonical[slug].headshot_filename
+  // and look it up here.
+  //
+  // Team logos come from ESPN's public CDN. Slug→ESPN-abbrev mapping
+  // is mostly the team's `abbr` field; a few teams use a different
+  // short code on ESPN (sa for San Antonio, no for New Orleans, gs
+  // for Golden State, ny for the Knicks, etc.).
+  const _ESPN_ABBREV_OVERRIDES = {
+    "san-antonio-spurs": "sa",
+    "new-orleans-pelicans": "no",
+    "golden-state-warriors": "gs",
+    "new-york-knicks": "ny",
+    "brooklyn-nets": "bkn",
+    "los-angeles-clippers": "lac",
+    "los-angeles-lakers": "lal",
+    "oklahoma-city-thunder": "okc",
+    "philadelphia-76ers": "phi",
+    "portland-trail-blazers": "por",
+    "washington-wizards": "wsh", // ESPN uses wsh, not was
+    "utah-jazz": "utah",
+    "phoenix-suns": "phx",
+    "memphis-grizzlies": "mem",
+    "minnesota-timberwolves": "min",
+    "milwaukee-bucks": "mil",
+    "miami-heat": "mia",
+    "houston-rockets": "hou",
+    "denver-nuggets": "den",
+    "detroit-pistons": "det",
+    "dallas-mavericks": "dal",
+    "cleveland-cavaliers": "cle",
+    "chicago-bulls": "chi",
+    "charlotte-hornets": "cha",
+    "boston-celtics": "bos",
+    "atlanta-hawks": "atl",
+    "indiana-pacers": "ind",
+    "orlando-magic": "orl",
+    "sacramento-kings": "sac",
+    "toronto-raptors": "tor",
+  };
+
+  // Lazily-loaded canonical (players.json / teams.json) so the helpers
+  // can resolve any slug without forcing every caller to pass dicts.
+  // After loadCanonical() resolves, window.NCS_Canonical is populated
+  // synchronously for renderCard to read.
+  let _canonicalLoading = null;
+  async function loadCanonical() {
+    if (window.NCS_Canonical) return window.NCS_Canonical;
+    if (_canonicalLoading) return _canonicalLoading;
+    _canonicalLoading = (async () => {
+      const fetchJson = async (p) => {
+        try {
+          const r = await fetch(p);
+          if (r.ok) return await r.json();
+        } catch {}
+        return null;
+      };
+      const players =
+        (await fetchJson("data/canonical/players.json")) ||
+        (await fetchJson("../data/canonical/players.json")) ||
+        {};
+      const teams =
+        (await fetchJson("data/canonical/teams.json")) ||
+        (await fetchJson("../data/canonical/teams.json")) ||
+        {};
+      window.NCS_Canonical = { players, teams };
+      return window.NCS_Canonical;
+    })();
+    return _canonicalLoading;
+  }
+
+  const NBA_HEADSHOTS_BASE =
+    "https://raw.githubusercontent.com/jsierrahoopshype/nba-headshots/main/players/headshots/face/";
+
+  function headshotUrl(playerSlug, players) {
+    if (!playerSlug || !players) return null;
+    const entry = players[playerSlug];
+    if (!entry || !entry.headshot_filename) return null;
+    return NBA_HEADSHOTS_BASE + entry.headshot_filename;
+  }
+
+  function teamLogoUrl(teamSlug) {
+    if (!teamSlug) return null;
+    const abbrev = _ESPN_ABBREV_OVERRIDES[teamSlug];
+    if (!abbrev) return null;
+    return `https://a.espncdn.com/i/teamlogos/nba/500/${abbrev}.png`;
+  }
+
+  // Cluster C: visual integration. For a non-Bluesky non-YouTube card
+  // with NO thumbnail, prefer (in order):
+  //   1. first tagged player's headshot
+  //   2. first tagged team's ESPN logo
+  //   3. the initials-avatar fallback (existing behavior)
+  // onerror chains gracefully — if the headshot image 404s, the
+  // browser hides the img; we still show the initials underneath
+  // (rendered into the same slot via a wrapper).
+  function _imgWithFallback(src, fallbackHtml, cls) {
+    // The fallback is a sibling that's visually hidden until the
+    // image fires onerror. Cleanest: render both and use a small
+    // inline-onerror handler to swap.
+    return `
+      <span class="img-fallback-wrap">
+        <img class="${cls}" src="${escapeHtml(src)}" alt="" loading="lazy"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <span class="img-fallback-content" style="display:none">${fallbackHtml}</span>
+      </span>
+    `;
+  }
+
+  function visualAvatarHtml(item) {
+    // Bluesky has its own avatar from author info.
+    if (item.source === "bluesky") return "";
+    // YouTube has its own video thumbnail.
+    if (item.source === "youtube") return "";
+    // If the card already has a media thumbnail, don't compete.
+    if (item.thumbnail) return "";
+
+    const initials = escapeHtml(_initialsFromAuthor(item.author));
+    const initialsHtml = `<span class="initials-avatar src-tint-${escapeHtml(item.source)}" aria-hidden="true">${initials}</span>`;
+
+    // Read canonical from window if loadCanonical() has resolved.
+    // First render before canonical loads uses initials only; the
+    // second render after canonical load (triggered by loadLive)
+    // upgrades to headshots/logos.
+    const canonical = window.NCS_Canonical;
+    if (!canonical) return initialsHtml;
+
+    // Prefer a tagged player's headshot.
+    const firstPlayer = (item.players || [])[0];
+    if (firstPlayer) {
+      const url = headshotUrl(firstPlayer, canonical.players);
+      if (url) return _imgWithFallback(url, initialsHtml, "visual-avatar visual-headshot");
+    }
+    // Fall back to a tagged team's logo.
+    const firstTeam = (item.teams || [])[0];
+    if (firstTeam) {
+      const url = teamLogoUrl(firstTeam);
+      if (url) return _imgWithFallback(url, initialsHtml, "visual-avatar visual-team-logo");
+    }
+    // Nothing tagged — initials only.
+    return initialsHtml;
+  }
+
   function bylineIconHtml(item) {
     // Bluesky cards: use the post author's avatar (the user's identity).
     // Live items carry author_avatar from the AppView response; archive
@@ -513,6 +662,11 @@
       // with literal "View on Bluesky →" text so attribution is
       // unambiguous and discoverable. Other sources don't need the
       // equivalent because their headline IS the click-through.
+      // Wrap the timestamp + View-on-Bluesky in a flex-end group so
+      // they stay together. Previous attempt used `margin-left: auto`
+      // on the timestamp alone, which pushed the timestamp to the
+      // right but left View-on-Bluesky orphaned on a wrapped second
+      // line (or hidden off the right edge on narrow viewports).
       const viewOnBluesky = item.url
         ? `<a class="view-on-source" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">View on Bluesky →</a>`
         : "";
@@ -520,8 +674,10 @@
         <div class="top">
           ${sourceBadgeHtml(source)}
           ${liveFlag}
-          ${timestampHtml(item)}
-          ${viewOnBluesky}
+          <span class="meta-right">
+            ${timestampHtml(item)}
+            ${viewOnBluesky}
+          </span>
         </div>
       `;
       // Fix A2: avatar + author both link to bsky.app/profile/{handle}.
@@ -581,12 +737,14 @@
           ${timestampHtml(item)}
         </div>
       `;
-      // Fix A6: initials avatar when the card has no thumbnail.
-      const initials = initialsAvatarHtml(item);
-      bodyHtml = initials
+      // Cluster C: visual avatar in the body — prefer tagged player's
+      // headshot, then tagged team's ESPN logo, then initials. Returns
+      // empty string when the card already has a thumbnail.
+      const visual = visualAvatarHtml(item);
+      bodyHtml = visual
         ? `
           <div class="card-body-with-avatar">
-            ${initials}
+            ${visual}
             <div class="card-body-main">
               <div class="title"><a href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener noreferrer">${escapeHtml(titleText)}</a></div>
               ${excerpt}
@@ -925,6 +1083,22 @@
     }
     const tagger = window.NCS_Tagger;
     await tagger.ready();
+    // Fix 2 (avatar coverage): walk every fetched feed BEFORE the
+    // filter loop and pre-populate the handle→avatar cache from each
+    // post's author. Previously the cache only wrote inside the
+    // filter loop (after the reply/repost gate), so reporters whose
+    // recent posts were all replies / reposts never reached the
+    // cache-write line — and entity pages, which show mostly archive
+    // items keyed by handle, saw initials avatars instead of real
+    // headshots. Pre-population guarantees every reporter with any
+    // recent post in their feed gets cached, even if no post passes
+    // the filter for inclusion in LIVE_ITEMS.
+    for (const feed of feeds) {
+      for (const fv of feed) {
+        const a = fv && fv.post && fv.post.author;
+        if (a && a.handle && a.avatar) _cacheBskyAvatar(a.handle, a.avatar);
+      }
+    }
     for (const feed of feeds) {
       for (const fv of feed) {
         const post = fv.post;
@@ -1392,7 +1566,7 @@
   // Public
   // ---------------------------------------------------------------------
 
-  window.NCS = {
+  window.NCS = Object.assign(window.NCS || {}, {
     relativeTime,
     escapeHtml,
     renderCard,
@@ -1401,5 +1575,8 @@
     attachSourcePills,
     liveMerge,
     mergeItems,
-  };
+    loadCanonical,
+    headshotUrl,
+    teamLogoUrl,
+  });
 })();

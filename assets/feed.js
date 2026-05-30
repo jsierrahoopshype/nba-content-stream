@@ -93,10 +93,15 @@
   }
 
   async function loadArchive() {
+    // Cluster C: preload canonical alongside the other index files so
+    // renderCard can resolve player headshots + team logos on the
+    // very first render. ncs.loadCanonical resolves to the same
+    // window.NCS_Canonical that visualAvatarHtml reads.
     const [manifest, feed, trending] = await Promise.all([
       fetch("data/index/manifest.json").then((r) => r.json()),
       fetch("data/index/feed.json").then((r) => r.json()),
       fetch("data/index/trending.json").then((r) => r.json()).catch(() => null),
+      ncs.loadCanonical(),
     ]);
     MANIFEST = manifest;
     MANIFEST_SLUGS = ncs.manifestSlugSets(manifest);

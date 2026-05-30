@@ -263,7 +263,7 @@ def test_player_index_groups_by_player_newest_first(isolated_data):
             )
         ],
     )
-    players, teams, _, _, _ = build_indexes.build_indexes(now=FIXED_NOW)
+    players, teams, _, _, _ = build_indexes.build_indexes(now=FIXED_NOW, retag=False)
     curry = players["stephen-curry"]
     assert curry["count"] == 3
     assert [it["title"] for it in curry["items"]] == ["newest", "middle", "oldest"]
@@ -285,7 +285,7 @@ def test_team_index_built_separately(isolated_data):
             )
         ],
     )
-    _, teams, _, _, _ = build_indexes.build_indexes(now=FIXED_NOW)
+    _, teams, _, _, _ = build_indexes.build_indexes(now=FIXED_NOW, retag=False)
     assert "los-angeles-lakers" in teams
     assert teams["los-angeles-lakers"]["name"] == "Los Angeles Lakers"
     assert teams["los-angeles-lakers"]["count"] == 1
@@ -304,7 +304,7 @@ def test_unknown_slug_skipped(isolated_data, caplog):
             )
         ],
     )
-    players, _, _, _, _ = build_indexes.build_indexes(now=FIXED_NOW)
+    players, _, _, _, _ = build_indexes.build_indexes(now=FIXED_NOW, retag=False)
     assert "not-a-real-player" not in players
 
 
@@ -331,7 +331,7 @@ def test_window_filter_excludes_old_items(isolated_data):
     )
     players, _, _, _, _ = build_indexes.build_indexes(
         window_days=30, now=FIXED_NOW
-    )
+    , retag=False)
     assert players["stephen-curry"]["count"] == 1
     assert players["stephen-curry"]["items"][0]["title"] == "new"
 
@@ -350,7 +350,7 @@ def test_per_entity_items_use_compact_shape(isolated_data):
             )
         ],
     )
-    players, _, _, _, _ = build_indexes.build_indexes(now=FIXED_NOW)
+    players, _, _, _, _ = build_indexes.build_indexes(now=FIXED_NOW, retag=False)
     item = players["stephen-curry"]["items"][0]
     assert "engagement" not in item
     assert "ingested_at" not in item
@@ -370,7 +370,7 @@ def test_max_items_per_entity_cap(isolated_data, monkeypatch):
         for i in range(10)
     ]
     _write_shard(isolated_data, "bluesky", items)
-    players, _, _, _, _ = build_indexes.build_indexes(now=FIXED_NOW)
+    players, _, _, _, _ = build_indexes.build_indexes(now=FIXED_NOW, retag=False)
     assert players["stephen-curry"]["count"] == 3
     # The 3 newest survive (oldest entries dropped).
     titles = [it["id"] for it in players["stephen-curry"]["items"]]
@@ -391,7 +391,7 @@ def test_trending_newer_outranks_older_same_source(isolated_data):
             _item("bs-new", "bluesky", _hours_before(1), title="new"),
         ],
     )
-    _, _, trending, _, _ = build_indexes.build_indexes(now=FIXED_NOW)
+    _, _, trending, _, _ = build_indexes.build_indexes(now=FIXED_NOW, retag=False)
     ids = [it["id"] for it in trending["items"]]
     assert ids.index("bs-new") < ids.index("bs-old")
 
@@ -408,7 +408,7 @@ def test_trending_youtube_outranks_bluesky_same_age(isolated_data):
         "bluesky",
         [_item("bs-1", "bluesky", _hours_before(1), title="BS")],
     )
-    _, _, trending, _, _ = build_indexes.build_indexes(now=FIXED_NOW)
+    _, _, trending, _, _ = build_indexes.build_indexes(now=FIXED_NOW, retag=False)
     ids = [it["id"] for it in trending["items"]]
     assert ids.index("yt-1") < ids.index("bs-1")
     # Both should also have trending_score set.
@@ -425,7 +425,7 @@ def test_trending_window_filters_out_old(isolated_data):
             _item("bs-stale", "bluesky", _hours_before(200), title="stale"),
         ],
     )
-    _, _, trending, _, _ = build_indexes.build_indexes(now=FIXED_NOW)
+    _, _, trending, _, _ = build_indexes.build_indexes(now=FIXED_NOW, retag=False)
     ids = [it["id"] for it in trending["items"]]
     assert "bs-fresh" in ids
     assert "bs-stale" not in ids
@@ -441,7 +441,7 @@ def test_trending_limit_respected(isolated_data, monkeypatch):
             for i in range(10)
         ],
     )
-    _, _, trending, _, _ = build_indexes.build_indexes(now=FIXED_NOW)
+    _, _, trending, _, _ = build_indexes.build_indexes(now=FIXED_NOW, retag=False)
     assert trending["count"] == 3
 
 
@@ -461,7 +461,7 @@ def test_feed_includes_source_and_is_newest_first(isolated_data):
         "google-news",
         [_item("gn-1", "google-news", _hours_before(1))],
     )
-    _, _, _, feed, _ = build_indexes.build_indexes(now=FIXED_NOW)
+    _, _, _, feed, _ = build_indexes.build_indexes(now=FIXED_NOW, retag=False)
     ids = [it["id"] for it in feed["items"]]
     assert ids == ["gn-1", "bs-1"]
     sources_seen = {it["source"] for it in feed["items"]}
@@ -477,7 +477,7 @@ def test_feed_window_drops_old(isolated_data):
             _item("bs-new", "bluesky", _hours_before(1), title="new"),
         ],
     )
-    _, _, _, feed, _ = build_indexes.build_indexes(now=FIXED_NOW)
+    _, _, _, feed, _ = build_indexes.build_indexes(now=FIXED_NOW, retag=False)
     # FEED_WINDOW_DAYS defaults to 7; the 20-day-old item must be dropped.
     ids = [it["id"] for it in feed["items"]]
     assert ids == ["bs-new"]
@@ -493,7 +493,7 @@ def test_feed_cap_respected(isolated_data, monkeypatch):
             for i in range(20)
         ],
     )
-    _, _, _, feed, _ = build_indexes.build_indexes(now=FIXED_NOW)
+    _, _, _, feed, _ = build_indexes.build_indexes(now=FIXED_NOW, retag=False)
     assert feed["count"] == 5
 
 
@@ -514,7 +514,7 @@ def test_manifest_sorts_players_and_teams_by_count_desc(isolated_data):
             _item("bs-l1", "bluesky", _hours_before(4), players=["lebron-james"]),
         ],
     )
-    _, _, _, _, manifest = build_indexes.build_indexes(now=FIXED_NOW)
+    _, _, _, _, manifest = build_indexes.build_indexes(now=FIXED_NOW, retag=False)
     assert manifest["players"][0]["slug"] == "stephen-curry"
     assert manifest["players"][0]["count"] == 3
     assert manifest["players"][1]["slug"] == "lebron-james"
@@ -526,7 +526,7 @@ def test_manifest_only_lists_slugs_with_content(isolated_data):
         "bluesky",
         [_item("bs-1", "bluesky", _hours_before(1), players=["stephen-curry"])],
     )
-    _, _, _, _, manifest = build_indexes.build_indexes(now=FIXED_NOW)
+    _, _, _, _, manifest = build_indexes.build_indexes(now=FIXED_NOW, retag=False)
     slugs = {p["slug"] for p in manifest["players"]}
     assert slugs == {"stephen-curry"}  # no entries for canonical players with 0 items
 
@@ -545,7 +545,7 @@ def test_manifest_source_histogram(isolated_data):
         "youtube",
         [_item("yt-1", "youtube", _hours_before(1))],
     )
-    _, _, _, _, manifest = build_indexes.build_indexes(now=FIXED_NOW)
+    _, _, _, _, manifest = build_indexes.build_indexes(now=FIXED_NOW, retag=False)
     assert manifest["sources"] == {"bluesky": 2, "youtube": 1}
     assert manifest["total_items"] == 3
 
@@ -570,8 +570,8 @@ def test_build_indexes_is_idempotent(isolated_data):
             )
         ],
     )
-    a = build_indexes.build_indexes(now=FIXED_NOW)
-    b = build_indexes.build_indexes(now=FIXED_NOW)
+    a = build_indexes.build_indexes(now=FIXED_NOW, retag=False)
+    b = build_indexes.build_indexes(now=FIXED_NOW, retag=False)
     # Tuple of (players, teams, trending, feed, manifest).
     assert a == b
 
@@ -592,7 +592,7 @@ def test_write_all_indexes_creates_files(isolated_data):
     )
     players, teams, trending, feed, manifest = build_indexes.build_indexes(
         now=FIXED_NOW
-    )
+    , retag=False)
     build_indexes.write_all_indexes(players, teams, trending, feed, manifest)
     index_root = isolated_data / "index"
     assert (index_root / "players" / "stephen-curry.json").exists()
@@ -616,7 +616,7 @@ def test_write_all_indexes_clears_stale_entity_files(isolated_data):
     )
     players, teams, trending, feed, manifest = build_indexes.build_indexes(
         now=FIXED_NOW
-    )
+    , retag=False)
     build_indexes.write_all_indexes(players, teams, trending, feed, manifest)
     assert not (stale_dir / "old-player.json").exists()
     assert (stale_dir / "stephen-curry.json").exists()
