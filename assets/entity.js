@@ -118,32 +118,30 @@
   // Bootstrap
   // ---------------------------------------------------------------------
 
-  // Fix 5: trending players + teams nav rail. Rendered client-side
-  // from manifest.json so we don't have to re-bake all 68 entity HTML
-  // files every cycle. Each pill is a link to that entity's page.
+  // Fix 6 (polish-5): single TRENDING strip mixing players + teams.
+  // Previously two rows ate vertical space; now one horizontal scroll
+  // with both kinds interleaved by count desc. Each pill is a link
+  // to that entity's page, excluding the current one.
   function renderNavRail(manifest) {
     const railEl = document.getElementById("nav-rail");
     if (!railEl) return;
-    // Manifest already lists players + teams sorted by content count
-    // desc. Take the top N of each excluding the current entity so the
-    // user always sees other places to jump to.
-    const TOP_N = 8;
+    const TOTAL = 12;
     const players = (manifest.players || [])
       .filter((p) => !(KIND === "player" && p.slug === SLUG))
-      .slice(0, TOP_N);
+      .map((p) => ({ ...p, _kind: "player" }));
     const teams = (manifest.teams || [])
       .filter((t) => !(KIND === "team" && t.slug === SLUG))
-      .slice(0, TOP_N);
-    const renderPill = (e, kind) =>
-      `<a class="rail-pill rail-pill-${kind}" href="../${kind}s/${ncs.escapeHtml(e.slug)}.html">${ncs.escapeHtml(e.name)}<span class="rail-count">${e.count}</span></a>`;
+      .map((t) => ({ ...t, _kind: "team" }));
+    // Interleave players + teams sorted by count desc, capped at TOTAL.
+    const merged = players.concat(teams)
+      .sort((a, b) => (b.count || 0) - (a.count || 0))
+      .slice(0, TOTAL);
+    const renderPill = (e) =>
+      `<a class="rail-pill rail-pill-${e._kind}" href="../${e._kind}s/${ncs.escapeHtml(e.slug)}.html">${ncs.escapeHtml(e.name)}<span class="rail-count">${e.count}</span></a>`;
     railEl.innerHTML = `
       <div class="rail-section">
-        <div class="rail-label">Trending players</div>
-        <div class="rail-pills">${players.map((p) => renderPill(p, "player")).join("")}</div>
-      </div>
-      <div class="rail-section">
-        <div class="rail-label">Trending teams</div>
-        <div class="rail-pills">${teams.map((t) => renderPill(t, "team")).join("")}</div>
+        <div class="rail-label">Trending</div>
+        <div class="rail-pills">${merged.map(renderPill).join("")}</div>
       </div>
     `;
   }
@@ -171,11 +169,18 @@
 
   async function loadLive() {
     if (!config.LIVE_MERGE_ENABLED) return;
+    if (window.NCS_DEBUG) console.debug("[NCS-AVATAR-TRACE]", "entity:loadLive:start");
     try {
       LIVE_ITEMS = await ncs.liveMerge();
     } catch (e) {
       console.warn("live merge failed:", e);
       LIVE_ITEMS = [];
+    }
+    if (window.NCS_DEBUG) {
+      console.debug("[NCS-AVATAR-TRACE]", "entity:loadLive:done", {
+        live_count: LIVE_ITEMS.length,
+        cache_size: (window.NCS_AvatarCache || new Map()).size,
+      });
     }
     render();
   }

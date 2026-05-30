@@ -441,11 +441,18 @@ a.when:hover{ color:var(--text); text-decoration:underline }
   position:absolute; inset:0; width:100%; height:100%; border:0;
 }
 
-/* Reddit / Google News / Substack: small right-floated thumb */
-.rss-thumb{ display:inline-block }
+/* Reddit / Google News / Substack media preview. Polish-5: bumped
+   from a 6.5×4.5rem right-floated thumb to a full-width preview
+   below the headline, similar shape to YouTube embeds. Natural
+   aspect with a cap so portrait images don't dominate. */
+.rss-thumb{ display:block; margin:.5rem 0 .3rem }
 .rss-thumb img{
-  float:right; width:6.5rem; height:4.5rem; object-fit:cover;
-  border-radius:6px; margin:0 0 .4rem .8rem;
+  display:block; width:100%; max-width:100%;
+  max-height:24rem; object-fit:contain;
+  border-radius:8px; background:var(--surface-hover);
+}
+@media (max-width:520px){
+  .rss-thumb img{ max-height:18rem }
 }
 
 /* Fix A2: avatar link wrapper on Bluesky cards keeps the image inline
@@ -606,9 +613,9 @@ a.when:hover{ color:var(--text); text-decoration:underline }
   letter-spacing:.06em; margin-bottom:.2rem; font-weight:600;
 }
 .chart-wrap svg{
-  display:block; width:100%; height:60px;
+  display:block; width:100%; height:50px;
   background:var(--surface); border:1px solid var(--border); border-radius:6px;
-  padding:.25rem .4rem; overflow:visible;
+  padding:.2rem .35rem; overflow:visible;
 }
 .chart-wrap svg rect.bar{ fill:var(--accent); opacity:.85 }
 .chart-wrap svg rect.bar:hover{ opacity:1 }

@@ -127,6 +127,50 @@ def load_all_items(data_dir: Optional[Path] = None) -> List[dict]:
 # ---------------------------------------------------------------------------
 
 
+def _dedupe_google_news(items: List[dict]) -> int:
+    """Collapse Google News items with identical titles within 24h.
+
+    Same story syndicated by multiple outlets shows up as one GN item
+    per outlet — e.g. "The Jay Wright-ism Jalen Brunson has carried"
+    from NY Post AND Yahoo Sports. They have different `id`s (different
+    publishers in the hash) so the per-id dedup in load_all_items
+    doesn't catch them. Group by (normalized title, calendar day UTC):
+    when multiple GN items share that key, keep only the newest.
+
+    Mutates `items` in place by removing the losers. Returns the count
+    of dropped items so the caller can log it.
+    """
+    by_key: Dict[Tuple[str, str], dict] = {}
+    losers: set = set()
+    for it in items:
+        if it.get("source") != "google-news":
+            continue
+        title = (it.get("title") or "").strip().lower()
+        if not title:
+            continue
+        title = " ".join(title.split())  # collapse whitespace
+        date = (it.get("published_at") or "")[:10]  # YYYY-MM-DD (UTC)
+        if not date:
+            continue
+        key = (title, date)
+        prev = by_key.get(key)
+        if prev is None:
+            by_key[key] = it
+            continue
+        # Pick the newer of the two (string compare on ISO Z works);
+        # mark the loser for removal by item identity.
+        if (it.get("published_at") or "") > (prev.get("published_at") or ""):
+            losers.add(id(prev))
+            by_key[key] = it
+        else:
+            losers.add(id(it))
+    if not losers:
+        return 0
+    survivors = [it for it in items if id(it) not in losers]
+    items[:] = survivors
+    return len(losers)
+
+
 def _retag_items(items: List[dict], players_dict, teams_dict) -> None:
     """Re-tag every item in place using the current canonical.
 
@@ -442,6 +486,14 @@ def build_indexes(
     # based on placeholder titles.
     if retag:
         _retag_items(items, players_dict, teams_dict)
+
+    # Phase 3 polish 5 / Fix 2: collapse duplicate Google News stories
+    # syndicated by multiple outlets. Same normalized title within the
+    # same UTC calendar day → keep only the newest. Provenance is still
+    # preserved in the per-source shards under data/google-news/.
+    dropped = _dedupe_google_news(items)
+    if dropped:
+        logger.info("google-news dedup: dropped %d duplicate-title items", dropped)
 
     now = now or datetime.now(timezone.utc)
     generated_at = parse_to_iso(now)
