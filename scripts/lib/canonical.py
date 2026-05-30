@@ -99,6 +99,36 @@ def _combined_pattern(
     return index, pattern
 
 
+def _punct_variants(phrase: str) -> List[str]:
+    """Generate punctuation-tolerant variants of a name phrase.
+
+    Real-world posts drop apostrophes ("DeAaron" for "De'Aaron"),
+    swap hyphens for spaces ("Trayce Jackson Davis" for "Trayce
+    Jackson-Davis"), and elide periods ("DJ" for "D.J."). We can't
+    rewrite the canonical to all of these, so the tagger indexes
+    each variant as an additional phrase pointing at the same slug.
+    """
+    variants = {phrase}
+    # Strip apostrophes entirely ("De'Aaron Fox" -> "DeAaron Fox").
+    no_apos = phrase.replace("'", "").replace("’", "")
+    if no_apos != phrase:
+        variants.add(no_apos)
+    # Hyphens → spaces ("Trayce Jackson-Davis" -> "Trayce Jackson Davis").
+    no_hyph = phrase.replace("-", " ")
+    if no_hyph != phrase:
+        variants.add(no_hyph)
+    # Combined: drop apostrophes AND swap hyphens.
+    combined = no_apos.replace("-", " ")
+    if combined != phrase and combined != no_apos and combined != no_hyph:
+        variants.add(combined)
+    # Periods elided ("D.J. Carton" -> "DJ Carton").
+    no_period = phrase.replace(".", "")
+    if no_period != phrase:
+        variants.add(no_period)
+    # Collapse any double spaces introduced by hyphen→space.
+    return [re.sub(r"\s+", " ", v).strip() for v in variants if v.strip()]
+
+
 def _build_candidate_index(
     canonical: CanonicalDict,
     include_last_name: bool,
@@ -107,6 +137,11 @@ def _build_candidate_index(
 
     Same phrase can resolve to multiple slugs (e.g. "JB" -> jalen-brunson
     and jaylen-brown). Callers use the list length to detect ambiguity.
+
+    For each canonical name and alias, we also index punctuation-
+    tolerant variants (apostrophe-stripped, hyphen-as-space, period-
+    elided) so casual spellings still tag. "DeAaron Fox" maps to
+    de'aaron-fox; "Trayce Jackson Davis" to trayce-jackson-davis.
     """
     index: Dict[str, List[str]] = {}
     for slug, info in canonical.items():
@@ -115,7 +150,12 @@ def _build_candidate_index(
         if include_last_name:
             last = _last_name(str(info["name"]))
             phrases.append(last)
-        for phrase in phrases:
+        # Expand each phrase into its punctuation variants.
+        expanded = []
+        for p in phrases:
+            if p:
+                expanded.extend(_punct_variants(p))
+        for phrase in expanded:
             if not phrase:
                 continue
             key = phrase.lower()

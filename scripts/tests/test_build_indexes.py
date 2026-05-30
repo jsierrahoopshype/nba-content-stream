@@ -153,6 +153,55 @@ def test_compact_item_keeps_only_render_fields():
     assert compact["author"] == "X"
 
 
+# ---------------------------------------------------------------------------
+# Polish-5 / Fix 2: Google News dedup (same title within 24h).
+# ---------------------------------------------------------------------------
+
+
+def test_gn_dedup_collapses_same_title_same_day():
+    # All three on the same UTC calendar day (FIXED_NOW is 2026-05-25T12Z).
+    items = [
+        _item("gn-a", "google-news", _hours_before(10), title="Brunson carries Jay Wright-ism"),
+        _item("gn-b", "google-news", _hours_before(5),  title="Brunson carries Jay Wright-ism"),
+        _item("gn-c", "google-news", _hours_before(1),  title="Brunson carries Jay Wright-ism"),
+    ]
+    dropped = build_indexes._dedupe_google_news(items)
+    assert dropped == 2
+    assert len(items) == 1
+    assert items[0]["id"] == "gn-c"  # newest survives
+
+
+def test_gn_dedup_case_and_whitespace_insensitive():
+    items = [
+        _item("gn-a", "google-news", _hours_before(5), title="Brunson Carries  Jay Wright-ism"),
+        _item("gn-b", "google-news", _hours_before(1), title="brunson carries jay wright-ism"),
+    ]
+    dropped = build_indexes._dedupe_google_news(items)
+    assert dropped == 1
+    assert items[0]["id"] == "gn-b"
+
+
+def test_gn_dedup_does_not_collapse_across_days():
+    items = [
+        _item("gn-a", "google-news", _days_before(2), title="Brunson story"),
+        _item("gn-b", "google-news", _days_before(0), title="Brunson story"),
+    ]
+    dropped = build_indexes._dedupe_google_news(items)
+    assert dropped == 0
+    assert len(items) == 2
+
+
+def test_gn_dedup_does_not_touch_other_sources():
+    items = [
+        _item("bs-a", "bluesky", _hours_before(5), title="Same headline"),
+        _item("bs-b", "bluesky", _hours_before(1), title="Same headline"),
+        _item("gn-a", "google-news", _hours_before(3), title="Same headline"),
+    ]
+    dropped = build_indexes._dedupe_google_news(items)
+    assert dropped == 0  # bluesky pair untouched, gn alone has no dup
+    assert len(items) == 3
+
+
 def test_compact_item_handles_missing_optional_fields():
     raw = _item("bs-2", "bluesky", _hours_before(1))
     compact = build_indexes._compact_item(raw)

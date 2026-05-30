@@ -474,6 +474,31 @@ def test_every_player_has_team_and_headshot_filename(vocab):
     assert not bad, f"first 5 issues: {bad[:5]}"
 
 
+# ---------------------------------------------------------------------------
+# Phase-3 polish-5: punctuation-tolerant tagging (Fix 4).
+# Real-world posts drop apostrophes, swap hyphens for spaces, and elide
+# periods. The tagger now indexes each name's punctuation variants so
+# casual spellings tag the same slug as the canonical form.
+# ---------------------------------------------------------------------------
+
+
+def test_apostrophe_dropped_in_name_still_tags(vocab):
+    players, teams = vocab
+    p1, _ = detect_entities("DeAaron Fox leads both conference finals", players, teams)
+    p2, _ = detect_entities("De'Aaron Fox leads both conference finals", players, teams)
+    assert "deaaron-fox" in p1, "missing apostrophe must still tag"
+    assert "deaaron-fox" in p2, "canonical apostrophe spelling must still tag"
+
+
+def test_hyphen_swapped_for_space_still_tags(vocab):
+    players, teams = vocab
+    # "Trayce Jackson-Davis" with the hyphen elided as a space.
+    p1, _ = detect_entities("Trayce Jackson Davis dunked", players, teams)
+    p2, _ = detect_entities("Trayce Jackson-Davis dunked", players, teams)
+    assert "trayce-jackson-davis" in p1
+    assert "trayce-jackson-davis" in p2
+
+
 def test_diacritic_player_resolves_to_ascii_slug(vocab):
     """Players with diacritics in the name (Jokić, Dončić, Schröder,
     Porziņģis) should resolve under the ASCII-folded slug AND tag

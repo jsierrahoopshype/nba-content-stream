@@ -36,6 +36,22 @@
     return parts[parts.length - 1] || "";
   }
 
+  // Mirrors scripts/lib/canonical._punct_variants — generate tolerance
+  // variants for each phrase so "DeAaron Fox" (no apostrophe) and
+  // "Trayce Jackson Davis" (hyphen as space) still tag.
+  function _punctVariants(phrase) {
+    const out = new Set([phrase]);
+    const noApos = phrase.replace(/['’]/g, "");
+    if (noApos !== phrase) out.add(noApos);
+    const noHyph = phrase.replace(/-/g, " ");
+    if (noHyph !== phrase) out.add(noHyph);
+    const combined = noApos.replace(/-/g, " ");
+    if (combined !== phrase) out.add(combined);
+    const noPeriod = phrase.replace(/\./g, "");
+    if (noPeriod !== phrase) out.add(noPeriod);
+    return Array.from(out).map((v) => v.replace(/\s+/g, " ").trim()).filter(Boolean);
+  }
+
   function _buildIndex(dict, includeLastName) {
     const idx = Object.create(null);
     for (const slug of Object.keys(dict)) {
@@ -43,7 +59,11 @@
       const phrases = [String(info.name)];
       for (const a of info.aliases || []) phrases.push(String(a));
       if (includeLastName) phrases.push(_lastName(String(info.name)));
+      const expanded = [];
       for (const p of phrases) {
+        if (p) expanded.push(..._punctVariants(p));
+      }
+      for (const p of expanded) {
         if (!p) continue;
         const key = p.toLowerCase();
         const slugs = idx[key] || (idx[key] = []);

@@ -25,19 +25,45 @@
   // item.author_avatar is missing. After live merge completes,
   // entity.js re-renders, and archive cards pick up cached avatars.
   if (!window.NCS_AvatarCache) window.NCS_AvatarCache = new Map();
+  // Polish-5 / Fix 3: gated debug traces for the avatar pipeline.
+  // This is the 3rd PR attempting to fix avatars on entity pages;
+  // previous PRs traced the code on paper but the bug persisted.
+  // To diagnose decisively, set `window.NCS_DEBUG = true` in the
+  // console, reload, and read [NCS-AVATAR-TRACE] log lines to see
+  // exactly which step in the chain breaks.
+  function _dbg(stage, info) {
+    if (window.NCS_DEBUG) {
+      // eslint-disable-next-line no-console
+      console.debug("[NCS-AVATAR-TRACE]", stage, info);
+    }
+  }
   function _cacheBskyAvatar(handle, url) {
-    if (handle && url) window.NCS_AvatarCache.set(handle, url);
+    if (handle && url) {
+      window.NCS_AvatarCache.set(handle, url);
+      _dbg("cache:write", { handle, url, size: window.NCS_AvatarCache.size });
+    }
   }
   function _lookupBskyAvatar(handle) {
-    return handle ? window.NCS_AvatarCache.get(handle) || null : null;
+    const hit = handle ? window.NCS_AvatarCache.get(handle) || null : null;
+    _dbg("cache:lookup", {
+      handle,
+      hit: !!hit,
+      cache_size: window.NCS_AvatarCache.size,
+    });
+    return hit;
   }
   // Extract handle from a Bluesky post URL — works on both live and
   // archive items because both carry the public bsky.app URL.
   const _BSKY_HANDLE_FROM_URL_RE = /https?:\/\/bsky\.app\/profile\/([^/]+)\/post\//;
   function _handleFromBskyUrl(url) {
-    if (!url) return "";
+    if (!url) {
+      _dbg("url:extract", { url, handle: "" });
+      return "";
+    }
     const m = _BSKY_HANDLE_FROM_URL_RE.exec(url);
-    return m ? m[1] : "";
+    const handle = m ? m[1] : "";
+    _dbg("url:extract", { url, handle });
+    return handle;
   }
 
   // ---------------------------------------------------------------------
@@ -693,6 +719,13 @@
       // during liveMerge; entity.js re-renders afterwards so the
       // archive cards pick up the avatars then.
       const avatarUrl = item.author_avatar || _lookupBskyAvatar(bskyHandle);
+      _dbg("render:bsky-card", {
+        id: item.id,
+        live: !!item._live,
+        author_avatar_on_item: !!item.author_avatar,
+        bskyHandle,
+        resolved_avatar: avatarUrl,
+      });
       const avatarImg = avatarUrl
         ? `<img class="bsky-avatar" src="${escapeHtml(avatarUrl)}" alt="" loading="lazy" onerror="this.style.display='none'">`
         : `<span class="bsky-avatar bsky-avatar-placeholder" aria-hidden="true"></span>`;
@@ -712,13 +745,15 @@
         ${renderQuotedPost(item.quotedPost)}
       `;
     } else if (source === "youtube") {
+      // Fix 1 (polish-5): wrap the timestamp in .meta-right so it
+      // anchors to the right edge consistently across all card types.
       topRowHtml = `
         <div class="top">
           ${sourceBadgeHtml(source)}
           ${liveFlag}
           ${bylineIcon}
           ${outletAuthorHtml(item)}
-          ${timestampHtml(item)}
+          <span class="meta-right">${timestampHtml(item)}</span>
         </div>
       `;
       bodyHtml = `
@@ -728,13 +763,14 @@
       `;
     } else {
       // Reddit, Google News, Substack — link-out headline + small thumb.
+      // Fix 1 (polish-5): same meta-right wrapper as YouTube/Bluesky.
       topRowHtml = `
         <div class="top">
           ${sourceBadgeHtml(source)}
           ${liveFlag}
           ${bylineIcon}
           ${outletAuthorHtml(item)}
-          ${timestampHtml(item)}
+          <span class="meta-right">${timestampHtml(item)}</span>
         </div>
       `;
       // Cluster C: visual avatar in the body — prefer tagged player's
@@ -1059,6 +1095,7 @@
   }
 
   async function bskyLiveItems(maxPosts) {
+    _dbg("bsky:start", { time: Date.now() });
     const out = [];
     // Poll EVERY handle in the committed CSV. The CSV is sorted
     // alphabetically (not by activity), so any sub-sample biases the
@@ -1230,8 +1267,17 @@
     // against an edge case where every reporter posted a lot at once.
     if (maxPosts && out.length > maxPosts) {
       out.sort((a, b) => (b.published_at || "").localeCompare(a.published_at || ""));
+      _dbg("bsky:done", {
+        produced: out.length,
+        cached_handles: window.NCS_AvatarCache.size,
+        capped_to: maxPosts,
+      });
       return out.slice(0, maxPosts);
     }
+    _dbg("bsky:done", {
+      produced: out.length,
+      cached_handles: window.NCS_AvatarCache.size,
+    });
     return out;
   }
 
