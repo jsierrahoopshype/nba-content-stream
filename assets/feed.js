@@ -98,9 +98,9 @@
     // very first render. ncs.loadCanonical resolves to the same
     // window.NCS_Canonical that visualAvatarHtml reads.
     const [manifest, feed, trending] = await Promise.all([
-      fetch("data/index/manifest.json").then((r) => r.json()),
-      fetch("data/index/feed.json").then((r) => r.json()),
-      fetch("data/index/trending.json").then((r) => r.json()).catch(() => null),
+      fetch(window.NCS_dataUrl("data/index/manifest.json")).then((r) => r.json()),
+      fetch(window.NCS_dataUrl("data/index/feed.json")).then((r) => r.json()),
+      fetch(window.NCS_dataUrl("data/index/trending.json")).then((r) => r.json()).catch(() => null),
       ncs.loadCanonical(),
     ]);
     MANIFEST = manifest;

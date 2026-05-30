@@ -90,16 +90,12 @@
   async function _load() {
     if (_ready) return _ready;
     _ready = (async () => {
+      // Absolute-from-root via dataUrl: works on root, /players/{slug}.html,
+      // /teams/{slug}.html, and subpath-deployed (project pages) sites.
       const [playersBlob, teamsBlob] = await Promise.all([
-        fetch("data/canonical/players.json").then((r) => r.json()),
-        fetch("data/canonical/teams.json").then((r) => r.json()),
-      ]).catch(async () => {
-        // Try one level up in case we're on /players/{slug}.html.
-        return Promise.all([
-          fetch("../data/canonical/players.json").then((r) => r.json()),
-          fetch("../data/canonical/teams.json").then((r) => r.json()),
-        ]);
-      });
+        fetch(window.NCS_dataUrl("data/canonical/players.json")).then((r) => r.json()),
+        fetch(window.NCS_dataUrl("data/canonical/teams.json")).then((r) => r.json()),
+      ]);
       _players = _stripMeta(playersBlob);
       _teams = _stripMeta(teamsBlob);
       // Drop bare last names from the player candidate pool. With ~530
