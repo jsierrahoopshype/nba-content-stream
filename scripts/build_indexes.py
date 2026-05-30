@@ -37,7 +37,7 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Tuple
 
 from scripts.lib import shards as shards_module
-from scripts.lib.canonical import load_canonical
+from scripts.lib.canonical import detect_entities, load_canonical
 from scripts.lib.utils import parse_to_iso, utc_now_iso
 
 logger = logging.getLogger("build_indexes")
@@ -125,6 +125,22 @@ def load_all_items(data_dir: Optional[Path] = None) -> List[dict]:
 # ---------------------------------------------------------------------------
 # Compact item shape
 # ---------------------------------------------------------------------------
+
+
+def _retag_items(items: List[dict], players_dict, teams_dict) -> None:
+    """Re-tag every item in place using the current canonical.
+
+    Walks `item["title"]` (the most signal-dense field across sources)
+    through `detect_entities` and replaces `item["players"]` and
+    `item["teams"]` with the result. Pure — no shard files modified.
+    """
+    for it in items:
+        title = it.get("title") or ""
+        if not title:
+            continue
+        p_slugs, t_slugs = detect_entities(title, players_dict, teams_dict)
+        it["players"] = p_slugs
+        it["teams"] = t_slugs
 
 
 def _compact_item(item: dict) -> dict:
@@ -399,6 +415,7 @@ def build_indexes(
     window_days: int = WINDOW_DAYS,
     data_dir: Optional[Path] = None,
     now: Optional[datetime] = None,
+    retag: bool = True,
 ) -> Tuple[dict, dict, dict, dict, dict]:
     """Read all shards and build the five index blobs in memory.
 
@@ -408,6 +425,23 @@ def build_indexes(
     data_dir = data_dir or shards_module.DATA_DIR
     items = load_all_items(data_dir)
     players_dict, teams_dict = load_canonical()
+
+    # Archive backfill: re-tag every item from canonical at index time
+    # rather than trusting the per-shard tags. Two reasons:
+    #   1. The canonical changes (Cluster C added ~500 active players;
+    #      previous polish PR removed the NO/WAS aliases). Old shards
+    #      carry stale tags that the user sees on player/team pages.
+    #   2. Tagger fixes (the WAS/NO false-positive removal, the
+    #      include_last_name=False tightening) only affect newly-polled
+    #      items unless we re-apply at index time.
+    # Idempotent — detect_entities is pure, so re-running this step
+    # produces identical output.
+    #
+    # `retag=False` is for unit tests that set explicit per-item
+    # `players`/`teams` and don't want the tagger to overwrite them
+    # based on placeholder titles.
+    if retag:
+        _retag_items(items, players_dict, teams_dict)
 
     now = now or datetime.now(timezone.utc)
     generated_at = parse_to_iso(now)

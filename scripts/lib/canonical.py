@@ -65,6 +65,40 @@ def _compile_phrase(phrase: str) -> re.Pattern:
     return re.compile(r"\b" + re.escape(phrase) + r"\b", re.IGNORECASE)
 
 
+# Memoize the combined-regex + index per (canonical dict identity, include_last_name).
+# detect_entities runs once per shard item; without this cache the
+# 7K-item backfill in build_indexes compiled ~1500 regexes per item,
+# which made the index step take 2.5 minutes. Cached, the same step
+# runs in seconds.
+_COMBINED_CACHE: Dict[Tuple[int, bool], Tuple[Dict[str, List[str]], "re.Pattern"]] = {}
+
+
+def _combined_pattern(
+    canonical: CanonicalDict, include_last_name: bool
+) -> Tuple[Dict[str, List[str]], "re.Pattern"]:
+    key = (id(canonical), include_last_name)
+    cached = _COMBINED_CACHE.get(key)
+    if cached is not None:
+        return cached
+    index = _build_candidate_index(canonical, include_last_name)
+    # Sort longest-first so "LeBron James" wins over "James" when both
+    # are in the index. re.finditer with alternation matches leftmost
+    # first, then tries the next alternation at the next position;
+    # longest-first ordering keeps multi-word names from being
+    # shadowed by a shorter overlap.
+    phrases = sorted(index.keys(), key=len, reverse=True)
+    if phrases:
+        pattern = re.compile(
+            r"\b(?:" + "|".join(re.escape(p) for p in phrases) + r")\b",
+            re.IGNORECASE,
+        )
+    else:
+        # No phrases — match nothing. Use a regex that never matches.
+        pattern = re.compile(r"(?!)")
+    _COMBINED_CACHE[key] = (index, pattern)
+    return index, pattern
+
+
 def _build_candidate_index(
     canonical: CanonicalDict,
     include_last_name: bool,
@@ -94,11 +128,13 @@ def _build_candidate_index(
 def _detect_teams(text: str, teams_dict: CanonicalDict) -> List[str]:
     """Return sorted list of team slugs mentioned in `text`."""
     found: set[str] = set()
-    index = _build_candidate_index(teams_dict, include_last_name=False)
-    for phrase, slugs in index.items():
-        if _compile_phrase(phrase).search(text):
-            for slug in slugs:
-                found.add(slug)
+    index, pattern = _combined_pattern(teams_dict, include_last_name=False)
+    for m in pattern.finditer(text):
+        slugs = index.get(m.group(0).lower())
+        if not slugs:
+            continue
+        for slug in slugs:
+            found.add(slug)
     return sorted(found)
 
 
@@ -114,9 +150,24 @@ def _detect_players(
     """
     detected_teams_set = set(detected_team_slugs)
     found: set[str] = set()
-    index = _build_candidate_index(players_dict, include_last_name=True)
-    for phrase, slugs in index.items():
-        if not _compile_phrase(phrase).search(text):
+    # include_last_name=False: with a 500+ player pool, bare last names
+    # collide too often (Mitchell, Murray, Williams, Thompson, Brown,
+    # Jackson, ...). The old team-context disambiguator handled the
+    # tail of collisions but produced false positives when a post
+    # mentioned a team without naming the player. Match only on full
+    # names, display names, and explicitly curated short-form aliases.
+    index, pattern = _combined_pattern(players_dict, include_last_name=False)
+    # Walk the matches found by the single combined regex (≈10-100x
+    # faster than compiling N regexes per text on a 500-player canon).
+    # Track each matched phrase so we resolve the same phrase only once.
+    seen_phrases: set[str] = set()
+    for m in pattern.finditer(text):
+        phrase = m.group(0).lower()
+        if phrase in seen_phrases:
+            continue
+        seen_phrases.add(phrase)
+        slugs = index.get(phrase)
+        if not slugs:
             continue
         if len(slugs) == 1:
             found.add(slugs[0])

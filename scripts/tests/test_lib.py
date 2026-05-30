@@ -172,30 +172,62 @@ def test_murray_alone_is_ambiguous(vocab):
     assert "dejounte-murray" not in player_slugs
 
 
-def test_murray_with_nuggets_resolves_to_jamal(vocab):
-    players, teams = vocab
-    player_slugs, team_slugs = detect_entities(
-        "Murray and the Nuggets pulled away in the fourth.", players, teams
-    )
-    assert "jamal-murray" in player_slugs
-    assert "dejounte-murray" not in player_slugs
-    assert "denver-nuggets" in team_slugs
+def test_murray_with_full_first_name_resolves(vocab):
+    """After the Cluster C tagger tightening, bare last names no longer
+    match. The user must say "Jamal Murray" / "Dejounte Murray" to
+    tag a specific Murray. Team context alone is no longer enough.
 
-
-def test_murray_with_pelicans_resolves_to_dejounte(vocab):
-    """Per canonical players.json, Dejounte Murray plays for the Pelicans.
-
-    The task description's example used "Hawks" for Dejounte, but the
-    canonical data has him on New Orleans, so the test uses Pelicans.
-    See PR description for the note on this judgment call.
+    This is a deliberate trade-off: with 530+ canonical players, common
+    surnames (Mitchell, Murray, Williams, Thompson, Brown, Johnson, ...)
+    collide too much, and even the team-context disambiguator produced
+    false positives when a post mentioned a team without naming the
+    player. Test pins the new behavior.
     """
     players, teams = vocab
-    player_slugs, team_slugs = detect_entities(
-        "Murray and the Pelicans got a big road win.", players, teams
-    )
-    assert "dejounte-murray" in player_slugs
-    assert "jamal-murray" not in player_slugs
-    assert "new-orleans-pelicans" in team_slugs
+    p1, _ = detect_entities("Jamal Murray and the Nuggets pulled away.", players, teams)
+    assert "jamal-murray" in p1
+    assert "dejounte-murray" not in p1
+
+    p2, _ = detect_entities("Dejounte Murray and the Pelicans got a big road win.", players, teams)
+    assert "dejounte-murray" in p2
+    assert "jamal-murray" not in p2
+
+    # Bare "Murray" with team context: still doesn't tag (the conservative
+    # new behavior).
+    p3, t3 = detect_entities("Murray and the Nuggets pulled away.", players, teams)
+    assert p3 == []
+    assert "denver-nuggets" in t3
+
+
+def test_bare_last_name_does_not_tag(vocab):
+    """Common surnames must not auto-tag. Regression for the broader
+    canonical: Mitchell / Williams / Thompson / Brown / Johnson are
+    shared by multiple active players and a bare match would either
+    false-positive or get silently dropped — both bad. Tagger now
+    requires the full first+last."""
+    players, teams = vocab
+    for text in [
+        "Mitchell played well",         # Donovan Mitchell / Mitchell Robinson
+        "Williams traded to OKC",       # multiple Williamses
+        "Thompson dropped 40",          # multiple Thompsons
+        "Brown was incredible",         # multiple Browns
+        "Johnson stepped up",           # multiple Johnsons
+    ]:
+        p, _ = detect_entities(text, players, teams)
+        assert p == [], f"bare last name in {text!r} tagged {p}"
+
+
+def test_full_first_last_name_disambiguates_shared_surnames(vocab):
+    """The flip side: when the post DOES use the full name, both
+    Mitchells / Robinsons resolve correctly to the right slug."""
+    players, teams = vocab
+    p1, _ = detect_entities("Mitchell Robinson injured his ankle", players, teams)
+    assert "mitchell-robinson" in p1
+    assert "donovan-mitchell" not in p1
+
+    p2, _ = detect_entities("Donovan Mitchell scored 30", players, teams)
+    assert "donovan-mitchell" in p2
+    assert "mitchell-robinson" not in p2
 
 
 def test_ambiguous_alias_collision_is_dropped(vocab):
@@ -411,6 +443,76 @@ def test_strip_html_collapses_whitespace_to_single_spaces():
 def test_strip_html_empty_inputs_return_empty_string():
     assert strip_html("") == ""
     assert strip_html(None) == ""  # type: ignore[arg-type]
+
+
+# ---------------------------------------------------------------------------
+# Cluster C: expanded canonical (~530 active players) + headshot/team
+# logo URL builders. Sanity checks against the shipped canonical so a
+# rebuild that drops fields gets caught.
+# ---------------------------------------------------------------------------
+
+
+def test_canonical_has_active_roster_count(vocab):
+    """Canonical should have ~500+ active players post-Cluster-C."""
+    players, _ = vocab
+    assert len(players) >= 500, (
+        f"player canonical shrunk to {len(players)}; the active-roster "
+        "rebuild may have failed"
+    )
+
+
+def test_every_player_has_team_and_headshot_filename(vocab):
+    """Each entry should map to a known team slug and carry the
+    upstream headshot filename so the frontend can build the URL."""
+    players, teams = vocab
+    bad = []
+    for slug, info in players.items():
+        if not info.get("team") or info["team"] not in teams:
+            bad.append((slug, "team", info.get("team")))
+        if not info.get("headshot_filename"):
+            bad.append((slug, "headshot_filename"))
+    assert not bad, f"first 5 issues: {bad[:5]}"
+
+
+def test_diacritic_player_resolves_to_ascii_slug(vocab):
+    """Players with diacritics in the name (Jokić, Dončić, Schröder,
+    Porziņģis) should resolve under the ASCII-folded slug AND tag
+    correctly from the un-accented spelling that most posts use."""
+    players, teams = vocab
+    assert "nikola-jokic" in players
+    assert "luka-doncic" in players
+    assert "dennis-schroder" in players
+    # The folded ASCII spelling must tag.
+    p, _ = detect_entities("Nikola Jokic triple-double", players, teams)
+    assert "nikola-jokic" in p
+
+
+# ---------------------------------------------------------------------------
+# Archive backfill: build_indexes re-tags at index time. Idempotent —
+# running twice produces identical output.
+# ---------------------------------------------------------------------------
+
+
+def test_retag_items_is_idempotent(vocab):
+    from scripts.build_indexes import _retag_items
+
+    players, teams = vocab
+    items = [
+        {"title": "LeBron James scored 40 for the Lakers", "players": ["stale"], "teams": ["stale"]},
+        {"title": "Nikola Jokic triple-double", "players": [], "teams": []},
+        {"title": "Just some text with no entities", "players": ["lebron-james"], "teams": []},
+    ]
+    _retag_items(items, players, teams)
+    snap = [dict(it) for it in items]
+    _retag_items(items, players, teams)
+    assert items == snap, "second retag run produced different output"
+    # Stale tags wiped, correct ones added.
+    assert "lebron-james" in items[0]["players"]
+    assert "los-angeles-lakers" in items[0]["teams"]
+    assert "stale" not in items[0]["players"]
+    assert "nikola-jokic" in items[1]["players"]
+    # No-entity title clears the stale tag.
+    assert items[2]["players"] == []
 
 
 def test_strip_html_preserves_unicode():

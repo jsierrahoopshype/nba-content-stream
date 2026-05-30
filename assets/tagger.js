@@ -82,7 +82,12 @@
       });
       _players = _stripMeta(playersBlob);
       _teams = _stripMeta(teamsBlob);
-      _playerIndex = _buildIndex(_players, true);
+      // Drop bare last names from the player candidate pool. With ~530
+      // active players many surnames collide (Mitchell, Murray,
+      // Williams, Thompson, ...); matching only full names + curated
+      // short-form aliases avoids the false-positive trap that the
+      // older smaller canonical didn't expose.
+      _playerIndex = _buildIndex(_players, false);
       _teamIndex = _buildIndex(_teams, false);
       // We build ONE combined pattern; for each match we look up in
       // both indexes to resolve to slugs.

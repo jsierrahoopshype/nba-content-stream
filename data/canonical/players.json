@@ -1,203 +1,5468 @@
 {
   "_meta": {
-    "description": "Stub canonical player list for Phase 1 plumbing. Replaced in Phase 4 with full dump from HoopsHype rumors archive.",
-    "schema": "Each key is the canonical slug. 'name' is display name. 'aliases' is array of additional regex-matchable forms (case-insensitive, word-boundary matched).",
-    "version": "1-stub",
-    "last_updated": "2026-05-21"
+    "description": "Canonical NBA player list. Generated from jsierrahoopshype/nba-headshots active.json (the project's scraped + verified NBA.com active-roster manifest). The slug, full_name, team_id, and team_abbrev fields come from there. team is mapped from team_abbrev to our slug via teams.json. aliases preserve any curated short-form nicknames (Wemby, SGA, KD, JB, ...) from the previous canonical; bare last names are NOT included because they collide too often in a 500+ player pool — the tagger's _build_candidate_index also stops adding implicit last-name candidates as part of this PR.",
+    "source": "https://github.com/jsierrahoopshype/nba-headshots",
+    "source_file": "players/metadata/active.json",
+    "source_generated_at": "2026-03-08T23:04:37.237357+00:00",
+    "total_players": 532,
+    "version": "2"
   },
-  "lebron-james": {
-    "name": "LeBron James",
-    "team": "los-angeles-lakers",
-    "aliases": ["LeBron", "King James", "LBJ"]
+  "precious-achiuwa": {
+    "name": "Precious Achiuwa",
+    "full_name": "Precious Achiuwa",
+    "first_name": "Precious",
+    "last_name": "Achiuwa",
+    "team": "sacramento-kings",
+    "nba_id": 1630173,
+    "headshot_filename": "1630173-precious-achiuwa.png",
+    "aliases": []
   },
-  "stephen-curry": {
-    "name": "Stephen Curry",
-    "team": "golden-state-warriors",
-    "aliases": ["Steph Curry", "Steph", "Chef Curry"]
-  },
-  "kevin-durant": {
-    "name": "Kevin Durant",
+  "steven-adams": {
+    "name": "Steven Adams",
+    "full_name": "Steven Adams",
+    "first_name": "Steven",
+    "last_name": "Adams",
     "team": "houston-rockets",
-    "aliases": ["KD", "Durant", "Easy Money Sniper"]
+    "nba_id": 203500,
+    "headshot_filename": "203500-steven-adams.png",
+    "aliases": []
+  },
+  "bam-adebayo": {
+    "name": "Bam Adebayo",
+    "full_name": "Bam Adebayo",
+    "first_name": "Bam",
+    "last_name": "Adebayo",
+    "team": "miami-heat",
+    "nba_id": 1628389,
+    "headshot_filename": "1628389-bam-adebayo.png",
+    "aliases": []
+  },
+  "ochai-agbaji": {
+    "name": "Ochai Agbaji",
+    "full_name": "Ochai Agbaji",
+    "first_name": "Ochai",
+    "last_name": "Agbaji",
+    "team": "brooklyn-nets",
+    "nba_id": 1630534,
+    "headshot_filename": "1630534-ochai-agbaji.png",
+    "aliases": []
+  },
+  "santi-aldama": {
+    "name": "Santi Aldama",
+    "full_name": "Santi Aldama",
+    "first_name": "Santi",
+    "last_name": "Aldama",
+    "team": "memphis-grizzlies",
+    "nba_id": 1630583,
+    "headshot_filename": "1630583-santi-aldama.png",
+    "aliases": []
+  },
+  "trey-alexander": {
+    "name": "Trey Alexander",
+    "full_name": "Trey Alexander",
+    "first_name": "Trey",
+    "last_name": "Alexander",
+    "team": "new-orleans-pelicans",
+    "nba_id": 1641725,
+    "headshot_filename": "1641725-trey-alexander.png",
+    "aliases": []
+  },
+  "nickeil-alexander-walker": {
+    "name": "Nickeil Alexander-Walker",
+    "full_name": "Nickeil Alexander-Walker",
+    "first_name": "Nickeil",
+    "last_name": "Alexander-Walker",
+    "team": "atlanta-hawks",
+    "nba_id": 1629638,
+    "headshot_filename": "1629638-nickeil-alexander-walker.png",
+    "aliases": []
+  },
+  "grayson-allen": {
+    "name": "Grayson Allen",
+    "full_name": "Grayson Allen",
+    "first_name": "Grayson",
+    "last_name": "Allen",
+    "team": "phoenix-suns",
+    "nba_id": 1628960,
+    "headshot_filename": "1628960-grayson-allen.png",
+    "aliases": []
+  },
+  "jarrett-allen": {
+    "name": "Jarrett Allen",
+    "full_name": "Jarrett Allen",
+    "first_name": "Jarrett",
+    "last_name": "Allen",
+    "team": "cleveland-cavaliers",
+    "nba_id": 1628386,
+    "headshot_filename": "1628386-jarrett-allen.png",
+    "aliases": []
+  },
+  "jose-alvarado": {
+    "name": "Jose Alvarado",
+    "full_name": "Jose Alvarado",
+    "first_name": "Jose",
+    "last_name": "Alvarado",
+    "team": "new-york-knicks",
+    "nba_id": 1630631,
+    "headshot_filename": "1630631-jose-alvarado.png",
+    "aliases": []
+  },
+  "kyle-anderson": {
+    "name": "Kyle Anderson",
+    "full_name": "Kyle Anderson",
+    "first_name": "Kyle",
+    "last_name": "Anderson",
+    "team": "minnesota-timberwolves",
+    "nba_id": 203937,
+    "headshot_filename": "203937-kyle-anderson.png",
+    "aliases": []
+  },
+  "alex-antetokounmpo": {
+    "name": "Alex Antetokounmpo",
+    "full_name": "Alex Antetokounmpo",
+    "first_name": "Alex",
+    "last_name": "Antetokounmpo",
+    "team": "milwaukee-bucks",
+    "nba_id": 1630828,
+    "headshot_filename": "1630828-alex-antetokounmpo.png",
+    "aliases": []
   },
   "giannis-antetokounmpo": {
     "name": "Giannis Antetokounmpo",
+    "full_name": "Giannis Antetokounmpo",
+    "first_name": "Giannis",
+    "last_name": "Antetokounmpo",
     "team": "milwaukee-bucks",
-    "aliases": ["Giannis", "Greek Freak", "Antetokounmpo"]
+    "nba_id": 203507,
+    "headshot_filename": "203507-giannis-antetokounmpo.png",
+    "aliases": [
+      "Giannis",
+      "Greek Freak"
+    ]
   },
-  "nikola-jokic": {
-    "name": "Nikola Jokic",
-    "team": "denver-nuggets",
-    "aliases": ["Jokic", "Joker", "Nikola Jokić"]
+  "thanasis-antetokounmpo": {
+    "name": "Thanasis Antetokounmpo",
+    "full_name": "Thanasis Antetokounmpo",
+    "first_name": "Thanasis",
+    "last_name": "Antetokounmpo",
+    "team": "milwaukee-bucks",
+    "nba_id": 203648,
+    "headshot_filename": "203648-thanasis-antetokounmpo.png",
+    "aliases": []
   },
-  "luka-doncic": {
-    "name": "Luka Doncic",
-    "team": "los-angeles-lakers",
-    "aliases": ["Luka", "Luka Dončić", "Doncic", "Luka Magic"]
+  "og-anunoby": {
+    "name": "OG Anunoby",
+    "full_name": "OG Anunoby",
+    "first_name": "OG",
+    "last_name": "Anunoby",
+    "team": "new-york-knicks",
+    "nba_id": 1628384,
+    "headshot_filename": "1628384-og-anunoby.png",
+    "aliases": []
   },
-  "joel-embiid": {
-    "name": "Joel Embiid",
-    "team": "philadelphia-76ers",
-    "aliases": ["Embiid", "The Process", "JoJo"]
-  },
-  "jayson-tatum": {
-    "name": "Jayson Tatum",
-    "team": "boston-celtics",
-    "aliases": ["Tatum", "JT"]
-  },
-  "shai-gilgeous-alexander": {
-    "name": "Shai Gilgeous-Alexander",
-    "team": "oklahoma-city-thunder",
-    "aliases": ["SGA", "Shai", "Gilgeous-Alexander"]
-  },
-  "victor-wembanyama": {
-    "name": "Victor Wembanyama",
-    "team": "san-antonio-spurs",
-    "aliases": ["Wemby", "Wembanyama", "Victor"]
-  },
-  "anthony-edwards": {
-    "name": "Anthony Edwards",
-    "team": "minnesota-timberwolves",
-    "aliases": ["Ant", "Ant-Man", "Edwards"]
-  },
-  "anthony-davis": {
-    "name": "Anthony Davis",
-    "team": "dallas-mavericks",
-    "aliases": ["AD", "The Brow", "Davis"]
-  },
-  "kawhi-leonard": {
-    "name": "Kawhi Leonard",
-    "team": "los-angeles-clippers",
-    "aliases": ["Kawhi", "The Klaw", "Leonard"]
-  },
-  "paul-george": {
-    "name": "Paul George",
-    "team": "philadelphia-76ers",
-    "aliases": ["PG", "PG13", "George"]
-  },
-  "james-harden": {
-    "name": "James Harden",
-    "team": "los-angeles-clippers",
-    "aliases": ["Harden", "The Beard"]
-  },
-  "damian-lillard": {
-    "name": "Damian Lillard",
+  "deni-avdija": {
+    "name": "Deni Avdija",
+    "full_name": "Deni Avdija",
+    "first_name": "Deni",
+    "last_name": "Avdija",
     "team": "portland-trail-blazers",
-    "aliases": ["Dame", "Dame Time", "Lillard", "Dame D.O.L.L.A."]
+    "nba_id": 1630166,
+    "headshot_filename": "1630166-deni-avdija.png",
+    "aliases": []
   },
-  "devin-booker": {
-    "name": "Devin Booker",
-    "team": "phoenix-suns",
-    "aliases": ["Booker", "Book", "D-Book"]
+  "deandre-ayton": {
+    "name": "Deandre Ayton",
+    "full_name": "Deandre Ayton",
+    "first_name": "Deandre",
+    "last_name": "Ayton",
+    "team": "los-angeles-lakers",
+    "nba_id": 1629028,
+    "headshot_filename": "1629028-deandre-ayton.png",
+    "aliases": []
   },
-  "jimmy-butler": {
-    "name": "Jimmy Butler",
-    "team": "golden-state-warriors",
-    "aliases": ["Jimmy", "Jimmy Buckets", "Butler"]
+  "marvin-bagley-iii": {
+    "name": "Marvin Bagley III",
+    "full_name": "Marvin Bagley III",
+    "first_name": "Marvin",
+    "last_name": "Bagley III",
+    "team": "dallas-mavericks",
+    "nba_id": 1628963,
+    "headshot_filename": "1628963-marvin-bagley-iii.png",
+    "aliases": []
   },
-  "donovan-mitchell": {
-    "name": "Donovan Mitchell",
-    "team": "cleveland-cavaliers",
-    "aliases": ["Spida", "Mitchell", "Spida Mitchell"]
+  "ace-bailey": {
+    "name": "Ace Bailey",
+    "full_name": "Ace Bailey",
+    "first_name": "Ace",
+    "last_name": "Bailey",
+    "team": "utah-jazz",
+    "nba_id": 1642846,
+    "headshot_filename": "1642846-ace-bailey.png",
+    "aliases": []
   },
-  "trae-young": {
-    "name": "Trae Young",
-    "team": "atlanta-hawks",
-    "aliases": ["Trae", "Ice Trae"]
-  },
-  "ja-morant": {
-    "name": "Ja Morant",
-    "team": "memphis-grizzlies",
-    "aliases": ["Ja", "Morant"]
-  },
-  "zion-williamson": {
-    "name": "Zion Williamson",
-    "team": "new-orleans-pelicans",
-    "aliases": ["Zion", "Williamson"]
-  },
-  "tyrese-haliburton": {
-    "name": "Tyrese Haliburton",
-    "team": "indiana-pacers",
-    "aliases": ["Haliburton", "Hali", "Tyrese"]
-  },
-  "jamal-murray": {
-    "name": "Jamal Murray",
-    "team": "denver-nuggets",
-    "aliases": ["Jamal", "Blue Arrow"]
-  },
-  "dejounte-murray": {
-    "name": "Dejounte Murray",
-    "team": "new-orleans-pelicans",
-    "aliases": ["Dejounte"]
-  },
-  "karl-anthony-towns": {
-    "name": "Karl-Anthony Towns",
-    "team": "new-york-knicks",
-    "aliases": ["KAT", "Towns", "Karl Anthony Towns"]
-  },
-  "jalen-brunson": {
-    "name": "Jalen Brunson",
-    "team": "new-york-knicks",
-    "aliases": ["Brunson", "JB"]
-  },
-  "jaylen-brown": {
-    "name": "Jaylen Brown",
-    "team": "boston-celtics",
-    "aliases": ["JB", "Jaylen"]
-  },
-  "darius-garland": {
-    "name": "Darius Garland",
-    "team": "cleveland-cavaliers",
-    "aliases": ["DG", "Garland"]
-  },
-  "cade-cunningham": {
-    "name": "Cade Cunningham",
-    "team": "detroit-pistons",
-    "aliases": ["Cade", "Cunningham"]
-  },
-  "paolo-banchero": {
-    "name": "Paolo Banchero",
-    "team": "orlando-magic",
-    "aliases": ["Paolo", "Banchero"]
-  },
-  "scottie-barnes": {
-    "name": "Scottie Barnes",
-    "team": "toronto-raptors",
-    "aliases": ["Scottie", "Barnes"]
-  },
-  "chet-holmgren": {
-    "name": "Chet Holmgren",
-    "team": "oklahoma-city-thunder",
-    "aliases": ["Chet", "Holmgren"]
-  },
-  "jalen-williams": {
-    "name": "Jalen Williams",
-    "team": "oklahoma-city-thunder",
-    "aliases": ["J-Dub", "JDub", "Jalen Williams"]
-  },
-  "franz-wagner": {
-    "name": "Franz Wagner",
-    "team": "orlando-magic",
-    "aliases": ["Franz", "Wagner"]
-  },
-  "alperen-sengun": {
-    "name": "Alperen Sengun",
-    "team": "houston-rockets",
-    "aliases": ["Sengun", "Alperen", "Şengün", "Baby Jokic"]
+  "patrick-baldwin-jr": {
+    "name": "Patrick Baldwin Jr.",
+    "full_name": "Patrick Baldwin Jr.",
+    "first_name": "Patrick",
+    "last_name": "Baldwin Jr.",
+    "team": "sacramento-kings",
+    "nba_id": 1631116,
+    "headshot_filename": "1631116-patrick-baldwin-jr.png",
+    "aliases": []
   },
   "lamelo-ball": {
     "name": "LaMelo Ball",
+    "full_name": "LaMelo Ball",
+    "first_name": "LaMelo",
+    "last_name": "Ball",
     "team": "charlotte-hornets",
-    "aliases": ["LaMelo", "Melo Ball"]
+    "nba_id": 1630163,
+    "headshot_filename": "1630163-lamelo-ball.png",
+    "aliases": [
+      "LaMelo",
+      "Melo Ball"
+    ]
   },
-  "domantas-sabonis": {
-    "name": "Domantas Sabonis",
+  "paolo-banchero": {
+    "name": "Paolo Banchero",
+    "full_name": "Paolo Banchero",
+    "first_name": "Paolo",
+    "last_name": "Banchero",
+    "team": "orlando-magic",
+    "nba_id": 1631094,
+    "headshot_filename": "1631094-paolo-banchero.png",
+    "aliases": [
+      "Paolo"
+    ]
+  },
+  "desmond-bane": {
+    "name": "Desmond Bane",
+    "full_name": "Desmond Bane",
+    "first_name": "Desmond",
+    "last_name": "Bane",
+    "team": "orlando-magic",
+    "nba_id": 1630217,
+    "headshot_filename": "1630217-desmond-bane.png",
+    "aliases": []
+  },
+  "dominick-barlow": {
+    "name": "Dominick Barlow",
+    "full_name": "Dominick Barlow",
+    "first_name": "Dominick",
+    "last_name": "Barlow",
+    "team": "philadelphia-76ers",
+    "nba_id": 1631230,
+    "headshot_filename": "1631230-dominick-barlow.png",
+    "aliases": []
+  },
+  "harrison-barnes": {
+    "name": "Harrison Barnes",
+    "full_name": "Harrison Barnes",
+    "first_name": "Harrison",
+    "last_name": "Barnes",
+    "team": "san-antonio-spurs",
+    "nba_id": 203084,
+    "headshot_filename": "203084-harrison-barnes.png",
+    "aliases": []
+  },
+  "scottie-barnes": {
+    "name": "Scottie Barnes",
+    "full_name": "Scottie Barnes",
+    "first_name": "Scottie",
+    "last_name": "Barnes",
+    "team": "toronto-raptors",
+    "nba_id": 1630567,
+    "headshot_filename": "1630567-scottie-barnes.png",
+    "aliases": [
+      "Scottie"
+    ]
+  },
+  "brooks-barnhizer": {
+    "name": "Brooks Barnhizer",
+    "full_name": "Brooks Barnhizer",
+    "first_name": "Brooks",
+    "last_name": "Barnhizer",
+    "team": "oklahoma-city-thunder",
+    "nba_id": 1642964,
+    "headshot_filename": "1642964-brooks-barnhizer.png",
+    "aliases": []
+  },
+  "rj-barrett": {
+    "name": "RJ Barrett",
+    "full_name": "RJ Barrett",
+    "first_name": "RJ",
+    "last_name": "Barrett",
+    "team": "toronto-raptors",
+    "nba_id": 1629628,
+    "headshot_filename": "1629628-rj-barrett.png",
+    "aliases": []
+  },
+  "jamison-battle": {
+    "name": "Jamison Battle",
+    "full_name": "Jamison Battle",
+    "first_name": "Jamison",
+    "last_name": "Battle",
+    "team": "toronto-raptors",
+    "nba_id": 1642419,
+    "headshot_filename": "1642419-jamison-battle.png",
+    "aliases": []
+  },
+  "nicolas-batum": {
+    "name": "Nicolas Batum",
+    "full_name": "Nicolas Batum",
+    "first_name": "Nicolas",
+    "last_name": "Batum",
+    "team": "los-angeles-clippers",
+    "nba_id": 201587,
+    "headshot_filename": "201587-nicolas-batum.png",
+    "aliases": []
+  },
+  "bradley-beal": {
+    "name": "Bradley Beal",
+    "full_name": "Bradley Beal",
+    "first_name": "Bradley",
+    "last_name": "Beal",
+    "team": "los-angeles-clippers",
+    "nba_id": 203078,
+    "headshot_filename": "203078-bradley-beal.png",
+    "aliases": []
+  },
+  "marjon-beauchamp": {
+    "name": "MarJon Beauchamp",
+    "full_name": "MarJon Beauchamp",
+    "first_name": "MarJon",
+    "last_name": "Beauchamp",
+    "team": "philadelphia-76ers",
+    "nba_id": 1630699,
+    "headshot_filename": "1630699-marjon-beauchamp.png",
+    "aliases": []
+  },
+  "joan-beringer": {
+    "name": "Joan Beringer",
+    "full_name": "Joan Beringer",
+    "first_name": "Joan",
+    "last_name": "Beringer",
+    "team": "minnesota-timberwolves",
+    "nba_id": 1642866,
+    "headshot_filename": "1642866-joan-beringer.png",
+    "aliases": []
+  },
+  "saddiq-bey": {
+    "name": "Saddiq Bey",
+    "full_name": "Saddiq Bey",
+    "first_name": "Saddiq",
+    "last_name": "Bey",
+    "team": "new-orleans-pelicans",
+    "nba_id": 1630180,
+    "headshot_filename": "1630180-saddiq-bey.png",
+    "aliases": []
+  },
+  "goga-bitadze": {
+    "name": "Goga Bitadze",
+    "full_name": "Goga Bitadze",
+    "first_name": "Goga",
+    "last_name": "Bitadze",
+    "team": "orlando-magic",
+    "nba_id": 1629048,
+    "headshot_filename": "1629048-goga-bitadze.png",
+    "aliases": []
+  },
+  "bismack-biyombo": {
+    "name": "Bismack Biyombo",
+    "full_name": "Bismack Biyombo",
+    "first_name": "Bismack",
+    "last_name": "Biyombo",
+    "team": "san-antonio-spurs",
+    "nba_id": 202687,
+    "headshot_filename": "202687-bismack-biyombo.png",
+    "aliases": []
+  },
+  "anthony-black": {
+    "name": "Anthony Black",
+    "full_name": "Anthony Black",
+    "first_name": "Anthony",
+    "last_name": "Black",
+    "team": "orlando-magic",
+    "nba_id": 1641710,
+    "headshot_filename": "1641710-anthony-black.png",
+    "aliases": []
+  },
+  "leaky-black": {
+    "name": "Leaky Black",
+    "full_name": "Leaky Black",
+    "first_name": "Leaky",
+    "last_name": "Black",
+    "team": "washington-wizards",
+    "nba_id": 1641778,
+    "headshot_filename": "1641778-leaky-black.png",
+    "aliases": []
+  },
+  "bogdan-bogdanovic": {
+    "name": "Bogdan Bogdanović",
+    "full_name": "Bogdan Bogdanović",
+    "first_name": "Bogdan",
+    "last_name": "Bogdanović",
+    "team": "los-angeles-clippers",
+    "nba_id": 203992,
+    "headshot_filename": "203992-bogdan-bogdanovi.png",
+    "aliases": [
+      "Bogdan Bogdanovic"
+    ]
+  },
+  "adem-bona": {
+    "name": "Adem Bona",
+    "full_name": "Adem Bona",
+    "first_name": "Adem",
+    "last_name": "Bona",
+    "team": "philadelphia-76ers",
+    "nba_id": 1641737,
+    "headshot_filename": "1641737-adem-bona.png",
+    "aliases": []
+  },
+  "devin-booker": {
+    "name": "Devin Booker",
+    "full_name": "Devin Booker",
+    "first_name": "Devin",
+    "last_name": "Booker",
+    "team": "phoenix-suns",
+    "nba_id": 1626164,
+    "headshot_filename": "1626164-devin-booker.png",
+    "aliases": [
+      "Book",
+      "D-Book"
+    ]
+  },
+  "jamaree-bouyea": {
+    "name": "Jamaree Bouyea",
+    "full_name": "Jamaree Bouyea",
+    "first_name": "Jamaree",
+    "last_name": "Bouyea",
+    "team": "phoenix-suns",
+    "nba_id": 1631123,
+    "headshot_filename": "1631123-jamaree-bouyea.png",
+    "aliases": []
+  },
+  "christian-braun": {
+    "name": "Christian Braun",
+    "full_name": "Christian Braun",
+    "first_name": "Christian",
+    "last_name": "Braun",
+    "team": "denver-nuggets",
+    "nba_id": 1631128,
+    "headshot_filename": "1631128-christian-braun.png",
+    "aliases": []
+  },
+  "koby-brea": {
+    "name": "Koby Brea",
+    "full_name": "Koby Brea",
+    "first_name": "Koby",
+    "last_name": "Brea",
+    "team": "phoenix-suns",
+    "nba_id": 1642886,
+    "headshot_filename": "1642886-koby-brea.png",
+    "aliases": []
+  },
+  "mikal-bridges": {
+    "name": "Mikal Bridges",
+    "full_name": "Mikal Bridges",
+    "first_name": "Mikal",
+    "last_name": "Bridges",
+    "team": "new-york-knicks",
+    "nba_id": 1628969,
+    "headshot_filename": "1628969-mikal-bridges.png",
+    "aliases": []
+  },
+  "miles-bridges": {
+    "name": "Miles Bridges",
+    "full_name": "Miles Bridges",
+    "first_name": "Miles",
+    "last_name": "Bridges",
+    "team": "charlotte-hornets",
+    "nba_id": 1628970,
+    "headshot_filename": "1628970-miles-bridges.png",
+    "aliases": []
+  },
+  "dillon-brooks": {
+    "name": "Dillon Brooks",
+    "full_name": "Dillon Brooks",
+    "first_name": "Dillon",
+    "last_name": "Brooks",
+    "team": "phoenix-suns",
+    "nba_id": 1628415,
+    "headshot_filename": "1628415-dillon-brooks.png",
+    "aliases": []
+  },
+  "johni-broome": {
+    "name": "Johni Broome",
+    "full_name": "Johni Broome",
+    "first_name": "Johni",
+    "last_name": "Broome",
+    "team": "philadelphia-76ers",
+    "nba_id": 1641780,
+    "headshot_filename": "1641780-johni-broome.png",
+    "aliases": []
+  },
+  "bruce-brown": {
+    "name": "Bruce Brown",
+    "full_name": "Bruce Brown",
+    "first_name": "Bruce",
+    "last_name": "Brown",
+    "team": "denver-nuggets",
+    "nba_id": 1628971,
+    "headshot_filename": "1628971-bruce-brown.png",
+    "aliases": []
+  },
+  "jaylen-brown": {
+    "name": "Jaylen Brown",
+    "full_name": "Jaylen Brown",
+    "first_name": "Jaylen",
+    "last_name": "Brown",
+    "team": "boston-celtics",
+    "nba_id": 1627759,
+    "headshot_filename": "1627759-jaylen-brown.png",
+    "aliases": [
+      "JB",
+      "Jaylen"
+    ]
+  },
+  "kobe-brown": {
+    "name": "Kobe Brown",
+    "full_name": "Kobe Brown",
+    "first_name": "Kobe",
+    "last_name": "Brown",
+    "team": "indiana-pacers",
+    "nba_id": 1641738,
+    "headshot_filename": "1641738-kobe-brown.png",
+    "aliases": []
+  },
+  "jalen-brunson": {
+    "name": "Jalen Brunson",
+    "full_name": "Jalen Brunson",
+    "first_name": "Jalen",
+    "last_name": "Brunson",
+    "team": "new-york-knicks",
+    "nba_id": 1628973,
+    "headshot_filename": "1628973-jalen-brunson.png",
+    "aliases": [
+      "JB"
+    ]
+  },
+  "carter-bryant": {
+    "name": "Carter Bryant",
+    "full_name": "Carter Bryant",
+    "first_name": "Carter",
+    "last_name": "Bryant",
+    "team": "san-antonio-spurs",
+    "nba_id": 1642868,
+    "headshot_filename": "1642868-carter-bryant.png",
+    "aliases": []
+  },
+  "thomas-bryant": {
+    "name": "Thomas Bryant",
+    "full_name": "Thomas Bryant",
+    "first_name": "Thomas",
+    "last_name": "Bryant",
+    "team": "cleveland-cavaliers",
+    "nba_id": 1628418,
+    "headshot_filename": "1628418-thomas-bryant.png",
+    "aliases": []
+  },
+  "kobe-bufkin": {
+    "name": "Kobe Bufkin",
+    "full_name": "Kobe Bufkin",
+    "first_name": "Kobe",
+    "last_name": "Bufkin",
+    "team": "los-angeles-lakers",
+    "nba_id": 1641723,
+    "headshot_filename": "1641723-kobe-bufkin.png",
+    "aliases": []
+  },
+  "jimmy-butler-iii": {
+    "name": "Jimmy Butler III",
+    "full_name": "Jimmy Butler III",
+    "first_name": "Jimmy",
+    "last_name": "Butler III",
+    "team": "golden-state-warriors",
+    "nba_id": 202710,
+    "headshot_filename": "202710-jimmy-butler-iii.png",
+    "aliases": []
+  },
+  "matas-buzelis": {
+    "name": "Matas Buzelis",
+    "full_name": "Matas Buzelis",
+    "first_name": "Matas",
+    "last_name": "Buzelis",
+    "team": "chicago-bulls",
+    "nba_id": 1641824,
+    "headshot_filename": "1641824-matas-buzelis.png",
+    "aliases": []
+  },
+  "jamal-cain": {
+    "name": "Jamal Cain",
+    "full_name": "Jamal Cain",
+    "first_name": "Jamal",
+    "last_name": "Cain",
+    "team": "orlando-magic",
+    "nba_id": 1631288,
+    "headshot_filename": "1631288-jamal-cain.png",
+    "aliases": []
+  },
+  "kentavious-caldwell-pope": {
+    "name": "Kentavious Caldwell-Pope",
+    "full_name": "Kentavious Caldwell-Pope",
+    "first_name": "Kentavious",
+    "last_name": "Caldwell-Pope",
+    "team": "memphis-grizzlies",
+    "nba_id": 203484,
+    "headshot_filename": "203484-kentavious-caldwell-pope.png",
+    "aliases": []
+  },
+  "toumani-camara": {
+    "name": "Toumani Camara",
+    "full_name": "Toumani Camara",
+    "first_name": "Toumani",
+    "last_name": "Camara",
+    "team": "portland-trail-blazers",
+    "nba_id": 1641739,
+    "headshot_filename": "1641739-toumani-camara.png",
+    "aliases": []
+  },
+  "clint-capela": {
+    "name": "Clint Capela",
+    "full_name": "Clint Capela",
+    "first_name": "Clint",
+    "last_name": "Capela",
+    "team": "houston-rockets",
+    "nba_id": 203991,
+    "headshot_filename": "203991-clint-capela.png",
+    "aliases": []
+  },
+  "dylan-cardwell": {
+    "name": "Dylan Cardwell",
+    "full_name": "Dylan Cardwell",
+    "first_name": "Dylan",
+    "last_name": "Cardwell",
     "team": "sacramento-kings",
-    "aliases": ["Sabonis", "Domas"]
+    "nba_id": 1642928,
+    "headshot_filename": "1642928-dylan-cardwell.png",
+    "aliases": []
+  },
+  "branden-carlson": {
+    "name": "Branden Carlson",
+    "full_name": "Branden Carlson",
+    "first_name": "Branden",
+    "last_name": "Carlson",
+    "team": "oklahoma-city-thunder",
+    "nba_id": 1642382,
+    "headshot_filename": "1642382-branden-carlson.png",
+    "aliases": []
+  },
+  "bub-carrington": {
+    "name": "Bub Carrington",
+    "full_name": "Bub Carrington",
+    "first_name": "Bub",
+    "last_name": "Carrington",
+    "team": "washington-wizards",
+    "nba_id": 1642267,
+    "headshot_filename": "1642267-bub-carrington.png",
+    "aliases": []
+  },
+  "devin-carter": {
+    "name": "Devin Carter",
+    "full_name": "Devin Carter",
+    "first_name": "Devin",
+    "last_name": "Carter",
+    "team": "sacramento-kings",
+    "nba_id": 1642269,
+    "headshot_filename": "1642269-devin-carter.png",
+    "aliases": []
+  },
+  "jevon-carter": {
+    "name": "Jevon Carter",
+    "full_name": "Jevon Carter",
+    "first_name": "Jevon",
+    "last_name": "Carter",
+    "team": "orlando-magic",
+    "nba_id": 1628975,
+    "headshot_filename": "1628975-jevon-carter.png",
+    "aliases": []
+  },
+  "wendell-carter-jr": {
+    "name": "Wendell Carter Jr.",
+    "full_name": "Wendell Carter Jr.",
+    "first_name": "Wendell",
+    "last_name": "Carter Jr.",
+    "team": "orlando-magic",
+    "nba_id": 1628976,
+    "headshot_filename": "1628976-wendell-carter-jr.png",
+    "aliases": []
+  },
+  "alex-caruso": {
+    "name": "Alex Caruso",
+    "full_name": "Alex Caruso",
+    "first_name": "Alex",
+    "last_name": "Caruso",
+    "team": "oklahoma-city-thunder",
+    "nba_id": 1627936,
+    "headshot_filename": "1627936-alex-caruso.png",
+    "aliases": []
+  },
+  "stephon-castle": {
+    "name": "Stephon Castle",
+    "full_name": "Stephon Castle",
+    "first_name": "Stephon",
+    "last_name": "Castle",
+    "team": "san-antonio-spurs",
+    "nba_id": 1642264,
+    "headshot_filename": "1642264-stephon-castle.png",
+    "aliases": []
+  },
+  "colin-castleton": {
+    "name": "Colin Castleton",
+    "full_name": "Colin Castleton",
+    "first_name": "Colin",
+    "last_name": "Castleton",
+    "team": "orlando-magic",
+    "nba_id": 1630658,
+    "headshot_filename": "1630658-colin-castleton.png",
+    "aliases": []
+  },
+  "julian-champagnie": {
+    "name": "Julian Champagnie",
+    "full_name": "Julian Champagnie",
+    "first_name": "Julian",
+    "last_name": "Champagnie",
+    "team": "san-antonio-spurs",
+    "nba_id": 1630577,
+    "headshot_filename": "1630577-julian-champagnie.png",
+    "aliases": []
+  },
+  "justin-champagnie": {
+    "name": "Justin Champagnie",
+    "full_name": "Justin Champagnie",
+    "first_name": "Justin",
+    "last_name": "Champagnie",
+    "team": "washington-wizards",
+    "nba_id": 1630551,
+    "headshot_filename": "1630551-justin-champagnie.png",
+    "aliases": []
+  },
+  "cam-christie": {
+    "name": "Cam Christie",
+    "full_name": "Cam Christie",
+    "first_name": "Cam",
+    "last_name": "Christie",
+    "team": "los-angeles-clippers",
+    "nba_id": 1642353,
+    "headshot_filename": "1642353-cam-christie.png",
+    "aliases": []
+  },
+  "max-christie": {
+    "name": "Max Christie",
+    "full_name": "Max Christie",
+    "first_name": "Max",
+    "last_name": "Christie",
+    "team": "dallas-mavericks",
+    "nba_id": 1631108,
+    "headshot_filename": "1631108-max-christie.png",
+    "aliases": []
+  },
+  "moussa-cisse": {
+    "name": "Moussa Cisse",
+    "full_name": "Moussa Cisse",
+    "first_name": "Moussa",
+    "last_name": "Cisse",
+    "team": "dallas-mavericks",
+    "nba_id": 1630619,
+    "headshot_filename": "1630619-moussa-cisse.png",
+    "aliases": []
+  },
+  "sidy-cissoko": {
+    "name": "Sidy Cissoko",
+    "full_name": "Sidy Cissoko",
+    "first_name": "Sidy",
+    "last_name": "Cissoko",
+    "team": "portland-trail-blazers",
+    "nba_id": 1631321,
+    "headshot_filename": "1631321-sidy-cissoko.png",
+    "aliases": []
+  },
+  "jaylen-clark": {
+    "name": "Jaylen Clark",
+    "full_name": "Jaylen Clark",
+    "first_name": "Jaylen",
+    "last_name": "Clark",
+    "team": "minnesota-timberwolves",
+    "nba_id": 1641740,
+    "headshot_filename": "1641740-jaylen-clark.png",
+    "aliases": []
+  },
+  "brandon-clarke": {
+    "name": "Brandon Clarke",
+    "full_name": "Brandon Clarke",
+    "first_name": "Brandon",
+    "last_name": "Clarke",
+    "team": "memphis-grizzlies",
+    "nba_id": 1629634,
+    "headshot_filename": "1629634-brandon-clarke.png",
+    "aliases": []
+  },
+  "jordan-clarkson": {
+    "name": "Jordan Clarkson",
+    "full_name": "Jordan Clarkson",
+    "first_name": "Jordan",
+    "last_name": "Clarkson",
+    "team": "new-york-knicks",
+    "nba_id": 203903,
+    "headshot_filename": "203903-jordan-clarkson.png",
+    "aliases": []
+  },
+  "nic-claxton": {
+    "name": "Nic Claxton",
+    "full_name": "Nic Claxton",
+    "first_name": "Nic",
+    "last_name": "Claxton",
+    "team": "brooklyn-nets",
+    "nba_id": 1629651,
+    "headshot_filename": "1629651-nic-claxton.png",
+    "aliases": []
+  },
+  "walter-clayton-jr": {
+    "name": "Walter Clayton Jr.",
+    "full_name": "Walter Clayton Jr.",
+    "first_name": "Walter",
+    "last_name": "Clayton Jr.",
+    "team": "memphis-grizzlies",
+    "nba_id": 1642383,
+    "headshot_filename": "1642383-walter-clayton-jr.png",
+    "aliases": []
+  },
+  "nique-clifford": {
+    "name": "Nique Clifford",
+    "full_name": "Nique Clifford",
+    "first_name": "Nique",
+    "last_name": "Clifford",
+    "team": "sacramento-kings",
+    "nba_id": 1642363,
+    "headshot_filename": "1642363-nique-clifford.png",
+    "aliases": []
+  },
+  "donovan-clingan": {
+    "name": "Donovan Clingan",
+    "full_name": "Donovan Clingan",
+    "first_name": "Donovan",
+    "last_name": "Clingan",
+    "team": "portland-trail-blazers",
+    "nba_id": 1642270,
+    "headshot_filename": "1642270-donovan-clingan.png",
+    "aliases": []
+  },
+  "noah-clowney": {
+    "name": "Noah Clowney",
+    "full_name": "Noah Clowney",
+    "first_name": "Noah",
+    "last_name": "Clowney",
+    "team": "brooklyn-nets",
+    "nba_id": 1641730,
+    "headshot_filename": "1641730-noah-clowney.png",
+    "aliases": []
+  },
+  "amir-coffey": {
+    "name": "Amir Coffey",
+    "full_name": "Amir Coffey",
+    "first_name": "Amir",
+    "last_name": "Coffey",
+    "team": "phoenix-suns",
+    "nba_id": 1629599,
+    "headshot_filename": "1629599-amir-coffey.png",
+    "aliases": []
+  },
+  "isaiah-collier": {
+    "name": "Isaiah Collier",
+    "full_name": "Isaiah Collier",
+    "first_name": "Isaiah",
+    "last_name": "Collier",
+    "team": "utah-jazz",
+    "nba_id": 1642268,
+    "headshot_filename": "1642268-isaiah-collier.png",
+    "aliases": []
+  },
+  "john-collins": {
+    "name": "John Collins",
+    "full_name": "John Collins",
+    "first_name": "John",
+    "last_name": "Collins",
+    "team": "los-angeles-clippers",
+    "nba_id": 1628381,
+    "headshot_filename": "1628381-john-collins.png",
+    "aliases": []
+  },
+  "zach-collins": {
+    "name": "Zach Collins",
+    "full_name": "Zach Collins",
+    "first_name": "Zach",
+    "last_name": "Collins",
+    "team": "chicago-bulls",
+    "nba_id": 1628380,
+    "headshot_filename": "1628380-zach-collins.png",
+    "aliases": []
+  },
+  "mike-conley": {
+    "name": "Mike Conley",
+    "full_name": "Mike Conley",
+    "first_name": "Mike",
+    "last_name": "Conley",
+    "team": "minnesota-timberwolves",
+    "nba_id": 201144,
+    "headshot_filename": "201144-mike-conley.png",
+    "aliases": []
+  },
+  "pat-connaughton": {
+    "name": "Pat Connaughton",
+    "full_name": "Pat Connaughton",
+    "first_name": "Pat",
+    "last_name": "Connaughton",
+    "team": "charlotte-hornets",
+    "nba_id": 1626192,
+    "headshot_filename": "1626192-pat-connaughton.png",
+    "aliases": []
+  },
+  "sharife-cooper": {
+    "name": "Sharife Cooper",
+    "full_name": "Sharife Cooper",
+    "first_name": "Sharife",
+    "last_name": "Cooper",
+    "team": "washington-wizards",
+    "nba_id": 1630536,
+    "headshot_filename": "1630536-sharife-cooper.png",
+    "aliases": []
+  },
+  "bilal-coulibaly": {
+    "name": "Bilal Coulibaly",
+    "full_name": "Bilal Coulibaly",
+    "first_name": "Bilal",
+    "last_name": "Coulibaly",
+    "team": "washington-wizards",
+    "nba_id": 1641731,
+    "headshot_filename": "1641731-bilal-coulibaly.png",
+    "aliases": []
+  },
+  "cedric-coward": {
+    "name": "Cedric Coward",
+    "full_name": "Cedric Coward",
+    "first_name": "Cedric",
+    "last_name": "Coward",
+    "team": "memphis-grizzlies",
+    "nba_id": 1642907,
+    "headshot_filename": "1642907-cedric-coward.png",
+    "aliases": []
+  },
+  "isaiah-crawford": {
+    "name": "Isaiah Crawford",
+    "full_name": "Isaiah Crawford",
+    "first_name": "Isaiah",
+    "last_name": "Crawford",
+    "team": "houston-rockets",
+    "nba_id": 1642384,
+    "headshot_filename": "1642384-isaiah-crawford.png",
+    "aliases": []
+  },
+  "lj-cryer": {
+    "name": "LJ Cryer",
+    "full_name": "LJ Cryer",
+    "first_name": "LJ",
+    "last_name": "Cryer",
+    "team": "golden-state-warriors",
+    "nba_id": 1643018,
+    "headshot_filename": "1643018-lj-cryer.png",
+    "aliases": []
+  },
+  "cade-cunningham": {
+    "name": "Cade Cunningham",
+    "full_name": "Cade Cunningham",
+    "first_name": "Cade",
+    "last_name": "Cunningham",
+    "team": "detroit-pistons",
+    "nba_id": 1630595,
+    "headshot_filename": "1630595-cade-cunningham.png",
+    "aliases": [
+      "Cade"
+    ]
+  },
+  "seth-curry": {
+    "name": "Seth Curry",
+    "full_name": "Seth Curry",
+    "first_name": "Seth",
+    "last_name": "Curry",
+    "team": "golden-state-warriors",
+    "nba_id": 203552,
+    "headshot_filename": "203552-seth-curry.png",
+    "aliases": []
+  },
+  "stephen-curry": {
+    "name": "Stephen Curry",
+    "full_name": "Stephen Curry",
+    "first_name": "Stephen",
+    "last_name": "Curry",
+    "team": "golden-state-warriors",
+    "nba_id": 201939,
+    "headshot_filename": "201939-stephen-curry.png",
+    "aliases": [
+      "Steph Curry",
+      "Steph",
+      "Chef Curry"
+    ]
+  },
+  "tristan-da-silva": {
+    "name": "Tristan da Silva",
+    "full_name": "Tristan da Silva",
+    "first_name": "Tristan",
+    "last_name": "da Silva",
+    "team": "orlando-magic",
+    "nba_id": 1641783,
+    "headshot_filename": "1641783-tristan-da-silva.png",
+    "aliases": []
+  },
+  "pacome-dadiet": {
+    "name": "Pacôme Dadiet",
+    "full_name": "Pacôme Dadiet",
+    "first_name": "Pacôme",
+    "last_name": "Dadiet",
+    "team": "new-york-knicks",
+    "nba_id": 1642359,
+    "headshot_filename": "1642359-pacme-dadiet.png",
+    "aliases": [
+      "Pacome Dadiet"
+    ]
+  },
+  "dyson-daniels": {
+    "name": "Dyson Daniels",
+    "full_name": "Dyson Daniels",
+    "first_name": "Dyson",
+    "last_name": "Daniels",
+    "team": "atlanta-hawks",
+    "nba_id": 1630700,
+    "headshot_filename": "1630700-dyson-daniels.png",
+    "aliases": []
+  },
+  "anthony-davis": {
+    "name": "Anthony Davis",
+    "full_name": "Anthony Davis",
+    "first_name": "Anthony",
+    "last_name": "Davis",
+    "team": "washington-wizards",
+    "nba_id": 203076,
+    "headshot_filename": "203076-anthony-davis.png",
+    "aliases": [
+      "AD",
+      "The Brow"
+    ]
+  },
+  "jd-davison": {
+    "name": "JD Davison",
+    "full_name": "JD Davison",
+    "first_name": "JD",
+    "last_name": "Davison",
+    "team": "houston-rockets",
+    "nba_id": 1631120,
+    "headshot_filename": "1631120-jd-davison.png",
+    "aliases": []
+  },
+  "egor-demin": {
+    "name": "Egor Dëmin",
+    "full_name": "Egor Dëmin",
+    "first_name": "Egor",
+    "last_name": "Dëmin",
+    "team": "brooklyn-nets",
+    "nba_id": 1642856,
+    "headshot_filename": "1642856-egor-dmin.png",
+    "aliases": [
+      "Egor Demin"
+    ]
+  },
+  "rayj-dennis": {
+    "name": "RayJ Dennis",
+    "full_name": "RayJ Dennis",
+    "first_name": "RayJ",
+    "last_name": "Dennis",
+    "team": "atlanta-hawks",
+    "nba_id": 1642484,
+    "headshot_filename": "1642484-rayj-dennis.png",
+    "aliases": []
+  },
+  "demar-derozan": {
+    "name": "DeMar DeRozan",
+    "full_name": "DeMar DeRozan",
+    "first_name": "DeMar",
+    "last_name": "DeRozan",
+    "team": "sacramento-kings",
+    "nba_id": 201942,
+    "headshot_filename": "201942-demar-derozan.png",
+    "aliases": []
+  },
+  "moussa-diabate": {
+    "name": "Moussa Diabaté",
+    "full_name": "Moussa Diabaté",
+    "first_name": "Moussa",
+    "last_name": "Diabaté",
+    "team": "charlotte-hornets",
+    "nba_id": 1631217,
+    "headshot_filename": "1631217-moussa-diabat.png",
+    "aliases": [
+      "Moussa Diabate"
+    ]
+  },
+  "mohamed-diawara": {
+    "name": "Mohamed Diawara",
+    "full_name": "Mohamed Diawara",
+    "first_name": "Mohamed",
+    "last_name": "Diawara",
+    "team": "new-york-knicks",
+    "nba_id": 1642885,
+    "headshot_filename": "1642885-mohamed-diawara.png",
+    "aliases": []
+  },
+  "gradey-dick": {
+    "name": "Gradey Dick",
+    "full_name": "Gradey Dick",
+    "first_name": "Gradey",
+    "last_name": "Dick",
+    "team": "toronto-raptors",
+    "nba_id": 1641711,
+    "headshot_filename": "1641711-gradey-dick.png",
+    "aliases": []
+  },
+  "hunter-dickinson": {
+    "name": "Hunter Dickinson",
+    "full_name": "Hunter Dickinson",
+    "first_name": "Hunter",
+    "last_name": "Dickinson",
+    "team": "new-orleans-pelicans",
+    "nba_id": 1630621,
+    "headshot_filename": "1630621-hunter-dickinson.png",
+    "aliases": []
+  },
+  "ousmane-dieng": {
+    "name": "Ousmane Dieng",
+    "full_name": "Ousmane Dieng",
+    "first_name": "Ousmane",
+    "last_name": "Dieng",
+    "team": "milwaukee-bucks",
+    "nba_id": 1631172,
+    "headshot_filename": "1631172-ousmane-dieng.png",
+    "aliases": []
+  },
+  "rob-dillingham": {
+    "name": "Rob Dillingham",
+    "full_name": "Rob Dillingham",
+    "first_name": "Rob",
+    "last_name": "Dillingham",
+    "team": "chicago-bulls",
+    "nba_id": 1642265,
+    "headshot_filename": "1642265-rob-dillingham.png",
+    "aliases": []
+  },
+  "donte-divincenzo": {
+    "name": "Donte DiVincenzo",
+    "full_name": "Donte DiVincenzo",
+    "first_name": "Donte",
+    "last_name": "DiVincenzo",
+    "team": "minnesota-timberwolves",
+    "nba_id": 1628978,
+    "headshot_filename": "1628978-donte-divincenzo.png",
+    "aliases": []
+  },
+  "luka-doncic": {
+    "name": "Luka Dončić",
+    "full_name": "Luka Dončić",
+    "first_name": "Luka",
+    "last_name": "Dončić",
+    "team": "los-angeles-lakers",
+    "nba_id": 1629029,
+    "headshot_filename": "1629029-luka-doni.png",
+    "aliases": [
+      "Luka Doncic"
+    ]
+  },
+  "luguentz-dort": {
+    "name": "Luguentz Dort",
+    "full_name": "Luguentz Dort",
+    "first_name": "Luguentz",
+    "last_name": "Dort",
+    "team": "oklahoma-city-thunder",
+    "nba_id": 1629652,
+    "headshot_filename": "1629652-luguentz-dort.png",
+    "aliases": []
+  },
+  "ayo-dosunmu": {
+    "name": "Ayo Dosunmu",
+    "full_name": "Ayo Dosunmu",
+    "first_name": "Ayo",
+    "last_name": "Dosunmu",
+    "team": "minnesota-timberwolves",
+    "nba_id": 1630245,
+    "headshot_filename": "1630245-ayo-dosunmu.png",
+    "aliases": []
+  },
+  "andre-drummond": {
+    "name": "Andre Drummond",
+    "full_name": "Andre Drummond",
+    "first_name": "Andre",
+    "last_name": "Drummond",
+    "team": "philadelphia-76ers",
+    "nba_id": 203083,
+    "headshot_filename": "203083-andre-drummond.png",
+    "aliases": []
+  },
+  "kris-dunn": {
+    "name": "Kris Dunn",
+    "full_name": "Kris Dunn",
+    "first_name": "Kris",
+    "last_name": "Dunn",
+    "team": "los-angeles-clippers",
+    "nba_id": 1627739,
+    "headshot_filename": "1627739-kris-dunn.png",
+    "aliases": []
+  },
+  "ryan-dunn": {
+    "name": "Ryan Dunn",
+    "full_name": "Ryan Dunn",
+    "first_name": "Ryan",
+    "last_name": "Dunn",
+    "team": "phoenix-suns",
+    "nba_id": 1642346,
+    "headshot_filename": "1642346-ryan-dunn.png",
+    "aliases": []
+  },
+  "kevin-durant": {
+    "name": "Kevin Durant",
+    "full_name": "Kevin Durant",
+    "first_name": "Kevin",
+    "last_name": "Durant",
+    "team": "houston-rockets",
+    "nba_id": 201142,
+    "headshot_filename": "201142-kevin-durant.png",
+    "aliases": [
+      "KD",
+      "Easy Money Sniper"
+    ]
+  },
+  "jalen-duren": {
+    "name": "Jalen Duren",
+    "full_name": "Jalen Duren",
+    "first_name": "Jalen",
+    "last_name": "Duren",
+    "team": "detroit-pistons",
+    "nba_id": 1631105,
+    "headshot_filename": "1631105-jalen-duren.png",
+    "aliases": []
+  },
+  "tari-eason": {
+    "name": "Tari Eason",
+    "full_name": "Tari Eason",
+    "first_name": "Tari",
+    "last_name": "Eason",
+    "team": "houston-rockets",
+    "nba_id": 1631106,
+    "headshot_filename": "1631106-tari-eason.png",
+    "aliases": []
+  },
+  "zach-edey": {
+    "name": "Zach Edey",
+    "full_name": "Zach Edey",
+    "first_name": "Zach",
+    "last_name": "Edey",
+    "team": "memphis-grizzlies",
+    "nba_id": 1641744,
+    "headshot_filename": "1641744-zach-edey.png",
+    "aliases": []
+  },
+  "vj-edgecombe": {
+    "name": "VJ Edgecombe",
+    "full_name": "VJ Edgecombe",
+    "first_name": "VJ",
+    "last_name": "Edgecombe",
+    "team": "philadelphia-76ers",
+    "nba_id": 1642845,
+    "headshot_filename": "1642845-vj-edgecombe.png",
+    "aliases": []
+  },
+  "anthony-edwards": {
+    "name": "Anthony Edwards",
+    "full_name": "Anthony Edwards",
+    "first_name": "Anthony",
+    "last_name": "Edwards",
+    "team": "minnesota-timberwolves",
+    "nba_id": 1630162,
+    "headshot_filename": "1630162-anthony-edwards.png",
+    "aliases": [
+      "Ant",
+      "Ant-Man"
+    ]
+  },
+  "justin-edwards": {
+    "name": "Justin Edwards",
+    "full_name": "Justin Edwards",
+    "first_name": "Justin",
+    "last_name": "Edwards",
+    "team": "philadelphia-76ers",
+    "nba_id": 1642348,
+    "headshot_filename": "1642348-justin-edwards.png",
+    "aliases": []
+  },
+  "keon-ellis": {
+    "name": "Keon Ellis",
+    "full_name": "Keon Ellis",
+    "first_name": "Keon",
+    "last_name": "Ellis",
+    "team": "cleveland-cavaliers",
+    "nba_id": 1631165,
+    "headshot_filename": "1631165-keon-ellis.png",
+    "aliases": []
+  },
+  "joel-embiid": {
+    "name": "Joel Embiid",
+    "full_name": "Joel Embiid",
+    "first_name": "Joel",
+    "last_name": "Embiid",
+    "team": "philadelphia-76ers",
+    "nba_id": 203954,
+    "headshot_filename": "203954-joel-embiid.png",
+    "aliases": [
+      "The Process",
+      "JoJo"
+    ]
+  },
+  "tristan-enaruna": {
+    "name": "Tristan Enaruna",
+    "full_name": "Tristan Enaruna",
+    "first_name": "Tristan",
+    "last_name": "Enaruna",
+    "team": "cleveland-cavaliers",
+    "nba_id": 1642400,
+    "headshot_filename": "1642400-tristan-enaruna.png",
+    "aliases": []
+  },
+  "noa-essengue": {
+    "name": "Noa Essengue",
+    "full_name": "Noa Essengue",
+    "first_name": "Noa",
+    "last_name": "Essengue",
+    "team": "chicago-bulls",
+    "nba_id": 1642855,
+    "headshot_filename": "1642855-noa-essengue.png",
+    "aliases": []
+  },
+  "tyson-etienne": {
+    "name": "Tyson Etienne",
+    "full_name": "Tyson Etienne",
+    "first_name": "Tyson",
+    "last_name": "Etienne",
+    "team": "brooklyn-nets",
+    "nba_id": 1630623,
+    "headshot_filename": "1630623-tyson-etienne.png",
+    "aliases": []
+  },
+  "drew-eubanks": {
+    "name": "Drew Eubanks",
+    "full_name": "Drew Eubanks",
+    "first_name": "Drew",
+    "last_name": "Eubanks",
+    "team": "sacramento-kings",
+    "nba_id": 1629234,
+    "headshot_filename": "1629234-drew-eubanks.png",
+    "aliases": []
+  },
+  "tosan-evbuomwan": {
+    "name": "Tosan Evbuomwan",
+    "full_name": "Tosan Evbuomwan",
+    "first_name": "Tosan",
+    "last_name": "Evbuomwan",
+    "team": "charlotte-hornets",
+    "nba_id": 1641787,
+    "headshot_filename": "1641787-tosan-evbuomwan.png",
+    "aliases": []
+  },
+  "jeremiah-fears": {
+    "name": "Jeremiah Fears",
+    "full_name": "Jeremiah Fears",
+    "first_name": "Jeremiah",
+    "last_name": "Fears",
+    "team": "new-orleans-pelicans",
+    "nba_id": 1642847,
+    "headshot_filename": "1642847-jeremiah-fears.png",
+    "aliases": []
+  },
+  "kyle-filipowski": {
+    "name": "Kyle Filipowski",
+    "full_name": "Kyle Filipowski",
+    "first_name": "Kyle",
+    "last_name": "Filipowski",
+    "team": "utah-jazz",
+    "nba_id": 1642271,
+    "headshot_filename": "1642271-kyle-filipowski.png",
+    "aliases": []
+  },
+  "dorian-finney-smith": {
+    "name": "Dorian Finney-Smith",
+    "full_name": "Dorian Finney-Smith",
+    "first_name": "Dorian",
+    "last_name": "Finney-Smith",
+    "team": "houston-rockets",
+    "nba_id": 1627827,
+    "headshot_filename": "1627827-dorian-finney-smith.png",
+    "aliases": []
+  },
+  "cooper-flagg": {
+    "name": "Cooper Flagg",
+    "full_name": "Cooper Flagg",
+    "first_name": "Cooper",
+    "last_name": "Flagg",
+    "team": "dallas-mavericks",
+    "nba_id": 1642843,
+    "headshot_filename": "1642843-cooper-flagg.png",
+    "aliases": []
+  },
+  "rasheer-fleming": {
+    "name": "Rasheer Fleming",
+    "full_name": "Rasheer Fleming",
+    "first_name": "Rasheer",
+    "last_name": "Fleming",
+    "team": "phoenix-suns",
+    "nba_id": 1642853,
+    "headshot_filename": "1642853-rasheer-fleming.png",
+    "aliases": []
+  },
+  "simone-fontecchio": {
+    "name": "Simone Fontecchio",
+    "full_name": "Simone Fontecchio",
+    "first_name": "Simone",
+    "last_name": "Fontecchio",
+    "team": "miami-heat",
+    "nba_id": 1631323,
+    "headshot_filename": "1631323-simone-fontecchio.png",
+    "aliases": []
   },
   "deaaron-fox": {
     "name": "De'Aaron Fox",
+    "full_name": "De'Aaron Fox",
+    "first_name": "De'Aaron",
+    "last_name": "Fox",
     "team": "san-antonio-spurs",
-    "aliases": ["De'Aaron Fox", "Fox", "Swipa"]
+    "nba_id": 1628368,
+    "headshot_filename": "1628368-deaaron-fox.png",
+    "aliases": [
+      "Swipa"
+    ]
+  },
+  "enrique-freeman": {
+    "name": "Enrique Freeman",
+    "full_name": "Enrique Freeman",
+    "first_name": "Enrique",
+    "last_name": "Freeman",
+    "team": "minnesota-timberwolves",
+    "nba_id": 1642402,
+    "headshot_filename": "1642402-enrique-freeman.png",
+    "aliases": []
+  },
+  "johnny-furphy": {
+    "name": "Johnny Furphy",
+    "full_name": "Johnny Furphy",
+    "first_name": "Johnny",
+    "last_name": "Furphy",
+    "team": "indiana-pacers",
+    "nba_id": 1642277,
+    "headshot_filename": "1642277-johnny-furphy.png",
+    "aliases": []
+  },
+  "daniel-gafford": {
+    "name": "Daniel Gafford",
+    "full_name": "Daniel Gafford",
+    "first_name": "Daniel",
+    "last_name": "Gafford",
+    "team": "dallas-mavericks",
+    "nba_id": 1629655,
+    "headshot_filename": "1629655-daniel-gafford.png",
+    "aliases": []
+  },
+  "myron-gardner": {
+    "name": "Myron Gardner",
+    "full_name": "Myron Gardner",
+    "first_name": "Myron",
+    "last_name": "Gardner",
+    "team": "miami-heat",
+    "nba_id": 1642066,
+    "headshot_filename": "1642066-myron-gardner.png",
+    "aliases": []
+  },
+  "darius-garland": {
+    "name": "Darius Garland",
+    "full_name": "Darius Garland",
+    "first_name": "Darius",
+    "last_name": "Garland",
+    "team": "los-angeles-clippers",
+    "nba_id": 1629636,
+    "headshot_filename": "1629636-darius-garland.png",
+    "aliases": [
+      "DG"
+    ]
+  },
+  "luka-garza": {
+    "name": "Luka Garza",
+    "full_name": "Luka Garza",
+    "first_name": "Luka",
+    "last_name": "Garza",
+    "team": "boston-celtics",
+    "nba_id": 1630568,
+    "headshot_filename": "1630568-luka-garza.png",
+    "aliases": []
+  },
+  "keyonte-george": {
+    "name": "Keyonte George",
+    "full_name": "Keyonte George",
+    "first_name": "Keyonte",
+    "last_name": "George",
+    "team": "utah-jazz",
+    "nba_id": 1641718,
+    "headshot_filename": "1641718-keyonte-george.png",
+    "aliases": []
+  },
+  "kyshawn-george": {
+    "name": "Kyshawn George",
+    "full_name": "Kyshawn George",
+    "first_name": "Kyshawn",
+    "last_name": "George",
+    "team": "washington-wizards",
+    "nba_id": 1642273,
+    "headshot_filename": "1642273-kyshawn-george.png",
+    "aliases": []
+  },
+  "paul-george": {
+    "name": "Paul George",
+    "full_name": "Paul George",
+    "first_name": "Paul",
+    "last_name": "George",
+    "team": "philadelphia-76ers",
+    "nba_id": 202331,
+    "headshot_filename": "202331-paul-george.png",
+    "aliases": [
+      "PG",
+      "PG13"
+    ]
+  },
+  "taj-gibson": {
+    "name": "Taj Gibson",
+    "full_name": "Taj Gibson",
+    "first_name": "Taj",
+    "last_name": "Gibson",
+    "team": "memphis-grizzlies",
+    "nba_id": 201959,
+    "headshot_filename": "201959-taj-gibson.png",
+    "aliases": []
+  },
+  "josh-giddey": {
+    "name": "Josh Giddey",
+    "full_name": "Josh Giddey",
+    "first_name": "Josh",
+    "last_name": "Giddey",
+    "team": "chicago-bulls",
+    "nba_id": 1630581,
+    "headshot_filename": "1630581-josh-giddey.png",
+    "aliases": []
+  },
+  "keshon-gilbert": {
+    "name": "Keshon Gilbert",
+    "full_name": "Keshon Gilbert",
+    "first_name": "Keshon",
+    "last_name": "Gilbert",
+    "team": "atlanta-hawks",
+    "nba_id": 1642933,
+    "headshot_filename": "1642933-keshon-gilbert.png",
+    "aliases": []
+  },
+  "shai-gilgeous-alexander": {
+    "name": "Shai Gilgeous-Alexander",
+    "full_name": "Shai Gilgeous-Alexander",
+    "first_name": "Shai",
+    "last_name": "Gilgeous-Alexander",
+    "team": "oklahoma-city-thunder",
+    "nba_id": 1628983,
+    "headshot_filename": "1628983-shai-gilgeous-alexander.png",
+    "aliases": [
+      "SGA",
+      "Shai"
+    ]
+  },
+  "anthony-gill": {
+    "name": "Anthony Gill",
+    "full_name": "Anthony Gill",
+    "first_name": "Anthony",
+    "last_name": "Gill",
+    "team": "washington-wizards",
+    "nba_id": 1630264,
+    "headshot_filename": "1630264-anthony-gill.png",
+    "aliases": []
+  },
+  "collin-gillespie": {
+    "name": "Collin Gillespie",
+    "full_name": "Collin Gillespie",
+    "first_name": "Collin",
+    "last_name": "Gillespie",
+    "team": "phoenix-suns",
+    "nba_id": 1631221,
+    "headshot_filename": "1631221-collin-gillespie.png",
+    "aliases": []
+  },
+  "rudy-gobert": {
+    "name": "Rudy Gobert",
+    "full_name": "Rudy Gobert",
+    "first_name": "Rudy",
+    "last_name": "Gobert",
+    "team": "minnesota-timberwolves",
+    "nba_id": 203497,
+    "headshot_filename": "203497-rudy-gobert.png",
+    "aliases": []
+  },
+  "vladislav-goldin": {
+    "name": "Vladislav Goldin",
+    "full_name": "Vladislav Goldin",
+    "first_name": "Vladislav",
+    "last_name": "Goldin",
+    "team": "miami-heat",
+    "nba_id": 1642884,
+    "headshot_filename": "1642884-vladislav-goldin.png",
+    "aliases": []
+  },
+  "hugo-gonzalez": {
+    "name": "Hugo González",
+    "full_name": "Hugo González",
+    "first_name": "Hugo",
+    "last_name": "González",
+    "team": "boston-celtics",
+    "nba_id": 1642864,
+    "headshot_filename": "1642864-hugo-gonzlez.png",
+    "aliases": [
+      "Hugo Gonzalez"
+    ]
+  },
+  "jordan-goodwin": {
+    "name": "Jordan Goodwin",
+    "full_name": "Jordan Goodwin",
+    "first_name": "Jordan",
+    "last_name": "Goodwin",
+    "team": "phoenix-suns",
+    "nba_id": 1630692,
+    "headshot_filename": "1630692-jordan-goodwin.png",
+    "aliases": []
+  },
+  "aaron-gordon": {
+    "name": "Aaron Gordon",
+    "full_name": "Aaron Gordon",
+    "first_name": "Aaron",
+    "last_name": "Gordon",
+    "team": "denver-nuggets",
+    "nba_id": 203932,
+    "headshot_filename": "203932-aaron-gordon.png",
+    "aliases": []
+  },
+  "jerami-grant": {
+    "name": "Jerami Grant",
+    "full_name": "Jerami Grant",
+    "first_name": "Jerami",
+    "last_name": "Grant",
+    "team": "portland-trail-blazers",
+    "nba_id": 203924,
+    "headshot_filename": "203924-jerami-grant.png",
+    "aliases": []
+  },
+  "aj-green": {
+    "name": "AJ Green",
+    "full_name": "AJ Green",
+    "first_name": "AJ",
+    "last_name": "Green",
+    "team": "milwaukee-bucks",
+    "nba_id": 1631260,
+    "headshot_filename": "1631260-aj-green.png",
+    "aliases": []
+  },
+  "draymond-green": {
+    "name": "Draymond Green",
+    "full_name": "Draymond Green",
+    "first_name": "Draymond",
+    "last_name": "Green",
+    "team": "golden-state-warriors",
+    "nba_id": 203110,
+    "headshot_filename": "203110-draymond-green.png",
+    "aliases": []
+  },
+  "jalen-green": {
+    "name": "Jalen Green",
+    "full_name": "Jalen Green",
+    "first_name": "Jalen",
+    "last_name": "Green",
+    "team": "phoenix-suns",
+    "nba_id": 1630224,
+    "headshot_filename": "1630224-jalen-green.png",
+    "aliases": []
+  },
+  "javonte-green": {
+    "name": "Javonte Green",
+    "full_name": "Javonte Green",
+    "first_name": "Javonte",
+    "last_name": "Green",
+    "team": "detroit-pistons",
+    "nba_id": 1629750,
+    "headshot_filename": "1629750-javonte-green.png",
+    "aliases": []
+  },
+  "jeff-green": {
+    "name": "Jeff Green",
+    "full_name": "Jeff Green",
+    "first_name": "Jeff",
+    "last_name": "Green",
+    "team": "houston-rockets",
+    "nba_id": 201145,
+    "headshot_filename": "201145-jeff-green.png",
+    "aliases": []
+  },
+  "josh-green": {
+    "name": "Josh Green",
+    "full_name": "Josh Green",
+    "first_name": "Josh",
+    "last_name": "Green",
+    "team": "charlotte-hornets",
+    "nba_id": 1630182,
+    "headshot_filename": "1630182-josh-green.png",
+    "aliases": []
+  },
+  "quentin-grimes": {
+    "name": "Quentin Grimes",
+    "full_name": "Quentin Grimes",
+    "first_name": "Quentin",
+    "last_name": "Grimes",
+    "team": "philadelphia-76ers",
+    "nba_id": 1629656,
+    "headshot_filename": "1629656-quentin-grimes.png",
+    "aliases": []
+  },
+  "mouhamed-gueye": {
+    "name": "Mouhamed Gueye",
+    "full_name": "Mouhamed Gueye",
+    "first_name": "Mouhamed",
+    "last_name": "Gueye",
+    "team": "atlanta-hawks",
+    "nba_id": 1631243,
+    "headshot_filename": "1631243-mouhamed-gueye.png",
+    "aliases": []
+  },
+  "rui-hachimura": {
+    "name": "Rui Hachimura",
+    "full_name": "Rui Hachimura",
+    "first_name": "Rui",
+    "last_name": "Hachimura",
+    "team": "los-angeles-lakers",
+    "nba_id": 1629060,
+    "headshot_filename": "1629060-rui-hachimura.png",
+    "aliases": []
+  },
+  "tyrese-haliburton": {
+    "name": "Tyrese Haliburton",
+    "full_name": "Tyrese Haliburton",
+    "first_name": "Tyrese",
+    "last_name": "Haliburton",
+    "team": "indiana-pacers",
+    "nba_id": 1630169,
+    "headshot_filename": "1630169-tyrese-haliburton.png",
+    "aliases": [
+      "Hali",
+      "Tyrese"
+    ]
+  },
+  "pj-hall": {
+    "name": "PJ Hall",
+    "full_name": "PJ Hall",
+    "first_name": "PJ",
+    "last_name": "Hall",
+    "team": "charlotte-hornets",
+    "nba_id": 1641790,
+    "headshot_filename": "1641790-pj-hall.png",
+    "aliases": []
+  },
+  "tim-hardaway-jr": {
+    "name": "Tim Hardaway Jr.",
+    "full_name": "Tim Hardaway Jr.",
+    "first_name": "Tim",
+    "last_name": "Hardaway Jr.",
+    "team": "denver-nuggets",
+    "nba_id": 203501,
+    "headshot_filename": "203501-tim-hardaway-jr.png",
+    "aliases": []
+  },
+  "james-harden": {
+    "name": "James Harden",
+    "full_name": "James Harden",
+    "first_name": "James",
+    "last_name": "Harden",
+    "team": "cleveland-cavaliers",
+    "nba_id": 201935,
+    "headshot_filename": "201935-james-harden.png",
+    "aliases": [
+      "The Beard"
+    ]
+  },
+  "jaden-hardy": {
+    "name": "Jaden Hardy",
+    "full_name": "Jaden Hardy",
+    "first_name": "Jaden",
+    "last_name": "Hardy",
+    "team": "washington-wizards",
+    "nba_id": 1630702,
+    "headshot_filename": "1630702-jaden-hardy.png",
+    "aliases": []
+  },
+  "elijah-harkless": {
+    "name": "Elijah Harkless",
+    "full_name": "Elijah Harkless",
+    "first_name": "Elijah",
+    "last_name": "Harkless",
+    "team": "utah-jazz",
+    "nba_id": 1641989,
+    "headshot_filename": "1641989-elijah-harkless.png",
+    "aliases": []
+  },
+  "dylan-harper": {
+    "name": "Dylan Harper",
+    "full_name": "Dylan Harper",
+    "first_name": "Dylan",
+    "last_name": "Harper",
+    "team": "san-antonio-spurs",
+    "nba_id": 1642844,
+    "headshot_filename": "1642844-dylan-harper.png",
+    "aliases": []
+  },
+  "ron-harper-jr": {
+    "name": "Ron Harper Jr.",
+    "full_name": "Ron Harper Jr.",
+    "first_name": "Ron",
+    "last_name": "Harper Jr.",
+    "team": "boston-celtics",
+    "nba_id": 1631199,
+    "headshot_filename": "1631199-ron-harper-jr.png",
+    "aliases": []
+  },
+  "gary-harris": {
+    "name": "Gary Harris",
+    "full_name": "Gary Harris",
+    "first_name": "Gary",
+    "last_name": "Harris",
+    "team": "milwaukee-bucks",
+    "nba_id": 203914,
+    "headshot_filename": "203914-gary-harris.png",
+    "aliases": []
+  },
+  "tobias-harris": {
+    "name": "Tobias Harris",
+    "full_name": "Tobias Harris",
+    "first_name": "Tobias",
+    "last_name": "Harris",
+    "team": "detroit-pistons",
+    "nba_id": 202699,
+    "headshot_filename": "202699-tobias-harris.png",
+    "aliases": []
+  },
+  "josh-hart": {
+    "name": "Josh Hart",
+    "full_name": "Josh Hart",
+    "first_name": "Josh",
+    "last_name": "Hart",
+    "team": "new-york-knicks",
+    "nba_id": 1628404,
+    "headshot_filename": "1628404-josh-hart.png",
+    "aliases": []
+  },
+  "isaiah-hartenstein": {
+    "name": "Isaiah Hartenstein",
+    "full_name": "Isaiah Hartenstein",
+    "first_name": "Isaiah",
+    "last_name": "Hartenstein",
+    "team": "oklahoma-city-thunder",
+    "nba_id": 1628392,
+    "headshot_filename": "1628392-isaiah-hartenstein.png",
+    "aliases": []
+  },
+  "sam-hauser": {
+    "name": "Sam Hauser",
+    "full_name": "Sam Hauser",
+    "first_name": "Sam",
+    "last_name": "Hauser",
+    "team": "boston-celtics",
+    "nba_id": 1630573,
+    "headshot_filename": "1630573-sam-hauser.png",
+    "aliases": []
+  },
+  "jordan-hawkins": {
+    "name": "Jordan Hawkins",
+    "full_name": "Jordan Hawkins",
+    "first_name": "Jordan",
+    "last_name": "Hawkins",
+    "team": "new-orleans-pelicans",
+    "nba_id": 1641722,
+    "headshot_filename": "1641722-jordan-hawkins.png",
+    "aliases": []
+  },
+  "jaxson-hayes": {
+    "name": "Jaxson Hayes",
+    "full_name": "Jaxson Hayes",
+    "first_name": "Jaxson",
+    "last_name": "Hayes",
+    "team": "los-angeles-lakers",
+    "nba_id": 1629637,
+    "headshot_filename": "1629637-jaxson-hayes.png",
+    "aliases": []
+  },
+  "killian-hayes": {
+    "name": "Killian Hayes",
+    "full_name": "Killian Hayes",
+    "first_name": "Killian",
+    "last_name": "Hayes",
+    "team": "sacramento-kings",
+    "nba_id": 1630165,
+    "headshot_filename": "1630165-killian-hayes.png",
+    "aliases": []
+  },
+  "scoot-henderson": {
+    "name": "Scoot Henderson",
+    "full_name": "Scoot Henderson",
+    "first_name": "Scoot",
+    "last_name": "Henderson",
+    "team": "portland-trail-blazers",
+    "nba_id": 1630703,
+    "headshot_filename": "1630703-scoot-henderson.png",
+    "aliases": []
+  },
+  "taylor-hendricks": {
+    "name": "Taylor Hendricks",
+    "full_name": "Taylor Hendricks",
+    "first_name": "Taylor",
+    "last_name": "Hendricks",
+    "team": "memphis-grizzlies",
+    "nba_id": 1641707,
+    "headshot_filename": "1641707-taylor-hendricks.png",
+    "aliases": []
+  },
+  "chucky-hepburn": {
+    "name": "Chucky Hepburn",
+    "full_name": "Chucky Hepburn",
+    "first_name": "Chucky",
+    "last_name": "Hepburn",
+    "team": "toronto-raptors",
+    "nba_id": 1642935,
+    "headshot_filename": "1642935-chucky-hepburn.png",
+    "aliases": []
+  },
+  "tyler-herro": {
+    "name": "Tyler Herro",
+    "full_name": "Tyler Herro",
+    "first_name": "Tyler",
+    "last_name": "Herro",
+    "team": "miami-heat",
+    "nba_id": 1629639,
+    "headshot_filename": "1629639-tyler-herro.png",
+    "aliases": []
+  },
+  "buddy-hield": {
+    "name": "Buddy Hield",
+    "full_name": "Buddy Hield",
+    "first_name": "Buddy",
+    "last_name": "Hield",
+    "team": "atlanta-hawks",
+    "nba_id": 1627741,
+    "headshot_filename": "1627741-buddy-hield.png",
+    "aliases": []
+  },
+  "haywood-highsmith": {
+    "name": "Haywood Highsmith",
+    "full_name": "Haywood Highsmith",
+    "first_name": "Haywood",
+    "last_name": "Highsmith",
+    "team": "phoenix-suns",
+    "nba_id": 1629312,
+    "headshot_filename": "1629312-haywood-highsmith.png",
+    "aliases": []
+  },
+  "blake-hinson": {
+    "name": "Blake Hinson",
+    "full_name": "Blake Hinson",
+    "first_name": "Blake",
+    "last_name": "Hinson",
+    "team": "utah-jazz",
+    "nba_id": 1642396,
+    "headshot_filename": "1642396-blake-hinson.png",
+    "aliases": []
+  },
+  "aaron-holiday": {
+    "name": "Aaron Holiday",
+    "full_name": "Aaron Holiday",
+    "first_name": "Aaron",
+    "last_name": "Holiday",
+    "team": "houston-rockets",
+    "nba_id": 1628988,
+    "headshot_filename": "1628988-aaron-holiday.png",
+    "aliases": []
+  },
+  "jrue-holiday": {
+    "name": "Jrue Holiday",
+    "full_name": "Jrue Holiday",
+    "first_name": "Jrue",
+    "last_name": "Holiday",
+    "team": "portland-trail-blazers",
+    "nba_id": 201950,
+    "headshot_filename": "201950-jrue-holiday.png",
+    "aliases": []
+  },
+  "ronald-holland-ii": {
+    "name": "Ronald Holland II",
+    "full_name": "Ronald Holland II",
+    "first_name": "Ronald",
+    "last_name": "Holland II",
+    "team": "detroit-pistons",
+    "nba_id": 1641842,
+    "headshot_filename": "1641842-ronald-holland-ii.png",
+    "aliases": []
+  },
+  "daron-holmes-ii": {
+    "name": "DaRon Holmes II",
+    "full_name": "DaRon Holmes II",
+    "first_name": "DaRon",
+    "last_name": "Holmes II",
+    "team": "denver-nuggets",
+    "nba_id": 1641747,
+    "headshot_filename": "1641747-daron-holmes-ii.png",
+    "aliases": []
+  },
+  "chet-holmgren": {
+    "name": "Chet Holmgren",
+    "full_name": "Chet Holmgren",
+    "first_name": "Chet",
+    "last_name": "Holmgren",
+    "team": "oklahoma-city-thunder",
+    "nba_id": 1631096,
+    "headshot_filename": "1631096-chet-holmgren.png",
+    "aliases": [
+      "Chet"
+    ]
+  },
+  "al-horford": {
+    "name": "Al Horford",
+    "full_name": "Al Horford",
+    "first_name": "Al",
+    "last_name": "Horford",
+    "team": "golden-state-warriors",
+    "nba_id": 201143,
+    "headshot_filename": "201143-al-horford.png",
+    "aliases": []
+  },
+  "caleb-houstan": {
+    "name": "Caleb Houstan",
+    "full_name": "Caleb Houstan",
+    "first_name": "Caleb",
+    "last_name": "Houstan",
+    "team": "atlanta-hawks",
+    "nba_id": 1631216,
+    "headshot_filename": "1631216-caleb-houstan.png",
+    "aliases": []
+  },
+  "jett-howard": {
+    "name": "Jett Howard",
+    "full_name": "Jett Howard",
+    "first_name": "Jett",
+    "last_name": "Howard",
+    "team": "orlando-magic",
+    "nba_id": 1641724,
+    "headshot_filename": "1641724-jett-howard.png",
+    "aliases": []
+  },
+  "kevin-huerter": {
+    "name": "Kevin Huerter",
+    "full_name": "Kevin Huerter",
+    "first_name": "Kevin",
+    "last_name": "Huerter",
+    "team": "detroit-pistons",
+    "nba_id": 1628989,
+    "headshot_filename": "1628989-kevin-huerter.png",
+    "aliases": []
+  },
+  "jay-huff": {
+    "name": "Jay Huff",
+    "full_name": "Jay Huff",
+    "first_name": "Jay",
+    "last_name": "Huff",
+    "team": "indiana-pacers",
+    "nba_id": 1630643,
+    "headshot_filename": "1630643-jay-huff.png",
+    "aliases": []
+  },
+  "ariel-hukporti": {
+    "name": "Ariel Hukporti",
+    "full_name": "Ariel Hukporti",
+    "first_name": "Ariel",
+    "last_name": "Hukporti",
+    "team": "new-york-knicks",
+    "nba_id": 1630574,
+    "headshot_filename": "1630574-ariel-hukporti.png",
+    "aliases": []
+  },
+  "deandre-hunter": {
+    "name": "De'Andre Hunter",
+    "full_name": "De'Andre Hunter",
+    "first_name": "De'Andre",
+    "last_name": "Hunter",
+    "team": "sacramento-kings",
+    "nba_id": 1629631,
+    "headshot_filename": "1629631-deandre-hunter.png",
+    "aliases": []
+  },
+  "cj-huntley": {
+    "name": "CJ Huntley",
+    "full_name": "CJ Huntley",
+    "first_name": "CJ",
+    "last_name": "Huntley",
+    "team": "phoenix-suns",
+    "nba_id": 1643047,
+    "headshot_filename": "1643047-cj-huntley.png",
+    "aliases": []
+  },
+  "bones-hyland": {
+    "name": "Bones Hyland",
+    "full_name": "Bones Hyland",
+    "first_name": "Bones",
+    "last_name": "Hyland",
+    "team": "minnesota-timberwolves",
+    "nba_id": 1630538,
+    "headshot_filename": "1630538-bones-hyland.png",
+    "aliases": []
+  },
+  "oso-ighodaro": {
+    "name": "Oso Ighodaro",
+    "full_name": "Oso Ighodaro",
+    "first_name": "Oso",
+    "last_name": "Ighodaro",
+    "team": "phoenix-suns",
+    "nba_id": 1642345,
+    "headshot_filename": "1642345-oso-ighodaro.png",
+    "aliases": []
+  },
+  "joe-ingles": {
+    "name": "Joe Ingles",
+    "full_name": "Joe Ingles",
+    "first_name": "Joe",
+    "last_name": "Ingles",
+    "team": "minnesota-timberwolves",
+    "nba_id": 204060,
+    "headshot_filename": "204060-joe-ingles.png",
+    "aliases": []
+  },
+  "brandon-ingram": {
+    "name": "Brandon Ingram",
+    "full_name": "Brandon Ingram",
+    "first_name": "Brandon",
+    "last_name": "Ingram",
+    "team": "toronto-raptors",
+    "nba_id": 1627742,
+    "headshot_filename": "1627742-brandon-ingram.png",
+    "aliases": []
+  },
+  "harrison-ingram": {
+    "name": "Harrison Ingram",
+    "full_name": "Harrison Ingram",
+    "first_name": "Harrison",
+    "last_name": "Ingram",
+    "team": "san-antonio-spurs",
+    "nba_id": 1631127,
+    "headshot_filename": "1631127-harrison-ingram.png",
+    "aliases": []
+  },
+  "kyrie-irving": {
+    "name": "Kyrie Irving",
+    "full_name": "Kyrie Irving",
+    "first_name": "Kyrie",
+    "last_name": "Irving",
+    "team": "dallas-mavericks",
+    "nba_id": 202681,
+    "headshot_filename": "202681-kyrie-irving.png",
+    "aliases": []
+  },
+  "jonathan-isaac": {
+    "name": "Jonathan Isaac",
+    "full_name": "Jonathan Isaac",
+    "first_name": "Jonathan",
+    "last_name": "Isaac",
+    "team": "orlando-magic",
+    "nba_id": 1628371,
+    "headshot_filename": "1628371-jonathan-isaac.png",
+    "aliases": []
+  },
+  "jaden-ivey": {
+    "name": "Jaden Ivey",
+    "full_name": "Jaden Ivey",
+    "first_name": "Jaden",
+    "last_name": "Ivey",
+    "team": "chicago-bulls",
+    "nba_id": 1631093,
+    "headshot_filename": "1631093-jaden-ivey.png",
+    "aliases": []
+  },
+  "gg-jackson": {
+    "name": "GG Jackson",
+    "full_name": "GG Jackson",
+    "first_name": "GG",
+    "last_name": "Jackson",
+    "team": "memphis-grizzlies",
+    "nba_id": 1641713,
+    "headshot_filename": "1641713-gg-jackson.png",
+    "aliases": []
+  },
+  "isaiah-jackson": {
+    "name": "Isaiah Jackson",
+    "full_name": "Isaiah Jackson",
+    "first_name": "Isaiah",
+    "last_name": "Jackson",
+    "team": "los-angeles-clippers",
+    "nba_id": 1630543,
+    "headshot_filename": "1630543-isaiah-jackson.png",
+    "aliases": []
+  },
+  "quenton-jackson": {
+    "name": "Quenton Jackson",
+    "full_name": "Quenton Jackson",
+    "first_name": "Quenton",
+    "last_name": "Jackson",
+    "team": "indiana-pacers",
+    "nba_id": 1631245,
+    "headshot_filename": "1631245-quenton-jackson.png",
+    "aliases": []
+  },
+  "andre-jackson-jr": {
+    "name": "Andre Jackson Jr.",
+    "full_name": "Andre Jackson Jr.",
+    "first_name": "Andre",
+    "last_name": "Jackson Jr.",
+    "team": "milwaukee-bucks",
+    "nba_id": 1641748,
+    "headshot_filename": "1641748-andre-jackson-jr.png",
+    "aliases": []
+  },
+  "jaren-jackson-jr": {
+    "name": "Jaren Jackson Jr.",
+    "full_name": "Jaren Jackson Jr.",
+    "first_name": "Jaren",
+    "last_name": "Jackson Jr.",
+    "team": "utah-jazz",
+    "nba_id": 1628991,
+    "headshot_filename": "1628991-jaren-jackson-jr.png",
+    "aliases": []
+  },
+  "trayce-jackson-davis": {
+    "name": "Trayce Jackson-Davis",
+    "full_name": "Trayce Jackson-Davis",
+    "first_name": "Trayce",
+    "last_name": "Jackson-Davis",
+    "team": "toronto-raptors",
+    "nba_id": 1631218,
+    "headshot_filename": "1631218-trayce-jackson-davis.png",
+    "aliases": []
+  },
+  "kasparas-jakucionis": {
+    "name": "Kasparas Jakučionis",
+    "full_name": "Kasparas Jakučionis",
+    "first_name": "Kasparas",
+    "last_name": "Jakučionis",
+    "team": "miami-heat",
+    "nba_id": 1642857,
+    "headshot_filename": "1642857-kasparas-jakuionis.png",
+    "aliases": [
+      "Kasparas Jakucionis"
+    ]
+  },
+  "bronny-james": {
+    "name": "Bronny James",
+    "full_name": "Bronny James",
+    "first_name": "Bronny",
+    "last_name": "James",
+    "team": "los-angeles-lakers",
+    "nba_id": 1642355,
+    "headshot_filename": "1642355-bronny-james.png",
+    "aliases": []
+  },
+  "lebron-james": {
+    "name": "LeBron James",
+    "full_name": "LeBron James",
+    "first_name": "LeBron",
+    "last_name": "James",
+    "team": "los-angeles-lakers",
+    "nba_id": 2544,
+    "headshot_filename": "2544-lebron-james.png",
+    "aliases": [
+      "LeBron",
+      "King James",
+      "LBJ"
+    ]
+  },
+  "sion-james": {
+    "name": "Sion James",
+    "full_name": "Sion James",
+    "first_name": "Sion",
+    "last_name": "James",
+    "team": "charlotte-hornets",
+    "nba_id": 1642883,
+    "headshot_filename": "1642883-sion-james.png",
+    "aliases": []
+  },
+  "jaime-jaquez-jr": {
+    "name": "Jaime Jaquez Jr.",
+    "full_name": "Jaime Jaquez Jr.",
+    "first_name": "Jaime",
+    "last_name": "Jaquez Jr.",
+    "team": "miami-heat",
+    "nba_id": 1631170,
+    "headshot_filename": "1631170-jaime-jaquez-jr.png",
+    "aliases": []
+  },
+  "trey-jemison-iii": {
+    "name": "Trey Jemison III",
+    "full_name": "Trey Jemison III",
+    "first_name": "Trey",
+    "last_name": "Jemison III",
+    "team": "new-york-knicks",
+    "nba_id": 1641998,
+    "headshot_filename": "1641998-trey-jemison-iii.png",
+    "aliases": []
+  },
+  "daniss-jenkins": {
+    "name": "Daniss Jenkins",
+    "full_name": "Daniss Jenkins",
+    "first_name": "Daniss",
+    "last_name": "Jenkins",
+    "team": "detroit-pistons",
+    "nba_id": 1642450,
+    "headshot_filename": "1642450-daniss-jenkins.png",
+    "aliases": []
+  },
+  "ty-jerome": {
+    "name": "Ty Jerome",
+    "full_name": "Ty Jerome",
+    "first_name": "Ty",
+    "last_name": "Jerome",
+    "team": "memphis-grizzlies",
+    "nba_id": 1629660,
+    "headshot_filename": "1629660-ty-jerome.png",
+    "aliases": []
+  },
+  "isaiah-joe": {
+    "name": "Isaiah Joe",
+    "full_name": "Isaiah Joe",
+    "first_name": "Isaiah",
+    "last_name": "Joe",
+    "team": "oklahoma-city-thunder",
+    "nba_id": 1630198,
+    "headshot_filename": "1630198-isaiah-joe.png",
+    "aliases": []
+  },
+  "aj-johnson": {
+    "name": "AJ Johnson",
+    "full_name": "AJ Johnson",
+    "first_name": "AJ",
+    "last_name": "Johnson",
+    "team": "dallas-mavericks",
+    "nba_id": 1642358,
+    "headshot_filename": "1642358-aj-johnson.png",
+    "aliases": []
+  },
+  "cameron-johnson": {
+    "name": "Cameron Johnson",
+    "full_name": "Cameron Johnson",
+    "first_name": "Cameron",
+    "last_name": "Johnson",
+    "team": "denver-nuggets",
+    "nba_id": 1629661,
+    "headshot_filename": "1629661-cameron-johnson.png",
+    "aliases": []
+  },
+  "chaney-johnson": {
+    "name": "Chaney Johnson",
+    "full_name": "Chaney Johnson",
+    "first_name": "Chaney",
+    "last_name": "Johnson",
+    "team": "brooklyn-nets",
+    "nba_id": 1643052,
+    "headshot_filename": "1643052-chaney-johnson.png",
+    "aliases": []
+  },
+  "jalen-johnson": {
+    "name": "Jalen Johnson",
+    "full_name": "Jalen Johnson",
+    "first_name": "Jalen",
+    "last_name": "Johnson",
+    "team": "atlanta-hawks",
+    "nba_id": 1630552,
+    "headshot_filename": "1630552-jalen-johnson.png",
+    "aliases": []
+  },
+  "keldon-johnson": {
+    "name": "Keldon Johnson",
+    "full_name": "Keldon Johnson",
+    "first_name": "Keldon",
+    "last_name": "Johnson",
+    "team": "san-antonio-spurs",
+    "nba_id": 1629640,
+    "headshot_filename": "1629640-keldon-johnson.png",
+    "aliases": []
+  },
+  "keshad-johnson": {
+    "name": "Keshad Johnson",
+    "full_name": "Keshad Johnson",
+    "first_name": "Keshad",
+    "last_name": "Johnson",
+    "team": "miami-heat",
+    "nba_id": 1642352,
+    "headshot_filename": "1642352-keshad-johnson.png",
+    "aliases": []
+  },
+  "tre-johnson": {
+    "name": "Tre Johnson",
+    "full_name": "Tre Johnson",
+    "first_name": "Tre",
+    "last_name": "Johnson",
+    "team": "washington-wizards",
+    "nba_id": 1642848,
+    "headshot_filename": "1642848-tre-johnson.png",
+    "aliases": []
+  },
+  "nikola-jokic": {
+    "name": "Nikola Jokić",
+    "full_name": "Nikola Jokić",
+    "first_name": "Nikola",
+    "last_name": "Jokić",
+    "team": "denver-nuggets",
+    "nba_id": 203999,
+    "headshot_filename": "203999-nikola-joki.png",
+    "aliases": [
+      "Nikola Jokic"
+    ]
+  },
+  "curtis-jones": {
+    "name": "Curtis Jones",
+    "full_name": "Curtis Jones",
+    "first_name": "Curtis",
+    "last_name": "Jones",
+    "team": "denver-nuggets",
+    "nba_id": 1642938,
+    "headshot_filename": "1642938-curtis-jones.png",
+    "aliases": []
+  },
+  "dillon-jones": {
+    "name": "Dillon Jones",
+    "full_name": "Dillon Jones",
+    "first_name": "Dillon",
+    "last_name": "Jones",
+    "team": "new-york-knicks",
+    "nba_id": 1641794,
+    "headshot_filename": "1641794-dillon-jones.png",
+    "aliases": []
+  },
+  "herbert-jones": {
+    "name": "Herbert Jones",
+    "full_name": "Herbert Jones",
+    "first_name": "Herbert",
+    "last_name": "Jones",
+    "team": "new-orleans-pelicans",
+    "nba_id": 1630529,
+    "headshot_filename": "1630529-herbert-jones.png",
+    "aliases": []
+  },
+  "isaac-jones": {
+    "name": "Isaac Jones",
+    "full_name": "Isaac Jones",
+    "first_name": "Isaac",
+    "last_name": "Jones",
+    "team": "detroit-pistons",
+    "nba_id": 1642403,
+    "headshot_filename": "1642403-isaac-jones.png",
+    "aliases": []
+  },
+  "kam-jones": {
+    "name": "Kam Jones",
+    "full_name": "Kam Jones",
+    "first_name": "Kam",
+    "last_name": "Jones",
+    "team": "indiana-pacers",
+    "nba_id": 1642880,
+    "headshot_filename": "1642880-kam-jones.png",
+    "aliases": []
+  },
+  "spencer-jones": {
+    "name": "Spencer Jones",
+    "full_name": "Spencer Jones",
+    "first_name": "Spencer",
+    "last_name": "Jones",
+    "team": "denver-nuggets",
+    "nba_id": 1642461,
+    "headshot_filename": "1642461-spencer-jones.png",
+    "aliases": []
+  },
+  "tre-jones": {
+    "name": "Tre Jones",
+    "full_name": "Tre Jones",
+    "first_name": "Tre",
+    "last_name": "Jones",
+    "team": "chicago-bulls",
+    "nba_id": 1630200,
+    "headshot_filename": "1630200-tre-jones.png",
+    "aliases": []
+  },
+  "tyus-jones": {
+    "name": "Tyus Jones",
+    "full_name": "Tyus Jones",
+    "first_name": "Tyus",
+    "last_name": "Jones",
+    "team": "denver-nuggets",
+    "nba_id": 1626145,
+    "headshot_filename": "1626145-tyus-jones.png",
+    "aliases": []
+  },
+  "david-jones-garcia": {
+    "name": "David Jones Garcia",
+    "full_name": "David Jones Garcia",
+    "first_name": "David",
+    "last_name": "Jones Garcia",
+    "team": "san-antonio-spurs",
+    "nba_id": 1642357,
+    "headshot_filename": "1642357-david-jones-garcia.png",
+    "aliases": []
+  },
+  "derrick-jones-jr": {
+    "name": "Derrick Jones Jr.",
+    "full_name": "Derrick Jones Jr.",
+    "first_name": "Derrick",
+    "last_name": "Jones Jr.",
+    "team": "los-angeles-clippers",
+    "nba_id": 1627884,
+    "headshot_filename": "1627884-derrick-jones-jr.png",
+    "aliases": []
+  },
+  "deandre-jordan": {
+    "name": "DeAndre Jordan",
+    "full_name": "DeAndre Jordan",
+    "first_name": "DeAndre",
+    "last_name": "Jordan",
+    "team": "new-orleans-pelicans",
+    "nba_id": 201599,
+    "headshot_filename": "201599-deandre-jordan.png",
+    "aliases": []
+  },
+  "nikola-jovic": {
+    "name": "Nikola Jović",
+    "full_name": "Nikola Jović",
+    "first_name": "Nikola",
+    "last_name": "Jović",
+    "team": "miami-heat",
+    "nba_id": 1631107,
+    "headshot_filename": "1631107-nikola-jovi.png",
+    "aliases": [
+      "Nikola Jovic"
+    ]
+  },
+  "ryan-kalkbrenner": {
+    "name": "Ryan Kalkbrenner",
+    "full_name": "Ryan Kalkbrenner",
+    "first_name": "Ryan",
+    "last_name": "Kalkbrenner",
+    "team": "charlotte-hornets",
+    "nba_id": 1641750,
+    "headshot_filename": "1641750-ryan-kalkbrenner.png",
+    "aliases": []
+  },
+  "yuki-kawamura": {
+    "name": "Yuki Kawamura",
+    "full_name": "Yuki Kawamura",
+    "first_name": "Yuki",
+    "last_name": "Kawamura",
+    "team": "chicago-bulls",
+    "nba_id": 1642530,
+    "headshot_filename": "1642530-yuki-kawamura.png",
+    "aliases": []
+  },
+  "trevor-keels": {
+    "name": "Trevor Keels",
+    "full_name": "Trevor Keels",
+    "first_name": "Trevor",
+    "last_name": "Keels",
+    "team": "miami-heat",
+    "nba_id": 1631211,
+    "headshot_filename": "1631211-trevor-keels.png",
+    "aliases": []
+  },
+  "luke-kennard": {
+    "name": "Luke Kennard",
+    "full_name": "Luke Kennard",
+    "first_name": "Luke",
+    "last_name": "Kennard",
+    "team": "los-angeles-lakers",
+    "nba_id": 1628379,
+    "headshot_filename": "1628379-luke-kennard.png",
+    "aliases": []
+  },
+  "jayson-kent": {
+    "name": "Jayson Kent",
+    "full_name": "Jayson Kent",
+    "first_name": "Jayson",
+    "last_name": "Kent",
+    "team": "portland-trail-blazers",
+    "nba_id": 1643257,
+    "headshot_filename": "1643257-jayson-kent.png",
+    "aliases": []
+  },
+  "walker-kessler": {
+    "name": "Walker Kessler",
+    "full_name": "Walker Kessler",
+    "first_name": "Walker",
+    "last_name": "Kessler",
+    "team": "utah-jazz",
+    "nba_id": 1631117,
+    "headshot_filename": "1631117-walker-kessler.png",
+    "aliases": []
+  },
+  "corey-kispert": {
+    "name": "Corey Kispert",
+    "full_name": "Corey Kispert",
+    "first_name": "Corey",
+    "last_name": "Kispert",
+    "team": "atlanta-hawks",
+    "nba_id": 1630557,
+    "headshot_filename": "1630557-corey-kispert.png",
+    "aliases": []
+  },
+  "maxi-kleber": {
+    "name": "Maxi Kleber",
+    "full_name": "Maxi Kleber",
+    "first_name": "Maxi",
+    "last_name": "Kleber",
+    "team": "los-angeles-lakers",
+    "nba_id": 1628467,
+    "headshot_filename": "1628467-maxi-kleber.png",
+    "aliases": []
+  },
+  "bobi-klintman": {
+    "name": "Bobi Klintman",
+    "full_name": "Bobi Klintman",
+    "first_name": "Bobi",
+    "last_name": "Klintman",
+    "team": "detroit-pistons",
+    "nba_id": 1641752,
+    "headshot_filename": "1641752-bobi-klintman.png",
+    "aliases": []
+  },
+  "dalton-knecht": {
+    "name": "Dalton Knecht",
+    "full_name": "Dalton Knecht",
+    "first_name": "Dalton",
+    "last_name": "Knecht",
+    "team": "los-angeles-lakers",
+    "nba_id": 1642261,
+    "headshot_filename": "1642261-dalton-knecht.png",
+    "aliases": []
+  },
+  "kon-knueppel": {
+    "name": "Kon Knueppel",
+    "full_name": "Kon Knueppel",
+    "first_name": "Kon",
+    "last_name": "Knueppel",
+    "team": "charlotte-hornets",
+    "nba_id": 1642851,
+    "headshot_filename": "1642851-kon-knueppel.png",
+    "aliases": []
+  },
+  "tyler-kolek": {
+    "name": "Tyler Kolek",
+    "full_name": "Tyler Kolek",
+    "first_name": "Tyler",
+    "last_name": "Kolek",
+    "team": "new-york-knicks",
+    "nba_id": 1642278,
+    "headshot_filename": "1642278-tyler-kolek.png",
+    "aliases": []
+  },
+  "christian-koloko": {
+    "name": "Christian Koloko",
+    "full_name": "Christian Koloko",
+    "first_name": "Christian",
+    "last_name": "Koloko",
+    "team": "atlanta-hawks",
+    "nba_id": 1631132,
+    "headshot_filename": "1631132-christian-koloko.png",
+    "aliases": []
+  },
+  "john-konchar": {
+    "name": "John Konchar",
+    "full_name": "John Konchar",
+    "first_name": "John",
+    "last_name": "Konchar",
+    "team": "utah-jazz",
+    "nba_id": 1629723,
+    "headshot_filename": "1629723-john-konchar.png",
+    "aliases": []
+  },
+  "luke-kornet": {
+    "name": "Luke Kornet",
+    "full_name": "Luke Kornet",
+    "first_name": "Luke",
+    "last_name": "Kornet",
+    "team": "san-antonio-spurs",
+    "nba_id": 1628436,
+    "headshot_filename": "1628436-luke-kornet.png",
+    "aliases": []
+  },
+  "vit-krejci": {
+    "name": "Vít Krejčí",
+    "full_name": "Vít Krejčí",
+    "first_name": "Vít",
+    "last_name": "Krejčí",
+    "team": "portland-trail-blazers",
+    "nba_id": 1630249,
+    "headshot_filename": "1630249-vt-krej.png",
+    "aliases": [
+      "Vit Krejci"
+    ]
+  },
+  "jonathan-kuminga": {
+    "name": "Jonathan Kuminga",
+    "full_name": "Jonathan Kuminga",
+    "first_name": "Jonathan",
+    "last_name": "Kuminga",
+    "team": "atlanta-hawks",
+    "nba_id": 1630228,
+    "headshot_filename": "1630228-jonathan-kuminga.png",
+    "aliases": []
+  },
+  "kyle-kuzma": {
+    "name": "Kyle Kuzma",
+    "full_name": "Kyle Kuzma",
+    "first_name": "Kyle",
+    "last_name": "Kuzma",
+    "team": "milwaukee-bucks",
+    "nba_id": 1628398,
+    "headshot_filename": "1628398-kyle-kuzma.png",
+    "aliases": []
+  },
+  "jock-landale": {
+    "name": "Jock Landale",
+    "full_name": "Jock Landale",
+    "first_name": "Jock",
+    "last_name": "Landale",
+    "team": "atlanta-hawks",
+    "nba_id": 1629111,
+    "headshot_filename": "1629111-jock-landale.png",
+    "aliases": []
+  },
+  "chaz-lanier": {
+    "name": "Chaz Lanier",
+    "full_name": "Chaz Lanier",
+    "first_name": "Chaz",
+    "last_name": "Lanier",
+    "team": "detroit-pistons",
+    "nba_id": 1642404,
+    "headshot_filename": "1642404-chaz-lanier.png",
+    "aliases": []
+  },
+  "jake-laravia": {
+    "name": "Jake LaRavia",
+    "full_name": "Jake LaRavia",
+    "first_name": "Jake",
+    "last_name": "LaRavia",
+    "team": "los-angeles-lakers",
+    "nba_id": 1631222,
+    "headshot_filename": "1631222-jake-laravia.png",
+    "aliases": []
+  },
+  "pelle-larsson": {
+    "name": "Pelle Larsson",
+    "full_name": "Pelle Larsson",
+    "first_name": "Pelle",
+    "last_name": "Larsson",
+    "team": "miami-heat",
+    "nba_id": 1641796,
+    "headshot_filename": "1641796-pelle-larsson.png",
+    "aliases": []
+  },
+  "zach-lavine": {
+    "name": "Zach LaVine",
+    "full_name": "Zach LaVine",
+    "first_name": "Zach",
+    "last_name": "LaVine",
+    "team": "sacramento-kings",
+    "nba_id": 203897,
+    "headshot_filename": "203897-zach-lavine.png",
+    "aliases": []
+  },
+  "aj-lawson": {
+    "name": "A.J. Lawson",
+    "full_name": "A.J. Lawson",
+    "first_name": "A.J.",
+    "last_name": "Lawson",
+    "team": "toronto-raptors",
+    "nba_id": 1630639,
+    "headshot_filename": "1630639-aj-lawson.png",
+    "aliases": []
+  },
+  "kawhi-leonard": {
+    "name": "Kawhi Leonard",
+    "full_name": "Kawhi Leonard",
+    "first_name": "Kawhi",
+    "last_name": "Leonard",
+    "team": "los-angeles-clippers",
+    "nba_id": 202695,
+    "headshot_filename": "202695-kawhi-leonard.png",
+    "aliases": [
+      "Kawhi",
+      "The Klaw"
+    ]
+  },
+  "malevy-leons": {
+    "name": "Malevy Leons",
+    "full_name": "Malevy Leons",
+    "first_name": "Malevy",
+    "last_name": "Leons",
+    "team": "golden-state-warriors",
+    "nba_id": 1642502,
+    "headshot_filename": "1642502-malevy-leons.png",
+    "aliases": []
+  },
+  "caris-levert": {
+    "name": "Caris LeVert",
+    "full_name": "Caris LeVert",
+    "first_name": "Caris",
+    "last_name": "LeVert",
+    "team": "detroit-pistons",
+    "nba_id": 1627747,
+    "headshot_filename": "1627747-caris-levert.png",
+    "aliases": []
+  },
+  "ej-liddell": {
+    "name": "E.J. Liddell",
+    "full_name": "E.J. Liddell",
+    "first_name": "E.J.",
+    "last_name": "Liddell",
+    "team": "brooklyn-nets",
+    "nba_id": 1630604,
+    "headshot_filename": "1630604-ej-liddell.png",
+    "aliases": []
+  },
+  "damian-lillard": {
+    "name": "Damian Lillard",
+    "full_name": "Damian Lillard",
+    "first_name": "Damian",
+    "last_name": "Lillard",
+    "team": "portland-trail-blazers",
+    "nba_id": 203081,
+    "headshot_filename": "203081-damian-lillard.png",
+    "aliases": [
+      "Dame",
+      "Dame Time",
+      "Dame D.O.L.L.A."
+    ]
+  },
+  "dereck-lively-ii": {
+    "name": "Dereck Lively II",
+    "full_name": "Dereck Lively II",
+    "first_name": "Dereck",
+    "last_name": "Lively II",
+    "team": "dallas-mavericks",
+    "nba_id": 1641726,
+    "headshot_filename": "1641726-dereck-lively-ii.png",
+    "aliases": []
+  },
+  "isaiah-livers": {
+    "name": "Isaiah Livers",
+    "full_name": "Isaiah Livers",
+    "first_name": "Isaiah",
+    "last_name": "Livers",
+    "team": "phoenix-suns",
+    "nba_id": 1630587,
+    "headshot_filename": "1630587-isaiah-livers.png",
+    "aliases": []
+  },
+  "kevon-looney": {
+    "name": "Kevon Looney",
+    "full_name": "Kevon Looney",
+    "first_name": "Kevon",
+    "last_name": "Looney",
+    "team": "new-orleans-pelicans",
+    "nba_id": 1626172,
+    "headshot_filename": "1626172-kevon-looney.png",
+    "aliases": []
+  },
+  "brook-lopez": {
+    "name": "Brook Lopez",
+    "full_name": "Brook Lopez",
+    "first_name": "Brook",
+    "last_name": "Lopez",
+    "team": "los-angeles-clippers",
+    "nba_id": 201572,
+    "headshot_filename": "201572-brook-lopez.png",
+    "aliases": []
+  },
+  "caleb-love": {
+    "name": "Caleb Love",
+    "full_name": "Caleb Love",
+    "first_name": "Caleb",
+    "last_name": "Love",
+    "team": "portland-trail-blazers",
+    "nba_id": 1631126,
+    "headshot_filename": "1631126-caleb-love.png",
+    "aliases": []
+  },
+  "kevin-love": {
+    "name": "Kevin Love",
+    "full_name": "Kevin Love",
+    "first_name": "Kevin",
+    "last_name": "Love",
+    "team": "utah-jazz",
+    "nba_id": 201567,
+    "headshot_filename": "201567-kevin-love.png",
+    "aliases": []
+  },
+  "kyle-lowry": {
+    "name": "Kyle Lowry",
+    "full_name": "Kyle Lowry",
+    "first_name": "Kyle",
+    "last_name": "Lowry",
+    "team": "philadelphia-76ers",
+    "nba_id": 200768,
+    "headshot_filename": "200768-kyle-lowry.png",
+    "aliases": []
+  },
+  "khaman-maluach": {
+    "name": "Khaman Maluach",
+    "full_name": "Khaman Maluach",
+    "first_name": "Khaman",
+    "last_name": "Maluach",
+    "team": "phoenix-suns",
+    "nba_id": 1642863,
+    "headshot_filename": "1642863-khaman-maluach.png",
+    "aliases": []
+  },
+  "sandro-mamukelashvili": {
+    "name": "Sandro Mamukelashvili",
+    "full_name": "Sandro Mamukelashvili",
+    "first_name": "Sandro",
+    "last_name": "Mamukelashvili",
+    "team": "toronto-raptors",
+    "nba_id": 1630572,
+    "headshot_filename": "1630572-sandro-mamukelashvili.png",
+    "aliases": []
+  },
+  "terance-mann": {
+    "name": "Terance Mann",
+    "full_name": "Terance Mann",
+    "first_name": "Terance",
+    "last_name": "Mann",
+    "team": "brooklyn-nets",
+    "nba_id": 1629611,
+    "headshot_filename": "1629611-terance-mann.png",
+    "aliases": []
+  },
+  "tre-mann": {
+    "name": "Tre Mann",
+    "full_name": "Tre Mann",
+    "first_name": "Tre",
+    "last_name": "Mann",
+    "team": "charlotte-hornets",
+    "nba_id": 1630544,
+    "headshot_filename": "1630544-tre-mann.png",
+    "aliases": []
+  },
+  "chris-manon": {
+    "name": "Chris Mañon",
+    "full_name": "Chris Mañon",
+    "first_name": "Chris",
+    "last_name": "Mañon",
+    "team": "los-angeles-lakers",
+    "nba_id": 1643024,
+    "headshot_filename": "1643024-chris-maon.png",
+    "aliases": [
+      "Chris Manon"
+    ]
+  },
+  "lauri-markkanen": {
+    "name": "Lauri Markkanen",
+    "full_name": "Lauri Markkanen",
+    "first_name": "Lauri",
+    "last_name": "Markkanen",
+    "team": "utah-jazz",
+    "nba_id": 1628374,
+    "headshot_filename": "1628374-lauri-markkanen.png",
+    "aliases": []
+  },
+  "naji-marshall": {
+    "name": "Naji Marshall",
+    "full_name": "Naji Marshall",
+    "first_name": "Naji",
+    "last_name": "Marshall",
+    "team": "dallas-mavericks",
+    "nba_id": 1630230,
+    "headshot_filename": "1630230-naji-marshall.png",
+    "aliases": []
+  },
+  "alijah-martin": {
+    "name": "Alijah Martin",
+    "full_name": "Alijah Martin",
+    "first_name": "Alijah",
+    "last_name": "Martin",
+    "team": "toronto-raptors",
+    "nba_id": 1642918,
+    "headshot_filename": "1642918-alijah-martin.png",
+    "aliases": []
+  },
+  "caleb-martin": {
+    "name": "Caleb Martin",
+    "full_name": "Caleb Martin",
+    "first_name": "Caleb",
+    "last_name": "Martin",
+    "team": "dallas-mavericks",
+    "nba_id": 1628997,
+    "headshot_filename": "1628997-caleb-martin.png",
+    "aliases": []
+  },
+  "tyrese-martin": {
+    "name": "Tyrese Martin",
+    "full_name": "Tyrese Martin",
+    "first_name": "Tyrese",
+    "last_name": "Martin",
+    "team": "philadelphia-76ers",
+    "nba_id": 1631213,
+    "headshot_filename": "1631213-tyrese-martin.png",
+    "aliases": []
+  },
+  "jahmai-mashack": {
+    "name": "Jahmai Mashack",
+    "full_name": "Jahmai Mashack",
+    "first_name": "Jahmai",
+    "last_name": "Mashack",
+    "team": "memphis-grizzlies",
+    "nba_id": 1642942,
+    "headshot_filename": "1642942-jahmai-mashack.png",
+    "aliases": []
+  },
+  "bennedict-mathurin": {
+    "name": "Bennedict Mathurin",
+    "full_name": "Bennedict Mathurin",
+    "first_name": "Bennedict",
+    "last_name": "Mathurin",
+    "team": "los-angeles-clippers",
+    "nba_id": 1631097,
+    "headshot_filename": "1631097-bennedict-mathurin.png",
+    "aliases": []
+  },
+  "karlo-matkovic": {
+    "name": "Karlo Matković",
+    "full_name": "Karlo Matković",
+    "first_name": "Karlo",
+    "last_name": "Matković",
+    "team": "new-orleans-pelicans",
+    "nba_id": 1631255,
+    "headshot_filename": "1631255-karlo-matkovi.png",
+    "aliases": [
+      "Karlo Matkovic"
+    ]
+  },
+  "tyrese-maxey": {
+    "name": "Tyrese Maxey",
+    "full_name": "Tyrese Maxey",
+    "first_name": "Tyrese",
+    "last_name": "Maxey",
+    "team": "philadelphia-76ers",
+    "nba_id": 1630178,
+    "headshot_filename": "1630178-tyrese-maxey.png",
+    "aliases": []
+  },
+  "miles-mcbride": {
+    "name": "Miles McBride",
+    "full_name": "Miles McBride",
+    "first_name": "Miles",
+    "last_name": "McBride",
+    "team": "new-york-knicks",
+    "nba_id": 1630540,
+    "headshot_filename": "1630540-miles-mcbride.png",
+    "aliases": []
+  },
+  "jared-mccain": {
+    "name": "Jared McCain",
+    "full_name": "Jared McCain",
+    "first_name": "Jared",
+    "last_name": "McCain",
+    "team": "oklahoma-city-thunder",
+    "nba_id": 1642272,
+    "headshot_filename": "1642272-jared-mccain.png",
+    "aliases": []
+  },
+  "mac-mcclung": {
+    "name": "Mac McClung",
+    "full_name": "Mac McClung",
+    "first_name": "Mac",
+    "last_name": "McClung",
+    "team": "chicago-bulls",
+    "nba_id": 1630644,
+    "headshot_filename": "1630644-mac-mcclung.png",
+    "aliases": []
+  },
+  "cj-mccollum": {
+    "name": "CJ McCollum",
+    "full_name": "CJ McCollum",
+    "first_name": "CJ",
+    "last_name": "McCollum",
+    "team": "atlanta-hawks",
+    "nba_id": 203468,
+    "headshot_filename": "203468-cj-mccollum.png",
+    "aliases": []
+  },
+  "tj-mcconnell": {
+    "name": "T.J. McConnell",
+    "full_name": "T.J. McConnell",
+    "first_name": "T.J.",
+    "last_name": "McConnell",
+    "team": "indiana-pacers",
+    "nba_id": 204456,
+    "headshot_filename": "204456-tj-mcconnell.png",
+    "aliases": []
+  },
+  "kevin-mccullar-jr": {
+    "name": "Kevin McCullar Jr.",
+    "full_name": "Kevin McCullar Jr.",
+    "first_name": "Kevin",
+    "last_name": "McCullar Jr.",
+    "team": "new-york-knicks",
+    "nba_id": 1641755,
+    "headshot_filename": "1641755-kevin-mccullar-jr.png",
+    "aliases": []
+  },
+  "jaden-mcdaniels": {
+    "name": "Jaden McDaniels",
+    "full_name": "Jaden McDaniels",
+    "first_name": "Jaden",
+    "last_name": "McDaniels",
+    "team": "minnesota-timberwolves",
+    "nba_id": 1630183,
+    "headshot_filename": "1630183-jaden-mcdaniels.png",
+    "aliases": []
+  },
+  "doug-mcdermott": {
+    "name": "Doug McDermott",
+    "full_name": "Doug McDermott",
+    "first_name": "Doug",
+    "last_name": "McDermott",
+    "team": "sacramento-kings",
+    "nba_id": 203926,
+    "headshot_filename": "203926-doug-mcdermott.png",
+    "aliases": []
+  },
+  "bryce-mcgowens": {
+    "name": "Bryce McGowens",
+    "full_name": "Bryce McGowens",
+    "first_name": "Bryce",
+    "last_name": "McGowens",
+    "team": "new-orleans-pelicans",
+    "nba_id": 1631121,
+    "headshot_filename": "1631121-bryce-mcgowens.png",
+    "aliases": []
+  },
+  "jordan-mclaughlin": {
+    "name": "Jordan McLaughlin",
+    "full_name": "Jordan McLaughlin",
+    "first_name": "Jordan",
+    "last_name": "McLaughlin",
+    "team": "san-antonio-spurs",
+    "nba_id": 1629162,
+    "headshot_filename": "1629162-jordan-mclaughlin.png",
+    "aliases": []
+  },
+  "liam-mcneeley": {
+    "name": "Liam McNeeley",
+    "full_name": "Liam McNeeley",
+    "first_name": "Liam",
+    "last_name": "McNeeley",
+    "team": "charlotte-hornets",
+    "nba_id": 1642862,
+    "headshot_filename": "1642862-liam-mcneeley.png",
+    "aliases": []
+  },
+  "deanthony-melton": {
+    "name": "De'Anthony Melton",
+    "full_name": "De'Anthony Melton",
+    "first_name": "De'Anthony",
+    "last_name": "Melton",
+    "team": "golden-state-warriors",
+    "nba_id": 1629001,
+    "headshot_filename": "1629001-deanthony-melton.png",
+    "aliases": []
+  },
+  "sam-merrill": {
+    "name": "Sam Merrill",
+    "full_name": "Sam Merrill",
+    "first_name": "Sam",
+    "last_name": "Merrill",
+    "team": "cleveland-cavaliers",
+    "nba_id": 1630241,
+    "headshot_filename": "1630241-sam-merrill.png",
+    "aliases": []
+  },
+  "khris-middleton": {
+    "name": "Khris Middleton",
+    "full_name": "Khris Middleton",
+    "first_name": "Khris",
+    "last_name": "Middleton",
+    "team": "dallas-mavericks",
+    "nba_id": 203114,
+    "headshot_filename": "203114-khris-middleton.png",
+    "aliases": []
+  },
+  "brandon-miller": {
+    "name": "Brandon Miller",
+    "full_name": "Brandon Miller",
+    "first_name": "Brandon",
+    "last_name": "Miller",
+    "team": "charlotte-hornets",
+    "nba_id": 1641706,
+    "headshot_filename": "1641706-brandon-miller.png",
+    "aliases": []
+  },
+  "emanuel-miller": {
+    "name": "Emanuel Miller",
+    "full_name": "Emanuel Miller",
+    "first_name": "Emanuel",
+    "last_name": "Miller",
+    "team": "san-antonio-spurs",
+    "nba_id": 1641801,
+    "headshot_filename": "1641801-emanuel-miller.png",
+    "aliases": []
+  },
+  "jordan-miller": {
+    "name": "Jordan Miller",
+    "full_name": "Jordan Miller",
+    "first_name": "Jordan",
+    "last_name": "Miller",
+    "team": "los-angeles-clippers",
+    "nba_id": 1641757,
+    "headshot_filename": "1641757-jordan-miller.png",
+    "aliases": []
+  },
+  "leonard-miller": {
+    "name": "Leonard Miller",
+    "full_name": "Leonard Miller",
+    "first_name": "Leonard",
+    "last_name": "Miller",
+    "team": "chicago-bulls",
+    "nba_id": 1631159,
+    "headshot_filename": "1631159-leonard-miller.png",
+    "aliases": []
+  },
+  "riley-minix": {
+    "name": "Riley Minix",
+    "full_name": "Riley Minix",
+    "first_name": "Riley",
+    "last_name": "Minix",
+    "team": "cleveland-cavaliers",
+    "nba_id": 1642434,
+    "headshot_filename": "1642434-riley-minix.png",
+    "aliases": []
+  },
+  "josh-minott": {
+    "name": "Josh Minott",
+    "full_name": "Josh Minott",
+    "first_name": "Josh",
+    "last_name": "Minott",
+    "team": "brooklyn-nets",
+    "nba_id": 1631169,
+    "headshot_filename": "1631169-josh-minott.png",
+    "aliases": []
+  },
+  "yves-missi": {
+    "name": "Yves Missi",
+    "full_name": "Yves Missi",
+    "first_name": "Yves",
+    "last_name": "Missi",
+    "team": "new-orleans-pelicans",
+    "nba_id": 1642274,
+    "headshot_filename": "1642274-yves-missi.png",
+    "aliases": []
+  },
+  "ajay-mitchell": {
+    "name": "Ajay Mitchell",
+    "full_name": "Ajay Mitchell",
+    "first_name": "Ajay",
+    "last_name": "Mitchell",
+    "team": "oklahoma-city-thunder",
+    "nba_id": 1642349,
+    "headshot_filename": "1642349-ajay-mitchell.png",
+    "aliases": []
+  },
+  "davion-mitchell": {
+    "name": "Davion Mitchell",
+    "full_name": "Davion Mitchell",
+    "first_name": "Davion",
+    "last_name": "Mitchell",
+    "team": "miami-heat",
+    "nba_id": 1630558,
+    "headshot_filename": "1630558-davion-mitchell.png",
+    "aliases": []
+  },
+  "donovan-mitchell": {
+    "name": "Donovan Mitchell",
+    "full_name": "Donovan Mitchell",
+    "first_name": "Donovan",
+    "last_name": "Mitchell",
+    "team": "cleveland-cavaliers",
+    "nba_id": 1628378,
+    "headshot_filename": "1628378-donovan-mitchell.png",
+    "aliases": [
+      "Spida",
+      "Spida Mitchell"
+    ]
+  },
+  "evan-mobley": {
+    "name": "Evan Mobley",
+    "full_name": "Evan Mobley",
+    "first_name": "Evan",
+    "last_name": "Mobley",
+    "team": "cleveland-cavaliers",
+    "nba_id": 1630596,
+    "headshot_filename": "1630596-evan-mobley.png",
+    "aliases": []
+  },
+  "jonathan-mogbo": {
+    "name": "Jonathan Mogbo",
+    "full_name": "Jonathan Mogbo",
+    "first_name": "Jonathan",
+    "last_name": "Mogbo",
+    "team": "toronto-raptors",
+    "nba_id": 1642367,
+    "headshot_filename": "1642367-jonathan-mogbo.png",
+    "aliases": []
+  },
+  "malik-monk": {
+    "name": "Malik Monk",
+    "full_name": "Malik Monk",
+    "first_name": "Malik",
+    "last_name": "Monk",
+    "team": "sacramento-kings",
+    "nba_id": 1628370,
+    "headshot_filename": "1628370-malik-monk.png",
+    "aliases": []
+  },
+  "moses-moody": {
+    "name": "Moses Moody",
+    "full_name": "Moses Moody",
+    "first_name": "Moses",
+    "last_name": "Moody",
+    "team": "golden-state-warriors",
+    "nba_id": 1630541,
+    "headshot_filename": "1630541-moses-moody.png",
+    "aliases": []
+  },
+  "wendell-moore-jr": {
+    "name": "Wendell Moore Jr.",
+    "full_name": "Wendell Moore Jr.",
+    "first_name": "Wendell",
+    "last_name": "Moore Jr.",
+    "team": "detroit-pistons",
+    "nba_id": 1631111,
+    "headshot_filename": "1631111-wendell-moore-jr.png",
+    "aliases": []
+  },
+  "alex-morales": {
+    "name": "Alex Morales",
+    "full_name": "Alex Morales",
+    "first_name": "Alex",
+    "last_name": "Morales",
+    "team": "orlando-magic",
+    "nba_id": 1631457,
+    "headshot_filename": "1631457-alex-morales.png",
+    "aliases": []
+  },
+  "ja-morant": {
+    "name": "Ja Morant",
+    "full_name": "Ja Morant",
+    "first_name": "Ja",
+    "last_name": "Morant",
+    "team": "memphis-grizzlies",
+    "nba_id": 1629630,
+    "headshot_filename": "1629630-ja-morant.png",
+    "aliases": [
+      "Ja"
+    ]
+  },
+  "trey-murphy-iii": {
+    "name": "Trey Murphy III",
+    "full_name": "Trey Murphy III",
+    "first_name": "Trey",
+    "last_name": "Murphy III",
+    "team": "new-orleans-pelicans",
+    "nba_id": 1630530,
+    "headshot_filename": "1630530-trey-murphy-iii.png",
+    "aliases": []
+  },
+  "dejounte-murray": {
+    "name": "Dejounte Murray",
+    "full_name": "Dejounte Murray",
+    "first_name": "Dejounte",
+    "last_name": "Murray",
+    "team": "new-orleans-pelicans",
+    "nba_id": 1627749,
+    "headshot_filename": "1627749-dejounte-murray.png",
+    "aliases": [
+      "Dejounte"
+    ]
+  },
+  "jamal-murray": {
+    "name": "Jamal Murray",
+    "full_name": "Jamal Murray",
+    "first_name": "Jamal",
+    "last_name": "Murray",
+    "team": "denver-nuggets",
+    "nba_id": 1627750,
+    "headshot_filename": "1627750-jamal-murray.png",
+    "aliases": [
+      "Jamal",
+      "Blue Arrow"
+    ]
+  },
+  "keegan-murray": {
+    "name": "Keegan Murray",
+    "full_name": "Keegan Murray",
+    "first_name": "Keegan",
+    "last_name": "Murray",
+    "team": "sacramento-kings",
+    "nba_id": 1631099,
+    "headshot_filename": "1631099-keegan-murray.png",
+    "aliases": []
+  },
+  "kris-murray": {
+    "name": "Kris Murray",
+    "full_name": "Kris Murray",
+    "first_name": "Kris",
+    "last_name": "Murray",
+    "team": "portland-trail-blazers",
+    "nba_id": 1631200,
+    "headshot_filename": "1631200-kris-murray.png",
+    "aliases": []
+  },
+  "collin-murray-boyles": {
+    "name": "Collin Murray-Boyles",
+    "full_name": "Collin Murray-Boyles",
+    "first_name": "Collin",
+    "last_name": "Murray-Boyles",
+    "team": "toronto-raptors",
+    "nba_id": 1642867,
+    "headshot_filename": "1642867-collin-murray-boyles.png",
+    "aliases": []
+  },
+  "svi-mykhailiuk": {
+    "name": "Svi Mykhailiuk",
+    "full_name": "Svi Mykhailiuk",
+    "first_name": "Svi",
+    "last_name": "Mykhailiuk",
+    "team": "utah-jazz",
+    "nba_id": 1629004,
+    "headshot_filename": "1629004-svi-mykhailiuk.png",
+    "aliases": []
+  },
+  "pete-nance": {
+    "name": "Pete Nance",
+    "full_name": "Pete Nance",
+    "first_name": "Pete",
+    "last_name": "Nance",
+    "team": "milwaukee-bucks",
+    "nba_id": 1631250,
+    "headshot_filename": "1631250-pete-nance.png",
+    "aliases": []
+  },
+  "larry-nance-jr": {
+    "name": "Larry Nance Jr.",
+    "full_name": "Larry Nance Jr.",
+    "first_name": "Larry",
+    "last_name": "Nance Jr.",
+    "team": "cleveland-cavaliers",
+    "nba_id": 1626204,
+    "headshot_filename": "1626204-larry-nance-jr.png",
+    "aliases": []
+  },
+  "grant-nelson": {
+    "name": "Grant Nelson",
+    "full_name": "Grant Nelson",
+    "first_name": "Grant",
+    "last_name": "Nelson",
+    "team": "brooklyn-nets",
+    "nba_id": 1641761,
+    "headshot_filename": "1641761-grant-nelson.png",
+    "aliases": []
+  },
+  "andrew-nembhard": {
+    "name": "Andrew Nembhard",
+    "full_name": "Andrew Nembhard",
+    "first_name": "Andrew",
+    "last_name": "Nembhard",
+    "team": "indiana-pacers",
+    "nba_id": 1629614,
+    "headshot_filename": "1629614-andrew-nembhard.png",
+    "aliases": []
+  },
+  "ryan-nembhard": {
+    "name": "Ryan Nembhard",
+    "full_name": "Ryan Nembhard",
+    "first_name": "Ryan",
+    "last_name": "Nembhard",
+    "team": "dallas-mavericks",
+    "nba_id": 1642948,
+    "headshot_filename": "1642948-ryan-nembhard.png",
+    "aliases": []
+  },
+  "aaron-nesmith": {
+    "name": "Aaron Nesmith",
+    "full_name": "Aaron Nesmith",
+    "first_name": "Aaron",
+    "last_name": "Nesmith",
+    "team": "indiana-pacers",
+    "nba_id": 1630174,
+    "headshot_filename": "1630174-aaron-nesmith.png",
+    "aliases": []
+  },
+  "asa-newell": {
+    "name": "Asa Newell",
+    "full_name": "Asa Newell",
+    "first_name": "Asa",
+    "last_name": "Newell",
+    "team": "atlanta-hawks",
+    "nba_id": 1642854,
+    "headshot_filename": "1642854-asa-newell.png",
+    "aliases": []
+  },
+  "tristen-newton": {
+    "name": "Tristen Newton",
+    "full_name": "Tristen Newton",
+    "first_name": "Tristen",
+    "last_name": "Newton",
+    "team": "houston-rockets",
+    "nba_id": 1641803,
+    "headshot_filename": "1641803-tristen-newton.png",
+    "aliases": []
+  },
+  "yanic-konan-niederhauser": {
+    "name": "Yanic Konan Niederhäuser",
+    "full_name": "Yanic Konan Niederhäuser",
+    "first_name": "Yanic Konan",
+    "last_name": "Niederhäuser",
+    "team": "los-angeles-clippers",
+    "nba_id": 1642949,
+    "headshot_filename": "1642949-yanic-konan-niederhuser.png",
+    "aliases": [
+      "Yanic Konan Niederhauser"
+    ]
+  },
+  "zeke-nnaji": {
+    "name": "Zeke Nnaji",
+    "full_name": "Zeke Nnaji",
+    "first_name": "Zeke",
+    "last_name": "Nnaji",
+    "team": "denver-nuggets",
+    "nba_id": 1630192,
+    "headshot_filename": "1630192-zeke-nnaji.png",
+    "aliases": []
+  },
+  "jusuf-nurkic": {
+    "name": "Jusuf Nurkić",
+    "full_name": "Jusuf Nurkić",
+    "first_name": "Jusuf",
+    "last_name": "Nurkić",
+    "team": "utah-jazz",
+    "nba_id": 203994,
+    "headshot_filename": "203994-jusuf-nurki.png",
+    "aliases": [
+      "Jusuf Nurkic"
+    ]
+  },
+  "josh-oduro": {
+    "name": "Josh Oduro",
+    "full_name": "Josh Oduro",
+    "first_name": "Josh",
+    "last_name": "Oduro",
+    "team": "new-orleans-pelicans",
+    "nba_id": 1642490,
+    "headshot_filename": "1642490-josh-oduro.png",
+    "aliases": []
+  },
+  "josh-okogie": {
+    "name": "Josh Okogie",
+    "full_name": "Josh Okogie",
+    "first_name": "Josh",
+    "last_name": "Okogie",
+    "team": "houston-rockets",
+    "nba_id": 1629006,
+    "headshot_filename": "1629006-josh-okogie.png",
+    "aliases": []
+  },
+  "onyeka-okongwu": {
+    "name": "Onyeka Okongwu",
+    "full_name": "Onyeka Okongwu",
+    "first_name": "Onyeka",
+    "last_name": "Okongwu",
+    "team": "atlanta-hawks",
+    "nba_id": 1630168,
+    "headshot_filename": "1630168-onyeka-okongwu.png",
+    "aliases": []
+  },
+  "isaac-okoro": {
+    "name": "Isaac Okoro",
+    "full_name": "Isaac Okoro",
+    "first_name": "Isaac",
+    "last_name": "Okoro",
+    "team": "chicago-bulls",
+    "nba_id": 1630171,
+    "headshot_filename": "1630171-isaac-okoro.png",
+    "aliases": []
+  },
+  "lachlan-olbrich": {
+    "name": "Lachlan Olbrich",
+    "full_name": "Lachlan Olbrich",
+    "first_name": "Lachlan",
+    "last_name": "Olbrich",
+    "team": "chicago-bulls",
+    "nba_id": 1642950,
+    "headshot_filename": "1642950-lachlan-olbrich.png",
+    "aliases": []
+  },
+  "kelly-olynyk": {
+    "name": "Kelly Olynyk",
+    "full_name": "Kelly Olynyk",
+    "first_name": "Kelly",
+    "last_name": "Olynyk",
+    "team": "san-antonio-spurs",
+    "nba_id": 203482,
+    "headshot_filename": "203482-kelly-olynyk.png",
+    "aliases": []
+  },
+  "norchad-omier": {
+    "name": "Norchad Omier",
+    "full_name": "Norchad Omier",
+    "first_name": "Norchad",
+    "last_name": "Omier",
+    "team": "los-angeles-clippers",
+    "nba_id": 1641807,
+    "headshot_filename": "1641807-norchad-omier.png",
+    "aliases": []
+  },
+  "royce-oneale": {
+    "name": "Royce O'Neale",
+    "full_name": "Royce O'Neale",
+    "first_name": "Royce",
+    "last_name": "O'Neale",
+    "team": "phoenix-suns",
+    "nba_id": 1626220,
+    "headshot_filename": "1626220-royce-oneale.png",
+    "aliases": []
+  },
+  "kelly-oubre-jr": {
+    "name": "Kelly Oubre Jr.",
+    "full_name": "Kelly Oubre Jr.",
+    "first_name": "Kelly",
+    "last_name": "Oubre Jr.",
+    "team": "philadelphia-76ers",
+    "nba_id": 1626162,
+    "headshot_filename": "1626162-kelly-oubre-jr.png",
+    "aliases": []
+  },
+  "cameron-payne": {
+    "name": "Cameron Payne",
+    "full_name": "Cameron Payne",
+    "first_name": "Cameron",
+    "last_name": "Payne",
+    "team": "philadelphia-76ers",
+    "nba_id": 1626166,
+    "headshot_filename": "1626166-cameron-payne.png",
+    "aliases": []
+  },
+  "gary-payton-ii": {
+    "name": "Gary Payton II",
+    "full_name": "Gary Payton II",
+    "first_name": "Gary",
+    "last_name": "Payton II",
+    "team": "golden-state-warriors",
+    "nba_id": 1627780,
+    "headshot_filename": "1627780-gary-payton-ii.png",
+    "aliases": []
+  },
+  "micah-peavy": {
+    "name": "Micah Peavy",
+    "full_name": "Micah Peavy",
+    "first_name": "Micah",
+    "last_name": "Peavy",
+    "team": "new-orleans-pelicans",
+    "nba_id": 1642877,
+    "headshot_filename": "1642877-micah-peavy.png",
+    "aliases": []
+  },
+  "sean-pedulla": {
+    "name": "Sean Pedulla",
+    "full_name": "Sean Pedulla",
+    "first_name": "Sean",
+    "last_name": "Pedulla",
+    "team": "los-angeles-clippers",
+    "nba_id": 1642951,
+    "headshot_filename": "1642951-sean-pedulla.png",
+    "aliases": []
+  },
+  "noah-penda": {
+    "name": "Noah Penda",
+    "full_name": "Noah Penda",
+    "first_name": "Noah",
+    "last_name": "Penda",
+    "team": "orlando-magic",
+    "nba_id": 1642869,
+    "headshot_filename": "1642869-noah-penda.png",
+    "aliases": []
+  },
+  "taelon-peter": {
+    "name": "Taelon Peter",
+    "full_name": "Taelon Peter",
+    "first_name": "Taelon",
+    "last_name": "Peter",
+    "team": "indiana-pacers",
+    "nba_id": 1643007,
+    "headshot_filename": "1643007-taelon-peter.png",
+    "aliases": []
+  },
+  "julian-phillips": {
+    "name": "Julian Phillips",
+    "full_name": "Julian Phillips",
+    "first_name": "Julian",
+    "last_name": "Phillips",
+    "team": "minnesota-timberwolves",
+    "nba_id": 1641763,
+    "headshot_filename": "1641763-julian-phillips.png",
+    "aliases": []
+  },
+  "jalen-pickett": {
+    "name": "Jalen Pickett",
+    "full_name": "Jalen Pickett",
+    "first_name": "Jalen",
+    "last_name": "Pickett",
+    "team": "denver-nuggets",
+    "nba_id": 1629618,
+    "headshot_filename": "1629618-jalen-pickett.png",
+    "aliases": []
+  },
+  "scotty-pippen-jr": {
+    "name": "Scotty Pippen Jr.",
+    "full_name": "Scotty Pippen Jr.",
+    "first_name": "Scotty",
+    "last_name": "Pippen Jr.",
+    "team": "memphis-grizzlies",
+    "nba_id": 1630590,
+    "headshot_filename": "1630590-scotty-pippen-jr.png",
+    "aliases": []
+  },
+  "daeqwon-plowden": {
+    "name": "Daeqwon Plowden",
+    "full_name": "Daeqwon Plowden",
+    "first_name": "Daeqwon",
+    "last_name": "Plowden",
+    "team": "sacramento-kings",
+    "nba_id": 1631342,
+    "headshot_filename": "1631342-daeqwon-plowden.png",
+    "aliases": []
+  },
+  "mason-plumlee": {
+    "name": "Mason Plumlee",
+    "full_name": "Mason Plumlee",
+    "first_name": "Mason",
+    "last_name": "Plumlee",
+    "team": "san-antonio-spurs",
+    "nba_id": 203486,
+    "headshot_filename": "203486-mason-plumlee.png",
+    "aliases": []
+  },
+  "brandin-podziemski": {
+    "name": "Brandin Podziemski",
+    "full_name": "Brandin Podziemski",
+    "first_name": "Brandin",
+    "last_name": "Podziemski",
+    "team": "golden-state-warriors",
+    "nba_id": 1641764,
+    "headshot_filename": "1641764-brandin-podziemski.png",
+    "aliases": []
+  },
+  "jakob-poeltl": {
+    "name": "Jakob Poeltl",
+    "full_name": "Jakob Poeltl",
+    "first_name": "Jakob",
+    "last_name": "Poeltl",
+    "team": "toronto-raptors",
+    "nba_id": 1627751,
+    "headshot_filename": "1627751-jakob-poeltl.png",
+    "aliases": []
+  },
+  "jordan-poole": {
+    "name": "Jordan Poole",
+    "full_name": "Jordan Poole",
+    "first_name": "Jordan",
+    "last_name": "Poole",
+    "team": "new-orleans-pelicans",
+    "nba_id": 1629673,
+    "headshot_filename": "1629673-jordan-poole.png",
+    "aliases": []
+  },
+  "craig-porter-jr": {
+    "name": "Craig Porter Jr.",
+    "full_name": "Craig Porter Jr.",
+    "first_name": "Craig",
+    "last_name": "Porter Jr.",
+    "team": "cleveland-cavaliers",
+    "nba_id": 1641854,
+    "headshot_filename": "1641854-craig-porter-jr.png",
+    "aliases": []
+  },
+  "kevin-porter-jr": {
+    "name": "Kevin Porter Jr.",
+    "full_name": "Kevin Porter Jr.",
+    "first_name": "Kevin",
+    "last_name": "Porter Jr.",
+    "team": "milwaukee-bucks",
+    "nba_id": 1629645,
+    "headshot_filename": "1629645-kevin-porter-jr.png",
+    "aliases": []
+  },
+  "michael-porter-jr": {
+    "name": "Michael Porter Jr.",
+    "full_name": "Michael Porter Jr.",
+    "first_name": "Michael",
+    "last_name": "Porter Jr.",
+    "team": "brooklyn-nets",
+    "nba_id": 1629008,
+    "headshot_filename": "1629008-michael-porter-jr.png",
+    "aliases": []
+  },
+  "bobby-portis": {
+    "name": "Bobby Portis",
+    "full_name": "Bobby Portis",
+    "first_name": "Bobby",
+    "last_name": "Portis",
+    "team": "milwaukee-bucks",
+    "nba_id": 1626171,
+    "headshot_filename": "1626171-bobby-portis.png",
+    "aliases": []
+  },
+  "kristaps-porzingis": {
+    "name": "Kristaps Porziņģis",
+    "full_name": "Kristaps Porziņģis",
+    "first_name": "Kristaps",
+    "last_name": "Porziņģis",
+    "team": "golden-state-warriors",
+    "nba_id": 204001,
+    "headshot_filename": "204001-kristaps-porziis.png",
+    "aliases": [
+      "Kristaps Porzingis"
+    ]
+  },
+  "quinten-post": {
+    "name": "Quinten Post",
+    "full_name": "Quinten Post",
+    "first_name": "Quinten",
+    "last_name": "Post",
+    "team": "golden-state-warriors",
+    "nba_id": 1642366,
+    "headshot_filename": "1642366-quinten-post.png",
+    "aliases": []
+  },
+  "micah-potter": {
+    "name": "Micah Potter",
+    "full_name": "Micah Potter",
+    "first_name": "Micah",
+    "last_name": "Potter",
+    "team": "indiana-pacers",
+    "nba_id": 1630695,
+    "headshot_filename": "1630695-micah-potter.png",
+    "aliases": []
+  },
+  "john-poulakidas": {
+    "name": "John Poulakidas",
+    "full_name": "John Poulakidas",
+    "first_name": "John",
+    "last_name": "Poulakidas",
+    "team": "dallas-mavericks",
+    "nba_id": 1642967,
+    "headshot_filename": "1642967-john-poulakidas.png",
+    "aliases": []
+  },
+  "drake-powell": {
+    "name": "Drake Powell",
+    "full_name": "Drake Powell",
+    "first_name": "Drake",
+    "last_name": "Powell",
+    "team": "brooklyn-nets",
+    "nba_id": 1642962,
+    "headshot_filename": "1642962-drake-powell.png",
+    "aliases": []
+  },
+  "dwight-powell": {
+    "name": "Dwight Powell",
+    "full_name": "Dwight Powell",
+    "first_name": "Dwight",
+    "last_name": "Powell",
+    "team": "dallas-mavericks",
+    "nba_id": 203939,
+    "headshot_filename": "203939-dwight-powell.png",
+    "aliases": []
+  },
+  "norman-powell": {
+    "name": "Norman Powell",
+    "full_name": "Norman Powell",
+    "first_name": "Norman",
+    "last_name": "Powell",
+    "team": "miami-heat",
+    "nba_id": 1626181,
+    "headshot_filename": "1626181-norman-powell.png",
+    "aliases": []
+  },
+  "taurean-prince": {
+    "name": "Taurean Prince",
+    "full_name": "Taurean Prince",
+    "first_name": "Taurean",
+    "last_name": "Prince",
+    "team": "milwaukee-bucks",
+    "nba_id": 1627752,
+    "headshot_filename": "1627752-taurean-prince.png",
+    "aliases": []
+  },
+  "payton-pritchard": {
+    "name": "Payton Pritchard",
+    "full_name": "Payton Pritchard",
+    "first_name": "Payton",
+    "last_name": "Pritchard",
+    "team": "boston-celtics",
+    "nba_id": 1630202,
+    "headshot_filename": "1630202-payton-pritchard.png",
+    "aliases": []
+  },
+  "tyrese-proctor": {
+    "name": "Tyrese Proctor",
+    "full_name": "Tyrese Proctor",
+    "first_name": "Tyrese",
+    "last_name": "Proctor",
+    "team": "cleveland-cavaliers",
+    "nba_id": 1642878,
+    "headshot_filename": "1642878-tyrese-proctor.png",
+    "aliases": []
+  },
+  "olivier-maxence-prosper": {
+    "name": "Olivier-Maxence Prosper",
+    "full_name": "Olivier-Maxence Prosper",
+    "first_name": "Olivier-Maxence",
+    "last_name": "Prosper",
+    "team": "memphis-grizzlies",
+    "nba_id": 1641765,
+    "headshot_filename": "1641765-olivier-maxence-prosper.png",
+    "aliases": []
+  },
+  "zyon-pullin": {
+    "name": "Zyon Pullin",
+    "full_name": "Zyon Pullin",
+    "first_name": "Zyon",
+    "last_name": "Pullin",
+    "team": "minnesota-timberwolves",
+    "nba_id": 1642389,
+    "headshot_filename": "1642389-zyon-pullin.png",
+    "aliases": []
+  },
+  "derik-queen": {
+    "name": "Derik Queen",
+    "full_name": "Derik Queen",
+    "first_name": "Derik",
+    "last_name": "Queen",
+    "team": "new-orleans-pelicans",
+    "nba_id": 1642852,
+    "headshot_filename": "1642852-derik-queen.png",
+    "aliases": []
+  },
+  "neemias-queta": {
+    "name": "Neemias Queta",
+    "full_name": "Neemias Queta",
+    "first_name": "Neemias",
+    "last_name": "Queta",
+    "team": "boston-celtics",
+    "nba_id": 1629674,
+    "headshot_filename": "1629674-neemias-queta.png",
+    "aliases": []
+  },
+  "immanuel-quickley": {
+    "name": "Immanuel Quickley",
+    "full_name": "Immanuel Quickley",
+    "first_name": "Immanuel",
+    "last_name": "Quickley",
+    "team": "toronto-raptors",
+    "nba_id": 1630193,
+    "headshot_filename": "1630193-immanuel-quickley.png",
+    "aliases": []
+  },
+  "julius-randle": {
+    "name": "Julius Randle",
+    "full_name": "Julius Randle",
+    "first_name": "Julius",
+    "last_name": "Randle",
+    "team": "minnesota-timberwolves",
+    "nba_id": 203944,
+    "headshot_filename": "203944-julius-randle.png",
+    "aliases": []
+  },
+  "maxime-raynaud": {
+    "name": "Maxime Raynaud",
+    "full_name": "Maxime Raynaud",
+    "first_name": "Maxime",
+    "last_name": "Raynaud",
+    "team": "sacramento-kings",
+    "nba_id": 1642875,
+    "headshot_filename": "1642875-maxime-raynaud.png",
+    "aliases": []
+  },
+  "austin-reaves": {
+    "name": "Austin Reaves",
+    "full_name": "Austin Reaves",
+    "first_name": "Austin",
+    "last_name": "Reaves",
+    "team": "los-angeles-lakers",
+    "nba_id": 1630559,
+    "headshot_filename": "1630559-austin-reaves.png",
+    "aliases": []
+  },
+  "paul-reed": {
+    "name": "Paul Reed",
+    "full_name": "Paul Reed",
+    "first_name": "Paul",
+    "last_name": "Reed",
+    "team": "detroit-pistons",
+    "nba_id": 1630194,
+    "headshot_filename": "1630194-paul-reed.png",
+    "aliases": []
+  },
+  "julian-reese": {
+    "name": "Julian Reese",
+    "full_name": "Julian Reese",
+    "first_name": "Julian",
+    "last_name": "Reese",
+    "team": "washington-wizards",
+    "nba_id": 1642882,
+    "headshot_filename": "1642882-julian-reese.png",
+    "aliases": []
+  },
+  "antonio-reeves": {
+    "name": "Antonio Reeves",
+    "full_name": "Antonio Reeves",
+    "first_name": "Antonio",
+    "last_name": "Reeves",
+    "team": "charlotte-hornets",
+    "nba_id": 1641810,
+    "headshot_filename": "1641810-antonio-reeves.png",
+    "aliases": []
+  },
+  "naz-reid": {
+    "name": "Naz Reid",
+    "full_name": "Naz Reid",
+    "first_name": "Naz",
+    "last_name": "Reid",
+    "team": "minnesota-timberwolves",
+    "nba_id": 1629675,
+    "headshot_filename": "1629675-naz-reid.png",
+    "aliases": []
+  },
+  "will-richard": {
+    "name": "Will Richard",
+    "full_name": "Will Richard",
+    "first_name": "Will",
+    "last_name": "Richard",
+    "team": "golden-state-warriors",
+    "nba_id": 1642954,
+    "headshot_filename": "1642954-will-richard.png",
+    "aliases": []
+  },
+  "nick-richards": {
+    "name": "Nick Richards",
+    "full_name": "Nick Richards",
+    "first_name": "Nick",
+    "last_name": "Richards",
+    "team": "chicago-bulls",
+    "nba_id": 1630208,
+    "headshot_filename": "1630208-nick-richards.png",
+    "aliases": []
+  },
+  "jase-richardson": {
+    "name": "Jase Richardson",
+    "full_name": "Jase Richardson",
+    "first_name": "Jase",
+    "last_name": "Richardson",
+    "team": "orlando-magic",
+    "nba_id": 1642859,
+    "headshot_filename": "1642859-jase-richardson.png",
+    "aliases": []
+  },
+  "will-riley": {
+    "name": "Will Riley",
+    "full_name": "Will Riley",
+    "first_name": "Will",
+    "last_name": "Riley",
+    "team": "washington-wizards",
+    "nba_id": 1642860,
+    "headshot_filename": "1642860-will-riley.png",
+    "aliases": []
+  },
+  "zaccharie-risacher": {
+    "name": "Zaccharie Risacher",
+    "full_name": "Zaccharie Risacher",
+    "first_name": "Zaccharie",
+    "last_name": "Risacher",
+    "team": "atlanta-hawks",
+    "nba_id": 1642258,
+    "headshot_filename": "1642258-zaccharie-risacher.png",
+    "aliases": []
+  },
+  "duncan-robinson": {
+    "name": "Duncan Robinson",
+    "full_name": "Duncan Robinson",
+    "first_name": "Duncan",
+    "last_name": "Robinson",
+    "team": "detroit-pistons",
+    "nba_id": 1629130,
+    "headshot_filename": "1629130-duncan-robinson.png",
+    "aliases": []
+  },
+  "mitchell-robinson": {
+    "name": "Mitchell Robinson",
+    "full_name": "Mitchell Robinson",
+    "first_name": "Mitchell",
+    "last_name": "Robinson",
+    "team": "new-york-knicks",
+    "nba_id": 1629011,
+    "headshot_filename": "1629011-mitchell-robinson.png",
+    "aliases": []
+  },
+  "david-roddy": {
+    "name": "David Roddy",
+    "full_name": "David Roddy",
+    "first_name": "David",
+    "last_name": "Roddy",
+    "team": "denver-nuggets",
+    "nba_id": 1631223,
+    "headshot_filename": "1631223-david-roddy.png",
+    "aliases": []
+  },
+  "ryan-rollins": {
+    "name": "Ryan Rollins",
+    "full_name": "Ryan Rollins",
+    "first_name": "Ryan",
+    "last_name": "Rollins",
+    "team": "milwaukee-bucks",
+    "nba_id": 1631157,
+    "headshot_filename": "1631157-ryan-rollins.png",
+    "aliases": []
+  },
+  "terry-rozier": {
+    "name": "Terry Rozier",
+    "full_name": "Terry Rozier",
+    "first_name": "Terry",
+    "last_name": "Rozier",
+    "team": "miami-heat",
+    "nba_id": 1626179,
+    "headshot_filename": "1626179-terry-rozier.png",
+    "aliases": []
+  },
+  "rayan-rupert": {
+    "name": "Rayan Rupert",
+    "full_name": "Rayan Rupert",
+    "first_name": "Rayan",
+    "last_name": "Rupert",
+    "team": "memphis-grizzlies",
+    "nba_id": 1641712,
+    "headshot_filename": "1641712-rayan-rupert.png",
+    "aliases": []
+  },
+  "dangelo-russell": {
+    "name": "D'Angelo Russell",
+    "full_name": "D'Angelo Russell",
+    "first_name": "D'Angelo",
+    "last_name": "Russell",
+    "team": "washington-wizards",
+    "nba_id": 1626156,
+    "headshot_filename": "1626156-dangelo-russell.png",
+    "aliases": []
+  },
+  "cormac-ryan": {
+    "name": "Cormac Ryan",
+    "full_name": "Cormac Ryan",
+    "first_name": "Cormac",
+    "last_name": "Ryan",
+    "team": "milwaukee-bucks",
+    "nba_id": 1642504,
+    "headshot_filename": "1642504-cormac-ryan.png",
+    "aliases": []
+  },
+  "domantas-sabonis": {
+    "name": "Domantas Sabonis",
+    "full_name": "Domantas Sabonis",
+    "first_name": "Domantas",
+    "last_name": "Sabonis",
+    "team": "sacramento-kings",
+    "nba_id": 1627734,
+    "headshot_filename": "1627734-domantas-sabonis.png",
+    "aliases": [
+      "Domas"
+    ]
+  },
+  "tidjane-salaun": {
+    "name": "Tidjane Salaün",
+    "full_name": "Tidjane Salaün",
+    "first_name": "Tidjane",
+    "last_name": "Salaün",
+    "team": "charlotte-hornets",
+    "nba_id": 1642275,
+    "headshot_filename": "1642275-tidjane-salan.png",
+    "aliases": [
+      "Tidjane Salaun"
+    ]
+  },
+  "kobe-sanders": {
+    "name": "Kobe Sanders",
+    "full_name": "Kobe Sanders",
+    "first_name": "Kobe",
+    "last_name": "Sanders",
+    "team": "los-angeles-clippers",
+    "nba_id": 1642920,
+    "headshot_filename": "1642920-kobe-sanders.png",
+    "aliases": []
+  },
+  "payton-sandfort": {
+    "name": "Payton Sandfort",
+    "full_name": "Payton Sandfort",
+    "first_name": "Payton",
+    "last_name": "Sandfort",
+    "team": "oklahoma-city-thunder",
+    "nba_id": 1642362,
+    "headshot_filename": "1642362-payton-sandfort.png",
+    "aliases": []
+  },
+  "gui-santos": {
+    "name": "Gui Santos",
+    "full_name": "Gui Santos",
+    "first_name": "Gui",
+    "last_name": "Santos",
+    "team": "golden-state-warriors",
+    "nba_id": 1630611,
+    "headshot_filename": "1630611-gui-santos.png",
+    "aliases": []
+  },
+  "ben-saraf": {
+    "name": "Ben Saraf",
+    "full_name": "Ben Saraf",
+    "first_name": "Ben",
+    "last_name": "Saraf",
+    "team": "brooklyn-nets",
+    "nba_id": 1642879,
+    "headshot_filename": "1642879-ben-saraf.png",
+    "aliases": []
+  },
+  "alex-sarr": {
+    "name": "Alex Sarr",
+    "full_name": "Alex Sarr",
+    "first_name": "Alex",
+    "last_name": "Sarr",
+    "team": "washington-wizards",
+    "nba_id": 1642259,
+    "headshot_filename": "1642259-alex-sarr.png",
+    "aliases": []
+  },
+  "olivier-sarr": {
+    "name": "Olivier Sarr",
+    "full_name": "Olivier Sarr",
+    "first_name": "Olivier",
+    "last_name": "Sarr",
+    "team": "cleveland-cavaliers",
+    "nba_id": 1630846,
+    "headshot_filename": "1630846-olivier-sarr.png",
+    "aliases": []
+  },
+  "marcus-sasser": {
+    "name": "Marcus Sasser",
+    "full_name": "Marcus Sasser",
+    "first_name": "Marcus",
+    "last_name": "Sasser",
+    "team": "detroit-pistons",
+    "nba_id": 1631204,
+    "headshot_filename": "1631204-marcus-sasser.png",
+    "aliases": []
+  },
+  "baylor-scheierman": {
+    "name": "Baylor Scheierman",
+    "full_name": "Baylor Scheierman",
+    "first_name": "Baylor",
+    "last_name": "Scheierman",
+    "team": "boston-celtics",
+    "nba_id": 1631248,
+    "headshot_filename": "1631248-baylor-scheierman.png",
+    "aliases": []
+  },
+  "dennis-schroder": {
+    "name": "Dennis Schröder",
+    "full_name": "Dennis Schröder",
+    "first_name": "Dennis",
+    "last_name": "Schröder",
+    "team": "cleveland-cavaliers",
+    "nba_id": 203471,
+    "headshot_filename": "203471-dennis-schrder.png",
+    "aliases": [
+      "Dennis Schroder"
+    ]
+  },
+  "alperen-sengun": {
+    "name": "Alperen Sengun",
+    "full_name": "Alperen Sengun",
+    "first_name": "Alperen",
+    "last_name": "Sengun",
+    "team": "houston-rockets",
+    "nba_id": 1630578,
+    "headshot_filename": "1630578-alperen-sengun.png",
+    "aliases": [
+      "Alperen",
+      "Şengün",
+      "Baby Jokic"
+    ]
+  },
+  "brice-sensabaugh": {
+    "name": "Brice Sensabaugh",
+    "full_name": "Brice Sensabaugh",
+    "first_name": "Brice",
+    "last_name": "Sensabaugh",
+    "team": "utah-jazz",
+    "nba_id": 1641729,
+    "headshot_filename": "1641729-brice-sensabaugh.png",
+    "aliases": []
+  },
+  "collin-sexton": {
+    "name": "Collin Sexton",
+    "full_name": "Collin Sexton",
+    "first_name": "Collin",
+    "last_name": "Sexton",
+    "team": "chicago-bulls",
+    "nba_id": 1629012,
+    "headshot_filename": "1629012-collin-sexton.png",
+    "aliases": []
+  },
+  "landry-shamet": {
+    "name": "Landry Shamet",
+    "full_name": "Landry Shamet",
+    "first_name": "Landry",
+    "last_name": "Shamet",
+    "team": "new-york-knicks",
+    "nba_id": 1629013,
+    "headshot_filename": "1629013-landry-shamet.png",
+    "aliases": []
+  },
+  "terrence-shannon-jr": {
+    "name": "Terrence Shannon Jr.",
+    "full_name": "Terrence Shannon Jr.",
+    "first_name": "Terrence",
+    "last_name": "Shannon Jr.",
+    "team": "minnesota-timberwolves",
+    "nba_id": 1630545,
+    "headshot_filename": "1630545-terrence-shannon-jr.png",
+    "aliases": []
+  },
+  "dayron-sharpe": {
+    "name": "Day'Ron Sharpe",
+    "full_name": "Day'Ron Sharpe",
+    "first_name": "Day'Ron",
+    "last_name": "Sharpe",
+    "team": "brooklyn-nets",
+    "nba_id": 1630549,
+    "headshot_filename": "1630549-dayron-sharpe.png",
+    "aliases": []
+  },
+  "shaedon-sharpe": {
+    "name": "Shaedon Sharpe",
+    "full_name": "Shaedon Sharpe",
+    "first_name": "Shaedon",
+    "last_name": "Sharpe",
+    "team": "portland-trail-blazers",
+    "nba_id": 1631101,
+    "headshot_filename": "1631101-shaedon-sharpe.png",
+    "aliases": []
+  },
+  "jamal-shead": {
+    "name": "Jamal Shead",
+    "full_name": "Jamal Shead",
+    "first_name": "Jamal",
+    "last_name": "Shead",
+    "team": "toronto-raptors",
+    "nba_id": 1642347,
+    "headshot_filename": "1642347-jamal-shead.png",
+    "aliases": []
+  },
+  "ben-sheppard": {
+    "name": "Ben Sheppard",
+    "full_name": "Ben Sheppard",
+    "first_name": "Ben",
+    "last_name": "Sheppard",
+    "team": "indiana-pacers",
+    "nba_id": 1641767,
+    "headshot_filename": "1641767-ben-sheppard.png",
+    "aliases": []
+  },
+  "reed-sheppard": {
+    "name": "Reed Sheppard",
+    "full_name": "Reed Sheppard",
+    "first_name": "Reed",
+    "last_name": "Sheppard",
+    "team": "houston-rockets",
+    "nba_id": 1642263,
+    "headshot_filename": "1642263-reed-sheppard.png",
+    "aliases": []
+  },
+  "max-shulga": {
+    "name": "Max Shulga",
+    "full_name": "Max Shulga",
+    "first_name": "Max",
+    "last_name": "Shulga",
+    "team": "boston-celtics",
+    "nba_id": 1642917,
+    "headshot_filename": "1642917-max-shulga.png",
+    "aliases": []
+  },
+  "pascal-siakam": {
+    "name": "Pascal Siakam",
+    "full_name": "Pascal Siakam",
+    "first_name": "Pascal",
+    "last_name": "Siakam",
+    "team": "indiana-pacers",
+    "nba_id": 1627783,
+    "headshot_filename": "1627783-pascal-siakam.png",
+    "aliases": []
+  },
+  "anfernee-simons": {
+    "name": "Anfernee Simons",
+    "full_name": "Anfernee Simons",
+    "first_name": "Anfernee",
+    "last_name": "Simons",
+    "team": "chicago-bulls",
+    "nba_id": 1629014,
+    "headshot_filename": "1629014-anfernee-simons.png",
+    "aliases": []
+  },
+  "kj-simpson": {
+    "name": "KJ Simpson",
+    "full_name": "KJ Simpson",
+    "first_name": "KJ",
+    "last_name": "Simpson",
+    "team": "denver-nuggets",
+    "nba_id": 1642354,
+    "headshot_filename": "1642354-kj-simpson.png",
+    "aliases": []
+  },
+  "jericho-sims": {
+    "name": "Jericho Sims",
+    "full_name": "Jericho Sims",
+    "first_name": "Jericho",
+    "last_name": "Sims",
+    "team": "milwaukee-bucks",
+    "nba_id": 1630579,
+    "headshot_filename": "1630579-jericho-sims.png",
+    "aliases": []
+  },
+  "jalen-slawson": {
+    "name": "Jalen Slawson",
+    "full_name": "Jalen Slawson",
+    "first_name": "Jalen",
+    "last_name": "Slawson",
+    "team": "indiana-pacers",
+    "nba_id": 1641771,
+    "headshot_filename": "1641771-jalen-slawson.png",
+    "aliases": []
+  },
+  "javon-small": {
+    "name": "Javon Small",
+    "full_name": "Javon Small",
+    "first_name": "Javon",
+    "last_name": "Small",
+    "team": "memphis-grizzlies",
+    "nba_id": 1642914,
+    "headshot_filename": "1642914-javon-small.png",
+    "aliases": []
+  },
+  "marcus-smart": {
+    "name": "Marcus Smart",
+    "full_name": "Marcus Smart",
+    "first_name": "Marcus",
+    "last_name": "Smart",
+    "team": "los-angeles-lakers",
+    "nba_id": 203935,
+    "headshot_filename": "203935-marcus-smart.png",
+    "aliases": []
+  },
+  "dru-smith": {
+    "name": "Dru Smith",
+    "full_name": "Dru Smith",
+    "first_name": "Dru",
+    "last_name": "Smith",
+    "team": "miami-heat",
+    "nba_id": 1630696,
+    "headshot_filename": "1630696-dru-smith.png",
+    "aliases": []
+  },
+  "jalen-smith": {
+    "name": "Jalen Smith",
+    "full_name": "Jalen Smith",
+    "first_name": "Jalen",
+    "last_name": "Smith",
+    "team": "chicago-bulls",
+    "nba_id": 1630188,
+    "headshot_filename": "1630188-jalen-smith.png",
+    "aliases": []
+  },
+  "tolu-smith": {
+    "name": "Tolu Smith",
+    "full_name": "Tolu Smith",
+    "first_name": "Tolu",
+    "last_name": "Smith",
+    "team": "detroit-pistons",
+    "nba_id": 1642449,
+    "headshot_filename": "1642449-tolu-smith.png",
+    "aliases": []
+  },
+  "tyler-smith": {
+    "name": "Tyler Smith",
+    "full_name": "Tyler Smith",
+    "first_name": "Tyler",
+    "last_name": "Smith",
+    "team": "dallas-mavericks",
+    "nba_id": 1641890,
+    "headshot_filename": "1641890-tyler-smith.png",
+    "aliases": []
+  },
+  "jabari-smith-jr": {
+    "name": "Jabari Smith Jr.",
+    "full_name": "Jabari Smith Jr.",
+    "first_name": "Jabari",
+    "last_name": "Smith Jr.",
+    "team": "houston-rockets",
+    "nba_id": 1631095,
+    "headshot_filename": "1631095-jabari-smith-jr.png",
+    "aliases": []
+  },
+  "nick-smith-jr": {
+    "name": "Nick Smith Jr.",
+    "full_name": "Nick Smith Jr.",
+    "first_name": "Nick",
+    "last_name": "Smith Jr.",
+    "team": "los-angeles-lakers",
+    "nba_id": 1641733,
+    "headshot_filename": "1641733-nick-smith-jr.png",
+    "aliases": []
+  },
+  "jeremy-sochan": {
+    "name": "Jeremy Sochan",
+    "full_name": "Jeremy Sochan",
+    "first_name": "Jeremy",
+    "last_name": "Sochan",
+    "team": "new-york-knicks",
+    "nba_id": 1631110,
+    "headshot_filename": "1631110-jeremy-sochan.png",
+    "aliases": []
+  },
+  "thomas-sorber": {
+    "name": "Thomas Sorber",
+    "full_name": "Thomas Sorber",
+    "first_name": "Thomas",
+    "last_name": "Sorber",
+    "team": "oklahoma-city-thunder",
+    "nba_id": 1642850,
+    "headshot_filename": "1642850-thomas-sorber.png",
+    "aliases": []
+  },
+  "cam-spencer": {
+    "name": "Cam Spencer",
+    "full_name": "Cam Spencer",
+    "first_name": "Cam",
+    "last_name": "Spencer",
+    "team": "memphis-grizzlies",
+    "nba_id": 1642285,
+    "headshot_filename": "1642285-cam-spencer.png",
+    "aliases": []
+  },
+  "pat-spencer": {
+    "name": "Pat Spencer",
+    "full_name": "Pat Spencer",
+    "first_name": "Pat",
+    "last_name": "Spencer",
+    "team": "golden-state-warriors",
+    "nba_id": 1630311,
+    "headshot_filename": "1630311-pat-spencer.png",
+    "aliases": []
+  },
+  "isaiah-stevens": {
+    "name": "Isaiah Stevens",
+    "full_name": "Isaiah Stevens",
+    "first_name": "Isaiah",
+    "last_name": "Stevens",
+    "team": "sacramento-kings",
+    "nba_id": 1641815,
+    "headshot_filename": "1641815-isaiah-stevens.png",
+    "aliases": []
+  },
+  "isaiah-stewart": {
+    "name": "Isaiah Stewart",
+    "full_name": "Isaiah Stewart",
+    "first_name": "Isaiah",
+    "last_name": "Stewart",
+    "team": "detroit-pistons",
+    "nba_id": 1630191,
+    "headshot_filename": "1630191-isaiah-stewart.png",
+    "aliases": []
+  },
+  "julian-strawther": {
+    "name": "Julian Strawther",
+    "full_name": "Julian Strawther",
+    "first_name": "Julian",
+    "last_name": "Strawther",
+    "team": "denver-nuggets",
+    "nba_id": 1631124,
+    "headshot_filename": "1631124-julian-strawther.png",
+    "aliases": []
+  },
+  "max-strus": {
+    "name": "Max Strus",
+    "full_name": "Max Strus",
+    "first_name": "Max",
+    "last_name": "Strus",
+    "team": "cleveland-cavaliers",
+    "nba_id": 1629622,
+    "headshot_filename": "1629622-max-strus.png",
+    "aliases": []
+  },
+  "jalen-suggs": {
+    "name": "Jalen Suggs",
+    "full_name": "Jalen Suggs",
+    "first_name": "Jalen",
+    "last_name": "Suggs",
+    "team": "orlando-magic",
+    "nba_id": 1630591,
+    "headshot_filename": "1630591-jalen-suggs.png",
+    "aliases": []
+  },
+  "jaesean-tate": {
+    "name": "Jae'Sean Tate",
+    "full_name": "Jae'Sean Tate",
+    "first_name": "Jae'Sean",
+    "last_name": "Tate",
+    "team": "houston-rockets",
+    "nba_id": 1630256,
+    "headshot_filename": "1630256-jaesean-tate.png",
+    "aliases": []
+  },
+  "jayson-tatum": {
+    "name": "Jayson Tatum",
+    "full_name": "Jayson Tatum",
+    "first_name": "Jayson",
+    "last_name": "Tatum",
+    "team": "boston-celtics",
+    "nba_id": 1628369,
+    "headshot_filename": "1628369-jayson-tatum.png",
+    "aliases": [
+      "JT"
+    ]
+  },
+  "garrett-temple": {
+    "name": "Garrett Temple",
+    "full_name": "Garrett Temple",
+    "first_name": "Garrett",
+    "last_name": "Temple",
+    "team": "toronto-raptors",
+    "nba_id": 202066,
+    "headshot_filename": "202066-garrett-temple.png",
+    "aliases": []
+  },
+  "dalen-terry": {
+    "name": "Dalen Terry",
+    "full_name": "Dalen Terry",
+    "first_name": "Dalen",
+    "last_name": "Terry",
+    "team": "philadelphia-76ers",
+    "nba_id": 1631207,
+    "headshot_filename": "1631207-dalen-terry.png",
+    "aliases": []
+  },
+  "adou-thiero": {
+    "name": "Adou Thiero",
+    "full_name": "Adou Thiero",
+    "first_name": "Adou",
+    "last_name": "Thiero",
+    "team": "los-angeles-lakers",
+    "nba_id": 1642876,
+    "headshot_filename": "1642876-adou-thiero.png",
+    "aliases": []
+  },
+  "cam-thomas": {
+    "name": "Cam Thomas",
+    "full_name": "Cam Thomas",
+    "first_name": "Cam",
+    "last_name": "Thomas",
+    "team": "milwaukee-bucks",
+    "nba_id": 1630560,
+    "headshot_filename": "1630560-cam-thomas.png",
+    "aliases": []
+  },
+  "amen-thompson": {
+    "name": "Amen Thompson",
+    "full_name": "Amen Thompson",
+    "first_name": "Amen",
+    "last_name": "Thompson",
+    "team": "houston-rockets",
+    "nba_id": 1641708,
+    "headshot_filename": "1641708-amen-thompson.png",
+    "aliases": []
+  },
+  "ausar-thompson": {
+    "name": "Ausar Thompson",
+    "full_name": "Ausar Thompson",
+    "first_name": "Ausar",
+    "last_name": "Thompson",
+    "team": "detroit-pistons",
+    "nba_id": 1641709,
+    "headshot_filename": "1641709-ausar-thompson.png",
+    "aliases": []
+  },
+  "ethan-thompson": {
+    "name": "Ethan Thompson",
+    "full_name": "Ethan Thompson",
+    "first_name": "Ethan",
+    "last_name": "Thompson",
+    "team": "indiana-pacers",
+    "nba_id": 1630679,
+    "headshot_filename": "1630679-ethan-thompson.png",
+    "aliases": []
+  },
+  "klay-thompson": {
+    "name": "Klay Thompson",
+    "full_name": "Klay Thompson",
+    "first_name": "Klay",
+    "last_name": "Thompson",
+    "team": "dallas-mavericks",
+    "nba_id": 202691,
+    "headshot_filename": "202691-klay-thompson.png",
+    "aliases": []
+  },
+  "matisse-thybulle": {
+    "name": "Matisse Thybulle",
+    "full_name": "Matisse Thybulle",
+    "first_name": "Matisse",
+    "last_name": "Thybulle",
+    "team": "portland-trail-blazers",
+    "nba_id": 1629680,
+    "headshot_filename": "1629680-matisse-thybulle.png",
+    "aliases": []
+  },
+  "xavier-tillman": {
+    "name": "Xavier Tillman",
+    "full_name": "Xavier Tillman",
+    "first_name": "Xavier",
+    "last_name": "Tillman",
+    "team": "charlotte-hornets",
+    "nba_id": 1630214,
+    "headshot_filename": "1630214-xavier-tillman.png",
+    "aliases": []
+  },
+  "drew-timme": {
+    "name": "Drew Timme",
+    "full_name": "Drew Timme",
+    "first_name": "Drew",
+    "last_name": "Timme",
+    "team": "los-angeles-lakers",
+    "nba_id": 1631166,
+    "headshot_filename": "1631166-drew-timme.png",
+    "aliases": []
+  },
+  "naeqwan-tomlin": {
+    "name": "Nae'Qwan Tomlin",
+    "full_name": "Nae'Qwan Tomlin",
+    "first_name": "Nae'Qwan",
+    "last_name": "Tomlin",
+    "team": "cleveland-cavaliers",
+    "nba_id": 1641772,
+    "headshot_filename": "1641772-naeqwan-tomlin.png",
+    "aliases": []
+  },
+  "john-tonje": {
+    "name": "John Tonje",
+    "full_name": "John Tonje",
+    "first_name": "John",
+    "last_name": "Tonje",
+    "team": "boston-celtics",
+    "nba_id": 1642910,
+    "headshot_filename": "1642910-john-tonje.png",
+    "aliases": []
+  },
+  "nikola-topic": {
+    "name": "Nikola Topić",
+    "full_name": "Nikola Topić",
+    "first_name": "Nikola",
+    "last_name": "Topić",
+    "team": "oklahoma-city-thunder",
+    "nba_id": 1642260,
+    "headshot_filename": "1642260-nikola-topi.png",
+    "aliases": [
+      "Nikola Topic"
+    ]
+  },
+  "obi-toppin": {
+    "name": "Obi Toppin",
+    "full_name": "Obi Toppin",
+    "first_name": "Obi",
+    "last_name": "Toppin",
+    "team": "indiana-pacers",
+    "nba_id": 1630167,
+    "headshot_filename": "1630167-obi-toppin.png",
+    "aliases": []
+  },
+  "karl-anthony-towns": {
+    "name": "Karl-Anthony Towns",
+    "full_name": "Karl-Anthony Towns",
+    "first_name": "Karl-Anthony",
+    "last_name": "Towns",
+    "team": "new-york-knicks",
+    "nba_id": 1626157,
+    "headshot_filename": "1626157-karl-anthony-towns.png",
+    "aliases": [
+      "KAT",
+      "Karl Anthony Towns"
+    ]
+  },
+  "nolan-traore": {
+    "name": "Nolan Traore",
+    "full_name": "Nolan Traore",
+    "first_name": "Nolan",
+    "last_name": "Traore",
+    "team": "brooklyn-nets",
+    "nba_id": 1642849,
+    "headshot_filename": "1642849-nolan-traore.png",
+    "aliases": []
+  },
+  "gary-trent-jr": {
+    "name": "Gary Trent Jr.",
+    "full_name": "Gary Trent Jr.",
+    "first_name": "Gary",
+    "last_name": "Trent Jr.",
+    "team": "milwaukee-bucks",
+    "nba_id": 1629018,
+    "headshot_filename": "1629018-gary-trent-jr.png",
+    "aliases": []
+  },
+  "oscar-tshiebwe": {
+    "name": "Oscar Tshiebwe",
+    "full_name": "Oscar Tshiebwe",
+    "first_name": "Oscar",
+    "last_name": "Tshiebwe",
+    "team": "utah-jazz",
+    "nba_id": 1631131,
+    "headshot_filename": "1631131-oscar-tshiebwe.png",
+    "aliases": []
+  },
+  "myles-turner": {
+    "name": "Myles Turner",
+    "full_name": "Myles Turner",
+    "first_name": "Myles",
+    "last_name": "Turner",
+    "team": "milwaukee-bucks",
+    "nba_id": 1626167,
+    "headshot_filename": "1626167-myles-turner.png",
+    "aliases": []
+  },
+  "jaylon-tyson": {
+    "name": "Jaylon Tyson",
+    "full_name": "Jaylon Tyson",
+    "first_name": "Jaylon",
+    "last_name": "Tyson",
+    "team": "cleveland-cavaliers",
+    "nba_id": 1642281,
+    "headshot_filename": "1642281-jaylon-tyson.png",
+    "aliases": []
+  },
+  "jonas-valanciunas": {
+    "name": "Jonas Valančiūnas",
+    "full_name": "Jonas Valančiūnas",
+    "first_name": "Jonas",
+    "last_name": "Valančiūnas",
+    "team": "denver-nuggets",
+    "nba_id": 202685,
+    "headshot_filename": "202685-jonas-valaninas.png",
+    "aliases": [
+      "Jonas Valanciunas"
+    ]
+  },
+  "jarred-vanderbilt": {
+    "name": "Jarred Vanderbilt",
+    "full_name": "Jarred Vanderbilt",
+    "first_name": "Jarred",
+    "last_name": "Vanderbilt",
+    "team": "los-angeles-lakers",
+    "nba_id": 1629020,
+    "headshot_filename": "1629020-jarred-vanderbilt.png",
+    "aliases": []
+  },
+  "fred-vanvleet": {
+    "name": "Fred VanVleet",
+    "full_name": "Fred VanVleet",
+    "first_name": "Fred",
+    "last_name": "VanVleet",
+    "team": "houston-rockets",
+    "nba_id": 1627832,
+    "headshot_filename": "1627832-fred-vanvleet.png",
+    "aliases": []
+  },
+  "devin-vassell": {
+    "name": "Devin Vassell",
+    "full_name": "Devin Vassell",
+    "first_name": "Devin",
+    "last_name": "Vassell",
+    "team": "san-antonio-spurs",
+    "nba_id": 1630170,
+    "headshot_filename": "1630170-devin-vassell.png",
+    "aliases": []
+  },
+  "gabe-vincent": {
+    "name": "Gabe Vincent",
+    "full_name": "Gabe Vincent",
+    "first_name": "Gabe",
+    "last_name": "Vincent",
+    "team": "atlanta-hawks",
+    "nba_id": 1629216,
+    "headshot_filename": "1629216-gabe-vincent.png",
+    "aliases": []
+  },
+  "nikola-vucevic": {
+    "name": "Nikola Vučević",
+    "full_name": "Nikola Vučević",
+    "first_name": "Nikola",
+    "last_name": "Vučević",
+    "team": "boston-celtics",
+    "nba_id": 202696,
+    "headshot_filename": "202696-nikola-vuevi.png",
+    "aliases": [
+      "Nikola Vucevic"
+    ]
+  },
+  "tristan-vukcevic": {
+    "name": "Tristan Vukcevic",
+    "full_name": "Tristan Vukcevic",
+    "first_name": "Tristan",
+    "last_name": "Vukcevic",
+    "team": "washington-wizards",
+    "nba_id": 1641774,
+    "headshot_filename": "1641774-tristan-vukcevic.png",
+    "aliases": []
+  },
+  "dean-wade": {
+    "name": "Dean Wade",
+    "full_name": "Dean Wade",
+    "first_name": "Dean",
+    "last_name": "Wade",
+    "team": "cleveland-cavaliers",
+    "nba_id": 1629731,
+    "headshot_filename": "1629731-dean-wade.png",
+    "aliases": []
+  },
+  "franz-wagner": {
+    "name": "Franz Wagner",
+    "full_name": "Franz Wagner",
+    "first_name": "Franz",
+    "last_name": "Wagner",
+    "team": "orlando-magic",
+    "nba_id": 1630532,
+    "headshot_filename": "1630532-franz-wagner.png",
+    "aliases": [
+      "Franz"
+    ]
+  },
+  "moritz-wagner": {
+    "name": "Moritz Wagner",
+    "full_name": "Moritz Wagner",
+    "first_name": "Moritz",
+    "last_name": "Wagner",
+    "team": "orlando-magic",
+    "nba_id": 1629021,
+    "headshot_filename": "1629021-moritz-wagner.png",
+    "aliases": []
+  },
+  "jabari-walker": {
+    "name": "Jabari Walker",
+    "full_name": "Jabari Walker",
+    "first_name": "Jabari",
+    "last_name": "Walker",
+    "team": "philadelphia-76ers",
+    "nba_id": 1631133,
+    "headshot_filename": "1631133-jabari-walker.png",
+    "aliases": []
+  },
+  "jarace-walker": {
+    "name": "Jarace Walker",
+    "full_name": "Jarace Walker",
+    "first_name": "Jarace",
+    "last_name": "Walker",
+    "team": "indiana-pacers",
+    "nba_id": 1641716,
+    "headshot_filename": "1641716-jarace-walker.png",
+    "aliases": []
+  },
+  "cason-wallace": {
+    "name": "Cason Wallace",
+    "full_name": "Cason Wallace",
+    "first_name": "Cason",
+    "last_name": "Wallace",
+    "team": "oklahoma-city-thunder",
+    "nba_id": 1641717,
+    "headshot_filename": "1641717-cason-wallace.png",
+    "aliases": []
+  },
+  "keaton-wallace": {
+    "name": "Keaton Wallace",
+    "full_name": "Keaton Wallace",
+    "first_name": "Keaton",
+    "last_name": "Wallace",
+    "team": "atlanta-hawks",
+    "nba_id": 1630811,
+    "headshot_filename": "1630811-keaton-wallace.png",
+    "aliases": []
+  },
+  "jordan-walsh": {
+    "name": "Jordan Walsh",
+    "full_name": "Jordan Walsh",
+    "first_name": "Jordan",
+    "last_name": "Walsh",
+    "team": "boston-celtics",
+    "nba_id": 1641775,
+    "headshot_filename": "1641775-jordan-walsh.png",
+    "aliases": []
+  },
+  "jakobe-walter": {
+    "name": "Ja'Kobe Walter",
+    "full_name": "Ja'Kobe Walter",
+    "first_name": "Ja'Kobe",
+    "last_name": "Walter",
+    "team": "toronto-raptors",
+    "nba_id": 1642266,
+    "headshot_filename": "1642266-jakobe-walter.png",
+    "aliases": []
+  },
+  "kelel-ware": {
+    "name": "Kel'el Ware",
+    "full_name": "Kel'el Ware",
+    "first_name": "Kel'el",
+    "last_name": "Ware",
+    "team": "miami-heat",
+    "nba_id": 1642276,
+    "headshot_filename": "1642276-kelel-ware.png",
+    "aliases": []
+  },
+  "pj-washington": {
+    "name": "P.J. Washington",
+    "full_name": "P.J. Washington",
+    "first_name": "P.J.",
+    "last_name": "Washington",
+    "team": "dallas-mavericks",
+    "nba_id": 1629023,
+    "headshot_filename": "1629023-pj-washington.png",
+    "aliases": []
+  },
+  "tyty-washington-jr": {
+    "name": "TyTy Washington Jr.",
+    "full_name": "TyTy Washington Jr.",
+    "first_name": "TyTy",
+    "last_name": "Washington Jr.",
+    "team": "los-angeles-clippers",
+    "nba_id": 1631102,
+    "headshot_filename": "1631102-tyty-washington-jr.png",
+    "aliases": []
+  },
+  "lindy-waters-iii": {
+    "name": "Lindy Waters III",
+    "full_name": "Lindy Waters III",
+    "first_name": "Lindy",
+    "last_name": "Waters III",
+    "team": "san-antonio-spurs",
+    "nba_id": 1630322,
+    "headshot_filename": "1630322-lindy-waters-iii.png",
+    "aliases": []
+  },
+  "trendon-watford": {
+    "name": "Trendon Watford",
+    "full_name": "Trendon Watford",
+    "first_name": "Trendon",
+    "last_name": "Watford",
+    "team": "philadelphia-76ers",
+    "nba_id": 1630570,
+    "headshot_filename": "1630570-trendon-watford.png",
+    "aliases": []
+  },
+  "jamir-watkins": {
+    "name": "Jamir Watkins",
+    "full_name": "Jamir Watkins",
+    "first_name": "Jamir",
+    "last_name": "Watkins",
+    "team": "washington-wizards",
+    "nba_id": 1642364,
+    "headshot_filename": "1642364-jamir-watkins.png",
+    "aliases": []
+  },
+  "peyton-watson": {
+    "name": "Peyton Watson",
+    "full_name": "Peyton Watson",
+    "first_name": "Peyton",
+    "last_name": "Watson",
+    "team": "denver-nuggets",
+    "nba_id": 1631212,
+    "headshot_filename": "1631212-peyton-watson.png",
+    "aliases": []
+  },
+  "jaylen-wells": {
+    "name": "Jaylen Wells",
+    "full_name": "Jaylen Wells",
+    "first_name": "Jaylen",
+    "last_name": "Wells",
+    "team": "memphis-grizzlies",
+    "nba_id": 1642377,
+    "headshot_filename": "1642377-jaylen-wells.png",
+    "aliases": []
+  },
+  "victor-wembanyama": {
+    "name": "Victor Wembanyama",
+    "full_name": "Victor Wembanyama",
+    "first_name": "Victor",
+    "last_name": "Wembanyama",
+    "team": "san-antonio-spurs",
+    "nba_id": 1641705,
+    "headshot_filename": "1641705-victor-wembanyama.png",
+    "aliases": [
+      "Wemby",
+      "Victor"
+    ]
+  },
+  "blake-wesley": {
+    "name": "Blake Wesley",
+    "full_name": "Blake Wesley",
+    "first_name": "Blake",
+    "last_name": "Wesley",
+    "team": "portland-trail-blazers",
+    "nba_id": 1631104,
+    "headshot_filename": "1631104-blake-wesley.png",
+    "aliases": []
+  },
+  "russell-westbrook": {
+    "name": "Russell Westbrook",
+    "full_name": "Russell Westbrook",
+    "first_name": "Russell",
+    "last_name": "Westbrook",
+    "team": "sacramento-kings",
+    "nba_id": 201566,
+    "headshot_filename": "201566-russell-westbrook.png",
+    "aliases": []
+  },
+  "coby-white": {
+    "name": "Coby White",
+    "full_name": "Coby White",
+    "first_name": "Coby",
+    "last_name": "White",
+    "team": "charlotte-hornets",
+    "nba_id": 1629632,
+    "headshot_filename": "1629632-coby-white.png",
+    "aliases": []
+  },
+  "derrick-white": {
+    "name": "Derrick White",
+    "full_name": "Derrick White",
+    "first_name": "Derrick",
+    "last_name": "White",
+    "team": "boston-celtics",
+    "nba_id": 1628401,
+    "headshot_filename": "1628401-derrick-white.png",
+    "aliases": []
+  },
+  "cam-whitmore": {
+    "name": "Cam Whitmore",
+    "full_name": "Cam Whitmore",
+    "first_name": "Cam",
+    "last_name": "Whitmore",
+    "team": "washington-wizards",
+    "nba_id": 1641715,
+    "headshot_filename": "1641715-cam-whitmore.png",
+    "aliases": []
+  },
+  "aaron-wiggins": {
+    "name": "Aaron Wiggins",
+    "full_name": "Aaron Wiggins",
+    "first_name": "Aaron",
+    "last_name": "Wiggins",
+    "team": "oklahoma-city-thunder",
+    "nba_id": 1630598,
+    "headshot_filename": "1630598-aaron-wiggins.png",
+    "aliases": []
+  },
+  "andrew-wiggins": {
+    "name": "Andrew Wiggins",
+    "full_name": "Andrew Wiggins",
+    "first_name": "Andrew",
+    "last_name": "Wiggins",
+    "team": "miami-heat",
+    "nba_id": 203952,
+    "headshot_filename": "203952-andrew-wiggins.png",
+    "aliases": []
+  },
+  "amari-williams": {
+    "name": "Amari Williams",
+    "full_name": "Amari Williams",
+    "first_name": "Amari",
+    "last_name": "Williams",
+    "team": "boston-celtics",
+    "nba_id": 1642873,
+    "headshot_filename": "1642873-amari-williams.png",
+    "aliases": []
+  },
+  "brandon-williams": {
+    "name": "Brandon Williams",
+    "full_name": "Brandon Williams",
+    "first_name": "Brandon",
+    "last_name": "Williams",
+    "team": "dallas-mavericks",
+    "nba_id": 1630314,
+    "headshot_filename": "1630314-brandon-williams.png",
+    "aliases": []
+  },
+  "cody-williams": {
+    "name": "Cody Williams",
+    "full_name": "Cody Williams",
+    "first_name": "Cody",
+    "last_name": "Williams",
+    "team": "utah-jazz",
+    "nba_id": 1642262,
+    "headshot_filename": "1642262-cody-williams.png",
+    "aliases": []
+  },
+  "grant-williams": {
+    "name": "Grant Williams",
+    "full_name": "Grant Williams",
+    "first_name": "Grant",
+    "last_name": "Williams",
+    "team": "charlotte-hornets",
+    "nba_id": 1629684,
+    "headshot_filename": "1629684-grant-williams.png",
+    "aliases": []
+  },
+  "jalen-williams": {
+    "name": "Jalen Williams",
+    "full_name": "Jalen Williams",
+    "first_name": "Jalen",
+    "last_name": "Williams",
+    "team": "oklahoma-city-thunder",
+    "nba_id": 1631114,
+    "headshot_filename": "1631114-jalen-williams.png",
+    "aliases": [
+      "J-Dub",
+      "JDub"
+    ]
+  },
+  "jaylin-williams": {
+    "name": "Jaylin Williams",
+    "full_name": "Jaylin Williams",
+    "first_name": "Jaylin",
+    "last_name": "Williams",
+    "team": "oklahoma-city-thunder",
+    "nba_id": 1631119,
+    "headshot_filename": "1631119-jaylin-williams.png",
+    "aliases": []
+  },
+  "kenrich-williams": {
+    "name": "Kenrich Williams",
+    "full_name": "Kenrich Williams",
+    "first_name": "Kenrich",
+    "last_name": "Williams",
+    "team": "oklahoma-city-thunder",
+    "nba_id": 1629026,
+    "headshot_filename": "1629026-kenrich-williams.png",
+    "aliases": []
+  },
+  "mark-williams": {
+    "name": "Mark Williams",
+    "full_name": "Mark Williams",
+    "first_name": "Mark",
+    "last_name": "Williams",
+    "team": "phoenix-suns",
+    "nba_id": 1631109,
+    "headshot_filename": "1631109-mark-williams.png",
+    "aliases": []
+  },
+  "nate-williams": {
+    "name": "Nate Williams",
+    "full_name": "Nate Williams",
+    "first_name": "Nate",
+    "last_name": "Williams",
+    "team": "golden-state-warriors",
+    "nba_id": 1631466,
+    "headshot_filename": "1631466-nate-williams.png",
+    "aliases": []
+  },
+  "patrick-williams": {
+    "name": "Patrick Williams",
+    "full_name": "Patrick Williams",
+    "first_name": "Patrick",
+    "last_name": "Williams",
+    "team": "chicago-bulls",
+    "nba_id": 1630172,
+    "headshot_filename": "1630172-patrick-williams.png",
+    "aliases": []
+  },
+  "ziaire-williams": {
+    "name": "Ziaire Williams",
+    "full_name": "Ziaire Williams",
+    "first_name": "Ziaire",
+    "last_name": "Williams",
+    "team": "brooklyn-nets",
+    "nba_id": 1630533,
+    "headshot_filename": "1630533-ziaire-williams.png",
+    "aliases": []
+  },
+  "robert-williams-iii": {
+    "name": "Robert Williams III",
+    "full_name": "Robert Williams III",
+    "first_name": "Robert",
+    "last_name": "Williams III",
+    "team": "portland-trail-blazers",
+    "nba_id": 1629057,
+    "headshot_filename": "1629057-robert-williams-iii.png",
+    "aliases": []
+  },
+  "vince-williams-jr": {
+    "name": "Vince Williams Jr.",
+    "full_name": "Vince Williams Jr.",
+    "first_name": "Vince",
+    "last_name": "Williams Jr.",
+    "team": "utah-jazz",
+    "nba_id": 1631246,
+    "headshot_filename": "1631246-vince-williams-jr.png",
+    "aliases": []
+  },
+  "zion-williamson": {
+    "name": "Zion Williamson",
+    "full_name": "Zion Williamson",
+    "first_name": "Zion",
+    "last_name": "Williamson",
+    "team": "new-orleans-pelicans",
+    "nba_id": 1629627,
+    "headshot_filename": "1629627-zion-williamson.png",
+    "aliases": [
+      "Zion"
+    ]
+  },
+  "jalen-wilson": {
+    "name": "Jalen Wilson",
+    "full_name": "Jalen Wilson",
+    "first_name": "Jalen",
+    "last_name": "Wilson",
+    "team": "brooklyn-nets",
+    "nba_id": 1630592,
+    "headshot_filename": "1630592-jalen-wilson.png",
+    "aliases": []
+  },
+  "danny-wolf": {
+    "name": "Danny Wolf",
+    "full_name": "Danny Wolf",
+    "first_name": "Danny",
+    "last_name": "Wolf",
+    "team": "brooklyn-nets",
+    "nba_id": 1642874,
+    "headshot_filename": "1642874-danny-wolf.png",
+    "aliases": []
+  },
+  "guerschon-yabusele": {
+    "name": "Guerschon Yabusele",
+    "full_name": "Guerschon Yabusele",
+    "first_name": "Guerschon",
+    "last_name": "Yabusele",
+    "team": "chicago-bulls",
+    "nba_id": 1627824,
+    "headshot_filename": "1627824-guerschon-yabusele.png",
+    "aliases": []
+  },
+  "yang-hansen": {
+    "name": "Yang Hansen",
+    "full_name": "Yang Hansen",
+    "first_name": "Yang",
+    "last_name": "Hansen",
+    "team": "portland-trail-blazers",
+    "nba_id": 1642905,
+    "headshot_filename": "1642905-yang-hansen.png",
+    "aliases": []
+  },
+  "jahmir-young": {
+    "name": "Jahmir Young",
+    "full_name": "Jahmir Young",
+    "first_name": "Jahmir",
+    "last_name": "Young",
+    "team": "miami-heat",
+    "nba_id": 1642443,
+    "headshot_filename": "1642443-jahmir-young.png",
+    "aliases": []
+  },
+  "trae-young": {
+    "name": "Trae Young",
+    "full_name": "Trae Young",
+    "first_name": "Trae",
+    "last_name": "Young",
+    "team": "washington-wizards",
+    "nba_id": 1629027,
+    "headshot_filename": "1629027-trae-young.png",
+    "aliases": [
+      "Trae",
+      "Ice Trae"
+    ]
+  },
+  "chris-youngblood": {
+    "name": "Chris Youngblood",
+    "full_name": "Chris Youngblood",
+    "first_name": "Chris",
+    "last_name": "Youngblood",
+    "team": "portland-trail-blazers",
+    "nba_id": 1642959,
+    "headshot_filename": "1642959-chris-youngblood.png",
+    "aliases": []
+  },
+  "rocco-zikarsky": {
+    "name": "Rocco Zikarsky",
+    "full_name": "Rocco Zikarsky",
+    "first_name": "Rocco",
+    "last_name": "Zikarsky",
+    "team": "minnesota-timberwolves",
+    "nba_id": 1642911,
+    "headshot_filename": "1642911-rocco-zikarsky.png",
+    "aliases": []
+  },
+  "ivica-zubac": {
+    "name": "Ivica Zubac",
+    "full_name": "Ivica Zubac",
+    "first_name": "Ivica",
+    "last_name": "Zubac",
+    "team": "indiana-pacers",
+    "nba_id": 1627826,
+    "headshot_filename": "1627826-ivica-zubac.png",
+    "aliases": []
   }
 }
