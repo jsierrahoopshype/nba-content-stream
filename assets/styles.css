@@ -127,6 +127,14 @@ input[type=text]:focus,select:focus{
 }
 .pill:hover{ border-color:var(--accent); color:var(--accent) }
 .pill.on{ background:var(--accent); border-color:var(--accent); color:#fff }
+/* Polish-8 (Fix 2): when exactly one source is on, mark it "solo"
+   for an even louder active state. Makes the single-click filter
+   read at a glance against the other muted-but-still-clickable
+   pills. */
+.pill.solo{
+  background:var(--accent); border-color:var(--accent); color:#fff;
+  box-shadow:0 0 0 2px var(--accent-dim);
+}
 .pill .dot{
   display:inline-block; width:.45rem; height:.45rem; border-radius:50%;
   background:currentColor; margin-right:.4rem; vertical-align:middle;
@@ -326,13 +334,34 @@ a.when:hover{ color:var(--text); text-decoration:underline }
 .bsky-body-text .inline-url:hover,
 .card .inline-url:hover{ text-decoration:underline }
 
+/* Polish-8 (Fix 1): unified media-embed width. Every media container
+   rendered inside a card body claims the FULL card-body width so the
+   feed reads as a single uniform column instead of a ragged mix of
+   widths per source. The unified rule lives below as a single
+   shared selector; individual containers still set their own layout
+   (grid columns, flex direction, aspect-ratio) but the width
+   baseline is shared. */
+.bsky-images,
+.bsky-video,
+.bsky-video-link,
+.bsky-linkcard,
+.bsky-extcard,
+.yt-embed,
+.rss-thumb{
+  width:100%; max-width:100%; box-sizing:border-box;
+}
+
 /* Fix A5: single image renders at natural aspect ratio (capped tall);
    grid uses aspect-ratio:1 per cell so the bottom row isn't clipped by
-   the previous overflow:hidden + fixed max-height combination. */
+   the previous overflow:hidden + fixed max-height combination.
+   Polish-8: single-image case now also fills the full card width
+   (img width:100% + object-fit:contain) so portrait images sit
+   centered with letterbox padding instead of rendering narrower
+   than landscape neighbors. Twitter / Bluesky-native look. */
 .bsky-images{ display:block; margin:.4rem 0; }
-.bsky-images a{ display:block }
+.bsky-images a{ display:block; width:100% }
 .bsky-images img{
-  display:block; max-width:100%; max-height:28rem;
+  display:block; width:100%; max-width:100%; max-height:28rem;
   border-radius:8px; object-fit:contain;
   background:var(--surface-hover);
 }
@@ -581,10 +610,10 @@ a.when:hover{ color:var(--text); text-decoration:underline }
   word-break:break-word;
 }
 .bsky-quoted-images{
-  display:block; margin:.4rem 0 0;
+  display:block; width:100%; max-width:100%; margin:.4rem 0 0;
 }
 .bsky-quoted-images img{
-  display:block; max-width:100%; max-height:14rem;
+  display:block; width:100%; max-width:100%; max-height:14rem;
   border-radius:6px; object-fit:contain; background:var(--surface-hover);
 }
 .bsky-quoted-images.grid{

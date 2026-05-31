@@ -542,3 +542,103 @@ def test_retag_items_is_idempotent(vocab):
 
 def test_strip_html_preserves_unicode():
     assert strip_html("<p>Giannis 🦌 dunks</p>") == "Giannis 🦌 dunks"
+
+
+# ---------------------------------------------------------------------------
+# Polish-8: curated alias additions from data/sources/alternate_names.csv.
+# Each test exercises a single alias added in this PR; together they
+# document the active-player aliases we trust enough to ship and
+# confirm that the safety-filtered rejections still don't tag.
+# ---------------------------------------------------------------------------
+
+
+def test_polish8_alias_wemby_tags_wembanyama(vocab):
+    players, teams = vocab
+    p, _ = detect_entities("Wemby is on fire tonight", players, teams)
+    assert p == ["victor-wembanyama"]
+
+
+def test_polish8_alias_shai_tags_sga(vocab):
+    players, teams = vocab
+    p, _ = detect_entities("Shai pulled up from 30 feet", players, teams)
+    assert p == ["shai-gilgeous-alexander"]
+
+
+def test_polish8_alias_jjj_tags_jaren_jackson_jr(vocab):
+    players, teams = vocab
+    p, _ = detect_entities("JJJ blocked four shots", players, teams)
+    assert p == ["jaren-jackson-jr"]
+
+
+def test_polish8_alias_jdub_tags_jalen_williams(vocab):
+    players, teams = vocab
+    p, _ = detect_entities("JDub stepped up in Game 7", players, teams)
+    assert p == ["jalen-williams"]
+
+
+def test_polish8_alias_maxey_tags_tyrese_maxey(vocab):
+    players, teams = vocab
+    p, _ = detect_entities("Maxey carried the offense", players, teams)
+    assert p == ["tyrese-maxey"]
+
+
+def test_polish8_alias_dame_lillard_tags_damian(vocab):
+    players, teams = vocab
+    p, _ = detect_entities("Dame Lillard hit the buzzer beater", players, teams)
+    assert "damian-lillard" in p
+
+
+def test_polish8_alias_kentavious_tags_kcp(vocab):
+    players, teams = vocab
+    p, _ = detect_entities("Kentavious knocked down five threes", players, teams)
+    assert p == ["kentavious-caldwell-pope"]
+
+
+def test_polish8_alias_kcp_tags_kentavious(vocab):
+    players, teams = vocab
+    p, _ = detect_entities("KCP locked up the perimeter", players, teams)
+    assert p == ["kentavious-caldwell-pope"]
+
+
+def test_polish8_alias_uncle_drew_tags_kyrie(vocab):
+    players, teams = vocab
+    p, _ = detect_entities("Uncle Drew put on a show", players, teams)
+    assert p == ["kyrie-irving"]
+
+
+def test_polish8_alias_chef_curry_tags_steph(vocab):
+    players, teams = vocab
+    p, _ = detect_entities("Chef Curry cooked again", players, teams)
+    assert p == ["stephen-curry"]
+
+
+def test_polish8_skipped_bald_eagle_does_not_tag_caruso(vocab):
+    """'Bald Eagle' was a CSV alias for Alex Caruso but is in the
+    safety blocklist (US national symbol; non-NBA news collides)."""
+    players, teams = vocab
+    p, _ = detect_entities("A bald eagle was spotted soaring", players, teams)
+    assert "alex-caruso" not in p
+
+
+def test_polish8_skipped_kai_does_not_tag_kyrie(vocab):
+    """'Kai' was a CSV alias for Kyrie Irving but blocked as a common
+    given name."""
+    players, teams = vocab
+    p, _ = detect_entities("Kai ate breakfast and went surfing", players, teams)
+    assert "kyrie-irving" not in p
+
+
+def test_polish8_skipped_dunn_does_not_tag(vocab):
+    """'Dunn' was a CSV alias for Kris Dunn but skipped because the
+    surname collides with multiple active players."""
+    players, teams = vocab
+    p, _ = detect_entities("Dunn played well off the bench", players, teams)
+    assert p == []
+
+
+def test_polish8_retired_player_kobe_does_not_tag(vocab):
+    """Retired aliases from the CSV are filtered by active-only design;
+    'Kobe' references should never tag a current canonical entry."""
+    players, teams = vocab
+    p, _ = detect_entities("Kobe-like footwork on that turnaround", players, teams)
+    assert p == []
