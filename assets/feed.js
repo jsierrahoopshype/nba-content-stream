@@ -125,7 +125,15 @@
     if (!config.LIVE_MERGE_ENABLED) return;
     if (LIVE_STATUS) LIVE_STATUS.begin();
     try {
-      LIVE_ITEMS = await ncs.liveMerge();
+      LIVE_ITEMS = await ncs.liveMerge({
+        // Polish-10 (Fix 1): forward Bluesky's per-chunk progress to
+        // the status badge so the user sees the fetch advancing
+        // (40% … 60% … 100%) instead of a 3-5s "fetching live…" hang.
+        onBskyProgress: (p) => {
+          if (!LIVE_STATUS || !p || !p.total) return;
+          LIVE_STATUS.progress((p.done / p.total) * 100);
+        },
+      });
       if (LIVE_STATUS) LIVE_STATUS.end({ count: LIVE_ITEMS.length });
     } catch (e) {
       console.warn("live merge failed:", e);

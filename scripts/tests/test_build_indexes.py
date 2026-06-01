@@ -599,6 +599,20 @@ def test_manifest_source_histogram(isolated_data):
     assert manifest["total_items"] == 3
 
 
+def test_manifest_exposes_per_entity_cap(isolated_data):
+    """Polish-10 (Fix 2): the manifest publishes max_items_per_entity
+    so the leaderboards + entity pages can render "1000+" when a
+    bucket has saturated, instead of silently displaying the cap as
+    if it were the real count."""
+    _write_shard(
+        isolated_data,
+        "bluesky",
+        [_item("bs-1", "bluesky", _hours_before(1), players=["stephen-curry"])],
+    )
+    _, _, _, _, manifest = build_indexes.build_indexes(now=FIXED_NOW, retag=False)
+    assert manifest["max_items_per_entity"] == build_indexes.MAX_ITEMS_PER_ENTITY
+
+
 # ---------------------------------------------------------------------------
 # Idempotency + write/dry-run
 # ---------------------------------------------------------------------------

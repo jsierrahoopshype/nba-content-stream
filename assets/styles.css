@@ -872,6 +872,78 @@ a.when:hover{ color:var(--text); text-decoration:underline }
   color:var(--text-secondary); font-weight:500;
 }
 
+/* Polish-10 (Fix 3): ranked leaderboards on players.html / teams.html.
+   Each row is a clickable anchor that navigates to the entity page,
+   laid out as a 5-column CSS grid:
+     [rank] [portrait] [name] [secondary] [count]
+   Mobile collapses secondary under the name (the rank/portrait/count
+   columns stay fixed so the volume read stays consistent). */
+.leaderboard{
+  display:flex; flex-direction:column;
+  border:1px solid var(--border); border-radius:10px;
+  background:var(--surface); overflow:hidden;
+}
+.lb-row{
+  display:grid;
+  grid-template-columns:2.2rem 2.6rem 1fr 9rem 4rem;
+  gap:.8rem; align-items:center;
+  padding:.5rem .9rem;
+  border-bottom:1px solid var(--border);
+  text-decoration:none; color:var(--text);
+  transition:background .12s ease;
+}
+.lb-row:last-child{ border-bottom:none }
+.lb-row:hover{ background:var(--surface-hover); text-decoration:none }
+.lb-rank{
+  font-family:'JetBrains Mono',monospace; font-size:.78rem;
+  color:var(--text-secondary); text-align:right; font-weight:600;
+}
+.lb-portrait-wrap{
+  width:2.4rem; height:2.4rem; position:relative;
+  border-radius:50%; overflow:hidden;
+  background:var(--surface-hover);
+  flex-shrink:0;
+}
+.lb-portrait{
+  display:block; width:100%; height:100%;
+  object-fit:cover; object-position:center top;
+}
+.lb-portrait--team{
+  object-fit:contain; padding:.2rem; background:var(--surface);
+}
+.lb-portrait-fallback{
+  position:absolute; inset:0; width:100%; height:100%;
+  display:none; align-items:center; justify-content:center;
+  background:var(--accent-dim); color:var(--accent);
+  font-family:'DM Sans',sans-serif; font-weight:700; font-size:.75rem;
+}
+.lb-name{
+  font-family:'DM Sans',sans-serif; font-weight:600; font-size:.92rem;
+  color:var(--text);
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap; min-width:0;
+}
+.lb-row:hover .lb-name{ color:var(--accent) }
+.lb-secondary{
+  font-size:.74rem; color:var(--text-secondary);
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap; min-width:0;
+}
+.lb-team-text{ color:var(--text-secondary) }
+.lb-team-empty{ color:var(--border) }
+.lb-conf{
+  display:inline-block; padding:.1rem .45rem; border-radius:999px;
+  font-family:'JetBrains Mono',monospace; font-size:.6rem; font-weight:600;
+  text-transform:uppercase; letter-spacing:.05em;
+  background:var(--surface-hover); color:var(--text-secondary);
+  border:1px solid var(--border);
+}
+.lb-conf--east{ color:#1d4ed8; background:#dbeafe; border-color:#bfdbfe }
+.lb-conf--west{ color:#b91c1c; background:#fee2e2; border-color:#fecaca }
+.lb-count{
+  font-family:'JetBrains Mono',monospace; font-size:.86rem; font-weight:600;
+  color:var(--text); text-align:right;
+}
+.lb-row:hover .lb-count{ color:var(--accent) }
+
 /* -------- mobile -------- */
 @media(max-width:760px){
   .container{ padding:.8rem 1rem 3rem }
@@ -896,6 +968,23 @@ a.when:hover{ color:var(--text); text-decoration:underline }
   .entity-portrait-initials{ font-size:1.4rem }
   .entity-portrait-img--team{ padding:.3rem }
   .entity-hero .name{ font-size:1.25rem }
+  /* Polish-10 (Fix 3): leaderboard collapses the secondary column
+     under the name on narrow viewports — rank / portrait / count
+     stay locked to their columns so the volume read stays
+     consistent. Two-row layout per entry; tap target stays full
+     width. */
+  .lb-row{
+    grid-template-columns:2rem 2.2rem 1fr 3.5rem;
+    grid-template-areas:
+      "rank portrait name count"
+      "rank portrait secondary count";
+    gap:.5rem .6rem; padding:.45rem .65rem;
+  }
+  .lb-rank{ grid-area:rank; font-size:.7rem }
+  .lb-portrait-wrap{ grid-area:portrait; width:2.2rem; height:2.2rem }
+  .lb-name{ grid-area:name; font-size:.86rem }
+  .lb-secondary{ grid-area:secondary; font-size:.68rem }
+  .lb-count{ grid-area:count; font-size:.78rem }
   /* On narrow viewports the chart + rail stack vertically so the
      chart isn't squeezed to ~120px and the rail has room to breathe. */
   .header-row{ flex-direction:column; gap:.4rem }

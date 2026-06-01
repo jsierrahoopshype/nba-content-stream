@@ -175,7 +175,14 @@
     if (window.NCS_DEBUG) console.debug("[NCS-AVATAR-TRACE]", "entity:loadLive:start");
     if (LIVE_STATUS) LIVE_STATUS.begin();
     try {
-      LIVE_ITEMS = await ncs.liveMerge();
+      LIVE_ITEMS = await ncs.liveMerge({
+        // Polish-10 (Fix 1): per-chunk progress to the badge —
+        // same wiring as feed.js.
+        onBskyProgress: (p) => {
+          if (!LIVE_STATUS || !p || !p.total) return;
+          LIVE_STATUS.progress((p.done / p.total) * 100);
+        },
+      });
       // Entity pages filter live items to those tagged to THIS slug;
       // report the filtered count so the badge isn't misleading.
       const filteredCount = LIVE_ITEMS.filter((it) => {

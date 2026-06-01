@@ -23,12 +23,12 @@
     <h1>Players</h1>
     <span class="brand">HoopsMatic · NBA Content Stream</span>
   </div>
-  <p class="subtitle">Every player with at least one recent mention. Sorted by volume; click for the full stream.</p>
+  <p class="subtitle">Ranked by mention volume in the rolling window. Click any row for the player's full stream.</p>
 
   <div class="controls">
     <div class="search-row">
       <div class="search-group">
-        <label>Search player or team</label>
+        <label>Filter by name</label>
         <input type="text" id="q" placeholder="e.g. Wemby, SGA…" autocomplete="off">
         <div class="suggest" id="suggest"></div>
       </div>
@@ -36,7 +36,8 @@
   </div>
 
   <div class="summary" id="summary">loading…</div>
-  <div class="dir-grid" id="grid"></div>
+  <div class="leaderboard" id="leaderboard"></div>
+  <div class="empty" id="empty" style="display:none">No players match that filter.</div>
 </div>
 
 <script src="assets/config.js"></script>
@@ -44,23 +45,89 @@
 <script>
 (async function () {
   const ncs = window.NCS;
-  const manifest = await fetch(window.NCS_dataUrl("data/index/manifest.json")).then((r) => r.json());
-  ncs.attachSearch(
-    document.getElementById("q"),
-    document.getElementById("suggest"),
-    manifest,
-    ""
-  );
-  const grid = document.getElementById("grid");
-  const frag = document.createDocumentFragment();
-  for (const p of manifest.players) {
-    const div = document.createElement("div");
-    div.className = "dir-card";
-    div.innerHTML = `<a href="players/${ncs.escapeHtml(p.slug)}.html">${ncs.escapeHtml(p.name)}</a><span class="count">${p.count}</span>`;
-    frag.appendChild(div);
+  const [manifest, canonical] = await Promise.all([
+    fetch(window.NCS_dataUrl("data/index/manifest.json")).then((r) => r.json()),
+    ncs.loadCanonical(),
+  ]);
+  const players = (canonical && canonical.players) || {};
+  const teams = (canonical && canonical.teams) || {};
+  const cap = manifest.max_items_per_entity || null;
+
+  // Search box keeps its existing autocomplete behavior (a navigable
+  // jump-to suggester) AND additionally drives the inline list
+  // filter — typing matches against player name with case-insensitive
+  // substring search, no Levenshtein, no team-name filter (the
+  // teams page has its own filter).
+  const inputEl = document.getElementById("q");
+  const suggestEl = document.getElementById("suggest");
+  ncs.attachSearch(inputEl, suggestEl, manifest, "");
+
+  const grid = document.getElementById("leaderboard");
+  const summary = document.getElementById("summary");
+  const emptyEl = document.getElementById("empty");
+
+  function teamCellHtml(playerSlug) {
+    const info = players[playerSlug];
+    if (!info || !info.team) return '<span class="lb-team-empty">—</span>';
+    const teamInfo = teams[info.team];
+    const teamName = teamInfo ? teamInfo.name : info.team;
+    // Plain styled span (no nested <a>): the whole row is already a
+    // link to the player's entity page; if a user wants the team
+    // page they can search or use the Teams tab.
+    return `<span class="lb-team-text">${ncs.escapeHtml(teamName)}</span>`;
   }
-  grid.appendChild(frag);
-  document.getElementById("summary").innerHTML = `<strong>${manifest.players.length}</strong> players with content`;
+
+  function rowHtml(rank, p) {
+    const info = players[p.slug] || {};
+    const headshot = ncs.headshotUrl(p.slug, players);
+    const portraitHtml = headshot
+      ? `<img class="lb-portrait" src="${ncs.escapeHtml(headshot)}"
+           alt="" loading="lazy" decoding="async"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+         <span class="lb-portrait-fallback" aria-hidden="true">${ncs.escapeHtml(initials(p.name))}</span>`
+      : `<span class="lb-portrait-fallback" style="display:flex" aria-hidden="true">${ncs.escapeHtml(initials(p.name))}</span>`;
+    return `
+      <a class="lb-row" href="players/${ncs.escapeHtml(p.slug)}.html" data-rank="${rank}">
+        <span class="lb-rank">${rank}</span>
+        <span class="lb-portrait-wrap">${portraitHtml}</span>
+        <span class="lb-name">${ncs.escapeHtml(p.name)}</span>
+        <span class="lb-secondary">${teamCellHtml(p.slug)}</span>
+        <span class="lb-count">${ncs.escapeHtml(ncs.formatCappedCount(p.count, cap))}</span>
+      </a>
+    `;
+  }
+
+  function initials(name) {
+    const parts = String(name || "").split(/\s+/).filter(Boolean);
+    if (!parts.length) return "?";
+    if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+  }
+
+  // Single render() that takes a filter string. The list is already
+  // sorted desc by count in manifest.players (build_indexes guarantees
+  // it), so rank = sorted-index + 1 — even when filtering, the
+  // displayed rank reflects the player's global standing.
+  function render(filter) {
+    const f = (filter || "").trim().toLowerCase();
+    const all = manifest.players;
+    let visibleHtml = "";
+    let shown = 0;
+    for (let i = 0; i < all.length; i++) {
+      const p = all[i];
+      if (f && p.name.toLowerCase().indexOf(f) === -1) continue;
+      visibleHtml += rowHtml(i + 1, p);
+      shown++;
+    }
+    grid.innerHTML = visibleHtml;
+    emptyEl.style.display = shown ? "none" : "block";
+    summary.innerHTML = f
+      ? `<strong>${shown}</strong> of <strong>${all.length}</strong> players match "${ncs.escapeHtml(f)}"`
+      : `<strong>${all.length}</strong> players with content`;
+  }
+
+  render("");
+  inputEl.addEventListener("input", (e) => render(e.target.value));
 })();
 </script>
 </body>

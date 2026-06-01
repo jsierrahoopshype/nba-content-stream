@@ -45,9 +45,14 @@ logger = logging.getLogger("build_indexes")
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
 # Tunable constants. The defaults aim for "fast page load on mobile":
-# per-entity files cap at ~50KB each at the 500-item ceiling.
+# per-entity files cap at ~100KB each at the 1000-item ceiling.
 WINDOW_DAYS = 30                    # rolling window for per-entity indexes
-MAX_ITEMS_PER_ENTITY = 500          # hard cap per player/team file
+# Polish-10 (Fix 2): cap raised from 500 → 1000. Heavy hitters (Wemby,
+# Shai) were pinned at "500 mentions" because that's where their bucket
+# saturated, hiding the real mention volume. Per-file size stays well
+# under 100KB at 1000. The leaderboard frontend renders "1000+" when
+# count >= cap so the ceiling is honest.
+MAX_ITEMS_PER_ENTITY = 1000         # hard cap per player/team file
 FEED_WINDOW_DAYS = 7                # homepage stream window
 MAX_FEED_ITEMS = 1000               # homepage stream cap
 TRENDING_LIMIT = 40                 # top-N for trending.json
@@ -395,6 +400,11 @@ def build_manifest(
         "generated_at": generated_at,
         "window_days": window_days,
         "total_items": len(items),
+        # Polish-10 (Fix 2): expose the per-entity cap so the
+        # leaderboards + entity pages can render "1000+" when a
+        # bucket has saturated, instead of silently displaying the
+        # cap as if it were the real count.
+        "max_items_per_entity": MAX_ITEMS_PER_ENTITY,
         "sources": dict(sorted(source_counts.items())),
         "players": _entries(player_indexes),
         "teams": _entries(team_indexes),
