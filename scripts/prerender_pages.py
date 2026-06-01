@@ -35,6 +35,8 @@ logger = logging.getLogger("prerender_pages")
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 MANIFEST_PATH = REPO_ROOT / "data" / "index" / "manifest.json"
+PLAYERS_CANONICAL_PATH = REPO_ROOT / "data" / "canonical" / "players.json"
+TEAMS_CANONICAL_PATH = REPO_ROOT / "data" / "canonical" / "teams.json"
 PLAYERS_OUT_DIR = REPO_ROOT / "players"
 TEAMS_OUT_DIR = REPO_ROOT / "teams"
 SITEMAP_PATH = REPO_ROOT / "sitemap.xml"
@@ -42,6 +44,51 @@ SITEMAP_PATH = REPO_ROOT / "sitemap.xml"
 # Optional: a base URL for canonical and sitemap. If unset, the
 # sitemap uses relative paths (still valid; Google accepts both).
 SITE_BASE_URL = "https://jsierrahoopshype.github.io/nba-content-stream"
+
+# Polish-9 (Fix 3): portrait sources. Matches the JS helpers in
+# assets/common.js exactly so the prerendered HTML and live JS
+# produce the same URLs.
+NBA_HEADSHOTS_BASE = (
+    "https://raw.githubusercontent.com/jsierrahoopshype/"
+    "nba-headshots/main/players/headshots/face/"
+)
+ESPN_TEAM_LOGO_BASE = "https://a.espncdn.com/i/teamlogos/nba/500/"
+# Slug → ESPN URL abbreviation. Mirror of _ESPN_ABBREV_OVERRIDES in
+# common.js; the two sources of truth must stay in sync (a missing
+# entry here means a working circle on cards but an initials-only
+# header on the entity page, which would be a regression).
+_ESPN_TEAM_ABBR = {
+    "atlanta-hawks": "atl",
+    "boston-celtics": "bos",
+    "brooklyn-nets": "bkn",
+    "charlotte-hornets": "cha",
+    "chicago-bulls": "chi",
+    "cleveland-cavaliers": "cle",
+    "dallas-mavericks": "dal",
+    "denver-nuggets": "den",
+    "detroit-pistons": "det",
+    "golden-state-warriors": "gs",
+    "houston-rockets": "hou",
+    "indiana-pacers": "ind",
+    "los-angeles-clippers": "lac",
+    "los-angeles-lakers": "lal",
+    "memphis-grizzlies": "mem",
+    "miami-heat": "mia",
+    "milwaukee-bucks": "mil",
+    "minnesota-timberwolves": "min",
+    "new-orleans-pelicans": "no",
+    "new-york-knicks": "ny",
+    "oklahoma-city-thunder": "okc",
+    "orlando-magic": "orl",
+    "philadelphia-76ers": "phi",
+    "phoenix-suns": "phx",
+    "portland-trail-blazers": "por",
+    "sacramento-kings": "sac",
+    "san-antonio-spurs": "sa",
+    "toronto-raptors": "tor",
+    "utah-jazz": "utah",
+    "washington-wizards": "wsh",  # ESPN uses wsh, not was
+}
 
 
 # ---------------------------------------------------------------------------
@@ -75,9 +122,78 @@ def _avatar(name: str) -> Tuple[str, str]:
 # ---------------------------------------------------------------------------
 
 
-def _render_page(kind: str, slug: str, name: str, count: int) -> str:
-    """Render one entity page. `kind` is 'player' or 'team'."""
+def _portrait_url(kind: str, slug: str, entity_info: dict | None) -> str | None:
+    """Build the headshot (player) or logo (team) URL for an entity.
+
+    Returns None if no portrait source is known — caller will skip the
+    <img> and render the initials avatar directly. Mirrors the JS
+    helpers in assets/common.js (headshotUrl / teamLogoUrl) so the
+    static prerender and the live JS agree.
+    """
+    if kind == "player":
+        if entity_info and entity_info.get("headshot_filename"):
+            return NBA_HEADSHOTS_BASE + entity_info["headshot_filename"]
+        return None
+    if kind == "team":
+        abbr = _ESPN_TEAM_ABBR.get(slug)
+        if abbr:
+            return ESPN_TEAM_LOGO_BASE + abbr + ".png"
+        return None
+    return None
+
+
+def _portrait_html(kind: str, slug: str, name: str, entity_info: dict | None) -> str:
+    """Render the entity-hero portrait block.
+
+    Layers a real headshot/logo on top of an initials avatar; the
+    inline `onerror` swaps the image's display:none and reveals the
+    initials underneath if the upstream image 404s. When no portrait
+    URL is known (missing canonical entry, unknown team abbr) the
+    initials are rendered alone in the same layout slot.
+    """
     initials, color = _avatar(name)
+    safe_initials = html.escape(initials)
+    portrait_url = _portrait_url(kind, slug, entity_info)
+    if not portrait_url:
+        # No image source known — render the initials directly at
+        # portrait size. Inline display:flex overrides the
+        # default-hidden state of .entity-portrait-initials (which is
+        # hidden so the onerror fallback can reveal it).
+        return (
+            f'<div class="entity-portrait">'
+            f'<div class="entity-portrait-initials" '
+            f'style="display:flex;background:{color}">{safe_initials}</div>'
+            f"</div>"
+        )
+    initials_html = (
+        f'<div class="entity-portrait-initials" style="background:{color}">'
+        f"{safe_initials}</div>"
+    )
+    portrait_cls = "entity-portrait-img"
+    if kind == "team":
+        # Team logos are typically transparent PNGs; object-fit:contain
+        # + a subtle background keeps the logo crisp inside the circle
+        # without cropping it like a player headshot.
+        portrait_cls += " entity-portrait-img--team"
+    return (
+        f'<div class="entity-portrait">'
+        f'<img class="{portrait_cls}" src="{portrait_url}" '
+        f'alt="{html.escape(name)}" loading="eager" decoding="async" '
+        f"onerror=\"this.style.display='none';"
+        f"this.nextElementSibling.style.display='flex';\">"
+        f'{initials_html}'
+        f'</div>'
+    )
+
+
+def _render_page(
+    kind: str,
+    slug: str,
+    name: str,
+    count: int,
+    entity_info: dict | None = None,
+) -> str:
+    """Render one entity page. `kind` is 'player' or 'team'."""
     kind_label = "Player" if kind == "player" else "Team"
     safe_name = html.escape(name)
     title = (
@@ -118,7 +234,7 @@ def _render_page(kind: str, slug: str, name: str, count: int) -> str:
   </div>
 
   <div class="entity-hero">
-    <div class="avatar" style="background:{color}">{html.escape(initials)}</div>
+    {_portrait_html(kind, slug, name, entity_info)}
     <div>
       <div class="name">{safe_name}</div>
       <div class="sub">{kind_label} · {count} mentions in the rolling window</div>
@@ -214,6 +330,20 @@ def load_manifest(manifest_path: Path = MANIFEST_PATH) -> dict:
         return json.load(f)
 
 
+def _load_canonical(path: Path) -> dict:
+    """Load a canonical players.json / teams.json. Strips `_meta`.
+
+    Missing file isn't fatal — the entity pages still render with
+    initials in the portrait slot if no canonical metadata exists.
+    """
+    if not path.exists():
+        logger.warning("canonical not found at %s; portraits will fall back to initials", path)
+        return {}
+    with path.open(encoding="utf-8") as f:
+        blob = json.load(f)
+    return {k: v for k, v in blob.items() if not k.startswith("_")}
+
+
 def _safe_clear_dir(path: Path) -> None:
     """Wipe a directory's *.html files, but leave any other content alone.
 
@@ -234,6 +364,8 @@ def generate_pages(
     teams_out: Path = TEAMS_OUT_DIR,
     sitemap_path: Path = SITEMAP_PATH,
     dry_run: bool = False,
+    players_canonical_path: Path = PLAYERS_CANONICAL_PATH,
+    teams_canonical_path: Path = TEAMS_CANONICAL_PATH,
 ) -> Tuple[int, int]:
     """Generate all player and team HTML pages + sitemap.xml.
 
@@ -245,12 +377,20 @@ def generate_pages(
         _safe_clear_dir(players_out)
         _safe_clear_dir(teams_out)
 
+    # Polish-9 (Fix 3): canonical lookup powers the entity-header
+    # portrait. Each manifest entry only carries slug/name/count, so
+    # we pull headshot_filename (players) or use the team abbr map
+    # (teams) from canonical here.
+    players_canon = _load_canonical(players_canonical_path)
+    teams_canon = _load_canonical(teams_canonical_path)
+
     n_players = 0
     for p in manifest.get("players", []):
         slug = p["slug"]
         name = p["name"]
         count = p["count"]
-        html_text = _render_page("player", slug, name, count)
+        info = players_canon.get(slug)
+        html_text = _render_page("player", slug, name, count, info)
         if not dry_run:
             (players_out / f"{slug}.html").write_text(html_text, encoding="utf-8")
         n_players += 1
@@ -260,7 +400,8 @@ def generate_pages(
         slug = t["slug"]
         name = t["name"]
         count = t["count"]
-        html_text = _render_page("team", slug, name, count)
+        info = teams_canon.get(slug)
+        html_text = _render_page("team", slug, name, count, info)
         if not dry_run:
             (teams_out / f"{slug}.html").write_text(html_text, encoding="utf-8")
         n_teams += 1

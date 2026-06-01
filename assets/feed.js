@@ -25,6 +25,7 @@
   let MANIFEST_SLUGS = null;
   let ARCHIVE_ITEMS = [];
   let LIVE_ITEMS = [];
+  let LIVE_STATUS = null;
   let SOURCE_FILTER = new Set([
     "bluesky",
     "google-news",
@@ -111,17 +112,25 @@
       SOURCE_FILTER = state;
       render();
     });
+    // Polish-9 (Fix 2): inline live-fetch status badge next to the
+    // source pills. begin() runs when liveMerge starts; end() flips
+    // to "+N live" once items arrive. User no longer has to guess
+    // whether the ~2s paced Bluesky fetch is in flight.
+    LIVE_STATUS = ncs.attachLiveStatus(els.pills);
     renderTrending(trending);
     render();
   }
 
   async function loadLive() {
     if (!config.LIVE_MERGE_ENABLED) return;
+    if (LIVE_STATUS) LIVE_STATUS.begin();
     try {
       LIVE_ITEMS = await ncs.liveMerge();
+      if (LIVE_STATUS) LIVE_STATUS.end({ count: LIVE_ITEMS.length });
     } catch (e) {
       console.warn("live merge failed:", e);
       LIVE_ITEMS = [];
+      if (LIVE_STATUS) LIVE_STATUS.error();
     }
     render();
   }

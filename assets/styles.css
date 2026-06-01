@@ -135,6 +135,42 @@ input[type=text]:focus,select:focus{
   background:var(--accent); border-color:var(--accent); color:#fff;
   box-shadow:0 0 0 2px var(--accent-dim);
 }
+/* Polish-9 (Fix 2): inline live-fetch status badge attached to the
+   .pills container. Sits to the right of the source pills. Three
+   visual states reflect the async live-merge lifecycle:
+     .loading — small spinner + "fetching live…"
+     .done    — "+N live" confirmation
+     .error   — "live unavailable"
+   Auto-hides 4s after the terminal state; user perception of "fresh
+   content is on the way" is the goal, not a permanent fixture. */
+.live-status{
+  flex:0 0 auto;
+  display:inline-flex; align-items:center; gap:.35rem;
+  padding:.2rem .55rem; border-radius:999px;
+  font-family:'JetBrains Mono',monospace; font-size:.6rem; font-weight:600;
+  text-transform:uppercase; letter-spacing:.05em;
+  border:1px solid var(--border); background:var(--surface);
+  color:var(--text-secondary);
+  transition:opacity .25s ease;
+}
+.live-status.loading{
+  color:var(--accent); border-color:var(--accent-dim);
+  background:var(--accent-dim);
+}
+.live-status.done{
+  color:var(--accent); border-color:var(--accent); background:var(--surface);
+}
+.live-status.error{
+  color:#b91c1c; border-color:#fecaca; background:#fef2f2;
+}
+.live-status-spinner{
+  display:inline-block; width:.55rem; height:.55rem; border-radius:50%;
+  border:2px solid var(--accent-dim); border-top-color:var(--accent);
+  animation:ncs-live-spin .8s linear infinite;
+}
+@keyframes ncs-live-spin{
+  to{ transform:rotate(360deg) }
+}
 .pill .dot{
   display:inline-block; width:.45rem; height:.45rem; border-radius:50%;
   background:currentColor; margin-right:.4rem; vertical-align:middle;
@@ -604,6 +640,31 @@ a.when:hover{ color:var(--text); text-decoration:underline }
   font-size:.7rem; color:var(--text-secondary);
   font-family:'JetBrains Mono',monospace;
 }
+/* Polish-9 (Fix 1): quoted-post timestamp, mirrors the outer-post
+   meta row. Pushed to the right of the head row via margin-left:auto. */
+.bsky-quoted-time{
+  font-size:.65rem; color:var(--text-secondary);
+  font-family:'JetBrains Mono',monospace;
+  margin-left:auto;
+}
+/* Polish-9 (Fix 1): quoted-post video. Same thumbnail-only treatment
+   as the outer .bsky-video-link; click-through goes through the
+   parent .bsky-quoted anchor to the quoted post on bsky.app. */
+.bsky-quoted-video{
+  position:relative; display:block; margin:.4rem 0 0;
+  border-radius:8px; overflow:hidden; background:#000;
+  width:100%; max-width:100%;
+}
+.bsky-quoted-video img{
+  display:block; width:100%; max-height:14rem; object-fit:cover;
+}
+.bsky-quoted-video-hint{
+  position:absolute; left:.4rem; bottom:.4rem;
+  padding:.18rem .45rem; border-radius:4px;
+  background:rgba(0,0,0,.72); color:#fff;
+  font-family:'JetBrains Mono',monospace; font-size:.6rem; font-weight:600;
+  letter-spacing:.04em;
+}
 .bsky-quoted-text{
   font-size:.85rem; line-height:1.4; color:var(--text);
   white-space:pre-wrap; word-wrap:break-word; overflow-wrap:anywhere;
@@ -661,6 +722,33 @@ a.when:hover{ color:var(--text); text-decoration:underline }
   display:flex; align-items:center; justify-content:center;
   font-family:'DM Sans',sans-serif; font-weight:700; font-size:1.3rem;
   color:#fff; flex-shrink:0; letter-spacing:.02em;
+}
+/* Polish-9 (Fix 3): real player headshot / team logo in the entity
+   hero. Layered structure: the real image sits on top; the initials
+   block underneath stays hidden until the image's onerror flips the
+   image to display:none and the initials to display:flex. */
+.entity-portrait{
+  width:7rem; height:7rem; flex-shrink:0; position:relative;
+  border-radius:50%; overflow:hidden;
+  background:var(--surface-hover);
+}
+.entity-portrait-img{
+  display:block; width:100%; height:100%;
+  object-fit:cover; object-position:center top;
+}
+/* Team logos are usually transparent PNGs with strong brand colors;
+   `contain` + a small padding so they don't crop into a tight circle
+   like player headshots, plus a neutral background to read on dark
+   logos. */
+.entity-portrait-img--team{
+  object-fit:contain; padding:.5rem; background:var(--surface);
+}
+.entity-portrait-initials{
+  position:absolute; inset:0; width:100%; height:100%;
+  display:none;  /* revealed by inline onerror when the image 404s */
+  align-items:center; justify-content:center;
+  font-family:'DM Sans',sans-serif; font-weight:700; font-size:2rem;
+  color:#fff; letter-spacing:.02em;
 }
 .entity-hero .name{ font-size:1.6rem; font-weight:700; letter-spacing:-.02em }
 .entity-hero .sub{
@@ -801,6 +889,12 @@ a.when:hover{ color:var(--text); text-decoration:underline }
   .card .thumb{ width:4.5rem; height:3rem }
   .entity-hero{ padding:.8rem .9rem }
   .avatar{ width:3rem; height:3rem; font-size:1rem }
+  /* Polish-9 (Fix 3): portrait shrinks on mobile so the hero stays
+     under ~110px tall and the chart/rail/first-card layout from
+     PR #20 still fits above the fold. */
+  .entity-portrait{ width:5rem; height:5rem }
+  .entity-portrait-initials{ font-size:1.4rem }
+  .entity-portrait-img--team{ padding:.3rem }
   .entity-hero .name{ font-size:1.25rem }
   /* On narrow viewports the chart + rail stack vertically so the
      chart isn't squeezed to ~120px and the rail has room to breathe. */
