@@ -925,6 +925,7 @@
     allPill.className = "pill on";
     allPill.dataset.kind = "all";
     allPill.textContent = "All";
+    allPill.title = "Show every source";
     containerEl.appendChild(allPill);
 
     const pills = {};
@@ -933,13 +934,24 @@
       el.className = "pill on";
       el.dataset.kind = s;
       el.innerHTML = `<span class="dot" style="color:var(--src-${s})"></span>${s}`;
+      // Polish-8 (Fix 2): click = make this the only active source.
+      // Click the same pill again to return to All. Ctrl/Cmd+Click
+      // still combines for power users.
+      el.title = "Click: show only this source · Ctrl/Cmd+Click: toggle this source in the current set";
       containerEl.appendChild(el);
       pills[s] = el;
     }
 
     function sync() {
       for (const s of sources) pills[s].classList.toggle("on", state.has(s));
-      allPill.classList.toggle("on", state.size === sources.length);
+      const allOn = state.size === sources.length;
+      allPill.classList.toggle("on", allOn);
+      // Polish-8: mark exactly one source as "solo" so the active-source
+      // pill stands out from the muted greyed-out others. The "on" class
+      // alone wasn't strong enough to read at a glance when only one was
+      // selected.
+      const solo = state.size === 1;
+      for (const s of sources) pills[s].classList.toggle("solo", solo && state.has(s));
       onChange(state);
     }
 
@@ -961,17 +973,36 @@
     };
 
     allPill.addEventListener("click", () => {
-      if (state.size === sources.length) {
-        state.clear();
-      } else {
-        sources.forEach((s) => state.add(s));
-      }
+      // "All" always sets the state to every source on; if everything
+      // is already on, do nothing (instead of clearing — that left the
+      // user with an empty feed and no obvious way to recover).
+      sources.forEach((s) => state.add(s));
       sync();
     });
     for (const s of sources) {
-      pills[s].addEventListener("click", () => {
-        if (state.has(s)) state.delete(s);
-        else state.add(s);
+      pills[s].addEventListener("click", (e) => {
+        // Polish-8 (Fix 2): single-click selects this source as the
+        // only active filter. Click the same active solo pill again
+        // and we go back to All. Ctrl/Cmd+Click preserves the old
+        // multi-select toggle behavior for users combining sources.
+        if (e.ctrlKey || e.metaKey) {
+          if (state.has(s)) state.delete(s);
+          else state.add(s);
+          // Empty state is meaningless (shows no items); if the
+          // power user toggled the last source off, snap back to All
+          // instead of leaving them stranded.
+          if (state.size === 0) sources.forEach((x) => state.add(x));
+        } else {
+          const isSolo = state.size === 1 && state.has(s);
+          if (isSolo) {
+            // Already the only one on — toggle back to All.
+            sources.forEach((x) => state.add(x));
+          } else {
+            // Solo this source.
+            state.clear();
+            state.add(s);
+          }
+        }
         sync();
       });
     }
