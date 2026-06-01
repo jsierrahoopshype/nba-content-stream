@@ -277,6 +277,55 @@ def test_run_missing_manifest_returns_1(tmp_path, monkeypatch, caplog):
 
 
 # ---------------------------------------------------------------------------
+# Polish-10 (Fix 2): _format_count renders "<cap>+" suffix when the
+# bucket has saturated, so the entity-page header doesn't lie about
+# real volume on top players (Wemby, SGA) hitting the per-entity cap.
+# ---------------------------------------------------------------------------
+
+
+def test_format_count_under_cap_renders_raw_number():
+    assert prerender_pages._format_count(42, 1000) == "42"
+
+
+def test_format_count_at_cap_marks_plus():
+    assert prerender_pages._format_count(1000, 1000) == "1000+"
+
+
+def test_format_count_above_cap_marks_plus():
+    # _bucket_by_entity caps the bucket, so the count never exceeds
+    # the cap — but the helper should still be robust to it.
+    assert prerender_pages._format_count(1234, 1000) == "1000+"
+
+
+def test_format_count_with_no_cap_renders_raw_number():
+    # Old manifests without max_items_per_entity field — fall through
+    # to the plain stringification.
+    assert prerender_pages._format_count(500, None) == "500"
+
+
+def test_render_page_threads_cap_into_sub_line_at_cap():
+    html_text = prerender_pages._render_page(
+        "team", "new-york-knicks", "New York Knicks", 1000, {}, 1000
+    )
+    assert "1000+ mentions in the rolling window" in html_text
+
+
+def test_render_page_threads_cap_into_sub_line_under_cap():
+    html_text = prerender_pages._render_page(
+        "player", "lebron-james", "LeBron James", 174, None, 1000
+    )
+    assert "174 mentions in the rolling window" in html_text
+    assert "174+" not in html_text  # not at the cap, no marker
+
+
+def test_render_page_with_no_cap_renders_plain_count():
+    html_text = prerender_pages._render_page(
+        "player", "x", "X Player", 42, None, None
+    )
+    assert "42 mentions in the rolling window" in html_text
+
+
+# ---------------------------------------------------------------------------
 # Polish-9 (Fix 3): entity-page portrait. Players get an nba-headshots
 # URL; teams get an ESPN logo URL; both fall back to the initials block
 # (revealed via inline onerror) if the upstream image 404s.

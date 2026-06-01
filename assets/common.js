@@ -344,6 +344,44 @@
   // when we have no idea who the story is about.
   const NBA_LEAGUE_LOGO_URL = "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png";
 
+  // Polish-10 (Fix 3): team → conference map for the leaderboard
+  // dashboards. canonical/teams.json carries name/city/abbr/aliases
+  // but not conference; rather than re-derive from the league API
+  // we hardcode the 30-team split here. East and West haven't
+  // changed structure in modern memory, so a static map is fine
+  // and keeps the dashboards offline-renderable.
+  const _TEAM_CONFERENCE = {
+    "atlanta-hawks": "East", "boston-celtics": "East",
+    "brooklyn-nets": "East", "charlotte-hornets": "East",
+    "chicago-bulls": "East", "cleveland-cavaliers": "East",
+    "detroit-pistons": "East", "indiana-pacers": "East",
+    "miami-heat": "East", "milwaukee-bucks": "East",
+    "new-york-knicks": "East", "orlando-magic": "East",
+    "philadelphia-76ers": "East", "toronto-raptors": "East",
+    "washington-wizards": "East",
+    "dallas-mavericks": "West", "denver-nuggets": "West",
+    "golden-state-warriors": "West", "houston-rockets": "West",
+    "los-angeles-clippers": "West", "los-angeles-lakers": "West",
+    "memphis-grizzlies": "West", "minnesota-timberwolves": "West",
+    "new-orleans-pelicans": "West", "oklahoma-city-thunder": "West",
+    "phoenix-suns": "West", "portland-trail-blazers": "West",
+    "sacramento-kings": "West", "san-antonio-spurs": "West",
+    "utah-jazz": "West",
+  };
+
+  function teamConference(teamSlug) {
+    return _TEAM_CONFERENCE[teamSlug] || "";
+  }
+
+  // Polish-10 (Fix 2): render a manifest count with a "+" suffix
+  // when it's saturated at the per-entity cap. Cap is read from
+  // manifest.max_items_per_entity; callers pass the value (or null
+  // if absent on an old manifest).
+  function formatCappedCount(count, cap) {
+    if (cap != null && count >= cap) return `${cap}+`;
+    return String(count);
+  }
+
   // Cluster C: visual integration. For a non-Bluesky non-YouTube card
   // with NO thumbnail, prefer (in order):
   //   1. first tagged player's headshot
@@ -1051,12 +1089,20 @@
   // this overruns the resolver cache and most lookups fail with
   // net::ERR_NAME_NOT_RESOLVED. Likewise, 19 simultaneous Substack
   // feed fetches through the Worker trip 429s either at CF or at
-  // Substack. Pacing chunks ~250-500ms apart keeps DNS warm and
+  // Substack. Pacing chunks ~100-500ms apart keeps DNS warm and
   // request rates under the rate limiters.
-  async function pacedBatchFetch(items, batchSize, betweenMs, fetchFn, traceLabel) {
+  //
+  // Polish-10 (Fix 1): optional `onProgress` callback invoked after
+  // every chunk with {done, total, succeeded, failed, chunkIndex,
+  // totalChunks}. Used by the live-status badge to display percent
+  // progress so a 3-5s paced fetch feels like progress instead of a
+  // hang. Stays optional — every existing call site that doesn't
+  // pass it gets identical behavior.
+  async function pacedBatchFetch(items, batchSize, betweenMs, fetchFn, traceLabel, onProgress) {
     const out = [];
     let succeeded = 0;
     let failed = 0;
+    const totalChunks = Math.ceil(items.length / batchSize);
     for (let i = 0; i < items.length; i += batchSize) {
       const batch = items.slice(i, i + batchSize);
       const results = await Promise.all(
@@ -1073,15 +1119,32 @@
           out.push(r);
         }
       }
+      const chunkIndex = Math.floor(i / batchSize) + 1;
+      const done = Math.min(i + batchSize, items.length);
       if (traceLabel && window.NCS_DEBUG) {
         console.debug(traceLabel, {
-          chunk: Math.floor(i / batchSize) + 1,
-          totalChunks: Math.ceil(items.length / batchSize),
-          sent: Math.min(i + batchSize, items.length),
+          chunk: chunkIndex,
+          totalChunks,
+          sent: done,
           total: items.length,
           succeeded,
           failed,
         });
+      }
+      if (typeof onProgress === "function") {
+        try {
+          onProgress({
+            done,
+            total: items.length,
+            succeeded,
+            failed,
+            chunkIndex,
+            totalChunks,
+          });
+        } catch (e) {
+          // Progress callbacks must never break the batch.
+          if (window.NCS_DEBUG) console.warn("pacedBatchFetch onProgress threw:", e);
+        }
       }
       if (i + batchSize < items.length) {
         await new Promise((r) => setTimeout(r, betweenMs));
@@ -1231,7 +1294,7 @@
     };
   }
 
-  async function bskyLiveItems(maxPosts) {
+  async function bskyLiveItems(maxPosts, opts) {
     const tStart = Date.now();
     _dbg("bsky:start", { time: tStart });
     const out = [];
@@ -1240,32 +1303,38 @@
     // live feed to whatever reporters happen to be near the top of
     // the alphabet rather than whoever just posted.
     //
-    // Chunk size 20 with a 250ms gap between chunks keeps the local
-    // DNS resolver from being asked to look up
-    // public.api.bsky.app 164 times in the same tick — that overran
-    // the resolver on home networks and most fetches failed with
-    // net::ERR_NAME_NOT_RESOLVED. Total wall time at ~8 chunks
-    // × 250ms is ~2s of staggered requests, still well under what a
-    // user would notice on page open.
+    // Chunk size 20 keeps the local DNS resolver from being asked
+    // to look up public.api.bsky.app 164 times in the same tick —
+    // that overran the resolver on home networks and most fetches
+    // failed with net::ERR_NAME_NOT_RESOLVED (PR #21 bug). 20 stays.
     //
-    // Polish-9 (Fix 2): perHandle bumped from 3 → 5 so an active
-    // reporter contributes more of their recent feed. Wall-clock cost
-    // is zero — the chunk gap (250ms) dominates per-request latency,
-    // and Bluesky's getAuthorFeed already returns up to 100 per call.
+    // Polish-10 (Fix 1): between_ms 250 → 100. Diagnostic traces
+    // showed 100% handle success rate, so the conservative 250ms gap
+    // was idle time we didn't need. Halving it cuts ~1s off the
+    // total. perHandle bumped 5 → 3 (revert PR #24): smaller payload
+    // = faster parse + smaller network footprint, and 3 posts per
+    // reporter × 164 handles × the recent-activity filter is plenty
+    // of recency. Combined: ~10s → ~3-5s typical wall time.
     const handles = await fetchBlueskyHandles();
-    const perHandle = 5;
+    const perHandle = 3;
+    const chunkSize = 20;
+    const betweenMs = 100;
     console.debug("[NCS-BSKY-LIVE] start", {
       handles_total: handles.length,
       per_handle: perHandle,
-      chunk_size: 20,
-      between_ms: 250,
+      chunk_size: chunkSize,
+      between_ms: betweenMs,
     });
+    const onProgress = opts && typeof opts.onProgress === "function"
+      ? opts.onProgress
+      : null;
     const feeds = await pacedBatchFetch(
       handles,
-      20,
-      250,
+      chunkSize,
+      betweenMs,
       (h) => fetchBlueskyAuthor(h, perHandle),
-      "[NCS-BLUESKY-BATCH]"
+      "[NCS-BLUESKY-BATCH]",
+      onProgress
     );
     const tagger = window.NCS_Tagger;
     await tagger.ready();
@@ -1717,8 +1786,17 @@
     const wanted = opts && opts.sources
       ? opts.sources
       : ["bluesky", "reddit", "google-news", "substack"];
+    // Polish-10 (Fix 1): forward an optional per-source progress
+    // callback. Currently only Bluesky reports progress (it's the
+    // long pole of the live fetch); the other sources finish in
+    // sub-second time so percentage updates would just be noise.
+    const onBskyProgress = opts && typeof opts.onBskyProgress === "function"
+      ? opts.onBskyProgress
+      : null;
     const tasks = [];
-    if (wanted.indexOf("bluesky") >= 0) tasks.push(bskyLiveItems(limits.bluesky));
+    if (wanted.indexOf("bluesky") >= 0) {
+      tasks.push(bskyLiveItems(limits.bluesky, { onProgress: onBskyProgress }));
+    }
     if (wanted.indexOf("reddit") >= 0) tasks.push(redditLiveItems(limits.reddit));
     if (wanted.indexOf("google-news") >= 0) tasks.push(googleNewsLiveItems(limits.googleNews));
     if (wanted.indexOf("substack") >= 0) tasks.push(substackLiveItems(limits.substack));
@@ -1783,29 +1861,48 @@
   // entity.js call begin() / end() / error() around their liveMerge
   // call so the user sees an unmistakable "fresh content on the way"
   // indicator (and a "+N live" confirmation when it lands) instead
-  // of wondering whether the page is broken during the ~2s paced
+  // of wondering whether the page is broken during the ~3-5s paced
   // fetch window. Auto-hides 4s after end() so it doesn't linger.
+  //
+  // Polish-10 (Fix 1): progress(pct) updates the label with a percent
+  // so the badge actively shows the fetch advancing instead of
+  // sitting on "fetching live…" the whole time. Callers wire this
+  // via the `onBskyProgress` option to liveMerge.
   function attachLiveStatus(containerEl) {
     if (!containerEl) {
-      return { begin() {}, end() {}, error() {} };
+      return { begin() {}, progress() {}, end() {}, error() {} };
     }
     const badge = document.createElement("span");
     badge.className = "live-status";
     badge.style.display = "none";
     containerEl.appendChild(badge);
     let fadeTimer = null;
+    let inFlight = false;
     function clearFade() {
       if (fadeTimer) { clearTimeout(fadeTimer); fadeTimer = null; }
+    }
+    function setLoadingLabel(pct) {
+      const pctStr = (pct == null || isNaN(pct)) ? "" : ` ${pct}%`;
+      badge.innerHTML =
+        '<span class="live-status-spinner" aria-hidden="true"></span>' +
+        `fetching live…${pctStr}`;
     }
     return {
       begin() {
         clearFade();
+        inFlight = true;
         badge.style.display = "";
         badge.className = "live-status loading";
-        badge.innerHTML = '<span class="live-status-spinner" aria-hidden="true"></span>fetching live…';
+        setLoadingLabel(null);
+      },
+      progress(pct) {
+        if (!inFlight) return;
+        const clamped = Math.max(0, Math.min(100, Math.round(pct)));
+        setLoadingLabel(clamped);
       },
       end(opts) {
         clearFade();
+        inFlight = false;
         const o = opts || {};
         const count = o.count || 0;
         badge.className = "live-status done";
@@ -1814,6 +1911,7 @@
       },
       error() {
         clearFade();
+        inFlight = false;
         badge.className = "live-status error";
         badge.textContent = "live unavailable";
         fadeTimer = setTimeout(() => { badge.style.display = "none"; }, 4000);
@@ -1834,5 +1932,7 @@
     loadCanonical,
     headshotUrl,
     teamLogoUrl,
+    teamConference,
+    formatCappedCount,
   });
 })();

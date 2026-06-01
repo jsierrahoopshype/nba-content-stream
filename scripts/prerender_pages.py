@@ -186,15 +186,26 @@ def _portrait_html(kind: str, slug: str, name: str, entity_info: dict | None) ->
     )
 
 
+def _format_count(count: int, cap: int | None) -> str:
+    """Render a mention count, marking it as `1000+` when it's at the
+    per-entity cap. Without this honesty, top-of-the-list players sit
+    pinned at the cap and look identical to anyone else at the cap."""
+    if cap is not None and count >= cap:
+        return f"{cap}+"
+    return str(count)
+
+
 def _render_page(
     kind: str,
     slug: str,
     name: str,
     count: int,
     entity_info: dict | None = None,
+    cap: int | None = None,
 ) -> str:
     """Render one entity page. `kind` is 'player' or 'team'."""
     kind_label = "Player" if kind == "player" else "Team"
+    count_display = _format_count(count, cap)
     safe_name = html.escape(name)
     title = (
         f"{safe_name} — NBA News, Quotes &amp; Buzz | NBA Content Stream · HoopsMatic"
@@ -237,7 +248,7 @@ def _render_page(
     {_portrait_html(kind, slug, name, entity_info)}
     <div>
       <div class="name">{safe_name}</div>
-      <div class="sub">{kind_label} · {count} mentions in the rolling window</div>
+      <div class="sub">{kind_label} · {count_display} mentions in the rolling window</div>
     </div>
   </div>
 
@@ -383,6 +394,11 @@ def generate_pages(
     # (teams) from canonical here.
     players_canon = _load_canonical(players_canonical_path)
     teams_canon = _load_canonical(teams_canonical_path)
+    # Polish-10 (Fix 2): per-entity cap drives the "1000+" suffix on
+    # at-cap counts so the entity-page header doesn't lie about the
+    # real volume. Falls back to no marker if the manifest is old
+    # and lacks the field.
+    cap = manifest.get("max_items_per_entity")
 
     n_players = 0
     for p in manifest.get("players", []):
@@ -390,7 +406,7 @@ def generate_pages(
         name = p["name"]
         count = p["count"]
         info = players_canon.get(slug)
-        html_text = _render_page("player", slug, name, count, info)
+        html_text = _render_page("player", slug, name, count, info, cap)
         if not dry_run:
             (players_out / f"{slug}.html").write_text(html_text, encoding="utf-8")
         n_players += 1
@@ -401,7 +417,7 @@ def generate_pages(
         name = t["name"]
         count = t["count"]
         info = teams_canon.get(slug)
-        html_text = _render_page("team", slug, name, count, info)
+        html_text = _render_page("team", slug, name, count, info, cap)
         if not dry_run:
             (teams_out / f"{slug}.html").write_text(html_text, encoding="utf-8")
         n_teams += 1

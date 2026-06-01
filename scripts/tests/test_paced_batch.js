@@ -116,9 +116,51 @@ vm.runInContext(FN_SRC + "\nthis.pacedBatchFetch = pacedBatchFetch;", sandbox);
     if (!ok) failed++;
   }
 
+  // Case 6 (Polish-10 Fix 1): onProgress fires after every chunk
+  // with cumulative {done, total, succeeded, failed, chunkIndex,
+  // totalChunks}, and exceptions inside the callback do NOT break
+  // the batch.
+  {
+    const items = Array.from({ length: 7 }, (_, i) => i);
+    const calls = [];
+    const out = await sandbox.pacedBatchFetch(
+      items,
+      3,
+      5,
+      async (x) => x * 10,
+      null,
+      (p) => calls.push(p)
+    );
+    // 7 items / 3 per chunk = 3 chunks → 3 progress calls.
+    const ok =
+      calls.length === 3 &&
+      calls[0].done === 3 && calls[0].total === 7 &&
+      calls[0].chunkIndex === 1 && calls[0].totalChunks === 3 &&
+      calls[2].done === 7 && calls[2].succeeded === 7 &&
+      out.length === 7;
+    console.log(`${ok ? "PASS" : "FAIL"}  onProgress fires per chunk: ${JSON.stringify(calls)}`);
+    if (!ok) failed++;
+  }
+
+  // Case 7 (Polish-10 Fix 1): a throwing onProgress callback is
+  // caught — the batch must still complete and return results.
+  {
+    const out = await sandbox.pacedBatchFetch(
+      [1, 2, 3, 4],
+      2,
+      5,
+      async (x) => x,
+      null,
+      () => { throw new Error("progress blew up"); }
+    );
+    const ok = JSON.stringify(out) === JSON.stringify([1, 2, 3, 4]);
+    console.log(`${ok ? "PASS" : "FAIL"}  throwing onProgress doesn't break batch: out=${JSON.stringify(out)}`);
+    if (!ok) failed++;
+  }
+
   if (failed > 0) {
     console.error(`\n${failed} assertion(s) failed.`);
     process.exit(1);
   }
-  console.log("\nAll 5 assertions passed.");
+  console.log("\nAll 7 assertions passed.");
 })();

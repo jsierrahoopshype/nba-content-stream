@@ -23,12 +23,12 @@
     <h1>Teams</h1>
     <span class="brand">HoopsMatic · NBA Content Stream</span>
   </div>
-  <p class="subtitle">Every team with at least one recent mention. Sorted by volume; click for the full stream.</p>
+  <p class="subtitle">Ranked by mention volume in the rolling window. Click any row for the team's full stream.</p>
 
   <div class="controls">
     <div class="search-row">
       <div class="search-group">
-        <label>Search player or team</label>
+        <label>Filter by name</label>
         <input type="text" id="q" placeholder="e.g. Lakers, Spurs…" autocomplete="off">
         <div class="suggest" id="suggest"></div>
       </div>
@@ -36,7 +36,8 @@
   </div>
 
   <div class="summary" id="summary">loading…</div>
-  <div class="dir-grid" id="grid"></div>
+  <div class="leaderboard leaderboard--teams" id="leaderboard"></div>
+  <div class="empty" id="empty" style="display:none">No teams match that filter.</div>
 </div>
 
 <script src="assets/config.js"></script>
@@ -45,22 +46,66 @@
 (async function () {
   const ncs = window.NCS;
   const manifest = await fetch(window.NCS_dataUrl("data/index/manifest.json")).then((r) => r.json());
-  ncs.attachSearch(
-    document.getElementById("q"),
-    document.getElementById("suggest"),
-    manifest,
-    ""
-  );
-  const grid = document.getElementById("grid");
-  const frag = document.createDocumentFragment();
-  for (const t of manifest.teams) {
-    const div = document.createElement("div");
-    div.className = "dir-card";
-    div.innerHTML = `<a href="teams/${ncs.escapeHtml(t.slug)}.html">${ncs.escapeHtml(t.name)}</a><span class="count">${t.count}</span>`;
-    frag.appendChild(div);
+  const cap = manifest.max_items_per_entity || null;
+
+  const inputEl = document.getElementById("q");
+  const suggestEl = document.getElementById("suggest");
+  ncs.attachSearch(inputEl, suggestEl, manifest, "");
+
+  const grid = document.getElementById("leaderboard");
+  const summary = document.getElementById("summary");
+  const emptyEl = document.getElementById("empty");
+
+  function initials(name) {
+    const parts = String(name || "").split(/\s+/).filter(Boolean);
+    if (!parts.length) return "?";
+    if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
   }
-  grid.appendChild(frag);
-  document.getElementById("summary").innerHTML = `<strong>${manifest.teams.length}</strong> teams with content`;
+
+  function rowHtml(rank, t) {
+    const logo = ncs.teamLogoUrl(t.slug);
+    const portraitHtml = logo
+      ? `<img class="lb-portrait lb-portrait--team" src="${ncs.escapeHtml(logo)}"
+           alt="" loading="lazy" decoding="async"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+         <span class="lb-portrait-fallback" aria-hidden="true">${ncs.escapeHtml(initials(t.name))}</span>`
+      : `<span class="lb-portrait-fallback" style="display:flex" aria-hidden="true">${ncs.escapeHtml(initials(t.name))}</span>`;
+    const conf = ncs.teamConference(t.slug);
+    const confHtml = conf
+      ? `<span class="lb-conf lb-conf--${conf.toLowerCase()}">${ncs.escapeHtml(conf)}</span>`
+      : '<span class="lb-team-empty">—</span>';
+    return `
+      <a class="lb-row" href="teams/${ncs.escapeHtml(t.slug)}.html" data-rank="${rank}">
+        <span class="lb-rank">${rank}</span>
+        <span class="lb-portrait-wrap">${portraitHtml}</span>
+        <span class="lb-name">${ncs.escapeHtml(t.name)}</span>
+        <span class="lb-secondary">${confHtml}</span>
+        <span class="lb-count">${ncs.escapeHtml(ncs.formatCappedCount(t.count, cap))}</span>
+      </a>
+    `;
+  }
+
+  function render(filter) {
+    const f = (filter || "").trim().toLowerCase();
+    const all = manifest.teams;
+    let html = "";
+    let shown = 0;
+    for (let i = 0; i < all.length; i++) {
+      const t = all[i];
+      if (f && t.name.toLowerCase().indexOf(f) === -1) continue;
+      html += rowHtml(i + 1, t);
+      shown++;
+    }
+    grid.innerHTML = html;
+    emptyEl.style.display = shown ? "none" : "block";
+    summary.innerHTML = f
+      ? `<strong>${shown}</strong> of <strong>${all.length}</strong> teams match "${ncs.escapeHtml(f)}"`
+      : `<strong>${all.length}</strong> teams with content`;
+  }
+
+  render("");
+  inputEl.addEventListener("input", (e) => render(e.target.value));
 })();
 </script>
 </body>
