@@ -594,10 +594,17 @@
     const handleLine = qp.author_handle
       ? `<span class="bsky-quoted-handle">@${escapeHtml(qp.author_handle)}</span>`
       : "";
-    // Rich-text the quoted post's text too (URLs + regex-mention fallback;
-    // we don't have the quoted post's facets here, so no canonical did
-    // links inside the quote — acceptable for v1).
-    const textHtml = linkifyMentionsEscaped(linkifyEscaped(qp.text || ""));
+    // Polish-9 (Fix 1): use the SAME rich-text renderer as the outer
+    // post so URL + @mention facets resolve to canonical did→profile
+    // links inside the quote box (previously fell back to regex-only
+    // linkifying because facets weren't extracted).
+    const textHtml = renderBlueskyRichText(qp.text || "", qp.facets);
+    // Polish-9 (Fix 1): timestamp in the quoted-post head, mirroring
+    // the outer post's meta row. Helps readers tell when the quoted
+    // post was originally published vs. when it was quoted.
+    const timeHtml = qp.timestamp
+      ? `<span class="bsky-quoted-time">${escapeHtml(relativeTime(qp.timestamp))}</span>`
+      : "";
     // Quoted images: render a compact grid if present and within window.
     let mediaHtml = "";
     if (qp.images && qp.images.length) {
@@ -606,6 +613,17 @@
       mediaHtml += `<div class="${cls}">` + shown.map((img) =>
         `<img src="${escapeHtml(img.url)}" alt="${escapeHtml(img.alt)}" loading="lazy">`
       ).join("") + `</div>`;
+    }
+    // Polish-9 (Fix 1): quoted-post video. Thumbnail-only with a play
+    // overlay; the whole .bsky-quoted box is already a click-through
+    // to the quoted post on bsky.app, where the native player runs.
+    if (qp.video && qp.video.thumbnail) {
+      mediaHtml += `
+        <div class="bsky-quoted-video">
+          <img src="${escapeHtml(qp.video.thumbnail)}" alt="${escapeHtml(qp.video.alt || "")}" loading="lazy">
+          <span class="bsky-quoted-video-hint">VIDEO · click to play on Bluesky</span>
+        </div>
+      `;
     }
     // Quoted linkCard inside a quote: render a compact one-line preview.
     if (qp.linkCard && qp.linkCard.uri) {
@@ -629,6 +647,7 @@
           ${avatarHtml}
           <span class="bsky-quoted-author">${escapeHtml(qp.author)}</span>
           ${handleLine}
+          ${timeHtml}
         </div>
         <div class="bsky-quoted-text">${textHtml}</div>
         ${mediaHtml}
@@ -1137,19 +1156,29 @@
   // object the renderer consumes, or a {missing: true} sentinel for the
   // viewNotFound/viewBlocked variants so the renderer can show a
   // placeholder instead of crashing.
+  //
+  // Polish-9 (Fix 1): extracts FULL nested embeds — images, link card,
+  // AND video — plus the quoted record's facets so the renderer can
+  // build canonical @mention links the same way as the outer post.
+  // Previously video embeds inside a quote were dropped (only images
+  // and link cards were captured), and the text was linkified without
+  // facets so canonical did→profile links were lost.
   function _extractQuotedPost(recordView) {
     if (!recordView) return null;
     const t = recordView.$type || "";
     if (t.includes("viewNotFound") || t.includes("viewBlocked") || t.includes("viewDetached")) {
+      _dbg("bsky:quote:missing", { type: t });
       return { missing: true };
     }
     const author = recordView.author || {};
     const value = recordView.value || {};
     const text = value.text || "";
+    const facets = value.facets || null;
     // Quoted-post embeds are nested in recordView.embeds (an array of
-    // view objects). Walk it for images / external link card.
+    // view objects). Walk it for images / link card / video.
     let images = null;
     let linkCard = null;
+    let video = null;
     for (const e of recordView.embeds || []) {
       const et = e.$type || "";
       if (!images && et.includes("app.bsky.embed.images")) {
@@ -1166,22 +1195,45 @@
             thumb: ext.thumb || null,
           };
         }
+      } else if (!video && et.includes("app.bsky.embed.video")) {
+        // Same video#view shape as a top-level embed (cid, playlist,
+        // thumbnail, aspectRatio). Render thumbnail-only; click-through
+        // opens the post on bsky.app where their native player runs.
+        if (e.thumbnail || e.playlist) {
+          video = {
+            thumbnail: e.thumbnail || null,
+            playlist: e.playlist || null,
+            aspectRatio: e.aspectRatio || null,
+            alt: e.alt || "",
+          };
+        }
       }
     }
+    _dbg("bsky:quote:extracted", {
+      handle: author.handle,
+      text_len: text.length,
+      has_facets: !!facets,
+      images: images ? images.length : 0,
+      has_linkCard: !!linkCard,
+      has_video: !!video,
+    });
     return {
       author: author.displayName || author.handle || "",
       author_handle: author.handle || "",
       author_avatar: author.avatar || null,
       text: text,
+      facets: facets,
       timestamp: value.createdAt || recordView.indexedAt || null,
       url: _quotedPostUrl(recordView.uri, author.handle),
       images: images,
       linkCard: linkCard,
+      video: video,
     };
   }
 
   async function bskyLiveItems(maxPosts) {
-    _dbg("bsky:start", { time: Date.now() });
+    const tStart = Date.now();
+    _dbg("bsky:start", { time: tStart });
     const out = [];
     // Poll EVERY handle in the committed CSV. The CSV is sorted
     // alphabetically (not by activity), so any sub-sample biases the
@@ -1195,8 +1247,19 @@
     // net::ERR_NAME_NOT_RESOLVED. Total wall time at ~8 chunks
     // × 250ms is ~2s of staggered requests, still well under what a
     // user would notice on page open.
+    //
+    // Polish-9 (Fix 2): perHandle bumped from 3 → 5 so an active
+    // reporter contributes more of their recent feed. Wall-clock cost
+    // is zero — the chunk gap (250ms) dominates per-request latency,
+    // and Bluesky's getAuthorFeed already returns up to 100 per call.
     const handles = await fetchBlueskyHandles();
-    const perHandle = 3;  // each reporter contributes up to 3 recent posts
+    const perHandle = 5;
+    console.debug("[NCS-BSKY-LIVE] start", {
+      handles_total: handles.length,
+      per_handle: perHandle,
+      chunk_size: 20,
+      between_ms: 250,
+    });
     const feeds = await pacedBatchFetch(
       handles,
       20,
@@ -1351,20 +1414,29 @@
     // Sort newest-first and cap. `maxPosts` is now a soft ceiling on
     // the final pool rather than a per-handle budget; the cap protects
     // against an edge case where every reporter posted a lot at once.
-    if (maxPosts && out.length > maxPosts) {
-      out.sort((a, b) => (b.published_at || "").localeCompare(a.published_at || ""));
-      _dbg("bsky:done", {
-        produced: out.length,
-        cached_handles: window.NCS_AvatarCache.size,
-        capped_to: maxPosts,
-      });
-      return out.slice(0, maxPosts);
-    }
+    const final = (maxPosts && out.length > maxPosts)
+      ? (out.sort((a, b) => (b.published_at || "").localeCompare(a.published_at || "")),
+         out.slice(0, maxPosts))
+      : out;
+    const elapsed = Date.now() - tStart;
+    // Polish-9 (Fix 2): always-on summary trace so a single line in
+    // the console answers "did live-fetch work, how long, how many?"
+    // — useful for diagnosing the user-perceived "fresh content
+    // doesn't load right away" report without enabling NCS_DEBUG.
+    console.debug("[NCS-BSKY-LIVE] done", {
+      handles_polled: handles.length,
+      handles_succeeded: feeds.length,
+      handles_failed: handles.length - feeds.length,
+      items_returned: final.length,
+      cached_handles: window.NCS_AvatarCache.size,
+      elapsed_ms: elapsed,
+      capped: !!(maxPosts && out.length > maxPosts),
+    });
     _dbg("bsky:done", {
-      produced: out.length,
+      produced: final.length,
       cached_handles: window.NCS_AvatarCache.size,
     });
-    return out;
+    return final;
   }
 
   // --- Reddit (via CORS proxy) ---
@@ -1706,6 +1778,49 @@
   // Public
   // ---------------------------------------------------------------------
 
+  // Polish-9 (Fix 2): attach an inline live-fetch status badge next
+  // to the source pills. Returns a small controller that feed.js and
+  // entity.js call begin() / end() / error() around their liveMerge
+  // call so the user sees an unmistakable "fresh content on the way"
+  // indicator (and a "+N live" confirmation when it lands) instead
+  // of wondering whether the page is broken during the ~2s paced
+  // fetch window. Auto-hides 4s after end() so it doesn't linger.
+  function attachLiveStatus(containerEl) {
+    if (!containerEl) {
+      return { begin() {}, end() {}, error() {} };
+    }
+    const badge = document.createElement("span");
+    badge.className = "live-status";
+    badge.style.display = "none";
+    containerEl.appendChild(badge);
+    let fadeTimer = null;
+    function clearFade() {
+      if (fadeTimer) { clearTimeout(fadeTimer); fadeTimer = null; }
+    }
+    return {
+      begin() {
+        clearFade();
+        badge.style.display = "";
+        badge.className = "live-status loading";
+        badge.innerHTML = '<span class="live-status-spinner" aria-hidden="true"></span>fetching live…';
+      },
+      end(opts) {
+        clearFade();
+        const o = opts || {};
+        const count = o.count || 0;
+        badge.className = "live-status done";
+        badge.textContent = count ? `+${count} live` : "live ready";
+        fadeTimer = setTimeout(() => { badge.style.display = "none"; }, 4000);
+      },
+      error() {
+        clearFade();
+        badge.className = "live-status error";
+        badge.textContent = "live unavailable";
+        fadeTimer = setTimeout(() => { badge.style.display = "none"; }, 4000);
+      },
+    };
+  }
+
   window.NCS = Object.assign(window.NCS || {}, {
     relativeTime,
     escapeHtml,
@@ -1713,6 +1828,7 @@
     manifestSlugSets,
     attachSearch,
     attachSourcePills,
+    attachLiveStatus,
     liveMerge,
     mergeItems,
     loadCanonical,

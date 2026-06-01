@@ -30,6 +30,7 @@
   let MANIFEST_SLUGS = null;
   let ARCHIVE_ITEMS = [];
   let LIVE_ITEMS = [];
+  let LIVE_STATUS = null;
   let SOURCE_FILTER = new Set([
     "bluesky",
     "google-news",
@@ -162,6 +163,8 @@
       SOURCE_FILTER = state;
       render();
     });
+    // Polish-9 (Fix 2): live-fetch status badge — same wiring as feed.js.
+    LIVE_STATUS = ncs.attachLiveStatus(els.pills);
     renderChart(ARCHIVE_ITEMS);
     renderNavRail(manifest);
     render();
@@ -170,11 +173,20 @@
   async function loadLive() {
     if (!config.LIVE_MERGE_ENABLED) return;
     if (window.NCS_DEBUG) console.debug("[NCS-AVATAR-TRACE]", "entity:loadLive:start");
+    if (LIVE_STATUS) LIVE_STATUS.begin();
     try {
       LIVE_ITEMS = await ncs.liveMerge();
+      // Entity pages filter live items to those tagged to THIS slug;
+      // report the filtered count so the badge isn't misleading.
+      const filteredCount = LIVE_ITEMS.filter((it) => {
+        const tagged = (KIND === "player" ? it.players : it.teams) || [];
+        return tagged.indexOf(SLUG) >= 0;
+      }).length;
+      if (LIVE_STATUS) LIVE_STATUS.end({ count: filteredCount });
     } catch (e) {
       console.warn("live merge failed:", e);
       LIVE_ITEMS = [];
+      if (LIVE_STATUS) LIVE_STATUS.error();
     }
     if (window.NCS_DEBUG) {
       console.debug("[NCS-AVATAR-TRACE]", "entity:loadLive:done", {

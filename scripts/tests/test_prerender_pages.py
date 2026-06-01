@@ -276,6 +276,162 @@ def test_run_missing_manifest_returns_1(tmp_path, monkeypatch, caplog):
     assert any("manifest not found" in r.message for r in caplog.records)
 
 
+# ---------------------------------------------------------------------------
+# Polish-9 (Fix 3): entity-page portrait. Players get an nba-headshots
+# URL; teams get an ESPN logo URL; both fall back to the initials block
+# (revealed via inline onerror) if the upstream image 404s.
+# ---------------------------------------------------------------------------
+
+
+def test_player_portrait_url_uses_headshot_filename():
+    info = {"headshot_filename": "2544-lebron-james.png"}
+    url = prerender_pages._portrait_url("player", "lebron-james", info)
+    assert url == (
+        "https://raw.githubusercontent.com/jsierrahoopshype/"
+        "nba-headshots/main/players/headshots/face/2544-lebron-james.png"
+    )
+
+
+def test_player_portrait_url_returns_none_without_filename():
+    assert prerender_pages._portrait_url("player", "any-slug", None) is None
+    assert prerender_pages._portrait_url("player", "any-slug", {}) is None
+
+
+def test_team_portrait_url_uses_espn_cdn_with_abbr_override():
+    url = prerender_pages._portrait_url("team", "los-angeles-lakers", {})
+    assert url == "https://a.espncdn.com/i/teamlogos/nba/500/lal.png"
+
+
+def test_team_portrait_url_unknown_slug_returns_none():
+    assert prerender_pages._portrait_url("team", "not-a-real-team", {}) is None
+
+
+def test_team_portrait_url_handles_espn_abbr_overrides():
+    # The override map fixes the slugs ESPN spells with a non-`abbr` short
+    # code (sa for Spurs, no for Pelicans, wsh for Wizards).
+    assert prerender_pages._portrait_url(
+        "team", "san-antonio-spurs", {}
+    ).endswith("/sa.png")
+    assert prerender_pages._portrait_url(
+        "team", "new-orleans-pelicans", {}
+    ).endswith("/no.png")
+    assert prerender_pages._portrait_url(
+        "team", "washington-wizards", {}
+    ).endswith("/wsh.png")
+
+
+def test_player_page_includes_real_headshot_url():
+    info = {"headshot_filename": "1641705-victor-wembanyama.png"}
+    html_text = prerender_pages._render_page(
+        "player", "victor-wembanyama", "Victor Wembanyama", 99, info
+    )
+    assert (
+        "https://raw.githubusercontent.com/jsierrahoopshype/"
+        "nba-headshots/main/players/headshots/face/"
+        "1641705-victor-wembanyama.png"
+    ) in html_text
+    # Initials fallback is still in the DOM, hidden by default.
+    assert 'class="entity-portrait-initials"' in html_text
+    # The onerror swap is what reveals the initials when the image 404s.
+    assert "this.style.display='none'" in html_text
+    assert "this.nextElementSibling.style.display='flex'" in html_text
+
+
+def test_team_page_includes_espn_logo_url_with_team_class():
+    html_text = prerender_pages._render_page(
+        "team", "boston-celtics", "Boston Celtics", 30, {}
+    )
+    assert "https://a.espncdn.com/i/teamlogos/nba/500/bos.png" in html_text
+    # The team modifier class differentiates contain vs cover.
+    assert "entity-portrait-img--team" in html_text
+
+
+def test_player_page_without_canonical_info_falls_back_to_initials():
+    # No `entity_info` means no headshot URL; render the initials
+    # standalone with inline display:flex (otherwise it would be
+    # hidden under the default-hidden class).
+    html_text = prerender_pages._render_page(
+        "player", "unknown-player", "Unknown Player", 5, None
+    )
+    assert "raw.githubusercontent.com" not in html_text
+    assert 'style="display:flex;background:' in html_text
+    assert ">UP</div>" in html_text  # initials
+
+
+def test_team_page_with_unknown_slug_falls_back_to_initials():
+    html_text = prerender_pages._render_page(
+        "team", "not-real-team", "Not Real Team", 5, {}
+    )
+    assert "espncdn.com" not in html_text
+    assert 'style="display:flex;background:' in html_text
+
+
+def test_generate_pages_threads_canonical_info_into_pages(tmp_path):
+    manifest_path = tmp_path / "manifest.json"
+    _write_manifest(
+        manifest_path,
+        players=[{"slug": "lebron-james", "name": "LeBron James", "count": 12}],
+        teams=[{"slug": "los-angeles-lakers", "name": "Los Angeles Lakers", "count": 8}],
+    )
+    # Minimal canonical fixtures.
+    players_canonical = tmp_path / "players.json"
+    teams_canonical = tmp_path / "teams.json"
+    players_canonical.write_text(json.dumps({
+        "_meta": {"generated_at": "test"},
+        "lebron-james": {
+            "name": "LeBron James",
+            "headshot_filename": "2544-lebron-james.png",
+        },
+    }))
+    teams_canonical.write_text(json.dumps({
+        "los-angeles-lakers": {"name": "Los Angeles Lakers", "abbr": "LAL"},
+    }))
+    players_out = tmp_path / "players"
+    teams_out = tmp_path / "teams"
+    sitemap = tmp_path / "sitemap.xml"
+    n_p, n_t = prerender_pages.generate_pages(
+        prerender_pages.load_manifest(manifest_path),
+        players_out=players_out,
+        teams_out=teams_out,
+        sitemap_path=sitemap,
+        players_canonical_path=players_canonical,
+        teams_canonical_path=teams_canonical,
+    )
+    assert n_p == 1 and n_t == 1
+    p_html = (players_out / "lebron-james.html").read_text()
+    t_html = (teams_out / "los-angeles-lakers.html").read_text()
+    assert "2544-lebron-james.png" in p_html
+    assert "/nba/500/lal.png" in t_html
+
+
+def test_generate_pages_missing_canonical_falls_back_gracefully(tmp_path, caplog):
+    manifest_path = tmp_path / "manifest.json"
+    _write_manifest(
+        manifest_path,
+        players=[{"slug": "any-player", "name": "Any Player", "count": 1}],
+        teams=[],
+    )
+    players_out = tmp_path / "players"
+    teams_out = tmp_path / "teams"
+    sitemap = tmp_path / "sitemap.xml"
+    with caplog.at_level("WARNING"):
+        n_p, _ = prerender_pages.generate_pages(
+            prerender_pages.load_manifest(manifest_path),
+            players_out=players_out,
+            teams_out=teams_out,
+            sitemap_path=sitemap,
+            players_canonical_path=tmp_path / "missing.json",
+            teams_canonical_path=tmp_path / "also-missing.json",
+        )
+    assert n_p == 1
+    # Page must still render — initials avatar in the portrait slot.
+    p_html = (players_out / "any-player.html").read_text()
+    assert "raw.githubusercontent.com" not in p_html
+    assert 'class="entity-portrait-initials"' in p_html
+    # The warning fired so an operator notices the missing canonical.
+    assert any("canonical not found" in r.message for r in caplog.records)
+
+
 def test_run_dry_run_zero_exit(tmp_path, monkeypatch, capsys):
     manifest_path = tmp_path / "manifest.json"
     _write_manifest(
