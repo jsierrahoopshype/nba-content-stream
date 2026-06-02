@@ -1,0 +1,9 @@
+# Default: outputs are byproducts, not source. Generated weekly,
+# uploaded to HuggingFace, then discarded locally.
+*.mp4
+*.silent.mp4
+*.webm
+
+# Exception: one curated example MP4 is committed for visual review.
+# Update this list when promoting a new example.
+!*_square.example.mp4

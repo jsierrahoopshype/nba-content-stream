@@ -1,0 +1,19 @@
+# Sunday Scoreboard — pipeline runtime dependencies.
+#
+# Pinned to known-good majors. MoviePy 2.x rewrote the API away from
+# moviepy.editor (we use the top-level `from moviepy import ...`
+# imports). Pillow 10+ has the textbbox + alpha_composite API we
+# rely on in lib/draw.py.
+
+moviepy>=2.0.0,<3.0
+Pillow>=10.0.0
+requests>=2.31.0
+huggingface_hub>=0.20.0
+
+# numpy is a moviepy transitive dep but we import it directly in
+# lib/draw.to_numpy(); pin to a known-recent major.
+numpy>=1.26.0
+
+# Test runner — not strictly required for production rendering but
+# `pytest scripts/tests/` is the v1 CI gate.
+pytest>=7.4.0
