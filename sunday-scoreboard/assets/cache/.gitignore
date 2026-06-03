@@ -1,0 +1,4 @@
+# Engagement re-fetch caches land here (engagement_{week}.json).
+# They're derived data — never commit them.
+*.json
+!.gitignore

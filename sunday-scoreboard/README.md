@@ -17,6 +17,19 @@ Every Sunday morning, a GitHub Actions cron:
 
 No voiceover. No editorial commentary. Pure data-driven recap.
 
+## Two pipelines
+
+This sub-project ships two **parallel** render pipelines that share the
+same `lib/` and data layer:
+
+- **v1 — leaderboard recap** (`render_video.py`): top-10 with a title
+  card → headlines roll → reporters per beat. Shipped; kept as a
+  reference/fallback.
+- **v2 — "The Spotlight Edit"** (`render_video_v2.py`): the **current**
+  direction. Top-10 per-player deep-dives — hero parallax → best
+  Bluesky quote (with live engagement) → 7-day mention-spike sparkline.
+  See [DESIGN.md § v2](./DESIGN.md#v2--the-spotlight-edit).
+
 ## Quickstart
 
 ```bash
@@ -38,14 +51,38 @@ export HF_TOKEN=hf_...
 python scripts/upload_to_hf.py
 ```
 
+### v2 — The Spotlight Edit
+
+```bash
+# Dry-run (walks the pipeline, reuses cached engagement, no encode).
+python scripts/render_video_v2.py --week-of 2026-06-01 --dry-run -v
+
+# Warm the engagement cache on its own (paced Bluesky re-fetch).
+python scripts/fetch_engagement.py --week-of 2026-06-01 --top-n 10
+
+# Render the square spotlight recap (v2 validates square first).
+python scripts/render_video_v2.py --week-of 2026-06-01 --format square --top-n 10
+
+# Skip the live engagement fetch and rely on the cache only.
+python scripts/render_video_v2.py --week-of 2026-06-01 --format square --no-engagement
+```
+
+v2 fetches live Bluesky engagement (likes/reposts/replies) at render
+time, paced in chunks of 10 with 500ms between, and caches it to
+`assets/cache/engagement_{week}.json` (git-ignored). Horizontal +
+vertical formats arrive in v2.1 — square is the validated target for
+the first v2 PR.
+
 ## Tests
 
 ```bash
 PYTHONPATH=scripts python3 -m pytest scripts/tests/ -q
 ```
 
-28 smoke tests cover clustering, ranking, format specs, source
-styling, and the canonical / reporter lookups.
+71 smoke tests: the original 28 (clustering, ranking, format specs,
+source styling, canonical / reporter lookups) plus 43 for v2 —
+parallax + Ken Burns math, the animated sparkline, engagement scoring
++ AT-URI derivation, and the paced engagement fetcher.
 
 ## Layout
 
@@ -58,13 +95,18 @@ sunday-scoreboard/
 │                                  (DISABLED — copy to .github/workflows
 │                                   when ready to enable)
 ├── scripts/
-│   ├── render_video.py        ← orchestrator
+│   ├── render_video.py        ← v1 orchestrator
+│   ├── render_video_v2.py     ← v2 orchestrator (Spotlight Edit)
 │   ├── fetch_week_data.py     ← archive pull
+│   ├── fetch_engagement.py    ← v2 paced Bluesky engagement re-fetch
 │   ├── cluster_beats.py       ← 24h-window grouping
 │   ├── rank_beats.py          ← top-N + noise filter
-│   ├── render_intro.py        ← 6s branded intro
-│   ├── render_beat.py         ← 13s per beat (4 phases)
-│   ├── render_outro.py        ← 8s leaderboard
+│   ├── render_intro.py        ← v1 6s branded intro
+│   ├── render_beat.py         ← v1 13s per beat (4 phases)
+│   ├── render_outro.py        ← v1 8s leaderboard
+│   ├── render_intro_v2.py     ← v2 dynamic intro
+│   ├── render_beat_v2.py      ← v2 12s spotlight beat (3 phases)
+│   ├── render_outro_v2.py     ← v2 animated leaderboard
 │   ├── upload_to_hf.py        ← HF Space upload
 │   ├── tests/                 ← pytest smoke suite
 │   └── lib/
@@ -75,10 +117,14 @@ sunday-scoreboard/
 │       ├── format_specs.py    ← per-format dimensions + fonts
 │       ├── draw.py            ← Pillow drawing primitives
 │       ├── easing.py          ← quart-out / sin-in-out
-│       └── ffmpeg_compose.py  ← concat + music mux
+│       ├── ffmpeg_compose.py  ← concat + music mux
+│       ├── parallax.py        ← v2 parallax + Ken Burns helpers
+│       ├── sparkline.py       ← v2 animated mention-spike chart
+│       └── engagement_score.py← v2 AT-URI + scoring + quote pick
 ├── assets/
 │   ├── fonts/                 ← DM Sans + JetBrains Mono TTFs
 │   ├── music/                 ← background-recap.mp3 (see DESIGN.md)
+│   ├── cache/                 ← v2 engagement_{week}.json (git-ignored)
 │   ├── brand/                 ← HoopsMatic logo (when added)
 │   └── templates/             ← bundled team-logo PNGs (optional)
 └── outputs/

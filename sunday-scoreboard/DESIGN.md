@@ -1,5 +1,93 @@
 # Sunday Scoreboard — Design
 
+## Versions at a glance
+
+| Version | Editorial spine | Per-beat shape | Status |
+| ------- | --------------- | -------------- | ------ |
+| **v1** | Top-10 leaderboard recap | Title card → headlines roll → reporters → transition (13s) | Shipped, parallel |
+| **v2 — "The Spotlight Edit"** | Top-10 per-player deep-dives | Hero parallax → best Bluesky quote → mention-spike sparkline (12s) | **Current** |
+
+v2 is **parallel** to v1, not a replacement: it reuses the shared
+`lib/` unchanged and the v1 scripts are untouched, so either pipeline
+can run. v2 is the current editorial direction; v1 remains as a
+fallback and reference. The v2 entry point is
+`scripts/render_video_v2.py`. The first v2 PR validates **square
+only** — horizontal/vertical layouts land in v2.1 once square reads
+well.
+
+## v2 — The Spotlight Edit
+
+Same "top 10 players ranked by mention volume" spine, but each beat is
+a slower, more emotional spotlight on one player instead of a fast
+leaderboard roll.
+
+### Beat phases (12s, hard cut between beats)
+
+| Phase | Duration | What's on screen |
+| ----- | -------- | ---------------- |
+| 1 · Hero portrait | 4.0s | Headshot slow-zooms 100%→60% (quart-out) while a brand-blue→navy gradient parallaxes **behind** it at 0.3× (opposite direction). Rank glyph slides in from the top; player name reveals letter-by-letter (50ms stagger); mention count pulses bottom-right; source-mix pills along the bottom. |
+| 2 · Best Bluesky quote | 5.0s | Same headshot — desaturated, blurred, slow Ken Burns pan — behind the week's best quote, fading in line-by-line. Reporter avatar + display name + `@handle` top-left; engagement ticker (likes + reposts + replies) counts up 0→total over 1.5s with a pulse on the final tick; `via @reporter` under the quote. |
+| 3 · Mention spike | 3.0s | Per-player 7-day sparkline (Mon→Sun), drawn left-to-right over 1.5s, Y-axis scaled **per player** (each beat owns its data story). Peak day called out (`Tuesday: +47 mentions`); five spike source-mix pills below; weekly total above. |
+
+The "sharp cut to the next rank" is realized at the compose layer:
+beats concatenate with **no crossfade**, so the next beat's rank glyph
+slides in immediately at the top of its hero phase. There is no fourth
+phase — the cut *is* the transition.
+
+### Engagement sourcing
+
+The archive doesn't store Bluesky engagement, so `fetch_engagement.py`
+pulls it live at render time:
+
+1. For each top-10 player, take their Bluesky candidate items from the
+   beat cluster.
+2. Derive each post's AT-URI. The archive `id` already encodes it —
+   `bs-` + URL-encoded `did:…/app.bsky.feed.post/<rkey>` — so decoding
+   the id yields a `getPostThread`-ready URI with **no** handle→DID
+   round-trip. Fallback: DID from the CDN `thumbnail` URL + rkey from
+   the post `url`.
+3. `GET public.api.bsky.app/xrpc/app.bsky.feed.getPostThread?uri=…` →
+   `likeCount` / `repostCount` / `replyCount`.
+4. Score `(likes + reposts*2 + replies*3)` — replies/reposts weighted
+   higher because active engagement beats a passive like. Highest
+   score wins per player (ties → recency).
+
+Fetches are **paced** — chunks of 10 with 500ms between, a sync port
+of `pacedBatchFetch` in nba-content-stream's `assets/common.js`.
+Worst case ~500 candidate posts → ~30–60s. Results cache to
+`assets/cache/engagement_{week}.json` (git-ignored) so re-renders
+don't re-hit the API. If a fetch fails or every candidate scores 0,
+selection falls back to the most recent candidate — the render never
+fails on missing engagement.
+
+### Parallax + Ken Burns
+
+MoviePy has no native parallax; we render each frame ourselves with
+shifted/scaled PIL layers (same per-frame approach as v1). `lib/parallax.py`
+keeps the math pure (zoom curve, parallax offset, letter-stagger
+alpha, Ken Burns offset) and wraps the heavier transforms (gradient
+plate, scaled placement, desaturate+blur) thinly on top. `lib/sparkline.py`
+does the same for the spike chart (daily bucketing, peak detection,
+point mapping, draw progress). Both are unit-tested without touching
+the network or the encoder.
+
+### v2 module map (all additive — v1 untouched)
+
+```
+scripts/
+  render_video_v2.py   orchestrator (square first; --top-n; --dry-run)
+  render_beat_v2.py     3-phase spotlight beat
+  render_intro_v2.py    dynamic intro (slide + letter reveal)
+  render_outro_v2.py    animated leaderboard (count-up bars)
+  fetch_engagement.py   paced Bluesky engagement re-fetch + cache
+  lib/parallax.py        parallax + Ken Burns helpers
+  lib/sparkline.py       animated mention-spike sparkline
+  lib/engagement_score.py AT-URI derivation + scoring + quote pick
+```
+
+Music is unchanged from v1 — still the empty/silent slot at
+`assets/music/background-recap.mp3` (sourced separately; see § Music).
+
 ## Intent
 
 A polished, fully automated weekly NBA recap. Same brand language as
