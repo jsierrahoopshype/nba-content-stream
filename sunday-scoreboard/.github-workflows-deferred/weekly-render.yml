@@ -1,0 +1,103 @@
+# Sunday Scoreboard — weekly video render.
+#
+# DEFERRED LOCATION. This workflow lives in
+# `sunday-scoreboard/.github-workflows-deferred/` until v1 has been
+# reviewed. To enable:
+#
+#   mkdir -p .github/workflows
+#   cp sunday-scoreboard/.github-workflows-deferred/weekly-render.yml \
+#      .github/workflows/sunday-scoreboard.yml
+#   git add .github/workflows/sunday-scoreboard.yml
+#
+# After the migration to a standalone repo (see DESIGN.md), drop the
+# `cd sunday-scoreboard` lines and place this directly at
+# `.github/workflows/weekly-render.yml`.
+
+name: Weekly Render (Sunday Scoreboard)
+
+on:
+  # Sunday 09:00 Europe/Madrid is 07:00 UTC in summer, 08:00 UTC in
+  # winter. We pick 07:00 UTC so the recap lands before 09:30 local
+  # time year-round; the half-hour cushion is for slow renders.
+  schedule:
+    - cron: '0 7 * * 0'
+  workflow_dispatch:
+    inputs:
+      week_of:
+        description: "Sunday opening the week (YYYY-MM-DD, UTC). Blank = last Sunday."
+        required: false
+        default: ''
+      upload:
+        description: "Upload to HuggingFace after render."
+        type: boolean
+        default: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    # Render is ~5-10min for one format; budget 30min for all three +
+    # network jitter on the archive pull.
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+          cache-dependency-path: sunday-scoreboard/requirements.txt
+
+      - name: Install system deps
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Install Python deps
+        run: |
+          cd sunday-scoreboard
+          pip install -r requirements.txt
+
+      - name: Run smoke tests
+        run: |
+          cd sunday-scoreboard
+          PYTHONPATH=scripts python3 -m pytest scripts/tests/ -q
+
+      - name: Determine week
+        id: week
+        run: |
+          # If workflow_dispatch passed --week-of, use it. Else compute
+          # last Sunday in UTC.
+          input='${{ github.event.inputs.week_of }}'
+          if [ -n "$input" ]; then
+            echo "week_of=$input" >> "$GITHUB_OUTPUT"
+          else
+            # `date -d 'last Sunday'` on GNU date is Sunday of the
+            # previous calendar week (even if today IS Sunday).
+            week_of=$(date -u -d 'last Sunday' +%Y-%m-%d)
+            echo "week_of=$week_of" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Render all three formats
+        run: |
+          cd sunday-scoreboard
+          PYTHONPATH=scripts python3 scripts/render_video.py \
+            --week-of "${{ steps.week.outputs.week_of }}" \
+            --all-formats -v
+
+      - name: Upload to HuggingFace
+        if: ${{ github.event.inputs.upload != 'false' }}
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          cd sunday-scoreboard
+          PYTHONPATH=scripts python3 scripts/upload_to_hf.py \
+            --week-of "${{ steps.week.outputs.week_of }}" -v
+
+      - name: Archive rendered MP4s as workflow artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scoreboard-${{ steps.week.outputs.week_of }}
+          path: sunday-scoreboard/outputs/*.mp4
+          retention-days: 14

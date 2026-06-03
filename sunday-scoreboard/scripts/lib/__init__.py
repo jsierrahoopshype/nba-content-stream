@@ -1,0 +1,1 @@
+"""Sunday Scoreboard pipeline library."""
