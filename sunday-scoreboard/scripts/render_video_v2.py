@@ -29,19 +29,18 @@ _HERE = Path(__file__).resolve().parent
 if str(_HERE) not in sys.path:
     sys.path.insert(0, str(_HERE))
 
-from lib import archive_client, canonical_lookup, ffmpeg_compose  # noqa: E402
+from lib import archive_client, beat_select, canonical_lookup, ffmpeg_compose  # noqa: E402
 from lib import format_specs as fs  # noqa: E402
-from lib import sparkline  # noqa: E402
+from lib import quote_filter, sparkline  # noqa: E402
 from lib.engagement_score import (  # noqa: E402
     Engagement,
-    best_quote,
     bluesky_candidates,
     quote_text,
 )
 from lib.reporter_lookup import reporters_from_items  # noqa: E402
 from cluster_beats import Beat, cluster_beats  # noqa: E402
 from fetch_week_data import WeekRange, gather_week  # noqa: E402
-from rank_beats import rank_and_filter  # noqa: E402
+from rank_beats import filter_noise, rank_beats  # noqa: E402
 import fetch_engagement  # noqa: E402
 from render_beat_v2 import BeatRenderDataV2, render_beat_v2  # noqa: E402
 from render_intro_v2 import render_intro_v2  # noqa: E402
@@ -120,14 +119,29 @@ def _parse_iso(iso: str):
 # ---------------------------------------------------------------------------
 
 
+def _context_line(total: int, week_start: datetime, counts: list[int]) -> str:
+    """One-line spike context, e.g. "378 mentions this week · peaked
+    Wednesday". Drops the "peaked" clause when there's no peak."""
+    pk = sparkline.peak_index(counts)
+    base = f"{total} mentions this week"
+    if pk < 0:
+        return base
+    weekday = (week_start + timedelta(days=pk)).weekday()
+    return f"{base} · peaked {_WEEKDAY_FULL[weekday]}"
+
+
 def enrich_v2(
     beats: list[Beat],
     week: WeekRange,
     all_items: list[dict],
     engagement_by_uri: dict[str, Engagement],
+    *,
+    roster: set[str],
+    blocklist: set[str],
 ) -> list[BeatRenderDataV2]:
-    """Hydrate ranked beats into v2 render data: portrait, best quote
-    (via engagement), and the 7-day spike series."""
+    """Hydrate ranked beats into v2 render data: portrait, best *reporter*
+    quote (roster-filtered, engagement-scored), and the 7-day spike
+    series."""
     week_index = _entity_week_items(all_items)
     enriched: list[BeatRenderDataV2] = []
 
@@ -137,16 +151,19 @@ def enrich_v2(
             archive_client.fetch_binary(info.portrait_url) if info.portrait_url else None
         )
 
-        # Best quote of the week from this beat's Bluesky candidates.
+        # Best quote: hard filters (roster, length, emoji/caps) then
+        # engagement score. clean_text strips emoji for display.
         candidates = bluesky_candidates(beat.items)
-        chosen = best_quote(candidates, engagement_by_uri)
+        chosen = quote_filter.select_quote(
+            candidates, engagement_by_uri, roster=roster, blocklist=blocklist
+        )
         q_text = ""
         reporter = None
         avatar_bytes = None
         engagement = None
         if chosen is not None:
             item, engagement = chosen
-            q_text = quote_text(item)
+            q_text = quote_filter.clean_text(quote_text(item))
             reps = reporters_from_items([item], max_count=1)
             if reps:
                 reporter = reps[0]
@@ -160,6 +177,7 @@ def enrich_v2(
         counts = sparkline.daily_mention_counts(week_items, week.week_of, days=7)
         labels = sparkline.day_labels(week.week_of, days=7)
         pk = sparkline.peak_index(counts)
+        total = sum(counts)
 
         enriched.append(
             BeatRenderDataV2(
@@ -173,10 +191,11 @@ def enrich_v2(
                 quote_avatar_bytes=avatar_bytes,
                 engagement=engagement,
                 weekly_counts=counts,
-                weekly_total=sum(counts),
+                weekly_total=total,
                 day_labels=labels,
                 spike_source_mix=_spike_source_mix(week_items, pk, week.week_of),
                 peak_callout=_peak_callout(week.week_of, counts),
+                context_line=_context_line(total, week.week_of, counts),
             )
         )
     return enriched
@@ -208,13 +227,22 @@ def run_pipeline(
         logger.error("no items fetched for week %s — aborting", week_of)
         return []
 
-    ranked = rank_and_filter(cluster_beats(items, window_hours=24), top_n=top_n)
+    # v2.1 selection: players only → noise filter → rank → one beat per
+    # player → top N. Teams never become beats (only hero-card context),
+    # and the top-N is N distinct players.
+    raw = cluster_beats(items, window_hours=24)
+    player_beats = beat_select.players_only(raw)
+    ranked_all = rank_beats(filter_noise(player_beats), top_n=len(player_beats))
+    ranked = beat_select.one_beat_per_player(ranked_all)[:top_n]
     if not ranked:
-        logger.error("no beats survived noise filter — aborting")
+        logger.error("no player beats survived selection — aborting")
         return []
-    logger.info("ranked top %d beats from %d items", len(ranked), len(items))
+    logger.info(
+        "selected %d distinct players from %d items (%d raw beats, %d player beats)",
+        len(ranked), len(items), len(raw), len(player_beats),
+    )
 
-    # Engagement re-fetch (cached per week).
+    # Engagement re-fetch (cached per week) over the final beats' candidates.
     known = fetch_engagement.load_cache(week_of)
     uris = fetch_engagement.candidate_uris_from_beats([b.items for b in ranked])
     if fetch_live:
@@ -224,7 +252,12 @@ def run_pipeline(
         engagement = known
         logger.info("dry-run/offline: using %d cached engagement records", len(known))
 
-    enriched = enrich_v2(ranked, week, items, engagement)
+    # Editorial quote gates: reporter roster (live) + explicit blocklist.
+    roster = quote_filter.load_roster() if fetch_live else set()
+    blocklist = quote_filter.load_blocklist()
+    logger.info("quote gates: roster=%d handles, blocklist=%d handles", len(roster), len(blocklist))
+
+    enriched = enrich_v2(ranked, week, items, engagement, roster=roster, blocklist=blocklist)
     for b in enriched:
         logger.info(
             "  #%d %-28s %4d mentions · week %d · quote=%s · eng=%s",

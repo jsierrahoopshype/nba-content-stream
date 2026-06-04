@@ -88,6 +88,72 @@ scripts/
 Music is unchanged from v1 — still the empty/silent slot at
 `assets/music/background-recap.mp3` (sourced separately; see § Music).
 
+### v2.1 — review fixes (current)
+
+Corrections after the first real local render (2026-06-01, square,
+top-3). All are content/layout only — the 3-phase structure and per-
+beat timing are unchanged.
+
+**Players only.** Team entities are never beats — `beat_select.players_only`
+drops them before ranking. A team still appears as *context* (the
+player's team name on the hero card). Rationale: the recap is a player
+countdown; team beats produced near-duplicate stories.
+
+**One beat per player (dedupe rule).** The 24h-window clustering can
+split one news arc into two beats for the same player (the first render
+had the same player at #1 and #3 with identical sparklines). The rule:
+after ranking (`rank_beats`: mentions desc → source diversity →
+recency), `beat_select.one_beat_per_player` keeps **only each player's
+single highest-signal beat**, preserving rank order. Because the input
+is already ranked, the first beat seen per player is the one kept, so
+the top-N is **N distinct players**.
+
+**Quote quality gates** (`lib/quote_filter.py`). Pure engagement
+scoring surfaced @nba.com marketing copy, since official accounts win
+raw engagement. Replaced with filter-then-score:
+
+1. *Roster gate* — only posts from handles in nba-content-stream's
+   curated reporter roster (`data/sources/bluesky_handles.csv`, ~164
+   reporters) are eligible. **That roster is the editorial filter** —
+   official/league/team accounts simply aren't in it. An explicit
+   `data/quote_blocklist.json` (league + 30 team handles, plus any
+   `nba.com` handle) is a second gate. If the roster fetch fails the
+   gate disables (degrade to scoring) rather than yielding zero quotes.
+2. *Length* — drop posts under 60 chars (no "GAME DAY" one-liners).
+3. *Mostly emoji/caps* — drop posts >50% emoji or uppercase.
+4. *Score* the survivors with the unchanged `likes + reposts*2 + replies*3`.
+
+If nothing survives, the quote phase shows the spotlight cleanly
+("No standout reporter quote this week.") rather than airing junk.
+
+**Emoji / unrenderable handling.** Quote text is cleaned before render:
+strip emoji, pictographs, dingbats, arrows, and variation selectors by
+codepoint range — **never** a blanket regex — so accented Latin
+(French / Serbian-Latin / Turkish / Croatian player + reporter names)
+is fully preserved. Whitespace is then collapsed.
+
+**Truncation.** Quotes cut at the last sentence boundary that fits,
+falling back to the last whole word + `…`. Never mid-word. The wrap is
+measure-injected (`prepare_quote_lines`) so it's unit-tested without a
+font.
+
+**Hero layout (collision-safe).** `lib/layout.hero_layout` reserves
+non-overlapping rectangles — rank (top-left band), portrait (centered,
+capped at 45% frame height), name, team sub, count (own right-aligned
+band above the pills), pills (bottom edge). A test asserts no two zones
+intersect for the longest canonical names ("Giannis Antetokounmpo",
+"Shai Gilgeous-Alexander", "Karl-Anthony Towns") at ranks 1/3/10.
+
+**Quote-phase background.** Dropped the muddy blurred-portrait backdrop
+for a clean treatment: light `#f5f5f7` with a subtle diagonal accent
+gradient strip; the portrait becomes a small circular avatar beside the
+reporter attribution. Premium = clean, not layered blur.
+
+**Sparkline layout.** Chart now occupies the middle ~50% of the frame;
+peak callout above, source-mix pills + a one-line context row
+("378 mentions this week · peaked Wednesday") below — no more dead
+whitespace at the bottom.
+
 ## Intent
 
 A polished, fully automated weekly NBA recap. Same brand language as

@@ -65,7 +65,18 @@ python scripts/render_video_v2.py --week-of 2026-06-01 --format square --top-n 1
 
 # Skip the live engagement fetch and rely on the cache only.
 python scripts/render_video_v2.py --week-of 2026-06-01 --format square --no-engagement
+
+# v2.1 review build — players only, quote quality filters, layout fixes.
+# Render a square top-5 (fast iteration) on a machine with network:
+python scripts/render_video_v2.py --week-of 2026-06-01 --format square --top-n 5
 ```
+
+**v2.1** is players-only (teams appear as hero-card context, never as
+beats), keeps one beat per player (10 distinct players), and gates the
+"best quote" to the curated reporter roster
+(`data/sources/bluesky_handles.csv`) plus an explicit
+`data/quote_blocklist.json` so official/league/team accounts never get
+quoted. See [DESIGN.md § v2.1](./DESIGN.md#v21--review-fixes-current).
 
 v2 fetches live Bluesky engagement (likes/reposts/replies) at render
 time, paced in chunks of 10 with 500ms between, and caches it to
@@ -79,10 +90,13 @@ the first v2 PR.
 PYTHONPATH=scripts python3 -m pytest scripts/tests/ -q
 ```
 
-71 smoke tests: the original 28 (clustering, ranking, format specs,
-source styling, canonical / reporter lookups) plus 43 for v2 —
-parallax + Ken Burns math, the animated sparkline, engagement scoring
-+ AT-URI derivation, and the paced engagement fetcher.
+118 smoke tests: the original 28 (clustering, ranking, format specs,
+source styling, canonical / reporter lookups), 43 for v2 (parallax +
+Ken Burns math, the animated sparkline, engagement scoring + AT-URI
+derivation, the paced engagement fetcher), and 47 for v2.1 (players-
+only + per-player dedupe, quote quality filters + roster/blocklist +
+sentence-safe truncation + emoji strip preserving accented names, and
+collision-safe hero layout zones).
 
 ## Layout
 
@@ -120,7 +134,12 @@ sunday-scoreboard/
 │       ├── ffmpeg_compose.py  ← concat + music mux
 │       ├── parallax.py        ← v2 parallax + Ken Burns helpers
 │       ├── sparkline.py       ← v2 animated mention-spike chart
-│       └── engagement_score.py← v2 AT-URI + scoring + quote pick
+│       ├── engagement_score.py← v2 AT-URI + scoring + quote pick
+│       ├── beat_select.py     ← v2.1 players-only + per-player dedupe
+│       ├── layout.py          ← v2.1 collision-safe hero zones
+│       └── quote_filter.py    ← v2.1 roster/quality filters + clean/truncate
+├── data/
+│   └── quote_blocklist.json   ← v2.1 official/team handle blocklist
 ├── assets/
 │   ├── fonts/                 ← DM Sans + JetBrains Mono TTFs
 │   ├── music/                 ← background-recap.mp3 (see DESIGN.md)
