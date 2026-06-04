@@ -154,9 +154,10 @@ def enrich_v2(
         # Best quote: hard filters (roster, length, emoji/caps) then
         # engagement score. clean_text strips emoji for display.
         candidates = bluesky_candidates(beat.items)
-        chosen = quote_filter.select_quote(
+        chosen, stages = quote_filter.select_quote_staged(
             candidates, engagement_by_uri, roster=roster, blocklist=blocklist
         )
+        logger.info("  %s", stages.log_line(beat.entity))
         q_text = ""
         reporter = None
         avatar_bytes = None
@@ -264,6 +265,16 @@ def run_pipeline(
             b.rank, b.entity.name, b.mention_count, b.weekly_total,
             "yes" if b.quote_text else "—",
             b.engagement.total if b.engagement else "—",
+        )
+
+    # Sanity guard: a render where *every* beat lost its quote almost
+    # always means a handle-format mismatch in the roster join (the v2.1
+    # production bug), not a genuinely quiet week — make it loud.
+    if enriched and roster and all(not b.quote_text for b in enriched):
+        logger.warning(
+            "roster gate rejected all candidates for all %d beats — likely a "
+            "handle format mismatch (check quote pipeline counts above)",
+            len(enriched),
         )
 
     if dry_run:

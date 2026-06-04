@@ -32,12 +32,14 @@ from __future__ import annotations
 
 import json
 import logging
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable, Iterable, Optional
 
 from . import archive_client
 from . import format_specs as fs
 from .engagement_score import Engagement, at_uri_from_item, best_quote, quote_text
+from .reporter_lookup import _handle_from_url
 
 logger = logging.getLogger("quote_filter")
 
@@ -207,7 +209,7 @@ def parse_roster(csv_text: str) -> set[str]:
         line = line.strip()
         if not line:
             continue
-        handle = line.split(",", 1)[0].strip().lower()
+        handle = normalize_handle(line.split(",", 1)[0])
         if not handle or handle == "handle":  # skip header
             continue
         handles.add(handle)
@@ -243,13 +245,13 @@ def load_blocklist(path: Path | None = None) -> set[str]:
         logger.warning("blocklist unreadable (%s): %s", path, exc)
         return set()
     handles = data.get("handles", data) if isinstance(data, dict) else data
-    return {str(h).strip().lower() for h in handles}
+    return {normalize_handle(str(h)) for h in handles if normalize_handle(str(h))}
 
 
 def is_blocked_handle(handle: str, blocklist: set[str]) -> bool:
     """True if `handle` is an official/blocked account: an exact match,
     a subdomain of a blocked domain, or an obvious league/team handle."""
-    h = (handle or "").lower()
+    h = normalize_handle(handle)
     if not h:
         return True
     if h in blocklist:
@@ -265,8 +267,36 @@ def is_blocked_handle(handle: str, blocklist: set[str]) -> bool:
 # ---------------------------------------------------------------------------
 
 
+def normalize_handle(handle: str | None) -> str:
+    """Normalize a handle for comparison: strip whitespace, drop a
+    leading `@`, lowercase. Applied to BOTH the item handle and the
+    roster/blocklist entries so the join can't drift on case or `@`."""
+    if not handle:
+        return ""
+    return handle.strip().lstrip("@").strip().lower()
+
+
 def _handle_of(item: dict) -> str:
-    return (item.get("author_handle") or "").lower()
+    """Resolve a Bluesky item's handle, normalized.
+
+    The archive stores the handle in different shapes depending on the
+    file: the per-entity index files (what the pipeline reads) carry
+    `author` as a *display-name string* with the handle only in the
+    post `url`; the raw daily shards carry `author` as a dict with
+    `author.handle`. We try, in order: a flat `author_handle`, then
+    `author.handle`, then parse it out of the `url`
+    (`bsky.app/profile/<handle>/post/…`). The DID lives in `id` but the
+    handle is always recoverable from the url, so no DID→handle join is
+    needed.
+    """
+    raw = item.get("author_handle")
+    if not raw:
+        author = item.get("author")
+        if isinstance(author, dict):
+            raw = author.get("handle")
+    if not raw:
+        raw = _handle_from_url(item.get("url") or "")
+    return normalize_handle(raw)
 
 
 def passes_filters(
@@ -304,6 +334,75 @@ def filter_candidates(
     ]
 
 
+def _quality_ok(item: dict, min_chars: int) -> bool:
+    raw = quote_text(item)
+    if is_mostly_emoji_or_caps(raw):
+        return False
+    return len(clean_text(raw)) >= min_chars
+
+
+@dataclass
+class QuoteStages:
+    """Per-stage survivor counts for one player's quote pipeline, so a
+    failure (like the 100% roster-gate rejection) is self-diagnosing in
+    the render log instead of a silent `quote=—`."""
+
+    candidates: int = 0
+    after_roster: int = 0
+    after_blocklist: int = 0
+    after_quality: int = 0
+    picked: bool = False
+    picked_engagement: Optional[int] = None
+
+    def log_line(self, slug: str) -> str:
+        if self.picked:
+            tail = (
+                f"picked eng={self.picked_engagement}"
+                if self.picked_engagement is not None
+                else "picked (recency, no eng)"
+            )
+        else:
+            tail = "picked none"
+        return (
+            f"quote pipeline for {slug}: {self.candidates} bsky candidates "
+            f"→ roster {self.after_roster} → blocklist {self.after_blocklist} "
+            f"→ length {self.after_quality} → {tail}"
+        )
+
+
+def select_quote_staged(
+    candidates: list[dict],
+    engagement_by_uri: dict[str, Engagement],
+    *,
+    roster: set[str],
+    blocklist: set[str],
+    min_chars: int = MIN_QUOTE_CHARS,
+) -> tuple[Optional[tuple[dict, Optional[Engagement]]], QuoteStages]:
+    """Like `select_quote`, but also returns per-stage survivor counts.
+
+    Stages are applied in order — roster gate, blocklist, content
+    quality (length + emoji/caps) — counting survivors at each step,
+    then the survivors are engagement-scored (recency fallback)."""
+    cands = list(candidates)
+    stages = QuoteStages(candidates=len(cands))
+
+    after_roster = [it for it in cands if not roster or _handle_of(it) in roster]
+    stages.after_roster = len(after_roster)
+
+    after_block = [it for it in after_roster if not is_blocked_handle(_handle_of(it), blocklist)]
+    stages.after_blocklist = len(after_block)
+
+    survivors = [it for it in after_block if _quality_ok(it, min_chars)]
+    stages.after_quality = len(survivors)
+
+    chosen = best_quote(survivors, engagement_by_uri) if survivors else None
+    if chosen is not None:
+        stages.picked = True
+        eng = chosen[1]
+        stages.picked_engagement = eng.total if eng is not None else None
+    return chosen, stages
+
+
 def select_quote(
     candidates: list[dict],
     engagement_by_uri: dict[str, Engagement],
@@ -316,9 +415,8 @@ def select_quote(
     survivor by engagement (recency fallback). Returns None when nothing
     survives — the renderer then shows the spotlight without a quote
     rather than airing marketing copy."""
-    survivors = filter_candidates(
-        candidates, roster=roster, blocklist=blocklist, min_chars=min_chars
+    chosen, _ = select_quote_staged(
+        candidates, engagement_by_uri,
+        roster=roster, blocklist=blocklist, min_chars=min_chars,
     )
-    if not survivors:
-        return None
-    return best_quote(survivors, engagement_by_uri)
+    return chosen
