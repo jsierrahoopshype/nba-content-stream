@@ -282,6 +282,55 @@ def test_custom_domain_roster_handle_joins():
     assert qf.passes_filters(item, roster=roster, blocklist=set())
 
 
+# ---- self-promo filter (v2.2 Fix 7) ----
+
+# Verbatim from the v2.1 render review — a real self-promo post that the
+# engagement gate happily picked. It must now be rejected.
+_KATIE_HEINDL = "wrote about why we care so much about victor wembanyama caring so much"
+_OBSERVATION = "Wembanyama was the best player on the floor tonight and it was not close at all."
+
+
+def test_load_selfpromo_patterns_reads_shipped_config():
+    pats = qf.load_selfpromo_patterns()
+    assert "wrote about" in pats
+    assert "icymi" in pats
+
+
+def test_self_promo_rejects_real_katie_heindl_post():
+    pats = qf.load_selfpromo_patterns()
+    assert qf.is_self_promo(_KATIE_HEINDL, pats) is True
+
+
+def test_self_promo_allows_normal_observation():
+    pats = qf.load_selfpromo_patterns()
+    assert qf.is_self_promo(_OBSERVATION, pats) is False
+
+
+def test_self_promo_rejects_leading_bare_url():
+    assert qf.is_self_promo("https://hoopshype.com/2026/06/01/story latest piece", []) is True
+    assert qf.is_self_promo("www.example.com/abc", []) is True
+
+
+def test_self_promo_only_inspects_the_opening():
+    # A passing mention of "my piece" deep in the text shouldn't trip it.
+    text = "Brunson was incredible tonight and reminded me of a thought from my piece months ago."
+    assert qf.is_self_promo(text, ["my piece"], head_chars=40) is False
+
+
+def test_passes_filters_rejects_self_promo_post():
+    roster = {"wtevs.bsky.social"}
+    item = {
+        "source": "bluesky", "author_handle": "wtevs.bsky.social",
+        "url": "https://bsky.app/profile/wtevs.bsky.social/post/3a",
+        "title": _KATIE_HEINDL,
+    }
+    pats = qf.load_selfpromo_patterns()
+    assert qf.passes_filters(item, roster=roster, blocklist=set(), selfpromo=pats) is False
+    # ... while the same author's observation passes
+    item2 = dict(item, title=_OBSERVATION)
+    assert qf.passes_filters(item2, roster=roster, blocklist=set(), selfpromo=pats) is True
+
+
 def test_select_quote_staged_reports_stage_counts():
     roster = qf.parse_roster(_REAL_ROSTER_CSV)
     block = qf.load_blocklist()

@@ -66,23 +66,30 @@ python scripts/render_video_v2.py --week-of 2026-06-01 --format square --top-n 1
 # Skip the live engagement fetch and rely on the cache only.
 python scripts/render_video_v2.py --week-of 2026-06-01 --format square --no-engagement
 
-# v2.1 review build — players only, quote quality filters, layout fixes.
-# Render a square top-5 (fast iteration) on a machine with network:
+# v2.2 social edit — VERTICAL is now the default format. Render a
+# vertical top-5 (≈50s: cold open → #5…#1 countdown → outro → CTA):
+python scripts/render_video_v2.py --week-of 2026-06-01 --top-n 5
+# Square / horizontal still render:
 python scripts/render_video_v2.py --week-of 2026-06-01 --format square --top-n 5
+python scripts/render_video_v2.py --week-of 2026-06-01 --format horizontal --top-n 5
 ```
 
-**v2.1** is players-only (teams appear as hero-card context, never as
-beats), keeps one beat per player (10 distinct players), and gates the
-"best quote" to the curated reporter roster
-(`data/sources/bluesky_handles.csv`) plus an explicit
-`data/quote_blocklist.json` so official/league/team accounts never get
-quoted. See [DESIGN.md § v2.1](./DESIGN.md#v21--review-fixes-current).
+**v2.2 (social-first edit)** is vertical-first (9:16 default). It opens
+on a **cold open** (the #1 player's face, duotone, no name — the tease),
+plays beats in **countdown order** (#5 → #1, the finale gets +2s), and
+closes with a leaderboard + a **CTA end-card**. Each beat is a fast
+6–10s: full-bleed **duotone** hero → white **quote card** → area-filled
+spike sparkline, hard cuts throughout, no dead air. A
+`{date}_{format}_cuts.json` sidecar lists every phase boundary so a
+future pass can beat-sync music. Quote selection adds a **self-promo
+filter** ("wrote about", "icymi", leading URLs, …) on top of the v2.1
+roster/blocklist gates. See [DESIGN.md § v2.2](./DESIGN.md#v22--social-first-edit-current).
 
-v2 fetches live Bluesky engagement (likes/reposts/replies) at render
-time, paced in chunks of 10 with 500ms between, and caches it to
-`assets/cache/engagement_{week}.json` (git-ignored). Horizontal +
-vertical formats arrive in v2.1 — square is the validated target for
-the first v2 PR.
+**v2.1** is players-only (teams are hero-card context, never beats),
+keeps one beat per player (N distinct players), and gates the "best
+quote" to the curated reporter roster (`data/sources/bluesky_handles.csv`)
+plus `data/quote_blocklist.json`. v2 fetches live Bluesky engagement
+(paced 10/500ms, cached to `assets/cache/engagement_{week}.json`).
 
 ## Tests
 
@@ -90,13 +97,15 @@ the first v2 PR.
 PYTHONPATH=scripts python3 -m pytest scripts/tests/ -q
 ```
 
-118 smoke tests: the original 28 (clustering, ranking, format specs,
-source styling, canonical / reporter lookups), 43 for v2 (parallax +
-Ken Burns math, the animated sparkline, engagement scoring + AT-URI
-derivation, the paced engagement fetcher), and 47 for v2.1 (players-
-only + per-player dedupe, quote quality filters + roster/blocklist +
-sentence-safe truncation + emoji strip preserving accented names, and
-collision-safe hero layout zones).
+155 smoke tests: 28 original (clustering, ranking, format specs, source
+styling, lookups), 43 for v2 (parallax/Ken Burns math, sparkline,
+engagement scoring + AT-URI, paced fetcher), 47 for v2.1 (players-only +
+dedupe, quote filters + roster/blocklist + sentence-safe truncation +
+emoji strip, collision-safe hero zones; plus the production handle-join
+hotfix), and 32 for v2.2 (duotone, counter/slide/block-fade timing,
+self-promo rejection incl. the real Katie-Heindl post, the dead-air
+frame auditor + a render-time guard on the assembled phases, countdown
+order, cut-timeline contiguity, pace budgets, dynamic outro N).
 
 ## Layout
 
@@ -118,9 +127,12 @@ sunday-scoreboard/
 │   ├── render_intro.py        ← v1 6s branded intro
 │   ├── render_beat.py         ← v1 13s per beat (4 phases)
 │   ├── render_outro.py        ← v1 8s leaderboard
-│   ├── render_intro_v2.py     ← v2 dynamic intro
-│   ├── render_beat_v2.py      ← v2 12s spotlight beat (3 phases)
-│   ├── render_outro_v2.py     ← v2 animated leaderboard
+│   ├── render_intro_v2.py     ← v2 intro (superseded by cold open in v2.2)
+│   ├── render_coldopen_v2.py  ← v2.2 cold open (full-bleed #1 tease)
+│   ├── render_beat_v2.py      ← v2.2 spotlight beat (duotone/quote-card/spike)
+│   ├── render_outro_v2.py     ← v2.2 animated leaderboard (dynamic N)
+│   ├── render_cta_v2.py       ← v2.2 CTA end-card
+│   ├── render_helpers_v2.py   ← v2.2 brand mark + accent strip + pills
 │   ├── upload_to_hf.py        ← HF Space upload
 │   ├── tests/                 ← pytest smoke suite
 │   └── lib/
@@ -137,7 +149,11 @@ sunday-scoreboard/
 │       ├── engagement_score.py← v2 AT-URI + scoring + quote pick
 │       ├── beat_select.py     ← v2.1 players-only + per-player dedupe
 │       ├── layout.py          ← v2.1 collision-safe hero zones
-│       └── quote_filter.py    ← v2.1 roster/quality filters + clean/truncate
+│       ├── quote_filter.py    ← v2.1/v2.2 roster/quality/self-promo filters
+│       ├── style22.py         ← v2.2 vertical-first type/spacing scale
+│       ├── duotone.py         ← v2.2 duotone portrait + cover-crop
+│       ├── anim.py            ← v2.2 counter / slide / block-fade math
+│       └── frame_audit.py     ← v2.2 dead-air auditor (test helper)
 ├── data/
 │   └── quote_blocklist.json   ← v2.1 official/team handle blocklist
 ├── assets/

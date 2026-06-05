@@ -233,6 +233,35 @@ def load_roster(*, fetch: Callable[[str], Optional[bytes]] | None = None) -> set
         return set()
 
 
+def load_selfpromo_patterns(path: Path | None = None) -> list[str]:
+    """Load the self-promo opening patterns (lowercased) from the
+    blocklist config's `selfpromo_patterns` key. Missing → empty list."""
+    path = path or BLOCKLIST_PATH
+    if not path.exists():
+        return []
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        logger.warning("selfpromo patterns unreadable (%s): %s", path, exc)
+        return []
+    pats = data.get("selfpromo_patterns", []) if isinstance(data, dict) else []
+    return [str(p).strip().lower() for p in pats if str(p).strip()]
+
+
+def is_self_promo(text: str, patterns: Iterable[str], *, head_chars: int = 40) -> bool:
+    """True if the opening of `text` is self-promotion ("wrote about",
+    "my latest", "icymi", a leading bare URL, …) rather than an
+    observation. Only the first ~`head_chars` of the cleaned text are
+    inspected so a passing-mention of a link later doesn't trip it."""
+    head = clean_text(text).lower().lstrip()
+    if not head:
+        return False
+    if head.startswith(("http://", "https://", "www.")):
+        return True
+    head = head[:head_chars]
+    return any(p in head for p in patterns)
+
+
 def load_blocklist(path: Path | None = None) -> set[str]:
     """Load the explicit handle blocklist (lowercased). Missing file →
     empty set."""
@@ -305,20 +334,16 @@ def passes_filters(
     roster: set[str],
     blocklist: set[str],
     min_chars: int = MIN_QUOTE_CHARS,
+    selfpromo: Iterable[str] = (),
 ) -> bool:
-    """Apply the v2.1 hard filters to one candidate post."""
+    """Apply the v2.1/v2.2 hard filters to one candidate post."""
     handle = _handle_of(item)
     # Roster gate (only enforced when we actually have a roster).
     if roster and handle not in roster:
         return False
     if is_blocked_handle(handle, blocklist):
         return False
-    raw = quote_text(item)
-    if is_mostly_emoji_or_caps(raw):
-        return False
-    if len(clean_text(raw)) < min_chars:
-        return False
-    return True
+    return _quality_ok(item, min_chars, selfpromo)
 
 
 def filter_candidates(
@@ -327,16 +352,22 @@ def filter_candidates(
     roster: set[str],
     blocklist: set[str],
     min_chars: int = MIN_QUOTE_CHARS,
+    selfpromo: Iterable[str] = (),
 ) -> list[dict]:
     return [
         it for it in candidates
-        if passes_filters(it, roster=roster, blocklist=blocklist, min_chars=min_chars)
+        if passes_filters(
+            it, roster=roster, blocklist=blocklist,
+            min_chars=min_chars, selfpromo=selfpromo,
+        )
     ]
 
 
-def _quality_ok(item: dict, min_chars: int) -> bool:
+def _quality_ok(item: dict, min_chars: int, selfpromo: Iterable[str] = ()) -> bool:
     raw = quote_text(item)
     if is_mostly_emoji_or_caps(raw):
+        return False
+    if selfpromo and is_self_promo(raw, selfpromo):
         return False
     return len(clean_text(raw)) >= min_chars
 
@@ -377,12 +408,14 @@ def select_quote_staged(
     roster: set[str],
     blocklist: set[str],
     min_chars: int = MIN_QUOTE_CHARS,
+    selfpromo: Iterable[str] = (),
 ) -> tuple[Optional[tuple[dict, Optional[Engagement]]], QuoteStages]:
     """Like `select_quote`, but also returns per-stage survivor counts.
 
     Stages are applied in order — roster gate, blocklist, content
-    quality (length + emoji/caps) — counting survivors at each step,
-    then the survivors are engagement-scored (recency fallback)."""
+    quality (length + emoji/caps + self-promo) — counting survivors at
+    each step, then the survivors are engagement-scored (recency
+    fallback)."""
     cands = list(candidates)
     stages = QuoteStages(candidates=len(cands))
 
@@ -392,7 +425,7 @@ def select_quote_staged(
     after_block = [it for it in after_roster if not is_blocked_handle(_handle_of(it), blocklist)]
     stages.after_blocklist = len(after_block)
 
-    survivors = [it for it in after_block if _quality_ok(it, min_chars)]
+    survivors = [it for it in after_block if _quality_ok(it, min_chars, selfpromo)]
     stages.after_quality = len(survivors)
 
     chosen = best_quote(survivors, engagement_by_uri) if survivors else None
@@ -410,6 +443,7 @@ def select_quote(
     roster: set[str],
     blocklist: set[str],
     min_chars: int = MIN_QUOTE_CHARS,
+    selfpromo: Iterable[str] = (),
 ) -> Optional[tuple[dict, Optional[Engagement]]]:
     """Filter candidates through the quality gates, then pick the best
     survivor by engagement (recency fallback). Returns None when nothing
@@ -417,6 +451,6 @@ def select_quote(
     rather than airing marketing copy."""
     chosen, _ = select_quote_staged(
         candidates, engagement_by_uri,
-        roster=roster, blocklist=blocklist, min_chars=min_chars,
+        roster=roster, blocklist=blocklist, min_chars=min_chars, selfpromo=selfpromo,
     )
     return chosen

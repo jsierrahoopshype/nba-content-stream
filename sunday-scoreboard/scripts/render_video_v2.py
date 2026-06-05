@@ -1,25 +1,24 @@
-"""Orchestrate the v2 "Spotlight Edit" pipeline.
+"""Orchestrate the v2 "Spotlight Edit" pipeline (v2.2 social edit).
 
-  fetch_week_data
-    → cluster_beats
-    → rank_beats (top N)
+  fetch_week_data → cluster_beats → players-only + dedupe + rank
     → fetch_engagement (live Bluesky counts, cached per week)
-    → enrich_v2 (portraits, best quote, 7-day spike series)
-    → render intro_v2 + spotlight beats + outro_v2
-    → ffmpeg_compose: hard-cut concat + music mux
+    → enrich_v2 (portraits, roster/self-promo-filtered quote, spike)
+    → cold open → beats in COUNTDOWN order (#N→#1) → outro → CTA
+    → ffmpeg_compose: hard-cut concat + music mux + cut-timeline sidecar
 
-v2 is *parallel* to v1 — it reuses the shared lib/ unchanged and the
-v1 scripts are untouched. The first v2 PR validates square only;
-horizontal/vertical land in v2.1.
+v2 is parallel to v1 (shared lib/ + v1 scripts untouched). v2.2 is
+vertical-first (9:16 default); square + horizontal still render.
 
 CLI:
-  python scripts/render_video_v2.py --week-of 2026-06-01 --format square --top-n 10
-  python scripts/render_video_v2.py --week-of 2026-06-01 --format square --dry-run
+  python scripts/render_video_v2.py --week-of 2026-06-01 --top-n 5            # vertical
+  python scripts/render_video_v2.py --week-of 2026-06-01 --format square
+  python scripts/render_video_v2.py --week-of 2026-06-01 --dry-run
 """
 
 from __future__ import annotations
 
 import argparse
+import json
 import logging
 import sys
 from datetime import datetime, timedelta
@@ -42,9 +41,10 @@ from cluster_beats import Beat, cluster_beats  # noqa: E402
 from fetch_week_data import WeekRange, gather_week  # noqa: E402
 from rank_beats import filter_noise, rank_beats  # noqa: E402
 import fetch_engagement  # noqa: E402
-from render_beat_v2 import BeatRenderDataV2, render_beat_v2  # noqa: E402
-from render_intro_v2 import render_intro_v2  # noqa: E402
+from render_beat_v2 import BeatRenderDataV2, beat_phase_plan, render_beat_v2  # noqa: E402
+from render_coldopen_v2 import render_coldopen_v2, COLD_OPEN_SECONDS  # noqa: E402
 from render_outro_v2 import render_outro_v2  # noqa: E402
+from render_cta_v2 import render_cta_v2  # noqa: E402
 
 logger = logging.getLogger("render_video_v2")
 
@@ -138,11 +138,13 @@ def enrich_v2(
     *,
     roster: set[str],
     blocklist: set[str],
+    selfpromo: list[str] | None = None,
 ) -> list[BeatRenderDataV2]:
     """Hydrate ranked beats into v2 render data: portrait, best *reporter*
-    quote (roster-filtered, engagement-scored), and the 7-day spike
-    series."""
+    quote (roster-filtered, self-promo-filtered, engagement-scored), and
+    the 7-day spike series."""
     week_index = _entity_week_items(all_items)
+    selfpromo = selfpromo or []
     enriched: list[BeatRenderDataV2] = []
 
     for rank, beat in enumerate(beats, start=1):
@@ -151,11 +153,12 @@ def enrich_v2(
             archive_client.fetch_binary(info.portrait_url) if info.portrait_url else None
         )
 
-        # Best quote: hard filters (roster, length, emoji/caps) then
-        # engagement score. clean_text strips emoji for display.
+        # Best quote: hard filters (roster, blocklist, length, emoji/caps,
+        # self-promo) then engagement score. clean_text strips emoji.
         candidates = bluesky_candidates(beat.items)
         chosen, stages = quote_filter.select_quote_staged(
-            candidates, engagement_by_uri, roster=roster, blocklist=blocklist
+            candidates, engagement_by_uri,
+            roster=roster, blocklist=blocklist, selfpromo=selfpromo,
         )
         logger.info("  %s", stages.log_line(beat.entity))
         q_text = ""
@@ -197,9 +200,37 @@ def enrich_v2(
                 spike_source_mix=_spike_source_mix(week_items, pk, week.week_of),
                 peak_callout=_peak_callout(week.week_of, counts),
                 context_line=_context_line(total, week.week_of, counts),
+                is_payoff=(rank == 1),  # #1 is the countdown payoff
             )
         )
     return enriched
+
+
+# ---------------------------------------------------------------------------
+# v2.2 render order + cut timeline
+# ---------------------------------------------------------------------------
+
+
+def countdown_order(beats: list) -> list:
+    """Render beats in ascending suspense — #5 first, #1 (payoff) last.
+    Rank glyphs still show the true rank."""
+    return sorted(beats, key=lambda b: -b.rank)
+
+
+def build_cut_timeline(segments: list[tuple[str, float]]) -> list[dict]:
+    """Turn ordered (label, duration) segments into absolute cut points
+    [{label, start, end, duration}] for the music-sync sidecar."""
+    out: list[dict] = []
+    t = 0.0
+    for label, dur in segments:
+        out.append({
+            "label": label,
+            "start": round(t, 3),
+            "end": round(t + dur, 3),
+            "duration": round(dur, 3),
+        })
+        t += dur
+    return out
 
 
 # ---------------------------------------------------------------------------
@@ -253,12 +284,20 @@ def run_pipeline(
         engagement = known
         logger.info("dry-run/offline: using %d cached engagement records", len(known))
 
-    # Editorial quote gates: reporter roster (live) + explicit blocklist.
+    # Editorial quote gates: reporter roster (live) + explicit blocklist
+    # + self-promo opening patterns (v2.2).
     roster = quote_filter.load_roster() if fetch_live else set()
     blocklist = quote_filter.load_blocklist()
-    logger.info("quote gates: roster=%d handles, blocklist=%d handles", len(roster), len(blocklist))
+    selfpromo = quote_filter.load_selfpromo_patterns()
+    logger.info(
+        "quote gates: roster=%d handles, blocklist=%d handles, selfpromo=%d patterns",
+        len(roster), len(blocklist), len(selfpromo),
+    )
 
-    enriched = enrich_v2(ranked, week, items, engagement, roster=roster, blocklist=blocklist)
+    enriched = enrich_v2(
+        ranked, week, items, engagement,
+        roster=roster, blocklist=blocklist, selfpromo=selfpromo,
+    )
     for b in enriched:
         logger.info(
             "  #%d %-28s %4d mentions · week %d · quote=%s · eng=%s",
@@ -290,6 +329,35 @@ def run_pipeline(
     return produced
 
 
+def _write_cut_timeline(
+    spec: fs.FormatSpec, order: list[BeatRenderDataV2], out_dir: Path, week_of: str
+) -> Path:
+    """Emit the music-sync sidecar: every phase-boundary timestamp for
+    the assembled video, so a future pass can beat-sync when a track is
+    dropped in. ffmpeg_compose itself stays silent-fallback."""
+    segments: list[tuple[str, float]] = [("cold_open", COLD_OPEN_SECONDS)]
+    for b in order:
+        for phase, dur in beat_phase_plan(b.is_payoff):
+            segments.append((f"beat_rank{b.rank}_{phase}", dur))
+    from render_outro_v2 import OUTRO_SECONDS
+    from render_cta_v2 import CTA_SECONDS
+    segments.append(("outro", OUTRO_SECONDS))
+    segments.append(("cta", CTA_SECONDS))
+
+    timeline = build_cut_timeline(segments)
+    payload = {
+        "week_of": week_of,
+        "format": spec.key,
+        "fps": spec.fps,
+        "total_seconds": timeline[-1]["end"] if timeline else 0.0,
+        "cuts": timeline,
+    }
+    path = out_dir / f"{week_of}_{spec.key}_cuts.json"
+    path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    logger.info("wrote cut timeline %s (%.1fs total)", path, payload["total_seconds"])
+    return path
+
+
 def _render_one_format(
     week: WeekRange,
     spec: fs.FormatSpec,
@@ -297,14 +365,21 @@ def _render_one_format(
     out_dir: Path,
     week_of: str,
 ) -> Path:
-    intro = render_intro_v2(spec, week.week_of)
-    beats = [render_beat_v2(spec, b) for b in enriched]
-    leaderboard_rows = [(b.rank, b.entity.name, b.mention_count) for b in enriched]
+    # Cold open teases the #1 player's face (no name); beats play in
+    # countdown order (#5 → #1); outro leaderboard; CTA end-card.
+    payoff = next((b for b in enriched if b.is_payoff), enriched[0])
+    order = countdown_order(enriched)
+    coldopen = render_coldopen_v2(spec, payoff.portrait_bytes, len(enriched))
+    beats = [render_beat_v2(spec, b) for b in order]
+    leaderboard_rows = [(b.rank, b.entity.name, b.mention_count) for b in sorted(enriched, key=lambda b: b.rank)]
     outro = render_outro_v2(spec, week.week_of, leaderboard_rows)
+    cta = render_cta_v2(spec)
 
-    # Hard cut between beats — concat with no crossfade (the next rank
-    # glyph slides in at the top of the next hero phase).
-    full = ffmpeg_compose.concat_clips([intro, *beats, outro])
+    # Emit the cut-timeline sidecar alongside the video.
+    _write_cut_timeline(spec, order, out_dir, week_of)
+
+    # Hard cuts throughout (no crossfade) — the social-edit pace.
+    full = ffmpeg_compose.concat_clips([coldopen, *beats, outro, cta])
     silent = out_dir / f"{week_of}_{spec.key}_v2.silent.mp4"
     final = out_dir / f"{week_of}_{spec.key}_v2.mp4"
     ffmpeg_compose.write_silent(full, silent, fps=spec.fps)
@@ -324,8 +399,9 @@ def _build_arg_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description="Sunday Scoreboard v2 (Spotlight Edit) renderer.")
     p.add_argument("--week-of", required=True, help="Sunday opening the week (UTC, YYYY-MM-DD).")
     p.add_argument(
-        "--format", choices=list(fs.FORMAT_SPECS), default="square",
-        help="Format to render (v2 validates square first; default square).",
+        "--format", choices=list(fs.FORMAT_SPECS), default="vertical",
+        help="Format to render. v2.2 is vertical-first (9:16); default vertical. "
+             "Use --format square / horizontal for the others.",
     )
     p.add_argument("--out-dir", default=None, help="Output dir (default: outputs/).")
     p.add_argument("--top-n", type=int, default=10, help="Number of beats (default 10).")

@@ -154,6 +154,62 @@ peak callout above, source-mix pills + a one-line context row
 ("378 mentions this week · peaked Wednesday") below — no more dead
 whitespace at the bottom.
 
+## v2.2 — social-first edit (current)
+
+A motion-design + retention pass after a video-editor review of the
+v2.1 render: it read like a dashboard recording, not a social video.
+The data pipeline (players-only, dedupe, roster-gated quotes) is
+unchanged; this pass rebuilds the *edit*.
+
+**Vertical-first.** Every layout is designed for 9:16 (1080×1920) and
+scaled to square/horizontal by frame height (`lib/style22.metrics`,
+reference 1920). The shared `format_specs.FormatSpec` font fields are
+left untouched (v1 still reads them); v2.2 derives its own bold type
+scale. `--format` defaults to **vertical**; square + horizontal still
+render.
+
+**Structure (top-5 ≈ 50s; top-10 ≈ 90s):**
+
+| Segment | Dur | Notes |
+| ------- | --- | ----- |
+| Cold open | 3.0s | #1 player's portrait full-bleed duotone, slow zoom; hook slams in <0.3s; **name withheld** (the finale tease); brand mark ambient. Replaces the v2.0 title card. |
+| Beats (countdown) | 8.0s each | Rendered **#N → #1** (ascending suspense); rank glyphs show the true rank. |
+| #1 payoff beat | 10.0s | +2.0s and the most dramatic entrance. |
+| Outro | 3.0s | Leaderboard, header N = the real beat count (never hardcoded), count-up bars. |
+| CTA end-card | 2.5s | "Full data → HoopsMatic.com" — the clean screenshot frame. |
+
+**Beat phases (hard cuts, no crossfade):** full-bleed **duotone** hero
+(portrait ≥80% height, brand-blue/white wash, big uppercase name over
+the lower third, animated mention counter, big rank glyph) → white
+**quote card** (rounded, 8px accent left border, soft shadow, larger
+avatar, quote slammed in as a block, engagement ticker) → **area-filled
+spike sparkline** (filled so it's never sparse) + context row.
+
+**Pace / dead-air rules (hard).** No frame may be >60% empty; the
+test-only `lib/frame_audit` samples frames and fails if any is >85% the
+brand background tone (tol tuned so white cards count as content, not
+background). Text elements are legible well under 0.4s; the quote
+animates in as a single block (~0.35s), not a line-by-line drip.
+
+**Quote self-promo filter (v2.2).** Before scoring, reject candidates
+whose opening (~40 chars) is self-promotion — `selfpromo_patterns` in
+`data/quote_blocklist.json` ("wrote about", "my latest", "icymi", …)
+plus a leading bare URL. Config-driven so it extends without code
+changes. This is on top of the v2.1 roster + blocklist + length +
+emoji/caps gates.
+
+**Music (slot ready, no track).** Still silent-fallback. The orchestrator
+emits `outputs/{date}_{format}_cuts.json` — every phase-boundary
+timestamp for the assembled video — so a future pass can beat-sync once
+a licensed `assets/music/background-recap.mp3` is dropped in.
+`ffmpeg_compose` is otherwise unchanged.
+
+**Boundaries.** v1 and the v2.0 foundation lib (parallax, sparkline,
+engagement_score, beat_select, layout) are untouched. v2.2 adds new
+modules (`style22`, `duotone`, `anim`, `frame_audit`, the cold-open /
+CTA / helpers render scripts) and extends `quote_filter` for the
+self-promo gate.
+
 ## Intent
 
 A polished, fully automated weekly NBA recap. Same brand language as
