@@ -465,7 +465,10 @@ a.when:hover{ color:var(--text); text-decoration:underline }
    widths — the 6.5rem thumb left no room for legible meta. */
 @media(max-width:600px){
   .bsky-extcard{ flex-direction:column }
-  .bsky-extcard img{ width:100%; height:9rem }
+  /* Polish-1: full-width thumb scales at the Open Graph 1.91:1 ratio
+     instead of a fixed 9rem height, which cropped heads/feet once the
+     card spanned the phone width. object-fit:cover inherited from base. */
+  .bsky-extcard img{ width:100%; height:auto; aspect-ratio:1.91/1 }
 }
 .bsky-extcard .ext-title{
   font-size:.86rem; font-weight:600; line-height:1.35;
@@ -520,7 +523,9 @@ a.when:hover{ color:var(--text); text-decoration:underline }
 }
 @media(max-width:600px){
   .bsky-linkcard{ flex-direction:column }
-  .bsky-linkcard .lc-thumb{ width:100%; height:9rem; }
+  /* Polish-1: full-width thumb scales at the Open Graph 1.91:1 ratio
+     instead of a fixed 9rem height (same crop fix as .bsky-extcard). */
+  .bsky-linkcard .lc-thumb{ width:100%; height:auto; aspect-ratio:1.91/1; }
 }
 
 /* YouTube: full-width 16:9 lazy embed. Click the poster to swap in the iframe. */
