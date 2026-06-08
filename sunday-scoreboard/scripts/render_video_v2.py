@@ -33,13 +33,14 @@ from lib import format_specs as fs  # noqa: E402
 from lib import quote_filter, sparkline  # noqa: E402
 from lib.engagement_score import (  # noqa: E402
     Engagement,
+    at_uri_from_item,
     bluesky_candidates,
     quote_text,
 )
 from lib.reporter_lookup import reporters_from_items  # noqa: E402
 from cluster_beats import Beat, cluster_beats  # noqa: E402
 from fetch_week_data import WeekRange, gather_week  # noqa: E402
-from rank_beats import filter_noise, rank_beats  # noqa: E402
+from rank_beats import filter_noise  # noqa: E402
 import fetch_engagement  # noqa: E402
 from render_beat_v2 import BeatRenderDataV2, beat_phase_plan, render_beat_v2  # noqa: E402
 from render_coldopen_v2 import render_coldopen_v2, COLD_OPEN_SECONDS  # noqa: E402
@@ -139,12 +140,18 @@ def enrich_v2(
     roster: set[str],
     blocklist: set[str],
     selfpromo: list[str] | None = None,
+    demote: set[str] | None = None,
 ) -> list[BeatRenderDataV2]:
     """Hydrate ranked beats into v2 render data: portrait, best *reporter*
     quote (roster-filtered, self-promo-filtered, engagement-scored), and
     the 7-day spike series."""
     week_index = _entity_week_items(all_items)
     selfpromo = selfpromo or []
+    demote = demote or set()
+    # Cross-beat dedupe (v2.3): a post uri / account used by one beat is
+    # excluded from the others, so distinct reporters carry the 5 beats.
+    used_uris: set[str] = set()
+    used_handles: set[str] = set()
     enriched: list[BeatRenderDataV2] = []
 
     for rank, beat in enumerate(beats, start=1):
@@ -153,14 +160,38 @@ def enrich_v2(
             archive_client.fetch_binary(info.portrait_url) if info.portrait_url else None
         )
 
-        # Best quote: hard filters (roster, blocklist, length, emoji/caps,
-        # self-promo) then engagement score. clean_text strips emoji.
+        # 7-day spike series — the SINGLE number shown everywhere (hero
+        # counter, sparkline total, outro), so they always agree.
+        week_items = week_index.get((beat.entity, beat.entity_kind), beat.items)
+        counts = sparkline.daily_mention_counts(week_items, week.week_of, days=7)
+        labels = sparkline.day_labels(week.week_of, days=7)
+        pk = sparkline.peak_index(counts)
+        total = sum(counts)
+
+        # Quote: filter + order candidates, then take the best one whose
+        # post AND account aren't already used; non-demoted before demoted.
         candidates = bluesky_candidates(beat.items)
-        chosen, stages = quote_filter.select_quote_staged(
+        ordered, stages = quote_filter.rank_candidates(
             candidates, engagement_by_uri,
-            roster=roster, blocklist=blocklist, selfpromo=selfpromo,
+            roster=roster, blocklist=blocklist, selfpromo=selfpromo, demote=demote,
         )
-        logger.info("  %s", stages.log_line(beat.entity))
+        chosen = None
+        for prefer_demoted in (False, True):
+            for item, eng, is_dem in ordered:
+                if is_dem != prefer_demoted:
+                    continue
+                uri = at_uri_from_item(item)
+                handle = quote_filter._handle_of(item)
+                if uri in used_uris or handle in used_handles:
+                    continue
+                chosen = (item, eng)
+                used_uris.add(uri)
+                used_handles.add(handle)
+                break
+            if chosen:
+                break
+        logger.info("  %s%s", stages.log_line(beat.entity), "" if chosen else " (none after dedupe)")
+
         q_text = ""
         reporter = None
         avatar_bytes = None
@@ -176,18 +207,11 @@ def enrich_v2(
                     if reporter.avatar_url else None
                 )
 
-        # 7-day spike series from the entity's whole-week items.
-        week_items = week_index.get((beat.entity, beat.entity_kind), beat.items)
-        counts = sparkline.daily_mention_counts(week_items, week.week_of, days=7)
-        labels = sparkline.day_labels(week.week_of, days=7)
-        pk = sparkline.peak_index(counts)
-        total = sum(counts)
-
         enriched.append(
             BeatRenderDataV2(
                 rank=rank,
                 entity=info,
-                mention_count=beat.mention_count,
+                mention_count=total,          # == weekly total (consistent)
                 source_mix=beat.source_mix,
                 portrait_bytes=portrait_bytes,
                 quote_text=q_text,
@@ -259,19 +283,26 @@ def run_pipeline(
         logger.error("no items fetched for week %s — aborting", week_of)
         return []
 
-    # v2.1 selection: players only → noise filter → rank → one beat per
-    # player → top N. Teams never become beats (only hero-card context),
-    # and the top-N is N distinct players.
+    # Selection: players only → noise filter → rank by the 7-DAY WINDOW
+    # total (v2.3: the same number shown on screen) → one beat per player
+    # → top N. Teams are only hero-card context, never beats.
     raw = cluster_beats(items, window_hours=24)
     player_beats = beat_select.players_only(raw)
-    ranked_all = rank_beats(filter_noise(player_beats), top_n=len(player_beats))
-    ranked = beat_select.one_beat_per_player(ranked_all)[:top_n]
+    filtered = filter_noise(player_beats)
+    week_index = _entity_week_items(items)
+
+    def _week_total(b: Beat) -> int:
+        wk = week_index.get((b.entity, b.entity_kind), b.items)
+        return sum(sparkline.daily_mention_counts(wk, week.week_of, days=7))
+
+    ordered = sorted(filtered, key=lambda b: (-_week_total(b), -b.source_count, -b.end.timestamp()))
+    ranked = beat_select.one_beat_per_player(ordered)[:top_n]
     if not ranked:
         logger.error("no player beats survived selection — aborting")
         return []
     logger.info(
-        "selected %d distinct players from %d items (%d raw beats, %d player beats)",
-        len(ranked), len(items), len(raw), len(player_beats),
+        "selected %d distinct players from %d items (ranked by 7-day window total)",
+        len(ranked), len(items),
     )
 
     # Engagement re-fetch (cached per week) over the final beats' candidates.
@@ -289,14 +320,15 @@ def run_pipeline(
     roster = quote_filter.load_roster() if fetch_live else set()
     blocklist = quote_filter.load_blocklist()
     selfpromo = quote_filter.load_selfpromo_patterns()
+    demote = quote_filter.load_demote_handles()
     logger.info(
-        "quote gates: roster=%d handles, blocklist=%d handles, selfpromo=%d patterns",
-        len(roster), len(blocklist), len(selfpromo),
+        "quote gates: roster=%d, blocklist=%d, selfpromo=%d patterns, demote=%d",
+        len(roster), len(blocklist), len(selfpromo), len(demote),
     )
 
     enriched = enrich_v2(
         ranked, week, items, engagement,
-        roster=roster, blocklist=blocklist, selfpromo=selfpromo,
+        roster=roster, blocklist=blocklist, selfpromo=selfpromo, demote=demote,
     )
     for b in enriched:
         logger.info(

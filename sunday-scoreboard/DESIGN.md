@@ -154,7 +154,46 @@ peak callout above, source-mix pills + a one-line context row
 ("378 mentions this week · peaked Wednesday") below — no more dead
 whitespace at the bottom.
 
-## v2.2 — social-first edit (current)
+## v2.3 — vertical render fixes (current)
+
+Rendering-defect fixes after the first vertical render (architecture was
+correct). All in the v2.x layer; v1 and the v2.0 foundation lib —
+including `lib/sparkline` (we use only its pure math and draw the chart
+ourselves) — are untouched.
+
+1. **Text overflow** — `render_helpers_v2.fit_font/fit_text/fit_wrapped`
+   auto-shrink every text element to a ≥64px safe margin (scaled by
+   width), with an ellipsis floor; long single words (ANTETOKOUNMPO,
+   GILGEOUS-ALEXANDER) shrink rather than clip. Applied to the hero name,
+   counter label, sparkline axis + callout, quote card, CTA, cold open.
+2. **Sparkline drawing** — `_draw_sparkline` recomputes the plot rect
+   explicitly from the actual phase panel (no square assumption) and
+   self-draws the full 7-point line + area fill + peak marker; axis
+   labels are fit and edge-clamped. `frame_audit.assert_chart_drawn`
+   fails if the chart region has too few non-background, non-card-fill
+   pixels (catches the empty-chart-in-a-card case the bg auditor missed).
+3. **CTA tofu** — the `→` (absent from DM Sans) is now a drawn triangle;
+   `safe_text` strips any non-renderable codepoint before every draw
+   call; CTA strings are pure ASCII.
+4. **Counter** — settles 0→N within `COUNTER_SETTLE` (0.4s) then HOLDS
+   the final value for the rest of the phase (no "0 MENTIONS" mid-roll).
+5. **One number everywhere** — beats are ranked by the **7-day window
+   total**, and that same total is the hero counter, the sparkline total
+   (summed from its own 7 daily values), and the outro row. They cannot
+   disagree.
+6. **Quote dedupe + demotion** — a post uri / account used by one beat is
+   excluded from the others (distinct reporters across the countdown);
+   a `demote` list in `quote_blocklist.json` (aggregator / stat-bot
+   handles) is used only when no non-demoted roster post qualifies — not
+   hard-blocked, so empty states stay rare.
+7. **Duotone legibility** — lighter endpoints (`#2a4a96` → `#ffffff`)
+   plus a 0.72 midtone gamma lift so faces read clearly while keeping the
+   blue brand cast.
+8. **Lower-third consistency** — name / team / counter anchor to a fixed
+   lower-third band with a reserved 2-line name block, so baselines don't
+   jump between beats; nothing above the band overlaps the rank glyph.
+
+## v2.2 — social-first edit
 
 A motion-design + retention pass after a video-editor review of the
 v2.1 render: it read like a dashboard recording, not a social video.

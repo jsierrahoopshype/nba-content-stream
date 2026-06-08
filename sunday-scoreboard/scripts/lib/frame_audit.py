@@ -46,6 +46,48 @@ def max_background_fraction(
     return worst, worst_t
 
 
+def region_content_pixels(
+    frame,
+    region: tuple[int, int, int, int],
+    *,
+    bg_rgb: tuple[int, int, int] | None = None,
+    ignore: tuple[tuple[int, int, int], ...] = (),
+    tol: int = 7,
+) -> int:
+    """Count pixels inside `region` (x0,y0,x1,y1) that are NOT the
+    background AND not any `ignore` color (e.g. a flat card fill). Used
+    to detect an empty chart sitting inside a colored card — which the
+    plain background auditor misses."""
+    import numpy as np
+
+    if bg_rgb is None:
+        bg_rgb = fs.hex_to_rgb(fs.BACKGROUND)
+    x0, y0, x1, y1 = region
+    arr = np.asarray(frame).astype(np.int16)[y0:y1, x0:x1]
+    mask = np.abs(arr - np.array(bg_rgb, dtype=np.int16)).mean(axis=2) > tol
+    for col in ignore:
+        mask &= np.abs(arr - np.array(col, dtype=np.int16)).mean(axis=2) > tol
+    return int(mask.sum())
+
+
+def assert_chart_drawn(
+    frame,
+    region: tuple[int, int, int, int],
+    *,
+    min_pixels: int,
+    ignore: tuple[tuple[int, int, int], ...] = (),
+    label: str = "chart",
+) -> None:
+    """Fail if `region` has fewer than `min_pixels` content pixels —
+    i.e. the chart (line/fill/markers) didn't actually draw inside its
+    card."""
+    n = region_content_pixels(frame, region, ignore=ignore)
+    assert n >= min_pixels, (
+        f"{label}: only {n} content px in {region} (min {min_pixels}) — "
+        f"chart appears empty"
+    )
+
+
 def assert_no_dead_air(clip, *, threshold: float = 0.85, interval: float = 1.0, label: str = "clip") -> None:
     """Raise AssertionError if any sampled frame is more than `threshold`
     background. Hard rule: no frame >85% empty."""

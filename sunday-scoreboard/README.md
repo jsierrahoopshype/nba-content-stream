@@ -83,7 +83,17 @@ spike sparkline, hard cuts throughout, no dead air. A
 `{date}_{format}_cuts.json` sidecar lists every phase boundary so a
 future pass can beat-sync music. Quote selection adds a **self-promo
 filter** ("wrote about", "icymi", leading URLs, …) on top of the v2.1
-roster/blocklist gates. See [DESIGN.md § v2.2](./DESIGN.md#v22--social-first-edit-current).
+roster/blocklist gates. See [DESIGN.md § v2.2](./DESIGN.md#v22--social-first-edit).
+
+**v2.3 (rendering fixes)** corrects the first vertical render: every text
+element now auto-shrinks to a ≥64px safe margin (no more clipped names);
+the sparkline draws a real 7-point line + area fill at all aspect ratios;
+the CTA `→` is a drawn triangle (no tofu); the mention counter settles in
+0.4s then holds; one number (the 7-day window total) is shown on the hero,
+sparkline, and outro; quotes are de-duped across beats and aggregator/
+stat-bot accounts are demoted (config `demote` list, not hard-blocked);
+the duotone is lightened for face legibility. See
+[DESIGN.md § v2.3](./DESIGN.md#v23--vertical-render-fixes-current).
 
 **v2.1** is players-only (teams are hero-card context, never beats),
 keeps one beat per player (N distinct players), and gates the "best
@@ -97,7 +107,11 @@ plus `data/quote_blocklist.json`. v2 fetches live Bluesky engagement
 PYTHONPATH=scripts python3 -m pytest scripts/tests/ -q
 ```
 
-155 smoke tests: 28 original (clustering, ranking, format specs, source
+179 smoke tests (v2.3 adds: text-fit/no-overflow across formats, the
+7-point sparkline drawing + region content auditor, CTA no-tofu, counter
+settle-and-hold, one-number consistency, cross-beat quote dedupe +
+aggregator demotion, lightened-duotone legibility). Earlier coverage:
+28 original (clustering, ranking, format specs, source
 styling, lookups), 43 for v2 (parallax/Ken Burns math, sparkline,
 engagement scoring + AT-URI, paced fetcher), 47 for v2.1 (players-only +
 dedupe, quote filters + roster/blocklist + sentence-safe truncation +

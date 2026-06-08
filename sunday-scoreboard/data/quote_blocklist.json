@@ -1,5 +1,17 @@
 {
-  "_comment": "Explicit blocklist of official / league / team Bluesky handles that should never be quoted, even if they slip into the reporter roster. The roster allowlist in data/sources/bluesky_handles.csv is the primary editorial gate; this is a belt-and-suspenders second gate. Handles are matched case-insensitively, exactly or as a subdomain (handle endswith '.<entry>'). Any handle containing 'nba.com' is blocked automatically. 'selfpromo_patterns' (v2.2) reject quote candidates whose first ~40 chars are self-promotion rather than observation; matched case-insensitively as substrings of the cleaned opening; a leading bare URL is also rejected in code.",
+  "_comment": "Explicit blocklist of official / league / team Bluesky handles that should never be quoted, even if they slip into the reporter roster. The roster allowlist in data/sources/bluesky_handles.csv is the primary editorial gate; this is a belt-and-suspenders second gate. Handles are matched case-insensitively, exactly or as a subdomain (handle endswith '.<entry>'). Any handle containing 'nba.com' is blocked automatically. 'selfpromo_patterns' (v2.2) reject quote candidates whose first ~40 chars are self-promotion rather than observation; matched case-insensitively as substrings of the cleaned opening; a leading bare URL is also rejected in code. 'demote' (v2.3) lists aggregator / stat-bot accounts that are NOT hard-blocked but are only used when no non-demoted roster post qualifies, so empty quote states stay rare.",
+  "demote": [
+    "nbastat.bsky.social",
+    "nbastats.bsky.social",
+    "statmuse.bsky.social",
+    "basketball-reference.com",
+    "bbalref.bsky.social",
+    "nbacentral.bsky.social",
+    "nba_central.bsky.social",
+    "underdognba.bsky.social",
+    "buckets.bsky.social",
+    "courtsidebuzz.bsky.social"
+  ],
   "selfpromo_patterns": [
     "wrote about",
     "i wrote",

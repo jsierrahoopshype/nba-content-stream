@@ -20,27 +20,42 @@ from . import style22
 logger = logging.getLogger("duotone")
 
 
-def _build_lut(shadow: tuple[int, int, int], highlight: tuple[int, int, int]):
-    """Per-channel 256-entry LUTs mapping luminance 0→shadow, 255→highlight."""
+# v2.3: lighter, legible duotone. The v2.2 shadow (#1e3a8a) crushed
+# faces into navy. We lift the shadow endpoint to a mid-blue, map
+# highlights to pure white, and apply a midtone gamma (<1) so faces stay
+# clearly readable while keeping the blue brand cast.
+DUOTONE_SHADOW_V23 = "#2a4a96"
+DUOTONE_HIGHLIGHT_V23 = "#ffffff"
+DUOTONE_GAMMA = 0.72
+
+
+def _build_lut(shadow: tuple[int, int, int], highlight: tuple[int, int, int], gamma: float):
+    """Per-channel 256-entry LUTs: luminance v → shadow..highlight after
+    a `gamma` midtone lift (gamma<1 brightens midtones)."""
     luts = []
     for ch in range(3):
         lo, hi = shadow[ch], highlight[ch]
-        luts.append([int(lo + (hi - lo) * v / 255.0) for v in range(256)])
+        col = []
+        for v in range(256):
+            lifted = (v / 255.0) ** gamma
+            col.append(int(round(lo + (hi - lo) * lifted)))
+        luts.append(col)
     return luts
 
 
 def duotone(
     img: Image.Image,
     *,
-    shadow: str = style22.DUOTONE_SHADOW,
-    highlight: str = style22.DUOTONE_HIGHLIGHT,
+    shadow: str = DUOTONE_SHADOW_V23,
+    highlight: str = DUOTONE_HIGHLIGHT_V23,
+    gamma: float = DUOTONE_GAMMA,
     autocontrast: bool = True,
 ) -> Image.Image:
-    """Map `img` to a brand-blue duotone. Returns RGBA."""
+    """Map `img` to a legible brand-blue duotone (v2.3). Returns RGBA."""
     g = img.convert("L")
     if autocontrast:
         g = ImageOps.autocontrast(g, cutoff=1)
-    luts = _build_lut(fs.hex_to_rgb(shadow), fs.hex_to_rgb(highlight))
+    luts = _build_lut(fs.hex_to_rgb(shadow), fs.hex_to_rgb(highlight), gamma)
     r = g.point(luts[0])
     gg = g.point(luts[1])
     b = g.point(luts[2])
@@ -60,7 +75,7 @@ def cover_crop(img: Image.Image, size: tuple[int, int], *, anchor: str = "center
     return resized.crop((left, top, left + cw, top + ch))
 
 
-def duotone_panel(size: tuple[int, int], *, shadow: str = style22.DUOTONE_SHADOW) -> Image.Image:
+def duotone_panel(size: tuple[int, int], *, shadow: str = DUOTONE_SHADOW_V23) -> Image.Image:
     """A solid brand-blue panel at `size` — the headshot-404 fallback
     base (initials are drawn on top by the caller at full scale)."""
     return Image.new("RGBA", size, fs.hex_to_rgb(shadow) + (255,))

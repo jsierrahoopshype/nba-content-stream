@@ -8,11 +8,78 @@ phases.
 
 from __future__ import annotations
 
-from PIL import Image
+from PIL import Image, ImageDraw
 
-from lib import draw, parallax
+from lib import draw, parallax, quote_filter
 from lib import format_specs as fs
 from lib import style22
+
+# Minimum safe margin each side (≥64px at 1080w), scaled by frame width.
+def safe_margin(spec: fs.FormatSpec) -> int:
+    return max(spec.pad, int(round(64 * spec.width / 1080)))
+
+
+def safe_width(spec: fs.FormatSpec) -> int:
+    """Usable text width inside the safe margins."""
+    return spec.width - 2 * safe_margin(spec)
+
+
+def safe_text(text: str) -> str:
+    """Strip any non-renderable codepoint (emoji/symbols/arrows) and
+    collapse whitespace before it reaches a draw call — guards every
+    phase against tofu while preserving accented Latin names."""
+    return quote_filter.clean_text(text or "")
+
+
+def fit_font(text, font_path, max_size, max_width, *, min_size=14, step=2):
+    """Largest font (≤max_size, ≥min_size) at which `text` fits
+    `max_width`."""
+    size = max_size
+    while size > min_size:
+        f = draw.font(font_path, size)
+        if draw.measure_text(text, f)[0] <= max_width:
+            return f
+        size -= step
+    return draw.font(font_path, min_size)
+
+
+def fit_text(text, font_path, max_size, max_width, *, min_size=14):
+    """Return `(font, text)` that fits `max_width`: shrink the font, and
+    if still too wide at `min_size`, ellipsize as the floor."""
+    f = fit_font(text, font_path, max_size, max_width, min_size=min_size)
+    if draw.measure_text(text, f)[0] <= max_width:
+        return f, text
+    return f, draw.fit_text_to_width(text, f, max_width)
+
+
+def fit_wrapped(text, font_path, max_size, max_width, *, max_lines=2, min_size=14, step=4):
+    """Wrap `text` to ≤`max_lines`, shrinking the font until even the
+    longest word fits `max_width` (so long names like ANTETOKOUNMPO
+    never clip mid-word). Ellipsis floor at `min_size`."""
+    words = text.split() or [text]
+    size = max_size
+    while size >= min_size:
+        f = draw.font(font_path, size)
+        if max((draw.measure_text(w, f)[0] for w in words), default=0) <= max_width:
+            lines = draw.wrap_text(text, f, max_width, max_lines)
+            if all(draw.measure_text(ln, f)[0] <= max_width for ln in lines):
+                return f, lines
+        size -= step
+    f = draw.font(font_path, min_size)
+    lines = draw.wrap_text(text, f, max_width, max_lines)
+    return f, [draw.fit_text_to_width(ln, f, max_width) for ln in lines]
+
+
+def draw_triangle(canvas, center, size, color, *, direction="right") -> None:
+    """Draw a small filled triangle marker (renderable replacement for
+    glyphs DM Sans lacks, e.g. the → arrow)."""
+    cx, cy = center
+    s = size
+    if direction == "right":
+        pts = [(cx - s, cy - s), (cx + s, cy), (cx - s, cy + s)]
+    else:  # down
+        pts = [(cx - s, cy - s), (cx + s, cy - s), (cx, cy + s)]
+    ImageDraw.Draw(canvas).polygon(pts, fill=draw.rgb(color, 255))
 
 
 def brand_mark(canvas: Image.Image, spec: fs.FormatSpec, m: dict, *, on_dark: bool = False) -> None:

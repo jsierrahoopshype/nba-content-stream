@@ -262,19 +262,34 @@ def is_self_promo(text: str, patterns: Iterable[str], *, head_chars: int = 40) -
     return any(p in head for p in patterns)
 
 
-def load_blocklist(path: Path | None = None) -> set[str]:
-    """Load the explicit handle blocklist (lowercased). Missing file →
-    empty set."""
+def _load_handle_list(key: str, path: Path | None) -> set[str]:
     path = path or BLOCKLIST_PATH
     if not path.exists():
         return set()
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
-        logger.warning("blocklist unreadable (%s): %s", path, exc)
+        logger.warning("blocklist config unreadable (%s): %s", path, exc)
         return set()
-    handles = data.get("handles", data) if isinstance(data, dict) else data
+    if isinstance(data, dict):
+        handles = data.get(key, [])
+    elif key == "handles":
+        handles = data
+    else:
+        handles = []
     return {normalize_handle(str(h)) for h in handles if normalize_handle(str(h))}
+
+
+def load_blocklist(path: Path | None = None) -> set[str]:
+    """Load the explicit handle blocklist (normalized). Missing → empty."""
+    return _load_handle_list("handles", path)
+
+
+def load_demote_handles(path: Path | None = None) -> set[str]:
+    """Load the aggregator/stat-bot demotion list (v2.3). These are NOT
+    hard-blocked — they're only chosen when no non-demoted roster post
+    qualifies, keeping empty quote states rare."""
+    return _load_handle_list("demote", path)
 
 
 def is_blocked_handle(handle: str, blocklist: set[str]) -> bool:
@@ -434,6 +449,48 @@ def select_quote_staged(
         eng = chosen[1]
         stages.picked_engagement = eng.total if eng is not None else None
     return chosen, stages
+
+
+def rank_candidates(
+    candidates: list[dict],
+    engagement_by_uri: dict[str, Engagement],
+    *,
+    roster: set[str],
+    blocklist: set[str],
+    min_chars: int = MIN_QUOTE_CHARS,
+    selfpromo: Iterable[str] = (),
+    demote: set[str] = frozenset(),
+) -> tuple[list[tuple[dict, Optional[Engagement], bool]], QuoteStages]:
+    """Filter then ORDER a beat's candidates best-first for cross-beat
+    assignment (v2.3 dedupe).
+
+    Returns `([(item, engagement, is_demoted), …], stages)`. Non-demoted
+    posts always sort ahead of demoted ones; within each tier, higher
+    engagement score wins, ties broken by recency. Stages carry the
+    per-stage survivor counts for the diagnostic log line.
+    """
+    cands = list(candidates)
+    stages = QuoteStages(candidates=len(cands))
+    after_roster = [it for it in cands if not roster or _handle_of(it) in roster]
+    stages.after_roster = len(after_roster)
+    after_block = [it for it in after_roster if not is_blocked_handle(_handle_of(it), blocklist)]
+    stages.after_blocklist = len(after_block)
+    survivors = [it for it in after_block if _quality_ok(it, min_chars, selfpromo)]
+    stages.after_quality = len(survivors)
+
+    def eng_of(it: dict) -> Optional[Engagement]:
+        uri = at_uri_from_item(it)
+        return engagement_by_uri.get(uri) if uri else None
+
+    def sort_key(it: dict):
+        e = eng_of(it)
+        return (e.score if e is not None else -1, it.get("published_at") or "")
+
+    ordered = sorted(survivors, key=sort_key, reverse=True)
+    out = [(it, eng_of(it), _handle_of(it) in demote) for it in ordered]
+    # Non-demoted first (stable within tier).
+    out.sort(key=lambda row: row[2])
+    return out, stages
 
 
 def select_quote(

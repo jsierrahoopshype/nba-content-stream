@@ -22,8 +22,17 @@ def test_duotone_maps_black_to_shadow_and_white_to_highlight():
     img.putpixel((0, 0), (0, 0, 0))        # black → shadow
     img.putpixel((1, 0), (255, 255, 255))  # white → highlight
     out = duotone.duotone(img, autocontrast=False)
-    assert out.getpixel((0, 0))[:3] == fs.hex_to_rgb(style22.DUOTONE_SHADOW)
-    assert out.getpixel((1, 0))[:3] == fs.hex_to_rgb(style22.DUOTONE_HIGHLIGHT)
+    # v2.3: lighter endpoints (gamma keeps the 0/255 extremes exact).
+    assert out.getpixel((0, 0))[:3] == fs.hex_to_rgb(duotone.DUOTONE_SHADOW_V23)
+    assert out.getpixel((1, 0))[:3] == fs.hex_to_rgb(duotone.DUOTONE_HIGHLIGHT_V23)
+
+
+def test_duotone_v23_lifts_midtones_for_legibility():
+    # A mid/dark skin tone must stay clearly legible (not crushed to navy).
+    import numpy as np
+    out = np.asarray(duotone.duotone(Image.new("RGB", (1, 1), (95, 75, 65)), autocontrast=False).convert("RGB"))[0, 0]
+    lum = 0.299 * out[0] + 0.587 * out[1] + 0.114 * out[2]
+    assert lum > 120, f"duotone too dark (lum={lum:.0f})"
 
 
 def test_duotone_midtones_are_between_endpoints_and_bluish():
@@ -44,7 +53,7 @@ def test_hero_portrait_fallback_flag():
     assert had is False
     assert panel.size == (300, 400)
     # solid brand panel (the 404 base), not transparent
-    assert panel.getpixel((10, 10))[:3] == fs.hex_to_rgb(style22.DUOTONE_SHADOW)
+    assert panel.getpixel((10, 10))[:3] == fs.hex_to_rgb(duotone.DUOTONE_SHADOW_V23)
 
 
 def test_hero_portrait_decodes_real_bytes():

@@ -44,6 +44,12 @@ PAYOFF_EXTRA = {"hero": 1.0, "quote": 0.5, "spark": 0.5}
 
 MAX_QUOTE_WORDS = 12
 
+# v2.3: counter settles fast then holds (no "0 MENTIONS" caught mid-roll).
+COUNTER_SETTLE = 0.4
+# Consistent lower-third band top (fraction of frame height) so name /
+# team / counter baselines don't jump between beats.
+LOWER_THIRD = 0.60
+
 
 def beat_phase_plan(is_payoff: bool = False) -> list[tuple[str, float]]:
     """Ordered (phase_name, duration) for one beat. The payoff beat is
@@ -95,57 +101,72 @@ class BeatRenderDataV2:
 
 def _draw_hero(spec: fs.FormatSpec, beat: BeatRenderDataV2, t: float, dur: float) -> Image.Image:
     m = style22.metrics(spec)
+    k = m["k"]
+    margin = helpers.safe_margin(spec)
     prog = t / dur
 
-    # Full-bleed duotone portrait. Payoff gets a stronger push-in.
+    # Full-bleed legible duotone portrait. Payoff gets a stronger push-in.
     zoom_span = 0.12 if beat.is_payoff else 0.05
     zoom = (1.0 + zoom_span) - zoom_span * easing.quart_out(min(1.0, prog))
     bw, bh = int(spec.width * zoom), int(spec.height * zoom)
     portrait, had_img = duotone.hero_portrait(beat.portrait_bytes, (bw, bh), anchor="top")
-    canvas = Image.new("RGBA", (spec.width, spec.height), fs.hex_to_rgb(style22.DUOTONE_SHADOW) + (255,))
+    canvas = Image.new("RGBA", (spec.width, spec.height), fs.hex_to_rgb(duotone.DUOTONE_SHADOW_V23) + (255,))
     canvas.alpha_composite(portrait, (-(bw - spec.width) // 2, -(bh - spec.height) // 2))
 
     if not had_img:  # 404 fallback — big initials on the brand panel
-        init_fnt = draw.font(fs.FONT_BOLD, int(spec.height * 0.32))
-        draw.draw_text(canvas, (spec.width // 2, spec.height // 2 - int(spec.height * 0.08)),
+        init_fnt, _ = helpers.fit_text(beat.entity.initials, fs.FONT_BOLD, int(spec.height * 0.32), spec.width - 2 * margin)
+        draw.draw_text(canvas, (spec.width // 2, int(spec.height * 0.40)),
                        beat.entity.initials, init_fnt, fill=style22.DUOTONE_HIGHLIGHT, anchor="mm", alpha=235)
 
     # Bottom scrim so the name reads on any photo.
     scrim = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
-    ImageDraw.Draw(scrim).rectangle((0, int(spec.height * 0.5), spec.width, spec.height), fill=(10, 23, 48, 165))
+    ImageDraw.Draw(scrim).rectangle((0, int(spec.height * 0.5), spec.width, spec.height), fill=(10, 23, 48, 170))
     canvas.alpha_composite(scrim, (0, 0))
 
-    # Rank glyph — slams in from the left, legible by 0.3s.
-    rank_fnt = draw.font(fs.FONT_MONO_BOLD, m["rank"])
-    rx = int(spec.pad + anim.slide_offset(t, -spec.width * 0.3, 0.3))
-    draw.draw_text(canvas, (rx, spec.pad), f"#{beat.rank}", rank_fnt, fill=fs.ACCENT, alpha=240, anchor="lt")
+    # Rank glyph — slams in from the left (fit within the safe area).
+    rank_fnt = helpers.fit_font(f"#{beat.rank}", fs.FONT_MONO_BOLD, m["rank"], spec.width - 2 * margin)
+    rx = int(margin + anim.slide_offset(t, -spec.width * 0.3, 0.3))
+    draw.draw_text(canvas, (rx, margin), f"#{beat.rank}", rank_fnt, fill=fs.ACCENT, alpha=240, anchor="lt")
 
-    # Animated mention counter (0 → N over 0.8s), upper-right block.
-    count_val = anim.count_up(t, beat.mention_count, 0.8)
-    count_fnt = draw.font(fs.FONT_MONO_BOLD, m["count"])
-    label_fnt = draw.font(fs.FONT_MONO, m["count_label"])
-    cx = spec.width - spec.pad
-    cy = int(spec.height * 0.30)
-    draw.draw_text(canvas, (cx, cy), f"{count_val:,}", count_fnt, fill=style22.DUOTONE_HIGHLIGHT, anchor="rt")
-    draw.draw_text(canvas, (cx, cy + int(m["count"] * 0.95)), "MENTIONS", label_fnt, fill=fs.ACCENT, anchor="rt")
-
-    # Player name — huge uppercase over the lower third, slams in block.
-    name_fnt = draw.font(fs.FONT_BOLD, m["name"])
-    max_w = spec.width - spec.pad * 2
-    lines = draw.wrap_text(beat.entity.name.upper(), name_fnt, max_w, max_lines=2)
-    lh = int(m["name"] * 1.02)
+    # ---- Lower-third band: counter (right) + name (left) + team. Fixed
+    # anchors so baselines are consistent across beats. ----
+    band_top = int(spec.height * LOWER_THIRD)
     a = anim.block_alpha(t, fade_in=0.3)
-    off = int(anim.slide_offset(t, spec.height * 0.05, 0.3))
+
+    # Counter: font sized to the FINAL value (stable as it counts), right-
+    # aligned (grows leftward), settles in 0.4s then holds.
+    final_str = f"{beat.mention_count:,}"
+    count_fnt = helpers.fit_font(final_str, fs.FONT_MONO_BOLD, m["count"], int(spec.width * 0.40))
+    cnum_w = draw.measure_text(final_str, count_fnt)[0]
+    count_val = anim.count_up(t, beat.mention_count, COUNTER_SETTLE)
+    cx = spec.width - margin
+    draw.draw_text(canvas, (cx, band_top), f"{count_val:,}", count_fnt, fill=style22.DUOTONE_HIGHLIGHT, anchor="rt")
+    lbl_fnt, _ = helpers.fit_text("MENTIONS", fs.FONT_MONO, m["count_label"], int(spec.width * 0.40))
+    draw.draw_text(canvas, (cx, band_top + count_fnt.size + int(8 * k)), "MENTIONS", lbl_fnt, fill=fs.ACCENT, anchor="rt")
+
+    # Name: left, ≤2 lines, auto-shrunk so the longest word fits; bottom-
+    # aligned within a reserved 2-line block so the team baseline is fixed.
+    name_maxw = (spec.width - margin) - cnum_w - int(40 * k) - margin
+    name_fnt, name_lines = helpers.fit_wrapped(
+        helpers.safe_text(beat.entity.name.upper()), fs.FONT_BOLD, m["name"],
+        name_maxw, max_lines=2, min_size=int(m["name"] * 0.5),
+    )
+    name_lh = int(name_fnt.size * 1.04)
+    # Reserve a FIXED 2-line block (from the max name size) so the team
+    # baseline below is identical across beats regardless of how far an
+    # individual name had to shrink (FIX 8 — no jumping baselines).
+    name_block_h = 2 * int(m["name"] * 1.04)
     nlayer = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
-    name_top = int(spec.height * 0.66) + off
-    for i, ln in enumerate(lines):
-        draw.draw_text(nlayer, (spec.pad, name_top + i * lh), ln, name_fnt, fill=style22.DUOTONE_HIGHLIGHT, anchor="lt")
+    for i, ln in enumerate(reversed(name_lines)):  # bottom-aligned within the block
+        y = band_top + name_block_h - (i + 1) * name_lh
+        draw.draw_text(nlayer, (margin, y), ln, name_fnt, fill=style22.DUOTONE_HIGHLIGHT, anchor="lt")
     sub = beat.entity.team_context.upper() if (beat.entity.kind == "player" and beat.entity.team_context) else "PLAYER"
-    draw.draw_text(nlayer, (spec.pad, name_top + len(lines) * lh + 6), sub, draw.font(fs.FONT_MONO, m["name_sub"]), fill=fs.ACCENT, anchor="lt")
+    sub_fnt, sub_txt = helpers.fit_text(helpers.safe_text(sub), fs.FONT_MONO, m["name_sub"], spec.width - 2 * margin)
+    draw.draw_text(nlayer, (margin, band_top + name_block_h + int(12 * k)), sub_txt, sub_fnt, fill=fs.ACCENT, anchor="lt")
     canvas.alpha_composite(parallax.apply_layer_alpha(nlayer, a), (0, 0))
 
     # Source pills bottom edge.
-    helpers.centered_pill_row(canvas, spec, beat.source_mix, m, spec.height - spec.pad - m["pill"] - 16,
+    helpers.centered_pill_row(canvas, spec, beat.source_mix, m, spec.height - margin - m["pill"] - int(16 * k),
                               alpha=anim.block_alpha(t, fade_in=0.4))
     helpers.brand_mark(canvas, spec, m, on_dark=True)
     return canvas
@@ -203,21 +224,28 @@ def _draw_quote(spec: fs.FormatSpec, beat: BeatRenderDataV2, t: float, dur: floa
     )
     ImageDraw.Draw(canvas).rectangle((cx0 + border_w, band_b - radius, cx1, band_b), fill=draw.rgb(fs.ACCENT_DIM, 255))
 
-    # Reporter row at card top (larger avatar).
+    # Reporter row at card top (larger avatar; name/handle fit the card).
     if rep:
         avatar = draw.circle_image(beat.quote_avatar_bytes, avatar_d,
                                    fallback_initials=(rep.display_name or rep.handle)[:1].upper(),
                                    fallback_bg=fs.ACCENT_DIM, fallback_fg=fs.ACCENT)
         canvas.alpha_composite(avatar, (inner_x, cy0 + pad_in))
         tx = inner_x + avatar_d + int(24 * m["k"])
-        draw.draw_text(canvas, (tx, cy0 + pad_in + avatar_d // 2 - 6), rep.display_name, draw.font(fs.FONT_BOLD, m["reporter_name"]), fill=fs.TEXT, anchor="lb")
-        draw.draw_text(canvas, (tx, cy0 + pad_in + avatar_d // 2 + 6), f"@{rep.handle}", draw.font(fs.FONT_MONO, m["handle"]), fill=fs.TEXT_SECONDARY, anchor="lt")
+        text_w = cx1 - pad_in - tx
+        nfnt, ntxt = helpers.fit_text(helpers.safe_text(rep.display_name), fs.FONT_BOLD, m["reporter_name"], text_w)
+        hfnt, htxt = helpers.fit_text(f"@{rep.handle}", fs.FONT_MONO, m["handle"], text_w)
+        draw.draw_text(canvas, (tx, cy0 + pad_in + avatar_d // 2 - 6), ntxt, nfnt, fill=fs.TEXT, anchor="lb")
+        draw.draw_text(canvas, (tx, cy0 + pad_in + avatar_d // 2 + 6), htxt, hfnt, fill=fs.TEXT_SECONDARY, anchor="lt")
 
     # Quote text — block slide-up + fade over 0.35s (not line-by-line).
-    quote_fnt = draw.font(fs.FONT_REGULAR, m["quote"])
-    text = _limit_words(beat.quote_text, MAX_QUOTE_WORDS)
+    # Shrink the quote font until the longest word fits the card width so
+    # nothing clips, then wrap sentence-safe.
+    text = helpers.safe_text(_limit_words(beat.quote_text, MAX_QUOTE_WORDS))
+    quote_fnt = helpers.fit_font(
+        max(text.split(), key=len, default=text), fs.FONT_REGULAR, m["quote"], inner_w, min_size=int(m["quote"] * 0.55)
+    )
     lines = quote_filter.prepare_quote_lines(text, lambda s: draw.measure_text(s, quote_fnt)[0], inner_w, max_lines=4)
-    leading = int(m["quote"] * 1.35)
+    leading = int(quote_fnt.size * 1.35)
     qy = cy0 + pad_in + avatar_d + int(40 * m["k"])
     a = anim.block_alpha(t, fade_in=0.35)
     off = int(anim.slide_offset(t, spec.height * 0.03, 0.35))
@@ -226,9 +254,9 @@ def _draw_quote(spec: fs.FormatSpec, beat: BeatRenderDataV2, t: float, dur: floa
         draw.draw_text(qlayer, (inner_x, qy + i * leading + off), ln, quote_fnt, fill=fs.TEXT, anchor="lt")
     canvas.alpha_composite(parallax.apply_layer_alpha(qlayer, a), (0, 0))
 
-    # Engagement ticker bottom-right of the card, counts up over 0.8s.
+    # Engagement ticker bottom-right of the card, settles in 0.4s, holds.
     if beat.engagement is not None:
-        total = anim.count_up(t, beat.engagement.total, 0.8)
+        total = anim.count_up(t, beat.engagement.total, COUNTER_SETTLE)
         big = draw.font(fs.FONT_MONO_BOLD, m["ticker"])
         small = draw.font(fs.FONT_MONO, m["ticker_label"])
         draw.draw_text(canvas, (cx1 - pad_in, cy1 - pad_in), f"{total:,}", big, fill=fs.ACCENT, anchor="rb")
@@ -246,54 +274,97 @@ def _draw_quote(spec: fs.FormatSpec, beat: BeatRenderDataV2, t: float, dur: floa
 # ---------------------------------------------------------------------------
 
 
+def _sparkline_plot_rect(spec, panel, header_bottom, axis_h, k):
+    """Compute the chart plot rect explicitly from the actual phase
+    panel (NOT a square assumption) so it's valid at every aspect."""
+    inner = int(40 * k)
+    px0, px1 = panel[0] + inner, panel[2] - inner
+    bottom_reserve = axis_h + int(50 * k)  # axis labels + pills/context band
+    plot_top = header_bottom + int(40 * k)
+    plot_bottom = panel[3] - bottom_reserve
+    if plot_bottom - plot_top < int(140 * k):  # guard: never collapse the chart
+        plot_bottom = plot_top + int(140 * k)
+    return (px0, plot_top, px1, plot_bottom)
+
+
 def _draw_sparkline(spec: fs.FormatSpec, beat: BeatRenderDataV2, t: float, dur: float) -> Image.Image:
     m = style22.metrics(spec)
+    k = m["k"]
+    margin = helpers.safe_margin(spec)
+    cx = spec.width // 2
     canvas = draw.new_canvas(spec, fill=fs.BACKGROUND)
 
-    # Full-frame stat panel (present from frame 0 → no phase-start dead
-    # air). Soft brand blue reads as an intentional "stat card", not the
-    # empty app background.
-    draw.rounded_rect(canvas, (spec.pad, spec.pad, spec.width - spec.pad, spec.height - spec.pad),
-                      radius=int(28 * m["k"]), fill=fs.ACCENT_DIM)
+    panel = (margin, margin, spec.width - margin, spec.height - margin)
+    draw.rounded_rect(canvas, panel, radius=int(28 * k), fill=fs.ACCENT_DIM)
+    inner = int(40 * k)
+    avail = (panel[2] - inner) - (panel[0] + inner)
 
-    # Header + big weekly total (fills the upper third).
-    draw.draw_text(canvas, (spec.width // 2, spec.pad), f"#{beat.rank}  {beat.entity.name.upper()}",
-                   draw.font(fs.FONT_BOLD, m["spark_head"]), fill=fs.TEXT, anchor="mt")
-    top_y = spec.pad + int(m["spark_head"] * 1.4)
-    draw.draw_text(canvas, (spec.width // 2, top_y), str(beat.weekly_total),
-                   draw.font(fs.FONT_MONO_BOLD, m["spark_total"]), fill=fs.ACCENT, anchor="mt")
-    draw.draw_text(canvas, (spec.width // 2, top_y + int(m["spark_total"] * 0.95)), "MENTIONS THIS WEEK",
-                   draw.font(fs.FONT_MONO, m["spark_total_label"]), fill=fs.TEXT_SECONDARY, anchor="mt")
+    # Counts forced to length 7; the displayed total is the SUM of these
+    # 7 values, so hero / sparkline / outro all show the same number.
+    counts = list(beat.weekly_counts)[:7] + [0] * max(0, 7 - len(beat.weekly_counts))
+    total = sum(counts)
+    labels = beat.day_labels if len(beat.day_labels) == 7 else ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
-    # Chart box — middle band.
-    box_top = top_y + int(m["spark_total"] * 1.25)
-    box_h = int(spec.height * 0.30)
-    box = (spec.pad + int(40 * m["k"]), box_top, spec.width - spec.pad - int(40 * m["k"]), box_top + box_h)
+    # Header (fit) + big total (fit).
+    head_fnt, head_txt = helpers.fit_text(helpers.safe_text(f"#{beat.rank}  {beat.entity.name.upper()}"),
+                                          fs.FONT_BOLD, m["spark_head"], avail)
+    draw.draw_text(canvas, (cx, panel[1] + inner), head_txt, head_fnt, fill=fs.TEXT, anchor="mt")
+    ty = panel[1] + inner + head_fnt.size + int(18 * k)
+    total_fnt = helpers.fit_font(str(total), fs.FONT_MONO_BOLD, m["spark_total"], avail)
+    draw.draw_text(canvas, (cx, ty), str(total), total_fnt, fill=fs.ACCENT, anchor="mt")
+    lab_fnt, lab_txt = helpers.fit_text("MENTIONS THIS WEEK", fs.FONT_MONO, m["spark_total_label"], avail)
+    draw.draw_text(canvas, (cx, ty + total_fnt.size + int(6 * k)), lab_txt, lab_fnt, fill=fs.TEXT_SECONDARY, anchor="mt")
+    header_bottom = ty + total_fnt.size + int(6 * k) + lab_fnt.size
 
-    # Animated AREA FILL under the line (kills the sparse dead-air look),
-    # then the line + labels + peak callout on top.
+    axis_fnt = helpers.fit_font("Wed", fs.FONT_MONO, m["axis"], max(20, avail // 8))
+    plot = _sparkline_plot_rect(spec, panel, header_bottom, axis_fnt.size + int(12 * k), k)
+    px0, _, px1, pby = plot
+
     spark_t = min(1.0, t / 1.0)
-    pts = sparkline.sparkline_points(beat.weekly_counts, box)
-    if pts:
-        full, partial = sparkline.draw_progress(len(pts), spark_t)
-        vis = list(pts[:full])
-        if 0 < full < len(pts) and partial > 0:
-            a0, b0 = pts[full - 1], pts[full]
-            vis.append((int(a0[0] + (b0[0] - a0[0]) * partial), int(a0[1] + (b0[1] - a0[1]) * partial)))
-        if len(vis) >= 2:
-            poly = vis + [(vis[-1][0], box[3]), (vis[0][0], box[3])]
-            fill_layer = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
-            ImageDraw.Draw(fill_layer).polygon(poly, fill=draw.rgb(fs.ACCENT, 70))
-            canvas.alpha_composite(fill_layer, (0, 0))
-    sparkline.draw_sparkline(canvas, box, beat.weekly_counts, spark_t,
-                             labels=beat.day_labels, peak_callout=beat.peak_callout)
+    pts = sparkline.sparkline_points(counts, plot)
+    dr = ImageDraw.Draw(canvas)
+    dr.line([(px0, pby), (px1, pby)], fill=draw.rgb(fs.BORDER, 255), width=max(2, int(2 * k)))
 
-    # Source pills + context row below (fills the lower third).
-    a = anim.block_alpha(t - 0.4, fade_in=0.35)
-    helpers.centered_pill_row(canvas, spec, beat.spike_source_mix, m, box[3] + int(70 * m["k"]), alpha=a)
+    full, partial = sparkline.draw_progress(len(pts), spark_t)
+    vis = list(pts[:full])
+    if 0 < full < len(pts) and partial > 0:
+        a0, b0 = pts[full - 1], pts[full]
+        vis.append((int(a0[0] + (b0[0] - a0[0]) * partial), int(a0[1] + (b0[1] - a0[1]) * partial)))
+    if len(vis) >= 2:
+        fl = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
+        ImageDraw.Draw(fl).polygon(vis + [(vis[-1][0], pby), (vis[0][0], pby)], fill=draw.rgb(fs.ACCENT, 90))
+        canvas.alpha_composite(fl, (0, 0))
+        dr.line(vis, fill=draw.rgb(fs.ACCENT, 255), width=max(4, int(5 * k)), joint="curve")
+    elif len(vis) == 1:
+        xx, yy = vis[0]
+        dr.ellipse((xx - 5, yy - 5, xx + 5, yy + 5), fill=draw.rgb(fs.ACCENT, 255))
+
+    # Peak marker + callout once the draw passes the peak.
+    pk = sparkline.peak_index(counts)
+    if pk >= 0 and ((full - 1) >= pk or full >= len(pts)):
+        ppx, ppy = pts[pk]
+        r = int(9 * k)
+        dr.ellipse((ppx - r, ppy - r, ppx + r, ppy + r), fill=draw.rgb(fs.ACCENT, 255))
+        if beat.peak_callout:
+            co_fnt, co_txt = helpers.fit_text(helpers.safe_text(beat.peak_callout), fs.FONT_MONO_BOLD, m["callout"], avail)
+            half = draw.measure_text(co_txt, co_fnt)[0] // 2
+            cax = min(max(ppx, px0 + half), px1 - half)
+            draw.draw_text(canvas, (cax, max(plot[1], ppy - int(30 * k))), co_txt, co_fnt, fill=fs.ACCENT, anchor="mb")
+
+    # X-axis labels — fit + clamp first/last so they never clip the edge.
+    for (lpx, _), lbl in zip(pts, labels):
+        lt = helpers.safe_text(lbl)
+        lw = draw.measure_text(lt, axis_fnt)[0]
+        ax = min(max(lpx, px0 + lw // 2), px1 - lw // 2)
+        draw.draw_text(canvas, (ax, pby + int(12 * k)), lt, axis_fnt, fill=fs.TEXT_SECONDARY, anchor="mt")
+
+    # Source pills + context below the axis.
+    a = anim.block_alpha(t - 0.3, fade_in=0.3)
+    pills_y = pby + int(12 * k) + axis_fnt.size + int(30 * k)
+    helpers.centered_pill_row(canvas, spec, beat.spike_source_mix, m, pills_y, alpha=a)
     if beat.context_line:
-        draw.draw_text(canvas, (spec.width // 2, box[3] + int(70 * m["k"]) + m["pill"] + int(40 * m["k"])),
-                       beat.context_line, draw.font(fs.FONT_MONO, m["context"]),
+        ctx_fnt, ctx_txt = helpers.fit_text(helpers.safe_text(beat.context_line), fs.FONT_MONO, m["context"], avail)
+        draw.draw_text(canvas, (cx, pills_y + m["pill"] + int(30 * k)), ctx_txt, ctx_fnt,
                        fill=fs.TEXT_SECONDARY, anchor="mt", alpha=int(255 * a))
     helpers.brand_mark(canvas, spec, m)
     return canvas
