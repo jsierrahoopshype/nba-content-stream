@@ -93,47 +93,117 @@
     els.trending.appendChild(frag);
   }
 
+  // Perf-1: re-render is throttled to one paint per animation frame so
+  // streaming live chunks (and the background full-feed swap) don't
+  // thrash the DOM.
+  let renderQueued = false;
+  function scheduleRender() {
+    if (renderQueued) return;
+    renderQueued = true;
+    requestAnimationFrame(() => {
+      renderQueued = false;
+      render();
+    });
+  }
+
   async function loadArchive() {
-    // Cluster C: preload canonical alongside the other index files so
-    // renderCard can resolve player headshots + team logos on the
-    // very first render. ncs.loadCanonical resolves to the same
-    // window.NCS_Canonical that visualAvatarHtml reads.
-    const [manifest, feed, trending] = await Promise.all([
+    // Cluster C: preload canonical alongside the index files so
+    // renderCard can resolve player headshots + team logos on the very
+    // first render. ncs.loadCanonical resolves to window.NCS_Canonical.
+    //
+    // Perf-1: load the SMALL recent slice (feed-recent.json, ~100 newest
+    // items) first and paint immediately, instead of blocking first paint
+    // on the full ~850KB feed.json. The full feed loads in the background
+    // below for search depth / pagination and re-renders without a jarring
+    // jump (same items at top; older items appended beneath).
+    const [manifest, recent, trending] = await Promise.all([
       fetch(window.NCS_dataUrl("data/index/manifest.json")).then((r) => r.json()),
-      fetch(window.NCS_dataUrl("data/index/feed.json")).then((r) => r.json()),
+      fetch(window.NCS_dataUrl("data/index/feed-recent.json")).then((r) => r.json()).catch(() => null),
       fetch(window.NCS_dataUrl("data/index/trending.json")).then((r) => r.json()).catch(() => null),
       ncs.loadCanonical(),
     ]);
     MANIFEST = manifest;
     MANIFEST_SLUGS = ncs.manifestSlugSets(manifest);
-    ARCHIVE_ITEMS = feed.items || [];
+    const recentItems = recent && recent.items ? recent.items : null;
     ncs.attachSearch(els.search, els.suggest, manifest, "");
     ncs.attachSourcePills(els.pills, (state) => {
       SOURCE_FILTER = state;
       render();
     });
-    // Polish-9 (Fix 2): inline live-fetch status badge next to the
-    // source pills. begin() runs when liveMerge starts; end() flips
-    // to "+N live" once items arrive. User no longer has to guess
-    // whether the ~2s paced Bluesky fetch is in flight.
     LIVE_STATUS = ncs.attachLiveStatus(els.pills);
     renderTrending(trending);
-    render();
+
+    if (recentItems) {
+      // Fast path: paint the recent slice now, fetch the full feed next.
+      ARCHIVE_ITEMS = recentItems;
+      render();
+      fetch(window.NCS_dataUrl("data/index/feed.json"))
+        .then((r) => r.json())
+        .then((full) => {
+          ARCHIVE_ITEMS = full.items || ARCHIVE_ITEMS;
+          render();
+        })
+        .catch((e) => console.warn("full feed load failed; keeping recent slice:", e));
+    } else {
+      // Fallback (older build without feed-recent.json): full feed only.
+      const full = await fetch(window.NCS_dataUrl("data/index/feed.json")).then((r) => r.json());
+      ARCHIVE_ITEMS = full.items || [];
+      render();
+    }
+  }
+
+  // Build a handle→latest-post map from archive Bluesky items so the live
+  // Bluesky fetch can poll the most-recently-active reporters first.
+  function buildRecency(items) {
+    const m = {};
+    for (const it of items || []) {
+      if (!it || it.source !== "bluesky") continue;
+      const h = (it.author_handle || "").toLowerCase();
+      if (!h) continue;
+      const p = it.published_at || "";
+      if (!m[h] || p > m[h]) m[h] = p;
+    }
+    return m;
   }
 
   async function loadLive() {
     if (!config.LIVE_MERGE_ENABLED) return;
     if (LIVE_STATUS) LIVE_STATUS.begin();
+    // Perf-1: incremental live merge. Each source (and each Bluesky
+    // chunk) splices into LIVE_ITEMS and re-renders as it lands, so the
+    // freshest reporter posts appear within ~1-2s instead of after the
+    // whole ~10s merge. Dedupe by id; mergeItems handles live↔archive.
+    const seenLive = new Set();
+    const onPartial = (items) => {
+      let added = false;
+      for (const it of items) {
+        if (!it || !it.id || seenLive.has(it.id)) continue;
+        seenLive.add(it.id);
+        LIVE_ITEMS.push(it);
+        added = true;
+      }
+      if (added) scheduleRender();
+    };
     try {
-      LIVE_ITEMS = await ncs.liveMerge({
-        // Polish-10 (Fix 1): forward Bluesky's per-chunk progress to
-        // the status badge so the user sees the fetch advancing
-        // (40% … 60% … 100%) instead of a 3-5s "fetching live…" hang.
+      const finalItems = await ncs.liveMerge({
+        // Polish-10 (Fix 1): forward Bluesky's per-chunk progress to the
+        // status badge so the user sees the fetch advancing.
         onBskyProgress: (p) => {
           if (!LIVE_STATUS || !p || !p.total) return;
           LIVE_STATUS.progress((p.done / p.total) * 100);
         },
+        onPartial: onPartial,
+        // Poll the most-recently-active reporters first (freshest first).
+        recency: buildRecency(ARCHIVE_ITEMS),
       });
+      // Reconcile to the authoritative, de-duped pool.
+      const seen = new Set();
+      LIVE_ITEMS = [];
+      for (const it of finalItems) {
+        if (!it || !it.id || seen.has(it.id)) continue;
+        seen.add(it.id);
+        LIVE_ITEMS.push(it);
+      }
       if (LIVE_STATUS) LIVE_STATUS.end({ count: LIVE_ITEMS.length });
     } catch (e) {
       console.warn("live merge failed:", e);

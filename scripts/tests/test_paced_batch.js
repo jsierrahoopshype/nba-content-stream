@@ -158,9 +158,51 @@ vm.runInContext(FN_SRC + "\nthis.pacedBatchFetch = pacedBatchFetch;", sandbox);
     if (!ok) failed++;
   }
 
+  // Case 8 (Perf-1): onChunk streams each chunk's non-null results as it
+  // lands (incremental render), and a throwing onChunk doesn't break the
+  // batch. onChunk is the 7th argument.
+  {
+    const items = [1, 2, 3, 4, 5];
+    const chunks = [];
+    const out = await sandbox.pacedBatchFetch(
+      items,
+      2,
+      5,
+      async (x) => (x === 3 ? null : x * 10), // 3 fails → dropped from its chunk
+      null,
+      null,
+      (chunkOut, meta) => chunks.push({ chunkOut, meta }),
+    );
+    const ok =
+      chunks.length === 3 &&
+      JSON.stringify(chunks[0].chunkOut) === JSON.stringify([10, 20]) &&
+      JSON.stringify(chunks[1].chunkOut) === JSON.stringify([40]) && // 3 dropped
+      JSON.stringify(chunks[2].chunkOut) === JSON.stringify([50]) &&
+      chunks[0].meta.chunkIndex === 1 && chunks[2].meta.totalChunks === 3 &&
+      JSON.stringify(out) === JSON.stringify([10, 20, 40, 50]);
+    console.log(`${ok ? "PASS" : "FAIL"}  onChunk streams per-chunk results: ${JSON.stringify(chunks.map(c => c.chunkOut))}`);
+    if (!ok) failed++;
+  }
+
+  // Case 9 (Perf-1): a throwing onChunk is caught — batch still completes.
+  {
+    const out = await sandbox.pacedBatchFetch(
+      [1, 2, 3, 4],
+      2,
+      5,
+      async (x) => x,
+      null,
+      null,
+      () => { throw new Error("onChunk blew up"); },
+    );
+    const ok = JSON.stringify(out) === JSON.stringify([1, 2, 3, 4]);
+    console.log(`${ok ? "PASS" : "FAIL"}  throwing onChunk doesn't break batch: out=${JSON.stringify(out)}`);
+    if (!ok) failed++;
+  }
+
   if (failed > 0) {
     console.error(`\n${failed} assertion(s) failed.`);
     process.exit(1);
   }
-  console.log("\nAll 7 assertions passed.");
+  console.log("\nAll 9 assertions passed.");
 })();
