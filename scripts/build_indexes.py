@@ -55,6 +55,10 @@ WINDOW_DAYS = 30                    # rolling window for per-entity indexes
 MAX_ITEMS_PER_ENTITY = 1000         # hard cap per player/team file
 FEED_WINDOW_DAYS = 7                # homepage stream window
 MAX_FEED_ITEMS = 1000               # homepage stream cap
+# Perf-1: the homepage loads this small newest-first slice first and
+# paints immediately, then loads the full feed.json in the background.
+# Keeps the ~850KB feed.json from blocking first paint.
+RECENT_FEED_ITEMS = 100             # feed-recent.json size
 TRENDING_LIMIT = 40                 # top-N for trending.json
 TRENDING_WINDOW_HOURS = 72          # only score items from the last 3 days
 
@@ -370,6 +374,20 @@ def build_feed(
     }
 
 
+def build_feed_recent(feed: dict, cap: int = RECENT_FEED_ITEMS) -> dict:
+    """A small newest-first slice of `feed` (identical schema) the
+    homepage loads + renders FIRST, before the full feed.json. Purely
+    additive — feed.json is untouched. `feed["items"]` is already
+    newest-first and capped, so this is just the head of that list.
+    """
+    items = feed.get("items", [])
+    recent = dict(feed)
+    recent["items"] = items[:cap]
+    recent["count"] = len(recent["items"])
+    recent["recent_slice"] = True
+    return recent
+
+
 # ---------------------------------------------------------------------------
 # Manifest
 # ---------------------------------------------------------------------------
@@ -457,6 +475,8 @@ def write_all_indexes(
 
     _write_json(root / "trending.json", trending)
     _write_json(root / "feed.json", feed)
+    # Perf-1: small recent slice for instant first paint (see build_feed_recent).
+    _write_json(root / "feed-recent.json", build_feed_recent(feed))
     _write_json(root / "manifest.json", manifest)
 
 

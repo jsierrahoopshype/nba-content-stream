@@ -547,6 +547,59 @@ def test_feed_cap_respected(isolated_data, monkeypatch):
 
 
 # ---------------------------------------------------------------------------
+# Perf-1: feed-recent.json (small newest-first slice for instant paint)
+# ---------------------------------------------------------------------------
+
+
+def _fake_feed(n):
+    return {
+        "generated_at": "2026-06-08T00:00:00Z",
+        "window_days": 7,
+        "count": n,
+        "items": [
+            {"id": f"x{i}", "source": "bluesky", "published_at": "2026-06-08T00:00:00Z"}
+            for i in range(n)
+        ],
+    }
+
+
+def test_build_feed_recent_slices_head_and_preserves_schema():
+    feed = _fake_feed(250)
+    recent = build_indexes.build_feed_recent(feed, cap=100)
+    assert recent["count"] == 100
+    assert len(recent["items"]) == 100
+    assert recent["items"] == feed["items"][:100]   # newest-first head
+    assert recent["recent_slice"] is True
+    assert recent["generated_at"] == feed["generated_at"]
+    assert recent["window_days"] == feed["window_days"]
+    # source feed is untouched (purely additive)
+    assert feed["count"] == 250 and len(feed["items"]) == 250
+    assert "recent_slice" not in feed
+
+
+def test_build_feed_recent_handles_short_feed():
+    feed = _fake_feed(3)
+    recent = build_indexes.build_feed_recent(feed, cap=100)
+    assert recent["count"] == 3 and len(recent["items"]) == 3
+
+
+def test_write_all_indexes_emits_feed_recent(tmp_path):
+    feed = _fake_feed(150)
+    build_indexes.write_all_indexes(
+        {}, {}, {"items": []}, feed, {"players": [], "teams": []}, index_root=tmp_path
+    )
+    rec = tmp_path / "feed-recent.json"
+    full = tmp_path / "feed.json"
+    assert rec.exists() and full.exists()
+    rec_data = json.loads(rec.read_text())
+    full_data = json.loads(full.read_text())
+    assert rec_data.get("recent_slice") is True
+    assert rec_data["count"] == build_indexes.RECENT_FEED_ITEMS
+    # full feed unchanged (no recent_slice marker, full item count)
+    assert full_data["count"] == 150 and "recent_slice" not in full_data
+
+
+# ---------------------------------------------------------------------------
 # Manifest
 # ---------------------------------------------------------------------------
 

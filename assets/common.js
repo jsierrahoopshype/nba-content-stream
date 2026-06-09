@@ -1098,7 +1098,7 @@
   // progress so a 3-5s paced fetch feels like progress instead of a
   // hang. Stays optional — every existing call site that doesn't
   // pass it gets identical behavior.
-  async function pacedBatchFetch(items, batchSize, betweenMs, fetchFn, traceLabel, onProgress) {
+  async function pacedBatchFetch(items, batchSize, betweenMs, fetchFn, traceLabel, onProgress, onChunk) {
     const out = [];
     let succeeded = 0;
     let failed = 0;
@@ -1112,11 +1112,13 @@
             .catch(() => null)
         )
       );
+      const chunkOut = [];
       for (const r of results) {
         if (r === null || r === undefined) failed++;
         else {
           succeeded++;
           out.push(r);
+          chunkOut.push(r);
         }
       }
       const chunkIndex = Math.floor(i / batchSize) + 1;
@@ -1144,6 +1146,16 @@
         } catch (e) {
           // Progress callbacks must never break the batch.
           if (window.NCS_DEBUG) console.warn("pacedBatchFetch onProgress threw:", e);
+        }
+      }
+      // Perf-1: stream each chunk's results to the caller as they land,
+      // so the UI can render incrementally instead of awaiting every
+      // chunk. Pacing is unchanged — this is render timing, not requests.
+      if (typeof onChunk === "function") {
+        try {
+          onChunk(chunkOut, { chunkIndex, totalChunks, done, total: items.length });
+        } catch (e) {
+          if (window.NCS_DEBUG) console.warn("pacedBatchFetch onChunk threw:", e);
         }
       }
       if (i + batchSize < items.length) {
@@ -1294,6 +1306,94 @@
     };
   }
 
+  // Perf-1: normalize a set of author feeds into live items (and warm
+  // the handle->avatar cache). Extracted from bskyLiveItems so the same
+  // logic runs per-chunk (incremental render) and for the final pool.
+  function _processBskyFeeds(feeds, tagger) {
+    for (const feed of feeds) {
+      for (const fv of feed) {
+        const a = fv && fv.post && fv.post.author;
+        if (a && a.handle && a.avatar) _cacheBskyAvatar(a.handle, a.avatar);
+      }
+    }
+    const items = [];
+    for (const feed of feeds) {
+      for (const fv of feed) {
+        const post = fv.post;
+        if (!post) continue;
+        const reason = fv.reason;
+        if (reason && reason.$type && reason.$type.includes("reasonRepost")) continue;
+        const record = post.record || {};
+        if (record.reply) continue;
+        const author = post.author || {};
+        const handle = author.handle || "";
+        const rkey = (post.uri || "").split("/").pop();
+        const text = record.text || "";
+        const tags = tagger.detectEntitiesSync(text);
+        const embed = post.embed || {};
+        const embedType = embed.$type || "";
+        const isRecordWithMedia = embedType.includes("recordWithMedia");
+        const mediaView = isRecordWithMedia ? (embed.media || {}) : embed;
+        const mediaViewType = mediaView.$type || "";
+        let images = null;
+        let linkCard = null;
+        let video = null;
+        if (mediaViewType.includes("app.bsky.embed.images")) {
+          images = (mediaView.images || [])
+            .map((im) => ({ url: im.fullsize || im.thumb || "", alt: im.alt || "" }))
+            .filter((im) => im.url);
+        } else if (mediaViewType.includes("app.bsky.embed.external")) {
+          const ext = mediaView.external || {};
+          if (ext.uri) {
+            linkCard = {
+              uri: ext.uri,
+              title: ext.title || "",
+              description: ext.description || "",
+              thumb: ext.thumb || null,
+            };
+          }
+        } else if (mediaViewType.includes("app.bsky.embed.video")) {
+          if (mediaView.thumbnail || mediaView.playlist) {
+            video = {
+              thumbnail: mediaView.thumbnail || null,
+              playlist: mediaView.playlist || null,
+              aspectRatio: mediaView.aspectRatio || null,
+              alt: mediaView.alt || "",
+            };
+          }
+        }
+        let quotedPost = null;
+        const recordView = isRecordWithMedia
+          ? (embed.record && embed.record.record) || null
+          : (embedType.includes("app.bsky.embed.record") ? embed.record : null);
+        if (recordView) quotedPost = _extractQuotedPost(recordView);
+        items.push({
+          id: _atUriToId(post.uri),
+          source: "bluesky",
+          published_at: record.createdAt || post.indexedAt,
+          title: text.split("\n")[0].slice(0, 280) || "(no text)",
+          text: text,
+          facets: record.facets || null,
+          url: `https://bsky.app/profile/${handle}/post/${rkey}`,
+          author: author.displayName || handle,
+          author_handle: handle,
+          author_avatar: author.avatar || null,
+          images: images,
+          linkCard: linkCard,
+          video: video,
+          quotedPost: quotedPost,
+          thumbnail: null,
+          body_excerpt: text.length > 80 ? text : null,
+          players: tags.players,
+          teams: tags.teams,
+          _live: true,
+        });
+        _cacheBskyAvatar(handle, author.avatar);
+      }
+    }
+    return items;
+  }
+
   async function bskyLiveItems(maxPosts, opts) {
     const tStart = Date.now();
     _dbg("bsky:start", { time: tStart });
@@ -1315,7 +1415,17 @@
     // = faster parse + smaller network footprint, and 3 posts per
     // reporter × 164 handles × the recent-activity filter is plenty
     // of recency. Combined: ~10s → ~3-5s typical wall time.
-    const handles = await fetchBlueskyHandles();
+    let handles = await fetchBlueskyHandles();
+    // Perf-1: poll the most-recently-active reporters FIRST so the
+    // freshest posts arrive in the opening chunk(s) and paint within
+    // ~1-2s, instead of being scattered alphabetically across all chunks.
+    // `recency` is a handle->ISO map derived from the archive feed.
+    const recency = (opts && opts.recency) || null;
+    if (recency) {
+      handles = handles.slice().sort((a, b) =>
+        (recency[(b || "").toLowerCase()] || "").localeCompare(
+          recency[(a || "").toLowerCase()] || ""));
+    }
     const perHandle = 3;
     const chunkSize = 20;
     const betweenMs = 100;
@@ -1328,158 +1438,32 @@
     const onProgress = opts && typeof opts.onProgress === "function"
       ? opts.onProgress
       : null;
+    const onItems = opts && typeof opts.onItems === "function"
+      ? opts.onItems
+      : null;
+    const tagger = window.NCS_Tagger;
+    await tagger.ready();  // ready before the fetch so chunks process as they land
     const feeds = await pacedBatchFetch(
       handles,
       chunkSize,
       betweenMs,
       (h) => fetchBlueskyAuthor(h, perHandle),
       "[NCS-BLUESKY-BATCH]",
-      onProgress
+      onProgress,
+      // Perf-1: emit each chunk's posts the moment it lands so fresh
+      // reporter content paints incrementally (no waiting for all chunks).
+      onItems
+        ? (chunkFeeds) => {
+            const items = _processBskyFeeds(chunkFeeds, tagger);
+            if (items.length) onItems(items);
+          }
+        : null
     );
-    const tagger = window.NCS_Tagger;
-    await tagger.ready();
-    // Fix 2 (avatar coverage): walk every fetched feed BEFORE the
-    // filter loop and pre-populate the handle→avatar cache from each
-    // post's author. Previously the cache only wrote inside the
-    // filter loop (after the reply/repost gate), so reporters whose
-    // recent posts were all replies / reposts never reached the
-    // cache-write line — and entity pages, which show mostly archive
-    // items keyed by handle, saw initials avatars instead of real
-    // headshots. Pre-population guarantees every reporter with any
-    // recent post in their feed gets cached, even if no post passes
-    // the filter for inclusion in LIVE_ITEMS.
-    for (const feed of feeds) {
-      for (const fv of feed) {
-        const a = fv && fv.post && fv.post.author;
-        if (a && a.handle && a.avatar) _cacheBskyAvatar(a.handle, a.avatar);
-      }
-    }
-    for (const feed of feeds) {
-      for (const fv of feed) {
-        const post = fv.post;
-        if (!post) continue;
-        const reason = fv.reason;
-        if (reason && reason.$type && reason.$type.includes("reasonRepost")) continue;
-        const record = post.record || {};
-        if (record.reply) continue;
-        const author = post.author || {};
-        const handle = author.handle || "";
-        const rkey = (post.uri || "").split("/").pop();
-        const text = record.text || "";
-        // Tag ONLY the post text. Embed metadata (link card title,
-        // description, image alt text) describes the LINKED article,
-        // not the poster's own words — concatenating it would cause
-        // false attributions (e.g. a Pelicans article linked from a
-        // post about Game 7 would falsely tag the post as being
-        // "about" the Pelicans). The post text is authoritative.
-        const tags = tagger.detectEntitiesSync(text);
-
-        // Bluesky embed shapes from the public AppView. We render:
-        //   app.bsky.embed.images#view             -> grid of poster's images
-        //   app.bsky.embed.external#view           -> link-card preview
-        //   app.bsky.embed.record#view             -> quote-post (no media)
-        //   app.bsky.embed.recordWithMedia#view    -> quote + media
-        //   app.bsky.embed.record#viewNotFound     -> deleted/blocked quoted
-        // For recordWithMedia: media lives in embed.media; the quoted
-        // record lives in embed.record.record.
-        const embed = post.embed || {};
-        const embedType = embed.$type || "";
-        const isRecordWithMedia = embedType.includes("recordWithMedia");
-        const mediaView = isRecordWithMedia ? (embed.media || {}) : embed;
-        const mediaViewType = mediaView.$type || "";
-        let images = null;
-        let linkCard = null;
-        let video = null;
-        if (mediaViewType.includes("app.bsky.embed.images")) {
-          images = (mediaView.images || [])
-            .map((im) => ({
-              url: im.fullsize || im.thumb || "",
-              alt: im.alt || "",
-            }))
-            .filter((im) => im.url);
-        } else if (mediaViewType.includes("app.bsky.embed.external")) {
-          const ext = mediaView.external || {};
-          if (ext.uri) {
-            linkCard = {
-              uri: ext.uri,
-              title: ext.title || "",
-              description: ext.description || "",
-              thumb: ext.thumb || null,
-            };
-          }
-        } else if (mediaViewType.includes("app.bsky.embed.video")) {
-          // Fix 1: Bluesky native video. The AppView's video#view shape:
-          //   { cid, playlist (HLS m3u8), thumbnail, aspectRatio, alt? }
-          // We capture the thumbnail + aspect-ratio for rendering, and
-          // the playlist URL strictly for reference — we do NOT play
-          // HLS inline (no hls.js dependency). Click-through to bsky.app
-          // is the legal/sanctioned path; Bluesky's own player handles
-          // playback.
-          if (mediaView.thumbnail || mediaView.playlist) {
-            video = {
-              thumbnail: mediaView.thumbnail || null,
-              playlist: mediaView.playlist || null,
-              aspectRatio: mediaView.aspectRatio || null,
-              alt: mediaView.alt || "",
-            };
-          }
-        }
-
-        // Fix B1: quote post. Either a record-only embed (the post is
-        // just a quote with no media) or recordWithMedia (quote + media).
-        // The shape changes slightly between the two: in record#view
-        // the quoted record is in embed.record; in recordWithMedia#view
-        // it's in embed.record.record.
-        let quotedPost = null;
-        const recordView = isRecordWithMedia
-          ? (embed.record && embed.record.record) || null
-          : (embedType.includes("app.bsky.embed.record") ? embed.record : null);
-        if (recordView) {
-          quotedPost = _extractQuotedPost(recordView);
-        }
-
-        out.push({
-          id: _atUriToId(post.uri),
-          source: "bluesky",
-          published_at: record.createdAt || post.indexedAt,
-          title: text.split("\n")[0].slice(0, 280) || "(no text)",
-          // Full post text for the body, regardless of length. Bluesky
-          // posts max out at 300 graphemes anyway.
-          text: text,
-          // Fix B2: facets carry the canonical did for each @mention so
-          // we can build https://bsky.app/profile/<did> links without
-          // guessing. Falls back to regex linkify if facets is absent.
-          facets: record.facets || null,
-          url: `https://bsky.app/profile/${handle}/post/${rkey}`,
-          author: author.displayName || handle,
-          // Fix A2: store the actual handle separately from the display
-          // name. The body byline links to bsky.app/profile/{handle},
-          // and the display name can be anything.
-          author_handle: handle,
-          // The AppView exposes a CDN URL at author.avatar. Captured
-          // here so renderCard's bylineIconHtml shows a small circular
-          // avatar next to the byline. Archive items don't carry this
-          // yet — future enhancement: extend poll_bluesky.py to store
-          // author.avatar so archived Bluesky cards also get the
-          // avatar. For now, live cards get avatars, archive cards
-          // fall back to the text byline.
-          author_avatar: author.avatar || null,
-          images: images,
-          linkCard: linkCard,
-          video: video,
-          quotedPost: quotedPost,
-          thumbnail: null,
-          body_excerpt: text.length > 80 ? text : null,
-          players: tags.players,
-          teams: tags.teams,
-          _live: true,
-        });
-        // Fix 4: stash this reporter's avatar in the cache so any
-        // ARCHIVE Bluesky cards from the same handle (which lack
-        // author_avatar) can fall back to it during renderCard.
-        _cacheBskyAvatar(handle, author.avatar);
-      }
-    }
+    // Build the authoritative final pool from every fetched feed. The
+    // per-chunk onItems above already streamed these for incremental
+    // render; this single pass (same _processBskyFeeds) is the source of
+    // truth liveMerge returns. id-dedupe in mergeItems reconciles the two.
+    for (const it of _processBskyFeeds(feeds, tagger)) out.push(it);
     // Sort newest-first and cap. `maxPosts` is now a soft ceiling on
     // the final pool rather than a per-handle budget; the cap protects
     // against an edge case where every reporter posted a lot at once.
@@ -1793,18 +1777,40 @@
     const onBskyProgress = opts && typeof opts.onBskyProgress === "function"
       ? opts.onBskyProgress
       : null;
+    // Perf-1: stream partial results to the caller as each source (and
+    // each Bluesky chunk) lands, so the freshest content paints
+    // incrementally instead of after the slowest source finishes.
+    const onPartial = opts && typeof opts.onPartial === "function"
+      ? opts.onPartial
+      : null;
+    const recency = (opts && opts.recency) || null;
+    const all = [];
+    // Canonicalize published_at before emitting so the caller's sort
+    // orders fresh items correctly (see the format note below).
+    const emit = (items) => {
+      if (!items || !items.length || !onPartial) return;
+      for (const it of items) it.published_at = canonicalIsoZ(it.published_at);
+      onPartial(items);
+    };
+
     const tasks = [];
     if (wanted.indexOf("bluesky") >= 0) {
-      tasks.push(bskyLiveItems(limits.bluesky, { onProgress: onBskyProgress }));
+      // Bluesky is the long pole — stream it per chunk via onItems.
+      tasks.push(
+        bskyLiveItems(limits.bluesky, {
+          onProgress: onBskyProgress,
+          recency,
+          onItems: onPartial ? emit : null,
+        }).then((items) => { all.push(...items); return items; })
+      );
     }
-    if (wanted.indexOf("reddit") >= 0) tasks.push(redditLiveItems(limits.reddit));
-    if (wanted.indexOf("google-news") >= 0) tasks.push(googleNewsLiveItems(limits.googleNews));
-    if (wanted.indexOf("substack") >= 0) tasks.push(substackLiveItems(limits.substack));
-    const batches = await Promise.allSettled(tasks);
-    const out = [];
-    for (const r of batches) {
-      if (r.status === "fulfilled") out.push(...r.value);
-    }
+    // The other sources resolve all-at-once; emit each when it settles.
+    const settleEmit = (p) => p.then((items) => { all.push(...items); emit(items); return items; });
+    if (wanted.indexOf("reddit") >= 0) tasks.push(settleEmit(redditLiveItems(limits.reddit)));
+    if (wanted.indexOf("google-news") >= 0) tasks.push(settleEmit(googleNewsLiveItems(limits.googleNews)));
+    if (wanted.indexOf("substack") >= 0) tasks.push(settleEmit(substackLiveItems(limits.substack)));
+    await Promise.allSettled(tasks);
+
     // Normalize EVERY published_at to the canonical ISO Z form
     // (YYYY-MM-DDTHH:MM:SSZ). Bluesky's record.createdAt has fractional
     // milliseconds like "2026-05-27T14:30:00.123Z"; lexicographic
@@ -1813,7 +1819,14 @@
     // which was the production bug — fresh live items were getting
     // sorted under hours-old archive items. Force one format here so
     // mergeItems' string sort orders them correctly.
-    for (const it of out) it.published_at = canonicalIsoZ(it.published_at);
+    const seen = new Set();
+    const out = [];
+    for (const it of all) {
+      if (!it || !it.id || seen.has(it.id)) continue;
+      seen.add(it.id);
+      it.published_at = canonicalIsoZ(it.published_at);
+      out.push(it);
+    }
     return out;
   }
 
