@@ -1,7 +1,7 @@
 {
   "_meta": {
     "description": "Substack publications polled via public RSS ({URL}/feed). Raw feed: title + excerpt + link + entity tags, no AI. Free posts give full-ish content in RSS; paid posts give preview only. We store only a short excerpt (capped at 280 chars) either way and always link back to the original post.",
-    "last_updated": "2026-05-28",
+    "last_updated": "2026-06-09",
     "validation_status": "20 publications curated by Jorge. Marc Stein verified earlier; the other 19 are pending local validation. Custom-domain Substacks (truehoop.com, houseofstrauss.com, etc.) need a matching entry in the CORS Worker allowlist for the BROWSER live-fetch to reach them — handled in the same PR (worker-cors/src/index.js). The server-side poll_substack.py poller is uncostrained by CORS, so it picks these up immediately. Validate locally with: `python -m scripts.poll_substack --dry-run --since-hours 168 -v` and prune any feed that 404s."
   },
   "publications": [
@@ -124,6 +124,30 @@
       "name": "Zach's Draft Substack",
       "feed": "https://zachdraft.substack.com/feed",
       "validation": "unverified"
+    },
+    {
+      "slug": "chartinghoops",
+      "name": "Charting Hoops",
+      "feed": "https://chartinghoops.substack.com/feed",
+      "validation": "unverified — added 2026-06-09 (Chris Gunther), pending local dry-run"
+    },
+    {
+      "slug": "neilpaine",
+      "name": "Neil's Substack",
+      "feed": "https://neilpaine.substack.com/feed",
+      "validation": "unverified — added 2026-06-09 (Neil Paine). NOTE: multi-sport, not NBA-only; canonical entity tagging filters NBA relevance downstream. Prune if too noisy."
+    },
+    {
+      "slug": "digginbasketball",
+      "name": "Diggin' Basketball",
+      "feed": "https://digginbasketball.substack.com/feed",
+      "validation": "unverified — added 2026-06-09, pending local dry-run"
+    },
+    {
+      "slug": "basketballpoetry",
+      "name": "Basketball Poetry",
+      "feed": "https://www.basketballpoetry.com/feed",
+      "validation": "unverified — added 2026-06-09, custom-domain Substack (needs Worker allowlist for browser live-fetch); pending local dry-run. If www 404s, try apex https://basketballpoetry.com/feed."
     }
   ]
 }

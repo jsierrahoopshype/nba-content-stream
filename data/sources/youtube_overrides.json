@@ -2,8 +2,14 @@
   "_meta": {
     "description": "Local add/remove for the YouTube channel list. Live list comes from the jsierrahoopshype/nba-podcast-stream repo's app.py (the CHANNELS python list literal). 'add' = channel IDs to include beyond the live list. 'remove' = channel IDs to exclude even if in the live list. Both are bare YouTube channel IDs (UC...).",
     "format": "{ \"add\": [\"UCxxx...\"], \"remove\": [\"UCxxx...\"] }",
-    "last_updated": "2026-05-24"
+    "last_updated": "2026-06-09"
   },
-  "add": [],
+  "add": [
+    "UCUqIXubCV7gcDJ-QZrdYRbw",
+    "UCA95kYjGqDgRziNA7sJZBag",
+    "UCnD-vTb2QeSMsXdE360Ec1A",
+    "UCrlL3lECKmzkcYK8S6cW2Eg",
+    "UCI5av_J_zb7S90XrucOfH0w"
+  ],
   "remove": []
 }
