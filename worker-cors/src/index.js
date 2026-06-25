@@ -46,6 +46,11 @@ const ALLOWED_HOSTS = new Set([
   "www.noceilingsnba.com",             "noceilingsnba.com",
   "www.nbabigboard.com",               "nbabigboard.com",
   "www.fieldhousefiles.com",           "fieldhousefiles.com",
+  // content-stream-sources-1 additions: new custom-domain Substack.
+  // (chartinghoops/neilpaine/digginbasketball are *.substack.com, already
+  // covered by ALLOWED_SUFFIXES; roycewebb.com + statitudes.com were
+  // already listed above; YouTube isn't in the browser live-merge.)
+  "www.basketballpoetry.com",          "basketballpoetry.com",
 ]);
 
 // substack is *.substack.com — exact match doesn't suffice. Suffix match.
