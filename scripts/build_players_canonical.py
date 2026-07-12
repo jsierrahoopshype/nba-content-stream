@@ -58,6 +58,11 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 CANONICAL_DIR = REPO_ROOT / "data" / "canonical"
 PLAYERS_OUT = CANONICAL_DIR / "players.json"
 TEAMS_PATH = CANONICAL_DIR / "teams.json"
+# Additive manual overrides (e.g. incoming draft class) that nba-headshots'
+# active.json hasn't picked up yet. Merged in AFTER the active-derived
+# build so hand-added entries survive the full regeneration. See
+# apply_overrides for the merge rule.
+OVERRIDES_PATH = CANONICAL_DIR / "player_overrides.json"
 
 # Default input is the fetched-and-stashed copy of active.json. Override
 # with a path argument when running locally to use a fresh download.
@@ -100,6 +105,44 @@ def _existing_aliases(prev_players: dict) -> dict:
         if keep:
             out[slug] = keep
     return out
+
+
+def apply_overrides(out: dict, overrides: dict) -> tuple[int, int]:
+    """Merge additive `overrides` into the active-derived canonical `out`.
+
+    players.json is fully regenerated from active.json each run, so any
+    manually-added player would be wiped without this step. Merge rule:
+
+      * slug NOT yet in `out` — nba-headshots hasn't caught up with this
+        player (real nba_id / headshot still pending): add the override
+        entry as-is (nba_id / headshot_filename stay null until the real
+        pipeline fills them in).
+      * slug ALREADY in `out` — active.json now carries the real record:
+        the active-derived entry WINS (real nba_id / headshot / team), but
+        any override `aliases` not already present are merged in so the
+        curated alias work isn't lost when the real data arrives.
+
+    Mutates `out` in place. Idempotent: re-running against the same inputs
+    produces the same result (no duplicate entries, no duplicate aliases).
+    Returns `(added_as_is, superseded_by_active)`.
+    """
+    added = 0
+    superseded = 0
+    for slug, entry in overrides.items():
+        if slug.startswith("_"):
+            continue
+        if slug not in out:
+            out[slug] = entry
+            added += 1
+        else:
+            existing = out[slug].get("aliases") or []
+            merged = list(existing)
+            for alias in entry.get("aliases", []) or []:
+                if alias not in merged:
+                    merged.append(alias)
+            out[slug]["aliases"] = merged
+            superseded += 1
+    return added, superseded
 
 
 def build(active_path: Path = DEFAULT_ACTIVE_INPUT) -> dict:
@@ -177,6 +220,21 @@ def build(active_path: Path = DEFAULT_ACTIVE_INPUT) -> dict:
             "headshot_filename": (p.get("headshot") or {}).get("filename"),
             "aliases": aliases,
         }
+
+    # Additive overrides (incoming draft class, etc.) — merged AFTER the
+    # active-derived build so hand-added players survive regeneration.
+    if OVERRIDES_PATH.exists():
+        overrides = json.load(OVERRIDES_PATH.open(encoding="utf-8"))
+        added, superseded = apply_overrides(out, overrides)
+        total = len([k for k in out if not k.startswith("_")])
+        out["_meta"]["total_players"] = total
+        out["_meta"]["overrides_added"] = added
+        out["_meta"]["overrides_superseded"] = superseded
+        print(
+            f"overrides: {added} added as-is, {superseded} superseded by "
+            f"active.json data (total players: {total})",
+            file=sys.stderr,
+        )
     return out
 
 
