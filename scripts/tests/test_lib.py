@@ -462,14 +462,21 @@ def test_canonical_has_active_roster_count(vocab):
 
 
 def test_every_player_has_team_and_headshot_filename(vocab):
-    """Each entry should map to a known team slug and carry the
-    upstream headshot filename so the frontend can build the URL."""
+    """Each entry must map to a known team slug. Players sourced from the
+    real active roster (those with an nba_id) must also carry the upstream
+    headshot filename so the frontend can build the URL.
+
+    Additive override entries pending nba-headshots data — the incoming
+    draft class, which carries nba_id: null until the upstream pipeline
+    catches up (see build_players_canonical.apply_overrides) — are exempt
+    from the headshot requirement; the frontend falls back to initials."""
     players, teams = vocab
     bad = []
     for slug, info in players.items():
         if not info.get("team") or info["team"] not in teams:
             bad.append((slug, "team", info.get("team")))
-        if not info.get("headshot_filename"):
+        # A headshot can only exist once the player has a real nba_id.
+        if info.get("nba_id") is not None and not info.get("headshot_filename"):
             bad.append((slug, "headshot_filename"))
     assert not bad, f"first 5 issues: {bad[:5]}"
 
