@@ -32,6 +32,7 @@ Run from repo root:
 
 from __future__ import annotations
 
+import csv
 import json
 import re
 import sys
@@ -63,6 +64,14 @@ TEAMS_PATH = CANONICAL_DIR / "teams.json"
 # build so hand-added entries survive the full regeneration. See
 # apply_overrides for the merge rule.
 OVERRIDES_PATH = CANONICAL_DIR / "player_overrides.json"
+# Curated alias allowlist (Wemby, Dame, and the SAFE, non-colliding bare
+# surnames — Maxey, Tatum, Durant, …). Consulted by _existing_aliases so a
+# rebuild PRESERVES these instead of stripping them. Without this the
+# "drop bare last names" policy silently removed ~48 stars' surname tags
+# on every rebuild, even though those surnames are runtime-tagged only via
+# players.json (alternate_names.csv is NOT loaded at tag time). This is the
+# gap issue #31 actually needs closed.
+ALT_NAMES_PATH = REPO_ROOT / "data" / "sources" / "alternate_names.csv"
 
 # Default input is the fetched-and-stashed copy of active.json. Override
 # with a path argument when running locally to use a fresh download.
@@ -80,26 +89,58 @@ def _abbr_to_slug(teams: dict) -> dict:
     return out
 
 
-def _existing_aliases(prev_players: dict) -> dict:
-    """Map slug -> list of legacy short-form aliases that should survive."""
+def _load_alternate_names(path: Path = ALT_NAMES_PATH) -> dict:
+    """Parse alternate_names.csv into `{full_name: set(match strings)}`.
+
+    The CSV is the curated allowlist of aliases we trust enough to tag —
+    including the SAFE, non-colliding bare surnames (Maxey, Tatum, …).
+    Only the `mentions_match` column matters here; matching to a slug is
+    done by the caller via each player's display name.
+    """
+    out: dict = {}
+    if not path.exists():
+        return out
+    with path.open(encoding="utf-8", newline="") as f:
+        for row in csv.reader(f):
+            if len(row) != 2 or row[0] == "full_name":
+                continue
+            full_name, matches = row[0], row[1]
+            bucket = out.setdefault(full_name, set())
+            for m in matches.split(","):
+                m = m.strip()
+                if m:
+                    bucket.add(m)
+    return out
+
+
+def _existing_aliases(prev_players: dict, alt_map: Optional[dict] = None) -> dict:
+    """Map slug -> list of legacy short-form aliases that should survive.
+
+    Keeps curated nicknames (Wemby, SGA, KAT, KD, …) across the rebuild,
+    and — new in the alternate_names wiring — keeps a bare last name when
+    it's an explicitly curated, non-colliding alias in alternate_names.csv
+    (Maxey, Tatum, Durant, …). Other bare last names are still dropped:
+    with 600+ players most surnames collide, and the tagger no longer
+    generates implicit last-name candidates.
+    """
+    alt_map = alt_map or {}
     out = {}
-    # The PREVIOUS canonical had things like ["Wemby", "SGA", "KAT", "JB",
-    # "KD", "PG"] curated as nicknames. We want to keep those even when
-    # the new larger canonical comes from automated active.json — they
-    # are still single-player matches in most cases (the tagger will
-    # drop any that turn ambiguous in the larger pool).
     for slug, info in prev_players.items():
         if slug.startswith("_"):
             continue
-        last_name = (info.get("name") or "").split()[-1] if info.get("name") else ""
+        name = info.get("name") or ""
+        last_name = name.split()[-1] if name else ""
+        curated = alt_map.get(name, set())
         keep = []
         for a in info.get("aliases", []) or []:
-            # Skip the bare last name (would be added implicitly under the
-            # OLD tagger; we want to drop that everywhere now).
-            if a == last_name:
+            # Drop the bare last name UNLESS it's a curated safe alias in
+            # alternate_names.csv. Stripping curated surnames silently
+            # broke tagging for ~48 stars (they're runtime-tagged only via
+            # players.json; the CSV isn't read at tag time). See issue #31.
+            if a == last_name and a not in curated:
                 continue
             # Skip if it duplicates the display name (canonical already has it).
-            if a == info.get("name"):
+            if a == name:
                 continue
             keep.append(a)
         if keep:
@@ -152,7 +193,8 @@ def build(active_path: Path = DEFAULT_ACTIVE_INPUT) -> dict:
     prev_players: dict = {}
     if PLAYERS_OUT.exists():
         prev_players = json.load(PLAYERS_OUT.open(encoding="utf-8"))
-    legacy_aliases = _existing_aliases(prev_players)
+    alt_map = _load_alternate_names()
+    legacy_aliases = _existing_aliases(prev_players, alt_map)
 
     active = json.load(active_path.open(encoding="utf-8"))
     src_players = active.get("players", [])

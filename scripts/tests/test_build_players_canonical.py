@@ -108,3 +108,61 @@ def test_shipped_overrides_are_valid():
         assert isinstance(e["aliases"], list)
     # Thomas Sorber deliberately excluded (already in players.json).
     assert "thomas-sorber" not in overrides
+
+
+# ---------------------------------------------------------------------------
+# alternate_names.csv wiring (issue #31): a rebuild must PRESERVE curated
+# bare-surname aliases instead of stripping them. Those surnames are
+# runtime-tagged only via players.json (the CSV is not read at tag time),
+# so stripping them silently breaks tagging for ~48 stars.
+# ---------------------------------------------------------------------------
+
+ALT_NAMES_PATH = REPO_ROOT / "data" / "sources" / "alternate_names.csv"
+
+
+def test_existing_aliases_keeps_curated_surname_drops_uncurated():
+    prev = {
+        "_meta": {},
+        "tyrese-maxey": {"name": "Tyrese Maxey", "aliases": ["Maxey"]},          # curated surname
+        "some-rookie": {"name": "Some Rookie", "aliases": ["Rookie"]},           # NOT curated
+        "star-player": {"name": "Star Player", "aliases": ["Star", "Player"]},   # mix
+    }
+    alt_map = {"Tyrese Maxey": {"Maxey"}, "Star Player": {"Star"}}
+    out = bpc._existing_aliases(prev, alt_map)
+    assert out["tyrese-maxey"] == ["Maxey"]        # curated surname survives
+    assert "some-rookie" not in out                # uncurated bare surname dropped -> empty
+    assert out["star-player"] == ["Star"]          # "Player" (uncurated last name) dropped, "Star" kept
+
+
+def test_existing_aliases_without_altmap_strips_all_bare_surnames():
+    # Back-compat: no alt_map -> the original strip-everything behavior.
+    prev = {"a-b": {"name": "A B", "aliases": ["B", "Nick"]}}
+    assert bpc._existing_aliases(prev) == {"a-b": ["Nick"]}
+
+
+def test_load_alternate_names_parses_matches(tmp_path):
+    p = tmp_path / "alt.csv"
+    p.write_text(
+        'full_name,mentions_match\n'
+        'Tyrese Maxey,Maxey\n'
+        'Zion Williamson,"Zion,Williamson"\n',
+        encoding="utf-8",
+    )
+    m = bpc._load_alternate_names(p)
+    assert m["Tyrese Maxey"] == {"Maxey"}
+    assert m["Zion Williamson"] == {"Zion", "Williamson"}
+
+
+def test_shipped_csv_covers_the_curated_star_surnames():
+    """The shipped alternate_names.csv must list the safe surnames the
+    build relies on to survive a rebuild (spot-check a representative set
+    of the ~48). If one drops out of the CSV, its rebuild-preservation
+    would silently break — this catches that."""
+    alt = bpc._load_alternate_names(ALT_NAMES_PATH)
+    for full_name, surname in [
+        ("Tyrese Maxey", "Maxey"), ("Jayson Tatum", "Tatum"),
+        ("Kevin Durant", "Durant"), ("Victor Wembanyama", "Wembanyama"),
+        ("Damian Lillard", "Lillard"), ("Joel Embiid", "Embiid"),
+        ("Ja Morant", "Morant"),
+    ]:
+        assert surname in alt.get(full_name, set()), f"{surname} missing for {full_name}"
