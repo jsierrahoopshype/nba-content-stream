@@ -1,8 +1,31 @@
 {
   "date": "2026-07-15",
   "source": "google-news",
-  "generated_at": "2026-07-15T14:13:18Z",
+  "generated_at": "2026-07-15T15:54:19Z",
   "items": [
+    {
+      "id": "gn-3faf2fc50d816dbb",
+      "source": "google-news",
+      "published_at": "2026-07-15T00:00:00Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNVmx2eTJnd0JuZTQ4bXBwb0ltZVVpbUQ3YmJYbkZuelB3ckRueXl6Q3lEcHpBNjJ5NUdJQk1OdjltbERJMG40QjNUdXdfZzNZTlIyVWVOY2FUVVVpb190TFI0dUV0SkNnV2VIVXB4SGFfUERubG1KQ3JuaUFfUDMtVTVkTUhRSmJ2YmY0MkFadjlIU3ZtSVUtdzMyanRudw?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNVmx2eTJnd0JuZTQ4bXBwb0ltZVVpbUQ3YmJYbkZuelB3ckRueXl6Q3lEcHpBNjJ5NUdJQk1OdjltbERJMG40QjNUdXdfZzNZTlIyVWVOY2FUVVVpb190TFI0dUV0SkNnV2VIVXB4SGFfUERubG1KQ3JuaUFfUDMtVTVkTUhRSmJ2YmY0MkFadjlIU3ZtSVUtdzMyanRudw?oc=5",
+      "title": "Seth Meyers Just Asked Anne Hathaway About That Wild Knicks Stat After Devil Wears Prada 2 Came Out",
+      "author": {
+        "handle": "Yahoo",
+        "display_name": "Yahoo",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [],
+      "teams": [
+        "new-york-knicks"
+      ],
+      "matched_query": "New York Knicks",
+      "body_excerpt": "Seth Meyers Just Asked Anne Hathaway About That Wild Knicks Stat After Devil Wears Prada 2 Came Out Yahoo"
+    },
     {
       "id": "gn-6d6cde1bb22bb242",
       "source": "google-news",
@@ -130,6 +153,32 @@
       ],
       "matched_query": "NBA news",
       "body_excerpt": "Latest NBA free agency rumors: Is LeBron finally nearing a decision? Heat eye Thompson, DeRozan. NBC Sports"
+    },
+    {
+      "id": "gn-19ec392bfc3957c4",
+      "source": "google-news",
+      "published_at": "2026-07-15T00:05:31Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNU3hPRGZQYkFyeDhJV3NPXzRYN1ZvVVRlVWRrQzZlTW5HTkhVeElxblByU1dmWnFlZGhpMGJKQTNhSkZZUTFTdXJObE81UHRSTmJMc0dxMUJYTzVqc2tmdy1WbFZFWXhhWl85c0dLU01ITkhUZDdvaHRwMWE5SFpYeFhCdVlMczNGbWx5N1YtU3NBTGJUSF9NeHNweFJTVVVhLUozelRwSTRlUkhQRXVDN1FfaXZ3MFQtZzZwTE5ienlkOFBITVE?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNU3hPRGZQYkFyeDhJV3NPXzRYN1ZvVVRlVWRrQzZlTW5HTkhVeElxblByU1dmWnFlZGhpMGJKQTNhSkZZUTFTdXJObE81UHRSTmJMc0dxMUJYTzVqc2tmdy1WbFZFWXhhWl85c0dLU01ITkhUZDdvaHRwMWE5SFpYeFhCdVlMczNGbWx5N1YtU3NBTGJUSF9NeHNweFJTVVVhLUozelRwSTRlUkhQRXVDN1FfaXZ3MFQtZzZwTE5ienlkOFBITVE?oc=5",
+      "title": "Latest NBA free agency rumors: Is LeBron finally nearing a decision? Heat eye Thompson, DeRozan",
+      "author": {
+        "handle": "NBC Sports",
+        "display_name": "NBC Sports",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "demar-derozan",
+        "lebron-james"
+      ],
+      "teams": [
+        "miami-heat"
+      ],
+      "matched_query": "NBA trade rumors",
+      "body_excerpt": "Latest NBA free agency rumors: Is LeBron finally nearing a decision? Heat eye Thompson, DeRozan NBC Sports"
     },
     {
       "id": "gn-464075c2e49269c4",
@@ -963,6 +1012,29 @@
       ],
       "matched_query": "Memphis Grizzlies",
       "body_excerpt": "Yaxel Lendeborg Stuffs Stat Sheet in Warriors' Loss to Grizzlies NBA.com"
+    },
+    {
+      "id": "gn-fdc7e54fd33088d2",
+      "source": "google-news",
+      "published_at": "2026-07-15T00:58:00Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOaTg0THBMa3gyaW42bDdIamU4MUxNckIza3BYc0NZYzdFSHR1SHVHTzhmanhXdmdERlEzbUp5eGVWMGVwc2NYOERWWG9tMTVvWms2c2FYUnJtMDdfZTBtQVZlOHlCRUVWYkdHcXFCbDhFZG4wTUZCMUlpTkV4eDhaYWFjaDFrMHc?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOaTg0THBMa3gyaW42bDdIamU4MUxNckIza3BYc0NZYzdFSHR1SHVHTzhmanhXdmdERlEzbUp5eGVWMGVwc2NYOERWWG9tMTVvWms2c2FYUnJtMDdfZTBtQVZlOHlCRUVWYkdHcXFCbDhFZG4wTUZCMUlpTkV4eDhaYWFjaDFrMHc?oc=5",
+      "title": "Taylor Hendricks rises to block the shot",
+      "author": {
+        "handle": "Yahoo Sports",
+        "display_name": "Yahoo Sports",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "taylor-hendricks"
+      ],
+      "teams": [],
+      "matched_query": "Taylor Hendricks",
+      "body_excerpt": "Taylor Hendricks rises to block the shot Yahoo Sports"
     },
     {
       "id": "gn-effae4bdb01e5e0a",
@@ -2181,6 +2253,30 @@
       "body_excerpt": "Washington Wizards vs. Chicago Bulls: Game Highlights ESPN"
     },
     {
+      "id": "gn-65a891d1bbad6a92",
+      "source": "google-news",
+      "published_at": "2026-07-15T02:22:34Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE8wUTQ1SkVpSkZMSFYtUURWLVNnNUR3UmpMYWpVaEt0cjYzQW5UVXB3VXdXUmJUWXlYRmRBeUYyUi1wRTR6NGxLODBvTWgxT3U1MlNuQ2JSRGgtaEVkanJnWWlpd0RiNEk?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE8wUTQ1SkVpSkZMSFYtUURWLVNnNUR3UmpMYWpVaEt0cjYzQW5UVXB3VXdXUmJUWXlYRmRBeUYyUi1wRTR6NGxLODBvTWgxT3U1MlNuQ2JSRGgtaEVkanJnWWlpd0RiNEk?oc=5",
+      "title": "LA Clippers vs Los Angeles Lakers Jul 14, 2026 Box Scores",
+      "author": {
+        "handle": "NBA.com",
+        "display_name": "NBA.com",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [],
+      "teams": [
+        "los-angeles-clippers",
+        "los-angeles-lakers"
+      ],
+      "matched_query": "Los Angeles Lakers",
+      "body_excerpt": "LA Clippers vs Los Angeles Lakers Jul 14, 2026 Box Scores NBA.com"
+    },
+    {
       "id": "gn-66a6cf43b364ce24",
       "source": "google-news",
       "published_at": "2026-07-15T02:24:53Z",
@@ -2351,6 +2447,30 @@
       ],
       "matched_query": "Memphis Grizzlies",
       "body_excerpt": "Grizzlies 106-85 Warriors (Jul 14, 2026) Game Recap ESPN"
+    },
+    {
+      "id": "gn-3b21e411a19673a5",
+      "source": "google-news",
+      "published_at": "2026-07-15T02:30:16Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQbGxsZFhPN3VnUU91SE8tdkxqQWlIR0ZyRXhPV3VNOGVUVkRtNE9UdkF0ZG9BNmlvbXJOVVdOOWZSQUpDajFjcHhiX0NQc1AyM3ZLaURRTFY4RWFUaV9mUWVra2NsM2xXWlpNRnJWZ25CYjZmNGV4ekgya3VtY2dVVVRMUlV5ejVlQWZNek9lWGc5NlF4dW9ubXZvaw?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQbGxsZFhPN3VnUU91SE8tdkxqQWlIR0ZyRXhPV3VNOGVUVkRtNE9UdkF0ZG9BNmlvbXJOVVdOOWZSQUpDajFjcHhiX0NQc1AyM3ZLaURRTFY4RWFUaV9mUWVra2NsM2xXWlpNRnJWZ25CYjZmNGV4ekgya3VtY2dVVVRMUlV5ejVlQWZNek9lWGc5NlF4dW9ubXZvaw?oc=5",
+      "title": "Grizzlies 106-85 Warriors (15 Jul, 2026) Play-by-Play",
+      "author": {
+        "handle": "espn.in",
+        "display_name": "espn.in",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [],
+      "teams": [
+        "golden-state-warriors",
+        "memphis-grizzlies"
+      ],
+      "matched_query": "Taylor Hendricks",
+      "body_excerpt": "Grizzlies 106-85 Warriors (15 Jul, 2026) Play-by-Play espn.in"
     },
     {
       "id": "gn-dbb591b242b4d80d",
@@ -3539,6 +3659,30 @@
       "body_excerpt": "Adam Silver says NBA didn't 'pause' Kawhi Leonard trade, that Raptors, Clippers did; confident probe will end before new season Yahoo Sports"
     },
     {
+      "id": "gn-474bdc2c1a7e5e4e",
+      "source": "google-news",
+      "published_at": "2026-07-15T04:53:07Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNeGxGZXVuaWJDd1ltSFRfSmNLNzl6SVdEWVA0R0ktdU5FSjZHWUVCWk41cWlBczhRWmVybW9iaDVCbmhJQjNMSDZYWjBqM2FKVTF6RjB4a09MSXRYMW5oOHZGS1Bsb1pNZHpxdlRMeEpGc3J5d1lSY01UN0R6UllnMHU4T1c1RmxrdHNWNklvTU9uS0lPWkllX1FuemJaSkJpNVZqbHI3NnRaMk55bVE?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNeGxGZXVuaWJDd1ltSFRfSmNLNzl6SVdEWVA0R0ktdU5FSjZHWUVCWk41cWlBczhRWmVybW9iaDVCbmhJQjNMSDZYWjBqM2FKVTF6RjB4a09MSXRYMW5oOHZGS1Bsb1pNZHpxdlRMeEpGc3J5d1lSY01UN0R6UllnMHU4T1c1RmxrdHNWNklvTU9uS0lPWkllX1FuemJaSkJpNVZqbHI3NnRaMk55bVE?oc=5",
+      "title": "Relato Grizzlies 106-85 Warriors (14 de Jul., 2026)",
+      "author": {
+        "handle": "ESPN Chile",
+        "display_name": "ESPN Chile",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [],
+      "teams": [
+        "golden-state-warriors",
+        "memphis-grizzlies"
+      ],
+      "matched_query": "Taylor Hendricks",
+      "body_excerpt": "Relato Grizzlies 106-85 Warriors (14 de Jul., 2026) ESPN Chile"
+    },
+    {
       "id": "gn-69b1371eb9a9d1cb",
       "source": "google-news",
       "published_at": "2026-07-15T04:55:00Z",
@@ -4214,6 +4358,29 @@
       "body_excerpt": "Mitchell Robinson is a perfect fit for Mazzulla Ball and the Celtics Yahoo Sports"
     },
     {
+      "id": "gn-c6f7668779cd9bef",
+      "source": "google-news",
+      "published_at": "2026-07-15T08:50:00Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPLVpqMXQzMG1YSVRxTnRrZGtQQ21YNVNBNm03ZHAwVng2MXN1Wk5XV2ZMY3JrSV9pZkN3Y0o2dEJlNjV0czNwTnBmaFVKNkJLYmRxaV84ejBFbzFWbTYxU0hXWkNuazhHdWZLLTh1VHF5NWppajBYeENxNmNEbm9UcndlR1dicEZkNkJOWg?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPLVpqMXQzMG1YSVRxTnRrZGtQQ21YNVNBNm03ZHAwVng2MXN1Wk5XV2ZMY3JrSV9pZkN3Y0o2dEJlNjV0czNwTnBmaFVKNkJLYmRxaV84ejBFbzFWbTYxU0hXWkNuazhHdWZLLTh1VHF5NWppajBYeENxNmNEbm9UcndlR1dicEZkNkJOWg?oc=5",
+      "title": "Taylor Hendricks scores the first bucket of the game",
+      "author": {
+        "handle": "NBA.com",
+        "display_name": "NBA.com",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "taylor-hendricks"
+      ],
+      "teams": [],
+      "matched_query": "Taylor Hendricks",
+      "body_excerpt": "Taylor Hendricks scores the first bucket of the game NBA.com"
+    },
+    {
       "id": "gn-f84c565d01c754c2",
       "source": "google-news",
       "published_at": "2026-07-15T10:00:04Z",
@@ -4422,6 +4589,32 @@
       "body_excerpt": "How Marvel’s Guardians of the Galaxy is linked to the NBA’s second investigation into Kawhi Leonard Yahoo Sports UK"
     },
     {
+      "id": "gn-8d4069515488f69f",
+      "source": "google-news",
+      "published_at": "2026-07-15T10:42:06Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQWFpuM0R4OHg2RERhZThnb3ZqbU9VNGpNc3hsYnp4UzhmcExrTTgxa0syWnV2NlphcGtBejM2eHJQa2tLcVR1aGlFV3RuQVA4N1B5OHR3LW83X1JxS043NlRNel9odU83ZlVLVkh0LUUtYTdsZEM5N3poQlBJd0dZeldDTExrbUR2N2JUYzNWbw?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQWFpuM0R4OHg2RERhZThnb3ZqbU9VNGpNc3hsYnp4UzhmcExrTTgxa0syWnV2NlphcGtBejM2eHJQa2tLcVR1aGlFV3RuQVA4N1B5OHR3LW83X1JxS043NlRNel9odU83ZlVLVkh0LUUtYTdsZEM5N3poQlBJd0dZeldDTExrbUR2N2JUYzNWbw?oc=5",
+      "title": "Marcus Thornton Leads the Houston Rockets to a Dominant Victory Over the Philadelphia 76ers",
+      "author": {
+        "handle": "Yahoo Sports",
+        "display_name": "Yahoo Sports",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "bruce-thornton"
+      ],
+      "teams": [
+        "houston-rockets",
+        "philadelphia-76ers"
+      ],
+      "matched_query": "Houston Rockets",
+      "body_excerpt": "Marcus Thornton Leads the Houston Rockets to a Dominant Victory Over the Philadelphia 76ers Yahoo Sports"
+    },
+    {
       "id": "gn-0b0150db0eaad455",
       "source": "google-news",
       "published_at": "2026-07-15T11:00:00Z",
@@ -4464,6 +4657,31 @@
       ],
       "matched_query": "NBA free agency",
       "body_excerpt": "Grading Each of Detroit Pistons Moves in NBA Free Agency So Far Sports Illustrated"
+    },
+    {
+      "id": "gn-2a511226e6014410",
+      "source": "google-news",
+      "published_at": "2026-07-15T11:00:00Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNM0huZDllR2V2NS1LRjN0UExDczJvX0F2cUJaQlhPSU5sMk9VZ0NIYWFJeGN4TnBJUEJzSnpFQmhPZnl0VWotbTFGanF3M0tfdnVfYjZRSzhZTHFsajFNb29hZzdNTGQwbXRuZmEwd044R18wWm5GUzh4dmhUUk1WZ2Z1UlR2dEE?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNM0huZDllR2V2NS1LRjN0UExDczJvX0F2cUJaQlhPSU5sMk9VZ0NIYWFJeGN4TnBJUEJzSnpFQmhPZnl0VWotbTFGanF3M0tfdnVfYjZRSzhZTHFsajFNb29hZzdNTGQwbXRuZmEwd044R18wWm5GUzh4dmhUUk1WZ2Z1UlR2dEE?oc=5",
+      "title": "How long can Jalen Brunson remain elite for the Knicks?",
+      "author": {
+        "handle": "Yahoo Sports",
+        "display_name": "Yahoo Sports",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "jalen-brunson"
+      ],
+      "teams": [
+        "new-york-knicks"
+      ],
+      "matched_query": "New York Knicks",
+      "body_excerpt": "How long can Jalen Brunson remain elite for the Knicks? Yahoo Sports"
     },
     {
       "id": "gn-a651f17b6e5060b0",
@@ -4681,6 +4899,56 @@
       "body_excerpt": "Paul George is walking into the hardest first impression in Boston Yahoo Sports"
     },
     {
+      "id": "gn-41f1f8dee5cae76e",
+      "source": "google-news",
+      "published_at": "2026-07-15T11:26:40Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQOWk5cnc3THdJemlKTGpYOU9lVU9iZGFlaFg4SFRpckduWTBJMFVSUXdVZ1I4dFc2VEdDQ2ZWdmtrdFhYLUtkb0J0US12ak1QSmRTSFpUN3VQWWgwd010QVNMdnZpNG1lQ1BzajIyekZCR0E0M245enBpbFQ3NnJHeXdfbVF4RDg?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQOWk5cnc3THdJemlKTGpYOU9lVU9iZGFlaFg4SFRpckduWTBJMFVSUXdVZ1I4dFc2VEdDQ2ZWdmtrdFhYLUtkb0J0US12ak1QSmRTSFpUN3VQWWgwd010QVNMdnZpNG1lQ1BzajIyekZCR0E0M245enBpbFQ3NnJHeXdfbVF4RDg?oc=5",
+      "title": "“He’s Cheesing Hard”: Lakers Fans Sense Potential Jonathan Kuminga Trade is in Progress After Shams Charania’s Comment",
+      "author": {
+        "handle": "Yahoo Sports",
+        "display_name": "Yahoo Sports",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "jonathan-kuminga"
+      ],
+      "teams": [
+        "los-angeles-lakers"
+      ],
+      "matched_query": "Los Angeles Lakers",
+      "body_excerpt": "“He’s Cheesing Hard”: Lakers Fans Sense Potential Jonathan Kuminga Trade is in Progress After Shams Charania’s Comment Yahoo Sports"
+    },
+    {
+      "id": "gn-c2191d3a1a14560a",
+      "source": "google-news",
+      "published_at": "2026-07-15T11:28:49Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNMWFDYWo5bWNaRkpWNlVleXQzSVFlOUpxZkotOS1NN0FuUGd2T2JBbTh2MEVIZld3TlU3SjJ2UXpNWjV2MHJMZUdFaHdXdmZaazBkdEptcHl2c0hlMkRaZjB1WWRRYVBEalB0cXR5cFRSNkpqRWxYTnZDdzZKblFudUFKdm1TeEtBMmQ3SQ?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNMWFDYWo5bWNaRkpWNlVleXQzSVFlOUpxZkotOS1NN0FuUGd2T2JBbTh2MEVIZld3TlU3SjJ2UXpNWjV2MHJMZUdFaHdXdmZaazBkdEptcHl2c0hlMkRaZjB1WWRRYVBEalB0cXR5cFRSNkpqRWxYTnZDdzZKblFudUFKdm1TeEtBMmQ3SQ?oc=5",
+      "title": "Former LeBron James teammate breaks down NBA star's free-agent options, warns him about Cavs return",
+      "author": {
+        "handle": "Yahoo Sports",
+        "display_name": "Yahoo Sports",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "lebron-james"
+      ],
+      "teams": [
+        "cleveland-cavaliers"
+      ],
+      "matched_query": "NBA free agency",
+      "body_excerpt": "Former LeBron James teammate breaks down NBA star's free-agent options, warns him about Cavs return Yahoo Sports"
+    },
+    {
       "id": "gn-0e446f3a63e1c4ea",
       "source": "google-news",
       "published_at": "2026-07-15T11:45:11Z",
@@ -4700,6 +4968,58 @@
       "teams": [],
       "matched_query": "NBA news",
       "body_excerpt": "NBA Summer League Nightly Recap | July 14, 2026 NBA.com"
+    },
+    {
+      "id": "gn-5efe59a061082e93",
+      "source": "google-news",
+      "published_at": "2026-07-15T11:58:00Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPVnVnWDBsX0FLNm82anhlX2ZUeEhJalIweW01cjg5VFlteWp1Umw5SzhUZnN2ZGhlU1VpemF1cXFxdjBHU0lkLXlQYl9XQzNxZWQwU253RVlYQXZTWjlUbzFHbHRJVE16U3g4Mmk0SzVLSDJ1SmJqSFlWZzFhWElGZFJ6bEkzQ29saGU5N0NBRGdQTDRldWhfcEhlSFJLd2o1WVcyVEVULU5jTUVhZ3o2bkdGaUFQQQ?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPVnVnWDBsX0FLNm82anhlX2ZUeEhJalIweW01cjg5VFlteWp1Umw5SzhUZnN2ZGhlU1VpemF1cXFxdjBHU0lkLXlQYl9XQzNxZWQwU253RVlYQXZTWjlUbzFHbHRJVE16U3g4Mmk0SzVLSDJ1SmJqSFlWZzFhWElGZFJ6bEkzQ29saGU5N0NBRGdQTDRldWhfcEhlSFJLd2o1WVcyVEVULU5jTUVhZ3o2bkdGaUFQQQ?oc=5",
+      "title": "LeBron James free agency: Did NBA legend hint at Heat signing on social media?",
+      "author": {
+        "handle": "USA Today",
+        "display_name": "USA Today",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "lebron-james"
+      ],
+      "teams": [
+        "miami-heat"
+      ],
+      "matched_query": "Miami Heat",
+      "body_excerpt": "LeBron James free agency: Did NBA legend hint at Heat signing on social media? USA Today"
+    },
+    {
+      "id": "gn-4b60ddc2c5807216",
+      "source": "google-news",
+      "published_at": "2026-07-15T11:58:18Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQaG1IaG1YUUR1YW9UOG1Dcm12S1NTZlh2MnRXdkRJM19kUVA0UFpyeUtHU0dXS1Q3X0lOT1ZvX282dWhvbUVDSTFxNmdsSEV2T092a3NxVHhlTHdpcXFhdG5QbGxqejJTaVkyWExaOFg1Sl9OZnRHMkp3VE5DdEVWckE3MTd1X1V4ajRkRVM3SHpBaFk?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQaG1IaG1YUUR1YW9UOG1Dcm12S1NTZlh2MnRXdkRJM19kUVA0UFpyeUtHU0dXS1Q3X0lOT1ZvX282dWhvbUVDSTFxNmdsSEV2T092a3NxVHhlTHdpcXFhdG5QbGxqejJTaVkyWExaOFg1Sl9OZnRHMkp3VE5DdEVWckE3MTd1X1V4ajRkRVM3SHpBaFk?oc=5",
+      "title": "Timberwolves' Tim Connelly entices LeBron James to team up with Anthony Edwards and Lamelo Ball",
+      "author": {
+        "handle": "Yahoo Sports",
+        "display_name": "Yahoo Sports",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "anthony-edwards",
+        "lamelo-ball",
+        "lebron-james"
+      ],
+      "teams": [
+        "minnesota-timberwolves"
+      ],
+      "matched_query": "Minnesota Timberwolves",
+      "body_excerpt": "Timberwolves' Tim Connelly entices LeBron James to team up with Anthony Edwards and Lamelo Ball Yahoo Sports"
     },
     {
       "id": "gn-a9293d429b7ad5ab",
@@ -4828,6 +5148,55 @@
       "body_excerpt": "Spurs Get De'Aaron Fox Trade Verdict After Victor Wembanyama's Extension Yahoo Sports"
     },
     {
+      "id": "gn-f1d30d8f655e55bb",
+      "source": "google-news",
+      "published_at": "2026-07-15T12:00:49Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNYUt4b0gxYlVkc0FuejhpWFRPUEpyX0RXRDhtQ1FlYVl1NkJuR1BlaFFVV1RNRWVZOTRSYWNXZW5UbDBRaE9hS2s1UTVuRGVIaXVvaF91Z210T2tuaGs1LWRjcDFfcXc2bG9PUmktSk5Gb0otMjJNczN3U3RwNVlmSQ?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNYUt4b0gxYlVkc0FuejhpWFRPUEpyX0RXRDhtQ1FlYVl1NkJuR1BlaFFVV1RNRWVZOTRSYWNXZW5UbDBRaE9hS2s1UTVuRGVIaXVvaF91Z210T2tuaGs1LWRjcDFfcXc2bG9PUmktSk5Gb0otMjJNczN3U3RwNVlmSQ?oc=5",
+      "title": "Ja Morant Doesn't See Trail Blazers' Loaded Backcourt as 'Problem'",
+      "author": {
+        "handle": "Yahoo Sports",
+        "display_name": "Yahoo Sports",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "ja-morant"
+      ],
+      "teams": [
+        "portland-trail-blazers"
+      ],
+      "matched_query": "Scoot Henderson",
+      "body_excerpt": "Ja Morant Doesn't See Trail Blazers' Loaded Backcourt as 'Problem' Yahoo Sports"
+    },
+    {
+      "id": "gn-5e7c06125a9a6b1c",
+      "source": "google-news",
+      "published_at": "2026-07-15T12:04:42Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQMW9CaHVRaFM4WVZ4R2RjQ2xIaHBGdFp0WExubFp0Y1l6eno2MU5sNUVXdnhBSno2QjBGUDZOdkQ4ZXc3QTZkbjRXemF5ZlBwZTJQaVBrc1phMFp4ZXZDRlliSmNKYVRTbTZhMHdicTViOFEyXzhnUzRManFkcm9NLW1DYUF6MUU?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQMW9CaHVRaFM4WVZ4R2RjQ2xIaHBGdFp0WExubFp0Y1l6eno2MU5sNUVXdnhBSno2QjBGUDZOdkQ4ZXc3QTZkbjRXemF5ZlBwZTJQaVBrc1phMFp4ZXZDRlliSmNKYVRTbTZhMHdicTViOFEyXzhnUzRManFkcm9NLW1DYUF6MUU?oc=5",
+      "title": "Former Vol leads all scorers in Lakers-Clippers game",
+      "author": {
+        "handle": "Yahoo Sports",
+        "display_name": "Yahoo Sports",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [],
+      "teams": [
+        "los-angeles-clippers",
+        "los-angeles-lakers"
+      ],
+      "matched_query": "LA Clippers",
+      "body_excerpt": "Former Vol leads all scorers in Lakers-Clippers game Yahoo Sports"
+    },
+    {
       "id": "gn-ecbf55593b2b0a37",
       "source": "google-news",
       "published_at": "2026-07-15T12:09:31Z",
@@ -4872,6 +5241,81 @@
       "body_excerpt": "‘1A/1B on the List’ — LeBron James’ Friend Reveals the Free-Agency Advice He Texted the 22-Time NBA All-Star Yahoo Sports"
     },
     {
+      "id": "gn-e38bdc3b78f86746",
+      "source": "google-news",
+      "published_at": "2026-07-15T12:30:00Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPbjRWMTBSMUNreWEyTFdicVhnOUs0QzlEempKX1p3MHFWbG12QW56S1lpSkFZZ0Q1anFUb2h3dDZxcUVjX2JvTGVyaEVjVlJTVU5nSDhYSTQ2MFB6cXVYdENkLUo5YWViZTBTdVZUSzlXMkJnYmsxVjcwc2pkOG9QUmpyWGRWclZIcVhNTkxTYkhGQjZWaERzTHBUNU5OZ3JVV1hhQkNKeDBTUkR2M2lXRmFn?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPbjRWMTBSMUNreWEyTFdicVhnOUs0QzlEempKX1p3MHFWbG12QW56S1lpSkFZZ0Q1anFUb2h3dDZxcUVjX2JvTGVyaEVjVlJTVU5nSDhYSTQ2MFB6cXVYdENkLUo5YWViZTBTdVZUSzlXMkJnYmsxVjcwc2pkOG9QUmpyWGRWclZIcVhNTkxTYkhGQjZWaERzTHBUNU5OZ3JVV1hhQkNKeDBTUkR2M2lXRmFn?oc=5",
+      "title": "LeBron-Miami Heat Reunion Watch: 76ers emerge as significant threat",
+      "author": {
+        "handle": "Sports Illustrated",
+        "display_name": "Sports Illustrated",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "lebron-james"
+      ],
+      "teams": [
+        "miami-heat",
+        "philadelphia-76ers"
+      ],
+      "matched_query": "Miami Heat",
+      "body_excerpt": "LeBron-Miami Heat Reunion Watch: 76ers emerge as significant threat Sports Illustrated"
+    },
+    {
+      "id": "gn-c7b840d4a25e7582",
+      "source": "google-news",
+      "published_at": "2026-07-15T12:30:00Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNdkxUM1hoZ2U5ckthUi1hSUQzWm5yQnRQcGN6OFdvemhMMVREWVRXQkItMlZHYWVlOExrU2xCWDE1QmJHVldxeVJfM3dRZFVmMllTX2NaYmkyUlFIaVpORDA5MFNBXzc2TjhNOVpvUzdSY2NzdlRyZUw3RTY2V3VJRg?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNdkxUM1hoZ2U5ckthUi1hSUQzWm5yQnRQcGN6OFdvemhMMVREWVRXQkItMlZHYWVlOExrU2xCWDE1QmJHVldxeVJfM3dRZFVmMllTX2NaYmkyUlFIaVpORDA5MFNBXzc2TjhNOVpvUzdSY2NzdlRyZUw3RTY2V3VJRg?oc=5",
+      "title": "‘Filthy 10-Man Rotation’ — NBA Analyst Pinpoints LeBron James’ ‘Most Obvious’ Path to Contending for 5th Title",
+      "author": {
+        "handle": "Yahoo Sports",
+        "display_name": "Yahoo Sports",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "lebron-james"
+      ],
+      "teams": [],
+      "matched_query": "Minnesota Timberwolves",
+      "body_excerpt": "‘Filthy 10-Man Rotation’ — NBA Analyst Pinpoints LeBron James’ ‘Most Obvious’ Path to Contending for 5th Title Yahoo Sports"
+    },
+    {
+      "id": "gn-240ec7a1701f2993",
+      "source": "google-news",
+      "published_at": "2026-07-15T12:36:56Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNSWxCQkhweFVNM2tJOWJsYWtrTThpeFhQcjYzOTl6ZHRlTTkwbXVkSmtoRWFSR3hvajVGVHdaV1BjNHpPdWszSllGdHVsR3B6VUtaS3hKbXZPM3EzMnM3d1Y0S0ltVG1OWGtpOTUwSmVQelhvc3huLTlFczVoeTJtTzFSZXNlbzJCSWxxbUUxVQ?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNSWxCQkhweFVNM2tJOWJsYWtrTThpeFhQcjYzOTl6ZHRlTTkwbXVkSmtoRWFSR3hvajVGVHdaV1BjNHpPdWszSllGdHVsR3B6VUtaS3hKbXZPM3EzMnM3d1Y0S0ltVG1OWGtpOTUwSmVQelhvc3huLTlFczVoeTJtTzFSZXNlbzJCSWxxbUUxVQ?oc=5",
+      "title": "Lakers predicted to trade outcast Dalton Knecht for disgruntled $46M ex-Warriors NBA champion",
+      "author": {
+        "handle": "Yahoo Sports",
+        "display_name": "Yahoo Sports",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "dalton-knecht"
+      ],
+      "teams": [
+        "golden-state-warriors",
+        "los-angeles-lakers"
+      ],
+      "matched_query": "NBA news",
+      "body_excerpt": "Lakers predicted to trade outcast Dalton Knecht for disgruntled $46M ex-Warriors NBA champion Yahoo Sports"
+    },
+    {
       "id": "gn-3eb7b67f73068b8e",
       "source": "google-news",
       "published_at": "2026-07-15T12:40:26Z",
@@ -4893,6 +5337,33 @@
       "teams": [],
       "matched_query": "NBA news",
       "body_excerpt": "Adam Silver addresses NBA expansion, Kawhi Leonard investigation & more NBA.com"
+    },
+    {
+      "id": "gn-82ac6c30d55b56d6",
+      "source": "google-news",
+      "published_at": "2026-07-15T12:48:53Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPQjIyZnVteTZ5eHJNWjRmQldRZFB6ZlVwUW83THItc3dBUkttU19Nc0ZyNWRfb3lSbmJSSERlVTFUQXZmcGlCYURVcEkxbENybW5oSndhWFp5WUNodTdUZUZpUnpnVGo3dk1qWjUydXRaWU81SHUzbjVyZlc2NTlaNmFnZnJEcGRXcUFvY1d3UFBYNWFwRmJLRVdLOXctYjdIWmp5cXQ4aTRnaEc1NU9WbV8tQnB6b1luTTVpdnVuc1YzMzhwTjJEbA?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPQjIyZnVteTZ5eHJNWjRmQldRZFB6ZlVwUW83THItc3dBUkttU19Nc0ZyNWRfb3lSbmJSSERlVTFUQXZmcGlCYURVcEkxbENybW5oSndhWFp5WUNodTdUZUZpUnpnVGo3dk1qWjUydXRaWU81SHUzbjVyZlc2NTlaNmFnZnJEcGRXcUFvY1d3UFBYNWFwRmJLRVdLOXctYjdIWmp5cXQ4aTRnaEc1NU9WbV8tQnB6b1luTTVpdnVuc1YzMzhwTjJEbA?oc=5",
+      "title": "Kevin Durant Gives His Take on LeBron James' Free Agency, Jaylen Brown's Trade to 76ers in Video",
+      "author": {
+        "handle": "Bleacher Report",
+        "display_name": "Bleacher Report",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "jaylen-brown",
+        "kevin-durant",
+        "lebron-james"
+      ],
+      "teams": [
+        "philadelphia-76ers"
+      ],
+      "matched_query": "NBA free agency",
+      "body_excerpt": "Kevin Durant Gives His Take on LeBron James' Free Agency, Jaylen Brown's Trade to 76ers in Video Bleacher Report"
     },
     {
       "id": "gn-794cfce064e63099",
@@ -4990,6 +5461,31 @@
       "body_excerpt": "Cavaliers Proposed to Pair Kevin Durant With LeBron James in Blockbuster Trade Yahoo Sports"
     },
     {
+      "id": "gn-efefa27ee4d2a50f",
+      "source": "google-news",
+      "published_at": "2026-07-15T13:00:00Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPU2d1bXlzSElPR2NCWk1VM21jUFFvMHIxSV9vRHFUN2U5SXZPd0gyY1JlN21pVXJuenY3eW9iUDVXT21yWHlVeV9fanNFRWdJb0ZUTWo2MkFTR3d1Y21xRm5FcnVfa1p1bEJlcHV2MEd6VUFMaHFVYnQ1UVVmdnRHVjNFUTYyWi1t?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPU2d1bXlzSElPR2NCWk1VM21jUFFvMHIxSV9vRHFUN2U5SXZPd0gyY1JlN21pVXJuenY3eW9iUDVXT21yWHlVeV9fanNFRWdJb0ZUTWo2MkFTR3d1Y21xRm5FcnVfa1p1bEJlcHV2MEd6VUFMaHFVYnQ1UVVmdnRHVjNFUTYyWi1t?oc=5",
+      "title": "Bucks Reacts Survey: How does the Giannis trade package look now?",
+      "author": {
+        "handle": "Yahoo Sports",
+        "display_name": "Yahoo Sports",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "giannis-antetokounmpo"
+      ],
+      "teams": [
+        "milwaukee-bucks"
+      ],
+      "matched_query": "Milwaukee Bucks",
+      "body_excerpt": "Bucks Reacts Survey: How does the Giannis trade package look now? Yahoo Sports"
+    },
+    {
       "id": "gn-ac192f566e2706a6",
       "source": "google-news",
       "published_at": "2026-07-15T13:00:02Z",
@@ -5066,6 +5562,31 @@
       "body_excerpt": "Acuff Put Together Best NBA Performance So Far Despite Blowout Loss To Brown, Nets Sports Illustrated"
     },
     {
+      "id": "gn-6f9b70c52ab34757",
+      "source": "google-news",
+      "published_at": "2026-07-15T13:00:04Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQTVBuMHd5LVZveklLaEFwOHJHUkY4dGx3VDBrcTloUXlzMWxYQy1fZ0JINk1FTGYwSjc5dTIxTkZIZkVFUHViakY3eHdITzBERE9kWVlkNTdFNHFoMTVYajRZWGoxb01BZUpaUU9EamZ3LW5HU1h2SmFBcF9SaGd3Z0RUUkZOMXMzMHQxSkNR?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQTVBuMHd5LVZveklLaEFwOHJHUkY4dGx3VDBrcTloUXlzMWxYQy1fZ0JINk1FTGYwSjc5dTIxTkZIZkVFUHViakY3eHdITzBERE9kWVlkNTdFNHFoMTVYajRZWGoxb01BZUpaUU9EamZ3LW5HU1h2SmFBcF9SaGd3Z0RUUkZOMXMzMHQxSkNR?oc=5",
+      "title": "Zyon Pullin Playing His Way Into Timberwolves' Plans at Summer League",
+      "author": {
+        "handle": "Yahoo Sports",
+        "display_name": "Yahoo Sports",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "zyon-pullin"
+      ],
+      "teams": [
+        "minnesota-timberwolves"
+      ],
+      "matched_query": "Minnesota Timberwolves",
+      "body_excerpt": "Zyon Pullin Playing His Way Into Timberwolves' Plans at Summer League Yahoo Sports"
+    },
+    {
       "id": "gn-2916287be412bfe4",
       "source": "google-news",
       "published_at": "2026-07-15T13:00:05Z",
@@ -5113,6 +5634,30 @@
       ],
       "matched_query": "Golden State Warriors",
       "body_excerpt": "Warriors Rookie Yaxel Lendeborg Gives LeBron James His Recruitment Pitch Yahoo Sports"
+    },
+    {
+      "id": "gn-5b9a1669dfaa62e9",
+      "source": "google-news",
+      "published_at": "2026-07-15T13:19:21Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQMzhVd05ZM0tMdFhxNVoxNVpmdTVIbkgzSWJlVFZ1LTZSN3VyeDRHMDFnakx0Z3lxODlHYUZNbmpWSTNYR2hBYVlYcThRMFFoLVpIcUxraGZINjJ1YlM5bmlwVkFtQ191bi1Rc2dfbmpMc0dwUTJMc2s3R0JsWTV4Y1lQT3hKUQ?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQMzhVd05ZM0tMdFhxNVoxNVpmdTVIbkgzSWJlVFZ1LTZSN3VyeDRHMDFnakx0Z3lxODlHYUZNbmpWSTNYR2hBYVlYcThRMFFoLVpIcUxraGZINjJ1YlM5bmlwVkFtQ191bi1Rc2dfbmpMc0dwUTJMc2s3R0JsWTV4Y1lQT3hKUQ?oc=5",
+      "title": "Chet Holmgren takes subtle shot at Victor Wembanyama after Spain win",
+      "author": {
+        "handle": "Yahoo Sports Canada",
+        "display_name": "Yahoo Sports Canada",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "chet-holmgren",
+        "victor-wembanyama"
+      ],
+      "teams": [],
+      "matched_query": "Chet Holmgren",
+      "body_excerpt": "Chet Holmgren takes subtle shot at Victor Wembanyama after Spain win Yahoo Sports Canada"
     },
     {
       "id": "gn-66aeb7f6d802102b",
@@ -5166,6 +5711,105 @@
       "body_excerpt": "Klay Thompson's $17.5 million future with Mavericks hangs in the balance – here's why Yahoo Sports"
     },
     {
+      "id": "gn-d3d61292a8b9ef08",
+      "source": "google-news",
+      "published_at": "2026-07-15T13:52:58Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNOWFnTlpfWDVVa1FDaURyOTRXTS1yVmFaOVhLUzQ5RjVMVjBXYW1JbENoWkJlWF83YU44Y3pCdmpuai1NS2Vta0JMUklmVWpRenlEUFN3UGUxd3lWSUs0enl0U0FFREU0ZGtqNlRuQUtEX1dVNlhibmF2eHFPbHhOZEJ1TjRkTjNjUGxyeW1pWEVaMjlNNjlJ?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNOWFnTlpfWDVVa1FDaURyOTRXTS1yVmFaOVhLUzQ5RjVMVjBXYW1JbENoWkJlWF83YU44Y3pCdmpuai1NS2Vta0JMUklmVWpRenlEUFN3UGUxd3lWSUs0enl0U0FFREU0ZGtqNlRuQUtEX1dVNlhibmF2eHFPbHhOZEJ1TjRkTjNjUGxyeW1pWEVaMjlNNjlJ?oc=5",
+      "title": "Giannis Antetokounmpo's viral warning about Victor Wembanyama looks impossible to ignore now",
+      "author": {
+        "handle": "Yahoo Sports",
+        "display_name": "Yahoo Sports",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "giannis-antetokounmpo",
+        "victor-wembanyama"
+      ],
+      "teams": [],
+      "matched_query": "NBA news",
+      "body_excerpt": "Giannis Antetokounmpo's viral warning about Victor Wembanyama looks impossible to ignore now Yahoo Sports"
+    },
+    {
+      "id": "gn-c2fcbcbf83b8c448",
+      "source": "google-news",
+      "published_at": "2026-07-15T14:00:02Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPTi1iZlc4a015Z1VBZFkwbUtOQ0pFU2swdk1EYnVPaWtxQnRyQmRXX21tQUpzOFBjaUZlbHloaTBGSTEtVnRTYzBmZldxcHZCM3J4NFZKcFJUSjNRVUhEZDFHQU0zM3ZTOUtGc05ublYyaHdYbGJxVXdYR2t1R3o4LWlfa1lDYjNrM0ZqWmdmSmV6REVqenJNMWlnOA?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPTi1iZlc4a015Z1VBZFkwbUtOQ0pFU2swdk1EYnVPaWtxQnRyQmRXX21tQUpzOFBjaUZlbHloaTBGSTEtVnRTYzBmZldxcHZCM3J4NFZKcFJUSjNRVUhEZDFHQU0zM3ZTOUtGc05ublYyaHdYbGJxVXdYR2t1R3o4LWlfa1lDYjNrM0ZqWmdmSmV6REVqenJNMWlnOA?oc=5",
+      "title": "Ja Morant Injury Update Should Make Blazers Fans Happy",
+      "author": {
+        "handle": "Sports Illustrated",
+        "display_name": "Sports Illustrated",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "ja-morant"
+      ],
+      "teams": [
+        "portland-trail-blazers"
+      ],
+      "matched_query": "Memphis Grizzlies",
+      "body_excerpt": "Ja Morant Injury Update Should Make Blazers Fans Happy Sports Illustrated"
+    },
+    {
+      "id": "gn-acd95b636ed5af15",
+      "source": "google-news",
+      "published_at": "2026-07-15T14:00:02Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOTnhLaThNeHNiSzcxZjd0dUR5SU1RTkxjQ003WXRPOHk4cEtJTW00NmxYdHJ5MDVKaU92Y1dYWHBzMzRQNS03TVRQU3p0VkxHZXJzRDViQk13VkFfcDdBVENPbldVc1RMbGViLURtZVNlMWpHYkpkdjF6eVlta1JPZHI3cXZ0OEpUZVJpNV9UUGlnQm5YSTVTYW9JTVZjQ3UtU0xuV0xodE5jSW1acXhj?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOTnhLaThNeHNiSzcxZjd0dUR5SU1RTkxjQ003WXRPOHk4cEtJTW00NmxYdHJ5MDVKaU92Y1dYWHBzMzRQNS03TVRQU3p0VkxHZXJzRDViQk13VkFfcDdBVENPbldVc1RMbGViLURtZVNlMWpHYkpkdjF6eVlta1JPZHI3cXZ0OEpUZVJpNV9UUGlnQm5YSTVTYW9JTVZjQ3UtU0xuV0xodE5jSW1acXhj?oc=5",
+      "title": "Knicks Likely Inching Closer to Inevitable Pacome Dadiet Decision",
+      "author": {
+        "handle": "Sports Illustrated",
+        "display_name": "Sports Illustrated",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "pacome-dadiet"
+      ],
+      "teams": [
+        "new-york-knicks"
+      ],
+      "matched_query": "New York Knicks",
+      "body_excerpt": "Knicks Likely Inching Closer to Inevitable Pacome Dadiet Decision Sports Illustrated"
+    },
+    {
+      "id": "gn-40046046b576a99d",
+      "source": "google-news",
+      "published_at": "2026-07-15T14:00:04Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPT3haZmw3TFZwc3NzWkpYd2ZEelRJMWtYMldLSWpXRVplako3T0t3VnFvUkxGTkd0LTdIMUFzTTl6U1FOdUs4VzhSazBCbmNOdmlsY0NMUGs0dG96T2FMdm1kZ19ZYUNMX211SmpNQ1lSMWlveWk5YmotSnRpVUtQeWI5YTdpQml4MUNjeWlMOFVEUXQybTZBM3F3RDdrQk5oYU5hZTdR?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPT3haZmw3TFZwc3NzWkpYd2ZEelRJMWtYMldLSWpXRVplako3T0t3VnFvUkxGTkd0LTdIMUFzTTl6U1FOdUs4VzhSazBCbmNOdmlsY0NMUGs0dG96T2FMdm1kZ19ZYUNMX211SmpNQ1lSMWlveWk5YmotSnRpVUtQeWI5YTdpQml4MUNjeWlMOFVEUXQybTZBM3F3RDdrQk5oYU5hZTdR?oc=5",
+      "title": "Lakers’ Walker Kessler Makes Bold Promise Following Blockbuster Trade",
+      "author": {
+        "handle": "Sports Illustrated",
+        "display_name": "Sports Illustrated",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "walker-kessler"
+      ],
+      "teams": [
+        "los-angeles-lakers"
+      ],
+      "matched_query": "Los Angeles Lakers",
+      "body_excerpt": "Lakers’ Walker Kessler Makes Bold Promise Following Blockbuster Trade Sports Illustrated"
+    },
+    {
       "id": "gn-58d9d40007cb2f1c",
       "source": "google-news",
       "published_at": "2026-07-15T14:02:14Z",
@@ -5208,6 +5852,333 @@
       ],
       "matched_query": "Charlotte Hornets",
       "body_excerpt": "Charlotte Hornets' Latrell Wrightsell Jr. Talks Summer League, His Journey to the NBA, and More Sports Illustrated"
+    },
+    {
+      "id": "gn-038b15fc410380fd",
+      "source": "google-news",
+      "published_at": "2026-07-15T14:05:11Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPZTFtU2tBcElXek1nVU9DSFNZVzMyRFBkMURQZUlBY3pwNGJhNk9HLTU1SUZOejIyRk5vS0JYTGU1aWNtVzJKeDlEUkNUSnRoZ3lUN25MOVRTZ0VIbEZ5TURyalp3NWxOc2ZMOVZELVcyNTNFRTNJTG10Z3VfNzZjRzBB?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPZTFtU2tBcElXek1nVU9DSFNZVzMyRFBkMURQZUlBY3pwNGJhNk9HLTU1SUZOejIyRk5vS0JYTGU1aWNtVzJKeDlEUkNUSnRoZ3lUN25MOVRTZ0VIbEZ5TURyalp3NWxOc2ZMOVZELVcyNTNFRTNJTG10Z3VfNzZjRzBB?oc=5",
+      "title": "LeBron James Laughs Off \"Non-Factor\" Comment If He Joins Miami Heat",
+      "author": {
+        "handle": "Yahoo Sports",
+        "display_name": "Yahoo Sports",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "lebron-james"
+      ],
+      "teams": [
+        "miami-heat"
+      ],
+      "matched_query": "Miami Heat",
+      "body_excerpt": "LeBron James Laughs Off \"Non-Factor\" Comment If He Joins Miami Heat Yahoo Sports"
+    },
+    {
+      "id": "gn-a87a27f4a752548b",
+      "source": "google-news",
+      "published_at": "2026-07-15T14:21:03Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPbjRHTWZUUVgxaF9JV2xBT1h4aEg0VlpBY1VySDRlYmQ3NG5qUWF5ZFBkak52ZG9XWE91cWkwUzNna2dnYkRLYkhQMnlhVkxmTlZWRjcyTW1XdG1WenhQT3R5OTB3d0JNSUJFdEpiUDFfMlB1SElkWTkzb1A4ZG5KYXQ0ZHJLaGVscnQtbUd0MFBUQXJCRHZ5dUtyS3RZU3lYamlJNnhwMG1TWVZSX1lCaA?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPbjRHTWZUUVgxaF9JV2xBT1h4aEg0VlpBY1VySDRlYmQ3NG5qUWF5ZFBkak52ZG9XWE91cWkwUzNna2dnYkRLYkhQMnlhVkxmTlZWRjcyTW1XdG1WenhQT3R5OTB3d0JNSUJFdEpiUDFfMlB1SElkWTkzb1A4ZG5KYXQ0ZHJLaGVscnQtbUd0MFBUQXJCRHZ5dUtyS3RZU3lYamlJNnhwMG1TWVZSX1lCaA?oc=5",
+      "title": "NBA Summer League winners and losers: Brayden Burries looks like key piece as Bucks enter new era",
+      "author": {
+        "handle": "CBS Sports",
+        "display_name": "CBS Sports",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "brayden-burries"
+      ],
+      "teams": [
+        "milwaukee-bucks"
+      ],
+      "matched_query": "Milwaukee Bucks",
+      "body_excerpt": "NBA Summer League winners and losers: Brayden Burries looks like key piece as Bucks enter new era CBS Sports"
+    },
+    {
+      "id": "gn-7c61bb87dfed516b",
+      "source": "google-news",
+      "published_at": "2026-07-15T14:34:50Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPZWIxaS1PZ2YtazJxRkRROTVxR0Z0MlZYaXdPalhkZHlVNElBTGk1bllRZ0tpT0xOeXN0bkhkb2lfMTZHX1pDbXR0VHN4cGJ0dU1FdWpIb0pwdGZ0REJaOEJEeDN4OUJobTg5dzF5UXNRSFBFejl6TGdUbzAtMlJvc0tJdTV1OFpuX1VCejZLanhqcHB4?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPZWIxaS1PZ2YtazJxRkRROTVxR0Z0MlZYaXdPalhkZHlVNElBTGk1bllRZ0tpT0xOeXN0bkhkb2lfMTZHX1pDbXR0VHN4cGJ0dU1FdWpIb0pwdGZ0REJaOEJEeDN4OUJobTg5dzF5UXNRSFBFejl6TGdUbzAtMlJvc0tJdTV1OFpuX1VCejZLanhqcHB4?oc=5",
+      "title": "Grizzlies Answer Olivier-Maxence Prosper's Call for Better Defense in Warriors Rout",
+      "author": {
+        "handle": "Yahoo Sports",
+        "display_name": "Yahoo Sports",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "olivier-maxence-prosper"
+      ],
+      "teams": [
+        "golden-state-warriors",
+        "memphis-grizzlies"
+      ],
+      "matched_query": "Memphis Grizzlies",
+      "body_excerpt": "Grizzlies Answer Olivier-Maxence Prosper's Call for Better Defense in Warriors Rout Yahoo Sports"
+    },
+    {
+      "id": "gn-aa8a0e2861a2c2e6",
+      "source": "google-news",
+      "published_at": "2026-07-15T15:00:01Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQSnFwZFQ1dG9CM2dNYkZral9vRTBQRk5RTDRlaFRpVUtHQ3NVcE1jWmJSQ3dEVEZOLWhnSXU0SENVUnRfZmxVaWlvV3dRMXo0dE9zR0tYaVlLYUFaV3pUSHhPQk9uNDlhTXQ4a0lyZjZRVkRkb0xVVV9sVkdkQkhQZk1iX1JJbUQ3Ukp2ZGhET0lsc0xBU3lmMDdNcUJhX2RjLW9tODJ5Nkk4blJ0cVl1NDFreGpLUUVWdnEtc1N3?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQSnFwZFQ1dG9CM2dNYkZral9vRTBQRk5RTDRlaFRpVUtHQ3NVcE1jWmJSQ3dEVEZOLWhnSXU0SENVUnRfZmxVaWlvV3dRMXo0dE9zR0tYaVlLYUFaV3pUSHhPQk9uNDlhTXQ4a0lyZjZRVkRkb0xVVV9sVkdkQkhQZk1iX1JJbUQ3Ukp2ZGhET0lsc0xBU3lmMDdNcUJhX2RjLW9tODJ5Nkk4blJ0cVl1NDFreGpLUUVWdnEtc1N3?oc=5",
+      "title": "Brazile Bounced Back From Poor NBA Debut, Injury In Best Way Possible",
+      "author": {
+        "handle": "Sports Illustrated",
+        "display_name": "Sports Illustrated",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "trevon-brazile"
+      ],
+      "teams": [],
+      "matched_query": "NBA injury",
+      "body_excerpt": "Brazile Bounced Back From Poor NBA Debut, Injury In Best Way Possible Sports Illustrated"
+    },
+    {
+      "id": "gn-bdcd39dc11038cc5",
+      "source": "google-news",
+      "published_at": "2026-07-15T15:01:12Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQdjZ3NnNyNURrX0ZtT21RMV94N21kaVVzTjI2VFdPczVSWU4wRk5RbFpQRnhrQTFxSjh2am90ZlpRdXFSZ1g5bThXdDltclk2Rlo1MXY1NW5qaEo1VW9GTF9UX0JRTWZXVHJ6am91WEgyeDJYc2hkTUtyOGJETWVNdklKVGhJZw?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQdjZ3NnNyNURrX0ZtT21RMV94N21kaVVzTjI2VFdPczVSWU4wRk5RbFpQRnhrQTFxSjh2am90ZlpRdXFSZ1g5bThXdDltclk2Rlo1MXY1NW5qaEo1VW9GTF9UX0JRTWZXVHJ6am91WEgyeDJYc2hkTUtyOGJETWVNdklKVGhJZw?oc=5",
+      "title": "2026/27 NBA Contract Extension Tracker",
+      "author": {
+        "handle": "Hoops Rumors",
+        "display_name": "Hoops Rumors",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [],
+      "teams": [],
+      "matched_query": "NBA contract extension",
+      "body_excerpt": "2026/27 NBA Contract Extension Tracker Hoops Rumors"
+    },
+    {
+      "id": "gn-da4de665f4df6911",
+      "source": "google-news",
+      "published_at": "2026-07-15T15:09:19Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFAxNTVLckx2M0hKeTl6eGpZbFF5Vk1KcmxmakhqNHRHUTNGalR1R0gwOGd5NG5LX2lQX3FIUUlBTHhzVmJLdmRZYnhSZ2VfLXcycTNua3ctdU8yMUFZSVhIMG1fcFUtMUF3RkxxVUdGenZGWllS?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFAxNTVLckx2M0hKeTl6eGpZbFF5Vk1KcmxmakhqNHRHUTNGalR1R0gwOGd5NG5LX2lQX3FIUUlBTHhzVmJLdmRZYnhSZ2VfLXcycTNua3ctdU8yMUFZSVhIMG1fcFUtMUF3RkxxVUdGenZGWllS?oc=5",
+      "title": "Giannis Antetokounmpo trade has Bucks ready for era of 'something new'",
+      "author": {
+        "handle": "NBA.com",
+        "display_name": "NBA.com",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "giannis-antetokounmpo"
+      ],
+      "teams": [
+        "milwaukee-bucks"
+      ],
+      "matched_query": "NBA news",
+      "body_excerpt": "Giannis Antetokounmpo trade has Bucks ready for era of 'something new' NBA.com"
+    },
+    {
+      "id": "gn-5ab5f0bd1d1c64d3",
+      "source": "google-news",
+      "published_at": "2026-07-15T15:11:44Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPYlRvUzdNQUI5T25hYUl6Vmd5M1JBclE1NWthZTNELUVZR2lyTWZNdlJqRzNtYkRRRWNQUkVHRWs4czhYeTZ1TUZSNjQzNEVXWGpHUmxzalZxMVk1amZ5eGZ0SHh3c2JuMzFMek4yQWgxSjNDSnA2ekhLazRYakhPTVYyTGRLcV84Y0RR?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPYlRvUzdNQUI5T25hYUl6Vmd5M1JBclE1NWthZTNELUVZR2lyTWZNdlJqRzNtYkRRRWNQUkVHRWs4czhYeTZ1TUZSNjQzNEVXWGpHUmxzalZxMVk1amZ5eGZ0SHh3c2JuMzFMek4yQWgxSjNDSnA2ekhLazRYakhPTVYyTGRLcV84Y0RR?oc=5",
+      "title": "Heat reportedly want Warriors all-time great, but under one condition",
+      "author": {
+        "handle": "Yahoo Sports",
+        "display_name": "Yahoo Sports",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [],
+      "teams": [
+        "golden-state-warriors",
+        "miami-heat"
+      ],
+      "matched_query": "Miami Heat",
+      "body_excerpt": "Heat reportedly want Warriors all-time great, but under one condition Yahoo Sports"
+    },
+    {
+      "id": "gn-3e69e002274cc617",
+      "source": "google-news",
+      "published_at": "2026-07-15T15:14:39Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPRWljbHBWZHdxQ0hhYmJHQ1l6S0lrZDNMeF9zdDZmYTU1Wjg1VHVzMVdPemczUFJqRE9vRDFfbWEzTE13WTV6NVlScTE4UXNjMUJ4bjd1cVBQQzJ4MzhSS25jcTRXNndFR2NsLUlmSWxOVTFQcHZXRUtRNEpQdmViRzdsNUU4X1lXQzlZ?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPRWljbHBWZHdxQ0hhYmJHQ1l6S0lrZDNMeF9zdDZmYTU1Wjg1VHVzMVdPemczUFJqRE9vRDFfbWEzTE13WTV6NVlScTE4UXNjMUJ4bjd1cVBQQzJ4MzhSS25jcTRXNndFR2NsLUlmSWxOVTFQcHZXRUtRNEpQdmViRzdsNUU4X1lXQzlZ?oc=5",
+      "title": "Lakers given Jonathan Kuminga update that would hurt Los Angeles if he’s a star",
+      "author": {
+        "handle": "Yahoo Sports",
+        "display_name": "Yahoo Sports",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "jonathan-kuminga"
+      ],
+      "teams": [
+        "los-angeles-lakers"
+      ],
+      "matched_query": "Los Angeles Lakers",
+      "body_excerpt": "Lakers given Jonathan Kuminga update that would hurt Los Angeles if he’s a star Yahoo Sports"
+    },
+    {
+      "id": "gn-34ebb12b89927e24",
+      "source": "google-news",
+      "published_at": "2026-07-15T15:18:01Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9iX2VwU3RQZXBSVzVhcTRwbkR5d2x6NjBYNWdLVGZHOHRtM2xuYmhXazhUSEJnajF4M3F1VFRqUldSN3Z0eXFEQmRxQWR0YXhTcXc3ekQ5cGdBbXh2SnZzaHlqSnNyNHNzcXpJRXBqU1ltR1B2el9laFFXaDY?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9iX2VwU3RQZXBSVzVhcTRwbkR5d2x6NjBYNWdLVGZHOHRtM2xuYmhXazhUSEJnajF4M3F1VFRqUldSN3Z0eXFEQmRxQWR0YXhTcXc3ekQ5cGdBbXh2SnZzaHlqSnNyNHNzcXpJRXBqU1ltR1B2el9laFFXaDY?oc=5",
+      "title": "Duke Blue Devils' 7-foot-2 former phenom breaking out in NBA Summer League",
+      "author": {
+        "handle": "Yahoo Sports",
+        "display_name": "Yahoo Sports",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [],
+      "teams": [],
+      "matched_query": "NBA news",
+      "body_excerpt": "Duke Blue Devils' 7-foot-2 former phenom breaking out in NBA Summer League Yahoo Sports"
+    },
+    {
+      "id": "gn-b283052e5ea21068",
+      "source": "google-news",
+      "published_at": "2026-07-15T15:19:35Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQNFBZMHhPcVF1U3MtM1RqYzV3ZldrUkw4dldEc2pMOUFCbm96dDZvY01xN09xNU1fbUxZRWdHQkM3LWVrTjRzOTQwRllfTGQ1U1pnMXVZc0ZHU0dHUWFnSFd6dlJ4TldZXzE1TXRfdXE3UFFJVFdPblRVMC15UjN6MG5kaWI4NWl1TDZRU0hrNVdJenhCcnEycmYyd1NHZ0E1djRVc19ZaF9ZaGpEckRWVFFLTVh2SERX?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQNFBZMHhPcVF1U3MtM1RqYzV3ZldrUkw4dldEc2pMOUFCbm96dDZvY01xN09xNU1fbUxZRWdHQkM3LWVrTjRzOTQwRllfTGQ1U1pnMXVZc0ZHU0dHUWFnSFd6dlJ4TldZXzE1TXRfdXE3UFFJVFdPblRVMC15UjN6MG5kaWI4NWl1TDZRU0hrNVdJenhCcnEycmYyd1NHZ0E1djRVc19ZaF9ZaGpEckRWVFFLTVh2SERX?oc=5",
+      "title": "Pacers vs. Timberwolves Prediction, Odds, Players to Watch for NBA Summer League",
+      "author": {
+        "handle": "Sports Illustrated",
+        "display_name": "Sports Illustrated",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [],
+      "teams": [
+        "indiana-pacers",
+        "minnesota-timberwolves"
+      ],
+      "matched_query": "Indiana Pacers",
+      "body_excerpt": "Pacers vs. Timberwolves Prediction, Odds, Players to Watch for NBA Summer League Sports Illustrated"
+    },
+    {
+      "id": "gn-4c59b398654ce495",
+      "source": "google-news",
+      "published_at": "2026-07-15T15:32:04Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOTUJ5OVV1Y216WUNJQjhVLUhucWJGcEpYYjd0S2ZCWU1ES1hFSnBubk53VFlqT0JMUUtuVFhCOTdnUTU5WXgtWjU5WXhqaG51eUZ4TjVRREtGckt5YW8yS0Q1NEVyakhPa3NNQzcxcnp4SHNyUFZjRGkwaXRrTERwOV96NHBCSURnZ1M4?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOTUJ5OVV1Y216WUNJQjhVLUhucWJGcEpYYjd0S2ZCWU1ES1hFSnBubk53VFlqT0JMUUtuVFhCOTdnUTU5WXgtWjU5WXhqaG51eUZ4TjVRREtGckt5YW8yS0Q1NEVyakhPa3NNQzcxcnp4SHNyUFZjRGkwaXRrTERwOV96NHBCSURnZ1M4?oc=5",
+      "title": "Toronto Raptors Rumor Reveals ‘ONLY Thing That Would Jeopardize’ Kawhi Leonard Trade Completion",
+      "author": {
+        "handle": "Yahoo Sports",
+        "display_name": "Yahoo Sports",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [
+        "kawhi-leonard"
+      ],
+      "teams": [
+        "toronto-raptors"
+      ],
+      "matched_query": "LA Clippers",
+      "body_excerpt": "Toronto Raptors Rumor Reveals ‘ONLY Thing That Would Jeopardize’ Kawhi Leonard Trade Completion Yahoo Sports"
+    },
+    {
+      "id": "gn-59ff8980e7b55948",
+      "source": "google-news",
+      "published_at": "2026-07-15T15:32:50Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPdzFKSFlfRE55dWhwZ2VPZFhMNnJIckdPS1ptOFhIRnI3M1RQNzN3enBVMUlQeFBjMlFkdXRJNjRPU2ZDcGVtc1ZRdF9BblhpUUxfVHBZWlg1cE1mRFoxd3FzS3VTaVQ4bFdWXzVJdjZhc3ZZNGJPellGTm9kQ0w0ZEhuWTVxSi1PQ2lpTXMtaFAyd0N3aGx4bnV2bi02aDgwYV9uekN2ZGdEWVE?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPdzFKSFlfRE55dWhwZ2VPZFhMNnJIckdPS1ptOFhIRnI3M1RQNzN3enBVMUlQeFBjMlFkdXRJNjRPU2ZDcGVtc1ZRdF9BblhpUUxfVHBZWlg1cE1mRFoxd3FzS3VTaVQ4bFdWXzVJdjZhc3ZZNGJPellGTm9kQ0w0ZEhuWTVxSi1PQ2lpTXMtaFAyd0N3aGx4bnV2bi02aDgwYV9uekN2ZGdEWVE?oc=5",
+      "title": "Adam Silver defends second apron after players union, players, fans rip it",
+      "author": {
+        "handle": "NBC Sports",
+        "display_name": "NBC Sports",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [],
+      "teams": [],
+      "matched_query": "NBA news",
+      "body_excerpt": "Adam Silver defends second apron after players union, players, fans rip it NBC Sports"
+    },
+    {
+      "id": "gn-a4b9778381e5068a",
+      "source": "google-news",
+      "published_at": "2026-07-15T15:38:26Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1Ea0htYlUweFkyRXFYdVVIZUxrbUpvSHRHLVczLVFqeHAyMUltUDRHVGtrSVhmVWcweXhtWXRydEZwSlRaMG4zOXBvLUxxdkpzb0xEcllZZ2hhSkNCMk5KOHBxN0h4cVRyb3p3?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1Ea0htYlUweFkyRXFYdVVIZUxrbUpvSHRHLVczLVFqeHAyMUltUDRHVGtrSVhmVWcweXhtWXRydEZwSlRaMG4zOXBvLUxxdkpzb0xEcllZZ2hhSkNCMk5KOHBxN0h4cVRyb3p3?oc=5",
+      "title": "Looking ahead to 2027 free agency",
+      "author": {
+        "handle": "NBA.com",
+        "display_name": "NBA.com",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [],
+      "teams": [],
+      "matched_query": "NBA news",
+      "body_excerpt": "Looking ahead to 2027 free agency NBA.com"
+    },
+    {
+      "id": "gn-6e3d61638e5ba40b",
+      "source": "google-news",
+      "published_at": "2026-07-15T15:39:49Z",
+      "ingested_at": "2026-07-15T15:53:38Z",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9ZNFhUUEFWOUM1REJwM0d6ZjMwNmZCc0xqYTBnMlU1SFpaWkpXdEo4bkIwNTNvS2F2TFFXa1RnNndqaFhweS00bkVRQWtlRFd2N1VaUUZBY3hLa1pHLWc?oc=5",
+      "google_url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9ZNFhUUEFWOUM1REJwM0d6ZjMwNmZCc0xqYTBnMlU1SFpaWkpXdEo4bkIwNTNvS2F2TFFXa1RnNndqaFhweS00bkVRQWtlRFd2N1VaUUZBY3hLa1pHLWc?oc=5",
+      "title": "NBA Offseason: Every free agency deal, extension & trade for all 30 teams",
+      "author": {
+        "handle": "NBA.com",
+        "display_name": "NBA.com",
+        "url": null
+      },
+      "media": {
+        "type": "text"
+      },
+      "players": [],
+      "teams": [],
+      "matched_query": "NBA free agency",
+      "body_excerpt": "NBA Offseason: Every free agency deal, extension & trade for all 30 teams NBA.com"
     }
   ]
 }
