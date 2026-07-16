@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T04:16:45Z",
+  "generated_at": "2026-07-16T06:36:59Z",
   "window_hours": 72,
   "weights": {
     "youtube": 1.3,
@@ -11,32 +11,405 @@
   "count": 40,
   "items": [
     {
-      "id": "bs-did%3Aplc%3Ab5s7pvomuo3xwd3wgdpnohtt%2Fapp.bsky.feed.post%2F3mqqe3zs2ck2d",
+      "id": "bs-did%3Aplc%3Auq4rl5ozgfkyujw4ejela3l7%2Fapp.bsky.feed.post%2F3mqqmmb7qb22q",
       "source": "bluesky",
-      "published_at": "2026-07-16T04:02:58Z",
-      "title": "Joe Gas, so this really works",
-      "url": "https://bsky.app/profile/bullsjay.bsky.social/post/3mqqe3zs2ck2d",
-      "author": "Jason Patt",
-      "thumbnail": null,
-      "body_excerpt": "Joe Gas, so this really works",
+      "published_at": "2026-07-16T06:35:13Z",
+      "title": "The Valkyries have won 8 straight games but this is the coverage",
+      "url": "https://bsky.app/profile/kerithburke.bsky.social/post/3mqqmmb7qb22q",
+      "author": "Kerith Burke",
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:uq4rl5ozgfkyujw4ejela3l7/bafkreid7x46pwq6p5vql63e25xiusbsrx6x6nvitbflbawhcfpv6mpycry",
+      "body_excerpt": "The Valkyries have won 8 straight games but this is the coverage",
       "players": [],
       "teams": [],
-      "trending_score": 0.3003
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:uq4rl5ozgfkyujw4ejela3l7/bafkreid7x46pwq6p5vql63e25xiusbsrx6x6nvitbflbawhcfpv6mpycry",
+            "alt": "All Caitlin Clark mentions"
+          }
+        ]
+      },
+      "trending_score": 0.3459
     },
     {
-      "id": "bs-did%3Aplc%3Amx62ni2prhriaagd7jfa65zk%2Fapp.bsky.feed.post%2F3mqqdrgw5gc2b",
-      "source": "bluesky",
-      "published_at": "2026-07-16T03:57:03Z",
-      "title": "i was told the golden state valkyries were not a tier 1 team",
-      "url": "https://bsky.app/profile/stevejones20.bsky.social/post/3mqqdrgw5gc2b",
-      "author": "Steve Jones",
+      "id": "gn-09c781cd2f383ff9",
+      "source": "google-news",
+      "published_at": "2026-07-16T06:22:14Z",
+      "title": "Clippers 108-94 Wizards (Jul 15, 2026) Game Recap",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQWUpFQ1NwclAzX0NkUGRWTEJrS2c1dGxfYS05YmZnZWlrZ1BJWnhNamlkaTNBWk5kRUE4dWJYc1QtR1hrSmxSamlyYmhPRkRGVl9TT2V5YU9DY2hCeFZ4V09mMzhfN3ltY3FvTTFQY3ZHd2dfcWlrN0lWdVBjeTNqZ2pKU3hXX0RxNXAwVGlSWjRub2pZ?oc=5",
+      "author": "ESPN",
       "thumbnail": null,
-      "body_excerpt": "i was told the golden state valkyries were not a tier 1 team",
+      "body_excerpt": "Clippers 108-94 Wizards (Jul 15, 2026) Game Recap ESPN",
       "players": [],
       "teams": [
-        "golden-state-warriors"
+        "los-angeles-clippers",
+        "washington-wizards"
       ],
-      "trending_score": 0.2815
+      "trending_score": 0.3268
+    },
+    {
+      "id": "gn-4b4d42bdb0915130",
+      "source": "google-news",
+      "published_at": "2026-07-16T06:02:05Z",
+      "title": "Washington Wizards vs. LA Clippers Highlights | NBA Summer League",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPaTBuLWR0Y2lVUnJOT0R2Q2FkN0hQcUVLSElYSml0OFIyUFhUcnBtNk5adXRUMnNCRnVnTWozei1lemFUUGlranJnUWVXLWZuWjJOX1dNQ1lWSTJqN3JCakE1V0s1bDZfMnlWV1BLVHRZVGMwQVhlS0hCWV9lbWZqY3ZiLU9fQi1PX0x5OHE3RHdRTjB5czFCY2hqcUFLQQ?oc=5",
+      "author": "NBA.com",
+      "thumbnail": null,
+      "body_excerpt": "Washington Wizards vs. LA Clippers Highlights | NBA Summer League NBA.com",
+      "players": [],
+      "teams": [
+        "los-angeles-clippers",
+        "washington-wizards"
+      ],
+      "trending_score": 0.2652
+    },
+    {
+      "id": "gn-95fe0c8ce322fa1e",
+      "source": "google-news",
+      "published_at": "2026-07-16T06:01:43Z",
+      "title": "Kobe Sanders 26 Pts, 5 Ast vs Washington Wizards (7.15.26)",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPNGo5YVVVaVBHU1JuMkpTU09lUjF2NDIwLThVOUt3Z2ZxX3pibDVCUkVXOGRXYUxLeE52N0xvSk5hNHR1NDAzUGZ6UDFDLXVFVjB6SDBHZl9KS1JnY2txWTI2SDdtTTJucDU2UjYwWG5EV2IxUVZxNzRGeGxrMDZGS0p3T2lPdHN4SG84UC1WUmV2TF80Rmc?oc=5",
+      "author": "NBA.com",
+      "thumbnail": null,
+      "body_excerpt": "Kobe Sanders 26 Pts, 5 Ast vs Washington Wizards (7.15.26) NBA.com",
+      "players": [
+        "kobe-sanders"
+      ],
+      "teams": [
+        "washington-wizards"
+      ],
+      "trending_score": 0.2642
+    },
+    {
+      "id": "gn-abc04044c68f07f2",
+      "source": "google-news",
+      "published_at": "2026-07-16T06:01:43Z",
+      "title": "Game Highlights | Summer League: Clippers Win vs Wizards | (7.15.26)",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQSXNOMkpMVE5mQzd4RjI2R1dSZ2JqUWtCUlZXaTh4WnhwUmJHblh0R0NFWXk0ZVo5X2VyUVNNQ0xGS3FZTFJGM05mc1l6X1JsOXBzMGc1bnVtY1VJZmJvZWVycjBSOHJSbkpMeVRuTjJqbXZ0cWlhTF9wY0t5WjVreXZYb2poeTJPMXdIalBuZ3pBeDdneF9mREhwblpIUQ?oc=5",
+      "author": "NBA.com",
+      "thumbnail": null,
+      "body_excerpt": "Game Highlights | Summer League: Clippers Win vs Wizards | (7.15.26) NBA.com",
+      "players": [],
+      "teams": [
+        "los-angeles-clippers",
+        "washington-wizards"
+      ],
+      "trending_score": 0.2642
+    },
+    {
+      "id": "gn-a0fbf12f13ba95a6",
+      "source": "google-news",
+      "published_at": "2026-07-16T06:01:43Z",
+      "title": "Nick Martinelli 19 Pts, 5 Reb vs Washington Wizards (7.15.26)",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPZUZDMWJQQWtnV0k3aEo4dDJMMDU4bHhjUGNqTjhVUmpPbVlTY0h0aUJLdC05RWlHbFR2eFBSa2RWSFFpbzRGTzJGVW15SjI1Z0xxNmJhbmtuX0dybWpydFczWUVQM3BRR3lTSmt1Y1A5Q0tfSU1sTVlZTVhnVFM0OXJNV1I1NjZ2eHEwUkVIcGlER2dFZHFGSE5R?oc=5",
+      "author": "NBA.com",
+      "thumbnail": null,
+      "body_excerpt": "Nick Martinelli 19 Pts, 5 Reb vs Washington Wizards (7.15.26) NBA.com",
+      "players": [
+        "nick-martinelli"
+      ],
+      "teams": [
+        "washington-wizards"
+      ],
+      "trending_score": 0.2642
+    },
+    {
+      "id": "gn-2e6d03dddd8d8401",
+      "source": "google-news",
+      "published_at": "2026-07-16T05:44:33Z",
+      "title": "Clippers beat Wizards in Summer League action",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5BUDB2blYzOGtiUXlpS25vd0RsQmJtbm14b0x5d2ZlaHprdzBXNTd3TVl4RHRrYlZvcGM3U0JqOEc5UG9KUWZka2tRbFhpN1RDN3BpQ2MySXBiWnlrNjVOR3E3TTdzdlRZZzZ2ZlJ4blVydw?oc=5",
+      "author": "NBA.com",
+      "thumbnail": null,
+      "body_excerpt": "Clippers beat Wizards in Summer League action NBA.com",
+      "players": [],
+      "teams": [
+        "los-angeles-clippers",
+        "washington-wizards"
+      ],
+      "trending_score": 0.2258
+    },
+    {
+      "id": "gn-65b9435b5c041985",
+      "source": "google-news",
+      "published_at": "2026-07-16T05:39:41Z",
+      "title": "2026 NBA Summer League: Standout players from Day 7",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQZmZmWEJ2dm45TGJpTm11M0JTV041RVNLWC1weGlqbUJDMG4weVVpS3dlYjVvY0k5dFNtWHJVMTg0Rm5jZGtQel9rd1BVWDQ0ZFAyZDBjbjE4bjAzWHo4VWFpUlh1TlJoZ1M0bFFFeURsdEN1NnR1Q29rbUFQV2kyMw?oc=5",
+      "author": "NBA.com",
+      "thumbnail": null,
+      "body_excerpt": "2026 NBA Summer League: Standout players from Day 7 NBA.com",
+      "players": [],
+      "teams": [],
+      "trending_score": 0.2165
+    },
+    {
+      "id": "bs-did%3Aplc%3Ad7jo2dgltk635ycukifq3qjx%2Fapp.bsky.feed.post%2F3mqqjr3cros2b",
+      "source": "bluesky",
+      "published_at": "2026-07-16T05:44:13Z",
+      "title": "The grass always looks greener on the other side until you have to mow it.",
+      "url": "https://bsky.app/profile/ecreates88.bsky.social/post/3mqqjr3cros2b",
+      "author": "Edwin Garcia",
+      "thumbnail": null,
+      "body_excerpt": "The grass always looks greener on the other side until you have to mow it.",
+      "players": [],
+      "teams": [],
+      "trending_score": 0.2047
+    },
+    {
+      "id": "gn-1ea23cfcade3ab90",
+      "source": "google-news",
+      "published_at": "2026-07-16T05:24:53Z",
+      "title": "Clippers 108-94 Wizards (Jul 15, 2026) Play-by-Play",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQLW1zVEh2MlAxVExwMll6Ty1qVk15SF9UcllwSkdRX29EcUszS3VRcjU3eTA1LWI2REN0M2d5RUtrdmlqalNCdGZTbW1rQ2NlczBFVXBjUVprVnM3eE9mSjRHelVVQzkxM3lXaWg4TzIyZmhhYUphM0VBZDJoV0ppY1lETDlrbjhKOHJqQ1VranhyLVd6SmNfZ2VJa0g?oc=5",
+      "author": "ESPN",
+      "thumbnail": null,
+      "body_excerpt": "Clippers 108-94 Wizards (Jul 15, 2026) Play-by-Play ESPN",
+      "players": [],
+      "teams": [
+        "los-angeles-clippers",
+        "washington-wizards"
+      ],
+      "trending_score": 0.192
+    },
+    {
+      "id": "gn-b107f59ed035a5e2",
+      "source": "google-news",
+      "published_at": "2026-07-16T05:18:13Z",
+      "title": "Recap: 2026 NBA Summer League, Day 7 | Nate Ament delivers for Milwaukee",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1yNjdfX1g0Qjc5MjVIaUpCeGxMUmF2M2l6RkxzOWpydlp6NlNhbzNZNUlBeGFhdXl5MVp1cmV4NzFQeWdvS1BnRXRVSnBEMWd2eHhRVjVsTEM0TFByZlV5elFpeW02Y1lxNXlVZHhIaHExTVll?oc=5",
+      "author": "NBA.com",
+      "thumbnail": null,
+      "body_excerpt": "Recap: 2026 NBA Summer League, Day 7 | Nate Ament delivers for Milwaukee NBA.com",
+      "players": [
+        "nate-ament"
+      ],
+      "teams": [],
+      "trending_score": 0.1824
+    },
+    {
+      "id": "gn-1211f348620e99d9",
+      "source": "google-news",
+      "published_at": "2026-07-16T04:54:58Z",
+      "title": "Spurs beat Jazz in Summer League action",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1ST0ZLdmVEOS1ZVmpwX0E3VVlZY3BBUkV4MjlKdzJNWjhNaVFQVjg5azM5Zkw2MzFGS2wydkFjcERqWUYxVVROT0xJaFVWUGFtdzRmZEduRTZhb1JVcm1DY3Z6LVhqTnV5a3c?oc=5",
+      "author": "NBA.com",
+      "thumbnail": null,
+      "body_excerpt": "Spurs beat Jazz in Summer League action NBA.com",
+      "players": [],
+      "teams": [
+        "san-antonio-spurs",
+        "utah-jazz"
+      ],
+      "trending_score": 0.1545
+    },
+    {
+      "id": "yt--94letz2rzA",
+      "source": "youtube",
+      "published_at": "2026-07-16T04:24:21Z",
+      "title": "🥊 Dropped a new track for my birthday. And Still out now on all platforms. Tap in!",
+      "url": "https://www.youtube.com/watch?v=-94letz2rzA",
+      "author": "Damian Lillard",
+      "thumbnail": "https://i.ytimg.com/vi/-94letz2rzA/maxresdefault.jpg",
+      "body_excerpt": null,
+      "players": [],
+      "teams": [],
+      "media": {
+        "type": "video"
+      },
+      "trending_score": 0.1505
+    },
+    {
+      "id": "gn-c7568e8c848aa56b",
+      "source": "google-news",
+      "published_at": "2026-07-16T04:36:00Z",
+      "title": "Heat Receive Major Klay Thompson Update Amid LeBron Watch",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQYmlNQlo4UXVGX2l6bnl1RmcyQ0pKMFVfNlZWeVY5ankwbkloQ2oxS0FqdzFqWWhKVy1KeVQ4dV9DSGx3ZE1adW9lQ285YmtFTHktSEpPWE1fbVdRbHg2enRWd2VhYm1kUmkxOWptMFhSR1c4WEM5a25mdUNVWUtXUy1YLXZTOWM3?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Heat Receive Major Klay Thompson Update Amid LeBron Watch Yahoo Sports",
+      "players": [
+        "klay-thompson",
+        "lebron-james"
+      ],
+      "teams": [
+        "miami-heat"
+      ],
+      "trending_score": 0.1367
+    },
+    {
+      "id": "bs-did%3Aplc%3Asp36q2pao34wgscjwponqvop%2Fapp.bsky.feed.post%2F3mqqgj5mf3k2p",
+      "source": "bluesky",
+      "published_at": "2026-07-16T04:46:06Z",
+      "title": "Orie La Croix",
+      "url": "https://bsky.app/profile/dillonreagan.bsky.social/post/3mqqgj5mf3k2p",
+      "author": "Dillon Reagan",
+      "thumbnail": null,
+      "body_excerpt": "Orie La Croix",
+      "players": [],
+      "teams": [],
+      "trending_score": 0.1325
+    },
+    {
+      "id": "yt-3Q8KOiCqlBI",
+      "source": "youtube",
+      "published_at": "2026-07-16T04:00:06Z",
+      "title": "Dame D.O.L.L.A. - And Still",
+      "url": "https://www.youtube.com/watch?v=3Q8KOiCqlBI",
+      "author": "Damian Lillard",
+      "thumbnail": "https://i.ytimg.com/vi/3Q8KOiCqlBI/maxresdefault.jpg",
+      "body_excerpt": "Surprise drop from D.O.L.L.A. to celebrate his 36th birthday. And Still is the first track from Dame's upcoming Houston, We Have A Problem project.",
+      "players": [
+        "damian-lillard"
+      ],
+      "teams": [],
+      "media": {
+        "type": "video"
+      },
+      "trending_score": 0.1311
+    },
+    {
+      "id": "gn-7d30602019dccffb",
+      "source": "google-news",
+      "published_at": "2026-07-16T04:28:02Z",
+      "title": "Washington Wizards vs. LA Clippers: Game Highlights",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9YR2NsOVlEOGNwdVRrTjBvVWNTZ2lDeHkydl9QM250Wk1NS1lXNkJFbkVVZmZ5Q0JTSXRpRzJ0OHduNkhEU2JLMXl5UXZyY2NOWFNXaGpDaUZhaHFOR0Raemx5Q1NYSE5kRU96cnh5Vks?oc=5",
+      "author": "ESPN",
+      "thumbnail": null,
+      "body_excerpt": "Washington Wizards vs. LA Clippers: Game Highlights ESPN",
+      "players": [],
+      "teams": [
+        "los-angeles-clippers",
+        "washington-wizards"
+      ],
+      "trending_score": 0.1302
+    },
+    {
+      "id": "gn-c36b60486d96fd90",
+      "source": "google-news",
+      "published_at": "2026-07-16T04:27:00Z",
+      "title": "LA Clippers vs. Washington Wizards - Game Highlights",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNMU9CR0JrQlBjNjNTaXVDQThCb2VfRnNtRG1aa3NZZ2hnTDJPdlZSREZQRUVqelZEMnZEOGtmcmtRdGhMMkZLR3hjbEpyNVFaNjZHc3RzNEVMVVBuRXM0SGRiVTFFd2pTUDhJSk41OEF5UURZLWloNGpTWEFNZ2pnTVI2UHctUzQ?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "LA Clippers vs. Washington Wizards - Game Highlights Yahoo Sports",
+      "players": [],
+      "teams": [
+        "los-angeles-clippers",
+        "washington-wizards"
+      ],
+      "trending_score": 0.1293
+    },
+    {
+      "id": "gn-70298792cb955952",
+      "source": "google-news",
+      "published_at": "2026-07-16T04:19:00Z",
+      "title": "Kevin Durant weighs in on where LeBron James should go next amid 2026 NBA free agency",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOenBKSkt2ZUgzWDNrdVhpc19jYVE5MU0zRkVtTzZydHUwVGpTNldBc18yb0FjTlZfaDg3TzRWaVFJV2pjdk9FLUhJcThKdS14MVVDLVhvNjZpemtJSGI3U2hDbU5wOXA4b0lwelprNkM1SWl4ZnlmRlBOS3pCbGotNENjUm9SMXI0?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Kevin Durant weighs in on where LeBron James should go next amid 2026 NBA free agency Yahoo Sports",
+      "players": [
+        "kevin-durant",
+        "lebron-james"
+      ],
+      "teams": [],
+      "trending_score": 0.1234
+    },
+    {
+      "id": "gn-29ec34f8ec8e9dc8",
+      "source": "google-news",
+      "published_at": "2026-07-16T04:15:00Z",
+      "title": "Timberwolves Planning “Monster” Anthony Edwards Contract Offer",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPRkstalVNMExCS2tZVExoUXJCR3dQRDlubXJhLVN2M0NuY1FUVjhCMkZJb1Nrc2U5RzlnRmQ5NmxHZE00eU92M2ZOQzZjcG9tVHBPc1J5bFpIZVgzcjZyeUpvU29GWFBpbjRVSlRaQ1ZmS3hCMmlKSExTMWduOUNtbE9QOWlhRWJDaUtYMTNqY1R3YTdlcmR5c1J3?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Timberwolves Planning “Monster” Anthony Edwards Contract Offer Yahoo Sports",
+      "players": [
+        "anthony-edwards"
+      ],
+      "teams": [
+        "minnesota-timberwolves"
+      ],
+      "trending_score": 0.1206
+    },
+    {
+      "id": "gn-ae946f1832a93b8d",
+      "source": "google-news",
+      "published_at": "2026-07-16T04:03:00Z",
+      "title": "Did ESPN Accidentally Leak LeBron James’ Free-Agency Decision? A Look at What Sparked the Conspiracy Theory",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPcWxqYnpDUkZxUi1TR0NpQVhtazVLWTR0OC1JMG9lNmp2SmRvd1pfQ2lDaDI4dV9LLXFnckYwZ3BsdDZrTnJPMTZrandXMVk2dGxwTHk2bXozU05sMTFHUXRXUnotNUlyZ2h5TURlYld3dHhKbU5xckdWYlJ2WnF3R2JfeFFHSUJpc0E?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Did ESPN Accidentally Leak LeBron James’ Free-Agency Decision? A Look at What Sparked the Conspiracy Theory Yahoo Sports",
+      "players": [
+        "lebron-james"
+      ],
+      "teams": [],
+      "trending_score": 0.1127
+    },
+    {
+      "id": "gn-37d5120a61d2b9a9",
+      "source": "google-news",
+      "published_at": "2026-07-16T04:01:54Z",
+      "title": "Norris Agbakoko gets up for alley-oop vs. LA Clippers",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOa21kY2pPNEctN1JpXzNqWldoa2VuMVBTNzZaNW03aHg1V3NHdzJLMlh5dTNNQnh2Z0N5a3JjaXF4dVpBdmlMb3I3UE9fdl9vX0VVUEYwcko5eWRSMDZfSXEzQU9kVmNlZlVVemloaDF2S1VHZVZJbHBYWHRvWlhKLUM5aHM3WUM3YlVITGZ5XzIyTWFJZnpndw?oc=5",
+      "author": "ESPN",
+      "thumbnail": null,
+      "body_excerpt": "Norris Agbakoko gets up for alley-oop vs. LA Clippers ESPN",
+      "players": [],
+      "teams": [
+        "los-angeles-clippers"
+      ],
+      "trending_score": 0.1121
+    },
+    {
+      "id": "gn-4f40a657bbe8561c",
+      "source": "google-news",
+      "published_at": "2026-07-16T03:59:00Z",
+      "title": "Pacers Fans Dreaming of LeBron James Get Harsh New Reality",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQdGtRM2JBQklzRHQxMmhLWTNCZHpMbTc4VVFnYzBteGV1dGdpLVdrVVpvNGVSWWxURHFGcHl3OEsxaUVleXcxaTdkcm5WdzNJTTVaMEZWZmY2R0ZXRGtJaDZVY1FWZFM3VlFIYk0weTVyNlJVaG9Kemc1MVdfcVlDNjlOWUI2VlZDUWc?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Pacers Fans Dreaming of LeBron James Get Harsh New Reality Yahoo Sports",
+      "players": [
+        "lebron-james"
+      ],
+      "teams": [
+        "indiana-pacers"
+      ],
+      "trending_score": 0.1103
+    },
+    {
+      "id": "gn-b49b7aeb503f0c28",
+      "source": "google-news",
+      "published_at": "2026-07-16T03:54:00Z",
+      "title": "Lakers Trade Proposal Pairs Luka With 5-Time All-Star in 3-Team Blockbuster",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQYzQ0OUoxT09iSzNkeHpvRXZMQkFnM1ZuTXg4UEUwQllGMExuU0JKdXIyZ3ZSNUJXMkttQjc4UGpxNS15OFN2UEY2dU96bzA1TFZkQkMyeEk5eGpMdnVkTHRkdVV4UlpNSUZlYXJnUE9pVkt5NGZkeTEtRm9jSHM4ZzlfVzdjTmll?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Lakers Trade Proposal Pairs Luka With 5-Time All-Star in 3-Team Blockbuster Yahoo Sports",
+      "players": [],
+      "teams": [
+        "los-angeles-lakers"
+      ],
+      "trending_score": 0.1074
+    },
+    {
+      "id": "gn-51484e1edadb74f8",
+      "source": "google-news",
+      "published_at": "2026-07-16T03:48:38Z",
+      "title": "Wizards vs. Clippers (16 Jul, 2026) Play-by-Play",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOOVRORHJfOGJVemt2YnlzMWhuVkxGTU84X3IwOG1qLVMzMmxsc0Y5MDZsRDdKRmFNZDA3X2YyZUVmMlVKQTVXYUVreVdXZmV2eDZJeTZXQm03OHpaZTR3bzluV3N2Qm9kckRnS0F3S2dVTEpLZ0psSmdjVS1OXzNueXhUR3U4WmZNeE1rZUJ4ZXJDdkwyV0xxRThzWQ?oc=5",
+      "author": "ESPN Philippines",
+      "thumbnail": null,
+      "body_excerpt": "Wizards vs. Clippers (16 Jul, 2026) Play-by-Play ESPN Philippines",
+      "players": [],
+      "teams": [
+        "los-angeles-clippers",
+        "washington-wizards"
+      ],
+      "trending_score": 0.1044
     },
     {
       "id": "gn-e12b798b0ea88793",
@@ -52,27 +425,20 @@
         "jalen-brunson"
       ],
       "teams": [],
-      "trending_score": 0.2785
+      "trending_score": 0.1034
     },
     {
-      "id": "bs-did%3Aplc%3Aszxkt3ekyjatlwd7jknsmtv4%2Fapp.bsky.feed.post%2F3mqqdhrl5ts2g",
+      "id": "bs-did%3Aplc%3Ab5s7pvomuo3xwd3wgdpnohtt%2Fapp.bsky.feed.post%2F3mqqe3zs2ck2d",
       "source": "bluesky",
-      "published_at": "2026-07-16T03:51:39Z",
-      "title": "youtu.be/RG5V4_QqTnE?...",
-      "url": "https://bsky.app/profile/erikg503.bsky.social/post/3mqqdhrl5ts2g",
-      "author": "Erik García Gundersen",
-      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:szxkt3ekyjatlwd7jknsmtv4/bafkreig22fqkcn4sffoskifkka66chvzu6ior5kxiwbzfnrr3h5bwwcdzq",
-      "body_excerpt": "youtu.be/RG5V4_QqTnE?...",
+      "published_at": "2026-07-16T04:02:58Z",
+      "title": "Joe Gas, so this really works",
+      "url": "https://bsky.app/profile/bullsjay.bsky.social/post/3mqqe3zs2ck2d",
+      "author": "Jason Patt",
+      "thumbnail": null,
+      "body_excerpt": "Joe Gas, so this really works",
       "players": [],
       "teams": [],
-      "media": {
-        "type": "link",
-        "uri": "https://youtu.be/RG5V4_QqTnE?is=YOd45Nk8WwIrt1sX",
-        "title": "Leo Messi says goodbye to FC Barcelona (full farewell speech)",
-        "description": "YouTube video by FC Barcelona",
-        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:szxkt3ekyjatlwd7jknsmtv4/bafkreig22fqkcn4sffoskifkka66chvzu6ior5kxiwbzfnrr3h5bwwcdzq"
-      },
-      "trending_score": 0.2659
+      "trending_score": 0.1025
     },
     {
       "id": "gn-4b5c3f77f635398f",
@@ -88,7 +454,22 @@
         "brooklyn-nets",
         "houston-rockets"
       ],
-      "trending_score": 0.2645
+      "trending_score": 0.1007
+    },
+    {
+      "id": "bs-did%3Aplc%3Amx62ni2prhriaagd7jfa65zk%2Fapp.bsky.feed.post%2F3mqqdrgw5gc2b",
+      "source": "bluesky",
+      "published_at": "2026-07-16T03:57:03Z",
+      "title": "i was told the golden state valkyries were not a tier 1 team",
+      "url": "https://bsky.app/profile/stevejones20.bsky.social/post/3mqqdrgw5gc2b",
+      "author": "Steve Jones",
+      "thumbnail": null,
+      "body_excerpt": "i was told the golden state valkyries were not a tier 1 team",
+      "players": [],
+      "teams": [
+        "golden-state-warriors"
+      ],
+      "trending_score": 0.0992
     },
     {
       "id": "gn-320a313f9caa5fdf",
@@ -108,7 +489,27 @@
         "boston-celtics",
         "sacramento-kings"
       ],
-      "trending_score": 0.2521
+      "trending_score": 0.0982
+    },
+    {
+      "id": "bs-did%3Aplc%3Aszxkt3ekyjatlwd7jknsmtv4%2Fapp.bsky.feed.post%2F3mqqdhrl5ts2g",
+      "source": "bluesky",
+      "published_at": "2026-07-16T03:51:39Z",
+      "title": "youtu.be/RG5V4_QqTnE?...",
+      "url": "https://bsky.app/profile/erikg503.bsky.social/post/3mqqdhrl5ts2g",
+      "author": "Erik García Gundersen",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:szxkt3ekyjatlwd7jknsmtv4/bafkreig22fqkcn4sffoskifkka66chvzu6ior5kxiwbzfnrr3h5bwwcdzq",
+      "body_excerpt": "youtu.be/RG5V4_QqTnE?...",
+      "players": [],
+      "teams": [],
+      "media": {
+        "type": "link",
+        "uri": "https://youtu.be/RG5V4_QqTnE?is=YOd45Nk8WwIrt1sX",
+        "title": "Leo Messi says goodbye to FC Barcelona (full farewell speech)",
+        "description": "YouTube video by FC Barcelona",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:szxkt3ekyjatlwd7jknsmtv4/bafkreig22fqkcn4sffoskifkka66chvzu6ior5kxiwbzfnrr3h5bwwcdzq"
+      },
+      "trending_score": 0.0964
     },
     {
       "id": "gn-dbb4328ca8c69bf1",
@@ -123,7 +524,39 @@
         "vsevolod-ishchenko"
       ],
       "teams": [],
-      "trending_score": 0.2396
+      "trending_score": 0.0955
+    },
+    {
+      "id": "gn-ded35b435275cf13",
+      "source": "google-news",
+      "published_at": "2026-07-16T03:22:00Z",
+      "title": "Kevin Durant weighs in on LeBron James sweepstakes",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOZWxnRkc5SXRaa2ZwcFYyalJZazlHMERKZTg0SVdPTnE1X1JzTmZzWmdmYjk0dVF2THhnYjA5dzVfZmdRRm05ZnZGNlFneW1iN1BHZTJtd2VMM1RnSjhla3VzeFgzU2ZfV3FrNzhfb0VleFBYMHAxc0tSQko1SVNiejJ0RXNuQXBp?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Kevin Durant weighs in on LeBron James sweepstakes Yahoo Sports",
+      "players": [
+        "kevin-durant",
+        "lebron-james"
+      ],
+      "teams": [],
+      "trending_score": 0.0915
+    },
+    {
+      "id": "gn-7bca4284cd7fd838",
+      "source": "google-news",
+      "published_at": "2026-07-16T03:20:59Z",
+      "title": "Washington Wizards vs LA Clippers Jul 15, 2026 Box Scores",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5MUGFPckRGVl9WQVRtZkhPaUtmZmtqZ2x1b09Ra1ExWER3SlVOMVE4Y29EVzQ4OGpVVHRzWm9ac0tkWU5rZkdZeTdzZGMxNXIzbXFlWjV2X2I5V1hvaHdqdTI1U3AycDA?oc=5",
+      "author": "NBA.com",
+      "thumbnail": null,
+      "body_excerpt": "Washington Wizards vs LA Clippers Jul 15, 2026 Box Scores NBA.com",
+      "players": [],
+      "teams": [
+        "los-angeles-clippers",
+        "washington-wizards"
+      ],
+      "trending_score": 0.091
     },
     {
       "id": "bs-did%3Aplc%3Azvgi4eon2fvlemnmaqnmayuk%2Fapp.bsky.feed.post%2F3mqqcq7iwu224",
@@ -150,7 +583,27 @@
         "description": "The Boston Celtics wrapped up their scheduled portion of the Las Vegas Summer League with an 82-76 win over the Sacramento Kings. There is still one more game y",
         "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:zvgi4eon2fvlemnmaqnmayuk/bafkreiewkbjcto466gojyyheoy2srbdpmba6qydawlgmcwcfblt4qogtpa"
       },
-      "trending_score": 0.2334
+      "trending_score": 0.0901
+    },
+    {
+      "id": "yt-59M8g_I818w",
+      "source": "youtube",
+      "published_at": "2026-07-16T02:39:18Z",
+      "title": "Why the Internet is WRONG About LeBron’s 2020 Ring #LebronJames #NBA #Lakers",
+      "url": "https://www.youtube.com/watch?v=59M8g_I818w",
+      "author": "Road Trippin' Show",
+      "thumbnail": "https://i.ytimg.com/vi/59M8g_I818w/maxresdefault.jpg",
+      "body_excerpt": "🏀 Download the Fanatics Sportsbook app! https://fanatics.onelink.me/5kut/ROADTRIPPIN New customers who sign up and Bet $5, receive $100 in FanCash* Use FanCash on bonus bets, profit boosts, team gear on Fanatics.com and so much more. *New customers in AZ, CO, CT, DC, IA, IL, IN,…",
+      "players": [
+        "lebron-james"
+      ],
+      "teams": [
+        "los-angeles-lakers"
+      ],
+      "media": {
+        "type": "video"
+      },
+      "trending_score": 0.0893
     },
     {
       "id": "bs-did%3Aplc%3Apz2e6pmf64ey4zpgyjuvpdfj%2Fapp.bsky.feed.post%2F3mqqclccxuk2i",
@@ -170,23 +623,40 @@
         "description": "-A delightfully absurd and endearing film that might be Pixar's best work since Soul or even Coco before that  -Blends emotional resonance with plenty of clever jokes and animal gags to serve a pleasa...",
         "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:pz2e6pmf64ey4zpgyjuvpdfj/bafkreieqne6kwdiybqn7ka7z5sxebslixdcndxydvw2oer5ugxw72pla3q"
       },
-      "trending_score": 0.2274
+      "trending_score": 0.0889
     },
     {
-      "id": "gn-ded35b435275cf13",
+      "id": "gn-27a59f1a72df5b4f",
       "source": "google-news",
-      "published_at": "2026-07-16T03:22:00Z",
-      "title": "Kevin Durant weighs in on LeBron James sweepstakes",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOZWxnRkc5SXRaa2ZwcFYyalJZazlHMERKZTg0SVdPTnE1X1JzTmZzWmdmYjk0dVF2THhnYjA5dzVfZmdRRm05ZnZGNlFneW1iN1BHZTJtd2VMM1RnSjhla3VzeFgzU2ZfV3FrNzhfb0VleFBYMHAxc0tSQko1SVNiejJ0RXNuQXBp?oc=5",
+      "published_at": "2026-07-16T03:15:00Z",
+      "title": "Heat Open to Reunion With Former Guard Amid LeBron Pursuit",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPUTZ0b1lKb1dHN2pJVElYY2daYjF4QzZtN1NqaE1mUGhMQTl5V2dXeE9VN0NRVzRtSHVoRXV2YmxGb0FKS0p3ckZ5UGtPUU91bndmcGhWSDJoSUJjSjF6SlNBaG90T2JKSW0xVmpxaXRyYU1FQUJYZWIyU3VueWIwUURSb2kydw?oc=5",
       "author": "Yahoo Sports",
       "thumbnail": null,
-      "body_excerpt": "Kevin Durant weighs in on LeBron James sweepstakes Yahoo Sports",
+      "body_excerpt": "Heat Open to Reunion With Former Guard Amid LeBron Pursuit Yahoo Sports",
       "players": [
-        "kevin-durant",
         "lebron-james"
       ],
-      "teams": [],
-      "trending_score": 0.2213
+      "teams": [
+        "miami-heat"
+      ],
+      "trending_score": 0.0885
+    },
+    {
+      "id": "gn-45d1c6dcccf7d797",
+      "source": "google-news",
+      "published_at": "2026-07-16T03:12:27Z",
+      "title": "Takeaways as Kings Summer League Slide Continues, Fall to Celtics",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNa1RKakZZSmpHT01KZlJtVTZzelRzZUNsbXpHT1NXckFiVmJSd1lrWmJmMDI4bDNZWjVXSlZybjZzY2xhT3hFNEhnYVk3V0ZISnk2elJkd1ZfRlV1dV9rRzI2VC1waVdyY3Z3WHBmZDFiWWJqbml0aFo4enp3SklxTEtiNDIyTEVZTUd5Ql9ncE5nbTFNTVVCQTlSbDllUUk?oc=5",
+      "author": "Sports Illustrated",
+      "thumbnail": null,
+      "body_excerpt": "Takeaways as Kings Summer League Slide Continues, Fall to Celtics Sports Illustrated",
+      "players": [],
+      "teams": [
+        "boston-celtics",
+        "sacramento-kings"
+      ],
+      "trending_score": 0.0874
     },
     {
       "id": "bs-did%3Aplc%3A7sfnardo5xxznxc6esxc5ooe%2Fapp.bsky.feed.post%2F3mqqcemeb5c2l",
@@ -208,507 +678,7 @@
           }
         ]
       },
-      "trending_score": 0.2197
-    },
-    {
-      "id": "bs-did%3Aplc%3A7sfnardo5xxznxc6esxc5ooe%2Fapp.bsky.feed.post%2F3mqqc64xqy22l",
-      "source": "bluesky",
-      "published_at": "2026-07-16T03:28:21Z",
-      "title": "#0 for the Brooklyn Nets... Mikel Brown Jr. 📸",
-      "url": "https://bsky.app/profile/nba.com/post/3mqqc64xqy22l",
-      "author": "NBA",
-      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7sfnardo5xxznxc6esxc5ooe/bafkreibustenk4k3zfgp5bt2azrddpwmcltxi5qy6hws2zwgauxdgvo5nq",
-      "body_excerpt": "#0 for the Brooklyn Nets... Mikel Brown Jr. 📸",
-      "players": [
-        "mikel-brown"
-      ],
-      "teams": [
-        "brooklyn-nets"
-      ],
-      "media": {
-        "type": "image",
-        "images": [
-          {
-            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7sfnardo5xxznxc6esxc5ooe/bafkreibustenk4k3zfgp5bt2azrddpwmcltxi5qy6hws2zwgauxdgvo5nq",
-            "alt": ""
-          }
-        ]
-      },
-      "trending_score": 0.2127
-    },
-    {
-      "id": "gn-45d1c6dcccf7d797",
-      "source": "google-news",
-      "published_at": "2026-07-16T03:12:27Z",
-      "title": "Takeaways as Kings Summer League Slide Continues, Fall to Celtics",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNa1RKakZZSmpHT01KZlJtVTZzelRzZUNsbXpHT1NXckFiVmJSd1lrWmJmMDI4bDNZWjVXSlZybjZzY2xhT3hFNEhnYVk3V0ZISnk2elJkd1ZfRlV1dV9rRzI2VC1waVdyY3Z3WHBmZDFiWWJqbml0aFo4enp3SklxTEtiNDIyTEVZTUd5Ql9ncE5nbTFNTVVCQTlSbDllUUk?oc=5",
-      "author": "Sports Illustrated",
-      "thumbnail": null,
-      "body_excerpt": "Takeaways as Kings Summer League Slide Continues, Fall to Celtics Sports Illustrated",
-      "players": [],
-      "teams": [
-        "boston-celtics",
-        "sacramento-kings"
-      ],
-      "trending_score": 0.2043
-    },
-    {
-      "id": "gn-69f11a8d2aaa9bd1",
-      "source": "google-news",
-      "published_at": "2026-07-16T03:11:00Z",
-      "title": "San Antonio Spurs Announce Major Injury News for 1st Round Pick After NBA Draft",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOZnAzZFBaVVpfVmJBY0pPRG9tLV96dUZzR1Q1NG5QVzlSWkVCM3gyT2FqWGNJN2duRVBscnNMNWhYaVZIbVFfM19NNVlCTExqeTBseHlsM1puN0pjMjJKaHk1cGNZMUR6ZWZUMW4ta0kwd0ZPM3djYlVPYm1wZFZpVXliY3JRWDhJ?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "San Antonio Spurs Announce Major Injury News for 1st Round Pick After NBA Draft Yahoo Sports",
-      "players": [],
-      "teams": [
-        "san-antonio-spurs"
-      ],
-      "trending_score": 0.2019
-    },
-    {
-      "id": "gn-b8849d070ece8795",
-      "source": "google-news",
-      "published_at": "2026-07-16T03:06:59Z",
-      "title": "Celtics beat Kings in Summer League action",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE0yR3ltU3lCaGFtU0VQOUJhZTdzZTJOeDlQOFNpMkEweUxNbWdKcy1RV1NiSWhkdksyYVhtSmQ2T0RIWlJzTzhHNXMwOVZiRzk2RUZCZHE1aU5ibFB1bWJSVW0zZ1JNZDJXdV9rdVR3?oc=5",
-      "author": "NBA.com",
-      "thumbnail": null,
-      "body_excerpt": "Celtics beat Kings in Summer League action NBA.com",
-      "players": [],
-      "teams": [
-        "boston-celtics",
-        "sacramento-kings"
-      ],
-      "trending_score": 0.1956
-    },
-    {
-      "id": "yt-59M8g_I818w",
-      "source": "youtube",
-      "published_at": "2026-07-16T02:39:18Z",
-      "title": "Why the Internet is WRONG About LeBron’s 2020 Ring #LebronJames #NBA #Lakers",
-      "url": "https://www.youtube.com/watch?v=59M8g_I818w",
-      "author": "Road Trippin' Show",
-      "thumbnail": "https://i.ytimg.com/vi/59M8g_I818w/maxresdefault.jpg",
-      "body_excerpt": "🏀 Download the Fanatics Sportsbook app! https://fanatics.onelink.me/5kut/ROADTRIPPIN New customers who sign up and Bet $5, receive $100 in FanCash* Use FanCash on bonus bets, profit boosts, team gear on Fanatics.com and so much more. *New customers in AZ, CO, CT, DC, IA, IL, IN,…",
-      "players": [
-        "lebron-james"
-      ],
-      "teams": [
-        "los-angeles-lakers"
-      ],
-      "media": {
-        "type": "video"
-      },
-      "trending_score": 0.1884
-    },
-    {
-      "id": "gn-7e5e87b6bfa8f1eb",
-      "source": "google-news",
-      "published_at": "2026-07-16T03:00:46Z",
-      "title": "Suns 100-88 Pistons (Jul 15, 2026) Game Recap",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQc2pZV1hxSnlWRTBWM2dUOE9ZUGdDNHNLQUlPODV3UG1nb192Z0xyWUJzOGpRbVpFbm5oa3VWZGx4a1dNX2ZIYnYtd1pyMXc3eVFVZER6NkVreHA5WDVKZjlsN2c2S29vT0Yxa0FzdkI0ME9wcmpjSDBrVHkwRTRkazlUME80aUxqU25IUHVnRHRZOEFP?oc=5",
-      "author": "ESPN",
-      "thumbnail": null,
-      "body_excerpt": "Suns 100-88 Pistons (Jul 15, 2026) Game Recap ESPN",
-      "players": [],
-      "teams": [
-        "detroit-pistons",
-        "phoenix-suns"
-      ],
-      "trending_score": 0.1863
-    },
-    {
-      "id": "bs-did%3Aplc%3Agqgnr2obuwossobfnxw5xnxg%2Fapp.bsky.feed.post%2F3mqqaywyyhs2b",
-      "source": "bluesky",
-      "published_at": "2026-07-16T03:07:33Z",
-      "title": "Hollinger POTD Zach Randolph. Michigan St PF was drafted 19th by POR in 01. Sat behind Sheed for 2 yrs before scoring 20 ppg in 03-04 (won MIP). Had nice scoring run but traded to NY where he didn't work out. Found home w/MEM as leader of grit-grind squad. Retired in 18.",
-      "url": "https://bsky.app/profile/hoopsanalyst.bsky.social/post/3mqqaywyyhs2b",
-      "author": "HoopsAnalyst",
-      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:gqgnr2obuwossobfnxw5xnxg/bafkreihagmfmin23uldsdonls6xsxbjnkxvzydpjdnm74erzyapxnltgge",
-      "body_excerpt": "Hollinger POTD Zach Randolph. Michigan St PF was drafted 19th by POR in 01. Sat behind Sheed for 2 yrs before scoring 20 ppg in 03-04 (won MIP). Had nice scoring run but traded to NY where he didn't work out. Found home w/MEM as leader of grit-grind squad. Retired in 18.",
-      "players": [],
-      "teams": [
-        "memphis-grizzlies",
-        "portland-trail-blazers"
-      ],
-      "media": {
-        "type": "image",
-        "images": [
-          {
-            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:gqgnr2obuwossobfnxw5xnxg/bafkreihagmfmin23uldsdonls6xsxbjnkxvzydpjdnm74erzyapxnltgge",
-            "alt": ""
-          },
-          {
-            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:gqgnr2obuwossobfnxw5xnxg/bafkreigawsxbvhh7gwxpgjivqut6dmajo5ayp5r4jl6kre5fseccvlbely",
-            "alt": ""
-          }
-        ]
-      },
-      "trending_score": 0.1786
-    },
-    {
-      "id": "bs-did%3Aplc%3Ay3xahfdgzxpjsqogokmi43bt%2Fapp.bsky.feed.post%2F3mqqaro477k2r",
-      "source": "bluesky",
-      "published_at": "2026-07-16T03:03:29Z",
-      "title": "While recognizing that the music isn’t gonna be for everyone, Poppy is one of the top live performers out there right now. The quality of screaming+singing a breath apart is remarkable. Fun one (x4)!",
-      "url": "https://bsky.app/profile/blakemurphy.bsky.social/post/3mqqaro477k2r",
-      "author": "Blake Murphy",
-      "thumbnail": null,
-      "body_excerpt": "While recognizing that the music isn’t gonna be for everyone, Poppy is one of the top live performers out there right now. The quality of screaming+singing a breath apart is remarkable. Fun one (x4)!",
-      "players": [],
-      "teams": [],
-      "trending_score": 0.173
-    },
-    {
-      "id": "gn-eeec5248e09a6cd6",
-      "source": "google-news",
-      "published_at": "2026-07-16T02:48:00Z",
-      "title": "Who should get the Boston Celtics two way contract slots from summer league?",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQTkVIbEV0OXpQRkpHT3g4Vk9YOWxKTjl5YjVYUHVHd1RHQnpjakpnU3NSVU9QeWM2bnVmQUh2UjlMNU50Ym1NOFZJQW1JZ2VPTHFSTTZ5c09nNC1oMERWQ0NDZ05XcEZURk9WV2J5QUwwbEN5OUJsRjk2akFuZm15aFgzRHZLbzg?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Who should get the Boston Celtics two way contract slots from summer league? Yahoo Sports",
-      "players": [],
-      "teams": [
-        "boston-celtics"
-      ],
-      "trending_score": 0.1695
-    },
-    {
-      "id": "bs-did%3Aplc%3Ard3xjqinklzohadsvnwyuui3%2Fapp.bsky.feed.post%2F3mqqahzebyc2y",
-      "source": "bluesky",
-      "published_at": "2026-07-16T02:58:05Z",
-      "title": "Hyunjung Lee poppin off!! 🇰🇷🇰🇷🇰🇷🇰🇷",
-      "url": "https://bsky.app/profile/yoleo.bsky.social/post/3mqqahzebyc2y",
-      "author": "Leo S",
-      "thumbnail": null,
-      "body_excerpt": "Hyunjung Lee poppin off!! 🇰🇷🇰🇷🇰🇷🇰🇷\n\nGame-high 22 pts off the bench on 4/5 3P. He's literally outplaying Darryn Peterson 🤯\n\nbsky.app/profile/yole...",
-      "players": [],
-      "teams": [],
-      "trending_score": 0.166
-    },
-    {
-      "id": "gn-7fa53824d051abfc",
-      "source": "google-news",
-      "published_at": "2026-07-16T02:44:21Z",
-      "title": "Celtics 82-76 Kings (Jul 15, 2026) Game Stats",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPbDRGWUtUeW1rbkJGbFB4YXdldUVxN05ablBwQU82MGVZQ1E2d1pSdGhta1Y3NnF1ZS03ai1xWVlDV2FQa1BtTlkwYnJ0YmRRQ0lyZUFNVkVuSXg2SzlyQTByQldianFHUTVSV3Z1eGN6czh4Q2NCTnI3RGpSZF9GY19faHhnR3EtM0pPV190aDY2RHY3QWtacg?oc=5",
-      "author": "ESPN",
-      "thumbnail": null,
-      "body_excerpt": "Celtics 82-76 Kings (Jul 15, 2026) Game Stats ESPN",
-      "players": [],
-      "teams": [
-        "boston-celtics",
-        "sacramento-kings"
-      ],
-      "trending_score": 0.1651
-    },
-    {
-      "id": "gn-2961c8a35231f304",
-      "source": "google-news",
-      "published_at": "2026-07-16T02:42:30Z",
-      "title": "Steinbach Provides Another Double-Double For Hornets",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNRE50TDg3QldQLXo3TEFZUVpGMU5UbWhCclBuUUdfSkpoSVJTZFh3OW82UDBvYVBjRW15TXQ1NlY4VU5acF9CaXhqQ2JZV1pUc0JkUDRIVkZNcVN3WlBkRkFBa1dmd1lONTNhZ0RpbVdWcTcwTjRtSGxFc2Rxck9mSTc0clJ4OEpfMmNGQzY3bkttVVpaemZWMjUwSWV3UU95OHA1Z21hM2hhbmdkTldOLWZ5ZXo?oc=5",
-      "author": "Sports Illustrated",
-      "thumbnail": null,
-      "body_excerpt": "Steinbach Provides Another Double-Double For Hornets Sports Illustrated",
-      "players": [
-        "hannes-steinbach"
-      ],
-      "teams": [
-        "charlotte-hornets"
-      ],
-      "trending_score": 0.163
-    },
-    {
-      "id": "gn-11de5ac508a11fd6",
-      "source": "google-news",
-      "published_at": "2026-07-16T02:36:00Z",
-      "title": "Hugo Gonzalez powers Summer Celtics past Kings in 82-76 win",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPS2oxM2llTTZXUm43WlhBYnJHMjhveERFQ1RBd2pJbUJ2MHpnUTBucExRMHZCb1hQVHlCWFdJX1poUmhmX1dnb1pnQy14bGFORmJ6NjF2UHAtb29raDl4anRFUFpIazduRGlfYTFpMHYzeFBnSWwxZDBJZW9vYnRQRmZ0ZVh6S1dLZ0Q3bA?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Hugo Gonzalez powers Summer Celtics past Kings in 82-76 win Yahoo Sports",
-      "players": [
-        "hugo-gonzalez"
-      ],
-      "teams": [
-        "boston-celtics",
-        "sacramento-kings"
-      ],
-      "trending_score": 0.1559
-    },
-    {
-      "id": "gn-5b36446cfdc872a2",
-      "source": "google-news",
-      "published_at": "2026-07-16T02:34:08Z",
-      "title": "\"Your game is suited to us\" - How Jerry Krause convinced Toni Kukoc to play for the Chicago Bulls",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOVHFXNkl4b2hxQTlUZ3VGZmFnbllhQnU1MWVTcF9sYjFjS0RGTS1weHFLSzk5R3V1NU9fUXJabUc3WHc3XzJKLWZia3ROMW45bVBYN3ZkTjJheUd4Ul9heEw1TTFIOGw2MDZULXNRMm15MVFGbmdCTmV5VWFkOUhvWGp3?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "\"Your game is suited to us\" - How Jerry Krause convinced Toni Kukoc to play for the Chicago Bulls Yahoo Sports",
-      "players": [],
-      "teams": [
-        "chicago-bulls"
-      ],
-      "trending_score": 0.1539
-    },
-    {
-      "id": "gn-68bdcd68bcdb6543",
-      "source": "google-news",
-      "published_at": "2026-07-16T02:33:00Z",
-      "title": "PTI's new podcast episode title makes it seem like LeBron James is joining Steph Curry with Warriors",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOQ0duWDd1OTZXRzdzX29VaURPZEd2eXdZME9BcU9kNXZtWUIxbEw5SjB0cF9EeUJGRzRacG5hZnVUU2d5MWl4Wm1QQW9zNE5QVmlPXzJ6U05IaUlBQ2pqZk0xNTVlOXJQdHFQLWRtTG1hUDNwNFRneWg3eENTOEFmS21zSmlPSEZ6?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "PTI's new podcast episode title makes it seem like LeBron James is joining Steph Curry with Warriors Yahoo Sports",
-      "players": [
-        "lebron-james",
-        "stephen-curry"
-      ],
-      "teams": [
-        "golden-state-warriors"
-      ],
-      "trending_score": 0.1527
-    },
-    {
-      "id": "gn-0cc9c306d6183d28",
-      "source": "google-news",
-      "published_at": "2026-07-16T02:29:00Z",
-      "title": "Warriors' Stephen Curry receives Muhammad Ali Sports Humanitarian Award",
-      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPNnZUeGJVdXNwYVJjaGRhQ2tQbzd6cEdzRDJzbHFGc3lKT0Voc0Q1VzFNNDVRR2hTWjZjNmlpcXBSaUJobmw4blUxcmVGekptZ3REcUlZZWJVdlZXbm1mbFJISVp1cUd3TkRRdi1hOWVQRTBaYVV2YjNwUFBIZGRNU2w4THdyVjRySVoyenNZangtcVZtR1dNNnJ2dS1JNHJPcUN1ZDV1eU0tX0MxcjVxVXZldGtZU3pOLUZUNXVhTUlaRFctT3JLRF95MDU4ZUt0VFJEVGZ5NUtEZw?oc=5",
-      "author": "USA Today",
-      "thumbnail": null,
-      "body_excerpt": "Warriors' Stephen Curry receives Muhammad Ali Sports Humanitarian Award USA Today",
-      "players": [
-        "stephen-curry"
-      ],
-      "teams": [
-        "golden-state-warriors"
-      ],
-      "trending_score": 0.1487
-    },
-    {
-      "id": "gn-d75a79dcf9f4cfbd",
-      "source": "google-news",
-      "published_at": "2026-07-16T02:21:35Z",
-      "title": "Bucks beat Hornets in Summer League action",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9memtnZFAtbXR1bGgybnRGcU4zSEhNSElyRktZS182UWx3dmp3ZmJjUUtSczRLbXVJakMwUmc2aHZEV3Jrb3VicFN4SnJId0FkNnpRM0Z6VXhPOXl6UXdPbHRoYXV0TlZ6Nko0SGp3?oc=5",
-      "author": "NBA.com",
-      "thumbnail": null,
-      "body_excerpt": "Bucks beat Hornets in Summer League action NBA.com",
-      "players": [],
-      "teams": [
-        "charlotte-hornets",
-        "milwaukee-bucks"
-      ],
-      "trending_score": 0.1418
-    },
-    {
-      "id": "gn-05a2173a02bd3b7d",
-      "source": "google-news",
-      "published_at": "2026-07-16T02:21:08Z",
-      "title": "God Shammgod Postgame Interview | 2026 NBA Summer League | July 15, 2026",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQV2VUSHFsNlk4TG9ibnRYVE00cjhpdEQ5WTVlWk84T3RXQ1h0WWVFbnVPTldjbGlzUUVrb0ptcmp0bnRISVg4N0NVZER6TnNjbU9IM2tSYmJfbjhHVHJyM0QxVDBfMF9Ra255WHZiUHlXb09ERnRTdHNfZGdYblN4S29fRUFQUUVpUWtjTkdyMzkxdEpJOEVaLWFfWW9SSFZIWXdHelN3?oc=5",
-      "author": "NBA.com",
-      "thumbnail": null,
-      "body_excerpt": "God Shammgod Postgame Interview | 2026 NBA Summer League | July 15, 2026 NBA.com",
-      "players": [],
-      "teams": [],
-      "trending_score": 0.1413
-    },
-    {
-      "id": "gn-3d430a525ef6eca5",
-      "source": "google-news",
-      "published_at": "2026-07-16T02:19:44Z",
-      "title": "Steve Kerr Responds to Fans About Bringing LeBron James to Warriors in Trending Video",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQazJCXzNoSng5bWdJdUlTX2tGclpRcVhlOWRhckhnUk0zVWdOVE1lT0NCTm9ueXRhbHpQek1GNnlNT0w0US1CYU1KOUQzWGZOMkgzaWVpMVAybTlXNnp6VXpwZVozaERBUFFuNC05N1BOZjJZX1RfeUlRUWhRdll5bWpvd0FvUUtUSFROZ3lVdWFHNzh1RXphdHNYYWlMUzRCU2hWTzlhZWRtb2dBTUoxM2hScFJxZGViR2lwVzZR?oc=5",
-      "author": "Bleacher Report",
-      "thumbnail": null,
-      "body_excerpt": "Steve Kerr Responds to Fans About Bringing LeBron James to Warriors in Trending Video Bleacher Report",
-      "players": [
-        "lebron-james"
-      ],
-      "teams": [
-        "golden-state-warriors"
-      ],
-      "trending_score": 0.1401
-    },
-    {
-      "id": "gn-a52f2e6823f5e4fb",
-      "source": "google-news",
-      "published_at": "2026-07-16T02:18:00Z",
-      "title": "Sacramento Kings vs. Boston Celtics - Game Highlights",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQd2ROdjdkYmJGUWl2ZE8wN3NuakZxRmxnOEU1SEFnbkxTSmtwM3c3X3ZNcGV1NFpZcFYtZUF6SzFqZjloMHhZNnpaMTR6SmZIU0hhZnNPLXU2UTdncWhibWxMd1RCWDVXZkJGNlVJRVIzZzNEbUt3c2N5a3ViZXJGV254em5VYUtB?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Sacramento Kings vs. Boston Celtics - Game Highlights Yahoo Sports",
-      "players": [],
-      "teams": [
-        "boston-celtics",
-        "sacramento-kings"
-      ],
-      "trending_score": 0.1386
-    },
-    {
-      "id": "gn-3c7e8bb0104cf2bc",
-      "source": "google-news",
-      "published_at": "2026-07-16T02:14:00Z",
-      "title": "‘It’s Weird’ — Jayson Tatum Makes Feelings Clear on Celtics Trading Jaylen Brown to 76ers",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPcTNEbGFGakd4NmxuQ0Z5YjhtbXh1cms5TTJ0a3FReHA1aFp6endGbzVocXlUeWlPbmNfa3JOMS03X3plazgxR3V5R05ORVZQTFg0OWlwXzdoU0x4VTNwSF9kcm5HNXdsTS1ZOE5iWjJ3VlFHVEs1X1RqdFlObXBUbGdxR1AtQWFSY2c?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "‘It’s Weird’ — Jayson Tatum Makes Feelings Clear on Celtics Trading Jaylen Brown to 76ers Yahoo Sports",
-      "players": [
-        "jaylen-brown",
-        "jayson-tatum"
-      ],
-      "teams": [
-        "boston-celtics",
-        "philadelphia-76ers"
-      ],
-      "trending_score": 0.1352
-    },
-    {
-      "id": "bs-did%3Aplc%3A7sfnardo5xxznxc6esxc5ooe%2Fapp.bsky.feed.post%2F3mqq6q3srvc2l",
-      "source": "bluesky",
-      "published_at": "2026-07-16T02:26:49Z",
-      "title": "Of course No. 13 overall pick Nate Ament hit his signature 🤨 during his NBA Rookie Photoshoot!",
-      "url": "https://bsky.app/profile/nba.com/post/3mqq6q3srvc2l",
-      "author": "NBA",
-      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7sfnardo5xxznxc6esxc5ooe/bafkreibcqs7xmlgtamybui4vdc5xkyhwq7xq6qdtlqtbh5ylpkcyrsjteu",
-      "body_excerpt": "Of course No. 13 overall pick Nate Ament hit his signature 🤨 during his NBA Rookie Photoshoot!",
-      "players": [
-        "nate-ament"
-      ],
-      "teams": [],
-      "media": {
-        "type": "image",
-        "images": [
-          {
-            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7sfnardo5xxznxc6esxc5ooe/bafkreibcqs7xmlgtamybui4vdc5xkyhwq7xq6qdtlqtbh5ylpkcyrsjteu",
-            "alt": ""
-          }
-        ]
-      },
-      "trending_score": 0.1333
-    },
-    {
-      "id": "bs-did%3Aplc%3A6ahv2jk7wea2fql74oiisng6%2Fapp.bsky.feed.post%2F3mqq6n527vk2u",
-      "source": "bluesky",
-      "published_at": "2026-07-16T02:25:10Z",
-      "title": "Fever held to 40% in 88-75 loss to Valkyries, their first home game since returning from an 11-day road trip. Valkyries (18-7) have a league-best 8 straight wins.",
-      "url": "https://bsky.app/profile/scottagness.bsky.social/post/3mqq6n527vk2u",
-      "author": "Scott Agness",
-      "thumbnail": null,
-      "body_excerpt": "Fever held to 40% in 88-75 loss to Valkyries, their first home game since returning from an 11-day road trip. Valkyries (18-7) have a league-best 8 straight wins.\n\nMitchell scored 20, Boston had 15/7, and Clark added 13/6 (but looked stiff after fall).\n\nNext: Fri. v SEA",
-      "players": [],
-      "teams": [],
-      "trending_score": 0.1319
-    },
-    {
-      "id": "gn-7f9a0b9093c6f5ae",
-      "source": "google-news",
-      "published_at": "2026-07-16T02:08:37Z",
-      "title": "Markquis Nowell Postgame Interview | 2026 NBA Summer League | July 15, 2026",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOVTNtNnZnRkhWZkhSZlNpdUlhZ2UwUWVURzZOUTg2WVNhSHY4Q01TNDZ5TnNId21NNW1CM3JCS2hreWNaZHhNZ0h1U2IwZkJDTElpTUJVbWpXTnRtWjBMX2xRWC13VGIzQkxORGdYdERIRHNHRE9FQnBIMk4zTzdBV1VmMU9lRjhxSF9MZG1SaVpScEtGd3JULXZzdTkwNjZuWVRwb0RZVDVaQQ?oc=5",
-      "author": "NBA.com",
-      "thumbnail": null,
-      "body_excerpt": "Markquis Nowell Postgame Interview | 2026 NBA Summer League | July 15, 2026 NBA.com",
-      "players": [],
-      "teams": [],
-      "trending_score": 0.1308
-    },
-    {
-      "id": "gn-c83ce9011ad56b0f",
-      "source": "google-news",
-      "published_at": "2026-07-16T02:08:37Z",
-      "title": "Malik Dia Postgame Interview | 2026 NBA Summer League | July 15, 2026",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPa2duQVlrU1FHeDVmenlib2VCU0ZLY21neW0wUkk5UWdqVW9ueXVNaFZfQkwzeDBlcldfZUpodnRmOEhZd3lFVXZYanRxem9CN2s2TWNwZDVRdjdfZWZwWl9tb1UwWmM4VEhobUppeWxOTjRJS0pOSmFoVjN2eWRmNUJpNHJFZTdPVkNVc2YySDY5dzdTUjBZU1RQTG53dzQ1WXc?oc=5",
-      "author": "NBA.com",
-      "thumbnail": null,
-      "body_excerpt": "Malik Dia Postgame Interview | 2026 NBA Summer League | July 15, 2026 NBA.com",
-      "players": [],
-      "teams": [],
-      "trending_score": 0.1308
-    },
-    {
-      "id": "bs-did%3Aplc%3Aj24jtz7xkt5ttdsk32mmpkvn%2Fapp.bsky.feed.post%2F3mqq6dt3lis2s",
-      "source": "bluesky",
-      "published_at": "2026-07-16T02:19:57Z",
-      "title": "Glad I left before I had to see this first quarter",
-      "url": "https://bsky.app/profile/johnhollinger.bsky.social/post/3mqq6dt3lis2s",
-      "author": "John Hollinger",
-      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:j24jtz7xkt5ttdsk32mmpkvn/bafkreie6hg3ltuonw46wwxwudgg3cjno5kz3qexdogtqmxzjrcm3zdw7du",
-      "body_excerpt": "Glad I left before I had to see this first quarter",
-      "players": [],
-      "teams": [],
-      "media": {
-        "type": "image",
-        "images": [
-          {
-            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:j24jtz7xkt5ttdsk32mmpkvn/bafkreie6hg3ltuonw46wwxwudgg3cjno5kz3qexdogtqmxzjrcm3zdw7du",
-            "alt": ""
-          }
-        ]
-      },
-      "trending_score": 0.1275
-    },
-    {
-      "id": "bs-did%3Aplc%3A7uahugigvixjvxd5s2hidpad%2Fapp.bsky.feed.post%2F3mqq6bjmk422f",
-      "source": "bluesky",
-      "published_at": "2026-07-16T02:18:40Z",
-      "title": "Quick story from the Fever's loss against Golden State: www.circlecityspin.com/fever-offens...",
-      "url": "https://bsky.app/profile/tonyreast.bsky.social/post/3mqq6bjmk422f",
-      "author": "Tony East",
-      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreifw7ot7nxds2m3biue3b2yj3vtxma72hrkewf2j72lj4vldpto6me",
-      "body_excerpt": "Quick story from the Fever's loss against Golden State: www.circlecityspin.com/fever-offens...",
-      "players": [],
-      "teams": [
-        "golden-state-warriors"
-      ],
-      "media": {
-        "type": "link",
-        "uri": "https://www.circlecityspin.com/fever-offense-falls-flat-in-loss-vs-valkyries-likes-and-dislikes/",
-        "title": "Fever offense falls flat in loss vs Valkyries, Likes and Dislikes",
-        "description": "The Fever's offense came up short on Wednesday.",
-        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreifw7ot7nxds2m3biue3b2yj3vtxma72hrkewf2j72lj4vldpto6me"
-      },
-      "trending_score": 0.1265
-    },
-    {
-      "id": "gn-5fc46d30de540203",
-      "source": "google-news",
-      "published_at": "2026-07-16T02:03:00Z",
-      "title": "Karl-Anthony Towns takes brutal jab at Cavs during ESPYs: ‘Should win this one analytically’",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQTS1FdUtITzc2YTFWZ3djNE52REFjYmxwWDY2TklkMWVzU01ha09RRVlfMFVkQWNLd0psbnZEMTJqdFd3WnV6OW5SSFRnbnE4MmppRFpNa011eFlMUkVMcUJHdHRKdlByMkdVSVgwUG1hVHRlNVhqX2VkSXl5T1dVLVEyUTlHbUlXQjUzaVBWaTVUS2k1dkF2N29ISHYtWlR0TTF4bDlMWWtRZUpnYnJpTGlYT2o3c2x0NkNGcF93QQ?oc=5",
-      "author": "New York Post",
-      "thumbnail": null,
-      "body_excerpt": "Karl-Anthony Towns takes brutal jab at Cavs during ESPYs: ‘Should win this one analytically’ New York Post",
-      "players": [
-        "karl-anthony-towns"
-      ],
-      "teams": [
-        "cleveland-cavaliers"
-      ],
-      "trending_score": 0.1265
-    },
-    {
-      "id": "bs-did%3Aplc%3A7uahugigvixjvxd5s2hidpad%2Fapp.bsky.feed.post%2F3mqq67qllo22f",
-      "source": "bluesky",
-      "published_at": "2026-07-16T02:17:40Z",
-      "title": "Fever tie for a season-low in points with 75. They couldn't get going on that end outside of a stretch in the third quarter. Top defense outplays the top offense tonight as Golden State wins 88-75. Fever are 14-10.",
-      "url": "https://bsky.app/profile/tonyreast.bsky.social/post/3mqq67qllo22f",
-      "author": "Tony East",
-      "thumbnail": null,
-      "body_excerpt": "Fever tie for a season-low in points with 75. They couldn't get going on that end outside of a stretch in the third quarter. Top defense outplays the top offense tonight as Golden State wins 88-75. Fever are 14-10.",
-      "players": [],
-      "teams": [
-        "golden-state-warriors"
-      ],
-      "trending_score": 0.1257
+      "trending_score": 0.0873
     }
   ]
 }
