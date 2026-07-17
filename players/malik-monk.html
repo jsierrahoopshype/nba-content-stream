@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malik Monk — NBA News, Quotes &amp; Buzz | NBA Content Stream · HoopsMatic</title>
+<meta name="description" content="The latest Malik Monk news, podcast mentions, reporter posts, and headlines — updated continuously by HoopsMatic's NBA Content Stream.">
+<meta name="ncs-entity" data-kind="player" data-slug="malik-monk">
+<link rel="canonical" href="https://jsierrahoopshype.github.io/nba-content-stream/players/malik-monk.html">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
+<meta property="og:title" content="Malik Monk — NBA Content Stream">
+<meta property="og:description" content="The latest Malik Monk news, podcast mentions, reporter posts, and headlines — updated continuously by HoopsMatic's NBA Content Stream.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://jsierrahoopshype.github.io/nba-content-stream/players/malik-monk.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<div class="container">
+  <div class="tabs">
+    <a href="../index.html">Feed</a>
+    <a href="../players.html" class="active">Players</a>
+    <a href="../teams.html">Teams</a>
+  </div>
+
+  <div class="entity-hero">
+    <div class="entity-portrait"><img class="entity-portrait-img" src="https://raw.githubusercontent.com/jsierrahoopshype/nba-headshots/main/players/headshots/face/1628370-malik-monk.png" alt="Malik Monk" loading="eager" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="entity-portrait-initials" style="background:#84cc16">MM</div></div>
+    <div>
+      <div class="name">Malik Monk</div>
+      <div class="sub">Player · 1 mentions in the rolling window</div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="search-row">
+      <div class="search-group">
+        <label>Jump to another player or team</label>
+        <input type="text" id="q" placeholder="e.g. Wemby, Lakers…" autocomplete="off">
+        <div class="suggest" id="suggest"></div>
+      </div>
+    </div>
+    <div class="pills" id="pills"></div>
+  </div>
+
+  <!-- Header row: chart left, trending rail right. Collapses to stacked
+       on mobile via .header-row media query. Keeps the entity header
+       under ~130px on standard laptops so the first card lands above
+       the fold. -->
+  <div class="header-row">
+    <div class="chart-wrap">
+      <div class="chart-label">Mentions, last 14 days</div>
+      <div id="chart"></div>
+    </div>
+    <nav class="nav-rail" id="nav-rail" aria-label="Trending players and teams"></nav>
+  </div>
+
+  <div class="summary" id="summary">loading…</div>
+  <div class="feed" id="feed"></div>
+  <div class="empty" id="empty" style="display:none">No mentions in the rolling window.</div>
+
+  <div class="foot">
+    Archive refreshes every 15 minutes; the live layer merges fresh items in the browser on page open.
+  </div>
+</div>
+
+<script src="../assets/config.js"></script>
+<script src="../assets/tagger.js"></script>
+<script src="../assets/common.js"></script>
+<script src="../assets/entity.js"></script>
+</body>
+</html>
