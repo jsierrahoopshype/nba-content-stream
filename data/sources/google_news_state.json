@@ -2,6 +2,6 @@
   "_meta": {
     "description": "Rotation cursors for Google News entity queries. Each poll cycle takes `players_per_cycle` and `teams_per_cycle` entries starting at these cursors (with wraparound), then advances the cursors and saves this file. Committed so rotation persists across GH Action runs."
   },
-  "player_cursor": 177,
-  "team_cursor": 10
+  "player_cursor": 202,
+  "team_cursor": 20
 }
