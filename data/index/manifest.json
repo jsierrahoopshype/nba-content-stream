@@ -1,70 +1,70 @@
 {
-  "generated_at": "2026-08-28T04:34:23Z",
+  "generated_at": "2026-08-28T16:58:57Z",
   "window_days": 30,
-  "total_items": 81807,
+  "total_items": 81928,
   "max_items_per_entity": 1000,
   "sources": {
-    "bluesky": 30105,
-    "google-news": 43458,
-    "reddit": 3576,
-    "substack": 639,
-    "youtube": 4029
+    "bluesky": 30145,
+    "google-news": 43516,
+    "reddit": 3585,
+    "substack": 643,
+    "youtube": 4039
   },
   "players": [
     {
       "slug": "lebron-james",
       "name": "LeBron James",
-      "count": 940
+      "count": 884
     },
     {
       "slug": "klay-thompson",
       "name": "Klay Thompson",
-      "count": 477
+      "count": 478
     },
     {
       "slug": "jaylen-brown",
       "name": "Jaylen Brown",
-      "count": 380
-    },
-    {
-      "slug": "peyton-watson",
-      "name": "Peyton Watson",
-      "count": 332
+      "count": 374
     },
     {
       "slug": "kawhi-leonard",
       "name": "Kawhi Leonard",
-      "count": 330
+      "count": 329
     },
     {
-      "slug": "luka-doncic",
-      "name": "Luka Dončić",
-      "count": 323
+      "slug": "peyton-watson",
+      "name": "Peyton Watson",
+      "count": 326
     },
     {
       "slug": "russell-westbrook",
       "name": "Russell Westbrook",
-      "count": 321
+      "count": 322
+    },
+    {
+      "slug": "luka-doncic",
+      "name": "Luka Dončić",
+      "count": 317
     },
     {
       "slug": "stephen-curry",
       "name": "Stephen Curry",
-      "count": 315
+      "count": 308
     },
     {
       "slug": "jonathan-kuminga",
       "name": "Jonathan Kuminga",
-      "count": 258
-    },
-    {
-      "slug": "victor-wembanyama",
-      "name": "Victor Wembanyama",
-      "count": 227
+      "count": 261
     },
     {
       "slug": "kevin-durant",
       "name": "Kevin Durant",
       "count": 225
+    },
+    {
+      "slug": "victor-wembanyama",
+      "name": "Victor Wembanyama",
+      "count": 224
     },
     {
       "slug": "giannis-antetokounmpo",
@@ -84,12 +84,12 @@
     {
       "slug": "demar-derozan",
       "name": "DeMar DeRozan",
-      "count": 154
+      "count": 151
     },
     {
       "slug": "draymond-green",
       "name": "Draymond Green",
-      "count": 143
+      "count": 131
     },
     {
       "slug": "nikola-jokic",
@@ -97,14 +97,9 @@
       "count": 131
     },
     {
-      "slug": "lamelo-ball",
-      "name": "LaMelo Ball",
-      "count": 116
-    },
-    {
       "slug": "kyrie-irving",
       "name": "Kyrie Irving",
-      "count": 113
+      "count": 115
     },
     {
       "slug": "paul-george",
@@ -112,19 +107,24 @@
       "count": 113
     },
     {
-      "slug": "anthony-edwards",
-      "name": "Anthony Edwards",
-      "count": 104
+      "slug": "lamelo-ball",
+      "name": "LaMelo Ball",
+      "count": 111
     },
     {
-      "slug": "bennedict-mathurin",
-      "name": "Bennedict Mathurin",
-      "count": 102
+      "slug": "anthony-edwards",
+      "name": "Anthony Edwards",
+      "count": 105
     },
     {
       "slug": "dennis-schroder",
       "name": "Dennis Schröder",
       "count": 100
+    },
+    {
+      "slug": "bennedict-mathurin",
+      "name": "Bennedict Mathurin",
+      "count": 98
     },
     {
       "slug": "dillon-brooks",
@@ -134,17 +134,22 @@
     {
       "slug": "joel-embiid",
       "name": "Joel Embiid",
-      "count": 94
+      "count": 93
     },
     {
       "slug": "jalen-brunson",
       "name": "Jalen Brunson",
-      "count": 92
+      "count": 88
     },
     {
       "slug": "jayson-tatum",
       "name": "Jayson Tatum",
-      "count": 87
+      "count": 88
+    },
+    {
+      "slug": "devin-booker",
+      "name": "Devin Booker",
+      "count": 81
     },
     {
       "slug": "tyrese-maxey",
@@ -152,24 +157,14 @@
       "count": 79
     },
     {
-      "slug": "devin-booker",
-      "name": "Devin Booker",
-      "count": 78
-    },
-    {
       "slug": "cooper-flagg",
       "name": "Cooper Flagg",
-      "count": 73
+      "count": 72
     },
     {
       "slug": "jalen-duren",
       "name": "Jalen Duren",
-      "count": 72
-    },
-    {
-      "slug": "bronny-james",
-      "name": "Bronny James",
-      "count": 69
+      "count": 71
     },
     {
       "slug": "anthony-davis",
@@ -177,29 +172,34 @@
       "count": 68
     },
     {
+      "slug": "bronny-james",
+      "name": "Bronny James",
+      "count": 68
+    },
+    {
       "slug": "karl-anthony-towns",
       "name": "Karl-Anthony Towns",
-      "count": 67
+      "count": 65
     },
     {
       "slug": "duke-miles",
       "name": "Duke Miles",
-      "count": 65
+      "count": 62
     },
     {
       "slug": "ja-morant",
       "name": "Ja Morant",
-      "count": 60
-    },
-    {
-      "slug": "josh-hart",
-      "name": "Josh Hart",
       "count": 59
     },
     {
       "slug": "max-strus",
       "name": "Max Strus",
       "count": 59
+    },
+    {
+      "slug": "josh-hart",
+      "name": "Josh Hart",
+      "count": 56
     },
     {
       "slug": "spencer-jones",
@@ -217,24 +217,19 @@
       "count": 55
     },
     {
-      "slug": "vj-edgecombe",
-      "name": "VJ Edgecombe",
-      "count": 51
-    },
-    {
       "slug": "austin-reaves",
       "name": "Austin Reaves",
+      "count": 49
+    },
+    {
+      "slug": "vj-edgecombe",
+      "name": "VJ Edgecombe",
       "count": 49
     },
     {
       "slug": "michael-porter-jr",
       "name": "Michael Porter Jr.",
       "count": 48
-    },
-    {
-      "slug": "bam-adebayo",
-      "name": "Bam Adebayo",
-      "count": 45
     },
     {
       "slug": "cade-cunningham",
@@ -244,7 +239,7 @@
     {
       "slug": "shai-gilgeous-alexander",
       "name": "Shai Gilgeous-Alexander",
-      "count": 42
+      "count": 43
     },
     {
       "slug": "tre-mann",
@@ -252,13 +247,23 @@
       "count": 42
     },
     {
-      "slug": "walker-kessler",
-      "name": "Walker Kessler",
+      "slug": "bam-adebayo",
+      "name": "Bam Adebayo",
       "count": 41
     },
     {
       "slug": "damian-lillard",
       "name": "Damian Lillard",
+      "count": 40
+    },
+    {
+      "slug": "walker-kessler",
+      "name": "Walker Kessler",
+      "count": 40
+    },
+    {
+      "slug": "rudy-gobert",
+      "name": "Rudy Gobert",
       "count": 39
     },
     {
@@ -272,28 +277,23 @@
       "count": 38
     },
     {
-      "slug": "rudy-gobert",
-      "name": "Rudy Gobert",
-      "count": 38
-    },
-    {
       "slug": "aj-dybantsa",
       "name": "AJ Dybantsa",
       "count": 35
     },
     {
+      "slug": "shaedon-sharpe",
+      "name": "Shaedon Sharpe",
+      "count": 35
+    },
+    {
       "slug": "zach-lavine",
       "name": "Zach LaVine",
-      "count": 35
+      "count": 34
     },
     {
       "slug": "brandon-clarke",
       "name": "Brandon Clarke",
-      "count": 33
-    },
-    {
-      "slug": "shaedon-sharpe",
-      "name": "Shaedon Sharpe",
       "count": 33
     },
     {
@@ -402,6 +402,11 @@
       "count": 23
     },
     {
+      "slug": "chet-holmgren",
+      "name": "Chet Holmgren",
+      "count": 23
+    },
+    {
       "slug": "kentavious-caldwell-pope",
       "name": "Kentavious Caldwell-Pope",
       "count": 23
@@ -412,14 +417,9 @@
       "count": 23
     },
     {
-      "slug": "chet-holmgren",
-      "name": "Chet Holmgren",
-      "count": 22
-    },
-    {
-      "slug": "darius-acuff",
-      "name": "Darius Acuff",
-      "count": 22
+      "slug": "nick-richards",
+      "name": "Nick Richards",
+      "count": 23
     },
     {
       "slug": "haywood-highsmith",
@@ -432,8 +432,8 @@
       "count": 22
     },
     {
-      "slug": "nick-richards",
-      "name": "Nick Richards",
+      "slug": "mitchell-robinson",
+      "name": "Mitchell Robinson",
       "count": 22
     },
     {
@@ -442,13 +442,13 @@
       "count": 21
     },
     {
-      "slug": "domantas-sabonis",
-      "name": "Domantas Sabonis",
+      "slug": "darius-acuff",
+      "name": "Darius Acuff",
       "count": 21
     },
     {
-      "slug": "mitchell-robinson",
-      "name": "Mitchell Robinson",
+      "slug": "domantas-sabonis",
+      "name": "Domantas Sabonis",
       "count": 21
     },
     {
@@ -459,11 +459,6 @@
     {
       "slug": "ethan-thompson",
       "name": "Ethan Thompson",
-      "count": 20
-    },
-    {
-      "slug": "jrue-holiday",
-      "name": "Jrue Holiday",
       "count": 20
     },
     {
@@ -482,9 +477,14 @@
       "count": 18
     },
     {
+      "slug": "jrue-holiday",
+      "name": "Jrue Holiday",
+      "count": 18
+    },
+    {
       "slug": "dylan-harper",
       "name": "Dylan Harper",
-      "count": 18
+      "count": 17
     },
     {
       "slug": "jarred-vanderbilt",
@@ -492,8 +492,18 @@
       "count": 17
     },
     {
+      "slug": "julius-randle",
+      "name": "Julius Randle",
+      "count": 17
+    },
+    {
       "slug": "kevon-looney",
       "name": "Kevon Looney",
+      "count": 17
+    },
+    {
+      "slug": "kyle-lowry",
+      "name": "Kyle Lowry",
       "count": 17
     },
     {
@@ -505,11 +515,6 @@
       "slug": "naz-reid",
       "name": "Naz Reid",
       "count": 17
-    },
-    {
-      "slug": "julius-randle",
-      "name": "Julius Randle",
-      "count": 16
     },
     {
       "slug": "terry-rozier",
@@ -547,11 +552,6 @@
       "count": 14
     },
     {
-      "slug": "kyle-lowry",
-      "name": "Kyle Lowry",
-      "count": 14
-    },
-    {
       "slug": "mac-mcclung",
       "name": "Mac McClung",
       "count": 14
@@ -574,11 +574,6 @@
     {
       "slug": "anfernee-simons",
       "name": "Anfernee Simons",
-      "count": 13
-    },
-    {
-      "slug": "bobby-portis",
-      "name": "Bobby Portis",
       "count": 13
     },
     {
@@ -607,18 +602,13 @@
       "count": 13
     },
     {
+      "slug": "bobby-portis",
+      "name": "Bobby Portis",
+      "count": 12
+    },
+    {
       "slug": "carter-bryant",
       "name": "Carter Bryant",
-      "count": 12
-    },
-    {
-      "slug": "coby-white",
-      "name": "Coby White",
-      "count": 12
-    },
-    {
-      "slug": "daniel-gafford",
-      "name": "Daniel Gafford",
       "count": 12
     },
     {
@@ -632,14 +622,9 @@
       "count": 12
     },
     {
-      "slug": "nikola-jovic",
-      "name": "Nikola Jović",
+      "slug": "paolo-banchero",
+      "name": "Paolo Banchero",
       "count": 12
-    },
-    {
-      "slug": "andrew-wiggins",
-      "name": "Andrew Wiggins",
-      "count": 11
     },
     {
       "slug": "brandin-podziemski",
@@ -647,8 +632,8 @@
       "count": 11
     },
     {
-      "slug": "brayden-burries",
-      "name": "Brayden Burries",
+      "slug": "coby-white",
+      "name": "Coby White",
       "count": 11
     },
     {
@@ -657,8 +642,8 @@
       "count": 11
     },
     {
-      "slug": "derrick-white",
-      "name": "Derrick White",
+      "slug": "daniel-gafford",
+      "name": "Daniel Gafford",
       "count": 11
     },
     {
@@ -672,8 +657,8 @@
       "count": 11
     },
     {
-      "slug": "paolo-banchero",
-      "name": "Paolo Banchero",
+      "slug": "nikola-jovic",
+      "name": "Nikola Jović",
       "count": 11
     },
     {
@@ -687,13 +672,28 @@
       "count": 11
     },
     {
+      "slug": "andrew-wiggins",
+      "name": "Andrew Wiggins",
+      "count": 10
+    },
+    {
       "slug": "ausar-thompson",
       "name": "Ausar Thompson",
       "count": 10
     },
     {
+      "slug": "brayden-burries",
+      "name": "Brayden Burries",
+      "count": 10
+    },
+    {
       "slug": "dereck-lively-ii",
       "name": "Dereck Lively II",
+      "count": 10
+    },
+    {
+      "slug": "derrick-white",
+      "name": "Derrick White",
       "count": 10
     },
     {
@@ -714,11 +714,6 @@
     {
       "slug": "jordan-miller",
       "name": "Jordan Miller",
-      "count": 10
-    },
-    {
-      "slug": "joshua-jefferson",
-      "name": "Joshua Jefferson",
       "count": 10
     },
     {
@@ -772,11 +767,6 @@
       "count": 9
     },
     {
-      "slug": "jaden-mcdaniels",
-      "name": "Jaden McDaniels",
-      "count": 9
-    },
-    {
       "slug": "jalen-green",
       "name": "Jalen Green",
       "count": 9
@@ -787,8 +777,18 @@
       "count": 9
     },
     {
+      "slug": "joshua-jefferson",
+      "name": "Joshua Jefferson",
+      "count": 9
+    },
+    {
       "slug": "malique-lewis",
       "name": "Malique Lewis",
+      "count": 9
+    },
+    {
+      "slug": "matisse-thybulle",
+      "name": "Matisse Thybulle",
       "count": 9
     },
     {
@@ -847,6 +847,11 @@
       "count": 8
     },
     {
+      "slug": "jaden-mcdaniels",
+      "name": "Jaden McDaniels",
+      "count": 8
+    },
+    {
       "slug": "jalen-johnson",
       "name": "Jalen Johnson",
       "count": 8
@@ -874,11 +879,6 @@
     {
       "slug": "luka-garza",
       "name": "Luka Garza",
-      "count": 8
-    },
-    {
-      "slug": "matisse-thybulle",
-      "name": "Matisse Thybulle",
       "count": 8
     },
     {
@@ -957,8 +957,8 @@
       "count": 7
     },
     {
-      "slug": "keyonte-george",
-      "name": "Keyonte George",
+      "slug": "lauri-markkanen",
+      "name": "Lauri Markkanen",
       "count": 7
     },
     {
@@ -1062,6 +1062,11 @@
       "count": 6
     },
     {
+      "slug": "keyonte-george",
+      "name": "Keyonte George",
+      "count": 6
+    },
+    {
       "slug": "nique-clifford",
       "name": "Nique Clifford",
       "count": 6
@@ -1069,11 +1074,6 @@
     {
       "slug": "pascal-siakam",
       "name": "Pascal Siakam",
-      "count": 6
-    },
-    {
-      "slug": "scoot-henderson",
-      "name": "Scoot Henderson",
       "count": 6
     },
     {
@@ -1122,11 +1122,6 @@
       "count": 5
     },
     {
-      "slug": "christian-braun",
-      "name": "Christian Braun",
-      "count": 5
-    },
-    {
       "slug": "dangelo-russell",
       "name": "D'Angelo Russell",
       "count": 5
@@ -1134,6 +1129,11 @@
     {
       "slug": "devin-vassell",
       "name": "Devin Vassell",
+      "count": 5
+    },
+    {
+      "slug": "donte-divincenzo",
+      "name": "Donte DiVincenzo",
       "count": 5
     },
     {
@@ -1177,23 +1177,8 @@
       "count": 5
     },
     {
-      "slug": "johni-broome",
-      "name": "Johni Broome",
-      "count": 5
-    },
-    {
-      "slug": "jordan-goodwin",
-      "name": "Jordan Goodwin",
-      "count": 5
-    },
-    {
       "slug": "khaman-maluach",
       "name": "Khaman Maluach",
-      "count": 5
-    },
-    {
-      "slug": "kobe-brown",
-      "name": "Kobe Brown",
       "count": 5
     },
     {
@@ -1222,8 +1207,18 @@
       "count": 5
     },
     {
+      "slug": "scoot-henderson",
+      "name": "Scoot Henderson",
+      "count": 5
+    },
+    {
       "slug": "ty-jerome",
       "name": "Ty Jerome",
+      "count": 5
+    },
+    {
+      "slug": "yang-hansen",
+      "name": "Yang Hansen",
       "count": 5
     },
     {
@@ -1262,11 +1257,6 @@
       "count": 4
     },
     {
-      "slug": "donte-divincenzo",
-      "name": "Donte DiVincenzo",
-      "count": 4
-    },
-    {
       "slug": "dwight-powell",
       "name": "Dwight Powell",
       "count": 4
@@ -1302,6 +1292,11 @@
       "count": 4
     },
     {
+      "slug": "jordan-goodwin",
+      "name": "Jordan Goodwin",
+      "count": 4
+    },
+    {
       "slug": "josh-okogie",
       "name": "Josh Okogie",
       "count": 4
@@ -1314,6 +1309,11 @@
     {
       "slug": "karlo-matkovic",
       "name": "Karlo Matković",
+      "count": 4
+    },
+    {
+      "slug": "kobe-brown",
+      "name": "Kobe Brown",
       "count": 4
     },
     {
@@ -1382,18 +1382,8 @@
       "count": 4
     },
     {
-      "slug": "tobias-harris",
-      "name": "Tobias Harris",
-      "count": 4
-    },
-    {
       "slug": "tre-donaldson",
       "name": "Tre Donaldson",
-      "count": 4
-    },
-    {
-      "slug": "yang-hansen",
-      "name": "Yang Hansen",
       "count": 4
     },
     {
@@ -1427,8 +1417,8 @@
       "count": 3
     },
     {
-      "slug": "christian-koloko",
-      "name": "Christian Koloko",
+      "slug": "christian-braun",
+      "name": "Christian Braun",
       "count": 3
     },
     {
@@ -1507,6 +1497,11 @@
       "count": 3
     },
     {
+      "slug": "johni-broome",
+      "name": "Johni Broome",
+      "count": 3
+    },
+    {
       "slug": "jonas-valanciunas",
       "name": "Jonas Valančiūnas",
       "count": 3
@@ -1544,11 +1539,6 @@
     {
       "slug": "kyshawn-george",
       "name": "Kyshawn George",
-      "count": 3
-    },
-    {
-      "slug": "lauri-markkanen",
-      "name": "Lauri Markkanen",
       "count": 3
     },
     {
@@ -1602,11 +1592,6 @@
       "count": 3
     },
     {
-      "slug": "sergio-de-larrea",
-      "name": "Sergio De Larrea",
-      "count": 3
-    },
-    {
       "slug": "seth-curry",
       "name": "Seth Curry",
       "count": 3
@@ -1624,6 +1609,11 @@
     {
       "slug": "thomas-sorber",
       "name": "Thomas Sorber",
+      "count": 3
+    },
+    {
+      "slug": "tobias-harris",
+      "name": "Tobias Harris",
       "count": 3
     },
     {
@@ -1922,6 +1912,11 @@
       "count": 2
     },
     {
+      "slug": "rasheer-fleming",
+      "name": "Rasheer Fleming",
+      "count": 2
+    },
+    {
       "slug": "ryan-dunn",
       "name": "Ryan Dunn",
       "count": 2
@@ -1929,6 +1924,16 @@
     {
       "slug": "ryan-kalkbrenner",
       "name": "Ryan Kalkbrenner",
+      "count": 2
+    },
+    {
+      "slug": "sam-hauser",
+      "name": "Sam Hauser",
+      "count": 2
+    },
+    {
+      "slug": "sergio-de-larrea",
+      "name": "Sergio De Larrea",
       "count": 2
     },
     {
@@ -2042,6 +2047,11 @@
       "count": 1
     },
     {
+      "slug": "bismack-biyombo",
+      "name": "Bismack Biyombo",
+      "count": 1
+    },
+    {
       "slug": "brooks-barnhizer",
       "name": "Brooks Barnhizer",
       "count": 1
@@ -2064,6 +2074,11 @@
     {
       "slug": "christian-anderson",
       "name": "Christian Anderson",
+      "count": 1
+    },
+    {
+      "slug": "christian-koloko",
+      "name": "Christian Koloko",
       "count": 1
     },
     {
@@ -2247,11 +2262,6 @@
       "count": 1
     },
     {
-      "slug": "julian-champagnie",
-      "name": "Julian Champagnie",
-      "count": 1
-    },
-    {
       "slug": "jusuf-nurkic",
       "name": "Jusuf Nurkić",
       "count": 1
@@ -2377,11 +2387,6 @@
       "count": 1
     },
     {
-      "slug": "rasheer-fleming",
-      "name": "Rasheer Fleming",
-      "count": 1
-    },
-    {
       "slug": "ryan-nembhard",
       "name": "Ryan Nembhard",
       "count": 1
@@ -2389,11 +2394,6 @@
     {
       "slug": "ryan-rollins",
       "name": "Ryan Rollins",
-      "count": 1
-    },
-    {
-      "slug": "sam-hauser",
-      "name": "Sam Hauser",
       "count": 1
     },
     {
@@ -2482,6 +2482,11 @@
       "count": 1
     },
     {
+      "slug": "will-riley",
+      "name": "Will Riley",
+      "count": 1
+    },
+    {
       "slug": "xavier-tillman",
       "name": "Xavier Tillman",
       "count": 1
@@ -2501,47 +2506,47 @@
     {
       "slug": "philadelphia-76ers",
       "name": "Philadelphia 76ers",
-      "count": 994
+      "count": 968
     },
     {
       "slug": "golden-state-warriors",
       "name": "Golden State Warriors",
-      "count": 903
+      "count": 890
     },
     {
       "slug": "cleveland-cavaliers",
       "name": "Cleveland Cavaliers",
-      "count": 749
+      "count": 736
     },
     {
       "slug": "boston-celtics",
       "name": "Boston Celtics",
-      "count": 731
+      "count": 720
     },
     {
       "slug": "miami-heat",
       "name": "Miami Heat",
-      "count": 711
+      "count": 707
     },
     {
       "slug": "new-york-knicks",
       "name": "New York Knicks",
-      "count": 616
+      "count": 608
     },
     {
       "slug": "denver-nuggets",
       "name": "Denver Nuggets",
-      "count": 568
+      "count": 563
     },
     {
       "slug": "dallas-mavericks",
       "name": "Dallas Mavericks",
-      "count": 535
+      "count": 531
     },
     {
       "slug": "los-angeles-clippers",
       "name": "LA Clippers",
-      "count": 515
+      "count": 502
     },
     {
       "slug": "oklahoma-city-thunder",
@@ -2556,32 +2561,32 @@
     {
       "slug": "phoenix-suns",
       "name": "Phoenix Suns",
-      "count": 379
+      "count": 378
     },
     {
       "slug": "toronto-raptors",
       "name": "Toronto Raptors",
-      "count": 363
-    },
-    {
-      "slug": "charlotte-hornets",
-      "name": "Charlotte Hornets",
-      "count": 359
-    },
-    {
-      "slug": "indiana-pacers",
-      "name": "Indiana Pacers",
-      "count": 356
+      "count": 358
     },
     {
       "slug": "san-antonio-spurs",
       "name": "San Antonio Spurs",
-      "count": 356
+      "count": 353
+    },
+    {
+      "slug": "indiana-pacers",
+      "name": "Indiana Pacers",
+      "count": 351
+    },
+    {
+      "slug": "charlotte-hornets",
+      "name": "Charlotte Hornets",
+      "count": 350
     },
     {
       "slug": "houston-rockets",
       "name": "Houston Rockets",
-      "count": 344
+      "count": 342
     },
     {
       "slug": "detroit-pistons",
@@ -2591,52 +2596,52 @@
     {
       "slug": "portland-trail-blazers",
       "name": "Portland Trail Blazers",
-      "count": 330
-    },
-    {
-      "slug": "chicago-bulls",
-      "name": "Chicago Bulls",
-      "count": 328
+      "count": 329
     },
     {
       "slug": "brooklyn-nets",
       "name": "Brooklyn Nets",
-      "count": 323
+      "count": 322
+    },
+    {
+      "slug": "chicago-bulls",
+      "name": "Chicago Bulls",
+      "count": 322
     },
     {
       "slug": "washington-wizards",
       "name": "Washington Wizards",
-      "count": 319
+      "count": 313
     },
     {
       "slug": "sacramento-kings",
       "name": "Sacramento Kings",
-      "count": 308
+      "count": 310
     },
     {
       "slug": "new-orleans-pelicans",
       "name": "New Orleans Pelicans",
-      "count": 301
+      "count": 296
     },
     {
       "slug": "orlando-magic",
       "name": "Orlando Magic",
-      "count": 296
-    },
-    {
-      "slug": "milwaukee-bucks",
-      "name": "Milwaukee Bucks",
-      "count": 281
+      "count": 291
     },
     {
       "slug": "atlanta-hawks",
       "name": "Atlanta Hawks",
-      "count": 280
+      "count": 279
+    },
+    {
+      "slug": "milwaukee-bucks",
+      "name": "Milwaukee Bucks",
+      "count": 279
     },
     {
       "slug": "utah-jazz",
       "name": "Utah Jazz",
-      "count": 224
+      "count": 228
     },
     {
       "slug": "memphis-grizzlies",
