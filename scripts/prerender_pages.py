@@ -248,7 +248,7 @@ def _render_page(
     {_portrait_html(kind, slug, name, entity_info)}
     <div>
       <div class="name">{safe_name}</div>
-      <div class="sub">{kind_label} · {count_display} mentions in the rolling window</div>
+      <div class="sub">{kind_label} · {count_display} mention{'' if count_display == '1' else 's'} in the rolling window</div>
     </div>
   </div>
 
