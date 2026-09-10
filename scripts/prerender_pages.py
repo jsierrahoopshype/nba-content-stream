@@ -43,7 +43,7 @@ SITEMAP_PATH = REPO_ROOT / "sitemap.xml"
 
 # Optional: a base URL for canonical and sitemap. If unset, the
 # sitemap uses relative paths (still valid; Google accepts both).
-SITE_BASE_URL = "https://jsierrahoopshype.github.io/nba-content-stream"
+SITE_BASE_URL = "https://hoopsmatic.com/content-stream"
 
 # Polish-9 (Fix 3): portrait sources. Matches the JS helpers in
 # assets/common.js exactly so the prerendered HTML and live JS
