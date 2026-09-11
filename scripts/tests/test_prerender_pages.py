@@ -152,8 +152,8 @@ def test_generate_pages_writes_one_file_per_entity(tmp_path):
         ],
     }
     n_p, n_t = prerender_pages.generate_pages(
-        manifest, players_out=players_dir, teams_out=teams_dir, sitemap_path=sitemap
-    )
+        manifest, players_out=players_dir, teams_out=teams_dir, sitemap_path=sitemap,
+        players_canonical_path=players_dir / "no-canonical.json")
     assert (n_p, n_t) == (2, 1)
     assert (players_dir / "stephen-curry.html").exists()
     assert (players_dir / "lebron-james.html").exists()
@@ -175,7 +175,7 @@ def test_generate_pages_dry_run_writes_nothing(tmp_path):
         teams_out=teams_dir,
         sitemap_path=sitemap,
         dry_run=True,
-    )
+        players_canonical_path=players_dir / "no-canonical.json")
     assert (n_p, n_t) == (1, 0)
     assert not players_dir.exists()
     assert not sitemap.exists()
@@ -193,7 +193,7 @@ def test_generate_pages_is_idempotent(tmp_path):
         ],
         "teams": [],
     }
-    prerender_pages.generate_pages(manifest1, players_out=players_dir, teams_out=teams_dir, sitemap_path=sitemap)
+    prerender_pages.generate_pages(manifest1, players_out=players_dir, teams_out=teams_dir, sitemap_path=sitemap, players_canonical_path=players_dir / "no-canonical.json")
 
     # Second build with one player removed — the stale file must be wiped.
     manifest2 = {
@@ -202,7 +202,7 @@ def test_generate_pages_is_idempotent(tmp_path):
         ],
         "teams": [],
     }
-    prerender_pages.generate_pages(manifest2, players_out=players_dir, teams_out=teams_dir, sitemap_path=sitemap)
+    prerender_pages.generate_pages(manifest2, players_out=players_dir, teams_out=teams_dir, sitemap_path=sitemap, players_canonical_path=players_dir / "no-canonical.json")
     assert (players_dir / "stephen-curry.html").exists()
     assert not (players_dir / "lebron-james.html").exists()
 
@@ -217,7 +217,7 @@ def test_generate_pages_preserves_non_html_files(tmp_path):
     prerender_pages.generate_pages(
         {"players": [{"slug": "x", "name": "X", "count": 1}], "teams": []},
         players_out=players_dir, teams_out=teams_dir, sitemap_path=sitemap,
-    )
+        players_canonical_path=players_dir / "no-canonical.json")
     assert (players_dir / "README.md").exists()
 
 
@@ -232,7 +232,7 @@ def test_generate_pages_handles_special_chars_in_slug(tmp_path):
     }
     n_p, _ = prerender_pages.generate_pages(
         manifest, players_out=players_dir, teams_out=teams_dir, sitemap_path=sitemap,
-    )
+        players_canonical_path=players_dir / "no-canonical.json")
     assert n_p == 1
     assert (players_dir / "deaaron-fox.html").exists()
 
@@ -250,7 +250,7 @@ def test_sitemap_includes_homepage_and_all_entities(tmp_path):
         "players": [{"slug": "stephen-curry", "name": "Stephen Curry", "count": 5}],
         "teams": [{"slug": "los-angeles-lakers", "name": "Los Angeles Lakers", "count": 3}],
     }
-    prerender_pages.generate_pages(manifest, players_out=players_dir, teams_out=teams_dir, sitemap_path=sitemap)
+    prerender_pages.generate_pages(manifest, players_out=players_dir, teams_out=teams_dir, sitemap_path=sitemap, players_canonical_path=players_dir / "no-canonical.json")
     text = sitemap.read_text()
     assert "<?xml" in text
     assert "<urlset" in text
