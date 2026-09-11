@@ -411,6 +411,32 @@ def generate_pages(
             (players_out / f"{slug}.html").write_text(html_text, encoding="utf-8")
         n_players += 1
 
+    # Persistent pages for the full canonical roster: players with no
+    # mentions in the current window still get a page (count 0) and an
+    # empty index file, so player URLs never disappear between poll
+    # cycles and crawlers stop hitting dead pages for quiet players.
+    if players_canon:
+        seen_players = {p["slug"] for p in manifest.get("players", [])}
+        idx_dir = REPO_ROOT / "data" / "index" / "players"
+        for slug, info in players_canon.items():
+            if slug in seen_players:
+                continue
+            name = info.get("name") or info.get("full_name") or slug.replace("-", " ").title()
+            html_text = _render_page("player", slug, name, 0, info, cap)
+            if not dry_run:
+                (players_out / f"{slug}.html").write_text(html_text, encoding="utf-8")
+                idx_dir.mkdir(parents=True, exist_ok=True)
+                idx_path = idx_dir / f"{slug}.json"
+                if not idx_path.exists():
+                    idx_path.write_text(json.dumps({
+                        "slug": slug,
+                        "name": name,
+                        "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                        "count": 0,
+                        "items": [],
+                    }, ensure_ascii=False), encoding="utf-8")
+            n_players += 1
+
     n_teams = 0
     for t in manifest.get("teams", []):
         slug = t["slug"]
