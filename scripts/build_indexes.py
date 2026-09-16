@@ -221,6 +221,24 @@ def _compact_item(item: dict) -> dict:
     media = item.get("media")
     if isinstance(media, dict) and media.get("type") and media.get("type") != "text":
         out["media"] = media
+
+    # WHAT A CONSUMER WOULD OTHERWISE RE-REQUEST.
+    #
+    # `media` has always flowed through, which is why a downstream feed can play
+    # a Bluesky video without asking the AppView. These four are the rest of the
+    # same job: the avatar, the facets that turn Bluesky's display-shortened
+    # links back into real ones, the quoted post, and the marker saying this
+    # item was written by a poller that publishes them. Each is emitted only
+    # when the poller supplied it, so an index built from older shards is byte
+    # for byte what it was.
+    if author.get("avatar"):
+        out["avatar"] = author["avatar"]
+    if item.get("facets"):
+        out["facets"] = item["facets"]
+    if item.get("quote"):
+        out["quote"] = item["quote"]
+    if item.get("enriched"):
+        out["enriched"] = True
     return out
 
 

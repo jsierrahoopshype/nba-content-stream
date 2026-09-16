@@ -202,6 +202,40 @@ def test_gn_dedup_does_not_touch_other_sources():
     assert len(items) == 3
 
 
+def test_compact_item_passes_through_what_a_consumer_would_re_request():
+    """media already flowed through, which is why a downstream feed can play a
+    Bluesky video without calling the AppView. These are the rest of that job,
+    and each appears only when the poller supplied it - so an index built from
+    older shards is byte for byte what it was, which the exact-key-set test
+    above is what guarantees."""
+    raw = _item("bs-3", "bluesky", _hours_before(1), title="t", url="https://x/3")
+    raw["author"] = {"handle": "r.bsky.social", "display_name": "R",
+                     "avatar": "https://cdn.bsky.app/a.jpg"}
+    raw["facets"] = [{"index": {"byteStart": 0, "byteEnd": 4}, "features": []}]
+    raw["quote"] = {"author": "Q", "handle": "q.bsky.social", "text": "orig", "url": "https://x/q"}
+    raw["enriched"] = True
+    raw["media"] = {"type": "video", "thumbnail": "https://x/t.jpg",
+                    "playlist": "https://video.bsky.app/p.m3u8"}
+    compact = build_indexes._compact_item(raw)
+    assert compact["avatar"] == "https://cdn.bsky.app/a.jpg"
+    assert compact["facets"] == raw["facets"]
+    assert compact["quote"]["handle"] == "q.bsky.social"
+    assert compact["enriched"] is True
+    # The one that was already working, so it stays asserted.
+    assert compact["media"]["playlist"] == "https://video.bsky.app/p.m3u8"
+    # The author line itself is still the flattened display name.
+    assert compact["author"] == "R"
+
+
+def test_compact_item_omits_them_when_the_poller_did_not_supply_them():
+    """An item from a shard written before this has no marker and no extras,
+    and a consumer reading it must still be able to tell."""
+    raw = _item("bs-4", "bluesky", _hours_before(1))
+    compact = build_indexes._compact_item(raw)
+    for key in ("avatar", "facets", "quote", "enriched"):
+        assert key not in compact, key
+
+
 def test_compact_item_handles_missing_optional_fields():
     raw = _item("bs-2", "bluesky", _hours_before(1))
     compact = build_indexes._compact_item(raw)

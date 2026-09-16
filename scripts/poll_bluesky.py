@@ -184,6 +184,71 @@ def _extract_view(view: dict) -> Tuple[dict, Optional[str]]:
     return {"type": "text"}, None
 
 
+def _quoted_record(post: dict) -> Optional[dict]:
+    """The post this one quotes, flattened for a consumer to render.
+
+    WHY THIS IS HERE AND NOT IN THE CONSUMER
+
+    The media object already published here means a downstream feed can show a
+    Bluesky video without asking the AppView about it. The quote post was the
+    other half: consumers were calling
+    `app.bsky.feed.getPosts` per page-load purely to find out what a post was
+    quoting, which is a request per twenty-five cards for something that does
+    not change after the post is written.
+
+    The shape is deliberately flat and final - author, handle, avatar, text,
+    facets, media, url - so a renderer needs no knowledge of AT Protocol view
+    types. A quote whose target is deleted, blocked or detached returns
+    `{"missing": True}` rather than nothing: the post still reads as a reply to
+    something, and saying the something is gone is the honest render.
+    """
+    embed = post.get("embed") or {}
+    py_type = _embed_type(embed)
+    if "recordWithMedia" in py_type:
+        rec = (embed.get("record") or {}).get("record") or {}
+    elif "app.bsky.embed.record" in py_type:
+        rec = embed.get("record") or {}
+    else:
+        return None
+    if not rec:
+        return None
+
+    rec_type = _embed_type(rec)
+    if any(x in rec_type for x in ("viewNotFound", "viewBlocked", "viewDetached")):
+        return {"missing": True}
+
+    author = rec.get("author") or {}
+    value = rec.get("value") or {}
+    handle = author.get("handle") or ""
+
+    url = ""
+    uri = rec.get("uri") or ""
+    if uri.startswith("at://"):
+        parts = uri[5:].split("/")
+        if len(parts) >= 3:
+            url = f"https://bsky.app/profile/{handle or parts[0]}/post/{parts[-1]}"
+
+    media = None
+    for nested in rec.get("embeds") or []:
+        media, _ = _extract_view(nested)
+        if media and media.get("type") != "text":
+            break
+        media = None
+
+    out = {
+        "author": author.get("displayName") or handle,
+        "handle": handle,
+        "avatar": author.get("avatar") or "",
+        "text": value.get("text") or "",
+        "url": url,
+    }
+    if value.get("facets"):
+        out["facets"] = value["facets"]
+    if media:
+        out["media"] = media
+    return out
+
+
 def _has_image_embed(post: dict) -> bool:
     """Kept for backward-compat with the existing test that asserts image typing."""
     py_type = _embed_type(post.get("embed"))
@@ -276,6 +341,10 @@ def map_post_to_item(
             "handle": handle,
             "display_name": display_name,
             "url": f"https://bsky.app/profile/{handle}",
+            # The avatar is published because a consumer showing the post as a
+            # post needs the face, and asking the AppView for it is a request
+            # per page-load for something that changes about never.
+            "avatar": author.get("avatar") or "",
         },
         "body_excerpt": text,
         "media": media,
@@ -285,11 +354,28 @@ def map_post_to_item(
         },
         "players": player_slugs,
         "teams": team_slugs,
+        # EVERYTHING A CONSUMER NEEDS TO RENDER THE POST IS IN THIS ITEM.
+        #
+        # The marker exists so a consumer can tell a shard written by this
+        # version from one written before it, WITHOUT inspecting fields whose
+        # absence is ambiguous: a post with no facets and a post polled before
+        # facets were published both have no `facets` key, and only one of them
+        # needs a second request to find out. Shards on disk predate this, so
+        # they carry no marker and a consumer keeps enriching those.
+        "enriched": True,
     }
     if thumbnail:
         item["thumbnail"] = thumbnail
+    # Bluesky's display-shortened links ("hoopshype.com/2026/..." with the rest
+    # cut) are only real URLs once the facets are applied, so a consumer that
+    # renders the text needs them and had to fetch them.
+    if record.get("facets"):
+        item["facets"] = record["facets"]
     if _is_quote_post(post):
         item["is_quote_post"] = True
+    quote = _quoted_record(post)
+    if quote:
+        item["quote"] = quote
     return item
 
 

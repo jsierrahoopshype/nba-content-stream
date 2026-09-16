@@ -816,3 +816,163 @@ def test_default_when_neither_flag_given_is_24h(tmp_path, monkeypatch, vocab):
     ids = [it["id"] for it in shard["items"]]
     assert any("inside" in i for i in ids)
     assert not any("outside" in i for i in ids)
+
+
+# ---------------------------------------------------------------------------
+# Everything a consumer would otherwise re-request
+#
+# `media` has been published for a while, which is why a downstream feed can
+# play a Bluesky video without asking the AppView about it. The avatar, the
+# facets and the quoted post were the rest of that job: a consumer was calling
+# app.bsky.feed.getPosts once per twenty-five cards, on every page load, for
+# three things that do not change after a post is written.
+#
+# The tests that matter here are the ones about ABSENCE. A post with no facets
+# and a post polled before facets were published look identical, so the marker
+# is what tells a consumer which it is holding.
+# ---------------------------------------------------------------------------
+
+
+def _quoted_view(
+    text="the original post",
+    handle="quoted.bsky.social",
+    display_name="Quoted Person",
+    avatar="https://cdn.bsky.app/avatar/quoted.jpg",
+    uri="at://did:plc:q1/app.bsky.feed.post/3kquote9",
+    facets=None,
+    embeds=None,
+    view_type="app.bsky.embed.record#viewRecord",
+) -> dict:
+    value = {"$type": "app.bsky.feed.post", "text": text}
+    if facets is not None:
+        value["facets"] = facets
+    rec: dict = {
+        "$type": view_type,
+        "uri": uri,
+        "author": {"handle": handle, "displayName": display_name, "avatar": avatar},
+        "value": value,
+    }
+    if embeds is not None:
+        rec["embeds"] = embeds
+    return {"$type": "app.bsky.embed.record#view", "record": rec}
+
+
+FACETS = [
+    {
+        "index": {"byteStart": 5, "byteEnd": 25},
+        "features": [
+            {"$type": "app.bsky.richtext.facet#link", "uri": "https://hoopshype.com/x"}
+        ],
+    }
+]
+
+
+def test_item_carries_the_author_avatar(vocab):
+    players, teams = vocab
+    author = _author()
+    author["avatar"] = "https://cdn.bsky.app/avatar/reporter.jpg"
+    fv = _feed_view(_post(author=author))
+    item = map_post_to_item(fv, {"handle": "reporter.bsky.social"}, players, teams)
+    assert item["author"]["avatar"] == "https://cdn.bsky.app/avatar/reporter.jpg"
+    assert validate_item(item) == []
+
+
+def test_item_carries_facets_when_the_post_has_them(vocab):
+    players, teams = vocab
+    fv = _feed_view(_post(record=_record(text="see hoopshype.com/x for more")))
+    fv["post"]["record"]["facets"] = FACETS
+    item = map_post_to_item(fv, {"handle": "reporter.bsky.social"}, players, teams)
+    assert item["facets"] == FACETS
+
+
+def test_a_post_with_no_links_has_no_facets_key(vocab):
+    """Absence must stay absence: an empty list for every post is bytes on
+    every card, and the marker below is what disambiguates it."""
+    players, teams = vocab
+    item = map_post_to_item(
+        _feed_view(), {"handle": "reporter.bsky.social"}, players, teams
+    )
+    assert "facets" not in item
+
+
+def test_every_item_says_it_was_written_by_this_poller(vocab):
+    players, teams = vocab
+    item = map_post_to_item(
+        _feed_view(), {"handle": "reporter.bsky.social"}, players, teams
+    )
+    assert item["enriched"] is True
+
+
+def test_quote_post_carries_the_quoted_post(vocab):
+    players, teams = vocab
+    fv = _feed_view(_post(embed=_quoted_view()))
+    item = map_post_to_item(fv, {"handle": "reporter.bsky.social"}, players, teams)
+    q = item["quote"]
+    assert q["author"] == "Quoted Person"
+    assert q["handle"] == "quoted.bsky.social"
+    assert q["avatar"] == "https://cdn.bsky.app/avatar/quoted.jpg"
+    assert q["text"] == "the original post"
+    # Flat and final: a renderer should not need to know AT Protocol at all.
+    assert q["url"] == "https://bsky.app/profile/quoted.bsky.social/post/3kquote9"
+    assert "facets" not in q
+    assert validate_item(item) == []
+
+
+def test_quoted_post_keeps_its_own_facets_and_media(vocab):
+    players, teams = vocab
+    embeds = [
+        {
+            "$type": "app.bsky.embed.video#view",
+            "thumbnail": "https://video.bsky.app/t.jpg",
+            "playlist": "https://video.bsky.app/p.m3u8",
+        }
+    ]
+    fv = _feed_view(_post(embed=_quoted_view(facets=FACETS, embeds=embeds)))
+    item = map_post_to_item(fv, {"handle": "reporter.bsky.social"}, players, teams)
+    q = item["quote"]
+    assert q["facets"] == FACETS
+    assert q["media"]["type"] == "video"
+    assert q["media"]["playlist"] == "https://video.bsky.app/p.m3u8"
+
+
+def test_a_deleted_quote_says_it_is_gone(vocab):
+    """The post still reads as a reply to something. Dropping the quote makes
+    the card look like a non-sequitur; saying the target is gone does not."""
+    players, teams = vocab
+    for view_type in (
+        "app.bsky.embed.record#viewNotFound",
+        "app.bsky.embed.record#viewBlocked",
+        "app.bsky.embed.record#viewDetached",
+    ):
+        fv = _feed_view(_post(embed=_quoted_view(view_type=view_type)))
+        item = map_post_to_item(fv, {"handle": "reporter.bsky.social"}, players, teams)
+        assert item["quote"] == {"missing": True}, view_type
+
+
+def test_a_plain_post_has_no_quote_key(vocab):
+    players, teams = vocab
+    item = map_post_to_item(
+        _feed_view(), {"handle": "reporter.bsky.social"}, players, teams
+    )
+    assert "quote" not in item
+
+
+def test_record_with_media_keeps_both_the_media_and_the_quote(vocab):
+    """The one embed type that carries two things at once, and the reason the
+    extraction walks it rather than taking the first branch that matches."""
+    players, teams = vocab
+    inner = _quoted_view()["record"]
+    embed = {
+        "$type": "app.bsky.embed.recordWithMedia#view",
+        "record": {"$type": "app.bsky.embed.record#view", "record": inner},
+        "media": {
+            "$type": "app.bsky.embed.video#view",
+            "thumbnail": "https://video.bsky.app/t.jpg",
+            "playlist": "https://video.bsky.app/p.m3u8",
+        },
+    }
+    fv = _feed_view(_post(embed=embed))
+    item = map_post_to_item(fv, {"handle": "reporter.bsky.social"}, players, teams)
+    assert item["media"]["type"] == "video"
+    assert item["media"]["playlist"] == "https://video.bsky.app/p.m3u8"
+    assert item["quote"]["handle"] == "quoted.bsky.social"
