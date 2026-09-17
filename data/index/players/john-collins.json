@@ -1,9 +1,85 @@
 {
   "slug": "john-collins",
   "name": "John Collins",
-  "generated_at": "2026-09-17T19:06:28Z",
-  "count": 4,
+  "generated_at": "2026-09-17T22:14:20Z",
+  "count": 5,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Av6xd7qcm4tsgb4ndo547vh4n%2Fapp.bsky.feed.post%2F3mvqfyexrrc2m",
+      "source": "bluesky",
+      "published_at": "2026-09-17T19:42:41Z",
+      "title": "\"On your left\" and it's just John Collins 😶",
+      "url": "https://bsky.app/profile/jeskeets.bsky.social/post/3mvqfyexrrc2m",
+      "author": "J.E. Skeets",
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreih43mos6xwmnlqdx7i3aalaoohgb5niuw47j4bs4fuuszneaj5mjm",
+      "body_excerpt": "\"On your left\" and it's just John Collins 😶\n@kofie.bsky.social jumped on the No Dunks pod today\n\nYouTube 📺: bit.ly/3TduvXM\nApple 🍎: apple.co/3CUsJOD\nSpotify ✳️: bit.ly/44kso6Y",
+      "players": [
+        "john-collins"
+      ],
+      "teams": [],
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreih43mos6xwmnlqdx7i3aalaoohgb5niuw47j4bs4fuuszneaj5mjm",
+            "alt": ""
+          }
+        ]
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreidntfbgr4kn6b2nevpvhddp5xltzzb24dgq7msnh52llmzzqzi6r4",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:7dlhmih6zwcpsu3e54yykpvp"
+            }
+          ],
+          "index": {
+            "byteEnd": 65,
+            "byteStart": 47
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://bit.ly/3TduvXM"
+            }
+          ],
+          "index": {
+            "byteEnd": 128,
+            "byteStart": 114
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://apple.co/3CUsJOD"
+            }
+          ],
+          "index": {
+            "byteEnd": 157,
+            "byteStart": 141
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://bit.ly/44kso6Y"
+            }
+          ],
+          "index": {
+            "byteEnd": 188,
+            "byteStart": 174
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-418ea7c4e81cc164",
       "source": "google-news",
