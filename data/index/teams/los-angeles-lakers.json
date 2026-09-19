@@ -1,9 +1,58 @@
 {
   "slug": "los-angeles-lakers",
   "name": "Los Angeles Lakers",
-  "generated_at": "2026-09-19T21:28:23Z",
+  "generated_at": "2026-09-19T23:27:10Z",
   "count": 1000,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3A75z3gabuwl6uvv7pootuuvgn%2Fapp.bsky.feed.post%2F3mvvoupsin32r",
+      "source": "bluesky",
+      "published_at": "2026-09-19T22:05:01Z",
+      "title": "First look at the baseball-style jersey the #Lakers will be giving away on Nov. 18:",
+      "url": "https://bsky.app/profile/lakersnation.bsky.social/post/3mvvoupsin32r",
+      "author": "LakersNation.com",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreicfz5klushtkxijpwwj3r2uncappot3mmlmex5foeljsxs57cd2ce",
+      "body_excerpt": "First look at the baseball-style jersey the #Lakers will be giving away on Nov. 18:\nlakersnation.com/lakers-unvei...",
+      "players": [],
+      "teams": [
+        "los-angeles-lakers"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://lakersnation.com/lakers-unveil-baseball-style-jersey-for-nov-18-giveaway-vs-jazz/",
+        "title": "Lakers Unveil Baseball-Style Jersey For Nov. 18 Giveaway Vs. Jazz",
+        "description": "The Los Angeles Lakers unveiled the baseball-style jersey they will give out on Dodgers Night when they host the Utah Jazz on Nov. 18.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreicfz5klushtkxijpwwj3r2uncappot3mmlmex5foeljsxs57cd2ce"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreiha6wdd65xjneeckcurw4zgpgcfrick6hylxlxoe5owj2kjxzu42e",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Lakers"
+            }
+          ],
+          "index": {
+            "byteEnd": 51,
+            "byteStart": 44
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://lakersnation.com/lakers-unveil-baseball-style-jersey-for-nov-18-giveaway-vs-jazz/"
+            }
+          ],
+          "index": {
+            "byteEnd": 116,
+            "byteStart": 84
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "bs-did%3Aplc%3A75z3gabuwl6uvv7pootuuvgn%2Fapp.bsky.feed.post%2F3mvvi655w5624",
       "source": "bluesky",
@@ -17515,22 +17564,6 @@
         "description": "Robert Horry doesn't think the Los Angeles Lakers players care about the current drama going on with ownership.",
         "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreiawepicu4vchmxik6p5fimwg3zosmexvdp5nirehgy5rao7qsjvdu"
       }
-    },
-    {
-      "id": "gn-cedf256d6837a318",
-      "source": "google-news",
-      "published_at": "2026-08-21T20:42:50Z",
-      "title": "Matisse Thybulle Makes Honest Los Angeles Lakers Statement",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPUzZNc090a3JMVjVVOUZXZkVaM2RaWWQwQWZlNEJXdVpBenh0QmNTckJkYXBBYWdYeWs0Z09aWm5sSlhjUmQyenAtQVVEQndwYklJZkx0WDVkOTBEMDBaNkkyRTRjTXZDN2k5M0RLYnI1LUdrNEVmaFZpbmJvbkFRR242SU00MExjenc?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Matisse Thybulle Makes Honest Los Angeles Lakers Statement Yahoo Sports",
-      "players": [
-        "matisse-thybulle"
-      ],
-      "teams": [
-        "los-angeles-lakers"
-      ]
     }
   ]
 }
