@@ -1,8 +1,1215 @@
 {
-  "generated_at": "2026-09-20T16:13:04Z",
+  "generated_at": "2026-09-20T18:53:47Z",
   "window_days": 7,
   "count": 100,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Ab5s7pvomuo3xwd3wgdpnohtt%2Fapp.bsky.feed.post%2F3mvxuekbeac2s",
+      "source": "bluesky",
+      "published_at": "2026-09-20T18:48:40Z",
+      "title": "oh baby the Bears are going full #Bares",
+      "url": "https://bsky.app/profile/bullsjay.bsky.social/post/3mvxuekbeac2s",
+      "author": "Jason Patt",
+      "thumbnail": null,
+      "body_excerpt": "oh baby the Bears are going full #Bares",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:b5s7pvomuo3xwd3wgdpnohtt/bafkreig42lzcclk6qltt6b7cohurpm4sf5nti2xd3ws57wlwwx3zatwleu",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Bares"
+            }
+          ],
+          "index": {
+            "byteEnd": 39,
+            "byteStart": 33
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "gn-6dd824b1953bfe22",
+      "source": "google-news",
+      "published_at": "2026-09-20T18:46:51Z",
+      "title": "Minnesota coach Chris Finch talks LaMelo Ball in offense, Joan Beringer role",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxORGQtN1RyZGpOMmJLLTlkcEVNc2JHM29rWTlyVnFJRHV1ZHRHMWM1X3ZLOF9EOWxrUnhWMEg1VE16bEcybE9BZjVCR3J3TWpxcVpLbEpHdDFUODYzUW1FMkhzcS1HWDZSYXotQ2MwTTBPZFhSdFdhYVZhaGNlaWt3b2JSRzc4Uk1WTFIxTzhibTZwVjdpTGJ1NGYwLVBxYlB6TFlqOUJtdHpTdkRFdkJr?oc=5",
+      "author": "NBC Sports",
+      "thumbnail": null,
+      "body_excerpt": "Minnesota coach Chris Finch talks LaMelo Ball in offense, Joan Beringer role NBC Sports",
+      "players": [
+        "joan-beringer",
+        "lamelo-ball"
+      ],
+      "teams": []
+    },
+    {
+      "id": "bs-did%3Aplc%3Av6xd7qcm4tsgb4ndo547vh4n%2Fapp.bsky.feed.post%2F3mvxu5tolvs2l",
+      "source": "bluesky",
+      "published_at": "2026-09-20T18:44:55Z",
+      "title": "Eat up! No Buffs is recapping 'The Traitors: New Blood'",
+      "url": "https://bsky.app/profile/jeskeets.bsky.social/post/3mvxu5tolvs2l",
+      "author": "J.E. Skeets",
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Av6xd7qcm4tsgb4ndo547vh4n/bafkreihylnfrc2ngjjrmksvpg6lm3moweqjsi5p5kdq67uz3t3o2uvyth4/thumbnail.jpg",
+      "body_excerpt": "Eat up! No Buffs is recapping 'The Traitors: New Blood'\n\n🏰 YouTube: bit.ly/46sCbbU\n🏰 Apple: apple.co/3kn6rh7\n🏰 Spotify: bit.ly/3LZnmqe",
+      "players": [],
+      "teams": [],
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Av6xd7qcm4tsgb4ndo547vh4n/bafkreihylnfrc2ngjjrmksvpg6lm3moweqjsi5p5kdq67uz3t3o2uvyth4/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Av6xd7qcm4tsgb4ndo547vh4n/bafkreihylnfrc2ngjjrmksvpg6lm3moweqjsi5p5kdq67uz3t3o2uvyth4/playlist.m3u8"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreidntfbgr4kn6b2nevpvhddp5xltzzb24dgq7msnh52llmzzqzi6r4",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://bit.ly/46sCbbU"
+            }
+          ],
+          "index": {
+            "byteEnd": 85,
+            "byteStart": 71
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://apple.co/3kn6rh7"
+            }
+          ],
+          "index": {
+            "byteEnd": 114,
+            "byteStart": 98
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://bit.ly/3LZnmqe"
+            }
+          ],
+          "index": {
+            "byteEnd": 143,
+            "byteStart": 129
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "gn-bbcd9bd3ee15a9ee",
+      "source": "google-news",
+      "published_at": "2026-09-20T18:36:59Z",
+      "title": "Recent NBA Contract Extension Grades: Thompson Twins, Keyonte George Get Paid",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNdjB1U3NVLXEtNk0yaEhyLVFsWEw5QnNNZlllX3BlVHVkX29TVlJRWDQxZ1oySjBQcWZJLVBSYTloeWNRWlZjOHlnZGkwOVItVWZESFNrZF9DcUpRQ2Nlc2RiSmF5bWg4VkZtWXRfWFFLd096LXBBZmFDU3BRb2tmVFp4UWJOaWVMRVBIeE43a1BiOWxoZ3NmQk1ESThCU3M?oc=5",
+      "author": "Sports Illustrated",
+      "thumbnail": null,
+      "body_excerpt": "Recent NBA Contract Extension Grades: Thompson Twins, Keyonte George Get Paid Sports Illustrated",
+      "players": [
+        "keyonte-george"
+      ],
+      "teams": []
+    },
+    {
+      "id": "bs-did%3Aplc%3Ambxm4wdmklezjotcqa3g7uto%2Fapp.bsky.feed.post%2F3mvxtmwvl572y",
+      "source": "bluesky",
+      "published_at": "2026-09-20T18:35:29Z",
+      "title": "thought it was funny that against the literal zero-man packers pass rush at end of half that breece hall still opted to stay in to block",
+      "url": "https://bsky.app/profile/sethwalder.bsky.social/post/3mvxtmwvl572y",
+      "author": "Seth Walder",
+      "thumbnail": null,
+      "body_excerpt": "thought it was funny that against the literal zero-man packers pass rush at end of half that breece hall still opted to stay in to block",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:mbxm4wdmklezjotcqa3g7uto/bafkreieqpgxbgsw47ij77m7yqufi5ymmmzihm56zmorah3bpvfuqi2atfi",
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Ab5s7pvomuo3xwd3wgdpnohtt%2Fapp.bsky.feed.post%2F3mvxtbrqhps2s",
+      "source": "bluesky",
+      "published_at": "2026-09-20T18:29:14Z",
+      "title": "Everybody was so excited about all the Week 1 points across the NFL, and then Bills/Lions was great...and now we've been treated to a comically awful early Sunday window",
+      "url": "https://bsky.app/profile/bullsjay.bsky.social/post/3mvxtbrqhps2s",
+      "author": "Jason Patt",
+      "thumbnail": null,
+      "body_excerpt": "Everybody was so excited about all the Week 1 points across the NFL, and then Bills/Lions was great...and now we've been treated to a comically awful early Sunday window",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:b5s7pvomuo3xwd3wgdpnohtt/bafkreig42lzcclk6qltt6b7cohurpm4sf5nti2xd3ws57wlwwx3zatwleu",
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Ab5s7pvomuo3xwd3wgdpnohtt%2Fapp.bsky.feed.post%2F3mvxszzwos22s",
+      "source": "bluesky",
+      "published_at": "2026-09-20T18:24:54Z",
+      "title": "I don't think leaving Dallas Turner unblocked on a play where you need to drive the ball downfield was the strategy there. Total disaster on just about every level for Bears offense in the first half. Flores has them dead to rights right now.",
+      "url": "https://bsky.app/profile/bullsjay.bsky.social/post/3mvxszzwos22s",
+      "author": "Jason Patt",
+      "thumbnail": null,
+      "body_excerpt": "I don't think leaving Dallas Turner unblocked on a play where you need to drive the ball downfield was the strategy there. Total disaster on just about every level for Bears offense in the first half. Flores has them dead to rights right now.",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:b5s7pvomuo3xwd3wgdpnohtt/bafkreig42lzcclk6qltt6b7cohurpm4sf5nti2xd3ws57wlwwx3zatwleu",
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Ab5s7pvomuo3xwd3wgdpnohtt%2Fapp.bsky.feed.post%2F3mvxstuzl2c2s",
+      "source": "bluesky",
+      "published_at": "2026-09-20T18:21:27Z",
+      "title": "How many more penalties can the Bears offense manage before halftime?",
+      "url": "https://bsky.app/profile/bullsjay.bsky.social/post/3mvxstuzl2c2s",
+      "author": "Jason Patt",
+      "thumbnail": null,
+      "body_excerpt": "How many more penalties can the Bears offense manage before halftime?",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:b5s7pvomuo3xwd3wgdpnohtt/bafkreig42lzcclk6qltt6b7cohurpm4sf5nti2xd3ws57wlwwx3zatwleu",
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Ambxm4wdmklezjotcqa3g7uto%2Fapp.bsky.feed.post%2F3mvxsq3dshk2h",
+      "source": "bluesky",
+      "published_at": "2026-09-20T18:19:20Z",
+      "title": "Jalen Carter (98) lines up well off the ball, jumps at hard count but doesn't cross LOS but gets JC Latham to move in hopes of drawing defensive penalty. False start called. ",
+      "url": "https://bsky.app/profile/sethwalder.bsky.social/post/3mvxsq3dshk2h",
+      "author": "Seth Walder",
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ambxm4wdmklezjotcqa3g7uto/bafkreiedpbaxqjkuy5owvt2vxsndaoxanvsio26bzrau67qk5ss2ogp7vm/thumbnail.jpg",
+      "body_excerpt": "Jalen Carter (98) lines up well off the ball, jumps at hard count but doesn't cross LOS but gets JC Latham to move in hopes of drawing defensive penalty. False start called. \n\nI don't know if this was intentional or not. But would be a good little gambit for defenses to try occasionally!",
+      "players": [],
+      "teams": [],
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ambxm4wdmklezjotcqa3g7uto/bafkreiedpbaxqjkuy5owvt2vxsndaoxanvsio26bzrau67qk5ss2ogp7vm/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Ambxm4wdmklezjotcqa3g7uto/bafkreiedpbaxqjkuy5owvt2vxsndaoxanvsio26bzrau67qk5ss2ogp7vm/playlist.m3u8"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:mbxm4wdmklezjotcqa3g7uto/bafkreieqpgxbgsw47ij77m7yqufi5ymmmzihm56zmorah3bpvfuqi2atfi",
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Apgrqrtjyigyi3h4ygzkhxwkj%2Fapp.bsky.feed.post%2F3mvxso3ipkk2x",
+      "source": "bluesky",
+      "published_at": "2026-09-20T18:18:13Z",
+      "title": "Someone probably joked \"Hey what if we built the whole offense out of tight ends\" and Frank Reich decided to take that seriously",
+      "url": "https://bsky.app/profile/mikevorkunov.bsky.social/post/3mvxso3ipkk2x",
+      "author": "Mike Vorkunov",
+      "thumbnail": null,
+      "body_excerpt": "Someone probably joked \"Hey what if we built the whole offense out of tight ends\" and Frank Reich decided to take that seriously",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:pgrqrtjyigyi3h4ygzkhxwkj/bafkreicdumllig6oujl6ukh77j4ssr2utyqudic6qzbhy3mxelwyn4pkcq",
+      "quote": {
+        "author": "Luke Knox",
+        "handle": "lukeknox.me",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:tw77ipw5w2xwv3hzc6mrljsf/bafkreigtvamcsmslqwinqbksctqbw2rurfjsq2uw7x5kr3kezwucnji5qa",
+        "text": "five Jets TEs in one formation, Frank Reich is wild for this one",
+        "url": "https://bsky.app/profile/lukeknox.me/post/3mvxsj2uwvk2h"
+      },
+      "enriched": true
+    },
+    {
+      "id": "gn-8538d510c3a69340",
+      "source": "google-news",
+      "published_at": "2026-09-20T18:14:22Z",
+      "title": "NBA 2026 Offseason Check-In: Charlotte Hornets",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNVE9uVHMwVGhwSkNCbHRlWThnRzN4bUNEc2pnVng4a1RlWll3SVJZNERsQVJLS0FPUUZUSVByTmV3NVJBR2dSTHRZdVdXQ2dhaFpLcDdkMTk4VU9GNktwZl9keWtuUnBzeS1ZVkxHb0pfelJYcjRpZW5IU2lQakZBWFNKbW5MMTdvalpadGc4aw?oc=5",
+      "author": "Hoops Rumors",
+      "thumbnail": null,
+      "body_excerpt": "NBA 2026 Offseason Check-In: Charlotte Hornets Hoops Rumors",
+      "players": [],
+      "teams": [
+        "charlotte-hornets"
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Ab5s7pvomuo3xwd3wgdpnohtt%2Fapp.bsky.feed.post%2F3mvxsfy4das2s",
+      "source": "bluesky",
+      "published_at": "2026-09-20T18:13:41Z",
+      "title": "Drew Dalman, we miss you",
+      "url": "https://bsky.app/profile/bullsjay.bsky.social/post/3mvxsfy4das2s",
+      "author": "Jason Patt",
+      "thumbnail": null,
+      "body_excerpt": "Drew Dalman, we miss you",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:b5s7pvomuo3xwd3wgdpnohtt/bafkreig42lzcclk6qltt6b7cohurpm4sf5nti2xd3ws57wlwwx3zatwleu",
+      "enriched": true
+    },
+    {
+      "id": "gn-8cdd06f441f82498",
+      "source": "google-news",
+      "published_at": "2026-09-20T18:08:55Z",
+      "title": "‘Let’s Be More Serious’ – Joel Embiid’s Trainer Drew Hanlen Sends Crucial Advice to 76ers Star on Sophie Cunningham’s Podcast",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZkczbTVxd3hpVkh3RmNneUdmQ2FwRWtfMS10aUJhWUZUY05POVZQN0c5LVFrNzhfb1d2bUVRSXhUelNCYWQzRmlFdHltelFtNGNaalpsYlRKSUpUXzJNNC1hRnZUNE4zY240QWMta0VqYldTLTB2X3Z3RE5OQ1R3T3ZDcw?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "‘Let’s Be More Serious’ – Joel Embiid’s Trainer Drew Hanlen Sends Crucial Advice to 76ers Star on Sophie Cunningham’s Podcast Yahoo Sports",
+      "players": [
+        "joel-embiid"
+      ],
+      "teams": [
+        "philadelphia-76ers"
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3A75z3gabuwl6uvv7pootuuvgn%2Fapp.bsky.feed.post%2F3mvxrwibn5t2y",
+      "source": "bluesky",
+      "published_at": "2026-09-20T18:05:00Z",
+      "title": "Jonathan Kuminga wanted to set the record straight on the #Lakers contract offer.",
+      "url": "https://bsky.app/profile/lakersnation.bsky.social/post/3mvxrwibn5t2y",
+      "author": "LakersNation.com",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreibkza7naj6rraay2pflxtsbqsctcxp2uk2idynm3tpqvwpe3jhw4a",
+      "body_excerpt": "Jonathan Kuminga wanted to set the record straight on the #Lakers contract offer.\nlakersnation.com/jonathan-kum...",
+      "players": [
+        "jonathan-kuminga"
+      ],
+      "teams": [
+        "los-angeles-lakers"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://lakersnation.com/jonathan-kuminga-claims-lakers-never-offered-lucrative-contract/",
+        "title": "Jonathan Kuminga makes claim about Lakers contract offer",
+        "description": "Jonathan Kuminga claimed that the Los Angeles Lakers never gave him a lucrative multi-year offer despite reports saying they did.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreibkza7naj6rraay2pflxtsbqsctcxp2uk2idynm3tpqvwpe3jhw4a"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreiha6wdd65xjneeckcurw4zgpgcfrick6hylxlxoe5owj2kjxzu42e",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Lakers"
+            }
+          ],
+          "index": {
+            "byteEnd": 65,
+            "byteStart": 58
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://lakersnation.com/jonathan-kuminga-claims-lakers-never-offered-lucrative-contract/"
+            }
+          ],
+          "index": {
+            "byteEnd": 114,
+            "byteStart": 82
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "gn-7d557480b89a0014",
+      "source": "google-news",
+      "published_at": "2026-09-20T17:58:54Z",
+      "title": "Would Devin Booker Be Viewed Differently if Suns Won a Ring?",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOSjhuRDVPOE5Xd0hINzFGZVBydVlSYTlCNF9CVFlmcE5ra01iV2J1TXE5bVhWQ1Ffc09GWkxOYWNvZXZZMmtBZ1hzYnV3TmJOVEpkLWhLOC1RZlRCS00tczJPMXB0cDZHeHZUc2VnTkFEOXVjTjlSZFI1OU02aHMwaEFYVGNOaXo3V2M3NmYzSEs4VHJVU0tERXBPUmtxUQ?oc=5",
+      "author": "Sports Illustrated",
+      "thumbnail": null,
+      "body_excerpt": "Would Devin Booker Be Viewed Differently if Suns Won a Ring? Sports Illustrated",
+      "players": [
+        "devin-booker"
+      ],
+      "teams": [
+        "phoenix-suns"
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Ayvy5ax23zpmoearxn6xsgqzf%2Fapp.bsky.feed.post%2F3mvxrfnsifc2l",
+      "source": "bluesky",
+      "published_at": "2026-09-20T17:55:36Z",
+      "title": "i genuinely blacked out after that end around call",
+      "url": "https://bsky.app/profile/btrowland.bsky.social/post/3mvxrfnsifc2l",
+      "author": "Brad Rowland",
+      "thumbnail": null,
+      "body_excerpt": "i genuinely blacked out after that end around call",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:yvy5ax23zpmoearxn6xsgqzf/bafkreiewn3wnzotxikw45yiyzwfvo5jnimmrouiltejje4xehzcup6dc5i",
+      "quote": {
+        "author": "Robby Kalland",
+        "handle": "rkalland.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:rp7trk62kq2hae5y4pssmwcz/bafkreig632s7upwdpgipyzjzkvlvwzoroqmskezns4msffxelz6lksknai",
+        "text": "This broke @btrowland.bsky.social",
+        "url": "https://bsky.app/profile/rkalland.bsky.social/post/3mvxr5uhvws2p",
+        "facets": [
+          {
+            "$type": "app.bsky.richtext.facet",
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#mention",
+                "did": "did:plc:yvy5ax23zpmoearxn6xsgqzf"
+              }
+            ],
+            "index": {
+              "byteEnd": 33,
+              "byteStart": 11
+            }
+          }
+        ]
+      },
+      "enriched": true
+    },
+    {
+      "id": "gn-674e1bc9d12eb60e",
+      "source": "google-news",
+      "published_at": "2026-09-20T17:55:00Z",
+      "title": "TMZ Sports ran into Jared McCain at LAX recently and …",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPdi14c1NOQ1p0RGtmQlhZT1NyZl9ua2EyX1FXR3FCcUlQQ2lScHBQVG1OV0FlUndvUTZWYTRIZENNVG9QckVyd3JETVZlQ25Od3hzSC12NUJ5QU5VQ2lXSUhQUGZaTDJ4UG5kTnVicG5KZFFSZ0pVaDRtckcybGhEX2V2NDd6S0U0WVVTQUNzQV9WVldVOUVNNHlrQjZycjF3cHpJTm1WbHBVS1VLSGZoZG9TN2Q0VTQwbElHZFBhSEttdkxX?oc=5",
+      "author": "HoopsHype",
+      "thumbnail": null,
+      "body_excerpt": "TMZ Sports ran into Jared McCain at LAX recently and … HoopsHype",
+      "players": [
+        "jared-mccain"
+      ],
+      "teams": []
+    },
+    {
+      "id": "bs-did%3Aplc%3Ambxm4wdmklezjotcqa3g7uto%2Fapp.bsky.feed.post%2F3mvxrdwsjyf2l",
+      "source": "bluesky",
+      "published_at": "2026-09-20T17:54:39Z",
+      "title": "Was curious about Falcons end around on 4th-and-1. Was it a bad playcall?",
+      "url": "https://bsky.app/profile/sethwalder.bsky.social/post/3mvxrdwsjyf2l",
+      "author": "Seth Walder",
+      "thumbnail": null,
+      "body_excerpt": "Was curious about Falcons end around on 4th-and-1. Was it a bad playcall?\n\nLast 10 years, outside runs by WRs on 3rd/4th and 1: 73% conversion rate. \n\nBetter 4th down play than 3rd down: certainly more risk to lose yards than normal run, but all that matters on 4th is conversion chance.",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:mbxm4wdmklezjotcqa3g7uto/bafkreieqpgxbgsw47ij77m7yqufi5ymmmzihm56zmorah3bpvfuqi2atfi",
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Av54k3gt2dcjehyd33xmsbwqe%2Fapp.bsky.feed.post%2F3mvxqvjcsnk2j",
+      "source": "bluesky",
+      "published_at": "2026-09-20T17:46:35Z",
+      "title": "Nantz says Onwenu got \"tangled up\" with T.J. Watt after Watt dove at Maye, missed, and crashed into the back of Onwenu's legs. Wonder if he'd have framed it that way with Romo next to him in the booth.",
+      "url": "https://bsky.app/profile/chadfinn.bsky.social/post/3mvxqvjcsnk2j",
+      "author": "Chad Finn",
+      "thumbnail": null,
+      "body_excerpt": "Nantz says Onwenu got \"tangled up\" with T.J. Watt after Watt dove at Maye, missed, and crashed into the back of Onwenu's legs. Wonder if he'd have framed it that way with Romo next to him in the booth.",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:v54k3gt2dcjehyd33xmsbwqe/bafkreic5kbs2bxifrtvpis5nii3ozmiv4hs3au5zppqxjivh25kiuspjhq",
+      "enriched": true
+    },
+    {
+      "id": "gn-44f377aa4a92b90b",
+      "source": "google-news",
+      "published_at": "2026-09-20T17:41:14Z",
+      "title": "Assessing Ty Lue's Future With the Post-Kawhi Clippers",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNRS1zSWdQYk0yQjdkdjlTZ0FFck1vOXdsRzFHblZSOENZblF4TUJjdU0tOW1Zdld4d2xsaGVWeGhqbG9Wc3NoVzJLa0w3aHh2NHdoUFZpRHFHT3pJRTJBdnVWbjV2Mm13MGZoanBTb0lEaE1ENERpb2dxTHhqOUxfVThSQVhpbHRZRjFMYmpDcTNBdEtvV2VXYw?oc=5",
+      "author": "Sports Illustrated",
+      "thumbnail": null,
+      "body_excerpt": "Assessing Ty Lue's Future With the Post-Kawhi Clippers Sports Illustrated",
+      "players": [
+        "kawhi-leonard"
+      ],
+      "teams": [
+        "los-angeles-clippers"
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Ab5s7pvomuo3xwd3wgdpnohtt%2Fapp.bsky.feed.post%2F3mvxqdufd5s2s",
+      "source": "bluesky",
+      "published_at": "2026-09-20T17:36:42Z",
+      "title": "Bears ain't scoring 59 today",
+      "url": "https://bsky.app/profile/bullsjay.bsky.social/post/3mvxqdufd5s2s",
+      "author": "Jason Patt",
+      "thumbnail": null,
+      "body_excerpt": "Bears ain't scoring 59 today",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:b5s7pvomuo3xwd3wgdpnohtt/bafkreig42lzcclk6qltt6b7cohurpm4sf5nti2xd3ws57wlwwx3zatwleu",
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Apgok625ocobq7t3decm3o5vu%2Fapp.bsky.feed.post%2F3mvxq2xuy6q24",
+      "source": "bluesky",
+      "published_at": "2026-09-20T17:31:44Z",
+      "title": "Remember Colston Loveland?",
+      "url": "https://bsky.app/profile/jadubin5.bsky.social/post/3mvxq2xuy6q24",
+      "author": "Jared Dubin",
+      "thumbnail": null,
+      "body_excerpt": "Remember Colston Loveland?",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:pgok625ocobq7t3decm3o5vu/bafkreibzev32m2ogs6r3qxy7nsub4iv4ussiesz5rxnsmxvnzy2oaanlvq",
+      "enriched": true
+    },
+    {
+      "id": "yt-XHuxiERHrKo",
+      "source": "youtube",
+      "published_at": "2026-09-20T17:31:02Z",
+      "title": "BALL KNOWLEDGE",
+      "url": "https://www.youtube.com/watch?v=XHuxiERHrKo",
+      "author": "Hoopin' N Hollerin'",
+      "thumbnail": "https://i.ytimg.com/vi/XHuxiERHrKo/maxresdefault.jpg",
+      "body_excerpt": null,
+      "players": [],
+      "teams": [],
+      "media": {
+        "type": "video"
+      }
+    },
+    {
+      "id": "gn-bdf3f1c6262f89ef",
+      "source": "google-news",
+      "published_at": "2026-09-20T17:30:25Z",
+      "title": "Thunder Need Shai Gilgeous-Alexander To Play Lighter Regular Season Role",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNd1BDODlpbnBwWk5uck1IbmxaSUZ3V28ybTUzUFVyRGtlVFQxOThrX0dwdGtMeWpBMHkzODlRcDhWcWh2cDVsWXdZSDJRektrWTdJc1dQSWxLMWxudS1fdW9pdkpzRERHMUVoblpoUkVUdk1ZbVJkbzVrVUZHakJSa2FXN2JhVW5welNpS0tB?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Thunder Need Shai Gilgeous-Alexander To Play Lighter Regular Season Role Yahoo Sports",
+      "players": [
+        "shai-gilgeous-alexander"
+      ],
+      "teams": [
+        "oklahoma-city-thunder"
+      ]
+    },
+    {
+      "id": "gn-21d09a3830e8369a",
+      "source": "google-news",
+      "published_at": "2026-09-20T17:26:45Z",
+      "title": "Raptors news: Kyle Lowry dubbed GOAT on statue that's actually a Raptor",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQQ3V0SVJKTk5LUnJPOFQ2XzNWUUNsOThSdzFtWF96RW9aZ1JYVDdiTzJPRDJLMTB1azZtMTZ4Zm5tb2UwdTE3S2lLTktLOUJTQWptU0ctVy1BNzQ3bmhuQkxOV2JLOFpPSDA0NFVDTkg3VnhqaWxURlNNQ2gwWU94cDdxSVdkdw?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Raptors news: Kyle Lowry dubbed GOAT on statue that's actually a Raptor Yahoo Sports",
+      "players": [
+        "kyle-lowry"
+      ],
+      "teams": [
+        "toronto-raptors"
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Ahlawk4j2y3l576ky76ajqb5h%2Fapp.bsky.feed.post%2F3mvxpq3pyl22u",
+      "source": "bluesky",
+      "published_at": "2026-09-20T17:25:39Z",
+      "title": "Falcons: Two possessions, two turnovers.",
+      "url": "https://bsky.app/profile/jeffschultzatl.bsky.social/post/3mvxpq3pyl22u",
+      "author": "Jeff Schultz",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:hlawk4j2y3l576ky76ajqb5h/bafkreibfnqzu54cca3hv2dpli6nsyhgvoz36zsspenjgddvcmbe2py4t3m",
+      "body_excerpt": "Falcons: Two possessions, two turnovers.",
+      "players": [],
+      "teams": [],
+      "media": {
+        "type": "link",
+        "uri": "https://static.klipy.com/ii/d7aec6f6f171607374b2065c836f92f4/ed/2b/xnnuWJuT.gif?hh=278&ww=498&mp4=PpCeHqdxCnk7T732&webm=l84Tispr4mB4KMwJgw",
+        "title": "Voron Fire: It's Fine 3D Printer Meme",
+        "description": "ALT: Voron Fire: It's Fine 3D Printer Meme",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:hlawk4j2y3l576ky76ajqb5h/bafkreibfnqzu54cca3hv2dpli6nsyhgvoz36zsspenjgddvcmbe2py4t3m"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:hlawk4j2y3l576ky76ajqb5h/bafkreifzvp3j33evpnov6h4yrmf34piv6xuhopngfa44nbehaian7czlw4",
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Ayvy5ax23zpmoearxn6xsgqzf%2Fapp.bsky.feed.post%2F3mvxpooui2c2l",
+      "source": "bluesky",
+      "published_at": "2026-09-20T17:24:52Z",
+      "title": "the cooper rush era is really something to behold",
+      "url": "https://bsky.app/profile/btrowland.bsky.social/post/3mvxpooui2c2l",
+      "author": "Brad Rowland",
+      "thumbnail": null,
+      "body_excerpt": "the cooper rush era is really something to behold",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:yvy5ax23zpmoearxn6xsgqzf/bafkreiewn3wnzotxikw45yiyzwfvo5jnimmrouiltejje4xehzcup6dc5i",
+      "enriched": true
+    },
+    {
+      "id": "gn-5c03b1efa184d3dd",
+      "source": "google-news",
+      "published_at": "2026-09-20T17:22:09Z",
+      "title": "#1 NBA overall pick, Brockton native gives back to the community",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQNkhDSVZhRlNIZ3ZsSGdaSWJ0QVhOMmRGNTRXc1FoYm9FQjUyaDY0ZWtiemFWRVhXejZsejA2VW4wY2ZtVUpVTlhrcmxDNjZ2T3ZGNG1MVDNnT3B6SEpzMHZGczlOd18wRGVpMXB6RkVZaHh1cXdtZF8zRERZVHRHMkhB?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "#1 NBA overall pick, Brockton native gives back to the community Yahoo Sports",
+      "players": [],
+      "teams": []
+    },
+    {
+      "id": "bs-did%3Aplc%3Apaf4vetn26bu7uggsie3vyrc%2Fapp.bsky.feed.post%2F3mvxpjewkes2b",
+      "source": "bluesky",
+      "published_at": "2026-09-20T17:21:54Z",
+      "title": "Day 20 -- Boston Celtics",
+      "url": "https://bsky.app/profile/lawmurraythenu.bsky.social/post/3mvxpjewkes2b",
+      "author": "Law Murray 📘",
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:paf4vetn26bu7uggsie3vyrc/bafkreias7gpuofosuee7z7yrpyz7zzocc66ky66ttp5smzoa7f5t4nqndy",
+      "body_excerpt": "Day 20 -- Boston Celtics\n\nFor the first time ever, Jayson Tatum is no longer teammates with Jaylen Brown\n\nGeorge replaces Brown\nRobinson replaces Vucevic\nConley replaces Shulga\nCenac takes Williams standard contract spot (Williams back on 2-way)\n\nyoutu.be/gvx_ipgxM7E?...",
+      "players": [],
+      "teams": [
+        "boston-celtics"
+      ],
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:paf4vetn26bu7uggsie3vyrc/bafkreias7gpuofosuee7z7yrpyz7zzocc66ky66ttp5smzoa7f5t4nqndy",
+            "alt": ""
+          }
+        ]
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:paf4vetn26bu7uggsie3vyrc/bafkreigp4qqmpcwhlau6q6cwnlzamromydordmvp23tmejax5b7ocahsxy",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://youtu.be/gvx_ipgxM7E?si=UL9cgS1h8XQi4hhe"
+            }
+          ],
+          "index": {
+            "byteEnd": 271,
+            "byteStart": 247
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Av54k3gt2dcjehyd33xmsbwqe%2Fapp.bsky.feed.post%2F3mvxpifhhss2j",
+      "source": "bluesky",
+      "published_at": "2026-09-20T17:21:21Z",
+      "title": "Welcome back, Tre'Veyon.  What a burst.",
+      "url": "https://bsky.app/profile/chadfinn.bsky.social/post/3mvxpifhhss2j",
+      "author": "Chad Finn",
+      "thumbnail": null,
+      "body_excerpt": "Welcome back, Tre'Veyon.  What a burst.",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:v54k3gt2dcjehyd33xmsbwqe/bafkreic5kbs2bxifrtvpis5nii3ozmiv4hs3au5zppqxjivh25kiuspjhq",
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Akr33fajyxpy2voxwsthydewq%2Fapp.bsky.feed.post%2F3mvxomwyi2k2y",
+      "source": "bluesky",
+      "published_at": "2026-09-20T17:05:59Z",
+      "title": "Disgusting that they even claim that iteration of the franchise",
+      "url": "https://bsky.app/profile/samdigiovanni.bsky.social/post/3mvxomwyi2k2y",
+      "author": "Sam DiGiovanni",
+      "thumbnail": null,
+      "body_excerpt": "Disgusting that they even claim that iteration of the franchise",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:kr33fajyxpy2voxwsthydewq/bafkreia7hovzss2b53qvolnrm2vn3dswc2ot2rowzbll3ntn32g7tajpsy",
+      "quote": {
+        "author": "Mike",
+        "handle": "85mf.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:eum2iez6pm2idhce2jduel5o/bafkreiagvhn2mk3igkivitufirtbnpsgoupg6kvx3b4bgn6qckhlvmgpea",
+        "text": "I don’t know how you make the classic Oilers unis look bad but the Titans did",
+        "url": "https://bsky.app/profile/85mf.bsky.social/post/3mvxoknxksk2n"
+      },
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Akdvkohfy7btmsdkg5mwuzjbw%2Fapp.bsky.feed.post%2F3mvxoi3elmc2s",
+      "source": "bluesky",
+      "published_at": "2026-09-20T17:03:16Z",
+      "title": "3️⃣2️⃣ in action soon",
+      "url": "https://bsky.app/profile/nuggets.bsky.social/post/3mvxoi3elmc2s",
+      "author": "Denver Nuggets",
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Akdvkohfy7btmsdkg5mwuzjbw/bafkreiejm3mc32wlizeoxvao4qyue3jtbk4f4e3glr2g2ohls2vcm55wti/thumbnail.jpg",
+      "body_excerpt": "3️⃣2️⃣ in action soon",
+      "players": [],
+      "teams": [],
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Akdvkohfy7btmsdkg5mwuzjbw/bafkreiejm3mc32wlizeoxvao4qyue3jtbk4f4e3glr2g2ohls2vcm55wti/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Akdvkohfy7btmsdkg5mwuzjbw/bafkreiejm3mc32wlizeoxvao4qyue3jtbk4f4e3glr2g2ohls2vcm55wti/playlist.m3u8"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:kdvkohfy7btmsdkg5mwuzjbw/bafkreiash3szg455hhblp6g3hh7txuopvo4cd2ppf23phazl7wqp6bgptu",
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3A75z3gabuwl6uvv7pootuuvgn%2Fapp.bsky.feed.post%2F3mvxohnkv252y",
+      "source": "bluesky",
+      "published_at": "2026-09-20T17:03:01Z",
+      "title": "Allen Iverson included some #Lakers legends in his all-time starting five.",
+      "url": "https://bsky.app/profile/lakersnation.bsky.social/post/3mvxohnkv252y",
+      "author": "LakersNation.com",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreifyef2bcilylh4vqpkt2p2vvxinvcqiwl7gseri6yp5gfhuxatbpy",
+      "body_excerpt": "Allen Iverson included some #Lakers legends in his all-time starting five.\nlakersnation.com/allen-iverso...",
+      "players": [],
+      "teams": [
+        "los-angeles-lakers"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://lakersnation.com/allen-iverson-includes-kobe-bryant-shaquille-oneal-in-all-time-starting-five/",
+        "title": "Allen Iverson includes Lakers greats in his all-time starting five",
+        "description": "Hall of Famer Allen Iverson includes Los Angeles Lakers legends Kobe Bryant and Shaquille O'Neal in his all-time starting five.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreifyef2bcilylh4vqpkt2p2vvxinvcqiwl7gseri6yp5gfhuxatbpy"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreiha6wdd65xjneeckcurw4zgpgcfrick6hylxlxoe5owj2kjxzu42e",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Lakers"
+            }
+          ],
+          "index": {
+            "byteEnd": 35,
+            "byteStart": 28
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://lakersnation.com/allen-iverson-includes-kobe-bryant-shaquille-oneal-in-all-time-starting-five/"
+            }
+          ],
+          "index": {
+            "byteEnd": 107,
+            "byteStart": 75
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "gn-f6a34e9760b1b584",
+      "source": "google-news",
+      "published_at": "2026-09-20T17:02:50Z",
+      "title": "Raptors honor Kyle Lowry with golden 'GROAT' statue",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQSkpWVng3cEVPVExfTUJuM0NOckZ4aU10azh5c1o3dVkxZHNDMDNhQ3JGWl9nM3N1bFpvZ0E2UlhpVWl4MGhTWTJoaHNsTFpJelJVb1JBN2hTay0xVUlLNFJWY292aEdPUFZSVnYwNkhvZmp1WXJiVWdyWnEzNFlkY1J2bllRbFp0czd6TkVuNV9BRC1K?oc=5",
+      "author": "ESPN",
+      "thumbnail": null,
+      "body_excerpt": "Raptors honor Kyle Lowry with golden 'GROAT' statue ESPN The Raptors’ New Kyle Lowry ‘GROAT’ Statue Is a Work of Art Sports Illustrated The GROAT Legacy: Looking Back at Kyle Lowry’s Raptors Career Yahoo Sports",
+      "players": [
+        "kyle-lowry"
+      ],
+      "teams": [
+        "toronto-raptors"
+      ]
+    },
+    {
+      "id": "gn-e9fbbc912b91c664",
+      "source": "google-news",
+      "published_at": "2026-09-20T17:00:01Z",
+      "title": "Jared McCain Could be X Factor for OKC Thunder in 2026-27",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNTW9xbUUxam9qWnc1VERmYVdJOXpLTEJ2ZWtBUG4wQW1qUjFneGItalpFbWo1ZUtmRklqcTNQb1JCXzRCMU1WZ2RVSFJmd1ZCLXpYRW4yUDR3QWRUcXdjWXVvRGNiUWh0a216NWtPeUNoMVo5bWVFdi1WMEQtSVVDVjRIYTg1ZGVGVWJFVHgtV2s3VkxuRDNpQw?oc=5",
+      "author": "Sports Illustrated",
+      "thumbnail": null,
+      "body_excerpt": "Jared McCain Could be X Factor for OKC Thunder in 2026-27 Sports Illustrated",
+      "players": [
+        "jared-mccain"
+      ],
+      "teams": [
+        "oklahoma-city-thunder"
+      ]
+    },
+    {
+      "id": "gn-dba95aad7f64f97d",
+      "source": "google-news",
+      "published_at": "2026-09-20T17:00:00Z",
+      "title": "Ex-Rockets Guard Fuels Potential Russell Westbrook NBA Comeback",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQM04xbXRxWnlEWXVmeExUVlhqT0NmQko5YXV4WjBHZmFDaEpGazdOZ2d4MzJyMDREeVF2dTYwdjh6SHY4b0ljZU5jNms2MkNMZXRUekRXMnBGWU81NnE5MWhSMzNKMGdVTFJoRXd5THZMaE1MdGthUnFxOXVFY2VhMHVKWWZDOHBxX2dPZ1IwT3JwNkFaQThsdkpvY2o4RkRIWmh2T0dQeTkwWnZSVjZ3N2VB?oc=5",
+      "author": "Sports Illustrated",
+      "thumbnail": null,
+      "body_excerpt": "Ex-Rockets Guard Fuels Potential Russell Westbrook NBA Comeback Sports Illustrated",
+      "players": [
+        "russell-westbrook"
+      ],
+      "teams": [
+        "houston-rockets"
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Azgw663lwxmujmen5k4jmjair%2Fapp.bsky.feed.post%2F3mvxnwtqjfk2g",
+      "source": "bluesky",
+      "published_at": "2026-09-20T16:53:38Z",
+      "title": "the incomparable @fastbreakbreak.bsky.social going through the list of grizz players who could/should, ya know, play:",
+      "url": "https://bsky.app/profile/danfavale.bsky.social/post/3mvxnwtqjfk2g",
+      "author": "dan favale",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:zgw663lwxmujmen5k4jmjair/bafkreiaesff7uizlerhazyy6ctolgd5joz4jhiolu2q2twtwpy4pkstele",
+      "body_excerpt": "the incomparable @fastbreakbreak.bsky.social going through the list of grizz players who could/should, ya know, play:",
+      "players": [],
+      "teams": [
+        "memphis-grizzlies"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://static.klipy.com/ii/d7aec6f6f171607374b2065c836f92f4/ba/a1/FxLqtoIj.gif?hh=280&ww=498&mp4=Dsxj9guuj5vIr4s&webm=8i5u4Z6NdNf65M3yzw4",
+        "title": "Lil Nas X's Epic VMA List Unroll",
+        "description": "ALT: Lil Nas X's Epic VMA List Unroll",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:zgw663lwxmujmen5k4jmjair/bafkreiaesff7uizlerhazyy6ctolgd5joz4jhiolu2q2twtwpy4pkstele"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:zgw663lwxmujmen5k4jmjair/bafkreiheejgmzt4f5tjemx2yzsscee6a4giqqmnsv66puktug3b7hsipnm",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:dsjwrxalcgukpinoyrwzt3kk"
+            }
+          ],
+          "index": {
+            "byteEnd": 44,
+            "byteStart": 17
+          }
+        }
+      ],
+      "quote": {
+        "author": "Hardwood Knocks",
+        "handle": "hardwoodknocksnba.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:inouuyp7aeagit37xn7zehmb/bafkreiewyns3u3zpzbhwl6d2xzpgdrjpc6orvwlmfrhxoldd6ut5nlaz7a",
+        "text": "‼️NEW POD‼️\n\n📋 Memphis Grizzlies 2026-27 Lookahead w/ @fastbreakbreak.bsky.social \n\nBoozer’s role\nCoward’s growth\nCenters!\nTy Jerome = 🐐?\nRotation, predictions, MORE\n\n📺 youtu.be/BIk7K_is2zI\n🍎 apple.co/4dq5rUo\n✳️ shorturl.at/ulebG\n🔒AD FREE: patreon.com/hardwoodknocksnba/posts/memphis-2026-27-169917364",
+        "url": "https://bsky.app/profile/hardwoodknocksnba.bsky.social/post/3mvxnsaiwvc2z",
+        "facets": [
+          {
+            "$type": "app.bsky.richtext.facet",
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#mention",
+                "did": "did:plc:dsjwrxalcgukpinoyrwzt3kk"
+              }
+            ],
+            "index": {
+              "byteEnd": 92,
+              "byteStart": 65
+            }
+          },
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": "https://youtu.be/BIk7K_is2zI"
+              }
+            ],
+            "index": {
+              "byteEnd": 210,
+              "byteStart": 190
+            }
+          },
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": "https://apple.co/4dq5rUo"
+              }
+            ],
+            "index": {
+              "byteEnd": 232,
+              "byteStart": 216
+            }
+          },
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": "https://shorturl.at/ulebG"
+              }
+            ],
+            "index": {
+              "byteEnd": 257,
+              "byteStart": 240
+            }
+          },
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": "https://patreon.com/hardwoodknocksnba/posts/memphis-2026-27-169917364"
+              }
+            ],
+            "index": {
+              "byteEnd": 332,
+              "byteStart": 271
+            }
+          }
+        ],
+        "media": {
+          "type": "link",
+          "uri": "https://youtu.be/BIk7K_is2zI",
+          "title": "Memphis Grizzlies 2026-27 NBA Season Lookahead",
+          "description": "YouTube video by Hardwood Knocks",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:inouuyp7aeagit37xn7zehmb/bafkreied6yfaa74yn3zimy7buzjop2rej5j2e6mf23kiskb432g2s52udi"
+        }
+      },
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Aapwmhm7jvrsshe3yx7ywbekw%2Fapp.bsky.feed.post%2F3mvxnv22nzc2h",
+      "source": "bluesky",
+      "published_at": "2026-09-20T16:52:37Z",
+      "title": "Shawn Marion days to the season opener ☄️",
+      "url": "https://bsky.app/profile/sunsphx.bsky.social/post/3mvxnv22nzc2h",
+      "author": "Phoenix Suns",
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:apwmhm7jvrsshe3yx7ywbekw/bafkreicjicrqvuspyeailqg4sgq2wgeqilnbseqvbve2oxttvwahn2npxu",
+      "body_excerpt": "Shawn Marion days to the season opener ☄️",
+      "players": [],
+      "teams": [],
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:apwmhm7jvrsshe3yx7ywbekw/bafkreicjicrqvuspyeailqg4sgq2wgeqilnbseqvbve2oxttvwahn2npxu",
+            "alt": ""
+          }
+        ]
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:apwmhm7jvrsshe3yx7ywbekw/bafkreihd4rphffyeloxmtsue7lt34etvwc5prr2pojidrhwnuecnhi4264",
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Ae7n6cs5ayz4tuab43rr5lh3m%2Fapp.bsky.feed.post%2F3mvxngnr7ak2d",
+      "source": "bluesky",
+      "published_at": "2026-09-20T16:44:35Z",
+      "title": "Talked about Siakam's relentlessness in searching for solves at the free throw line -- including during warmups, when he purposefully banks in attempts",
+      "url": "https://bsky.app/profile/caitlinmaycooper.bsky.social/post/3mvxngnr7ak2d",
+      "author": "Caitlin Cooper",
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ae7n6cs5ayz4tuab43rr5lh3m/bafkreihwrfx7hz4useflwx7uv7m3djakm3psjxfhmu6hjgswenfqfzbwn4/thumbnail.jpg",
+      "body_excerpt": "Talked about Siakam's relentlessness in searching for solves at the free throw line -- including during warmups, when he purposefully banks in attempts\n\nFull video: www.youtube.com/watch?v=TGMn...",
+      "players": [
+        "pascal-siakam"
+      ],
+      "teams": [],
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ae7n6cs5ayz4tuab43rr5lh3m/bafkreihwrfx7hz4useflwx7uv7m3djakm3psjxfhmu6hjgswenfqfzbwn4/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Ae7n6cs5ayz4tuab43rr5lh3m/bafkreihwrfx7hz4useflwx7uv7m3djakm3psjxfhmu6hjgswenfqfzbwn4/playlist.m3u8"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7n6cs5ayz4tuab43rr5lh3m/bafkreicfoxyvbfa65zuaecox5d4cdvbkxky6xpqkgnrsvfn4ajhuxosnhq",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.youtube.com/watch?v=TGMn3WqNfVw"
+            }
+          ],
+          "index": {
+            "byteEnd": 196,
+            "byteStart": 165
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3A6k2l2zk4prog4khdtzbafugo%2Fapp.bsky.feed.post%2F3mvxmy5kcsc24",
+      "source": "bluesky",
+      "published_at": "2026-09-20T16:36:28Z",
+      "title": "Ahead of \"Sunday Night Football\" this evening, catch Mike Tirico on the latest edition of the Sports Media Watch Podcast: podcasts.apple.com/us/podcast/s...",
+      "url": "https://bsky.app/profile/sportsmediawatch.bsky.social/post/3mvxmy5kcsc24",
+      "author": "Sports Media Watch",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:6k2l2zk4prog4khdtzbafugo/bafkreibbxosyvsfl5bc4yr7xligyiohdoz75za3gsjsvcbasw5aydubnye",
+      "body_excerpt": "Ahead of \"Sunday Night Football\" this evening, catch Mike Tirico on the latest edition of the Sports Media Watch Podcast: podcasts.apple.com/us/podcast/s...",
+      "players": [],
+      "teams": [],
+      "media": {
+        "type": "link",
+        "uri": "https://podcasts.apple.com/us/podcast/sports-media-watch-podcast/id1670516721?i=1000790270306",
+        "title": "Mike Tirico joins the pod to discuss his acclaimed career: Partners, memorable games and more",
+        "description": "Podcast Episode · Sports Media Watch Podcast · September 17 · 1h 4m",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:6k2l2zk4prog4khdtzbafugo/bafkreibbxosyvsfl5bc4yr7xligyiohdoz75za3gsjsvcbasw5aydubnye"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:6k2l2zk4prog4khdtzbafugo/bafkreidrpvr4hcdnzq4lh7joarinab2iuq5lrvtdipqbmdc3jlpnbwexd4",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://podcasts.apple.com/us/podcast/sports-media-watch-podcast/id1670516721?i=1000790270306"
+            }
+          ],
+          "index": {
+            "byteEnd": 156,
+            "byteStart": 122
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Ab5s7pvomuo3xwd3wgdpnohtt%2Fapp.bsky.feed.post%2F3mvxmx4axy22n",
+      "source": "bluesky",
+      "published_at": "2026-09-20T16:35:53Z",
+      "title": "Neagley with Reacher at a Cubs game AND a Super Bowl shuffle bit in the debut episode is great pandering, to me specifically. Just need a MJ GOAT reference next.",
+      "url": "https://bsky.app/profile/bullsjay.bsky.social/post/3mvxmx4axy22n",
+      "author": "Jason Patt",
+      "thumbnail": null,
+      "body_excerpt": "Neagley with Reacher at a Cubs game AND a Super Bowl shuffle bit in the debut episode is great pandering, to me specifically. Just need a MJ GOAT reference next.",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:b5s7pvomuo3xwd3wgdpnohtt/bafkreig42lzcclk6qltt6b7cohurpm4sf5nti2xd3ws57wlwwx3zatwleu",
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Akdvkohfy7btmsdkg5mwuzjbw%2Fapp.bsky.feed.post%2F3mvxmnedqks2r",
+      "source": "bluesky",
+      "published_at": "2026-09-20T16:30:26Z",
+      "title": "AG startin' off the countdown‼️",
+      "url": "https://bsky.app/profile/nuggets.bsky.social/post/3mvxmnedqks2r",
+      "author": "Denver Nuggets",
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:kdvkohfy7btmsdkg5mwuzjbw/bafkreigafy5pk5ljqxcbrmj2rck2n7lq6qx5bxgtgtkbecjgfstaxh6qrm",
+      "body_excerpt": "AG startin' off the countdown‼️",
+      "players": [],
+      "teams": [],
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:kdvkohfy7btmsdkg5mwuzjbw/bafkreigafy5pk5ljqxcbrmj2rck2n7lq6qx5bxgtgtkbecjgfstaxh6qrm",
+            "alt": ""
+          }
+        ]
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:kdvkohfy7btmsdkg5mwuzjbw/bafkreiash3szg455hhblp6g3hh7txuopvo4cd2ppf23phazl7wqp6bgptu",
+      "enriched": true
+    },
+    {
+      "id": "yt-noyyXwUG2oQ",
+      "source": "youtube",
+      "published_at": "2026-09-20T16:30:09Z",
+      "title": "JALEN BRUNSON CLEARS SGA !",
+      "url": "https://www.youtube.com/watch?v=noyyXwUG2oQ",
+      "author": "Gil's Arena",
+      "thumbnail": "https://i.ytimg.com/vi/noyyXwUG2oQ/maxresdefault.jpg",
+      "body_excerpt": "Presented by Polymarket - the world's largest prediction market. Use code ARENA when you sign up for a $50 bonus with a qualifying deposit of $10. https://app.polymarket.us/S8ac/ARENA 18+ Only. Restrictions and eligibility requirements apply. Not available in all jurisdictions.…",
+      "players": [
+        "jalen-brunson",
+        "shai-gilgeous-alexander"
+      ],
+      "teams": [],
+      "media": {
+        "type": "video"
+      }
+    },
+    {
+      "id": "gn-046080ccd6dc8d50",
+      "source": "google-news",
+      "published_at": "2026-09-20T16:30:08Z",
+      "title": "2026 OKC Thunder fan survey results: Spurs viewed as top NBA threat",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPRUFKaGRCNl9HVXh3N01UYnk5M2I0V3haT3pTUGQ3TUlTSGpCNzRHYmlXRURVVUVEVTlLRkszenVyeHRRQlNEYXpSbS03YjA2NkY4VnBkdnpoeXpVX19TNmludklCMDFFSk5tODg2ZU1OM0J4VnRvbFRFM0RvS3RneFZ3?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "2026 OKC Thunder fan survey results: Spurs viewed as top NBA threat Yahoo Sports",
+      "players": [],
+      "teams": [
+        "oklahoma-city-thunder",
+        "san-antonio-spurs"
+      ]
+    },
+    {
+      "id": "yt-XmhcKGQxLhg",
+      "source": "youtube",
+      "published_at": "2026-09-20T16:28:27Z",
+      "title": "Need a whole documentary on Charlie Sheen & Mad Max's San Antonio nights 🤣",
+      "url": "https://www.youtube.com/watch?v=XmhcKGQxLhg",
+      "author": "ALL THE SMOKE",
+      "thumbnail": "https://i.ytimg.com/vi/XmhcKGQxLhg/maxresdefault.jpg",
+      "body_excerpt": "Need a whole documentary on Charlie Sheen & Mad Max's San Antonio nights 🤣 Took Charlie a minute to recognize Max, but then the memories started flooding in 😭😭😭",
+      "players": [],
+      "teams": [
+        "san-antonio-spurs"
+      ],
+      "media": {
+        "type": "video"
+      }
+    },
+    {
+      "id": "bs-did%3Aplc%3Afor72tiy5r7qmr4yq44372dd%2Fapp.bsky.feed.post%2F3mvxm3h4pqd2z",
+      "source": "bluesky",
+      "published_at": "2026-09-20T16:25:00Z",
+      "title": "30 days until the 2026-2027 NBA season starts",
+      "url": "https://bsky.app/profile/basketball-reference.com/post/3mvxm3h4pqd2z",
+      "author": "Basketball Reference",
+      "thumbnail": null,
+      "body_excerpt": "30 days until the 2026-2027 NBA season starts",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:for72tiy5r7qmr4yq44372dd/bafkreid57cbqxvcloqhzzkusowhg3acbcwsxd6u2dn376r6wpi5lv4r3vi",
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Aozrhqae34vzv6mso2hsym65i%2Fapp.bsky.feed.post%2F3mvxm6voe422l",
+      "source": "bluesky",
+      "published_at": "2026-09-20T16:22:21Z",
+      "title": "Only $1 for the first four weeks of a @freep.com subscription. Will take you through opening night",
+      "url": "https://bsky.app/profile/omarisankofa.bsky.social/post/3mvxm6voe422l",
+      "author": "Omari Sankofa II",
+      "thumbnail": null,
+      "body_excerpt": "Only $1 for the first four weeks of a @freep.com subscription. Will take you through opening night",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:ozrhqae34vzv6mso2hsym65i/bafkreicwqbfoqf3cv44vp3upnjizm5ez3pnd7z2tsnj7keaozddwl57oy4",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:c7lzsq6djrsjglznmbrihch6"
+            }
+          ],
+          "index": {
+            "byteEnd": 48,
+            "byteStart": 38
+          }
+        }
+      ],
+      "quote": {
+        "author": "Omari Sankofa II",
+        "handle": "omarisankofa.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:ozrhqae34vzv6mso2hsym65i/bafkreicwqbfoqf3cv44vp3upnjizm5ez3pnd7z2tsnj7keaozddwl57oy4",
+        "text": "It’s Year 6 for Cade Cunningham. So why does he feel like a rookie again? \n\nTalked to Cade one-on-one about an offseason of mountain hiking and “real deal” core training, the departure of cherished teammates and new expectations for a rising Pistons team.\n\nwww.freep.com/story/sports...",
+        "url": "https://bsky.app/profile/omarisankofa.bsky.social/post/3mvxc4cjsnc2y",
+        "facets": [
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": "https://www.freep.com/story/sports/nba/pistons/2026/09/20/cade-cunningham-pistons-nba-news/91832752007/"
+              }
+            ],
+            "index": {
+              "byteEnd": 292,
+              "byteStart": 263
+            }
+          }
+        ],
+        "media": {
+          "type": "link",
+          "uri": "https://www.freep.com/story/sports/nba/pistons/2026/09/20/cade-cunningham-pistons-nba-news/91832752007/",
+          "title": "Why Cade Cunningham hiked mountains to take Pistons to the summit",
+          "description": "After standout 2025-26 season, Cade Cunningham is improving his endurance and adjusting to life without key Detroit Pistons teammates. \"It is weird.\"",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:ozrhqae34vzv6mso2hsym65i/bafkreiflffna5qgy2k2mqy4t6p4wxq5w36i4d2cxc4f3chdbdp2tl6ilzi"
+        }
+      },
+      "enriched": true
+    },
+    {
+      "id": "gn-8b83ed140e27654e",
+      "source": "google-news",
+      "published_at": "2026-09-20T16:17:18Z",
+      "title": "Blazers news: Ja Morant's 6-word reaction to Grizzlies trade revealed",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE8yNlZCdW5kQWcyOFltZWNwOEpWMnZCNUxLbTFPd0Njam9IeTFHLXg5b0FjNWZtdzVUZlRscnYxSm9hNVF2VlhyWGFYT1lsdkE3bGFzRzNmVXNncHdwQkpaOW1QbktzU3NNX1I2bnVCcjRqTC1lbHN0Vjh2eGhLVTg?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Blazers news: Ja Morant's 6-word reaction to Grizzlies trade revealed Yahoo Sports",
+      "players": [
+        "ja-morant"
+      ],
+      "teams": [
+        "memphis-grizzlies",
+        "portland-trail-blazers"
+      ]
+    },
+    {
+      "id": "rd-t3_1wll8r1",
+      "source": "reddit",
+      "published_at": "2026-09-20T16:15:44Z",
+      "title": "Who is the second best young Big Man in the league right now after Wemby?",
+      "url": "https://www.reddit.com/r/nba/comments/1wll8r1/who_is_the_second_best_young_big_man_in_the/",
+      "author": "BasketVolleyball11",
+      "thumbnail": null,
+      "body_excerpt": "Wemby is obviously #1. But who is second among the younger Pf/C bigs? Some candidates are Chet, Mobley, Sengun, and Duren. All have their own strengths and weaknesses. Some are better in offense. Some are better in defense. Some are better all around. But overall, who would you…",
+      "players": [
+        "victor-wembanyama"
+      ],
+      "teams": []
+    },
+    {
+      "id": "bs-did%3Aplc%3Awj222j7j4agz3k4ikhxrbb4r%2Fapp.bsky.feed.post%2F3mvxlp64gg22l",
+      "source": "bluesky",
+      "published_at": "2026-09-20T16:13:33Z",
+      "title": "Pretty perfect",
+      "url": "https://bsky.app/profile/ekoreen.bsky.social/post/3mvxlp64gg22l",
+      "author": "Eric Koreen",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:wj222j7j4agz3k4ikhxrbb4r/bafkreidttfgxjtr3k42herb22t2juwia6plf6rhbgomjnf24uucqcorvw4",
+      "body_excerpt": "Pretty perfect",
+      "players": [],
+      "teams": [],
+      "media": {
+        "type": "link",
+        "uri": "https://www.youtube.com/watch?v=R484ME42Qt0",
+        "title": "Soccer Mommy - Rings Of Saturn (Lyric Video)",
+        "description": "YouTube video by Soccer Mommy",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:wj222j7j4agz3k4ikhxrbb4r/bafkreidttfgxjtr3k42herb22t2juwia6plf6rhbgomjnf24uucqcorvw4"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:wj222j7j4agz3k4ikhxrbb4r/bafkreic6dyjpvks3zzghqr5qko7lcks6tlow6jajr4uc4vztjayqf3qebu",
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Amtfaxzqle5h6stf7y6tmuxf7%2Fapp.bsky.feed.post%2F3mvxloshiys2s",
+      "source": "bluesky",
+      "published_at": "2026-09-20T16:13:21Z",
+      "title": "🇲🇽 x @daznboxing.bsky.social",
+      "url": "https://bsky.app/profile/sichrismannix.bsky.social/post/3mvxloshiys2s",
+      "author": "Chris Mannix",
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:mtfaxzqle5h6stf7y6tmuxf7/bafkreicmtzzspzujgz4arpecs7d3pntf4aquk235aegrdd5fjrsjtiju3e",
+      "body_excerpt": "🇲🇽 x @daznboxing.bsky.social",
+      "players": [],
+      "teams": [],
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:mtfaxzqle5h6stf7y6tmuxf7/bafkreicmtzzspzujgz4arpecs7d3pntf4aquk235aegrdd5fjrsjtiju3e",
+            "alt": ""
+          },
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:mtfaxzqle5h6stf7y6tmuxf7/bafkreie362aif2pfucjndcnyxy6gjqvd3qtqvirfat7q7enlpk5gcpjrle",
+            "alt": ""
+          },
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:mtfaxzqle5h6stf7y6tmuxf7/bafkreiblimmbo5zb4xndjcg24p4qa6y4rcmpdlz25tatb7gx74swsxnbfe",
+            "alt": ""
+          }
+        ]
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:mtfaxzqle5h6stf7y6tmuxf7/bafkreigzoz5dgbvnkmxc2uadotka4ln6jjnhjtdvdebvx3ae37mabnx2si",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:v5j5u4trwfbcd4cla23kjtwb"
+            }
+          ],
+          "index": {
+            "byteEnd": 34,
+            "byteStart": 11
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "gn-75e8e2867f01a67e",
+      "source": "google-news",
+      "published_at": "2026-09-20T16:03:52Z",
+      "title": "Paul Pierce admits that he feels for Devin Booker's loyalty amid struggles with the Suns",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNVlhtczcwSk9FN1JNTXMybHI1TDRYUGNVUEFhVVdxZXRQY2NLWFhDM3pPQnJld2NvWEtRdjFtQktHRGFGVVd6RFBJYThoMmVtMTJxSVlRcldrWmdNd2FJcVJFdVcwSlZVVlRBazM1dk5OMklZZ1FSNi1QQ2k0bFdQWmdKQjdEUQ?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Paul Pierce admits that he feels for Devin Booker's loyalty amid struggles with the Suns Yahoo Sports",
+      "players": [
+        "devin-booker"
+      ],
+      "teams": [
+        "phoenix-suns"
+      ]
+    },
     {
       "id": "bs-did%3Aplc%3A75z3gabuwl6uvv7pootuuvgn%2Fapp.bsky.feed.post%2F3mvxl3xbs5t2r",
       "source": "bluesky",
@@ -51,6 +1258,23 @@
         }
       ],
       "enriched": true
+    },
+    {
+      "id": "yt-rkdRUqRVnvM",
+      "source": "youtube",
+      "published_at": "2026-09-20T16:00:25Z",
+      "title": "Pat Bev says James Harden would WIN CHIPS if he went to Miami 👀",
+      "url": "https://www.youtube.com/watch?v=rkdRUqRVnvM",
+      "author": "Out The Mud Podcast",
+      "thumbnail": "https://i.ytimg.com/vi/rkdRUqRVnvM/maxresdefault.jpg",
+      "body_excerpt": "Get the stories we can't fit in the videos! Sign up for our newsletter here: https://magic.beehiiv.com/v1/7faa75e8-c405-45ce-b5d1-5201164c21d9 Follow us on Socials Zach Randolph Instagram : https://www.instagram.com/macbo50 X : https://x.com/macbo50 Tony Allen Instagram :…",
+      "players": [
+        "james-harden"
+      ],
+      "teams": [],
+      "media": {
+        "type": "video"
+      }
     },
     {
       "id": "bs-did%3Aplc%3Azfxkhiy2lyomncn3lykkwzi7%2Fapp.bsky.feed.post%2F3mvxkvwhdms2r",
@@ -182,6 +1406,34 @@
       "enriched": true
     },
     {
+      "id": "gn-19f83e295da26c67",
+      "source": "google-news",
+      "published_at": "2026-09-20T15:46:34Z",
+      "title": "Two Reasons Why Spurs Will Be Even Better Next Season",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSkFxazJ5U29BRzNIMEtOZnNGTlZ1ZnY1N2otVDRzdjhQT1hENElORjY5MHhpS3V6dHZkeE12ZkFGaXhEMWVmMFluTVdwWnpNaWlYRHVkNHQyazZyWVg1NGhnc3JzbWpsZ2F6UVhLdll5MDItNFhXM2t1SkNpQ1RJYg?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Two Reasons Why Spurs Will Be Even Better Next Season Yahoo Sports",
+      "players": [],
+      "teams": [
+        "san-antonio-spurs"
+      ]
+    },
+    {
+      "id": "gn-1c17d55b35a26fe3",
+      "source": "google-news",
+      "published_at": "2026-09-20T15:45:48Z",
+      "title": "Legendary Phoenix Suns Coach Names Shawn Marion for Major Honor",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOeWNvUk90cUE4ZTZlR29tN2hYaDhCNGxGMXo1MVFDYmRjaDRQdGE4N05Sc1BhNDBYelZQQ2xSX1ZZLUNMRTdVajhqY1N4VGxTRkdQeU94XzdaZFdPMC1EckJVTGJVcl9vUDRXWE9DYjRsbUVXWVVXenVldGJidFpDSzFRTUNkWjBiR29N?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Legendary Phoenix Suns Coach Names Shawn Marion for Major Honor Yahoo Sports",
+      "players": [],
+      "teams": [
+        "phoenix-suns"
+      ]
+    },
+    {
       "id": "gn-c86ac9928d912d4f",
       "source": "google-news",
       "published_at": "2026-09-20T15:45:04Z",
@@ -210,6 +1462,49 @@
       "players": [],
       "teams": [
         "miami-heat"
+      ]
+    },
+    {
+      "id": "gn-b5f4c03279d8cd8f",
+      "source": "google-news",
+      "published_at": "2026-09-20T15:39:36Z",
+      "title": "Philadelphia 76ers Projected To Finish No. 4 in Eastern Conference",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQeEpBSEdwWGhFa3JqNFlmSU9UM2NJd1c3SzlkaXltNHMxS05EMzFYbHUtd0Nqb1hwNE1xcmI0MzJEZ0QtcEhYWHhvVHFZZ2taVE8wclpYeFQyaEN6Yms0UllvY0FlY3BBbW53WGJMZEtwei1zSE9LTGpSMnl2Y21tTDNrQmN2bXVyQ2s1RnZpMWM?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Philadelphia 76ers Projected To Finish No. 4 in Eastern Conference Yahoo Sports",
+      "players": [],
+      "teams": [
+        "philadelphia-76ers"
+      ]
+    },
+    {
+      "id": "rd-t3_1wlkam5",
+      "source": "reddit",
+      "published_at": "2026-09-20T15:38:54Z",
+      "title": "[Highlight] Kyrie Irving crosses Kawhi Leonard and hits the longer 2-pointer (with replays). 2/2/2021",
+      "url": "https://www.reddit.com/r/nba/comments/1wlkam5/highlight_kyrie_irving_crosses_kawhi_leonard_and/",
+      "author": "MrBuckBuck",
+      "thumbnail": "https://external-preview.redd.it/_mfLgmrJTYK2j7M8LYL7Gig0Bqtyc7sEuQOxTF3SV7o.jpeg?width=640&crop=smart&auto=webp&s=ff72cd4625d5d0ff1b7587db6781dd1f851ff2a7",
+      "body_excerpt": null,
+      "players": [
+        "kawhi-leonard",
+        "kyrie-irving"
+      ],
+      "teams": []
+    },
+    {
+      "id": "gn-5eb2fe2fff684e67",
+      "source": "google-news",
+      "published_at": "2026-09-20T15:35:15Z",
+      "title": "MMBets: The Philadelphia 76ers are under immense pressure to win",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPdkNRM1VSY190QXlMcnpydjh6ZXg1VkcwWnJIWjV4NEhkZWxwVHV1cnk0Uk9udkZCMFVYVjBpeGNCTVNLZFUtNExub09QcTNKUVdLekxVc0N6LUlEV3Y2UjZOMndJXzVwLThudVJoSHhHT3lVNWkyYkxXT1QzQnhRZm5VN1lwLXRiVi1zMWx5X0VDUQ?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "MMBets: The Philadelphia 76ers are under immense pressure to win Yahoo Sports",
+      "players": [],
+      "teams": [
+        "philadelphia-76ers"
       ]
     },
     {
@@ -291,6 +1586,18 @@
       }
     },
     {
+      "id": "rd-t3_1wljzqt",
+      "source": "reddit",
+      "published_at": "2026-09-20T15:27:01Z",
+      "title": "Michael Jordan was Chicago's sole leading scorer for 66 consecutive games from December 1987-April 1988",
+      "url": "https://www.reddit.com/r/nba/comments/1wljzqt/michael_jordan_was_chicagos_sole_leading_scorer/",
+      "author": "StrategyTop7612",
+      "thumbnail": null,
+      "body_excerpt": "For 66 straight regular-season games, from December 2, 1987 through April 21, 1988, Jordan was the one and only Bulls player with the most points in that game. Nobody tied him once. Next best since 1980: Player Consecutive games as sole team scoring leader Years Michael Jordan…",
+      "players": [],
+      "teams": []
+    },
+    {
       "id": "bs-did%3Aplc%3A6k2l2zk4prog4khdtzbafugo%2Fapp.bsky.feed.post%2F3mvxiz4igok2r",
       "source": "bluesky",
       "published_at": "2026-09-20T15:25:25Z",
@@ -356,6 +1663,20 @@
       "players": [
         "jaylen-brown",
         "jonathan-kuminga"
+      ],
+      "teams": []
+    },
+    {
+      "id": "gn-3c6288bcbe88518f",
+      "source": "google-news",
+      "published_at": "2026-09-20T15:20:04Z",
+      "title": "Jared McCain Shuts Down Album Talk: ‘I’m Too Focused on Basketball Right Now’",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOeGFLZkdlTXdmVm9tZGVVR3RYTHpzOEh1bjlrTzVOWVZkd2JORTFFZXNmTGdudjYxVW1wb3Y5YTljSFAtR3R6T1lWYkM3VHZ2N0lxRXUxSmp6UDNOckY1a0JxUWJ4UTBOWWp2bkE5eTNZcnFfb0JsZW9kemRLNkVELTdXamc?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Jared McCain Shuts Down Album Talk: ‘I’m Too Focused on Basketball Right Now’ Yahoo Sports",
+      "players": [
+        "jared-mccain"
       ],
       "teams": []
     },
@@ -592,6 +1913,18 @@
       "enriched": true
     },
     {
+      "id": "rd-t3_1wlj2s5",
+      "source": "reddit",
+      "published_at": "2026-09-20T14:50:50Z",
+      "title": "A collection of Carmelo's teammates reflecting on the experience of having him in the locker room",
+      "url": "https://www.reddit.com/r/nba/comments/1wlj2s5/a_collection_of_carmelos_teammates_reflecting_on/",
+      "author": "E-Miles",
+      "thumbnail": null,
+      "body_excerpt": "This seems to be a popular topic lately, so I figured people might be interested in a collection of Carmelo's teammates reflecting on what the locker room was like with him. Excluded people talking with him on his podcast or comments made while they were actively playing…",
+      "players": [],
+      "teams": []
+    },
+    {
       "id": "gn-808e64cbf70ad347",
       "source": "google-news",
       "published_at": "2026-09-20T14:50:02Z",
@@ -799,6 +2132,21 @@
       "enriched": true
     },
     {
+      "id": "gn-8fb34e7fd22d6d18",
+      "source": "google-news",
+      "published_at": "2026-09-20T14:29:32Z",
+      "title": "‘Never Produced a Good Take’ — 3-Time All-Star’s Wild Paul George – Jaylen Brown Comparison Leaves NBA Fans Stumped",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPVkZGM2t3UWMxYlFKNEdRb0thV1YzNm9ucTZpSEtYZUktN3FNMWdOMzBabERHQ0U1WkwyQWpVS1NLZ05jejVJOWJPcmhXRlVGRElKTy0xYnRrUUp1QzFHWFhqTFpIZU1udkZkSk9qU19zdHJ5dFd0azNweUJOU0RXUg?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "‘Never Produced a Good Take’ — 3-Time All-Star’s Wild Paul George – Jaylen Brown Comparison Leaves NBA Fans Stumped Yahoo Sports",
+      "players": [
+        "jaylen-brown",
+        "paul-george"
+      ],
+      "teams": []
+    },
+    {
       "id": "bs-did%3Aplc%3Aluofuy2uw7g4vsd2vbwidtel%2Fapp.bsky.feed.post%2F3mvxfgugwos2u",
       "source": "bluesky",
       "published_at": "2026-09-20T14:21:32Z",
@@ -860,6 +2208,20 @@
         "url": "https://bsky.app/profile/erininthemorning.com/post/3mvx4mykjhc2y"
       },
       "enriched": true
+    },
+    {
+      "id": "gn-cd6bb06ca47269b4",
+      "source": "google-news",
+      "published_at": "2026-09-20T14:00:05Z",
+      "title": "Kings' Best and Worst-Case Scenarios From Ben Simmons Signing",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOZnh0MnBXcnFzdVEyLUJtNkhkbndYRmtqSXBHT2lqVDZlTU84bXYyZU05Y1ZGV1BqM2UyUm56WXRESkw1WnJXSzVsNjZUVUtxOHpOUEYxVVpKNXJxUjN3a1gtLXhheG92ZHkwNUJIY1BhRXZBZnAwcm9NcUcxUVZ1MlNoT3Rlc1U?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Kings' Best and Worst-Case Scenarios From Ben Simmons Signing Yahoo Sports",
+      "players": [],
+      "teams": [
+        "sacramento-kings"
+      ]
     },
     {
       "id": "gn-d3f7697fda30b165",
@@ -952,1119 +2314,6 @@
           "index": {
             "byteEnd": 292,
             "byteStart": 263
-          }
-        }
-      ],
-      "enriched": true
-    },
-    {
-      "id": "rd-t3_1wlgxvm",
-      "source": "reddit",
-      "published_at": "2026-09-20T13:20:38Z",
-      "title": "[Highlight] Every basket from Milwaukee Bucks legend and Hall of Famer Pau Gasol’s tenure with the Bucks",
-      "url": "https://www.reddit.com/r/nba/comments/1wlgxvm/highlight_every_basket_from_milwaukee_bucks/",
-      "author": "Pickleskennedy1",
-      "thumbnail": "https://external-preview.redd.it/38gFVcLxvs1liNj0SeZAcXyF7-BDFRI11sT8OKmOfoU.jpeg?width=640&crop=smart&auto=webp&s=428e06fe02269685ee10a7620104706f61ad8c5b",
-      "body_excerpt": null,
-      "players": [],
-      "teams": [
-        "milwaukee-bucks"
-      ]
-    },
-    {
-      "id": "bs-did%3Aplc%3Afn2d4f2fdyghzild2opwssaa%2Fapp.bsky.feed.post%2F3mvxb2pgcjs2c",
-      "source": "bluesky",
-      "published_at": "2026-09-20T13:03:09Z",
-      "title": "Peace be with you.",
-      "url": "https://bsky.app/profile/drew-h-stevens.bsky.social/post/3mvxb2pgcjs2c",
-      "author": "Drew",
-      "thumbnail": null,
-      "body_excerpt": "Peace be with you.",
-      "players": [],
-      "teams": [],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:fn2d4f2fdyghzild2opwssaa/bafkreidjkdq3z4xj2lbcijgpm5cipz2uezqzzi2iitbkgttur2ms5ap7qy",
-      "enriched": true
-    },
-    {
-      "id": "bs-did%3Aplc%3Akq5obb3xiadd6jum34eeif4u%2Fapp.bsky.feed.post%2F3mvxazgez5c2q",
-      "source": "bluesky",
-      "published_at": "2026-09-20T13:02:26Z",
-      "title": "Does Larsson's Heat extension open potential Jovic-like trap door? Latest \"Ask Ira\" at  www.sun-sentinel.com/2026/09/20/a... A Larsson-a-palooza of a mailbag.",
-      "url": "https://bsky.app/profile/irawinderman.bsky.social/post/3mvxazgez5c2q",
-      "author": "Ira Winderman",
-      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:kq5obb3xiadd6jum34eeif4u/bafkreifq4ghcfakzacpnibxq7do6ienm2ee2x6sf3imijx7j5udo7snm2u",
-      "body_excerpt": "Does Larsson's Heat extension open potential Jovic-like trap door? Latest \"Ask Ira\" at  www.sun-sentinel.com/2026/09/20/a... A Larsson-a-palooza of a mailbag.",
-      "players": [],
-      "teams": [
-        "miami-heat"
-      ],
-      "media": {
-        "type": "link",
-        "uri": "https://www.sun-sentinel.com/2026/09/20/ask-ira-does-larssons-heat-extension-open-potential-jovic-like-trap-door/",
-        "title": "ASK IRA: Does Larsson’s Heat extension open potential Jovic-like trap door?",
-        "description": "Did the Miami Heat do right with Pelle Larsson after questions about the Nikola Jovic extension?",
-        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:kq5obb3xiadd6jum34eeif4u/bafkreifq4ghcfakzacpnibxq7do6ienm2ee2x6sf3imijx7j5udo7snm2u"
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:kq5obb3xiadd6jum34eeif4u/bafkreidk3gnax4picokf3v25t7injina2ohe52rizsmnfjtx2yrgda5cda",
-      "facets": [
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://www.sun-sentinel.com/2026/09/20/ask-ira-does-larssons-heat-extension-open-potential-jovic-like-trap-door/"
-            }
-          ],
-          "index": {
-            "byteEnd": 124,
-            "byteStart": 88
-          }
-        }
-      ],
-      "enriched": true
-    },
-    {
-      "id": "gn-9b662a1240cfef25",
-      "source": "google-news",
-      "published_at": "2026-09-20T13:00:37Z",
-      "title": "Steph Curry Defends Adam Silver Over Clippers’ Cap Circumvention Punishment",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNOG93N19BckprdlFPNjdwNjZQUjJtMkR1a0RzeGhyVWxqRTFzM0VpbE0tZFZBU0d2Wi1NNEZxbkIyV3dGZUZEUWNFZkY4UzBJMXdYcVliRklITk1FQzJ4OVViTXFfN245eVMzM0RUMWQ2T1FjcE9uc2xNcmFqVjlZcTMzZVJqMkE?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Steph Curry Defends Adam Silver Over Clippers’ Cap Circumvention Punishment Yahoo Sports",
-      "players": [
-        "stephen-curry"
-      ],
-      "teams": [
-        "los-angeles-clippers"
-      ]
-    },
-    {
-      "id": "gn-291d0aee72c7cacc",
-      "source": "google-news",
-      "published_at": "2026-09-20T13:00:37Z",
-      "title": "Timberwolves’ Underrated Offseason Addition Could Have a Breakout Year",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNZVoxOTlfNTlBbU5IdWJmeGdidElBRDFiSnVLaHI1dEx6b2ZwQ3g3RFM2VWZtYVNCc04wM3dZOUEtV0VibGRoRUw2emtMTGJiTlJQd2czdEVocngxMHZLS1R0MVN6MDBZQW9fNlU2MDVIdjA0SGt6OUFrcnk5X09uTWxVcDFkVV9IWjFVa193UG1tN1VZcHJTVnUzalJqQQ?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Timberwolves’ Underrated Offseason Addition Could Have a Breakout Year Yahoo Sports",
-      "players": [],
-      "teams": [
-        "minnesota-timberwolves"
-      ]
-    },
-    {
-      "id": "gn-4921ebc6ca830e94",
-      "source": "google-news",
-      "published_at": "2026-09-20T13:00:37Z",
-      "title": "Jordan Clarkson Gets Honest About His Inconsistent Role With Knicks",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPd2owOV9OZUZTY29GQUVLQV8tX0ZwZmZ5a0RqaHBSeEZhMlNxTEF3QXNfTUhBbnNJMDNGUHk0aTQ1UHlfb1JzRzBxQ2VfbWlmRmgwREt6Q1ZBZ29LTmR6VEJJSHhJNGJxSzdFbnJSVFV0WkZpeGJjS3ozQ3hYYkZadGpTV0xhXzRHUEZzRktHTWJzMDg?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Jordan Clarkson Gets Honest About His Inconsistent Role With Knicks Yahoo Sports",
-      "players": [
-        "jordan-clarkson"
-      ],
-      "teams": [
-        "new-york-knicks"
-      ]
-    },
-    {
-      "id": "gn-78a3b045f8ac6c62",
-      "source": "google-news",
-      "published_at": "2026-09-20T13:00:03Z",
-      "title": "Ranking Every Player Under 25 on the Pelicans' Roster",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPU0FkQzdRWU04bDR5bkc0YVNZaEFQaWZRZm53bFViYWNIaTdna3plcUhqOWEza0xZcGt0aU5MSGpBckNzczFOa2ptN1VWQmxfTnkyREdiZl9wSWtKSUpXMzdWWmY1TXphV3JiLVUtRXoyMlRXU1RjSUlmWml4VjRDQjlVUkM1ZVNncXlsdHVYS0J4NmRuUTBvMnpIYw?oc=5",
-      "author": "Sports Illustrated",
-      "thumbnail": null,
-      "body_excerpt": "Ranking Every Player Under 25 on the Pelicans' Roster Sports Illustrated",
-      "players": [],
-      "teams": [
-        "new-orleans-pelicans"
-      ]
-    },
-    {
-      "id": "gn-64f0b152150c39b5",
-      "source": "google-news",
-      "published_at": "2026-09-20T13:00:02Z",
-      "title": "Timberwolves' Strong Potential Future Is Being Overlooked",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPY2FHb2VrWDBNY0o5eHlKYTBaV2JnTFRkbG9namcyRFBmQmhGY3lnWk5hVG9lMUk4TVZfdVBhcHlIRkRBV1ViVWRPOU9yTVJ1LWxGOXNzTU9jS3Vub25NRlRxUWhRQWgwVUpTQkd3dFl6ajJXNlFncW9xVWg4c1R0RmNTSU1mNlNnT3I3SGgwQlYzTXdKVlg5cGNGM1EwZklsQXVRZlVPUnRoQU0?oc=5",
-      "author": "Sports Illustrated",
-      "thumbnail": null,
-      "body_excerpt": "Timberwolves' Strong Potential Future Is Being Overlooked Sports Illustrated",
-      "players": [],
-      "teams": [
-        "minnesota-timberwolves"
-      ]
-    },
-    {
-      "id": "bs-did%3Aplc%3Av6xd7qcm4tsgb4ndo547vh4n%2Fapp.bsky.feed.post%2F3mvxamd4ous2k",
-      "source": "bluesky",
-      "published_at": "2026-09-20T12:55:06Z",
-      "title": "Gonna debate the best players who played *exclusively* for each NBA franchise on a bonus @nodunks.com episode today. Join me live at 11 a.m. ET in The Stream Team ➡️ bit.ly/4rjE04B",
-      "url": "https://bsky.app/profile/jeskeets.bsky.social/post/3mvxamd4ous2k",
-      "author": "J.E. Skeets",
-      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreietahs66j6477dxsclqni76hfumnxqet3yia2xcxrwt6hfse7pvlu",
-      "body_excerpt": "Gonna debate the best players who played *exclusively* for each NBA franchise on a bonus @nodunks.com episode today. Join me live at 11 a.m. ET in The Stream Team ➡️ bit.ly/4rjE04B",
-      "players": [],
-      "teams": [],
-      "media": {
-        "type": "image",
-        "images": [
-          {
-            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreietahs66j6477dxsclqni76hfumnxqet3yia2xcxrwt6hfse7pvlu",
-            "alt": ""
-          }
-        ]
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreidntfbgr4kn6b2nevpvhddp5xltzzb24dgq7msnh52llmzzqzi6r4",
-      "facets": [
-        {
-          "$type": "app.bsky.richtext.facet",
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#mention",
-              "did": "did:plc:33yuttg43domt6gyddetilkn"
-            }
-          ],
-          "index": {
-            "byteEnd": 101,
-            "byteStart": 89
-          }
-        },
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://bit.ly/4rjE04B"
-            }
-          ],
-          "index": {
-            "byteEnd": 184,
-            "byteStart": 170
-          }
-        }
-      ],
-      "enriched": true
-    },
-    {
-      "id": "bs-did%3Aplc%3Aq3fi25au634c4yojnysqzlrj%2Fapp.bsky.feed.post%2F3mvxajkgwbs26",
-      "source": "bluesky",
-      "published_at": "2026-09-20T12:53:33Z",
-      "title": "The Hornets are 0-3 and -78 through their first three FBS games as an FBS team. Their schedule: a fellow 1st-time FBS team, the team that tied for 9th in the MAC last season and the reigning Arizona Bowl champ. A real murderer's row.",
-      "url": "https://bsky.app/profile/teamziller.bsky.social/post/3mvxajkgwbs26",
-      "author": "Tom Ziller",
-      "thumbnail": null,
-      "body_excerpt": "The Hornets are 0-3 and -78 through their first three FBS games as an FBS team. Their schedule: a fellow 1st-time FBS team, the team that tied for 9th in the MAC last season and the reigning Arizona Bowl champ. A real murderer's row.",
-      "players": [],
-      "teams": [
-        "charlotte-hornets"
-      ],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:q3fi25au634c4yojnysqzlrj/bafkreigcujpqoa2yadtzz6clzmbjcvqadyreya62h5sr4brge2tzgot5xa",
-      "quote": {
-        "author": "Jason Kirk",
-        "handle": "jasonkirk.fyi",
-        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:fgpyya4en5thfmi6usrr3kvv/bafkreid4fntdy3qctsebxkz6gtvs7xykmwxt3wmbgptvvqnwajqw3c72r4",
-        "text": "One of these teams does not belong in FBS. See if you can identify which",
-        "url": "https://bsky.app/profile/jasonkirk.fyi/post/3mvwbkdy4a22a",
-        "media": {
-          "type": "image",
-          "images": [
-            {
-              "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:fgpyya4en5thfmi6usrr3kvv/bafkreigmn5sskf7th4kpxg2xd5iqaz4dgkvl3ukqdziv7v454lqaagoufm",
-              "alt": "NDSU 28, Sac State 0 early"
-            }
-          ]
-        }
-      },
-      "enriched": true
-    },
-    {
-      "id": "bs-did%3Aplc%3Apgok625ocobq7t3decm3o5vu%2Fapp.bsky.feed.post%2F3mvx6xabhtc2e",
-      "source": "bluesky",
-      "published_at": "2026-09-20T12:25:25Z",
-      "title": "PSA: Pharrell and Pusha T started a coffee brand called Grindin Coffee. This is very important to me.",
-      "url": "https://bsky.app/profile/jadubin5.bsky.social/post/3mvx6xabhtc2e",
-      "author": "Jared Dubin",
-      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:pgok625ocobq7t3decm3o5vu/bafkreigpujvwgbss25j722lsyjrcvfc37vrgcoah3bxclirwi5c2mkd2tq",
-      "body_excerpt": "PSA: Pharrell and Pusha T started a coffee brand called Grindin Coffee. This is very important to me.",
-      "players": [],
-      "teams": [],
-      "media": {
-        "type": "link",
-        "uri": "https://www.instagram.com/p/DdRfpSpAC6v/?stkn=Z252cmo0OTdwdm1s",
-        "title": "Instagram",
-        "description": "Create an account or log in to Instagram - Share what you're into with the people who get you.",
-        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:pgok625ocobq7t3decm3o5vu/bafkreigpujvwgbss25j722lsyjrcvfc37vrgcoah3bxclirwi5c2mkd2tq"
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:pgok625ocobq7t3decm3o5vu/bafkreibzev32m2ogs6r3qxy7nsub4iv4ussiesz5rxnsmxvnzy2oaanlvq",
-      "enriched": true
-    },
-    {
-      "id": "bs-did%3Aplc%3A7xcmvkawxqwarqmgcshdxh3c%2Fapp.bsky.feed.post%2F3mvx6hrrdr226",
-      "source": "bluesky",
-      "published_at": "2026-09-20T12:16:46Z",
-      "title": "So we've replaced the Cruz curse with the Hegseth Hex?",
-      "url": "https://bsky.app/profile/masonginsberg.bsky.social/post/3mvx6hrrdr226",
-      "author": "Mason Ginsberg",
-      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:7xcmvkawxqwarqmgcshdxh3c/bafkreigzvfjtktbfg44ael3esdrxoqhne3qyuinlhdfgtlkfcd7hi4k3di",
-      "body_excerpt": "So we've replaced the Cruz curse with the Hegseth Hex?",
-      "players": [],
-      "teams": [],
-      "media": {
-        "type": "link",
-        "uri": "https://static.klipy.com/ii/39f2394ae36df6e199be9eb7c9fa1012/97/d9/NUJwPwJx.gif?hh=498&ww=498&mp4=mt3gHTHTq4AIa&webm=FyCdO9Uq7fZy",
-        "title": "Aidy Bryant Says 'Sounds Right' on SNL",
-        "description": "ALT: Aidy Bryant Says 'Sounds Right' on SNL",
-        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:7xcmvkawxqwarqmgcshdxh3c/bafkreigzvfjtktbfg44ael3esdrxoqhne3qyuinlhdfgtlkfcd7hi4k3di"
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:7xcmvkawxqwarqmgcshdxh3c/bafkreihvnkt67bwnyzjwgxpa74y7sfd3o6u3uhhvjjgfpfm4ajeirjtgma",
-      "enriched": true
-    },
-    {
-      "id": "gn-56f870f10f1f74dc",
-      "source": "google-news",
-      "published_at": "2026-09-20T12:10:41Z",
-      "title": "Thompson Twins Extensions: Explaining $53M Difference",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxORGxOdWVTbVYyY0ljaXVWY3J6NHVMQkI0TnlwY2I0dTdNZTZvcnd5cE0xbDFhVC1ldUZacTluUUFmWTA2NFF6TFhIV2YyZnFWSmZqanFzZTFYQ0JhVUtTREZBZ21pUVVLbGpnQm1kS0NmRGVGMFRfTVVLV3pXYUtMc25hV0FlREZESjdLellhOXIxLUE?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Thompson Twins Extensions: Explaining $53M Difference Yahoo Sports",
-      "players": [],
-      "teams": []
-    },
-    {
-      "id": "rd-t3_1wlfdif",
-      "source": "reddit",
-      "published_at": "2026-09-20T12:07:30Z",
-      "title": "J Balvin prank-called Jimmy Butler asking for $2 million because he bought a chain without his girlfriend knowing and Jimmy was actually about to send it",
-      "url": "https://www.reddit.com/r/nba/comments/1wlfdif/j_balvin_prankcalled_jimmy_butler_asking_for_2/",
-      "author": "Hot-Freedom-6345",
-      "thumbnail": "https://external-preview.redd.it/fQDM_iD0J0A8f4cllygn8808y3N_JLZIb7d8dgm__H8.jpeg?width=640&crop=smart&auto=webp&s=4be13106265a2334555b599481c9223151ab5b7c",
-      "body_excerpt": null,
-      "players": [],
-      "teams": []
-    },
-    {
-      "id": "gn-d56ffb1e57cc434a",
-      "source": "google-news",
-      "published_at": "2026-09-20T12:00:02Z",
-      "title": "What Franz Wagner Must Do To Be A Top-5 Small Forward",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNM2otNGk3OG9OS3NObHZGR2NxTmpzdjRTOHROUVN4YjkxSGoxMHhMVXMwZ3dTcndNSVBwTko2Z0VZT0tTMXFvZnpJaGZLMVFGZVF6RHNadkpiRjBtNDlRZTM4SG5kempXNG9NSGRsQnUyRnhPc2ZFbWM1a2JnalNIT2JHSURZY3k3bHhHbmZfcG5qWU83SmFXdlV2NEFjRlRDSmc?oc=5",
-      "author": "Sports Illustrated",
-      "thumbnail": null,
-      "body_excerpt": "What Franz Wagner Must Do To Be A Top-5 Small Forward Sports Illustrated",
-      "players": [
-        "franz-wagner"
-      ],
-      "teams": []
-    },
-    {
-      "id": "gn-f50f1437d9d32433",
-      "source": "google-news",
-      "published_at": "2026-09-20T12:00:01Z",
-      "title": "Dissecting the Cavs “All What-If” Team",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQVGI1Z01Ick45VzZpMGxJZzlWeUVHMV9vbEI0aV9ENVF4cE5fNC1nVG5sbm5raW5nV2MzcEQxVUliTWNXSE1pWDRBN2U2ck50M1VvcWVBX2dvNlVsVm4wbTRGOU42bzB4cVdNbk1VNU1oUlQwckx5UVk3SmJFR2tTYS1NMDJzblpBbUFTMm0zMEFENWpFcDl1VVNyVnhXUQ?oc=5",
-      "author": "Sports Illustrated",
-      "thumbnail": null,
-      "body_excerpt": "Dissecting the Cavs “All What-If” Team Sports Illustrated",
-      "players": [],
-      "teams": [
-        "cleveland-cavaliers"
-      ]
-    },
-    {
-      "id": "gn-01691a05584b3af7",
-      "source": "google-news",
-      "published_at": "2026-09-20T12:00:00Z",
-      "title": "Which Houston Rockets Player Is Likely to Be Traded Next?",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNbkRYWllBX1lkV0VadFp2SXlEMW5QSkMxQXp2NVJ6Q2RZNGRVamx6cDFsRDhjLXpwRmtER2NDQlZRWXY0VmRvUkJzekVkZnNuQjd4VzB1X2pXRThsYlZWWTlSLVZiYjlNXzVya0VudWV5SGUwc0dnUHMzVFJwMHljblEzNlJPVW5ER2IwYWN3S1MtT1pBSWZOV1dyczRheklDUlpmRXcxN1c?oc=5",
-      "author": "Sports Illustrated",
-      "thumbnail": null,
-      "body_excerpt": "Which Houston Rockets Player Is Likely to Be Traded Next? Sports Illustrated",
-      "players": [],
-      "teams": [
-        "houston-rockets"
-      ]
-    },
-    {
-      "id": "gn-d6f379afd27f2fe5",
-      "source": "google-news",
-      "published_at": "2026-09-20T12:00:00Z",
-      "title": "Lakers’ JJ Redick Urged Not to Repeat Rui Hachimura Mistake With Sandro Mamukelashvili",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNNjlTd1h0REtCWF9IQ2JHWUctVWJQeE5QWkk0MU9TdzlEai1rODI3MkpNeWRZZ3VOVVRQN2VDNG1Vb3E4OEJJMkxjeTkyc0lScmRKWENhQjNGVmJNbkQ4dXhOU21kMnZFYjhHOVdnZzF3UUNjcGJueHRKZENobnVJYw?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Lakers’ JJ Redick Urged Not to Repeat Rui Hachimura Mistake With Sandro Mamukelashvili Yahoo Sports",
-      "players": [
-        "rui-hachimura",
-        "sandro-mamukelashvili"
-      ],
-      "teams": [
-        "los-angeles-lakers"
-      ]
-    },
-    {
-      "id": "gn-323b978ffecb5f9b",
-      "source": "google-news",
-      "published_at": "2026-09-20T11:58:10Z",
-      "title": "Spurs Trade Of De'Aaron Fox To Clippers Floated By Bill Simmons - But What's The Problem?",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPdUhEMmlmTDI2eE5YRnp3TFZ3M1c1MjhaNUVkVXVSaUhkZjk3dkdiOXpoODBoT3RjTDJDZkRxS3pjT2dTNWhiMWI4ZEZMY2RpU09UUFFXM0FkcEk4NW0zd3dKRjJTLTBHQWcyci1NVU50RllvRjZrcm5UT0kyWXhmazVXMmUzN3FW?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Spurs Trade Of De'Aaron Fox To Clippers Floated By Bill Simmons - But What's The Problem? Yahoo Sports",
-      "players": [
-        "deaaron-fox"
-      ],
-      "teams": [
-        "los-angeles-clippers",
-        "san-antonio-spurs"
-      ]
-    },
-    {
-      "id": "gn-d2e6f532137b11f2",
-      "source": "google-news",
-      "published_at": "2026-09-20T11:53:29Z",
-      "title": "Lakers Trade Pitch Lands 41% 3-Point Shooter, Sends Jarred Vanderbilt to Rockets",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPN2xTUHphT3BxZWVXSm9GSDVmbDM2SG1BbHpxQU92RVJENGRkeXdYWXQ3QVcyQ19EMjgyRlVFcDBDYlhRQkR0MjVvOUhWWWFtMEticVZqMEU3UkNTenM0andCTE1wV2lSa2xweDBzdVlQOG5PQklNWGdEQ1JnMmhTTjd3?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Lakers Trade Pitch Lands 41% 3-Point Shooter, Sends Jarred Vanderbilt to Rockets Yahoo Sports",
-      "players": [
-        "jarred-vanderbilt"
-      ],
-      "teams": [
-        "houston-rockets",
-        "los-angeles-lakers"
-      ]
-    },
-    {
-      "id": "rd-t3_1wlf1c9",
-      "source": "reddit",
-      "published_at": "2026-09-20T11:51:33Z",
-      "title": "[Highlight] 6 years ago AD hits a game winning three on Jokic to give the Lakers a 2-0 lead in the WCF.",
-      "url": "https://www.reddit.com/r/nba/comments/1wlf1c9/highlight_6_years_ago_ad_hits_a_game_winning/",
-      "author": "gridironk",
-      "thumbnail": "https://external-preview.redd.it/YXg8vVZYC7rc_yNJ_Ro39ifywfXhlufCZJWfUtl2DwM.jpeg?width=640&crop=smart&auto=webp&s=053a4d635e843ca4ab29773a304179c98cc419bc",
-      "body_excerpt": null,
-      "players": [
-        "anthony-davis"
-      ],
-      "teams": [
-        "los-angeles-lakers"
-      ]
-    },
-    {
-      "id": "bs-did%3Aplc%3Agqgnr2obuwossobfnxw5xnxg%2Fapp.bsky.feed.post%2F3mvx4ypa7es2f",
-      "source": "bluesky",
-      "published_at": "2026-09-20T11:50:27Z",
-      "title": "Hollander POTD Sidney Moncrief. Arkansas SG was drafted 5th by MIL in 79. Came off bench as rook but, per this bio, \"potential [is] unlimited.\" Was 5x All-Star, 4th in 82-83 MVP voting, & DPOY before knee issues curbed him by 86. Retired in 91. Didn't make HOF til 2019.",
-      "url": "https://bsky.app/profile/hoopsanalyst.bsky.social/post/3mvx4ypa7es2f",
-      "author": "HoopsAnalyst",
-      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:gqgnr2obuwossobfnxw5xnxg/bafkreievujsl2op6lznxqlajbhv2d4jqxnswz6yjyzr52u7tacmvc6eqde",
-      "body_excerpt": "Hollander POTD Sidney Moncrief. Arkansas SG was drafted 5th by MIL in 79. Came off bench as rook but, per this bio, \"potential [is] unlimited.\" Was 5x All-Star, 4th in 82-83 MVP voting, & DPOY before knee issues curbed him by 86. Retired in 91. Didn't make HOF til 2019.",
-      "players": [],
-      "teams": [
-        "milwaukee-bucks"
-      ],
-      "media": {
-        "type": "image",
-        "images": [
-          {
-            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:gqgnr2obuwossobfnxw5xnxg/bafkreievujsl2op6lznxqlajbhv2d4jqxnswz6yjyzr52u7tacmvc6eqde",
-            "alt": ""
-          }
-        ]
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:gqgnr2obuwossobfnxw5xnxg/bafkreig4bh4i4zvhl35mv4rk7rz65fusy6wyc6acr3z7kye4n4sv4n5ypq",
-      "enriched": true
-    },
-    {
-      "id": "bs-did%3Aplc%3Afhyu4zjougtr3emjwdulollt%2Fapp.bsky.feed.post%2F3mvx3wuaxm22g",
-      "source": "bluesky",
-      "published_at": "2026-09-20T11:31:31Z",
-      "title": "Delivery's in from Ye Olde Mailbag",
-      "url": "https://bsky.app/profile/smithraptorsbeat.bsky.social/post/3mvx3wuaxm22g",
-      "author": "Doug Smith",
-      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:fhyu4zjougtr3emjwdulollt/bafkreifyorffoif4oqltq7zoqe3vipmqgdgi5kxxj6cttk7ddlxvwfrzo4",
-      "body_excerpt": "Delivery's in from Ye Olde Mailbag\n\nwww.thestar.com/sports/doug-...",
-      "players": [],
-      "teams": [],
-      "media": {
-        "type": "link",
-        "uri": "https://www.thestar.com/sports/doug-smiths-sports-blog/raptors-mailbag-the-addition-of-kawhi-leonard-and-the-departure-of-uncle-dennis/article_5b87dc77-9592-41e8-b5ed-f005c05e566c.html",
-        "title": "Raptors mailbag: The addition of Kawhi Leonard and the departure of Uncle Dennis",
-        "description": "In this week’s mailbag, Doug Smith takes questions on what the Raptors look like with Kawhi Leonard, Trump’s tariffs, FIBA, the WNBA and more.",
-        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:fhyu4zjougtr3emjwdulollt/bafkreifyorffoif4oqltq7zoqe3vipmqgdgi5kxxj6cttk7ddlxvwfrzo4"
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:fhyu4zjougtr3emjwdulollt/bafkreiajribnpdrs22kkygn2qxwwowyitv7otscl6mebx6kty7uijwrk3i",
-      "facets": [
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://www.thestar.com/sports/doug-smiths-sports-blog/raptors-mailbag-the-addition-of-kawhi-leonard-and-the-departure-of-uncle-dennis/article_5b87dc77-9592-41e8-b5ed-f005c05e566c.html"
-            }
-          ],
-          "index": {
-            "byteEnd": 67,
-            "byteStart": 36
-          }
-        }
-      ],
-      "enriched": true
-    },
-    {
-      "id": "rd-t3_1wlem7m",
-      "source": "reddit",
-      "published_at": "2026-09-20T11:29:12Z",
-      "title": "The War of the Greens (2018)",
-      "url": "https://www.reddit.com/r/nba/comments/1wlem7m/the_war_of_the_greens_2018/",
-      "author": "Physical100",
-      "thumbnail": null,
-      "body_excerpt": "In the spring of 2018, four men bearing the name Green entered the great tournament of the National Basketball Association. Each served a different lord, wore different colors, and harbored different ambitions. Yet all were bound by a name, and by the terrible misfortune of…",
-      "players": [],
-      "teams": []
-    },
-    {
-      "id": "rd-t3_1wlegj9",
-      "source": "reddit",
-      "published_at": "2026-09-20T11:20:38Z",
-      "title": "Former Wizard and Knicks player Kevin Seraphin speaks about what makes a good leader, shares a Knicks days story.",
-      "url": "https://www.reddit.com/r/nba/comments/1wlegj9/former_wizard_and_knicks_player_kevin_seraphin/",
-      "author": "Romain974",
-      "thumbnail": "https://external-preview.redd.it/gIZnRuBHfyWUE-bKXAdCYqRqcmSqyHL2Gn6imObtR_g.jpeg?width=320&crop=smart&auto=webp&s=32eb5a4e240c8cc77592cffdc6ea2b994479e505",
-      "body_excerpt": null,
-      "players": [],
-      "teams": [
-        "new-york-knicks"
-      ]
-    },
-    {
-      "id": "gn-545a7cf8c9dbc6d1",
-      "source": "google-news",
-      "published_at": "2026-09-20T11:02:34Z",
-      "title": "“Anything but…” NBA fans can’t believe Jaylen Brown’s viral Italian fencing clip",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPeTd4Y3hfN1pORG9MenV0VENITm4xTHVRQVQyVnZ3ZkdFTmhBWlU2UGNaR2daa0ZIanpaZzJhb1FJVERyUG8xbFZjOFFKU0d2R1IyLVlxMGxobThUeWthM0NHR1pnQVg2aXpUOHpIRnNQMzFtbVNVQTJmRW8zT2I4bm1n?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "“Anything but…” NBA fans can’t believe Jaylen Brown’s viral Italian fencing clip Yahoo Sports",
-      "players": [
-        "jaylen-brown"
-      ],
-      "teams": []
-    },
-    {
-      "id": "gn-567ff50b6d77b57d",
-      "source": "google-news",
-      "published_at": "2026-09-20T11:00:07Z",
-      "title": "The Raptors Still Have One Matchup Problem They Haven't Solved",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOZ2tRY1pQSHhYV1g3cmpud0NXVTlTcjBlTnhzOTNHSmJfVUpRV0Q5U3NDU0FRX3p4ZEJhdmFzYjEtSFNkSmk0S3p3Sm43UzB5V01TamV5UWwwSXJvQ0VTTG1MQUJTQnJCc2N3TkoydXl3MVJWRzlDSUxsRXVJa2puVjdaOXMyWDVwRkE?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "The Raptors Still Have One Matchup Problem They Haven't Solved Yahoo Sports",
-      "players": [],
-      "teams": [
-        "toronto-raptors"
-      ]
-    },
-    {
-      "id": "gn-299a04dd0d449fda",
-      "source": "google-news",
-      "published_at": "2026-09-20T11:00:04Z",
-      "title": "3 Game Plan Adjustments That Could Help Knicks This Season",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPQU43RFl3aFpWVkFLQm5DUmZza3NjWFdnTHBNSjloaWdXdjdTRmFMYTJKQVBLM0xzUFVWMmV5NUQ0TjhUNEhmYnlkbXVWUE5SSjU3Y0Q1MlVNZm9abW5KdTBlTUgwYTlmRkdxOEw1akJPb1dBMDNZVV9TM2hPbFJHOGd5dnI3OVM0WFZvbEo3WjFrSmdSMnFlelEyUWV2bDdMbEZn?oc=5",
-      "author": "Sports Illustrated",
-      "thumbnail": null,
-      "body_excerpt": "3 Game Plan Adjustments That Could Help Knicks This Season Sports Illustrated",
-      "players": [],
-      "teams": [
-        "new-york-knicks"
-      ]
-    },
-    {
-      "id": "gn-b7d4bce3573ba018",
-      "source": "google-news",
-      "published_at": "2026-09-20T10:40:11Z",
-      "title": "Viral Clip Captures Ja Morant’s Shocked Response to Unexpected Portland Trade",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPQjhLaXYyMnpuejB2SXI3Ti15LWhKRTdLZUdUVUNYRHJGazRpY0w1YUR6U25YdTVTeVJ0cmZ4RmhadVVDRzFsNDVDN0F2UGltRUU0elcxT19mcjZXdHFhdDN6bFNSbmtQQ1UyLVFRNndmZDZmWXktcXE3REIxR05iNFI0RVE?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Viral Clip Captures Ja Morant’s Shocked Response to Unexpected Portland Trade Yahoo Sports",
-      "players": [
-        "ja-morant"
-      ],
-      "teams": []
-    },
-    {
-      "id": "gn-55588754e21e00a3",
-      "source": "google-news",
-      "published_at": "2026-09-20T10:35:37Z",
-      "title": "LeBron James’ Lakers Legacy Gets A Fresh Test With Jersey Retirement Still Unsettled",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPQWtjMzVkc1EzeERNZ0lWczlfOVAzVnNONEIwV2tYYXBtTDVyQ1RPWnl2NkxkYTZzUzIyc0VMbFhLQjdWQVlOU19yc0FrWnRFNWUtN0NaV0pQLXJ5TUJ2elBJZ1dMZ2pPcm5EUWd5eklRWEN6cm9kVkhkZTByTHQwcDVEaERDc2M?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "LeBron James’ Lakers Legacy Gets A Fresh Test With Jersey Retirement Still Unsettled Yahoo Sports",
-      "players": [
-        "lebron-james"
-      ],
-      "teams": [
-        "los-angeles-lakers"
-      ]
-    },
-    {
-      "id": "gn-c2b3010e7de7c6fe",
-      "source": "google-news",
-      "published_at": "2026-09-20T10:34:35Z",
-      "title": "Jonathan Kuminga’s Agent And Timberwolves GM Had 94 Calls Before Reaching A Deal",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPU3BQcXpvUFJKVGpfSkVhSEVoX2t0QWhnYXZwWWRSaHMxc1RHbUdJWFQ1NUJUdkl4WmY3b2tMakRUdnduUk1tVmJIUFhzUVFfX2dOeFphUThBMkktSUY2OVlwd3VZcHdiWUF1dEpLZjlLYURWZElyUjl0anFHN2J2UGppOGdLZzhkTkZFWjF3VzE?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Jonathan Kuminga’s Agent And Timberwolves GM Had 94 Calls Before Reaching A Deal Yahoo Sports",
-      "players": [
-        "jonathan-kuminga"
-      ],
-      "teams": [
-        "minnesota-timberwolves"
-      ]
-    },
-    {
-      "id": "gn-081bff081894bd28",
-      "source": "google-news",
-      "published_at": "2026-09-20T10:01:22Z",
-      "title": "Today in Boston Celtics history: Legendary coach, president Red Auerbach born",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOUjBDaUFBS3BFdjdxcTh3WW5XWWk0OWdobzB2MkdLcFJpRGJTaDlZWmNQR0Q3UzMzc1FGVWJtVXU0Z2Z1ZEVSMTBjZVlrWTh5czFrd1FqU0JnUnU0aFZzc3Z5UWQ1ZTJUTlgyZFMtOTlQRXo0S1UzcS1zc0RuUTh2RkJwQWVVQmlodnowUzBjd2k?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Today in Boston Celtics history: Legendary coach, president Red Auerbach born Yahoo Sports",
-      "players": [],
-      "teams": [
-        "boston-celtics"
-      ]
-    },
-    {
-      "id": "gn-fb87d07b90a3cd61",
-      "source": "google-news",
-      "published_at": "2026-09-20T10:00:37Z",
-      "title": "Ranking Every Lakers Position Group Ahead of 2026-27 Season",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOWmYzQTlFdzY2UEZUTXVrQjdQM2htRWhCN3JMUHhhd085RHl6bDl1UXBQT1hPOHFiNkdQRkR1VHZDangyTkRkR0Y1WnZyanlxNTE2Q2VLWE1yRzY3YTR6a3pZMk95ZE0tM3ZUekpXNUtCVzJWNTgyQm9wZ3J4bnh4QkNyazhtR2hFUEtOTg?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Ranking Every Lakers Position Group Ahead of 2026-27 Season Yahoo Sports",
-      "players": [],
-      "teams": [
-        "los-angeles-lakers"
-      ]
-    },
-    {
-      "id": "gn-36903ef033772d0c",
-      "source": "google-news",
-      "published_at": "2026-09-20T09:48:00Z",
-      "title": "YouTube Gold: Bill Walton At His Zenith",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQYm5KSWVKakM0R1lNYmNVNUg1NmJHMUFfbDYwMldQRjJKRHRDMnUzZWU0Rl9Tdm11RjIxVmYyRXIzVjc3enAwc0RQYTZBT3VISU4yY19tTmthM0lBbzNMR0pRRDhBYXN6VURLOTVBckp1R3NVckxuREFLeWlvRlg2MnphQVJrSUk?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "YouTube Gold: Bill Walton At His Zenith Yahoo Sports",
-      "players": [],
-      "teams": []
-    },
-    {
-      "id": "rd-t3_1wlax50",
-      "source": "reddit",
-      "published_at": "2026-09-20T07:58:25Z",
-      "title": "The forgotten big: Marcus Camby",
-      "url": "https://www.reddit.com/r/nba/comments/1wlax50/the_forgotten_big_marcus_camby/",
-      "author": "AffectionatePoet5033",
-      "thumbnail": "https://external-preview.redd.it/rU8QcuVNKDJNvQgZidS_mtoFMgIRJzz8bFbb8zQs1Uo.jpeg?width=320&crop=smart&auto=webp&s=7e9753b99b19d15e5926fdb718710be6f7ef2a0f",
-      "body_excerpt": null,
-      "players": [],
-      "teams": []
-    },
-    {
-      "id": "gn-b023dfe9944860f9",
-      "source": "google-news",
-      "published_at": "2026-09-20T07:29:15Z",
-      "title": "Giannis Antetokounmpo Makes Surprise Miami Appearance Ahead of 1st Season With Heat",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNODJIWnhvQ1dQblNyb2YyOXlRbHJzMVV4WG5uelhMdXF3dDJSUjZWaTNaTEVWMmk0ejVzejRfbkhvWGZYMHgzUC1la29KRTIxTFJ0RjJYbVozdDVTQzVpRVN5Z2hCRXlRMGU1OXpwODV5N2hleUdkSlhaaXp4RW9XOWZRbEJJYkluX2JaNmVhTlpfOXljTVE?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Giannis Antetokounmpo Makes Surprise Miami Appearance Ahead of 1st Season With Heat Yahoo Sports",
-      "players": [
-        "giannis-antetokounmpo"
-      ],
-      "teams": [
-        "miami-heat"
-      ]
-    },
-    {
-      "id": "gn-0345c26606dc8421",
-      "source": "google-news",
-      "published_at": "2026-09-20T06:11:00Z",
-      "title": "‘Worst Statue in NBA History,’ ‘Did (Kyle) Lowry Dirty’ – NBA World Trolls Toronto After 6-Time All-Star Gets Upstaged by Literal Raptor",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPZXBFZTJUN0FKdWx1bVczbXdqOC13NGM1aTVLa3hwLVZpWTMtZm5tZTh1YlpNM0huNTh6SjNnLUVVek1zR0IxbnpJZEh2VHVXbHM3NFBQYmlyNUtXdWFzT2FxdDVFOXNyNFc3eFN5NVJyczdyMUozZ2VMODluT1R2N2hncw?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "‘Worst Statue in NBA History,’ ‘Did (Kyle) Lowry Dirty’ – NBA World Trolls Toronto After 6-Time All-Star Gets Upstaged by Literal Raptor Yahoo Sports",
-      "players": [
-        "kyle-lowry"
-      ],
-      "teams": []
-    },
-    {
-      "id": "rd-t3_1wl8wrm",
-      "source": "reddit",
-      "published_at": "2026-09-20T06:06:29Z",
-      "title": "Cole Anthony debut for Melbourne United in the NBL. 30 points in 21 minutes.",
-      "url": "https://www.reddit.com/r/nba/comments/1wl8wrm/cole_anthony_debut_for_melbourne_united_in_the/",
-      "author": "eathbau",
-      "thumbnail": "https://external-preview.redd.it/BSWRWWuw_Rj3Jr7GVsn06t1eT-keaBPFLLEWSWx3ReY.jpeg?width=320&crop=smart&auto=webp&s=6fd7722ce5bf8af0d3b811e7f54a76a621ea3b22",
-      "body_excerpt": null,
-      "players": [],
-      "teams": []
-    },
-    {
-      "id": "gn-7eac0281706d78d3",
-      "source": "google-news",
-      "published_at": "2026-09-20T05:32:00Z",
-      "title": "Mavericks rumors: Dwight Powell to join Dallas for training camp despite full roster",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPcG5sdjAzUEgta2J2aTNpS2xocjhUd29jdTQ2Tm5MSHZscEdaU2M4S3pwV0NYSHVrRmp2WGR4a0Y0WXIydkZ6c2tsUjBJNGxUOXNKSG5LcE1reThJWGVJaXFOQ3doaFlkSEg3VUExd3pUOGFrX1loRkhTbk1HR1pEamJ3NGZKRFBMY25pSQ?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Mavericks rumors: Dwight Powell to join Dallas for training camp despite full roster Yahoo Sports",
-      "players": [
-        "dwight-powell"
-      ],
-      "teams": [
-        "dallas-mavericks"
-      ]
-    },
-    {
-      "id": "rd-t3_1wl7t9p",
-      "source": "reddit",
-      "published_at": "2026-09-20T05:07:35Z",
-      "title": "Tony Parker has made his official coaching debut with ASVEL, losing to a team coached by his brother. Tony is also ASVEL's president and majority owner, with the team experiencing financial issues during the offseason, leading ASVEL to assemble a much weaker team than initially anticipated",
-      "url": "https://www.reddit.com/r/nba/comments/1wl7t9p/tony_parker_has_made_his_official_coaching_debut/",
-      "author": "PianoJealous307",
-      "thumbnail": null,
-      "body_excerpt": "LDLC ASVEL Villeurbanne continue their unsuccessful preseason by losing the semifinal of the French SuperCup against the champions of France's second division Chorale Roanne Basket 71-73. In a battle of brothers, Roanne's head coach TJ Parker triumphed against his older brother…",
-      "players": [],
-      "teams": []
-    },
-    {
-      "id": "rd-t3_1wl7alx",
-      "source": "reddit",
-      "published_at": "2026-09-20T04:40:25Z",
-      "title": "What is the worst lineup and bench that can still be a serious championship contender?",
-      "url": "https://www.reddit.com/r/nba/comments/1wl7alx/what_is_the_worst_lineup_and_bench_that_can_still/",
-      "author": "yeeetmxster420",
-      "thumbnail": null,
-      "body_excerpt": "Pretty much the absolute worst lineup & bench that is still a serious threat in the playoffs to win a chip? Off the top of my head after thinking for 10 minutes (I'm probably wrong & maybe there is worse but my brains fried rn) I'm going with this for the starting lineup PG-…",
-      "players": [],
-      "teams": []
-    },
-    {
-      "id": "gn-77707b0edb822e11",
-      "source": "google-news",
-      "published_at": "2026-09-20T04:37:00Z",
-      "title": "Which Young Player is Most Exciting For Boston Celtics?",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPQ1ZIYmpXMmNxbGNWMnp1N0NBaFRyeERlVXNjS2ZfSDZUUFV6Q3plY05peW0xRW5UMzBnY2ZSUHdLM2d6Z1ZQVkcxWkU3OFR4V3hocnltYTdqQXljV2QySUplUk9kMmZoUlZ4a1FIRVZEcFkxRDFkSWJ6MmZwb2pxQko3aGVIT3dFcXc?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Which Young Player is Most Exciting For Boston Celtics? Yahoo Sports",
-      "players": [],
-      "teams": [
-        "boston-celtics"
-      ]
-    },
-    {
-      "id": "ss-thirdapron-extensions-for-keyonte-george-ausar",
-      "source": "substack",
-      "published_at": "2026-09-20T04:34:29Z",
-      "title": "Extensions for Keyonte George, Ausar Thompson, Saddiq Bey, and Pelle Larsson | Third Apron Podcast",
-      "url": "https://www.thirdapron.com/p/extensions-for-keyonte-george-ausar",
-      "author": "Third Apron",
-      "thumbnail": null,
-      "body_excerpt": "We discuss the four extensions released over the last couple of days. You can follow Yossi on: Twitter: https://twitter.com/YossiGozlan BlueSky: https://bsky.app/profile/yossigozlan.bsky.social Salary cap sheets: www.capsheets.com You can follow Sam on: Twitter:…",
-      "players": [
-        "ausar-thompson",
-        "keyonte-george",
-        "pelle-larsson",
-        "saddiq-bey"
-      ],
-      "teams": []
-    },
-    {
-      "id": "gn-2e347cfa16ca9a93",
-      "source": "google-news",
-      "published_at": "2026-09-20T04:24:00Z",
-      "title": "Keyonte George Breaks Silence After $157.5M Jazz Extension",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNbjdxRU5mb2lVUFRZZ3lzckpsZGFoUS14eEFqODQ0WEU0SWswQWU0TGc1YXFRY0JUX24yZTVvY2dJNWp5ZklWQXBseDZKZkNMNVAtVUFFaVVPbkVZbEZOdVhJQXBZbklhSWFpeHZtTXQ3RUJhVlU3ckZ6amZwWWs1aDQ1WEZOSVNjOUE?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Keyonte George Breaks Silence After $157.5M Jazz Extension Yahoo Sports",
-      "players": [
-        "keyonte-george"
-      ],
-      "teams": [
-        "utah-jazz"
-      ]
-    },
-    {
-      "id": "yt-0o6Kr0PTEEQ",
-      "source": "youtube",
-      "published_at": "2026-09-20T04:22:58Z",
-      "title": "Extensions for Keyonte George, Ausar Thompson, Saddiq Bey, and Pelle Larsson | Third Apron Podcast",
-      "url": "https://www.youtube.com/watch?v=0o6Kr0PTEEQ",
-      "author": "Yossi Gozlan",
-      "thumbnail": "https://i.ytimg.com/vi/0o6Kr0PTEEQ/maxresdefault_live.jpg",
-      "body_excerpt": "We discuss the four extensions released over the last couple of days. You can follow Yossi on: Twitter: https://twitter.com/YossiGozlan BlueSky: https://bsky.app/profile/yossigozlan.bsky.social Salary cap sheets: www.capsheets.com You can follow Sam on: Twitter:…",
-      "players": [
-        "ausar-thompson",
-        "keyonte-george",
-        "pelle-larsson",
-        "saddiq-bey"
-      ],
-      "teams": [],
-      "media": {
-        "type": "video"
-      }
-    },
-    {
-      "id": "bs-did%3Aplc%3A7uahugigvixjvxd5s2hidpad%2Fapp.bsky.feed.post%2F3mvwdxwwtyc2w",
-      "source": "bluesky",
-      "published_at": "2026-09-20T04:22:38Z",
-      "title": "This win gives Golden State 31 wins, so the Fever officially cannot catch them in the standings (as was already exceedingly likely).",
-      "url": "https://bsky.app/profile/tonyreast.bsky.social/post/3mvwdxwwtyc2w",
-      "author": "Tony East",
-      "thumbnail": null,
-      "body_excerpt": "This win gives Golden State 31 wins, so the Fever officially cannot catch them in the standings (as was already exceedingly likely).\n\nFever's playoff seeding range is now 3-8. Below, though, a weird quirk about their tiebreakers...",
-      "players": [],
-      "teams": [
-        "golden-state-warriors"
-      ],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreibcezoefeniffictxya32ce54pxckgbi6tyrpl5atugj63b6c25ei",
-      "quote": {
-        "author": "Marisa Ingemi",
-        "handle": "mingemi.bsky.social",
-        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:dglzm4uipfqmphcdo27wpioa/bafkreieo6mlw7y3o4nnmn4ksgzzjzpdjnk2henpfch6wsawknpcr4vunai",
-        "text": "Valkyries (31-11) close out Seattle 70-57 in regular season home finale.\n\nThird career double-double for Charles. Jocyte with a career-high 11 points. Valks finish 17-5 at Ballhalla in the regular season.",
-        "url": "https://bsky.app/profile/mingemi.bsky.social/post/3mvw74jbaec2e"
-      },
-      "enriched": true
-    },
-    {
-      "id": "rd-t3_1wl6vhk",
-      "source": "reddit",
-      "published_at": "2026-09-20T04:18:27Z",
-      "title": "Davion Mitchell on what Pat Riley and Erik Spoelstra said to him after last season's exit meeting “There was no basketball talk, it was ‘Get your weight down. Be in shape. That’s all we want'.\" He described the request as a perfect example of the demanding culture established by the Miami Heat",
-      "url": "https://www.reddit.com/r/nba/comments/1wl6vhk/davion_mitchell_on_what_pat_riley_and_erik/",
-      "author": "PianoJealous307",
-      "thumbnail": null,
-      "body_excerpt": "Pat Riley and Erik Spoelstra gave Davion Mitchell a clear offseason assignment: lose weight and improve his conditioning. The point guard revealed the message from his exit meeting during an appearance on the Deuce & Mo Podcast. “There was no basketball talk,” Mitchell said. “It…",
-      "players": [
-        "davion-mitchell"
-      ],
-      "teams": [
-        "miami-heat"
-      ]
-    },
-    {
-      "id": "gn-7b38cc9c20746f17",
-      "source": "google-news",
-      "published_at": "2026-09-20T03:58:52Z",
-      "title": "2H DUKE T. Jones made Three Point Jumper.",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1kbURTdzdVckhDMnVuOUF5cHotdDV0cnZ4dTZ3cnZEVW9nZXJHSExKaDRjVFEyQ0dCSkxOU1BQalo2LW5xR2Z6di1EdWhzNkxIeXItX0RtWEdDV0k?oc=5",
-      "author": "ESPN",
-      "thumbnail": null,
-      "body_excerpt": "2H DUKE T. Jones made Three Point Jumper. ESPN",
-      "players": [],
-      "teams": []
-    },
-    {
-      "id": "bs-did%3Aplc%3Afqsmj7o5mbb7n7oav2kkjuid%2Fapp.bsky.feed.post%2F3mvwbv7vcwc25",
-      "source": "bluesky",
-      "published_at": "2026-09-20T03:45:19Z",
-      "title": "The original gang is back together for Lowry’s party. All got a ring, except…",
-      "url": "https://bsky.app/profile/nbastat.bsky.social/post/3mvwbv7vcwc25",
-      "author": "NBA Stat",
-      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:fqsmj7o5mbb7n7oav2kkjuid/bafkreihhvcmldi2ipmn2invcc5scud4b7rd52ab353jitcbanz4pifrvnu",
-      "body_excerpt": "The original gang is back together for Lowry’s party. All got a ring, except…\n\n#NBA",
-      "players": [
-        "kyle-lowry"
-      ],
-      "teams": [],
-      "media": {
-        "type": "image",
-        "images": [
-          {
-            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:fqsmj7o5mbb7n7oav2kkjuid/bafkreihhvcmldi2ipmn2invcc5scud4b7rd52ab353jitcbanz4pifrvnu",
-            "alt": ""
-          }
-        ]
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:fqsmj7o5mbb7n7oav2kkjuid/bafkreic3g44bm3orae6dkm4npna6phnodi74whhp6rkohxpe32x2hht27u",
-      "facets": [
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#tag",
-              "tag": "NBA"
-            }
-          ],
-          "index": {
-            "byteEnd": 87,
-            "byteStart": 83
-          }
-        }
-      ],
-      "enriched": true
-    },
-    {
-      "id": "bs-did%3Aplc%3Alymzh2dxwzgjibwhgvwxhwla%2Fapp.bsky.feed.post%2F3mvwbut64nk27",
-      "source": "bluesky",
-      "published_at": "2026-09-20T03:45:06Z",
-      "title": "But yeah, I’ve thought Deion Sanders has been bad for four years. Welcome anyone who just figured that out.",
-      "url": "https://bsky.app/profile/shapalicious.bsky.social/post/3mvwbut64nk27",
-      "author": "Jake Shapiro",
-      "thumbnail": null,
-      "body_excerpt": "But yeah, I’ve thought Deion Sanders has been bad for four years. Welcome anyone who just figured that out.\n\nHe’s a bad symptom — not the main problem.\n\nRemember Rick was the only one desperate enough to hire him. And Deion was desperate enough to get a power job so he came.",
-      "players": [],
-      "teams": [],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:lymzh2dxwzgjibwhgvwxhwla/bafkreicw4cvc6ssn3mogzuaik5sogldkybfd5t6hsepitywq4ulhpszj34",
-      "quote": {
-        "author": "Jake Shapiro",
-        "handle": "shapalicious.bsky.social",
-        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:lymzh2dxwzgjibwhgvwxhwla/bafkreicw4cvc6ssn3mogzuaik5sogldkybfd5t6hsepitywq4ulhpszj34",
-        "text": "Ppl think I’m Prime’s biggest hater but now is not the time to jump off. 2024 could’ve been maximized with better coaching, duh.\n\nI’ve seen some real growth from Deion this year, even with tn’s disaster.\n\nThe money to fire him is a waste when it could be spent on talent & staff.",
-        "url": "https://bsky.app/profile/shapalicious.bsky.social/post/3mvwbj5otak27"
-      },
-      "enriched": true
-    },
-    {
-      "id": "gn-b25001f10f7b7383",
-      "source": "google-news",
-      "published_at": "2026-09-20T03:45:00Z",
-      "title": "Will Nets Regret Not Giving Porter Jr. An Extension?",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQLUR0RkFvT2N3RThseWZIeFdfc0JkNWNQempmX29laVFnUU16UElLMENyZ1cwa3RQQldmY2xiLVlOUGZJT0JPd201a0kzZlRsTnpFZXZETExQNXRMbXZFOVJUdl9KZGl3Q3NyX2M4elJhM3RRVWdVb2hxYVN0R19lNXRCd3Y?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Will Nets Regret Not Giving Porter Jr. An Extension? Yahoo Sports",
-      "players": [],
-      "teams": [
-        "brooklyn-nets"
-      ]
-    },
-    {
-      "id": "bs-did%3Aplc%3Alymzh2dxwzgjibwhgvwxhwla%2Fapp.bsky.feed.post%2F3mvwbj5otak27",
-      "source": "bluesky",
-      "published_at": "2026-09-20T03:38:34Z",
-      "title": "Ppl think I’m Prime’s biggest hater but now is not the time to jump off. 2024 could’ve been maximized with better coaching, duh.",
-      "url": "https://bsky.app/profile/shapalicious.bsky.social/post/3mvwbj5otak27",
-      "author": "Jake Shapiro",
-      "thumbnail": null,
-      "body_excerpt": "Ppl think I’m Prime’s biggest hater but now is not the time to jump off. 2024 could’ve been maximized with better coaching, duh.\n\nI’ve seen some real growth from Deion this year, even with tn’s disaster.\n\nThe money to fire him is a waste when it could be spent on talent & staff.",
-      "players": [],
-      "teams": [],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:lymzh2dxwzgjibwhgvwxhwla/bafkreicw4cvc6ssn3mogzuaik5sogldkybfd5t6hsepitywq4ulhpszj34",
-      "enriched": true
-    },
-    {
-      "id": "bs-did%3Aplc%3Aeltikd6go53huetqxq5hsikx%2Fapp.bsky.feed.post%2F3mvwb3tzlec24",
-      "source": "bluesky",
-      "published_at": "2026-09-20T03:31:08Z",
-      "title": "This one's for all the style guide + headline nerds ...",
-      "url": "https://bsky.app/profile/norlander.bsky.social/post/3mvwb3tzlec24",
-      "author": "Matt Norlander",
-      "thumbnail": null,
-      "body_excerpt": "This one's for all the style guide + headline nerds ...\n\n...\n\n...\n\nOXFORD KARMA",
-      "players": [],
-      "teams": [],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:eltikd6go53huetqxq5hsikx/bafkreiekwaxgvd7rhxuabv6oj3quhjvmdusqubah4tcdusnpv77yttlhqu",
-      "enriched": true
-    },
-    {
-      "id": "gn-fde21d4579c7d869",
-      "source": "google-news",
-      "published_at": "2026-09-20T03:30:00Z",
-      "title": "Mitchell’s Kings Tenure Prepared Him for Starting PG Role",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOOElmQmlNSEFoMEZtMXdFRVRBNmM2LTNrTGJoWjlGbVhJUjYyc2pXeGRJMFpobjhhQ3E0OXJ1TUZfTEVrSHpwd1hKTnFlc1F0bDNQaUkxYkxUN3R6NjhWSnJpMUNsTlFWZS1tRDRxM3pJdW55SHJ2UFhUSktlS05SUDROVUl0enhnTV9z?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Mitchell’s Kings Tenure Prepared Him for Starting PG Role Yahoo Sports",
-      "players": [
-        "paul-george"
-      ],
-      "teams": [
-        "sacramento-kings"
-      ]
-    },
-    {
-      "id": "bs-did%3Aplc%3Akhkkkhl5yezvfymz4g4tnukt%2Fapp.bsky.feed.post%2F3mvwaydwgcc2p",
-      "source": "bluesky",
-      "published_at": "2026-09-20T03:29:10Z",
-      "title": "A little late, but ... #Hokies!!!",
-      "url": "https://bsky.app/profile/johnschuhmann.bsky.social/post/3mvwaydwgcc2p",
-      "author": "John Schuhmann",
-      "thumbnail": null,
-      "body_excerpt": "A little late, but ... #Hokies!!!",
-      "players": [],
-      "teams": [],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:khkkkhl5yezvfymz4g4tnukt/bafkreigez4sk24rikgcjnq3qou3hpmtnvi3c5xi43ginkbmnd3s3s7qhgy",
-      "facets": [
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#tag",
-              "tag": "Hokies"
-            }
-          ],
-          "index": {
-            "byteEnd": 30,
-            "byteStart": 23
-          }
-        }
-      ],
-      "enriched": true
-    },
-    {
-      "id": "bs-did%3Aplc%3Ap4bdafxchicaouixvkysn5ua%2Fapp.bsky.feed.post%2F3mvwauxuotk2a",
-      "source": "bluesky",
-      "published_at": "2026-09-20T03:27:17Z",
-      "title": "LET’S DO CRIMES",
-      "url": "https://bsky.app/profile/alexmcdaniel.co/post/3mvwauxuotk2a",
-      "author": "Alex McDaniel",
-      "thumbnail": null,
-      "body_excerpt": "LET’S DO CRIMES",
-      "players": [],
-      "teams": [],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:p4bdafxchicaouixvkysn5ua/bafkreigasn6whw4ox2qqh3wn4j2vkl2or7ehzibp4thvzgp3fxp3bxkdiq",
-      "enriched": true
-    },
-    {
-      "id": "bs-did%3Aplc%3Ajq4psju6vsfswvot74qdwzff%2Fapp.bsky.feed.post%2F3mvwaukfqsc26",
-      "source": "bluesky",
-      "published_at": "2026-09-20T03:27:03Z",
-      "title": "(no text)",
-      "url": "https://bsky.app/profile/retepadam.bsky.social/post/3mvwaukfqsc26",
-      "author": "Peter Nygaard",
-      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ajq4psju6vsfswvot74qdwzff/bafkreiewqsf7mww4zdwf6nunsru5jnsnso6w3wv2agaxmq72gp24e2lewe/thumbnail.jpg",
-      "body_excerpt": "",
-      "players": [],
-      "teams": [],
-      "media": {
-        "type": "video",
-        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ajq4psju6vsfswvot74qdwzff/bafkreiewqsf7mww4zdwf6nunsru5jnsnso6w3wv2agaxmq72gp24e2lewe/thumbnail.jpg",
-        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Ajq4psju6vsfswvot74qdwzff/bafkreiewqsf7mww4zdwf6nunsru5jnsnso6w3wv2agaxmq72gp24e2lewe/playlist.m3u8"
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:jq4psju6vsfswvot74qdwzff/bafkreiedqungvh2di5ttddffidd4ovpyd5oz27gva6vbbm4zmegqf7wxqi",
-      "enriched": true
-    },
-    {
-      "id": "gn-48fac9f294bd467e",
-      "source": "google-news",
-      "published_at": "2026-09-20T03:23:00Z",
-      "title": "Furious Fans Pose Major Question After Kyle Lowry Gets “Greatest Raptor Ever” Statue",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOdmFDZWhpRHB5cDRIRE9KLUEzaDgtbXhiUVhIQVFyY2F4aWctSnZlRkxxX1owVjB0cENSSzF5UmN1WmpPWUFyaC1WM2hXSEFDdTJfV0VONG1QR29JNHBvR3FCWk9DUjFHTzlWNXZxcENpZGl2WkNBMFJIVWtLS3NPdmFpUQ?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Furious Fans Pose Major Question After Kyle Lowry Gets “Greatest Raptor Ever” Statue Yahoo Sports",
-      "players": [
-        "kyle-lowry"
-      ],
-      "teams": []
-    },
-    {
-      "id": "gn-d61dbb0079937947",
-      "source": "google-news",
-      "published_at": "2026-09-20T03:20:00Z",
-      "title": "The Golden State Warriors have waived forward Elias …",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQdTZFaFVfb3l6OWNEdXRVZ2JjYjBwQ2FVUmZSdHdJRUlGa0dqaWdWOGY2cTM4WGFBbTN1Y29wNDFRZTAyMkh1b3RmVEtiMDBOR3pEd3VoVjRIcnZzeVNRem9rZ0ZmdG9YWkxPc0VFNlZnYzRqU193QVZKX1o1S2hOc1lJV3pEZ2xkQzZ4QkJtZW1NSEFnQ2xKOXd5XzUzXzh3VGRENFBwWFNrbnpqV0JVUWJ3eHQ3Z1BlSDhpMUxJYmZMLTQ?oc=5",
-      "author": "HoopsHype",
-      "thumbnail": null,
-      "body_excerpt": "The Golden State Warriors have waived forward Elias … HoopsHype",
-      "players": [],
-      "teams": [
-        "golden-state-warriors"
-      ]
-    },
-    {
-      "id": "gn-e2d64413ab1bc704",
-      "source": "google-news",
-      "published_at": "2026-09-20T03:20:00Z",
-      "title": "The Minnesota Timberwolves have waived guard Stephen …",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPVVB5RlBUWDBLZURWaC1TRm5JZUh2LXVQVE9xNll2aXNOY0lsQVc2aURVbF9jQXZMZWN1RGdrcEdJazE0Umx6eXp0V0dNSlI5dm8ySFlKWUQxRGpMLXBGWWpOWm5XeW5ub29TclctSVRFcl9PQjZvZVdpUGpzdk9Zc0VTQkRldlpiQUN3RXQ2eWRpYlhXVVZMTjg5YkcwX0pVSE1nYWpzWlpfLTM0YVR4UUtQaFlHd1phV1Y2c2lvYTFsUmhI?oc=5",
-      "author": "HoopsHype",
-      "thumbnail": null,
-      "body_excerpt": "The Minnesota Timberwolves have waived guard Stephen … HoopsHype",
-      "players": [],
-      "teams": [
-        "minnesota-timberwolves"
-      ]
-    },
-    {
-      "id": "gn-7aea2de860b1f1fe",
-      "source": "google-news",
-      "published_at": "2026-09-20T03:15:00Z",
-      "title": "LeBron James, Will Smith Met Angola President After E1 Racing Luanda Debut",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNWUpPd1JwSnFiWlpMZ1F1dTg5dEhiSGRQSlRGdGpabTJIVW5wZ18yX21QNHNlR3FlRlB0bFJ2WWpPU0Rtb1kya3FmOFRacUdWdjRDYjRwdjNCaGJUd0s5cHIxV1FkNW4yek83UThndVkwT2xtdXBqQlhKdmwzMDZpb3hzV2c?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "LeBron James, Will Smith Met Angola President After E1 Racing Luanda Debut Yahoo Sports",
-      "players": [
-        "lebron-james"
-      ],
-      "teams": []
-    },
-    {
-      "id": "gn-7b3056b624dd618b",
-      "source": "google-news",
-      "published_at": "2026-09-20T03:13:00Z",
-      "title": "Kawhi Leonard's LA Clippers Message Draws Mixed Reactions",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQQVU4dUFNWjFJSDVsaUFhNTZDV1lGS2pRbTNiR3piOXhWcHVDc0JqQ21xLUdtMGdJQWF1S0VNeWY4SmVhYUJpbXRpdUJyUVBwa25NTjZEcTZoLTI1Z1hEd0UtdFo3dm1qQURnaE43NVNvWG5nc3NyVVRyMjRKR2J6LW1VUi1LZFRhRHZV?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Kawhi Leonard's LA Clippers Message Draws Mixed Reactions Yahoo Sports",
-      "players": [
-        "kawhi-leonard"
-      ],
-      "teams": [
-        "los-angeles-clippers"
-      ]
-    },
-    {
-      "id": "bs-did%3Aplc%3Akvf6pnfrtgek6jqlkpqhgacv%2Fapp.bsky.feed.post%2F3mvwa2n2piy2z",
-      "source": "bluesky",
-      "published_at": "2026-09-20T03:12:33Z",
-      "title": "LIVE: Extensions for Keyonte George, Ausar Thompson, Saddiq Bey, and Pelle Larsson | Third Apron Podcast with Sam Quinn",
-      "url": "https://bsky.app/profile/yossigozlan.bsky.social/post/3mvwa2n2piy2z",
-      "author": "Yossi Gozlan",
-      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:kvf6pnfrtgek6jqlkpqhgacv/bafkreicu6ulgisirt6bblr4brlphlzn7eriiu6damn3xqbbujnf7n4iwpa",
-      "body_excerpt": "LIVE: Extensions for Keyonte George, Ausar Thompson, Saddiq Bey, and Pelle Larsson | Third Apron Podcast with Sam Quinn\nyoutube.com/live/0o6Kr0P...",
-      "players": [
-        "ausar-thompson",
-        "keyonte-george",
-        "pelle-larsson",
-        "saddiq-bey"
-      ],
-      "teams": [],
-      "media": {
-        "type": "link",
-        "uri": "https://youtube.com/live/0o6Kr0PTEEQ",
-        "title": "Extensions for Keyonte George, Ausar Thompson, Saddiq Bey, and Pelle Larsson | Third Apron Podcast",
-        "description": "We discuss the four extensions released over the last couple of days.You can follow Yossi on:Twitter: https://twitter.com/YossiGozlanBlueSky: https://bsky.ap...",
-        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:kvf6pnfrtgek6jqlkpqhgacv/bafkreicu6ulgisirt6bblr4brlphlzn7eriiu6damn3xqbbujnf7n4iwpa"
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:kvf6pnfrtgek6jqlkpqhgacv/bafkreihdcpnidk5avxf7rlzcamycvhlujrgyl7ujriydh7cvhgipfvmefq",
-      "facets": [
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://youtube.com/live/0o6Kr0PTEEQ"
-            }
-          ],
-          "index": {
-            "byteEnd": 147,
-            "byteStart": 120
           }
         }
       ],
