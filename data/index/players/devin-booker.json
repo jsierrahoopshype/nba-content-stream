@@ -1,9 +1,60 @@
 {
   "slug": "devin-booker",
   "name": "Devin Booker",
-  "generated_at": "2026-09-22T16:53:03Z",
-  "count": 69,
+  "generated_at": "2026-09-22T20:07:44Z",
+  "count": 70,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3A75z3gabuwl6uvv7pootuuvgn%2Fapp.bsky.feed.post%2F3mw4phftvzi2d",
+      "source": "bluesky",
+      "published_at": "2026-09-22T17:04:05Z",
+      "title": "#Lakers announced the release of an official franchise history book in partnership with publisher TASCHEN:",
+      "url": "https://bsky.app/profile/lakersnation.bsky.social/post/3mw4phftvzi2d",
+      "author": "LakersNation.com",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreigxrzqs3gmblc2nbgy36ucb22kr5jhfn7jymxzt6fi4bgow2ht27u",
+      "body_excerpt": "#Lakers announced the release of an official franchise history book in partnership with publisher TASCHEN:\nlakersnation.com/lakers-annou...",
+      "players": [
+        "devin-booker"
+      ],
+      "teams": [
+        "los-angeles-lakers"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://lakersnation.com/lakers-announce-official-franchise-history-book-with-taschen/",
+        "title": "Lakers are putting out an official franchise history book",
+        "description": "The Los Angeles Lakers unveiled the release of the official franchise history book, in partnership with publisher TASCHEN.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreigxrzqs3gmblc2nbgy36ucb22kr5jhfn7jymxzt6fi4bgow2ht27u"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreiha6wdd65xjneeckcurw4zgpgcfrick6hylxlxoe5owj2kjxzu42e",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Lakers"
+            }
+          ],
+          "index": {
+            "byteEnd": 7,
+            "byteStart": 0
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://lakersnation.com/lakers-announce-official-franchise-history-book-with-taschen/"
+            }
+          ],
+          "index": {
+            "byteEnd": 139,
+            "byteStart": 107
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-9e1becdc05d03438",
       "source": "google-news",
