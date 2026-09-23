@@ -1,9 +1,59 @@
 {
   "slug": "sacramento-kings",
   "name": "Sacramento Kings",
-  "generated_at": "2026-09-23T12:06:15Z",
-  "count": 292,
+  "generated_at": "2026-09-23T17:06:30Z",
+  "count": 291,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Adf2gzsny4y5khzaa5rsfrblr%2Fapp.bsky.feed.post%2F3mw7655b54224",
+      "source": "bluesky",
+      "published_at": "2026-09-23T16:32:07Z",
+      "title": "From last night on @lockedonkings.bsky.social -- KINGS QUESTIONS: Which players needs to have a big training camp in Sacramento? youtu.be/hfQNdxULib4?...",
+      "url": "https://bsky.app/profile/jameshamnba.bsky.social/post/3mw7655b54224",
+      "author": "James Ham",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:df2gzsny4y5khzaa5rsfrblr/bafkreif7ipooohvwzxdpscsvdz4xjo7u4exw5l63ebqk4evwtuvjpup7ky",
+      "body_excerpt": "From last night on @lockedonkings.bsky.social -- KINGS QUESTIONS: Which players needs to have a big training camp in Sacramento? youtu.be/hfQNdxULib4?...",
+      "players": [],
+      "teams": [
+        "sacramento-kings"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://youtu.be/hfQNdxULib4?si=J5e0iDmGZ-zQ6QYg",
+        "title": "KINGS QUESTIONS: Which players needs to have a big training camp in Sacramento?",
+        "description": "YouTube video by Locked On Kings (Sacramento)",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:df2gzsny4y5khzaa5rsfrblr/bafkreif7ipooohvwzxdpscsvdz4xjo7u4exw5l63ebqk4evwtuvjpup7ky"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:df2gzsny4y5khzaa5rsfrblr/bafkreihd6r3qqcbqfpmfa624obuqiybrfzlz7ckrfc5364am5heocwqjla",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:hxxnziw4wkw3qdmoczhr4srx"
+            }
+          ],
+          "index": {
+            "byteEnd": 45,
+            "byteStart": 19
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://youtu.be/hfQNdxULib4?si=J5e0iDmGZ-zQ6QYg"
+            }
+          ],
+          "index": {
+            "byteEnd": 153,
+            "byteStart": 129
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-4e84b91ddb675d85",
       "source": "google-news",
@@ -4808,36 +4858,6 @@
           }
         ]
       }
-    },
-    {
-      "id": "gn-99fbfe35213dae45",
-      "source": "google-news",
-      "published_at": "2026-08-24T16:55:00Z",
-      "title": "Sacramento Kings to Honor Hall of Fame Coach Rick Adelman with Uniform Tribute Throughout 2026-27 Season",
-      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPdjlTem1aR2tuSVpiWjJ0NldCWTZqeWRheV9KNzh4WFlnM2ozQVhMNWR1X0xwQmhOS2p2LVVXQTNiODBvNUd4TXdEOEtpWFpNMF82WVpqU0g4WTFjeUNZSkNLaVZrWWhnZFZyOGVsWDVQbmZ3Q2hySXFsMUpzMmtVWnRZRnVJeXVVdkx4cnBZcEUwTmFGRUZCRUFpTHMyZHFKVHBqYWplRF8zdUF1YlJwSm0wRDhzSG5WRFBQcEwydGZjdWcwS0lMUG5qVmpzSGFG?oc=5",
-      "author": "NBA.com",
-      "thumbnail": null,
-      "body_excerpt": "Sacramento Kings to Honor Hall of Fame Coach Rick Adelman with Uniform Tribute Throughout 2026-27 Season NBA.com",
-      "players": [],
-      "teams": [
-        "sacramento-kings"
-      ]
-    },
-    {
-      "id": "gn-ed65388e2df19c5c",
-      "source": "google-news",
-      "published_at": "2026-08-24T14:17:41Z",
-      "title": "Zach LaVine Casts Doubt on Kings Future With Clear Career Aspirations",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQcmJPWW1RVzRqZHJ3cEhibDMtcURDR1puNEJ1Sk9aN2lkZnc0LUFQbG5wUTlEWmpIYVFUbTdZZ0RhQ2Y5WERDbmpMOUZqbURna0ZoUTZXN0JGV0FyMW9DU1pfSklQVkVTS2dlTkQybUZjaXRhdWt6d250WHZaY1RxeW9Hc05ZenZXamFPUGRmaDE0M2g0SFpxNDQ0d25YWDFmSmNrQXhB?oc=5",
-      "author": "Sports Illustrated",
-      "thumbnail": null,
-      "body_excerpt": "Zach LaVine Casts Doubt on Kings Future With Clear Career Aspirations Sports Illustrated",
-      "players": [
-        "zach-lavine"
-      ],
-      "teams": [
-        "sacramento-kings"
-      ]
     }
   ]
 }
