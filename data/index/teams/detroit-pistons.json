@@ -1,9 +1,81 @@
 {
   "slug": "detroit-pistons",
   "name": "Detroit Pistons",
-  "generated_at": "2026-09-22T23:01:54Z",
+  "generated_at": "2026-09-23T01:27:41Z",
   "count": 301,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Aluofuy2uw7g4vsd2vbwidtel%2Fapp.bsky.feed.post%2F3mw5exwtpyc2a",
+      "source": "bluesky",
+      "published_at": "2026-09-22T23:29:09Z",
+      "title": "New @frontofficeshow.bsky.social is up! @trevorlanenba.bsky.social & I talked extensions for Kawhi Leonard, Ausar Thompson & Pelle Larsson, Jalen Duren and DET negotiations, Brandon Miller and CHA extension talks, ATL-CHA trade, Raps moves and more!",
+      "url": "https://bsky.app/profile/keithsmithnba.bsky.social/post/3mw5exwtpyc2a",
+      "author": "KeithSmithNBA",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:luofuy2uw7g4vsd2vbwidtel/bafkreib37zzfy6dve7jbc5hsvedoe72sgaqjgx2sitb73ksyrhz4zka4pq",
+      "body_excerpt": "New @frontofficeshow.bsky.social is up! @trevorlanenba.bsky.social & I talked extensions for Kawhi Leonard, Ausar Thompson & Pelle Larsson, Jalen Duren and DET negotiations, Brandon Miller and CHA extension talks, ATL-CHA trade, Raps moves and more!\n\nWatch, like & subscribe!\nyoutu.be/ufW7fiD7LcY?...",
+      "players": [
+        "ausar-thompson",
+        "brandon-miller",
+        "jalen-duren",
+        "kawhi-leonard",
+        "pelle-larsson"
+      ],
+      "teams": [
+        "atlanta-hawks",
+        "charlotte-hornets",
+        "detroit-pistons",
+        "toronto-raptors"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://youtu.be/ufW7fiD7LcY?si=t9wuBUBl1wHAv7qO",
+        "title": "Kawhi's NEW Deal, Jalen Duren's Contract Demands, A Trade Gets Done And More!",
+        "description": "YouTube video by NBA Front Office",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:luofuy2uw7g4vsd2vbwidtel/bafkreib37zzfy6dve7jbc5hsvedoe72sgaqjgx2sitb73ksyrhz4zka4pq"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:luofuy2uw7g4vsd2vbwidtel/bafkreicvdayh6d2lkowdik5bvsakvqnw4c2y7ohsvrfhy5yhzgpm7ekjbm",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:quqv5mwk67iwqlb6mugpl7yo"
+            }
+          ],
+          "index": {
+            "byteEnd": 32,
+            "byteStart": 4
+          }
+        },
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:gn4eskqocck46zf2phqjusuc"
+            }
+          ],
+          "index": {
+            "byteEnd": 66,
+            "byteStart": 40
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://youtu.be/ufW7fiD7LcY?si=t9wuBUBl1wHAv7qO"
+            }
+          ],
+          "index": {
+            "byteEnd": 300,
+            "byteStart": 276
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-026cc89392104ed3",
       "source": "google-news",
@@ -30,6 +102,22 @@
       "thumbnail": null,
       "body_excerpt": "The Detroit Pistons have waived guard Drake Allen hoopshype.com",
       "players": [],
+      "teams": [
+        "detroit-pistons"
+      ]
+    },
+    {
+      "id": "gn-04c71ba10ef7b480",
+      "source": "google-news",
+      "published_at": "2026-09-22T22:00:29Z",
+      "title": "Detroit Pistons Slip Weight Clause Into Jalen Duren Contract",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNN3VJUjROS2dXWjhlNlhkdWdYOERYZkRrUG0zWnVXRWFvNUJ4MExpSzczZzRTUkFiQ1l2NHFyaFZpZlVFRnZGZ2xsUi1Edmk1VDQxY1p3c3FBSnBhd1hsNVVJaWVLUmR4TlFoVUl2WWZDd1hYSUlwMENVZFp3bW9ITUlBbmgwNjhOTUx3?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Detroit Pistons Slip Weight Clause Into Jalen Duren Contract Yahoo Sports",
+      "players": [
+        "jalen-duren"
+      ],
       "teams": [
         "detroit-pistons"
       ]
@@ -5191,38 +5279,6 @@
       "author": "Yahoo Sports",
       "thumbnail": null,
       "body_excerpt": "Cade Cunningham Fully Embracing Pistons’ Leadership Role Yahoo Sports",
-      "players": [
-        "cade-cunningham"
-      ],
-      "teams": [
-        "detroit-pistons"
-      ]
-    },
-    {
-      "id": "gn-750828cbe1d2b0dc",
-      "source": "google-news",
-      "published_at": "2026-08-24T01:06:00Z",
-      "title": "Blockbuster Jalen Duren Sign-and-Trade Proposal Would Send All-Star Guard to Pistons",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPOFQzMWJpbV9TT1FuVGJEYmQxNWJ5bmkxY0xUaVdERGM5WDdySUxKUjdTVHZKUjFUQzQ2ejFzc20xbjFKRnoyMFkyT1RURi03ZWZuUkFFNG54V0Zyc0FhekFCbG1VMmRyRk5heWhCb2FVNWZKeXA3NEd6NzlMMGtFRW9CMktMdlhQVF84?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Blockbuster Jalen Duren Sign-and-Trade Proposal Would Send All-Star Guard to Pistons Yahoo Sports",
-      "players": [
-        "jalen-duren"
-      ],
-      "teams": [
-        "detroit-pistons"
-      ]
-    },
-    {
-      "id": "gn-be80e017b9f15020",
-      "source": "google-news",
-      "published_at": "2026-08-23T23:44:36Z",
-      "title": "Pistons news: Cade Cunningham takes charge with move after wasted 60-win season",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNUjFfd2VkOTJwbHpQZ0ZQUkhsSEhhamZkM1RseHhnaU1fOThrb3VoU0kyZ3VKcGNvZmE3bGZuVUltYjQzWW9LbFk1SzhIV2x4TVRXWmFCS3o3dUVPcWU2QkI4MFVqSmlPNjVRZlVkZWMtNFJIcmZZNmpIUngxYTlyT0ZXYzRNZWRKQkZzaVdZV0JHd1VSaVdEeUVLdUwzd1V0em9YMjU0ZW9TZ2RUVFl4NFZ3?oc=5",
-      "author": "ClutchPoints",
-      "thumbnail": null,
-      "body_excerpt": "Pistons news: Cade Cunningham takes charge with move after wasted 60-win season ClutchPoints",
       "players": [
         "cade-cunningham"
       ],
