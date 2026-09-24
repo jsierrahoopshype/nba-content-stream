@@ -1,9 +1,62 @@
 {
   "slug": "phoenix-suns",
   "name": "Phoenix Suns",
-  "generated_at": "2026-09-24T12:19:00Z",
+  "generated_at": "2026-09-24T17:31:26Z",
   "count": 216,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Apz2e6pmf64ey4zpgyjuvpdfj%2Fapp.bsky.feed.post%2F3mwbnrn6m3s2z",
+      "source": "bluesky",
+      "published_at": "2026-09-24T16:17:21Z",
+      "title": "Last week, I made the case for Khaman Maluach to start at center over at @sports360az.bsky.social.  This week, I did the same for Oso Ighodaro, who might make more sense to pencil in as the Suns' starter for opening night: bit.ly/4hqiK8M",
+      "url": "https://bsky.app/profile/geraldbourguet.bsky.social/post/3mwbnrn6m3s2z",
+      "author": "Gerald Bourguet",
+      "thumbnail": null,
+      "body_excerpt": "Last week, I made the case for Khaman Maluach to start at center over at @sports360az.bsky.social.  This week, I did the same for Oso Ighodaro, who might make more sense to pencil in as the Suns' starter for opening night: bit.ly/4hqiK8M",
+      "players": [
+        "khaman-maluach",
+        "oso-ighodaro"
+      ],
+      "teams": [
+        "phoenix-suns"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://bit.ly/4hqiK8M",
+        "title": "",
+        "description": "",
+        "thumb": null
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:pz2e6pmf64ey4zpgyjuvpdfj/bafkreics2n2et46jeqi2kk2q2fsu3ytun3eyxjaqnyubjwzdcmfwzvdvze",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:6emoqotmr3f5jmwpolonp3xn"
+            }
+          ],
+          "index": {
+            "byteEnd": 97,
+            "byteStart": 73
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://bit.ly/4hqiK8M"
+            }
+          ],
+          "index": {
+            "byteEnd": 237,
+            "byteStart": 223
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "bs-did%3Aplc%3Apz2e6pmf64ey4zpgyjuvpdfj%2Fapp.bsky.feed.post%2F3mw74zruxvk2o",
       "source": "bluesky",
@@ -3669,27 +3722,6 @@
       "teams": [
         "phoenix-suns"
       ]
-    },
-    {
-      "id": "bs-did%3Aplc%3Apz2e6pmf64ey4zpgyjuvpdfj%2Fapp.bsky.feed.post%2F3mtw76n5s2s2h",
-      "source": "bluesky",
-      "published_at": "2026-08-25T16:06:30Z",
-      "title": "It's the NBA dead time, and I'm sure everyone's tired of Suns discourse. So @lindseysmithaz.bsky.social joined me on @sunsafterdark.bsky.social for a FREE palate cleanser episode to talk The Odyssey, Obsession, HOTD, Widow's Bay and more!",
-      "url": "https://bsky.app/profile/geraldbourguet.bsky.social/post/3mtw76n5s2s2h",
-      "author": "Gerald Bourguet",
-      "thumbnail": null,
-      "body_excerpt": "It's the NBA dead time, and I'm sure everyone's tired of Suns discourse. So @lindseysmithaz.bsky.social joined me on @sunsafterdark.bsky.social for a FREE palate cleanser episode to talk The Odyssey, Obsession, HOTD, Widow's Bay and more!\n\nWATCH: bit.ly/4wK9DFh\nLISTEN: bit.ly/4gxR3u0",
-      "players": [],
-      "teams": [
-        "phoenix-suns"
-      ],
-      "media": {
-        "type": "link",
-        "uri": "https://bit.ly/4wK9DFh",
-        "title": "Episode 32 (palate cleanser VIDEO feat. Lindsey Smith): The Odyssey, Obsession, Widow's Bay, House of the Dragon and Backrooms | Suns After Dark: A Phoenix Suns Pod Site",
-        "description": "On Episode 32 of the Suns After Dark Podcast, Gerald Bourguet is joined by Lindsey Smith for an offseason palate cleanser that has absolutel",
-        "thumb": null
-      }
     }
   ]
 }
