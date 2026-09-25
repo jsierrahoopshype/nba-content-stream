@@ -1,18 +1,98 @@
 {
   "slug": "sacramento-kings",
   "name": "Sacramento Kings",
-  "generated_at": "2026-09-25T01:59:19Z",
-  "count": 285,
+  "generated_at": "2026-09-25T07:32:55Z",
+  "count": 287,
   "items": [
     {
-      "id": "gn-ce125a6eccbd275e",
+      "id": "bs-did%3Aplc%3Adf2gzsny4y5khzaa5rsfrblr%2Fapp.bsky.feed.post%2F3mwcwcdxv522y",
+      "source": "bluesky",
+      "published_at": "2026-09-25T04:22:31Z",
+      "title": "The latest on @lockedonkings.bsky.social -- If Jalen Duren becomes available, what would the Kings' BEST OFFER be? youtu.be/jCnIWjB0gSA?...",
+      "url": "https://bsky.app/profile/jameshamnba.bsky.social/post/3mwcwcdxv522y",
+      "author": "James Ham",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:df2gzsny4y5khzaa5rsfrblr/bafkreid4l542t77alzvzpsppuoj45lgbm2m2f6aizymboxraaapixkobpm",
+      "body_excerpt": "The latest on @lockedonkings.bsky.social -- If Jalen Duren becomes available, what would the Kings' BEST OFFER be? youtu.be/jCnIWjB0gSA?...",
+      "players": [
+        "jalen-duren"
+      ],
+      "teams": [
+        "sacramento-kings"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://youtu.be/jCnIWjB0gSA?si=1MlaYA2T41USM61j",
+        "title": "If Jalen Duren becomes available, what would the Kings' BEST OFFER be for the All-NBA center?",
+        "description": "YouTube video by Locked On Kings (Sacramento)",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:df2gzsny4y5khzaa5rsfrblr/bafkreid4l542t77alzvzpsppuoj45lgbm2m2f6aizymboxraaapixkobpm"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:df2gzsny4y5khzaa5rsfrblr/bafkreihd6r3qqcbqfpmfa624obuqiybrfzlz7ckrfc5364am5heocwqjla",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:hxxnziw4wkw3qdmoczhr4srx"
+            }
+          ],
+          "index": {
+            "byteEnd": 40,
+            "byteStart": 14
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://youtu.be/jCnIWjB0gSA?si=1MlaYA2T41USM61j"
+            }
+          ],
+          "index": {
+            "byteEnd": 139,
+            "byteStart": 115
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "gn-aeb50f67d22d4ff7",
       "source": "google-news",
-      "published_at": "2026-09-24T22:56:29Z",
-      "title": "The Most Important Question For Kings First 10 Games",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQa2hqeEJseWZFd3JFd1VRSUZBOXBDM25fSFJyWTFZdkZIRTRRX1NlRlRzTnU1WWZXaG56V29fcktkZGV6WllmaTBmemdMNlR0MVM3X2E0VU1pUW5VNy1qenpzbDJ3aTRkeEhHSWdZdnlzaFpiVWM4QTFWaW9XRzhrNnZ5cFQ0MnNYWmNWWlJvQQ?oc=5",
-      "author": "Sports Illustrated",
+      "published_at": "2026-09-24T23:02:46Z",
+      "title": "Kings' Tyrone Marshall: Lands deal with Sacramento",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNbDhwZ29DelM2Z3lsTnBHakZwci0xbUM1VDVzVzBMb2ItdHU2OWU5S2lOYmdUc0pjNnpyZTlrbkxUTDlxSE1VemtiT0xBTWU2UXdvSERJWGtXbHM1S1RLd3VLMHFGRjR4WjIxdlhaVmFpSmpkSTEzSnhyRlAzVE5OdEFiQjV2NzRYVWVWZ0xxTnVuVlhmeVhyZXV4M3dGdlJD?oc=5",
+      "author": "CBS Sports",
       "thumbnail": null,
-      "body_excerpt": "The Most Important Question For Kings First 10 Games Sports Illustrated",
+      "body_excerpt": "Kings' Tyrone Marshall: Lands deal with Sacramento CBS Sports",
+      "players": [],
+      "teams": [
+        "sacramento-kings"
+      ]
+    },
+    {
+      "id": "gn-c76c5e676d254526",
+      "source": "google-news",
+      "published_at": "2026-09-24T22:56:30Z",
+      "title": "The Most Important Question For Kings First 10 Games",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOcG1Bd1J0WERMT0k3XzRWZGFCdFRVWFZFYzNqZDNYbmFxM0hhenJlaXhleDZnZVpYQUlaaVEtX1FkOXN0UmlXVXRSVEZUSlJHLUF2blFIUUE2NndJTjlEY2R6dXduQVZBVHE0RXI1eXNWM2ZOWmpiY1NWa014dWtJY3oyZUY?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "The Most Important Question For Kings First 10 Games Yahoo Sports",
+      "players": [],
+      "teams": [
+        "sacramento-kings"
+      ]
+    },
+    {
+      "id": "gn-47c9d44b71e8ea59",
+      "source": "google-news",
+      "published_at": "2026-09-24T21:06:00Z",
+      "title": "The Sacramento Kings have signed guard Gabe Levin and …",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQeHRQZDRNODI2NU9FQXBjczdtNkxnNl94UnBfenRSWHRSUlBMRkdMRWFuY2sySWxlQUFVQTFuZWZWMmQ1Z2JxdVNkLWR3YXpnLTVoaExmd052Q1J0V1o4NjhXSXBuaHoyY0ZYd1pyd0M0ZXlSMWFkM3Z5WkZjQ3lQWnRJcnNtSElmbEpoZHgyZUZxVkgtb1RTUUh4WjhRNFM0R1NCMUZsT0M5S1BCLTJrWXZTcGZvbEZ0RGo4amh4Wjk4b1ktN2c?oc=5",
+      "author": "HoopsHype",
+      "thumbnail": null,
+      "body_excerpt": "The Sacramento Kings have signed guard Gabe Levin and … HoopsHype",
       "players": [],
       "teams": [
         "sacramento-kings"
@@ -4753,20 +4833,6 @@
       "author": "Sports Illustrated",
       "thumbnail": null,
       "body_excerpt": "Projecting the Kings' Ideal Starting Lineup in Three Years Sports Illustrated",
-      "players": [],
-      "teams": [
-        "sacramento-kings"
-      ]
-    },
-    {
-      "id": "gn-a482f03d639f2e6b",
-      "source": "google-news",
-      "published_at": "2026-08-26T03:51:00Z",
-      "title": "1x All-NBA Ben Simmons Gets Major Kings Boost as GM Prepares to Watch Free Agent Work Out",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9XV1R4UFcxeldIeHJDQkNGa3VzRVRVNzRPRWpmbkhyc3FQZ2NXSmNjM1huVnYxS3BZbUhCa0xrQmQxZmNlWkJWN0VMYnJYbFA5XzdTdUxSUUg5dlRTaWlPaUllYjUyVE1fMjJIOTVWZHNFb1N5MnVOSVVwWXo?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "1x All-NBA Ben Simmons Gets Major Kings Boost as GM Prepares to Watch Free Agent Work Out Yahoo Sports",
       "players": [],
       "teams": [
         "sacramento-kings"
