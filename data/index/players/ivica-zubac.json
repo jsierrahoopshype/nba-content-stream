@@ -1,9 +1,76 @@
 {
   "slug": "ivica-zubac",
   "name": "Ivica Zubac",
-  "generated_at": "2026-09-25T17:56:38Z",
-  "count": 27,
+  "generated_at": "2026-09-25T21:27:19Z",
+  "count": 28,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3A7uahugigvixjvxd5s2hidpad%2Fapp.bsky.feed.post%2F3mweerllzb22z",
+      "source": "bluesky",
+      "published_at": "2026-09-25T18:14:14Z",
+      "title": "Today, @ipacers.bsky.social joins me to discuss the Pacers front office presser yesterday. Haliburton, Walker, Zubac, surprise depth centers, and so much more revealed.",
+      "url": "https://bsky.app/profile/tonyreast.bsky.social/post/3mweerllzb22z",
+      "author": "Tony East",
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreihcrhcmc7jyols6nntu2cua6ofuxwwebd577yqqqwluoj7kmuqbvy",
+      "body_excerpt": "Today, @ipacers.bsky.social joins me to discuss the Pacers front office presser yesterday. Haliburton, Walker, Zubac, surprise depth centers, and so much more revealed.\n\nListen: locked-on-pacers-daily-podcast-on-the-indiana-pacers.simplecast.com\nWatch: www.youtube.com/watch?v=KszO...",
+      "players": [
+        "ivica-zubac",
+        "tyrese-haliburton"
+      ],
+      "teams": [
+        "indiana-pacers"
+      ],
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreihcrhcmc7jyols6nntu2cua6ofuxwwebd577yqqqwluoj7kmuqbvy",
+            "alt": ""
+          }
+        ]
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreibcezoefeniffictxya32ce54pxckgbi6tyrpl5atugj63b6c25ei",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:hhv67ydqswmrizaz5dqlz336"
+            }
+          ],
+          "index": {
+            "byteEnd": 27,
+            "byteStart": 7
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://locked-on-pacers-daily-podcast-on-the-indiana-pacers.simplecast.com/"
+            }
+          ],
+          "index": {
+            "byteEnd": 245,
+            "byteStart": 178
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.youtube.com/watch?v=KszOLh4ngmw"
+            }
+          ],
+          "index": {
+            "byteEnd": 284,
+            "byteStart": 253
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-9ba945706381cce1",
       "source": "google-news",
