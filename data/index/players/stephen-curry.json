@@ -1,9 +1,680 @@
 {
   "slug": "stephen-curry",
   "name": "Stephen Curry",
-  "generated_at": "2026-09-26T00:05:08Z",
-  "count": 296,
+  "generated_at": "2026-09-26T05:04:46Z",
+  "count": 326,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Acrcybmshorvvegmbkp5rvgjv%2Fapp.bsky.feed.post%2F3mwfhqkb4s22e",
+      "source": "bluesky",
+      "published_at": "2026-09-26T04:40:00Z",
+      "title": "Steph Curry did the Warriors a solid by taking less than the max on his new contract extension.",
+      "url": "https://bsky.app/profile/nbcswarriors.bsky.social/post/3mwfhqkb4s22e",
+      "author": "Warriors on NBC Sports Bay Area",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:crcybmshorvvegmbkp5rvgjv/bafkreifyo2kayexfg7hhjz7b3hf2njij4wy2v7gfy6y2dnzoy4ms4j2m64",
+      "body_excerpt": "Steph Curry did the Warriors a solid by taking less than the max on his new contract extension.\n\nNow, as @montepoole.bsky.social writes, the attention turns to the front office to see what it can do with that financial flexibility. www.nbcsportsbayarea.com/nba/golden-s...",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://www.nbcsportsbayarea.com/nba/golden-state-warriors/steph-curry-contract-extension-analysis-2/1966281/",
+        "title": "What Steph Curry's less-than-max $116M contract extension means for Warriors' front office, future",
+        "description": "By taking $20 million less than the max, Steph Curry gives Warriors CEO Joe Lacob and general manager Mike Dunleavy flexibility next summer.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:crcybmshorvvegmbkp5rvgjv/bafkreifyo2kayexfg7hhjz7b3hf2njij4wy2v7gfy6y2dnzoy4ms4j2m64"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:crcybmshorvvegmbkp5rvgjv/bafkreicnwnxnmxmxr2uko53p2eh7hv7sebqduk3c72vrxykxk2y3hschrm",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:nrzonytvdybfyy7t7b3jr6le"
+            }
+          ],
+          "index": {
+            "byteEnd": 128,
+            "byteStart": 105
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.nbcsportsbayarea.com/nba/golden-state-warriors/steph-curry-contract-extension-analysis-2/1966281/"
+            }
+          ],
+          "index": {
+            "byteEnd": 272,
+            "byteStart": 232
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "gn-2184cbe59c2977f9",
+      "source": "google-news",
+      "published_at": "2026-09-26T04:18:54Z",
+      "title": "What Steph Curry's less-than-max $116M extension means for Warriors' future",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOenlfVUxTd19VdzU2VWdpRzhKVjBQVlRKLTU3bGtrZUs1NVZpNFNIYUdxMTZ3b1paZzd4aGdGTS16bzRsblJFRUZVMkI4UERPZzFvaUxJRWM5ZVp2VUJUQ3FlSGcycWFvTWx0VXNoNXlGU0hSSEFIbHd5SUFDM0VDUVdPYkotTmFESEY3QU9DdHpPZDlLTjFXR3VwQnVJYlZBbkxKR0Y0b3dUMFRhZEd0SmZOdlBkX2JlY19iNGc4MFjSAcgBQVVfeXFMT0htbnBUZ2ZHVXFqeS1ORFRqQ3BVamR3ZGRKdlZTRUhEMHlQeVRzdHgtX0tLVUdMX2UxUFhRaS1fOHhfdkpaWkJNN3FQNXoxZ2dlNkNzdWhUa1I2Mm51RldXRUNydG55ckFjMmpLMll4b2Q3ZDRjWnVDajkyZGhBRUZlbS0xeENVd1gwYTdZTkFBTTl2dTlDX1pqZTlBb3EwVzJqR3ZCaGJlVFVqbnRJLWxWU09fTUxWRUJFVEZnR0xUajVfMFlIR3Y?oc=5",
+      "author": "NBC Sports Bay Area & California",
+      "thumbnail": null,
+      "body_excerpt": "What Steph Curry's less-than-max $116M extension means for Warriors' future NBC Sports Bay Area & California",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ]
+    },
+    {
+      "id": "gn-0bba7134069978e7",
+      "source": "google-news",
+      "published_at": "2026-09-26T04:14:47Z",
+      "title": "Stephen Curry staying in Bay Area: He, Warriors agree to two-year, $116 million extension",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQMklqbHFONFdaa1I0U19WQjhxOGo3c3BQYTl5bHlMREd1U2p1dEtFdEtETGZGZnVUcC1peUxuY3NhYTQyM1VTV1NoVUFLLXVhSE45MDhBV05aTUlqTUNqOVl1SEtvR2NPYTBZSVBuR18wc1ZiRnFJSFZ3WDhodkdQN2p0YTEwMWpYenI3RVBmTjFFYzNKaURPVEZqV1RkS2xTa2ExbmtGZmhYMnNWT2cxbldjYllOSDNKVkczYg?oc=5",
+      "author": "NBC Sports",
+      "thumbnail": null,
+      "body_excerpt": "Stephen Curry staying in Bay Area: He, Warriors agree to two-year, $116 million extension NBC Sports",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ]
+    },
+    {
+      "id": "gn-165f26749e95782f",
+      "source": "google-news",
+      "published_at": "2026-09-26T04:12:43Z",
+      "title": "Warriors officially announce Stephen Curry extension",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOUGZCQ3daUXQxMkZmNEJPRkxWZ1VpME5sNGd0VVBHbGt3X2dFVVZWS0xIbGc3ZG5QRGZ5VkVwc1BKa2kwYV9IRVRfLVptTUdRMjFQMGxSLTJRN2FUNkt2V3p3MlZlNFBtS29yX0k0YXJQc2RvVTkwV1BVT01nQUJIUzgxdktmSExYOC1hS0RqWV9WcndNLWc?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Warriors officially announce Stephen Curry extension Yahoo Sports",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ]
+    },
+    {
+      "id": "gn-7322597e5281a389",
+      "source": "google-news",
+      "published_at": "2026-09-26T03:45:10Z",
+      "title": "Report: Stephen Curry, Warriors agree on 2-year, $116M extension",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUVlGbVdDRUt0VENvbHZmWXMyTHhaMGo1N1ExZmZ0Y1NMWHhXMmlXZ2F1UExpNlhmdFhDUGM4V241b0h6XzZ1d1dfUnVJeGVJS25BSG1neHhxdWpSa2RzZVhVY1VUV005RnpfNjRLVDZkZXE0MnBOblJHbFNzbk42RjhGOUJUdnd6clRibmZfZ0YzaURpRGFOazF5clJBNkFWTHJUd1NJNFI?oc=5",
+      "author": "Reuters",
+      "thumbnail": null,
+      "body_excerpt": "Report: Stephen Curry, Warriors agree on 2-year, $116M extension Reuters",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ]
+    },
+    {
+      "id": "gn-cc3790ec54cb813c",
+      "source": "google-news",
+      "published_at": "2026-09-26T03:45:00Z",
+      "title": "Stephen Curry signs 2-year, $116 million extension with Warriors: What it means",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPTm9PWDlDZk03THBNZ0FyQnNjV184eklwYUtDMHROa1FGcUtDdXI5UVpNRkRiU0pWS21LZVhQRUFUUXFYaVY3WkFkQlRKalRnUjlrcHBGdk9EUmlQVlQ3Z2syemhuSW5fUVkxZTdrNXMxeWpLQTR6a294aW1IOWk0RXloZFNQaDNlNGM0WEM2X2ZlanlRdnk0T21pRGRmZGQzM0VfZ1E1VnFvTF9mWkRoc0tuMElrQ0M1Nm9hUQ?oc=5",
+      "author": "USA Today",
+      "thumbnail": null,
+      "body_excerpt": "Stephen Curry signs 2-year, $116 million extension with Warriors: What it means USA Today",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ]
+    },
+    {
+      "id": "gn-ccccdb946e0b9d6e",
+      "source": "google-news",
+      "published_at": "2026-09-26T03:45:00Z",
+      "title": "Warriors sign Steph Curry to two-year, $116M extension with final-year player option",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNRk9nLVpfYk0yZWh2UF85Nm5LT1V4R2VzMTg2d1NEd1RhN3NfOW5MUDJhVlNRdS1Yc3NJOGJncGt1RWhzR1Rwa3g5VklJNjBmQkNPY21zQzRQVlhnYThJbjdKX050d3h6TVdSdnZMdWtpS19iUHVpdWtROU02NHVYYlc0VHY?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Warriors sign Steph Curry to two-year, $116M extension with final-year player option Yahoo Sports",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ]
+    },
+    {
+      "id": "gn-21c9dded94ff4a7d",
+      "source": "google-news",
+      "published_at": "2026-09-26T03:32:00Z",
+      "title": "Steph Curry takes a discount, signs 2-year extension with Warriors",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPRlplSFN4WHNUMkluS2pRbkJUbHpWZEkyaDFPT0xTenl1S0ZJMUE2YUFfMnNWamZsTnF5d19ZRTA1TzMxSVJXVC1xU0tJOXA4Smx6R3d5ZlNLN09YcmlwMk0xR2JJekljWmpURWJZNkthOXlibWpleHpwOFY1Z3dZT28waG00ME9U?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Steph Curry takes a discount, signs 2-year extension with Warriors Yahoo Sports",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ]
+    },
+    {
+      "id": "gn-985079f0e7c48876",
+      "source": "google-news",
+      "published_at": "2026-09-26T03:28:00Z",
+      "title": "Stephen Curry, Warriors reportedly agree to $116M extension: What it means for Golden State's future",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQZmpLVmdfQ1FGamVQamJDZkJnQzVjX05PUXFBNkFyS2dWQ2R6R3NxQU4yY2hhRXNUX1pmVWxDM1FwMkZkVTg2eERtUS1DMlZZMGt3bmFDUE9iZHVaM0V4YllsNUVuV0hzQWdVaXZYc1VXYXlSX0ZBOVctUFFVYzkzTWs1cmhoQlFENndqT0daVWtwODZu?oc=5",
+      "author": "CBS Sports",
+      "thumbnail": null,
+      "body_excerpt": "Stephen Curry, Warriors reportedly agree to $116M extension: What it means for Golden State's future CBS Sports",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ]
+    },
+    {
+      "id": "gn-aa9f0f47067316ad",
+      "source": "google-news",
+      "published_at": "2026-09-26T03:26:00Z",
+      "title": "Breaking: Steph Curry agrees to two-year, $116 million contract extension with Warriors",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQallNbzBGZVJvYkxkcWtYV2swdm41clFtVDNLSVFKRkNxT0N6OUdCTTI3Q2ZyZnN2U1h4cFhFR21vRHpGQmRMV3BxTVZLQmd0WWZzQVZ6S0hfc1FzQWhaMVdTejdmY0ZMc0JoUWRGbEtvT3FodlhwdFZaZEE5bXAwSGIwUXFYMVU?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Breaking: Steph Curry agrees to two-year, $116 million contract extension with Warriors Yahoo Sports",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ]
+    },
+    {
+      "id": "gn-f5ac41577358bb81",
+      "source": "google-news",
+      "published_at": "2026-09-26T03:22:00Z",
+      "title": "Sources: Stephen Curry, Warriors agree to $116 million contract extension",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQM0xfWGttOHNLYVNwOWlkSUdEaE5uNlk0cHFKVzhudDdNTUFhcXB3U29jNDlkcV9NR015ckFMcUtJc0otelNIandjMkd2VV9pOUgtRXZFX3hLMnp6dHZuM1M3cmNBX21HQjJEeWx2MWdEMldjNVJCQVVoeDlUVWFCN0RIc1Npd2xtTWhSV3lB?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Sources: Stephen Curry, Warriors agree to $116 million contract extension Yahoo Sports",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3All23rgrkk7tvdjey3kflygoq%2Fapp.bsky.feed.post%2F3mwfcv2adl22q",
+      "source": "bluesky",
+      "published_at": "2026-09-26T03:13:03Z",
+      "title": "Three days before training camp, Steph Curry opted to give the Warriors $10 million in extra cap space flexibility next summer. His max was $65.7 million. He instead took $55.7 million.",
+      "url": "https://bsky.app/profile/anthonyvslater.bsky.social/post/3mwfcv2adl22q",
+      "author": "Anthony Slater",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:ll23rgrkk7tvdjey3kflygoq/bafkreifeq4lc3krp2dyitks4m6u52dt5wubrrnia5ifowymhiy5p7oqeza",
+      "body_excerpt": "Three days before training camp, Steph Curry opted to give the Warriors $10 million in extra cap space flexibility next summer. His max was $65.7 million. He instead took $55.7 million.\n\nwww.espn.com/nba/story/_/...",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://www.espn.com/nba/story/_/id/50030670/sources-warriors-curry-reach-2-year-extension-worth-116-million",
+        "title": "Sources: Warriors, Curry reach 2-year extension worth $116 million",
+        "description": "Warriors star Stephen Curry has agreed on a two-year, $116 million contract extension with the franchise, with a player option in 2028-29, sources told ESPN's Shams Charania.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:ll23rgrkk7tvdjey3kflygoq/bafkreifeq4lc3krp2dyitks4m6u52dt5wubrrnia5ifowymhiy5p7oqeza"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:ll23rgrkk7tvdjey3kflygoq/bafkreiboudagjsnpjnz7nixe53q3scq2ngyozyoxehb5rgywfh26exkq5e",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.espn.com/nba/story/_/id/50030670/sources-warriors-curry-reach-2-year-extension-worth-116-million"
+            }
+          ],
+          "index": {
+            "byteEnd": 215,
+            "byteStart": 187
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "gn-01121e56f6c804fa",
+      "source": "google-news",
+      "published_at": "2026-09-26T03:06:08Z",
+      "title": "Stephen Curry, Warriors agree on 2-year contract extension",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFA3cTZ2MmlTUUFGTFhKZlhrVW8zYXIydjBxMGJqUHlMeEhleFlnMG5oZnZnSkhRd2xIU0JEdWVmeHlLSnp0aEtlY0paZS1YNE4yVEo4MDhZVFJCQVhHZzZrV1YtWHNMR0pGVXRHUE1Gd1B5M1gzeGc?oc=5",
+      "author": "NBA.com",
+      "thumbnail": null,
+      "body_excerpt": "Stephen Curry, Warriors agree on 2-year contract extension NBA.com",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ]
+    },
+    {
+      "id": "gn-323cbd925f105f80",
+      "source": "google-news",
+      "published_at": "2026-09-26T03:04:00Z",
+      "title": "$116 Million Reasons to Stay! Steph Curry Makes His Warriors Future Clear",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOdUdjWWxvMkNNUTBRNkNGQzg3MGFhVTdJcDBHeUxfSWhBUU1IT3RxbFdYb1gzSndIaGVyNEk5OE5Wdk9NMFV1dF9BOGRiRkoyTmphQmJrOVF0WjJsb0RLdkRjQjJvS09LOHpnNkc3MDh6RGdVNVpZN1J1N3lCS2lYYm1vTFZNZw?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "$116 Million Reasons to Stay! Steph Curry Makes His Warriors Future Clear Yahoo Sports",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Ahb5s4bd5ctk6inznrn6gf6hx%2Fapp.bsky.feed.post%2F3mwfcbq2rskzn",
+      "source": "bluesky",
+      "published_at": "2026-09-26T03:02:15Z",
+      "title": "Stephen Curry staying in Bay Area: He, Warriors agree to two-year, $116 million extension",
+      "url": "https://bsky.app/profile/basketballtalk.bsky.social/post/3mwfcbq2rskzn",
+      "author": "Kurt Helin",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:hb5s4bd5ctk6inznrn6gf6hx/bafkreieuvp4hfebelc2sxzgcltpiv4dkfjg5qfeaj7k2div4ldy7s4e3iq",
+      "body_excerpt": "Stephen Curry staying in Bay Area: He, Warriors agree to two-year, $116 million extension\n\nCurry has consistently said he wants to retire a Warrior, this contract takes him through his 20th season.\n\nwww.nbcsports.com/nba/news/ste...",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://www.nbcsports.com/nba/news/stephen-curry-staying-in-bay-area-he-warriors-agree-to-two-year-116-million-extension",
+        "title": "Stephen Curry staying in Bay Area: He, Warriors agree to two-year, $116 million extension",
+        "description": "Curry has consistently said he wants to retire a Warrior, this contract takes him through his 20th season.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:hb5s4bd5ctk6inznrn6gf6hx/bafkreieuvp4hfebelc2sxzgcltpiv4dkfjg5qfeaj7k2div4ldy7s4e3iq"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:hb5s4bd5ctk6inznrn6gf6hx/bafkreicew6cnah57fkltfde2ieoa2m62tiwjhewn7ptpayloebpzvm3k5a",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.nbcsports.com/nba/news/stephen-curry-staying-in-bay-area-he-warriors-agree-to-two-year-116-million-extension"
+            }
+          ],
+          "index": {
+            "$type": "app.bsky.richtext.facet#byteSlice",
+            "byteEnd": 232,
+            "byteStart": 199
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "gn-bfda7d4f85e03050",
+      "source": "google-news",
+      "published_at": "2026-09-26T02:52:00Z",
+      "title": "Stephen Curry signs 2-year, $116 million extension to stay in Golden State",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQRkpkZUc0TXRVZHZEZXdNb1h1QmFITWlyaC1jYTczNFN6Y2RMWlJYRDhWeFlaWlpHS1FnZ1VmR1ZwX0p4QW1SQl9EVGVlM0pMa2FIczRrZU41amYtdHN4STNHcFZZamFXanFhUmIyRldpcE0yRHlxVi1XZm1oRWRHS0NkRFJhenl4YnhENE1IRnZfQzBLOGxoRVpYOEdhT290Q3U4SjZRZ2luOHB6eEg0ZEhYeWJ4VTlvdld2ZDJCc0NVQQ?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Stephen Curry signs 2-year, $116 million extension to stay in Golden State Yahoo Sports",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ]
+    },
+    {
+      "id": "gn-1705638463e86795",
+      "source": "google-news",
+      "published_at": "2026-09-26T02:49:00Z",
+      "title": "Stephen Curry is set to play his entire career with the Warriors with latest extension",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPTkFjZllhQ1FvTUQtbUtBSjhwN3VyS3dNblVyR0dTd1M1b0lXM0VPV2Rza1BGZy1YTldnX2JUbnZBaWNVRmxPWjUxbGJHaTBnTGdVckN2eS1Tdl9idHF4cTR4dmY5T0xVRjFoSkItWGczUTZYcnNhY3FDcWN6RXJFVDBpdXA?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Stephen Curry is set to play his entire career with the Warriors with latest extension Yahoo Sports",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ]
+    },
+    {
+      "id": "gn-f4f7f9418e4fe560",
+      "source": "google-news",
+      "published_at": "2026-09-26T02:44:00Z",
+      "title": "Stephen Curry and Warriors agree to 2-year contract extension worth $116 million, AP source says",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOT3BNRV9VNjFSb21kVGtZLUg5Uy1LTHVKN09CT05RMk5KZ25ldmNsODhiWGVNS3YtZ0R4WVg4Z01Oa1hTSmpRYi1zQjVIdlZISWU4U21vU0gzWEFTM2hVV0NXZmdmVmdvQlMxaWdlSlY4RzNLRGFBRW9mZUVBWFYwMWo3Tkl2dw?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Stephen Curry and Warriors agree to 2-year contract extension worth $116 million, AP source says Yahoo Sports",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ]
+    },
+    {
+      "id": "gn-b4b3076dee2be0b9",
+      "source": "google-news",
+      "published_at": "2026-09-26T02:40:00Z",
+      "title": "Steph Curry’s Warriors contract extension falls short of potential supermax deal",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNY0RsUmxMVXdqUGxLT2x6cFlpckM5TTdDNTMyNVJsT1dXSm1nRGkzOUZlUURuUTd6SWhLeHVHWmluVmdHQXg0aHVfbnY5TGcyV3VNUzhvR29yY2dtSkNWaXJQaEhHY25zRmpjVUh5TGlDand1NTlUcjFqS1M4eGpfbW5PMnlKbFJSSnVraFFISXBDSW96bGl5UE1oXzNKVVN6aVlmaXFkMHo4eTA?oc=5",
+      "author": "New York Post",
+      "thumbnail": null,
+      "body_excerpt": "Steph Curry’s Warriors contract extension falls short of potential supermax deal New York Post",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Acrcybmshorvvegmbkp5rvgjv%2Fapp.bsky.feed.post%2F3mwfapfio3c2u",
+      "source": "bluesky",
+      "published_at": "2026-09-26T02:34:06Z",
+      "title": "Steph Curry is staying in the Bay, reportedly agreeing to a two-year contract extension with the Warriors :star-struck:",
+      "url": "https://bsky.app/profile/nbcswarriors.bsky.social/post/3mwfapfio3c2u",
+      "author": "Warriors on NBC Sports Bay Area",
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Acrcybmshorvvegmbkp5rvgjv/bafkreigv6w7svqgw674essrmmpk76hu4z2pm5oajydymwqr4yex33ip6de/thumbnail.jpg",
+      "body_excerpt": "Steph Curry is staying in the Bay, reportedly agreeing to a two-year contract extension with the Warriors :star-struck:\n\nRead here: shorturl.at/AxSsL\n\n(➡️ Toyota NorCal Dealers)",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ],
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Acrcybmshorvvegmbkp5rvgjv/bafkreigv6w7svqgw674essrmmpk76hu4z2pm5oajydymwqr4yex33ip6de/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Acrcybmshorvvegmbkp5rvgjv/bafkreigv6w7svqgw674essrmmpk76hu4z2pm5oajydymwqr4yex33ip6de/playlist.m3u8"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:crcybmshorvvegmbkp5rvgjv/bafkreicnwnxnmxmxr2uko53p2eh7hv7sebqduk3c72vrxykxk2y3hschrm",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://shorturl.at/AxSsL"
+            }
+          ],
+          "index": {
+            "byteEnd": 149,
+            "byteStart": 132
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Aluofuy2uw7g4vsd2vbwidtel%2Fapp.bsky.feed.post%2F3mwfai45yic23",
+      "source": "bluesky",
+      "published_at": "2026-09-26T02:30:01Z",
+      "title": "Stephen Curry’s extension comes in about $20M lower than his max. Warriors can still create $40-$50M in cap space in the summer of 2027.",
+      "url": "https://bsky.app/profile/keithsmithnba.bsky.social/post/3mwfai45yic23",
+      "author": "KeithSmithNBA",
+      "thumbnail": null,
+      "body_excerpt": "Stephen Curry’s extension comes in about $20M lower than his max. Warriors can still create $40-$50M in cap space in the summer of 2027.",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:luofuy2uw7g4vsd2vbwidtel/bafkreicvdayh6d2lkowdik5bvsakvqnw4c2y7ohsvrfhy5yhzgpm7ekjbm",
+      "enriched": true
+    },
+    {
+      "id": "gn-9b0ccf6abeb3f221",
+      "source": "google-news",
+      "published_at": "2026-09-26T02:27:46Z",
+      "title": "Steph Curry, Warriors reportedly agree to two-year, $116M contract extension",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQQjc5Zl91NDlNa2JOc0JUekpIdnU4R0pyNE5jU3hDaFRhdklTamE3TDYyX1JqSWVFREp3SjY2dzR5dXFGNV8zUEtkcjBXcXVTa25kemY5TG9vUmgzYkQwQVZiZmdQUGlLalVYTVJwWmRVeUllWjNBektiaVFlUFcwdm1BaVZFWEpmUm0yT1dzVzJ2b2FvaXUydEFZNnRrNXdud1BmUlo5T0vSAbABQVVfeXFMUDdOVW9zWVd4RXNZNEJwODNCYWl1ZlJ6RzVPWFpuM29KVWVPVEh1aWEzeWJud2NJTWlwMzNkNWdEd0lxeGl4MzNsMVRYY0U3bU1wTzNUUHMyYnk4R2hGenlRc2lORG8wQXpsRG4wTnhpYkp1NTFMVG10aGxGZ3o0TkxyeVEyRlJrWTNaZWlKS1pQR2tuNWM5OEI2bE16cU10VFMwSHhSU3VILTJaS2dBZjI?oc=5",
+      "author": "NBC Sports Bay Area & California",
+      "thumbnail": null,
+      "body_excerpt": "Steph Curry, Warriors reportedly agree to two-year, $116M contract extension NBC Sports Bay Area & California",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ]
+    },
+    {
+      "id": "gn-8ca722856957da38",
+      "source": "google-news",
+      "published_at": "2026-09-26T02:26:00Z",
+      "title": "Steph Curry’s $116 million contract clarifies future with Warriors",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQSnR6Xzc4RzdoSDVhU2kzb3ZBS3hiSHQ1cGJFcGp3ZmlSUmpDaG1qR0prLWRRbGY2eDNNWEZ4bDRuVmtaODRNRGwzTWRsSXZNdUE5Rk9uN0VDN1p3NExxd1FmTnZvelVEN25pTlZObmpJMXU3S2ZiSTFseVhWQW1nYjNFWi1COUVi?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Steph Curry’s $116 million contract clarifies future with Warriors Yahoo Sports",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3A635cuwuwdmeaqrubnkorrcjj%2Fapp.bsky.feed.post%2F3mwfaau5qxx2d",
+      "source": "bluesky",
+      "published_at": "2026-09-26T02:25:58Z",
+      "title": "Stephen Curry, Warriors Sign Two-Year, $116M Extension https://basketball.realgm.com/wiretap/287400/Stephen-Curry-Warriors-Sign-Two-Year-$116M-Extension",
+      "url": "https://bsky.app/profile/realgmnba.bsky.social/post/3mwfaau5qxx2d",
+      "author": "RealGM",
+      "thumbnail": null,
+      "body_excerpt": "Stephen Curry, Warriors Sign Two-Year, $116M Extension https://basketball.realgm.com/wiretap/287400/Stephen-Curry-Warriors-Sign-Two-Year-$116M-Extension",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:635cuwuwdmeaqrubnkorrcjj/bafkreihphtdom6qobdx2q7ug5jcupvxd56u37byhsmdseguhezdkp6m7ui",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://basketball.realgm.com/wiretap/287400/Stephen-Curry-Warriors-Sign-Two-Year-$116M-Extension"
+            }
+          ],
+          "index": {
+            "byteEnd": 152,
+            "byteStart": 55
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3A5dwbpojkp6wykwcafasvwroi%2Fapp.bsky.feed.post%2F3mwfa6mmz2k2w",
+      "source": "bluesky",
+      "published_at": "2026-09-26T02:24:43Z",
+      "title": "Steph Curry is signing for $20 million less than the $136.7 million max contact extension he was eligible for",
+      "url": "https://bsky.app/profile/daltonjohnson.bsky.social/post/3mwfa6mmz2k2w",
+      "author": "Dalton Johnson",
+      "thumbnail": null,
+      "body_excerpt": "Steph Curry is signing for $20 million less than the $136.7 million max contact extension he was eligible for",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:5dwbpojkp6wykwcafasvwroi/bafkreidhwdyekurk3jktwzgtwhupkld4cqnttl7no4vahioehgjhignf3m",
+      "quote": {
+        "author": "Shams Charania Tweets",
+        "handle": "shamsbot.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:sa73fbx3vxzh2fw5pu5wmief/bafkreia3wn6jntgttuf3wogeyx32epvpdupys5t3qul6sdj62q2tfw2pni",
+        "text": "BREAKING: Golden State’s Stephen Curry has agreed on a two-year, $116 million contract extension with the franchise, with a player option in 2028-29, sources tell ESPN.",
+        "url": "https://bsky.app/profile/shamsbot.bsky.social/post/3mwf7upehbr2l",
+        "media": {
+          "type": "image",
+          "images": [
+            {
+              "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:sa73fbx3vxzh2fw5pu5wmief/bafkreiefafufmbfjsyert3crjocm3jvzz36qx73a7zc4qprps3qt6n2tzy",
+              "alt": ""
+            }
+          ]
+        }
+      },
+      "enriched": true
+    },
+    {
+      "id": "gn-608206cf678d8bdc",
+      "source": "google-news",
+      "published_at": "2026-09-26T02:22:00Z",
+      "title": "Warriors, Stephen Curry agree to two-year, $116 million extension",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQUVBabFhDbFJvYk5xTDVQSTJ3TXBCQ21hcUpyaV95Um5GcURIaHVvZEhzSkN2ZHV5V3IzTTllT3pESDU1RXVPZ1BQREFzeVJGMzJPT2QwT3BQWWtFdHJ5Wm5pRFhrQ3cwVEJBd2ZzTGV5R2h6V1pTN3ptZkota29zcTdLR3JDSUxL?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Warriors, Stephen Curry agree to two-year, $116 million extension Yahoo Sports",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ]
+    },
+    {
+      "id": "gn-b1af8bb4680af841",
+      "source": "google-news",
+      "published_at": "2026-09-26T02:22:00Z",
+      "title": "Stephen Curry extension worth $20 million less than what he was eligible for, gives Warriors significant spending power",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNczg0QWl1am5abk1UTllTcGw1Yk1SUVE4TjNEX3UyeWdQa3JPc3JQY0pCck9uT0Z3b21Bdm11NlJxZEdPaWN0c0VpRk1nZ3FCNEpmSld5YVpjQkpka3N0M2o1dkZsX3JraldzRGJaa19kZE9qejNlSzljNjlPeDMyTkhPdGZGeG0x?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Stephen Curry extension worth $20 million less than what he was eligible for, gives Warriors significant spending power Yahoo Sports",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ]
+    },
+    {
+      "id": "rd-t3_1wqera1",
+      "source": "reddit",
+      "published_at": "2026-09-26T02:20:00Z",
+      "title": "BREAKING: Golden State’s Stephen Curry has agreed on a two-year, $116 million contract extension with the franchise, with a player option in 2028-29, sources tell ESPN.",
+      "url": "https://www.reddit.com/r/nba/comments/1wqera1/breaking_golden_states_stephen_curry_has_agreed/",
+      "author": "OrganicHunt952",
+      "thumbnail": null,
+      "body_excerpt": "BREAKING: Golden State’s Stephen Curry has agreed on a two-year, $116 million contract extension with the franchise, with a player option in 2028-29, sources tell ESPN. https://www.espn.com/contributor/shams-charania",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Asa73fbx3vxzh2fw5pu5wmief%2Fapp.bsky.feed.post%2F3mwf7upehbr2l",
+      "source": "bluesky",
+      "published_at": "2026-09-26T02:18:53Z",
+      "title": "BREAKING: Golden State’s Stephen Curry has agreed on a two-year, $116 million contract extension with the franchise, with a player option in 2028-29, sources tell ESPN.",
+      "url": "https://bsky.app/profile/shamsbot.bsky.social/post/3mwf7upehbr2l",
+      "author": "Shams Charania Tweets",
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:sa73fbx3vxzh2fw5pu5wmief/bafkreiefafufmbfjsyert3crjocm3jvzz36qx73a7zc4qprps3qt6n2tzy",
+      "body_excerpt": "BREAKING: Golden State’s Stephen Curry has agreed on a two-year, $116 million contract extension with the franchise, with a player option in 2028-29, sources tell ESPN.",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ],
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:sa73fbx3vxzh2fw5pu5wmief/bafkreiefafufmbfjsyert3crjocm3jvzz36qx73a7zc4qprps3qt6n2tzy",
+            "alt": ""
+          }
+        ]
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:sa73fbx3vxzh2fw5pu5wmief/bafkreia3wn6jntgttuf3wogeyx32epvpdupys5t3qul6sdj62q2tfw2pni",
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Ahb5s4bd5ctk6inznrn6gf6hx%2Fapp.bsky.feed.post%2F3mwf4typt7czn",
+      "source": "bluesky",
+      "published_at": "2026-09-26T01:25:05Z",
+      "title": "Does Stephen Curry think the Warriors can contend? 'We still believe that we can be that team'",
+      "url": "https://bsky.app/profile/basketballtalk.bsky.social/post/3mwf4typt7czn",
+      "author": "Kurt Helin",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:hb5s4bd5ctk6inznrn6gf6hx/bafkreieadrbkii5xrz4jse7pwb646srgbpfiu2ntblpruybekthuremi7y",
+      "body_excerpt": "Does Stephen Curry think the Warriors can contend? 'We still believe that we can be that team'\n\n\"I think our challenge now is to reimagine what that looks like. And, you know, we have a veteran team. We need health on our side.\"\n\nwww.nbcsports.com/nba/news/doe...",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://www.nbcsports.com/nba/news/does-stephen-curry-think-warriors-can-contend-we-still-believe-that-we-can-be-that-team",
+        "title": "Does Stephen Curry think Warriors can contend? 'We still believe that we can be that team'",
+        "description": "Curry also talked about understanding he is nearing the end of his career.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:hb5s4bd5ctk6inznrn6gf6hx/bafkreieadrbkii5xrz4jse7pwb646srgbpfiu2ntblpruybekthuremi7y"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:hb5s4bd5ctk6inznrn6gf6hx/bafkreicew6cnah57fkltfde2ieoa2m62tiwjhewn7ptpayloebpzvm3k5a",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.nbcsports.com/nba/news/does-stephen-curry-think-warriors-can-contend-we-still-believe-that-we-can-be-that-team"
+            }
+          ],
+          "index": {
+            "$type": "app.bsky.richtext.facet#byteSlice",
+            "byteEnd": 263,
+            "byteStart": 230
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "gn-b1985b967ab3938f",
+      "source": "google-news",
+      "published_at": "2026-09-25T22:25:59Z",
+      "title": "Stephen Curry believes Warriors can still be a championship contender",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQeDFXOElyUGlLdmF2UkQwU2RaTlhiVktQNnd3VGp4eUlzbDlZQ2lnRTZGMmc3TXlnR01WaVJuLXZ1aFh1endHNGJ1OWU3WXE5NXRKR3NCaXhlNlRyZGU1UTJOT2dkSWp5YVVESUh5U1dQSGJRT2lRa1d5dlpLM0x4UlVsS2dORnEzY2xjalVWaw?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Stephen Curry believes Warriors can still be a championship contender Yahoo Sports",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ]
+    },
     {
       "id": "bs-did%3Aplc%3Arkpzrwxex34r36ypejhew7ml%2Fapp.bsky.feed.post%2F3mwdxe3bhvk2z",
       "source": "bluesky",
@@ -5062,22 +5733,6 @@
       "body_excerpt": "Warriors Legend Klay Thompson Compares New Teammate to Steph Curry Yahoo Sports",
       "players": [
         "klay-thompson",
-        "stephen-curry"
-      ],
-      "teams": [
-        "golden-state-warriors"
-      ]
-    },
-    {
-      "id": "gn-44c9fc8780dc048d",
-      "source": "google-news",
-      "published_at": "2026-08-27T01:45:00Z",
-      "title": "Warriors to discuss contract extension with Steph Curry this weekend",
-      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNRnYtdXkyMnJxaWlsUV9wdXVNUldQQjRhY1hMU0x5M3JPd1dwdFI1ZWVGRUxHazB5SlBLaXpmc2pWam1PUGowQi1DM0N4UWRnM3VibldWSGd4d2lhV2pKaXpUYXgybS1aczdmOHRkNGJ6TUNZaGNkZk1sNlFLTkZaLXY3cWREbUh0NWxPcUlYeDVNSnJDVUE3WDRIeVl3MDBoRkVfTWVTUGtuNC0tUEN1ZmRieTN0cThOREt6NjlmejFuUzA4TFVqSEkwMnJwZXhHV1V5OVlUYWhJUQ?oc=5",
-      "author": "USA Today",
-      "thumbnail": null,
-      "body_excerpt": "Warriors to discuss contract extension with Steph Curry this weekend USA Today",
-      "players": [
         "stephen-curry"
       ],
       "teams": [
