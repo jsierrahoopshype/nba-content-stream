@@ -1,9 +1,50 @@
 {
   "slug": "jalen-brunson",
   "name": "Jalen Brunson",
-  "generated_at": "2026-09-27T13:06:32Z",
+  "generated_at": "2026-09-27T17:54:06Z",
   "count": 186,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Ahb5s4bd5ctk6inznrn6gf6hx%2Fapp.bsky.feed.post%2F3mwjdrb2bmseb",
+      "source": "bluesky",
+      "published_at": "2026-09-27T17:39:28Z",
+      "title": "Watch highlights from Knicks' Jalen Brunson hosting Saturday Night Live",
+      "url": "https://bsky.app/profile/basketballtalk.bsky.social/post/3mwjdrb2bmseb",
+      "author": "Kurt Helin",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:hb5s4bd5ctk6inznrn6gf6hx/bafkreifekjvl3bl57cikwflfacarlr4aivxbglrom3pjg2frm3kebkzn2y",
+      "body_excerpt": "Watch highlights from Knicks' Jalen Brunson hosting Saturday Night Live\n\nwww.nbcsports.com/nba/news/wat...",
+      "players": [
+        "jalen-brunson"
+      ],
+      "teams": [
+        "new-york-knicks"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://www.nbcsports.com/nba/news/watch-highlights-from-knicks-jalen-brunson-hosting-saturday-night-live",
+        "title": "Watch highlights from Knicks' Jalen Brunson hosting Saturday Night Live",
+        "description": "Watch a few highlights from Brunson's big night here, or stream the entire episode on Peacock.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:hb5s4bd5ctk6inznrn6gf6hx/bafkreifekjvl3bl57cikwflfacarlr4aivxbglrom3pjg2frm3kebkzn2y"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:hb5s4bd5ctk6inznrn6gf6hx/bafkreicew6cnah57fkltfde2ieoa2m62tiwjhewn7ptpayloebpzvm3k5a",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.nbcsports.com/nba/news/watch-highlights-from-knicks-jalen-brunson-hosting-saturday-night-live"
+            }
+          ],
+          "index": {
+            "$type": "app.bsky.richtext.facet#byteSlice",
+            "byteEnd": 106,
+            "byteStart": 73
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-daf8355c9afc5a39",
       "source": "google-news",
@@ -3099,26 +3140,6 @@
         "shai-gilgeous-alexander"
       ],
       "teams": []
-    },
-    {
-      "id": "yt-y2BfBpsQ474",
-      "source": "youtube",
-      "published_at": "2026-08-28T17:00:52Z",
-      "title": "Kevin Durant on Jalen Brunson turning down $100 million #knicks #kevindurant #jalenbrunson #nba",
-      "url": "https://www.youtube.com/watch?v=y2BfBpsQ474",
-      "author": "Boardroom",
-      "thumbnail": "https://i.ytimg.com/vi/y2BfBpsQ474/maxresdefault.jpg",
-      "body_excerpt": "Watch the full conversation here: https://youtu.be/BARcxEBt8oM Like what you see? Subscribe - http://bit.ly/3aTKcuz Follow Boardroom on Apple News - https://bit.ly/2VjRZfR Like what you see? Subscribe - http://bit.ly/3aTKcuz Visit Boardroom's website: https://boardroom.tv/…",
-      "players": [
-        "jalen-brunson",
-        "kevin-durant"
-      ],
-      "teams": [
-        "new-york-knicks"
-      ],
-      "media": {
-        "type": "video"
-      }
     }
   ]
 }

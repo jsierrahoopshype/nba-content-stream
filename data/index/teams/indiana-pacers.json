@@ -1,9 +1,48 @@
 {
   "slug": "indiana-pacers",
   "name": "Indiana Pacers",
-  "generated_at": "2026-09-27T13:06:32Z",
-  "count": 264,
+  "generated_at": "2026-09-27T17:54:06Z",
+  "count": 262,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3A7uahugigvixjvxd5s2hidpad%2Fapp.bsky.feed.post%2F3mwja7owydk2z",
+      "source": "bluesky",
+      "published_at": "2026-09-27T16:35:58Z",
+      "title": "What the Pacers 2026 offseason means for 2027: www.forbes.com/sites/tonyea...",
+      "url": "https://bsky.app/profile/tonyreast.bsky.social/post/3mwja7owydk2z",
+      "author": "Tony East",
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreigzgu573ilyp4mg7yqyglm3nqel2sth6db2m6auw34hgvvykpmam4",
+      "body_excerpt": "What the Pacers 2026 offseason means for 2027: www.forbes.com/sites/tonyea...",
+      "players": [],
+      "teams": [
+        "indiana-pacers"
+      ],
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreigzgu573ilyp4mg7yqyglm3nqel2sth6db2m6auw34hgvvykpmam4",
+            "alt": ""
+          }
+        ]
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreibcezoefeniffictxya32ce54pxckgbi6tyrpl5atugj63b6c25ei",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.forbes.com/sites/tonyeast/2026/09/27/pacers-2026-additions-set-up-for-tight-spending-in-2027-offseason/"
+            }
+          ],
+          "index": {
+            "byteEnd": 77,
+            "byteStart": 47
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "bs-did%3Aplc%3As2ahnyyou2ocsnkyjai3u3na%2Fapp.bsky.feed.post%2F3mwiu6qtgak24",
       "source": "bluesky",
@@ -5147,59 +5186,6 @@
           }
         ]
       }
-    },
-    {
-      "id": "bs-did%3Aplc%3A7uahugigvixjvxd5s2hidpad%2Fapp.bsky.feed.post%2F3mu5w4mvrkk23",
-      "source": "bluesky",
-      "published_at": "2026-08-28T17:45:37Z",
-      "title": "Softball! www.circlecityspin.com/pacers-and-c...",
-      "url": "https://bsky.app/profile/tonyreast.bsky.social/post/3mu5w4mvrkk23",
-      "author": "Tony East",
-      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreicqqfuedfdqgvdfewbu7qotgg4k2vzaswjzfj2wejy4vgimli26la",
-      "body_excerpt": "Softball! www.circlecityspin.com/pacers-and-c...",
-      "players": [],
-      "teams": [
-        "indiana-pacers"
-      ],
-      "media": {
-        "type": "image",
-        "images": [
-          {
-            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreicqqfuedfdqgvdfewbu7qotgg4k2vzaswjzfj2wejy4vgimli26la",
-            "alt": ""
-          }
-        ]
-      }
-    },
-    {
-      "id": "gn-9cc0ca3d32acae81",
-      "source": "google-news",
-      "published_at": "2026-08-28T16:49:45Z",
-      "title": "Kendrick Perkins Has Absurd Prediction for Pacers’ 2026-27 Season",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQcThNcFFXdGh2VzBFVnVUUXNRbHA4dG1pdnpiM3NQaG9tTDVWQjNPalZLa1d3eWJySHpmWDFEc2kwdDg5bDJyNnFFRGluM1VFTGFNM3J4S0FpOEY3TzBPVWtTa0lRY0s1NW8zUTdvRDJtY2VjUVNHSURKWDJHaVVjYk5UOEJhRjNxS25EcGJjaFA0M05hcldrQ3pKQjdYUm01Y2J1YnVuLUZMTDBqUkV3V2NR?oc=5",
-      "author": "Sports Illustrated",
-      "thumbnail": null,
-      "body_excerpt": "Kendrick Perkins Has Absurd Prediction for Pacers’ 2026-27 Season Sports Illustrated",
-      "players": [],
-      "teams": [
-        "indiana-pacers"
-      ]
-    },
-    {
-      "id": "gn-2805d10605b8b883",
-      "source": "google-news",
-      "published_at": "2026-08-28T15:40:52Z",
-      "title": "Pacers' Tyrese Haliburton Drops in NBA 2K27 After Missing Entire Season",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNalVHN0VnVGRoMENDV05QR1F0LUtESnJaZVhYdmxjYnE4c0dGVmwyOEdCVldkRFV2T0R5MFZTb3RNMmlmbXUzVXJYQ2UzbTZLbjFSd0ZBcG9HVmdZaTEza0xwVHU1a2dzTFZRNi04cERwNkQzVzZJaDlHR1pGYUVQQWVBMF9QMnRoeVBF?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Pacers' Tyrese Haliburton Drops in NBA 2K27 After Missing Entire Season Yahoo Sports",
-      "players": [
-        "tyrese-haliburton"
-      ],
-      "teams": [
-        "indiana-pacers"
-      ]
     }
   ]
 }
