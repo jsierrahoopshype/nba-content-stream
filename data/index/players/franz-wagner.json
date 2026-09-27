@@ -1,9 +1,73 @@
 {
   "slug": "franz-wagner",
   "name": "Franz Wagner",
-  "generated_at": "2026-09-27T21:11:03Z",
-  "count": 7,
+  "generated_at": "2026-09-27T23:50:50Z",
+  "count": 8,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3mwjqfyvluk2h",
+      "source": "bluesky",
+      "published_at": "2026-09-27T21:25:49Z",
+      "title": "New for @orlandosentinel.com: #Magic forward Franz Wagner is excited about working with new Orlando coach Sean Sweeney:",
+      "url": "https://bsky.app/profile/jbeede.bsky.social/post/3mwjqfyvluk2h",
+      "author": "Jason Beede",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreifgts4263ajcsudnoqefadvih6sjvi56t7rmgfwuzgxiywbonprbe",
+      "body_excerpt": "New for @orlandosentinel.com: #Magic forward Franz Wagner is excited about working with new Orlando coach Sean Sweeney:\n\n“It’s going to be some change and some adjustments for us, how we’re being coached, and that’s where growth comes in,” Wagner said.\n\nMore: www.orlandosentinel.com/2026/09/27/o...",
+      "players": [
+        "franz-wagner"
+      ],
+      "teams": [
+        "orlando-magic"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://www.orlandosentinel.com/2026/09/27/orlando-magic-franz-wagner-basketball-camp-moe-sean-sweeney-nba/",
+        "title": "Magic’s Franz Wagner excited about working with new coach Sweeney",
+        "description": "Hosting a youth basketball camp Sunday, Magic forward Franz Wagner talked about how excited he is about new coach Sean Sweeney and more ahead of the start of Orlando training camp.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreifgts4263ajcsudnoqefadvih6sjvi56t7rmgfwuzgxiywbonprbe"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiey3powizzh2yl5k4eyoftbxztccx6pgnmdozyhyyjqybjhhnc2ne",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:g5n6tmh54utzmwjregfbb7ul"
+            }
+          ],
+          "index": {
+            "byteEnd": 28,
+            "byteStart": 8
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Magic"
+            }
+          ],
+          "index": {
+            "byteEnd": 36,
+            "byteStart": 30
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.orlandosentinel.com/2026/09/27/orlando-magic-franz-wagner-basketball-camp-moe-sean-sweeney-nba/"
+            }
+          ],
+          "index": {
+            "byteEnd": 309,
+            "byteStart": 270
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3mwjbwm65sc25",
       "source": "bluesky",
