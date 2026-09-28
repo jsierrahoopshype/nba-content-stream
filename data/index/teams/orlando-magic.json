@@ -1,9 +1,110 @@
 {
   "slug": "orlando-magic",
   "name": "Orlando Magic",
-  "generated_at": "2026-09-28T11:18:59Z",
+  "generated_at": "2026-09-28T18:44:24Z",
   "count": 203,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3mwlkjhk6vk24",
+      "source": "bluesky",
+      "published_at": "2026-09-28T14:45:42Z",
+      "title": "Greetings from 2026 #Magic media day 📍",
+      "url": "https://bsky.app/profile/jbeede.bsky.social/post/3mwlkjhk6vk24",
+      "author": "Jason Beede",
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiek6z7naht2hs5o3lqiqfdef6jyat5waltsz5dmrtfmrrktz7lypi",
+      "body_excerpt": "Greetings from 2026 #Magic media day 📍",
+      "players": [],
+      "teams": [
+        "orlando-magic"
+      ],
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiek6z7naht2hs5o3lqiqfdef6jyat5waltsz5dmrtfmrrktz7lypi",
+            "alt": ""
+          }
+        ]
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiey3powizzh2yl5k4eyoftbxztccx6pgnmdozyhyyjqybjhhnc2ne",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Magic"
+            }
+          ],
+          "index": {
+            "byteEnd": 26,
+            "byteStart": 20
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3mwlexdg2bs2v",
+      "source": "bluesky",
+      "published_at": "2026-09-28T13:06:05Z",
+      "title": "New for @orlandosentinel.com: As the #Magic open training camp this week, here are five questions that need answers: www.orlandosentinel.com/2026/09/27/o...",
+      "url": "https://bsky.app/profile/jbeede.bsky.social/post/3mwlexdg2bs2v",
+      "author": "Jason Beede",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreietq3bswwi44q7xkrtaqybgkhfasu3qzquqsulslg4yebki3ln24y",
+      "body_excerpt": "New for @orlandosentinel.com: As the #Magic open training camp this week, here are five questions that need answers: www.orlandosentinel.com/2026/09/27/o...",
+      "players": [],
+      "teams": [
+        "orlando-magic"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://www.orlandosentinel.com/2026/09/27/orlando-magic-media-day-training-camp-preview-big-questions-anthony-black/",
+        "title": "How will Magic respond to new coach Sweeney? | 5 training camp questions",
+        "description": "The Magic open their first training camp under new coach Sean Sweeney this week. How Orlando’s players respond to Sweeney, contracts, roles and more are among key training camp questions.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreietq3bswwi44q7xkrtaqybgkhfasu3qzquqsulslg4yebki3ln24y"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiey3powizzh2yl5k4eyoftbxztccx6pgnmdozyhyyjqybjhhnc2ne",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:g5n6tmh54utzmwjregfbb7ul"
+            }
+          ],
+          "index": {
+            "byteEnd": 28,
+            "byteStart": 8
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Magic"
+            }
+          ],
+          "index": {
+            "byteEnd": 43,
+            "byteStart": 37
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.orlandosentinel.com/2026/09/27/orlando-magic-media-day-training-camp-preview-big-questions-anthony-black/"
+            }
+          ],
+          "index": {
+            "byteEnd": 156,
+            "byteStart": 117
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-ec19b76544880770",
       "source": "google-news",
@@ -3773,43 +3874,6 @@
       "teams": [
         "orlando-magic"
       ]
-    },
-    {
-      "id": "gn-a444a33e7fa2aed2",
-      "source": "google-news",
-      "published_at": "2026-08-29T16:00:40Z",
-      "title": "What Will TV Time Look Like for the Orlando Magic? Part 1",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOOWtIT2VUVk9BSU4tTVFfaVo2dUIzZ3VrQXZ4M3ZoOHE2ZHFGdEJNZ29GbW5GVHVVeTVMS2lVUVF4SlY4czJZYThtWHJkTWhITUU1bUpRVGJOTGJqS01Bb2xTb2NZNHhFY3ZTX3N0b3BVR3ZCcGVVSDNZbjduTFkxeg?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "What Will TV Time Look Like for the Orlando Magic? Part 1 Yahoo Sports",
-      "players": [],
-      "teams": [
-        "orlando-magic"
-      ]
-    },
-    {
-      "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3mua47rvc322w",
-      "source": "bluesky",
-      "published_at": "2026-08-29T14:40:05Z",
-      "title": "New for @orlandosentinel.com: I spoke with #Magic guard Jalen Suggs while he was in Istanbul for the NBA’s Basketball Without Borders camp:",
-      "url": "https://bsky.app/profile/jbeede.bsky.social/post/3mua47rvc322w",
-      "author": "Jason Beede",
-      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreic4enncbo5l3k23mt6ybdje3rmuayoxkctjygm2pkhvsapg5cagqe",
-      "body_excerpt": "New for @orlandosentinel.com: I spoke with #Magic guard Jalen Suggs while he was in Istanbul for the NBA’s Basketball Without Borders camp:\n\n“I’ve loved my summer, and I really do miss the guys.”\n\nMore on that, the camp and his connection with Sean Sweeney: www.orlandosentinel.com/2026/08/29/o...",
-      "players": [
-        "jalen-suggs"
-      ],
-      "teams": [
-        "orlando-magic"
-      ],
-      "media": {
-        "type": "link",
-        "uri": "https://www.orlandosentinel.com/2026/08/29/orlando-magic-jalen-suggs-nba-basketball-without-borders-bwb-camp-istanbul-turkey-sean-sweeney/",
-        "title": "Magic’s Jalen Suggs teaches at camp in Turkey, connects with Sweeney as season nears",
-        "description": "Magic guard Jalen Suggs talked about his time at the NBA’s Basketball Without Borders camp in Turkey, new coach Sean Sweeney and his busy summer.",
-        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreic4enncbo5l3k23mt6ybdje3rmuayoxkctjygm2pkhvsapg5cagqe"
-      }
     }
   ]
 }
