@@ -1,9 +1,115 @@
 {
   "slug": "ivica-zubac",
   "name": "Ivica Zubac",
-  "generated_at": "2026-09-29T09:39:07Z",
-  "count": 30,
+  "generated_at": "2026-09-29T16:10:09Z",
+  "count": 32,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3A7uahugigvixjvxd5s2hidpad%2Fapp.bsky.feed.post%2F3mwnwnh2ljs27",
+      "source": "bluesky",
+      "published_at": "2026-09-29T13:28:01Z",
+      "title": "Today, @ipacers.bsky.social stops by again and we break down the important notes from Pacers media day from Haliburton to Zubac to new guys to play style and much more.",
+      "url": "https://bsky.app/profile/tonyreast.bsky.social/post/3mwnwnh2ljs27",
+      "author": "Tony East",
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreihvxrwsx4twmoviertgzv57tprfywbsuxco6toe55yrh3ixqke57e",
+      "body_excerpt": "Today, @ipacers.bsky.social stops by again and we break down the important notes from Pacers media day from Haliburton to Zubac to new guys to play style and much more.\n\nListen: locked-on-pacers-daily-podcast-on-the-indiana-pacers.simplecast.com\nWatch: www.youtube.com/watch?v=13tR...",
+      "players": [
+        "ivica-zubac",
+        "tyrese-haliburton"
+      ],
+      "teams": [
+        "indiana-pacers"
+      ],
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreihvxrwsx4twmoviertgzv57tprfywbsuxco6toe55yrh3ixqke57e",
+            "alt": ""
+          }
+        ]
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreibcezoefeniffictxya32ce54pxckgbi6tyrpl5atugj63b6c25ei",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:hhv67ydqswmrizaz5dqlz336"
+            }
+          ],
+          "index": {
+            "byteEnd": 27,
+            "byteStart": 7
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://locked-on-pacers-daily-podcast-on-the-indiana-pacers.simplecast.com/"
+            }
+          ],
+          "index": {
+            "byteEnd": 245,
+            "byteStart": 178
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.youtube.com/watch?v=13tRd0iRe3A"
+            }
+          ],
+          "index": {
+            "byteEnd": 284,
+            "byteStart": 253
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3As2ahnyyou2ocsnkyjai3u3na%2Fapp.bsky.feed.post%2F3mwntgk4ewc2g",
+      "source": "bluesky",
+      "published_at": "2026-09-29T12:30:28Z",
+      "title": "At media day, Zubac, Haliburton and Siakam feel their chemistry is developing well.",
+      "url": "https://bsky.app/profile/alexgoldennba.bsky.social/post/3mwntgk4ewc2g",
+      "author": "Alex Golden",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:s2ahnyyou2ocsnkyjai3u3na/bafkreihiqvo2owso7vfipksng2vbibamdqk7q3tejrwvg2de7oyoel7twu",
+      "body_excerpt": "At media day, Zubac, Haliburton and Siakam feel their chemistry is developing well.\n\n“I have no concerns. You put good basketball players around me and I feel like I'll do pretty well.” -Tyrese on playing with Zubac\n\nRead what the Pacers Big 3 had to say👇\nwww.si.com/nba/pacers/o...",
+      "players": [
+        "ivica-zubac",
+        "pascal-siakam",
+        "tyrese-haliburton"
+      ],
+      "teams": [],
+      "media": {
+        "type": "link",
+        "uri": "https://www.si.com/nba/pacers/onsi/zubac-haliburton-and-siakam-quickly-building-chemistry-for-pacers-01m3n2q1wqe6",
+        "title": "Zubac, Haliburton and Siakam Quickly Building Chemistry for Pacers",
+        "description": "INDIANAPOLIS — The Indiana Pacers were elated last February when they were able to acquire Ivica Zubac hours before the NBA trade deadline.  Upon his arrival, t",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:s2ahnyyou2ocsnkyjai3u3na/bafkreihiqvo2owso7vfipksng2vbibamdqk7q3tejrwvg2de7oyoel7twu"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:s2ahnyyou2ocsnkyjai3u3na/bafkreifjxzdseagu5z2afcys3p55aqchnuifez4jmeiuhpbkxsajhmuo5u",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.si.com/nba/pacers/onsi/zubac-haliburton-and-siakam-quickly-building-chemistry-for-pacers-01m3n2q1wqe6"
+            }
+          ],
+          "index": {
+            "byteEnd": 289,
+            "byteStart": 263
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-e1eb363109fc84a1",
       "source": "google-news",
