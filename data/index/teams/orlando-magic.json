@@ -1,9 +1,103 @@
 {
   "slug": "orlando-magic",
   "name": "Orlando Magic",
-  "generated_at": "2026-09-30T11:24:46Z",
-  "count": 222,
+  "generated_at": "2026-09-30T16:59:14Z",
+  "count": 223,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3mwqp3f7nak2o",
+      "source": "bluesky",
+      "published_at": "2026-09-30T15:50:38Z",
+      "title": "#Magic coach Sean Sweeney said Anthony Black had a minor ankle sprain during the team’s voluntary workouts leading into training camp. Sweeney said Black is considered day-to-day and they’re just being smart about it.",
+      "url": "https://bsky.app/profile/jbeede.bsky.social/post/3mwqp3f7nak2o",
+      "author": "Jason Beede",
+      "thumbnail": null,
+      "body_excerpt": "#Magic coach Sean Sweeney said Anthony Black had a minor ankle sprain during the team’s voluntary workouts leading into training camp. Sweeney said Black is considered day-to-day and they’re just being smart about it.",
+      "players": [
+        "anthony-black"
+      ],
+      "teams": [
+        "orlando-magic"
+      ],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiey3powizzh2yl5k4eyoftbxztccx6pgnmdozyhyyjqybjhhnc2ne",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Magic"
+            }
+          ],
+          "index": {
+            "byteEnd": 6,
+            "byteStart": 0
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3mwqcmwteo22j",
+      "source": "bluesky",
+      "published_at": "2026-09-30T12:07:48Z",
+      "title": "New: The #Magic are introducing several new affordability options on tickets, merchandise and concessions for all home games at Kia Center this season.",
+      "url": "https://bsky.app/profile/jbeede.bsky.social/post/3mwqcmwteo22j",
+      "author": "Jason Beede",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreibsu5ju2fmvopjcxkvwniuloomyu7ek7xm3wskesnz3cadetdjwa4",
+      "body_excerpt": "New: The #Magic are introducing several new affordability options on tickets, merchandise and concessions for all home games at Kia Center this season.\n\nMore details for @orlandosentinel.com: www.orlandosentinel.com/2026/09/30/o...",
+      "players": [],
+      "teams": [
+        "orlando-magic"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://www.orlandosentinel.com/2026/09/30/orlando-magic-affordability-options-tickets-merch-nba-kia-center/",
+        "title": "Tickets, food, merch: Magic introduce value options for games at Kia Center",
+        "description": "From $20 tickets to reduced food prices, the Magic are offering several new affordability options on tickets, merchandise and concessions at Kia Center this upcoming season.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreibsu5ju2fmvopjcxkvwniuloomyu7ek7xm3wskesnz3cadetdjwa4"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiey3powizzh2yl5k4eyoftbxztccx6pgnmdozyhyyjqybjhhnc2ne",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Magic"
+            }
+          ],
+          "index": {
+            "byteEnd": 15,
+            "byteStart": 9
+          }
+        },
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:g5n6tmh54utzmwjregfbb7ul"
+            }
+          ],
+          "index": {
+            "byteEnd": 190,
+            "byteStart": 170
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.orlandosentinel.com/2026/09/30/orlando-magic-affordability-options-tickets-merch-nba-kia-center/"
+            }
+          ],
+          "index": {
+            "byteEnd": 231,
+            "byteStart": 192
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-9c7706466b9c3ec1",
       "source": "google-news",
@@ -4368,22 +4462,6 @@
       "thumbnail": null,
       "body_excerpt": "What Will Dictate a Successful Season for the Orlando Magic? Yahoo Sports",
       "players": [],
-      "teams": [
-        "orlando-magic"
-      ]
-    },
-    {
-      "id": "gn-b6f4e275c096bc16",
-      "source": "google-news",
-      "published_at": "2026-08-31T15:10:23Z",
-      "title": "Magic's Goga Bitadze: Strong effort in win",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPeUIwUlc5NHhWd0tWVGNZWElERkZNeUpDN0JzZWhQYlc5NU9XeTRHblpzZTZjdFY1clZfNEZreHZYdXphcVRLMmNFX0pmRVl1UXByWTY2ZHdUX0hfQVdCSmdJV2tqZmpiVlJrOGgxYkdzNTdRZWNpQUJzekpuQkJ2bWM4czVOZ3Y5RmlDQW0xRnUzNnNSbFE?oc=5",
-      "author": "CBS Sports",
-      "thumbnail": null,
-      "body_excerpt": "Magic's Goga Bitadze: Strong effort in win CBS Sports",
-      "players": [
-        "goga-bitadze"
-      ],
       "teams": [
         "orlando-magic"
       ]
