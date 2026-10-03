@@ -1,9 +1,61 @@
 {
   "slug": "labaron-philon",
   "name": "Labaron Philon",
-  "generated_at": "2026-10-03T18:21:34Z",
-  "count": 18,
+  "generated_at": "2026-10-03T21:42:52Z",
+  "count": 19,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Apy7chfax4ftugpcpyj2binih%2Fapp.bsky.feed.post%2F3mwyrqhls3s2p",
+      "source": "bluesky",
+      "published_at": "2026-10-03T20:59:30Z",
+      "title": "A little PSA, between @ginamizell.bsky.social and myself we wrote over 10 stories from 76ers training camp this week: about the big names of course, but also about the backup center situation, Labaron Philon and a look at the defense. $2.50 for 250 days. Subscribe: www.inquirer.c",
+      "url": "https://bsky.app/profile/christopherhine.bsky.social/post/3mwyrqhls3s2p",
+      "author": "Chris Hine",
+      "thumbnail": null,
+      "body_excerpt": "A little PSA, between @ginamizell.bsky.social and myself we wrote over 10 stories from 76ers training camp this week: about the big names of course, but also about the backup center situation, Labaron Philon and a look at the defense. $2.50 for 250 days. Subscribe: www.inquirer.com/offers/",
+      "players": [
+        "labaron-philon"
+      ],
+      "teams": [
+        "philadelphia-76ers"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://www.inquirer.com/offers/",
+        "title": "Subscribe to the Philadelphia Inquirer",
+        "description": "Choose a Philadelphia Inquirer newspaper subscription, from unlimited digital access to Sunday or seven-day delivery.",
+        "thumb": null
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:py7chfax4ftugpcpyj2binih/bafkreifwzfgb34ucql5h5ivezbp53ugm5dhunolaawqttjyevaovqsn7jm",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:hl273o7bfegotspjc5dqfzmq"
+            }
+          ],
+          "index": {
+            "byteEnd": 45,
+            "byteStart": 22
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.inquirer.com/offers/"
+            }
+          ],
+          "index": {
+            "byteEnd": 290,
+            "byteStart": 266
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "bs-did%3Aplc%3Ahl273o7bfegotspjc5dqfzmq%2Fapp.bsky.feed.post%2F3mwybxcoznk2j",
       "source": "bluesky",
