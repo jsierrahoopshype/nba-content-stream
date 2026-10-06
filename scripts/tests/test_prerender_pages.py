@@ -258,9 +258,55 @@ def test_sitemap_includes_homepage_and_all_entities(tmp_path):
     assert "/index.html</loc>" in text
     assert "/players.html</loc>" in text
     assert "/teams.html</loc>" in text
-    # Entity pages
-    assert "/players/stephen-curry.html</loc>" in text
+    # Entity pages: teams listed, players excluded (they're noindex)
+    assert "/players/stephen-curry.html</loc>" not in text
     assert "/teams/los-angeles-lakers.html</loc>" in text
+
+
+# ---------------------------------------------------------------------------
+# Robots noindex: player pages only
+# ---------------------------------------------------------------------------
+
+
+NOINDEX_TAG = '<meta name="robots" content="noindex, follow">'
+
+
+def test_player_pages_carry_noindex_including_backfill(tmp_path, monkeypatch):
+    # Backfill pages write empty index JSON under REPO_ROOT; keep that in tmp.
+    monkeypatch.setattr(prerender_pages, "REPO_ROOT", tmp_path)
+    players_canonical = tmp_path / "players.json"
+    players_canonical.write_text(json.dumps({
+        "stephen-curry": {"name": "Stephen Curry"},
+        "quiet-player": {"name": "Quiet Player"},
+    }))
+    manifest = {
+        "players": [{"slug": "stephen-curry", "name": "Stephen Curry", "count": 5}],
+        "teams": [{"slug": "los-angeles-lakers", "name": "Los Angeles Lakers", "count": 3}],
+    }
+    players_dir = tmp_path / "players"
+    teams_dir = tmp_path / "teams"
+    prerender_pages.generate_pages(
+        manifest, players_out=players_dir, teams_out=teams_dir,
+        sitemap_path=tmp_path / "sitemap.xml",
+        players_canonical_path=players_canonical,
+        teams_canonical_path=tmp_path / "no-teams.json",
+    )
+    for slug in ("stephen-curry", "quiet-player"):  # quiet-player = count-0 backfill
+        page = (players_dir / f"{slug}.html").read_text()
+        head = page.split("</head>")[0]
+        assert NOINDEX_TAG in head
+        # Canonical and og:url are unchanged
+        url = f"https://hoopsmatic.com/content-stream/players/{slug}.html"
+        assert f'<link rel="canonical" href="{url}">' in head
+        assert f'<meta property="og:url" content="{url}">' in head
+    # Team pages are not affected
+    assert "noindex" not in (teams_dir / "los-angeles-lakers.html").read_text()
+
+
+def test_hub_page_is_not_noindexed():
+    hub = (Path(prerender_pages.__file__).resolve().parent.parent / "index.html").read_text()
+    assert "noindex" not in hub
+    assert 'name="robots"' not in hub
 
 
 # ---------------------------------------------------------------------------
