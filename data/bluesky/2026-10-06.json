@@ -1,7 +1,7 @@
 {
   "date": "2026-10-06",
   "source": "bluesky",
-  "generated_at": "2026-10-06T21:34:20Z",
+  "generated_at": "2026-10-06T21:39:39Z",
   "items": [
     {
       "id": "bs-did%3Aplc%3Aj24jtz7xkt5ttdsk32mmpkvn%2Fapp.bsky.feed.post%2F3mx3xjyxjbk2u",
@@ -25717,6 +25717,52 @@
         "charlotte-hornets"
       ],
       "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Aarafm74ft3zdygyhtatq5j7k%2Fapp.bsky.feed.post%2F3mxafbsw2ck6q",
+      "source": "bluesky",
+      "published_at": "2026-10-06T21:37:52Z",
+      "ingested_at": "2026-10-06T21:38:21Z",
+      "url": "https://bsky.app/profile/hpbasketball.bsky.social/post/3mxafbsw2ck6q",
+      "title": "I am all the way in on Alpha Diallo. www.youtube.com/watch?v=6CYB...",
+      "author": {
+        "handle": "hpbasketball.bsky.social",
+        "display_name": "Hardwood Paroxysm",
+        "url": "https://bsky.app/profile/hpbasketball.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:arafm74ft3zdygyhtatq5j7k/bafkreid2vtl3scltqcfegbp2m722e55rlxvqryakq4qmyo2hr75opbqao4"
+      },
+      "body_excerpt": "I am all the way in on Alpha Diallo. www.youtube.com/watch?v=6CYB...",
+      "media": {
+        "type": "link",
+        "uri": "https://www.youtube.com/watch?v=6CYBAHu3JgU",
+        "title": "LOCKDOWN: Alpha Diallo Can GUARD Anyone—Why That’s HUGE for the Denver Nuggets’ Defense",
+        "description": "YouTube video by Locked On Nuggets",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:arafm74ft3zdygyhtatq5j7k/bafkreihbjqcxmaeq5le5sm2ymw2l7e42gj4me33ixrru3y2y56pyw3gq6i"
+      },
+      "engagement": {
+        "likes": 0,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:arafm74ft3zdygyhtatq5j7k/bafkreihbjqcxmaeq5le5sm2ymw2l7e42gj4me33ixrru3y2y56pyw3gq6i",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.youtube.com/watch?v=6CYBAHu3JgU"
+            }
+          ],
+          "index": {
+            "$type": "app.bsky.richtext.facet#byteSlice",
+            "byteEnd": 68,
+            "byteStart": 37
+          }
+        }
+      ]
     }
   ]
 }
