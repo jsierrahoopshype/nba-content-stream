@@ -7,7 +7,8 @@ index (`data/index/{players,teams}/{slug}.json`) is loaded by
 `assets/entity.js` at page-load time, so the prerender step doesn't
 duplicate the items into the HTML — the JS pulls them.
 
-Also writes `sitemap.xml` listing the homepage + every generated page.
+Also writes `sitemap.xml` listing the homepage, directory pages, and
+team pages. Player pages carry `noindex` and are left out of it.
 
 The script is idempotent: every run wipes `players/` and `teams/`
 under the repo root (the public HTML, not the JSON indexes) and
@@ -215,6 +216,13 @@ def _render_page(
         f"and headlines — updated continuously by HoopsMatic's NBA Content Stream."
     )
     og_url = f"{SITE_BASE_URL}/{kind}s/{slug}.html"
+    # Player pages stay live for readers but are kept out of Google's
+    # index (crawlable, so Google can see the noindex; links still
+    # followed). Team pages and the hub are unaffected.
+    robots_meta = (
+        '<meta name="robots" content="noindex, follow">\n'
+        if kind == "player" else ""
+    )
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -224,7 +232,7 @@ def _render_page(
 <title>{title}</title>
 <meta name="description" content="{description}">
 <meta name="ncs-entity" data-kind="{kind}" data-slug="{html.escape(slug)}">
-<link rel="canonical" href="{og_url}">
+{robots_meta}<link rel="canonical" href="{og_url}">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
 <meta property="og:title" content="{safe_name} — NBA Content Stream">
@@ -313,11 +321,8 @@ def _render_sitemap(player_slugs: List[str], team_slugs: List[str]) -> str:
         lines.append(
             f"  <url><loc>{url}</loc><lastmod>{today}</lastmod><changefreq>hourly</changefreq></url>"
         )
-    for slug in player_slugs:
-        lines.append(
-            f"  <url><loc>{SITE_BASE_URL}/players/{slug}.html</loc>"
-            f"<lastmod>{today}</lastmod><changefreq>hourly</changefreq></url>"
-        )
+    # Player pages are noindex, so they're deliberately left out of the
+    # sitemap. `player_slugs` is kept in the signature for callers.
     for slug in team_slugs:
         lines.append(
             f"  <url><loc>{SITE_BASE_URL}/teams/{slug}.html</loc>"

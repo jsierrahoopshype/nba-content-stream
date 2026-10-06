@@ -258,8 +258,8 @@ def test_sitemap_includes_homepage_and_all_entities(tmp_path):
     assert "/index.html</loc>" in text
     assert "/players.html</loc>" in text
     assert "/teams.html</loc>" in text
-    # Entity pages
-    assert "/players/stephen-curry.html</loc>" in text
+    # Entity pages: teams listed, players excluded (they're noindex)
+    assert "/players/stephen-curry.html</loc>" not in text
     assert "/teams/los-angeles-lakers.html</loc>" in text
 
 
