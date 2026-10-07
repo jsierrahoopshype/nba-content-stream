@@ -1,9 +1,73 @@
 {
   "slug": "desmond-bane",
   "name": "Desmond Bane",
-  "generated_at": "2026-10-06T21:41:12Z",
-  "count": 10,
+  "generated_at": "2026-10-07T01:05:05Z",
+  "count": 11,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3mxahg4jygk2i",
+      "source": "bluesky",
+      "published_at": "2026-10-06T22:16:03Z",
+      "title": "My latest for @orlandosentinel.com: Desmond Bane is looking forward to his return to Memphis as the #Magic open the preseason on the road:",
+      "url": "https://bsky.app/profile/jbeede.bsky.social/post/3mxahg4jygk2i",
+      "author": "Jason Beede",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreihelf4f4y3sdmizvxkx5p65g5bo4vt45hv5km7cztwqc5quc22qv4",
+      "body_excerpt": "My latest for @orlandosentinel.com: Desmond Bane is looking forward to his return to Memphis as the #Magic open the preseason on the road:\n\n“We want to learn about ourselves as much as anything,” Orlando coach Sean Sweeney said of the preseason opener.\n\nMore: www.orlandosentinel.com/2026/10/06/o...",
+      "players": [
+        "desmond-bane"
+      ],
+      "teams": [
+        "orlando-magic"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://www.orlandosentinel.com/2026/10/06/orlando-magic-memphis-grizzlies-preseason-preview-anthony-black-jalen-suggs-franz-wagner-desmond-bane-nba-sean-sweeney/",
+        "title": "Bane looking forward to return to Memphis as Magic open preseason away",
+        "description": "Wednesday’s preseason game at Memphis marks the first time Desmond Bane returns to the city since the Magic acquired him last year.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreihelf4f4y3sdmizvxkx5p65g5bo4vt45hv5km7cztwqc5quc22qv4"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiey3powizzh2yl5k4eyoftbxztccx6pgnmdozyhyyjqybjhhnc2ne",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:g5n6tmh54utzmwjregfbb7ul"
+            }
+          ],
+          "index": {
+            "byteEnd": 34,
+            "byteStart": 14
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Magic"
+            }
+          ],
+          "index": {
+            "byteEnd": 106,
+            "byteStart": 100
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.orlandosentinel.com/2026/10/06/orlando-magic-memphis-grizzlies-preseason-preview-anthony-black-jalen-suggs-franz-wagner-desmond-bane-nba-sean-sweeney/"
+            }
+          ],
+          "index": {
+            "byteEnd": 303,
+            "byteStart": 264
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-3903ad032159e189",
       "source": "google-news",

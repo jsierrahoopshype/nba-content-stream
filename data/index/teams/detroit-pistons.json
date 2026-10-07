@@ -1,9 +1,46 @@
 {
   "slug": "detroit-pistons",
   "name": "Detroit Pistons",
-  "generated_at": "2026-10-06T21:41:12Z",
-  "count": 503,
+  "generated_at": "2026-10-07T01:05:05Z",
+  "count": 505,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Aozrhqae34vzv6mso2hsym65i%2Fapp.bsky.feed.post%2F3mxam2g6x7k2t",
+      "source": "bluesky",
+      "published_at": "2026-10-06T23:39:00Z",
+      "title": "The Pistons Pulse is live www.youtube.com/live/kkNUrNT...",
+      "url": "https://bsky.app/profile/omarisankofa.bsky.social/post/3mxam2g6x7k2t",
+      "author": "Omari Sankofa II",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:ozrhqae34vzv6mso2hsym65i/bafkreic2vkxxbkormdp3jqpiln4fo3i4wpdq4dy6cqp7s5eca23oz5waey",
+      "body_excerpt": "The Pistons Pulse is live www.youtube.com/live/kkNUrNT...",
+      "players": [],
+      "teams": [
+        "detroit-pistons"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://www.youtube.com/live/kkNUrNTMXBo?si=2-G-9oubE2-Kj94I",
+        "title": "The Pistons Pulse: The NBA (pre-)Season is Here!",
+        "description": "YouTube video by Detroit Free Press",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:ozrhqae34vzv6mso2hsym65i/bafkreic2vkxxbkormdp3jqpiln4fo3i4wpdq4dy6cqp7s5eca23oz5waey"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:ozrhqae34vzv6mso2hsym65i/bafkreicwqbfoqf3cv44vp3upnjizm5ez3pnd7z2tsnj7keaozddwl57oy4",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.youtube.com/live/kkNUrNTMXBo?si=2-G-9oubE2-Kj94I"
+            }
+          ],
+          "index": {
+            "byteEnd": 57,
+            "byteStart": 26
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-4fba22c4809bc784",
       "source": "google-news",
@@ -46,6 +83,23 @@
       "teams": [
         "detroit-pistons"
       ]
+    },
+    {
+      "id": "yt-9aRUkC3h34Q",
+      "source": "youtube",
+      "published_at": "2026-10-06T16:50:26Z",
+      "title": "Detroit Pistons 2026 Offseason Reaction and Salary Cap Analysis | Third Apron Podcast",
+      "url": "https://www.youtube.com/watch?v=9aRUkC3h34Q",
+      "author": "Yossi Gozlan",
+      "thumbnail": "https://i.ytimg.com/vi/9aRUkC3h34Q/maxresdefault.jpg",
+      "body_excerpt": "Bryce Simon and Omari Sankofa join the show to review the Pistons' offseason while I break down the salary cap mechanics of all their transactions. You can follow Yossi on: Twitter: https://twitter.com/YossiGozlan BlueSky: https://bsky.app/profile/yossigozlan.bsky.social Salary…",
+      "players": [],
+      "teams": [
+        "detroit-pistons"
+      ],
+      "media": {
+        "type": "video"
+      }
     },
     {
       "id": "gn-39cc9a464aec1d4a",
