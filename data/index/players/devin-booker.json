@@ -1,9 +1,74 @@
 {
   "slug": "devin-booker",
   "name": "Devin Booker",
-  "generated_at": "2026-10-10T02:24:41Z",
-  "count": 73,
+  "generated_at": "2026-10-10T08:53:21Z",
+  "count": 74,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Amj6biylh6csvzgjz75dwtx3t%2Fapp.bsky.feed.post%2F3mxipksz5ts2d",
+      "source": "bluesky",
+      "published_at": "2026-10-10T05:03:09Z",
+      "title": "Dear @adambecker.bsky.social. French journalist here, currently in the Bay Area, and would love to interview you tomorrow morning about your book and Prop 40?  For @reporterre.net. Merci :)",
+      "url": "https://bsky.app/profile/theoquintard.bsky.social/post/3mxipksz5ts2d",
+      "author": "Théo Quintard",
+      "thumbnail": null,
+      "body_excerpt": "Dear @adambecker.bsky.social. French journalist here, currently in the Bay Area, and would love to interview you tomorrow morning about your book and Prop 40?  For @reporterre.net. Merci :)",
+      "players": [
+        "devin-booker"
+      ],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:mj6biylh6csvzgjz75dwtx3t/bafkreiacwzdp3v6ij6ze4rjsm53chlvibmavooxta2kwbemdtyeh4rco2i",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:wbtjiqd5pshd5tsvwjv6xmr3"
+            }
+          ],
+          "index": {
+            "byteEnd": 28,
+            "byteStart": 5
+          }
+        },
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:2htr6vzopp6mejep7qcpszru"
+            }
+          ],
+          "index": {
+            "byteEnd": 179,
+            "byteStart": 164
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Ao7nvaeky6b42dplp2ssdudvw%2Fapp.bsky.feed.post%2F3mxim6bt6us23",
+      "source": "bluesky",
+      "published_at": "2026-10-10T04:02:27Z",
+      "title": "THE VALKYRIES SWEEP THE DEFENDING CHAMPION ACES AND BOOK THEIR TICKET TO THE WNBA FINALS!!!!",
+      "url": "https://bsky.app/profile/ohnohedidnt24.bsky.social/post/3mxim6bt6us23",
+      "author": "Oh No He Didn't",
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ao7nvaeky6b42dplp2ssdudvw/bafkreifzcltk44vog4uz3cio3g5al63otnjsmvtydbsfkco7qqticct37y/thumbnail.jpg",
+      "body_excerpt": "THE VALKYRIES SWEEP THE DEFENDING CHAMPION ACES AND BOOK THEIR TICKET TO THE WNBA FINALS!!!!",
+      "players": [
+        "devin-booker"
+      ],
+      "teams": [],
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ao7nvaeky6b42dplp2ssdudvw/bafkreifzcltk44vog4uz3cio3g5al63otnjsmvtydbsfkco7qqticct37y/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Ao7nvaeky6b42dplp2ssdudvw/bafkreifzcltk44vog4uz3cio3g5al63otnjsmvtydbsfkco7qqticct37y/playlist.m3u8"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:o7nvaeky6b42dplp2ssdudvw/bafkreie3xikpqt2e2rng6s3ujtfukf6aph2p4ohgs6dmksoift3eazeium",
+      "enriched": true
+    },
     {
       "id": "gn-b4de51fcdbf90c4e",
       "source": "google-news",
@@ -1603,26 +1668,6 @@
         "boston-celtics",
         "phoenix-suns"
       ]
-    },
-    {
-      "id": "yt-fTXwOlPruv0",
-      "source": "youtube",
-      "published_at": "2026-09-10T03:55:08Z",
-      "title": "NBA Star Jalen Brunson Did WHAT? 😳 He Wrote a Book #nba #basketball #knicks",
-      "url": "https://www.youtube.com/watch?v=fTXwOlPruv0",
-      "author": "Road Trippin' Show",
-      "thumbnail": "https://i.ytimg.com/vi/fTXwOlPruv0/maxresdefault.jpg",
-      "body_excerpt": "🏀 Download the Fanatics Sportsbook app! https://fanatics.onelink.me/5kut/ROADTRIPPIN New customers who sign up and Bet $5, receive $100 in FanCash* Use FanCash on bonus bets, profit boosts, team gear on Fanatics.com and so much more. *New customers in AZ, CO, CT, DC, IA, IL, IN,…",
-      "players": [
-        "devin-booker",
-        "jalen-brunson"
-      ],
-      "teams": [
-        "new-york-knicks"
-      ],
-      "media": {
-        "type": "video"
-      }
     }
   ]
 }
