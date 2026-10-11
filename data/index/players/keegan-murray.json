@@ -1,9 +1,60 @@
 {
   "slug": "keegan-murray",
   "name": "Keegan Murray",
-  "generated_at": "2026-10-11T01:45:45Z",
-  "count": 5,
+  "generated_at": "2026-10-11T07:54:38Z",
+  "count": 6,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Adf2gzsny4y5khzaa5rsfrblr%2Fapp.bsky.feed.post%2F3mxl6h4nkms2l",
+      "source": "bluesky",
+      "published_at": "2026-10-11T04:34:51Z",
+      "title": "The latest on @lockedonkings.bsky.social -- BIG MAN DOWN, Maxime Raynaud injures knee, Ben Simmons and Keegan Murray make preseason debut youtu.be/GM2MJp3YcCE?...",
+      "url": "https://bsky.app/profile/jameshamnba.bsky.social/post/3mxl6h4nkms2l",
+      "author": "James Ham",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:df2gzsny4y5khzaa5rsfrblr/bafkreih32tp5yrhlwbidysi3rb4h4fqeg7ztd7z4dh66gcj6iuwlccwkyy",
+      "body_excerpt": "The latest on @lockedonkings.bsky.social -- BIG MAN DOWN, Maxime Raynaud injures knee, Ben Simmons and Keegan Murray make preseason debut youtu.be/GM2MJp3YcCE?...",
+      "players": [
+        "keegan-murray",
+        "maxime-raynaud"
+      ],
+      "teams": [],
+      "media": {
+        "type": "link",
+        "uri": "https://youtu.be/GM2MJp3YcCE?si=9RzWBfv4JX1CNgN1",
+        "title": "BIG MAN DOWN, Maxime Raynaud injures knee, Ben Simmons and Keegan Murray debut",
+        "description": "YouTube video by Locked On Kings (Sacramento)",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:df2gzsny4y5khzaa5rsfrblr/bafkreih32tp5yrhlwbidysi3rb4h4fqeg7ztd7z4dh66gcj6iuwlccwkyy"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:df2gzsny4y5khzaa5rsfrblr/bafkreihd6r3qqcbqfpmfa624obuqiybrfzlz7ckrfc5364am5heocwqjla",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:hxxnziw4wkw3qdmoczhr4srx"
+            }
+          ],
+          "index": {
+            "byteEnd": 40,
+            "byteStart": 14
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://youtu.be/GM2MJp3YcCE?si=9RzWBfv4JX1CNgN1"
+            }
+          ],
+          "index": {
+            "byteEnd": 162,
+            "byteStart": 138
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "bs-did%3Aplc%3Alldgxx4auj7zsd2fp4hbory3%2Fapp.bsky.feed.post%2F3mxkllcltgc26",
       "source": "bluesky",
