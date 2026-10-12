@@ -1,9 +1,62 @@
 {
   "slug": "deandre-hunter",
   "name": "De'Andre Hunter",
-  "generated_at": "2026-10-11T23:07:57Z",
-  "count": 2,
+  "generated_at": "2026-10-12T02:29:26Z",
+  "count": 3,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Adf2gzsny4y5khzaa5rsfrblr%2Fapp.bsky.feed.post%2F3mxn4nku6s22l",
+      "source": "bluesky",
+      "published_at": "2026-10-11T23:07:59Z",
+      "title": "The latest on @lockedonkings.bsky.social -- Kings' Maxime Raynaud DODGE A BULLET with knee injury, MRI shows patellar subluxation. Plus, De'Andre Hunter is struggling and the Kings might have dueling point guards. youtu.be/CNDVVj4kLTc?...",
+      "url": "https://bsky.app/profile/jameshamnba.bsky.social/post/3mxn4nku6s22l",
+      "author": "James Ham",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:df2gzsny4y5khzaa5rsfrblr/bafkreihfyhq44ztokvmvxjov4mme7uwmtlfyptqhzbbndcglijj6q4tunu",
+      "body_excerpt": "The latest on @lockedonkings.bsky.social -- Kings' Maxime Raynaud DODGE A BULLET with knee injury, MRI shows patellar subluxation. Plus, De'Andre Hunter is struggling and the Kings might have dueling point guards. youtu.be/CNDVVj4kLTc?...",
+      "players": [
+        "deandre-hunter",
+        "maxime-raynaud"
+      ],
+      "teams": [
+        "sacramento-kings"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://youtu.be/CNDVVj4kLTc?si=XaT2U8ApHNoQ8sXI",
+        "title": "Kings' Maxime Raynaud DODGE A BULLET with knee injury, MRI shows patellar subluxation",
+        "description": "YouTube video by Locked On Kings (Sacramento)",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:df2gzsny4y5khzaa5rsfrblr/bafkreihfyhq44ztokvmvxjov4mme7uwmtlfyptqhzbbndcglijj6q4tunu"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:df2gzsny4y5khzaa5rsfrblr/bafkreihd6r3qqcbqfpmfa624obuqiybrfzlz7ckrfc5364am5heocwqjla",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:hxxnziw4wkw3qdmoczhr4srx"
+            }
+          ],
+          "index": {
+            "byteEnd": 40,
+            "byteStart": 14
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://youtu.be/CNDVVj4kLTc?si=XaT2U8ApHNoQ8sXI"
+            }
+          ],
+          "index": {
+            "byteEnd": 238,
+            "byteStart": 214
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-96fb303eb8af4587",
       "source": "google-news",
