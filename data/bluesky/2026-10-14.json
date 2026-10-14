@@ -1,7 +1,7 @@
 {
   "date": "2026-10-14",
   "source": "bluesky",
-  "generated_at": "2026-10-14T10:32:10Z",
+  "generated_at": "2026-10-14T15:32:38Z",
   "items": [
     {
       "id": "bs-did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao%2Fapp.bsky.feed.post%2F3mxprun5kf22l",
@@ -17791,6 +17791,2397 @@
       },
       "players": [],
       "teams": [],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Adopbstmnsij5ipmn6sr3fd43%2Fapp.bsky.feed.post%2F3mxte323nt22e",
+      "source": "bluesky",
+      "published_at": "2026-10-14T10:36:46Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/sethrosenthal.bsky.social/post/3mxte323nt22e",
+      "title": "“We must stop eating!” cried Toad as he ate another penguin",
+      "author": {
+        "handle": "sethrosenthal.bsky.social",
+        "display_name": "Seth Rosenthal",
+        "url": "https://bsky.app/profile/sethrosenthal.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:dopbstmnsij5ipmn6sr3fd43/bafkreif2nalttdyf2va4pskcdsbq7rji2mggz44j5ccd4sfput37ivsj6q"
+      },
+      "body_excerpt": "“We must stop eating!” cried Toad as he ate another penguin",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 28,
+        "reposts": 1
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "is_quote_post": true,
+      "quote": {
+        "author": "Darren Naish",
+        "handle": "tetzoo.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:p6abhlpqn4gauvp3gu325lrj/bafkreicejkhrs4nzbpybgtjzlbh62uwmudyjuzqumb5gww2olfi5g6inke",
+        "text": "New at Tetrapod Zoology: Late News on Hyloid Frogs tetzoo.com/blog/2026/10... #amphibians #herpetology #frogs",
+        "url": "https://bsky.app/profile/tetzoo.bsky.social/post/3mxtciiulnc2c",
+        "facets": [
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": "https://tetzoo.com/blog/2026/10/13/late-news-on-hyloid-frogs"
+              }
+            ],
+            "index": {
+              "byteEnd": 77,
+              "byteStart": 51
+            }
+          },
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#tag",
+                "tag": "amphibians"
+              }
+            ],
+            "index": {
+              "byteEnd": 89,
+              "byteStart": 78
+            }
+          },
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#tag",
+                "tag": "herpetology"
+              }
+            ],
+            "index": {
+              "byteEnd": 102,
+              "byteStart": 90
+            }
+          },
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#tag",
+                "tag": "frogs"
+              }
+            ],
+            "index": {
+              "byteEnd": 109,
+              "byteStart": 103
+            }
+          }
+        ],
+        "media": {
+          "type": "link",
+          "uri": "https://tetzoo.com/blog/2026/10/13/late-news-on-hyloid-frogs",
+          "title": "Late News on Hyloid Frogs — Tetrapod Zoology",
+          "description": "frogs, frog evolution, Hyloidea, Hyloides, hyloid, hyloids, Anura, anurans, myobatrachoids, Myobatrachoidea, Australobatrachia, australobatrachian, australobatrachians, Calyptocephalella, treefrogs, t...",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:p6abhlpqn4gauvp3gu325lrj/bafkreibk4543oyguvihcsld7kj254k4p4xox773c3muevnakmdynxwx4nu"
+        }
+      }
+    },
+    {
+      "id": "bs-did%3Aplc%3Ayvy5ax23zpmoearxn6xsgqzf%2Fapp.bsky.feed.post%2F3mxtgd4axik2i",
+      "source": "bluesky",
+      "published_at": "2026-10-14T11:17:04Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/btrowland.bsky.social/post/3mxtgd4axik2i",
+      "title": "dropped another @rkalland.bsky.social over/under extravaganza overnight",
+      "author": {
+        "handle": "btrowland.bsky.social",
+        "display_name": "Brad Rowland",
+        "url": "https://bsky.app/profile/btrowland.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:yvy5ax23zpmoearxn6xsgqzf/bafkreiewn3wnzotxikw45yiyzwfvo5jnimmrouiltejje4xehzcup6dc5i"
+      },
+      "body_excerpt": "dropped another @rkalland.bsky.social over/under extravaganza overnight",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 5,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:rp7trk62kq2hae5y4pssmwcz"
+            }
+          ],
+          "index": {
+            "byteEnd": 37,
+            "byteStart": 16
+          }
+        }
+      ],
+      "is_quote_post": true,
+      "quote": {
+        "author": "Brad Rowland",
+        "handle": "btrowland.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:yvy5ax23zpmoearxn6xsgqzf/bafkreiewn3wnzotxikw45yiyzwfvo5jnimmrouiltejje4xehzcup6dc5i",
+        "text": "new locked on hawks is here to break down the home preseason finale\n\n🎧 Apple: apple.co/3xGpUhr\n🎧 YouTube: tinyurl.com/4fnjpma2\n🎧 Spotify: tinyurl.com/vycdm5ye",
+        "url": "https://bsky.app/profile/btrowland.bsky.social/post/3mxqviiuh722a",
+        "facets": [
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": "http://apple.co/3xGpUhr"
+              }
+            ],
+            "index": {
+              "byteEnd": 97,
+              "byteStart": 81
+            }
+          },
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": "https://tinyurl.com/4fnjpma2"
+              }
+            ],
+            "index": {
+              "byteEnd": 132,
+              "byteStart": 112
+            }
+          },
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": "https://tinyurl.com/vycdm5ye"
+              }
+            ],
+            "index": {
+              "byteEnd": 167,
+              "byteStart": 147
+            }
+          }
+        ],
+        "media": {
+          "type": "link",
+          "uri": "http://apple.co/3xGpUhr",
+          "title": "Locked On Hawks - Daily Podcast On The Atlanta Hawks",
+          "description": "Basketball Podcast · Updated Daily · Locked On Hawks podcast is your daily ticket to stay ahead of the game and the first to know the latest news, analysis, and insider info for the Atlanta Hawks and ...",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:yvy5ax23zpmoearxn6xsgqzf/bafkreid6dz2uy3ibbwvlg4dmrd7drbagjczl3jngymo5pbf2pucgyu62yi"
+        }
+      }
+    },
+    {
+      "id": "bs-did%3Aplc%3Aiw3ftokh7zieu6pwqsufsd6x%2Fapp.bsky.feed.post%2F3mxthdlzfbc2e",
+      "source": "bluesky",
+      "published_at": "2026-10-14T11:35:14Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/plottheball.com/post/3mxthdlzfbc2e",
+      "title": "⏪️ I watch a lot of sporting highlight reels on YouTube — and, for a while, I’ve been meaning to start a thread of videos that have brought me considerable joy.",
+      "author": {
+        "handle": "plottheball.com",
+        "display_name": "Ben Wylie",
+        "url": "https://bsky.app/profile/plottheball.com",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:iw3ftokh7zieu6pwqsufsd6x/bafkreidhgdykm4v5rgetueczgf2azxtn6yvd2ujzcvio2tqxkefazegc4m"
+      },
+      "body_excerpt": "⏪️ I watch a lot of sporting highlight reels on YouTube — and, for a while, I’ve been meaning to start a thread of videos that have brought me considerable joy.\n\nToday's as good a day as any to get started, so: here are a few recent favourites.\n\n(I’ll keep adding to it as things catch my eye.)",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 1,
+        "reposts": 2
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Av6xd7qcm4tsgb4ndo547vh4n%2Fapp.bsky.feed.post%2F3mxti2x2svk25",
+      "source": "bluesky",
+      "published_at": "2026-10-14T11:48:17Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/jeskeets.bsky.social/post/3mxti2x2svk25",
+      "title": "Kyrie Irving is BACK ... so why are we doubting the Mavs?! ➡️ youtu.be/a78-VYp6n4A",
+      "author": {
+        "handle": "jeskeets.bsky.social",
+        "display_name": "J.E. Skeets",
+        "url": "https://bsky.app/profile/jeskeets.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreidntfbgr4kn6b2nevpvhddp5xltzzb24dgq7msnh52llmzzqzi6r4"
+      },
+      "body_excerpt": "Kyrie Irving is BACK ... so why are we doubting the Mavs?! ➡️ youtu.be/a78-VYp6n4A",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreihraelddxbytl37fl6x23wlyo6mdas5lnxqwyrlntyk33h26gussq",
+            "alt": ""
+          }
+        ]
+      },
+      "engagement": {
+        "likes": 1,
+        "reposts": 0
+      },
+      "players": [
+        "kyrie-irving"
+      ],
+      "teams": [
+        "dallas-mavericks"
+      ],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreihraelddxbytl37fl6x23wlyo6mdas5lnxqwyrlntyk33h26gussq",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://youtu.be/a78-VYp6n4A"
+            }
+          ],
+          "index": {
+            "byteEnd": 86,
+            "byteStart": 66
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Av6xd7qcm4tsgb4ndo547vh4n%2Fapp.bsky.feed.post%2F3mxti5sp6tk25",
+      "source": "bluesky",
+      "published_at": "2026-10-14T11:49:54Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/jeskeets.bsky.social/post/3mxti5sp6tk25",
+      "title": "48 wins for Houston?! Why we're ALL buying the Rockets over! ➡️ youtu.be/kVFvkzp7M_s",
+      "author": {
+        "handle": "jeskeets.bsky.social",
+        "display_name": "J.E. Skeets",
+        "url": "https://bsky.app/profile/jeskeets.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreidntfbgr4kn6b2nevpvhddp5xltzzb24dgq7msnh52llmzzqzi6r4"
+      },
+      "body_excerpt": "48 wins for Houston?! Why we're ALL buying the Rockets over! ➡️ youtu.be/kVFvkzp7M_s",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreicpo5sxzhh5rdf4rfesi52ahdcx65v5wvioaiel75d2ne5obr6gfq",
+            "alt": ""
+          }
+        ]
+      },
+      "engagement": {
+        "likes": 2,
+        "reposts": 1
+      },
+      "players": [],
+      "teams": [
+        "houston-rockets"
+      ],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreicpo5sxzhh5rdf4rfesi52ahdcx65v5wvioaiel75d2ne5obr6gfq",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://youtu.be/kVFvkzp7M_s"
+            }
+          ],
+          "index": {
+            "byteEnd": 88,
+            "byteStart": 68
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Av6xd7qcm4tsgb4ndo547vh4n%2Fapp.bsky.feed.post%2F3mxti75vde22w",
+      "source": "bluesky",
+      "published_at": "2026-10-14T11:50:39Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/jeskeets.bsky.social/post/3mxti75vde22w",
+      "title": "Cam Boozer could make the Grizzlies a SURPRISE team in 2026-27! ➡️ youtu.be/Pg9RWD9W_Go",
+      "author": {
+        "handle": "jeskeets.bsky.social",
+        "display_name": "J.E. Skeets",
+        "url": "https://bsky.app/profile/jeskeets.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreidntfbgr4kn6b2nevpvhddp5xltzzb24dgq7msnh52llmzzqzi6r4"
+      },
+      "body_excerpt": "Cam Boozer could make the Grizzlies a SURPRISE team in 2026-27! ➡️ youtu.be/Pg9RWD9W_Go",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreiebob4ob2jm47lnhuog6asgbz3oc2jtizs2jd5a5okiec6asfq5ae",
+            "alt": ""
+          }
+        ]
+      },
+      "engagement": {
+        "likes": 1,
+        "reposts": 0
+      },
+      "players": [
+        "cam-boozer"
+      ],
+      "teams": [
+        "memphis-grizzlies"
+      ],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreiebob4ob2jm47lnhuog6asgbz3oc2jtizs2jd5a5okiec6asfq5ae",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://youtu.be/Pg9RWD9W_Go"
+            }
+          ],
+          "index": {
+            "byteEnd": 91,
+            "byteStart": 71
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Av6xd7qcm4tsgb4ndo547vh4n%2Fapp.bsky.feed.post%2F3mxtiapjqhc2w",
+      "source": "bluesky",
+      "published_at": "2026-10-14T11:51:31Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/jeskeets.bsky.social/post/3mxtiapjqhc2w",
+      "title": "The Pelicans have so much talent … so why can't they win 30 games?! ➡️ youtu.be/B0B9PZ-ul3o",
+      "author": {
+        "handle": "jeskeets.bsky.social",
+        "display_name": "J.E. Skeets",
+        "url": "https://bsky.app/profile/jeskeets.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreidntfbgr4kn6b2nevpvhddp5xltzzb24dgq7msnh52llmzzqzi6r4"
+      },
+      "body_excerpt": "The Pelicans have so much talent … so why can't they win 30 games?! ➡️ youtu.be/B0B9PZ-ul3o",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreid7bataar6lb23ejfz6ezamvmo7sks7felvq4cpp32k43z3gsxiv4",
+            "alt": ""
+          }
+        ]
+      },
+      "engagement": {
+        "likes": 1,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [
+        "new-orleans-pelicans"
+      ],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreid7bataar6lb23ejfz6ezamvmo7sks7felvq4cpp32k43z3gsxiv4",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://youtu.be/B0B9PZ-ul3o"
+            }
+          ],
+          "index": {
+            "byteEnd": 97,
+            "byteStart": 77
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Av6xd7qcm4tsgb4ndo547vh4n%2Fapp.bsky.feed.post%2F3mxtic5bs2s2w",
+      "source": "bluesky",
+      "published_at": "2026-10-14T11:52:19Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/jeskeets.bsky.social/post/3mxtic5bs2s2w",
+      "title": "Can Wembanyama's Spurs win 60+ games AGAIN?! ➡️ youtu.be/5FCs-L0TMNk",
+      "author": {
+        "handle": "jeskeets.bsky.social",
+        "display_name": "J.E. Skeets",
+        "url": "https://bsky.app/profile/jeskeets.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreidntfbgr4kn6b2nevpvhddp5xltzzb24dgq7msnh52llmzzqzi6r4"
+      },
+      "body_excerpt": "Can Wembanyama's Spurs win 60+ games AGAIN?! ➡️ youtu.be/5FCs-L0TMNk",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreiajgr7pjf6klab6cddugwzs3jp6n2bbihk5boqffm4yjxnhfhuqwa",
+            "alt": ""
+          }
+        ]
+      },
+      "engagement": {
+        "likes": 1,
+        "reposts": 0
+      },
+      "players": [
+        "victor-wembanyama"
+      ],
+      "teams": [
+        "san-antonio-spurs"
+      ],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreiajgr7pjf6klab6cddugwzs3jp6n2bbihk5boqffm4yjxnhfhuqwa",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://youtu.be/5FCs-L0TMNk"
+            }
+          ],
+          "index": {
+            "byteEnd": 72,
+            "byteStart": 52
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Av6xd7qcm4tsgb4ndo547vh4n%2Fapp.bsky.feed.post%2F3mxtj2laoic2m",
+      "source": "bluesky",
+      "published_at": "2026-10-14T12:05:59Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/jeskeets.bsky.social/post/3mxtj2laoic2m",
+      "title": "Predicting the 2026-27 NBA award winners",
+      "author": {
+        "handle": "jeskeets.bsky.social",
+        "display_name": "J.E. Skeets",
+        "url": "https://bsky.app/profile/jeskeets.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreidntfbgr4kn6b2nevpvhddp5xltzzb24dgq7msnh52llmzzqzi6r4"
+      },
+      "body_excerpt": "Predicting the 2026-27 NBA award winners\nMVP, Rookie of the Year, Most Improved, etc.\nNew No Dunks live at 10 a.m. ET ➡️ bit.ly/47iwjSY",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreidy54yjv4oribbir64gy5g5xuac7fkja7nqqsu4xbccji243mesgm",
+            "alt": ""
+          }
+        ]
+      },
+      "engagement": {
+        "likes": 2,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreidy54yjv4oribbir64gy5g5xuac7fkja7nqqsu4xbccji243mesgm",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://bit.ly/47iwjSY"
+            }
+          ],
+          "index": {
+            "byteEnd": 139,
+            "byteStart": 125
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Av6xd7qcm4tsgb4ndo547vh4n%2Fapp.bsky.feed.post%2F3mxtjp2knkc2h",
+      "source": "bluesky",
+      "published_at": "2026-10-14T12:17:26Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/jeskeets.bsky.social/post/3mxtjp2knkc2h",
+      "title": "Forgot to share this over the weekend: What We Like, Vol. 50",
+      "author": {
+        "handle": "jeskeets.bsky.social",
+        "display_name": "J.E. Skeets",
+        "url": "https://bsky.app/profile/jeskeets.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreidntfbgr4kn6b2nevpvhddp5xltzzb24dgq7msnh52llmzzqzi6r4"
+      },
+      "body_excerpt": "Forgot to share this over the weekend: What We Like, Vol. 50\nLinks and recommendations from No Dunks ➡️ bit.ly/4ilrq1y",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreif4be3snr4sx3c5c5jjguje3f2uog574fjwyh4bpoeqapac6q5f2a",
+            "alt": ""
+          }
+        ]
+      },
+      "engagement": {
+        "likes": 2,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreif4be3snr4sx3c5c5jjguje3f2uog574fjwyh4bpoeqapac6q5f2a",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://bit.ly/4ilrq1y"
+            }
+          ],
+          "index": {
+            "byteEnd": 122,
+            "byteStart": 108
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Akq5obb3xiadd6jum34eeif4u%2Fapp.bsky.feed.post%2F3mxtkkgmfms2a",
+      "source": "bluesky",
+      "published_at": "2026-10-14T12:32:45Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/irawinderman.bsky.social/post/3mxtkkgmfms2a",
+      "title": "Will Davion Mitchell's backup be settled before Heat opener? Latest \"Ask Ira\" at  www.sun-sentinel.com/2026/10/14/a... Plus: Conwell's role; Larsson's illness.",
+      "author": {
+        "handle": "irawinderman.bsky.social",
+        "display_name": "Ira Winderman",
+        "url": "https://bsky.app/profile/irawinderman.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:kq5obb3xiadd6jum34eeif4u/bafkreidk3gnax4picokf3v25t7injina2ohe52rizsmnfjtx2yrgda5cda"
+      },
+      "body_excerpt": "Will Davion Mitchell's backup be settled before Heat opener? Latest \"Ask Ira\" at  www.sun-sentinel.com/2026/10/14/a... Plus: Conwell's role; Larsson's illness.",
+      "media": {
+        "type": "link",
+        "uri": "https://www.sun-sentinel.com/2026/10/14/ask-ira-will-davion-mitchells-backup-be-settled-before-heat-opener/",
+        "title": "ASK IRA: Will Davion Mitchell’s backup be settled before Heat opener?",
+        "description": "The Miami Heat know their starting point guard. Behind Davion Mitchell at the position? Not as clear.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:kq5obb3xiadd6jum34eeif4u/bafkreibgioywnfp5wat5dh4yugfgvvhklss33hwg3do56st2w5kx74nx2m"
+      },
+      "engagement": {
+        "likes": 1,
+        "reposts": 0
+      },
+      "players": [
+        "davion-mitchell",
+        "ryan-conwell"
+      ],
+      "teams": [
+        "miami-heat"
+      ],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:kq5obb3xiadd6jum34eeif4u/bafkreibgioywnfp5wat5dh4yugfgvvhklss33hwg3do56st2w5kx74nx2m",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.sun-sentinel.com/2026/10/14/ask-ira-will-davion-mitchells-backup-be-settled-before-heat-opener/"
+            }
+          ],
+          "index": {
+            "byteEnd": 118,
+            "byteStart": 82
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Arohc2dntuoghb2yg2kav4yyh%2Fapp.bsky.feed.post%2F3mxtkus2svk2a",
+      "source": "bluesky",
+      "published_at": "2026-10-14T12:38:32Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/howardmegdal.bsky.social/post/3mxtkus2svk2a",
+      "title": "And so excited for all the #WNBA Finals coverage ahead from @theixsports.bsky.social. @michaelwaterloo.bsky.social, @mingemi.bsky.social and Hall of Famer @macsmith413.bsky.social are here to give you every angle of the 2026 championship series!",
+      "author": {
+        "handle": "howardmegdal.bsky.social",
+        "display_name": "Howard Megdal",
+        "url": "https://bsky.app/profile/howardmegdal.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:rohc2dntuoghb2yg2kav4yyh/bafkreia7wk5wpdjvyxb76fmdxmc764mf363dofb2hv224ehju34pzdzham"
+      },
+      "body_excerpt": "And so excited for all the #WNBA Finals coverage ahead from @theixsports.bsky.social. @michaelwaterloo.bsky.social, @mingemi.bsky.social and Hall of Famer @macsmith413.bsky.social are here to give you every angle of the 2026 championship series!",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 4,
+        "reposts": 2
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "WNBA"
+            }
+          ],
+          "index": {
+            "byteEnd": 32,
+            "byteStart": 27
+          }
+        },
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:2talt3msahtgmd52hjx2weld"
+            }
+          ],
+          "index": {
+            "byteEnd": 84,
+            "byteStart": 60
+          }
+        },
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:kpwhldfxutpxgrimsvs2vber"
+            }
+          ],
+          "index": {
+            "byteEnd": 114,
+            "byteStart": 86
+          }
+        },
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:dglzm4uipfqmphcdo27wpioa"
+            }
+          ],
+          "index": {
+            "byteEnd": 136,
+            "byteStart": 116
+          }
+        },
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:lqcev2tjudo75j3a7smya3wx"
+            }
+          ],
+          "index": {
+            "byteEnd": 179,
+            "byteStart": 155
+          }
+        }
+      ],
+      "is_quote_post": true,
+      "quote": {
+        "author": "The IX Sports",
+        "handle": "theixsports.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2talt3msahtgmd52hjx2weld/bafkreihj44lzauxoochqqdsqy5ow7y5awfniavbknt53moigtvn54kuxim",
+        "text": "Basketball Insider @howardmegdal.bsky.social winds back the clock to show how incremental improvements throughout the season took the Atlanta Dream all the way to the 2026 WNBA Finals. Plus, top WBB headlines and more!\n\nwww.theixsports.com/newsletter/a...",
+        "url": "https://bsky.app/profile/theixsports.bsky.social/post/3mxtirsl6kg22",
+        "facets": [
+          {
+            "$type": "app.bsky.richtext.facet",
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#mention",
+                "did": "did:plc:rohc2dntuoghb2yg2kav4yyh"
+              }
+            ],
+            "index": {
+              "byteEnd": 44,
+              "byteStart": 19
+            }
+          },
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": "https://www.theixsports.com/newsletter/atlanta-dream-in-season-improvement-2026-wnba-finals-basketball-insider-angel-reese-jordin-canada/"
+              }
+            ],
+            "index": {
+              "byteEnd": 255,
+              "byteStart": 220
+            }
+          }
+        ],
+        "media": {
+          "type": "link",
+          "uri": "https://www.theixsports.com/newsletter/atlanta-dream-in-season-improvement-2026-wnba-finals-basketball-insider-angel-reese-jordin-canada/",
+          "title": "How in-season improvement lifted Atlanta Dream to WNBA Finals",
+          "description": "Basketball Insider Howard Megdal breaks down how the Atlanta Dream advanced to the 2026 WNBA Finals. Plus, WBB headlines and more!",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:2talt3msahtgmd52hjx2weld/bafkreibl66gaobawlgnqr2rumvomwdox5wjlqslq7cw2ds54hftsnwjgji"
+        }
+      }
+    },
+    {
+      "id": "bs-did%3Aplc%3Aizehxvvqo37nfna3245hhtt3%2Fapp.bsky.feed.post%2F3mxtlk4wfus2s",
+      "source": "bluesky",
+      "published_at": "2026-10-14T12:50:28Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/stephnoh.bsky.social/post/3mxtlk4wfus2s",
+      "title": "It's Day Three of my starter rankings! Here are all 30 starting small forwards, ranked 1-30: www.sportingnews.com/us/nba/news/...",
+      "author": {
+        "handle": "stephnoh.bsky.social",
+        "display_name": "Steph Noh",
+        "url": "https://bsky.app/profile/stephnoh.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:izehxvvqo37nfna3245hhtt3/bafkreid3iwb4lrrfhpnhazki2o5jhre3zoqkdr5wvdemeww626ixxbyhmm"
+      },
+      "body_excerpt": "It's Day Three of my starter rankings! Here are all 30 starting small forwards, ranked 1-30: www.sportingnews.com/us/nba/news/...",
+      "media": {
+        "type": "link",
+        "uri": "https://www.sportingnews.com/us/nba/news/best-nba-small-forwards-2026-27-ranking-starters-jaylen-brown/c2145684e660375c98539b7c",
+        "title": "Best NBA small forwards for 2026-27: Ranking all 30 starters from Kawhi Leonard to Jaylen Brown | Sporting News",
+        "description": "Ranking all 30 starting small forwards for the 2026-27 season",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:izehxvvqo37nfna3245hhtt3/bafkreie7i7nlixyrmd26zs5ur2cegppawlsg6jldaxd5guugbpgareukv4"
+      },
+      "engagement": {
+        "likes": 6,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:izehxvvqo37nfna3245hhtt3/bafkreie7i7nlixyrmd26zs5ur2cegppawlsg6jldaxd5guugbpgareukv4",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.sportingnews.com/us/nba/news/best-nba-small-forwards-2026-27-ranking-starters-jaylen-brown/c2145684e660375c98539b7c"
+            }
+          ],
+          "index": {
+            "byteEnd": 129,
+            "byteStart": 93
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Afn2d4f2fdyghzild2opwssaa%2Fapp.bsky.feed.post%2F3mxtludohms2c",
+      "source": "bluesky",
+      "published_at": "2026-10-14T12:56:11Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/drew-h-stevens.bsky.social/post/3mxtludohms2c",
+      "title": "Peace be with you.",
+      "author": {
+        "handle": "drew-h-stevens.bsky.social",
+        "display_name": "Drew",
+        "url": "https://bsky.app/profile/drew-h-stevens.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:fn2d4f2fdyghzild2opwssaa/bafkreidjkdq3z4xj2lbcijgpm5cipz2uezqzzi2iitbkgttur2ms5ap7qy"
+      },
+      "body_excerpt": "Peace be with you.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 2,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Ab6754hi2xy3rxuq4pbu62jgw%2Fapp.bsky.feed.post%2F3mxtmaofupc2z",
+      "source": "bluesky",
+      "published_at": "2026-10-14T13:03:05Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/paulhudrick.bsky.social/post/3mxtmaofupc2z",
+      "title": "Better to temper our expectations before the season even starts, I suppose.",
+      "author": {
+        "handle": "paulhudrick.bsky.social",
+        "display_name": "Paul Hudrick",
+        "url": "https://bsky.app/profile/paulhudrick.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:b6754hi2xy3rxuq4pbu62jgw/bafkreifogllh2ipwqjck4ndq5csre3vjinl6gt5bj7pul52jvtlb5wfxea"
+      },
+      "body_excerpt": "Better to temper our expectations before the season even starts, I suppose.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 2,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "is_quote_post": true,
+      "quote": {
+        "author": "Matt Gelb",
+        "handle": "mattgelb.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:hoy6e5tru27j3r7xyfzdojwk/bafkreiddterfikmha3cyuidc7hoqlkdddynftpqjvyw3wyodnyq5kgpu54",
+        "text": "Phillies expected to name Don Mattingly their manager this week. Story with @charlottevarnes.bsky.social: www.nytimes.com/athletic/768...",
+        "url": "https://bsky.app/profile/mattgelb.bsky.social/post/3mxtja6hk4c2j",
+        "facets": [
+          {
+            "$type": "app.bsky.richtext.facet",
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#mention",
+                "did": "did:plc:4qts4put2k55lg3terqlqr67"
+              }
+            ],
+            "index": {
+              "byteEnd": 104,
+              "byteStart": 76
+            }
+          },
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": "https://www.nytimes.com/athletic/7688238/2026/10/14/phillies-don-mattingly-manager-job/?unlocked_article_code=1.IlE.mXni.puKwyJQthqxp&source=emp_shared_article&smid=ta-ios-share"
+              }
+            ],
+            "index": {
+              "byteEnd": 137,
+              "byteStart": 106
+            }
+          }
+        ],
+        "media": {
+          "type": "link",
+          "uri": "https://www.nytimes.com/athletic/7688238/2026/10/14/phillies-don-mattingly-manager-job/?unlocked_article_code=1.IlE.mXni.puKwyJQthqxp&source=emp_shared_article&smid=ta-ios-share",
+          "title": "Phillies expected to name Don Mattingly as full-time manager this week: Sources (Gift Article)",
+          "description": "The move marks a doubling down on the Phillies' current vision after a near-historic September collapse and another postseason gone wrong.",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:hoy6e5tru27j3r7xyfzdojwk/bafkreigjr3qggrzt3472wb7fwem52b7x6kxsi2wrw3hmzhl2nfkdugvvge"
+        }
+      }
+    },
+    {
+      "id": "bs-did%3Aplc%3Akq5obb3xiadd6jum34eeif4u%2Fapp.bsky.feed.post%2F3mxtmbfhgbc2a",
+      "source": "bluesky",
+      "published_at": "2026-10-14T13:03:29Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/irawinderman.bsky.social/post/3mxtmbfhgbc2a",
+      "title": "Location of legacy: Tim Hardaway has his father's Heat number and now his Heat locker. www.sun-sentinel.com/2026/10/14/l... \"I’m just trying to do what I can to try to mimic and have that same comfortable feeling that I had when I was a kid when we came here.\"",
+      "author": {
+        "handle": "irawinderman.bsky.social",
+        "display_name": "Ira Winderman",
+        "url": "https://bsky.app/profile/irawinderman.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:kq5obb3xiadd6jum34eeif4u/bafkreidk3gnax4picokf3v25t7injina2ohe52rizsmnfjtx2yrgda5cda"
+      },
+      "body_excerpt": "Location of legacy: Tim Hardaway has his father's Heat number and now his Heat locker. www.sun-sentinel.com/2026/10/14/l... \"I’m just trying to do what I can to try to mimic and have that same comfortable feeling that I had when I was a kid when we came here.\"",
+      "media": {
+        "type": "link",
+        "uri": "https://www.sun-sentinel.com/2026/10/14/location-of-legacy-tim-hardaway-has-his-fathers-heat-number-and-now-his-heat-locker/",
+        "title": "Location of legacy: Tim Hardaway has his father’s Heat number and now his Heat locker",
+        "description": "The moment in June he agreed to join the Miami Heat, the homecoming was complete for Tim Hardaway Jr. Almost. There still remained a parcel of prime real estate that remained to be secured.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:kq5obb3xiadd6jum34eeif4u/bafkreihrphhhlapjqeo3jii7rtaamnn7vgsxlieicqiaqsybhmyasihbsm"
+      },
+      "engagement": {
+        "likes": 3,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [
+        "miami-heat"
+      ],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:kq5obb3xiadd6jum34eeif4u/bafkreihrphhhlapjqeo3jii7rtaamnn7vgsxlieicqiaqsybhmyasihbsm",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.sun-sentinel.com/2026/10/14/location-of-legacy-tim-hardaway-has-his-fathers-heat-number-and-now-his-heat-locker/"
+            }
+          ],
+          "index": {
+            "byteEnd": 123,
+            "byteStart": 87
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3A6jpqgc6d4tplxcioxuh7khmr%2Fapp.bsky.feed.post%2F3mxtmnqimt22a",
+      "source": "bluesky",
+      "published_at": "2026-10-14T13:10:23Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/jimowczarski.bsky.social/post/3mxtmnqimt22a",
+      "title": "The Milwaukee Bucks play basketball today.",
+      "author": {
+        "handle": "jimowczarski.bsky.social",
+        "display_name": "Jim Owczarski",
+        "url": "https://bsky.app/profile/jimowczarski.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:6jpqgc6d4tplxcioxuh7khmr/bafkreigdgpen526icgd3bkitiwfq7q6jjqpjsekj4uuu7czcpu2jhonjvi"
+      },
+      "body_excerpt": "The Milwaukee Bucks play basketball today.\n\nOur Jake Dale caught up with Cormac Ryan, one of many on the roster looking to create a more permanent foothold for himself in the NBA. \n\n👇\n\nwww.jsonline.com/story/sports...",
+      "media": {
+        "type": "link",
+        "uri": "https://www.jsonline.com/story/sports/nba/bucks/2026/10/12/bucks-guard-cormac-ryan-is-building-on-his-late-season-success-story/92209891007/",
+        "title": "",
+        "description": "",
+        "thumb": null
+      },
+      "engagement": {
+        "likes": 2,
+        "reposts": 0
+      },
+      "players": [
+        "cormac-ryan"
+      ],
+      "teams": [
+        "milwaukee-bucks"
+      ],
+      "enriched": true,
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.jsonline.com/story/sports/nba/bucks/2026/10/12/bucks-guard-cormac-ryan-is-building-on-his-late-season-success-story/92209891007/"
+            }
+          ],
+          "index": {
+            "byteEnd": 220,
+            "byteStart": 188
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Amtfaxzqle5h6stf7y6tmuxf7%2Fapp.bsky.feed.post%2F3mxtmr3xbgh2d",
+      "source": "bluesky",
+      "published_at": "2026-10-14T13:12:14Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/sichrismannix.bsky.social/post/3mxtmr3xbgh2d",
+      "title": "NEW NBA newsletter headed to your inbox, led by my conversation with the NBPA's David Kelly, who talks Kawhi's deal, issues with the second apron and if a future work stoppage is avoidable. Subscribe! www.si.com/newsletter-nba",
+      "author": {
+        "handle": "sichrismannix.bsky.social",
+        "display_name": "Chris Mannix",
+        "url": "https://bsky.app/profile/sichrismannix.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:mtfaxzqle5h6stf7y6tmuxf7/bafkreigzoz5dgbvnkmxc2uadotka4ln6jjnhjtdvdebvx3ae37mabnx2si"
+      },
+      "body_excerpt": "NEW NBA newsletter headed to your inbox, led by my conversation with the NBPA's David Kelly, who talks Kawhi's deal, issues with the second apron and if a future work stoppage is avoidable. Subscribe! www.si.com/newsletter-nba",
+      "media": {
+        "type": "link",
+        "uri": "https://www.si.com/newsletter-nba",
+        "title": "Sign Up For Open Floor with Chris Mannix - SI’s Free NBA Newsletter",
+        "description": "Open Floor with Chris Mannix Newsletter A must-read NBA newsletter for basketball diehards, Open Floor delivers breaking news, analysis, and insider stories fro",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:mtfaxzqle5h6stf7y6tmuxf7/bafkreieis3bwdf54tlkuv4b4jmc6pcvdmqgmoxlur7x2lu2jbjealv3z54"
+      },
+      "engagement": {
+        "likes": 1,
+        "reposts": 0
+      },
+      "players": [
+        "kawhi-leonard"
+      ],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:mtfaxzqle5h6stf7y6tmuxf7/bafkreieis3bwdf54tlkuv4b4jmc6pcvdmqgmoxlur7x2lu2jbjealv3z54",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.si.com/newsletter-nba"
+            }
+          ],
+          "index": {
+            "byteEnd": 226,
+            "byteStart": 201
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Aq3fi25au634c4yojnysqzlrj%2Fapp.bsky.feed.post%2F3mxtmzv2wbs2d",
+      "source": "bluesky",
+      "published_at": "2026-10-14T13:17:10Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/teamziller.bsky.social/post/3mxtmzv2wbs2d",
+      "title": "It's Free Newsletter Wednesday, and we have a case for Erik Spoelstra as Coach of the Year before a single second is played. Right historic wrongs! Give one of the best coaches of his generation a trophy! Plus: there's a preseason COY longlist that includes names like Rajakovic, ",
+      "author": {
+        "handle": "teamziller.bsky.social",
+        "display_name": "Tom Ziller",
+        "url": "https://bsky.app/profile/teamziller.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:q3fi25au634c4yojnysqzlrj/bafkreigcujpqoa2yadtzz6clzmbjcvqadyreya62h5sr4brge2tzgot5xa"
+      },
+      "body_excerpt": "It's Free Newsletter Wednesday, and we have a case for Erik Spoelstra as Coach of the Year before a single second is played. Right historic wrongs! Give one of the best coaches of his generation a trophy! Plus: there's a preseason COY longlist that includes names like Rajakovic, Carlisle, Redick.",
+      "media": {
+        "type": "link",
+        "uri": "https://www.teamziller.com/erik-spoelstra-heat-coach-of-the-year-longlist/",
+        "title": "The early case for Erik Spoelstra winning Coach of the Year",
+        "description": "He won a couple championships as head coach, but Coach of the Year has eluded him. Will there be a case this year? Yes, if we make one.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:q3fi25au634c4yojnysqzlrj/bafkreia2xuilnmcfi7ruc3ls5eaeuc37zzesbntfvj2eyfaeod7zwhkiyq"
+      },
+      "engagement": {
+        "likes": 5,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:q3fi25au634c4yojnysqzlrj/bafkreia2xuilnmcfi7ruc3ls5eaeuc37zzesbntfvj2eyfaeod7zwhkiyq"
+    },
+    {
+      "id": "bs-did%3Aplc%3Arrh5me656wmncolysevqhc4y%2Fapp.bsky.feed.post%2F3mxtngwkf7k2y",
+      "source": "bluesky",
+      "published_at": "2026-10-14T13:24:28Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/adamaaronson.bsky.social/post/3mxtngwkf7k2y",
+      "title": "I’d like to do a fun predictions gimmick for next week’s mailbag. Requesting you submit the most interesting Sixers prompts you can think of — feel free to go wacky/hyper-specific! — and I’ll hit as many as I can.",
+      "author": {
+        "handle": "adamaaronson.bsky.social",
+        "display_name": "Adam Aaronson",
+        "url": "https://bsky.app/profile/adamaaronson.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:rrh5me656wmncolysevqhc4y/bafkreic5e2dbeyhtbdt345o3qcnp36uydttbs6bstqatp6aketr6u6glva"
+      },
+      "body_excerpt": "I’d like to do a fun predictions gimmick for next week’s mailbag. Requesting you submit the most interesting Sixers prompts you can think of — feel free to go wacky/hyper-specific! — and I’ll hit as many as I can.\n\nStraightforward Qs, over/unders, etc. all work for me. Fire away!",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 4,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [
+        "philadelphia-76ers"
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3A42qm4nzol5bkpulya64jnskm%2Fapp.bsky.feed.post%2F3mxtomhnznc2p",
+      "source": "bluesky",
+      "published_at": "2026-10-14T13:45:28Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/richarddeitsch.bsky.social/post/3mxtomhnznc2p",
+      "title": "NEW PODCAST: If you were listening to Westwood One's audio broadcast of Jaguars-Eagles, you might have wondered, \"Who is that British dude calling the game with Mike Mayock",
+      "author": {
+        "handle": "richarddeitsch.bsky.social",
+        "display_name": "Richard Deitsch",
+        "url": "https://bsky.app/profile/richarddeitsch.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:42qm4nzol5bkpulya64jnskm/bafkreigdxttgytbcak6tmpdea6h6tbynpsjd7ns6c5jdsyoqzooqzg3jhm"
+      },
+      "body_excerpt": "NEW PODCAST: If you were listening to Westwood One's audio broadcast of Jaguars-Eagles, you might have wondered, \"Who is that British dude calling the game with Mike Mayock\n\nThat would be Oliver Wilson who has received critical praise for his work. He's my guest\n\nLISTEN/SUB: swap.fm/l/4apy5A6Fma...",
+      "media": {
+        "type": "link",
+        "uri": "https://swap.fm/l/4apy5A6FmakGYZa2Tfop",
+        "title": "",
+        "description": "",
+        "thumb": null
+      },
+      "engagement": {
+        "likes": 14,
+        "reposts": 1
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://swap.fm/l/4apy5A6FmakGYZa2Tfop"
+            }
+          ],
+          "index": {
+            "byteEnd": 299,
+            "byteStart": 276
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3As2ibun2lfcftexxcqsr4ryce%2Fapp.bsky.feed.post%2F3mxtoqjjtxs2l",
+      "source": "bluesky",
+      "published_at": "2026-10-14T13:47:44Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/michaelvpina.bsky.social/post/3mxtoqjjtxs2l",
+      "title": "i'm starting to think the HALLOWEEN II score is better than the original",
+      "author": {
+        "handle": "michaelvpina.bsky.social",
+        "display_name": "Michael Pina",
+        "url": "https://bsky.app/profile/michaelvpina.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:s2ibun2lfcftexxcqsr4ryce/bafkreiegsljctlnzi52l56wsfenftdfde3b5rtw7ytmwio7nrpbylhlaqy"
+      },
+      "body_excerpt": "i'm starting to think the HALLOWEEN II score is better than the original",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 9,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Ajeb5puwe2trbthuqu4qnuctx%2Fapp.bsky.feed.post%2F3mxtouj7wu22d",
+      "source": "bluesky",
+      "published_at": "2026-10-14T13:49:58Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/noadalzell.bsky.social/post/3mxtouj7wu22d",
+      "title": "NEW: Payton Pritchard agreed to a 2-year, $$44.2 million extension that keeps him a Celtic through 2028-2029.",
+      "author": {
+        "handle": "noadalzell.bsky.social",
+        "display_name": "Noa Dalzell",
+        "url": "https://bsky.app/profile/noadalzell.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:jeb5puwe2trbthuqu4qnuctx/bafkreif3lgpmucmunghfrgxwwom4gm2x7fhftufklznmnxpbpmm4bwlpze"
+      },
+      "body_excerpt": "NEW: Payton Pritchard agreed to a 2-year, $$44.2 million extension that keeps him a Celtic through 2028-2029.\n\nIt's years in the making: \n\n“Everybody always tries to put people in a box...I just feel like those expectations — I blow them out of the water.\nwww.celticsblog.com/boston-celti...",
+      "media": {
+        "type": "link",
+        "uri": "https://www.celticsblog.com/boston-celtics-news/147100/payton-pritchard-contract-extension-celtics",
+        "title": "Payton Pritchard’s big contract is years in the making",
+        "description": "Pritchard agreed to a two-year, $$44.2 million contract extension that keeps him in Boston through 2028-2029. It’s a full-circle moment.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:jeb5puwe2trbthuqu4qnuctx/bafkreigxcvbknzknlvbitlnzandkedhzbddnbmsgyifnamn4bqlmaaf3ci"
+      },
+      "engagement": {
+        "likes": 5,
+        "reposts": 0
+      },
+      "players": [
+        "payton-pritchard"
+      ],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:jeb5puwe2trbthuqu4qnuctx/bafkreigxcvbknzknlvbitlnzandkedhzbddnbmsgyifnamn4bqlmaaf3ci",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.celticsblog.com/boston-celtics-news/147100/payton-pritchard-contract-extension-celtics"
+            }
+          ],
+          "index": {
+            "byteEnd": 295,
+            "byteStart": 260
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Av6xd7qcm4tsgb4ndo547vh4n%2Fapp.bsky.feed.post%2F3mxtpb5wqn22i",
+      "source": "bluesky",
+      "published_at": "2026-10-14T13:57:02Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/jeskeets.bsky.social/post/3mxtpb5wqn22i",
+      "title": "I know you won't believe me, but this dude is 7-foot tall",
+      "author": {
+        "handle": "jeskeets.bsky.social",
+        "display_name": "J.E. Skeets",
+        "url": "https://bsky.app/profile/jeskeets.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreidntfbgr4kn6b2nevpvhddp5xltzzb24dgq7msnh52llmzzqzi6r4"
+      },
+      "body_excerpt": "I know you won't believe me, but this dude is 7-foot tall",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 5,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "is_quote_post": true,
+      "quote": {
+        "author": "Chuck🏳️‍🌈",
+        "handle": "mooney039.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:xsozpuomntei2hm2wmefyb6f/bafkreiatgtq2n73e5nxtkb3holv3sulw3ktdy2oq6xgkgzwhk4miu25dle",
+        "text": "LSU is genuinely making people up to fill out their basketball roster",
+        "url": "https://bsky.app/profile/mooney039.bsky.social/post/3mxtnu4rtgc2d",
+        "media": {
+          "type": "image",
+          "images": [
+            {
+              "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:xsozpuomntei2hm2wmefyb6f/bafkreibe3dp7kdhp5lhiihienoqnauustwc2kgpxqgjqht3x2d4g6g7qmm",
+              "alt": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "bs-did%3Aplc%3Afqsmj7o5mbb7n7oav2kkjuid%2Fapp.bsky.feed.post%2F3mxtpem5nxk2v",
+      "source": "bluesky",
+      "published_at": "2026-10-14T13:58:58Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/nbastat.bsky.social/post/3mxtpem5nxk2v",
+      "title": "Damian Lillard needs 624 points to become the 25th player in NBA history (and the first in Blazers history) to score 20,000 regular-season points with a single team.",
+      "author": {
+        "handle": "nbastat.bsky.social",
+        "display_name": "NBA Stat",
+        "url": "https://bsky.app/profile/nbastat.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:fqsmj7o5mbb7n7oav2kkjuid/bafkreic3g44bm3orae6dkm4npna6phnodi74whhp6rkohxpe32x2hht27u"
+      },
+      "body_excerpt": "Damian Lillard needs 624 points to become the 25th player in NBA history (and the first in Blazers history) to score 20,000 regular-season points with a single team.\n\n(via CrazyStats)\n#NBA",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:fqsmj7o5mbb7n7oav2kkjuid/bafkreicg2aapv7sa3z6oudqpu7us2axxwc3bihrxs5xi7m7z6pga23tx7m",
+            "alt": ""
+          }
+        ]
+      },
+      "engagement": {
+        "likes": 6,
+        "reposts": 0
+      },
+      "players": [
+        "damian-lillard"
+      ],
+      "teams": [
+        "portland-trail-blazers"
+      ],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:fqsmj7o5mbb7n7oav2kkjuid/bafkreicg2aapv7sa3z6oudqpu7us2axxwc3bihrxs5xi7m7z6pga23tx7m",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "NBA"
+            }
+          ],
+          "index": {
+            "byteEnd": 188,
+            "byteStart": 184
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Aozrhqae34vzv6mso2hsym65i%2Fapp.bsky.feed.post%2F3mxtpgim3dc2u",
+      "source": "bluesky",
+      "published_at": "2026-10-14T14:00:01Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/omarisankofa.bsky.social/post/3mxtpgim3dc2u",
+      "title": "The Pistons say they're being cautious with Jalen Duren, who's yet to play in preseason with two games left. Evaluating his fit with John Collins is high on their to-do list. ",
+      "author": {
+        "handle": "omarisankofa.bsky.social",
+        "display_name": "Omari Sankofa II",
+        "url": "https://bsky.app/profile/omarisankofa.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:ozrhqae34vzv6mso2hsym65i/bafkreicwqbfoqf3cv44vp3upnjizm5ez3pnd7z2tsnj7keaozddwl57oy4"
+      },
+      "body_excerpt": "The Pistons say they're being cautious with Jalen Duren, who's yet to play in preseason with two games left. Evaluating his fit with John Collins is high on their to-do list. \n\nwww.freep.com/story/sports...",
+      "media": {
+        "type": "link",
+        "uri": "https://www.freep.com/story/sports/nba/pistons/2026/10/14/john-collins-jalen-duren-detroit-pistons-offseason/92237833007/",
+        "title": "",
+        "description": "",
+        "thumb": null
+      },
+      "engagement": {
+        "likes": 3,
+        "reposts": 1
+      },
+      "players": [
+        "jalen-duren",
+        "john-collins"
+      ],
+      "teams": [
+        "detroit-pistons"
+      ],
+      "enriched": true,
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.freep.com/story/sports/nba/pistons/2026/10/14/john-collins-jalen-duren-detroit-pistons-offseason/92237833007/"
+            }
+          ],
+          "index": {
+            "byteEnd": 206,
+            "byteStart": 177
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Aluofuy2uw7g4vsd2vbwidtel%2Fapp.bsky.feed.post%2F3mxtphqwq4c2w",
+      "source": "bluesky",
+      "published_at": "2026-10-14T14:00:43Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/keithsmithnba.bsky.social/post/3mxtphqwq4c2w",
+      "title": "The final of my Offseason Resets is up on @spotrac.com and it covers the Central Division:",
+      "author": {
+        "handle": "keithsmithnba.bsky.social",
+        "display_name": "KeithSmithNBA",
+        "url": "https://bsky.app/profile/keithsmithnba.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:luofuy2uw7g4vsd2vbwidtel/bafkreicvdayh6d2lkowdik5bvsakvqnw4c2y7ohsvrfhy5yhzgpm7ekjbm"
+      },
+      "body_excerpt": "The final of my Offseason Resets is up on @spotrac.com and it covers the Central Division:\n\n🏀Cavs and Pistons need to contend or changes will come\n🏀Pacers will be back in contention\n🏀Bulls and Bucks rebuilds are off to solid starts\n\nRead more:\n\nwww.spotrac.com/news/_/id/35...",
+      "media": {
+        "type": "link",
+        "uri": "https://www.spotrac.com/news/_/id/3528/central-division-offseason-reset",
+        "title": "Central Division Offseason Reset | Spotrac News",
+        "description": "Recapping the 2026 offseason moves for the NBA Central Division: returning players, arriving and departing players, roster status, cap/tax/apron status, exceptions, extension eligible players and full...",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:luofuy2uw7g4vsd2vbwidtel/bafkreico3midilk76xoq52tis55sshs2srbjk7vzzr2l5y3bbnbldi6wnq"
+      },
+      "engagement": {
+        "likes": 5,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [
+        "chicago-bulls",
+        "cleveland-cavaliers",
+        "detroit-pistons",
+        "indiana-pacers",
+        "milwaukee-bucks"
+      ],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:luofuy2uw7g4vsd2vbwidtel/bafkreico3midilk76xoq52tis55sshs2srbjk7vzzr2l5y3bbnbldi6wnq",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:hkyduehroabfhtqiz63qxpgw"
+            }
+          ],
+          "index": {
+            "byteEnd": 54,
+            "byteStart": 42
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.spotrac.com/news/_/id/3528/central-division-offseason-reset"
+            }
+          ],
+          "index": {
+            "byteEnd": 285,
+            "byteStart": 254
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Ajeb5puwe2trbthuqu4qnuctx%2Fapp.bsky.feed.post%2F3mxtpkacjkc2w",
+      "source": "bluesky",
+      "published_at": "2026-10-14T14:02:07Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/noadalzell.bsky.social/post/3mxtpkacjkc2w",
+      "title": "NEW WNBA Today on @WNBAonCLNS !",
+      "author": {
+        "handle": "noadalzell.bsky.social",
+        "display_name": "Noa Dalzell",
+        "url": "https://bsky.app/profile/noadalzell.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:jeb5puwe2trbthuqu4qnuctx/bafkreif3lgpmucmunghfrgxwwom4gm2x7fhftufklznmnxpbpmm4bwlpze"
+      },
+      "body_excerpt": "NEW WNBA Today on @WNBAonCLNS !\n\nWhat's next for the New York Liberty after a semifinals sweep? Is this the end for Chris DeMarco and his staff?\n\nBroke it all down with the one and only @madkenney\nwww.youtube.com/watch?v=qR9b...",
+      "media": {
+        "type": "link",
+        "uri": "https://www.youtube.com/watch?v=qR9blqBzskY&list=TLGGV3QPZvXP6MExNDEwMjAyNg",
+        "title": "WNBA Playoff Preview: How Valkyries Can Beat the Dream | WNBA Today",
+        "description": "YouTube video by WNBA on CLNS",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:jeb5puwe2trbthuqu4qnuctx/bafkreiecxm2dzlnoe44igrwx7wnmjblzfezeskmiqya6dxdzucczthfd3u"
+      },
+      "engagement": {
+        "likes": 0,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:jeb5puwe2trbthuqu4qnuctx/bafkreiecxm2dzlnoe44igrwx7wnmjblzfezeskmiqya6dxdzucczthfd3u",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.youtube.com/watch?v=qR9blqBzskY&list=TLGGV3QPZvXP6MExNDEwMjAyNg"
+            }
+          ],
+          "index": {
+            "byteEnd": 228,
+            "byteStart": 197
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Ajeb5puwe2trbthuqu4qnuctx%2Fapp.bsky.feed.post%2F3mxtplchyr22w",
+      "source": "bluesky",
+      "published_at": "2026-10-14T14:02:42Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/noadalzell.bsky.social/post/3mxtplchyr22w",
+      "title": "NEW WNBA Today on @WNBAonCLNS !",
+      "author": {
+        "handle": "noadalzell.bsky.social",
+        "display_name": "Noa Dalzell",
+        "url": "https://bsky.app/profile/noadalzell.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:jeb5puwe2trbthuqu4qnuctx/bafkreif3lgpmucmunghfrgxwwom4gm2x7fhftufklznmnxpbpmm4bwlpze"
+      },
+      "body_excerpt": "NEW WNBA Today on @WNBAonCLNS !\n\nWhat's next for the New York Liberty after a semifinals sweep? Is this the end for Chris DeMarco and his staff?\n\nBroke it all down with the one and only @madkenney\nwww.youtube.com/watch?v=Mnkd...",
+      "media": {
+        "type": "link",
+        "uri": "https://www.youtube.com/watch?v=MnkdTBsxJJs",
+        "title": "What's Next For New York Liberty, Chris DeMarco After WNBA Semifinals Sweep? | WNBA Today",
+        "description": "YouTube video by WNBA on CLNS",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:jeb5puwe2trbthuqu4qnuctx/bafkreicuu3pfso4pri6ojua4ojjwgoozdwgtfwvpel3ice53qy63o3yyn4"
+      },
+      "engagement": {
+        "likes": 0,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:jeb5puwe2trbthuqu4qnuctx/bafkreicuu3pfso4pri6ojua4ojjwgoozdwgtfwvpel3ice53qy63o3yyn4",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.youtube.com/watch?v=MnkdTBsxJJs"
+            }
+          ],
+          "index": {
+            "byteEnd": 228,
+            "byteStart": 197
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Ank756gkpj52ryc6gaorkvctp%2Fapp.bsky.feed.post%2F3mxtpnaqrcs2i",
+      "source": "bluesky",
+      "published_at": "2026-10-14T14:03:48Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/nbacobwebs.bsky.social/post/3mxtpnaqrcs2i",
+      "title": "October 14, 2004: Sacramento's Chris Webber drills a 55-foot shot to beat the third quarter buzzer during an NBA Preseason game against Houston at Shanghai Indoor Stadium in Shanghai, China.",
+      "author": {
+        "handle": "nbacobwebs.bsky.social",
+        "display_name": "NBA Cobwebs",
+        "url": "https://bsky.app/profile/nbacobwebs.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:nk756gkpj52ryc6gaorkvctp/bafkreieq3iqdy6qdoesofi4f472fwr4vyjo2u43ttwf2uwp7kz6ghu73ra"
+      },
+      "body_excerpt": "October 14, 2004: Sacramento's Chris Webber drills a 55-foot shot to beat the third quarter buzzer during an NBA Preseason game against Houston at Shanghai Indoor Stadium in Shanghai, China.\n\nThe Rockets defeated the Kings, 88-86.",
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ank756gkpj52ryc6gaorkvctp/bafkreihqf2lmb6p42ua2ure72epwnwvan3aiz4a7t2kxoj6mb34zryqc3u/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Ank756gkpj52ryc6gaorkvctp/bafkreihqf2lmb6p42ua2ure72epwnwvan3aiz4a7t2kxoj6mb34zryqc3u/playlist.m3u8"
+      },
+      "engagement": {
+        "likes": 6,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [
+        "houston-rockets",
+        "sacramento-kings"
+      ],
+      "enriched": true,
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ank756gkpj52ryc6gaorkvctp/bafkreihqf2lmb6p42ua2ure72epwnwvan3aiz4a7t2kxoj6mb34zryqc3u/thumbnail.jpg"
+    },
+    {
+      "id": "bs-did%3Aplc%3Ambxm4wdmklezjotcqa3g7uto%2Fapp.bsky.feed.post%2F3mxtpqeq5722q",
+      "source": "bluesky",
+      "published_at": "2026-10-14T14:05:33Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/sethwalder.bsky.social/post/3mxtpqeq5722q",
+      "title": "Before the season, I made bold predictions for all 32 teams. ",
+      "author": {
+        "handle": "sethwalder.bsky.social",
+        "display_name": "Seth Walder",
+        "url": "https://bsky.app/profile/sethwalder.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:mbxm4wdmklezjotcqa3g7uto/bafkreieqpgxbgsw47ij77m7yqufi5ymmmzihm56zmorah3bpvfuqi2atfi"
+      },
+      "body_excerpt": "Before the season, I made bold predictions for all 32 teams. \n\nFive weeks in, I'm checking in on those predictions to see which are on track, which still have a chance, and which already need to be thrown out. \n\nwww.espn.com/nfl/story/_/...",
+      "media": {
+        "type": "link",
+        "uri": "https://www.espn.com/nfl/story/_/id/50163007/2026-season-evaluating-preseason-predictions-updates",
+        "title": "Revisiting 2026 preseason bold predictions for 32 NFL teams: Which are on track?",
+        "description": "In the preseason, we made bold predictions for every NFL team, from Jordan Love's MVP case to Isaiah Likely's catch total. Which ones are on track? Which seem unlikely?",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:mbxm4wdmklezjotcqa3g7uto/bafkreih4kbf2fsfixekxubdnipela5vm7hmvjwuxdl5fxpfvlue3nkxfem"
+      },
+      "engagement": {
+        "likes": 10,
+        "reposts": 1
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:mbxm4wdmklezjotcqa3g7uto/bafkreih4kbf2fsfixekxubdnipela5vm7hmvjwuxdl5fxpfvlue3nkxfem",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.espn.com/nfl/story/_/id/50163007/2026-season-evaluating-preseason-predictions-updates"
+            }
+          ],
+          "index": {
+            "byteEnd": 240,
+            "byteStart": 212
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Ae7n6cs5ayz4tuab43rr5lh3m%2Fapp.bsky.feed.post%2F3mxtq2gnmns2k",
+      "source": "bluesky",
+      "published_at": "2026-10-14T14:11:10Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/caitlinmaycooper.bsky.social/post/3mxtq2gnmns2k",
+      "title": "Wrote about Tyrese Haliburton getting back to where he left off in his triumphal return to OKC ",
+      "author": {
+        "handle": "caitlinmaycooper.bsky.social",
+        "display_name": "Caitlin Cooper",
+        "url": "https://bsky.app/profile/caitlinmaycooper.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7n6cs5ayz4tuab43rr5lh3m/bafkreicfoxyvbfa65zuaecox5d4cdvbkxky6xpqkgnrsvfn4ajhuxosnhq"
+      },
+      "body_excerpt": "Wrote about Tyrese Haliburton getting back to where he left off in his triumphal return to OKC \n\nOn what stood out from him going left as a right-hand dominant PG coming back from a right Achilles injury & the full-circle moment leading to a new direction: www.patreon.com/basketballsh...",
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ae7n6cs5ayz4tuab43rr5lh3m/bafkreihi7cyazolajfpiaqw3x3tmi3vwwp2spju4sljnel6rcv7rxc2l4u/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Ae7n6cs5ayz4tuab43rr5lh3m/bafkreihi7cyazolajfpiaqw3x3tmi3vwwp2spju4sljnel6rcv7rxc2l4u/playlist.m3u8"
+      },
+      "engagement": {
+        "likes": 11,
+        "reposts": 0
+      },
+      "players": [
+        "paul-george",
+        "tyrese-haliburton"
+      ],
+      "teams": [
+        "oklahoma-city-thunder"
+      ],
+      "enriched": true,
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ae7n6cs5ayz4tuab43rr5lh3m/bafkreihi7cyazolajfpiaqw3x3tmi3vwwp2spju4sljnel6rcv7rxc2l4u/thumbnail.jpg",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.patreon.com/basketballshewrote/posts/tyrese-gets-back-172302973"
+            }
+          ],
+          "index": {
+            "byteEnd": 288,
+            "byteStart": 257
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Aluofuy2uw7g4vsd2vbwidtel%2Fapp.bsky.feed.post%2F3mxtqdzzoks2w",
+      "source": "bluesky",
+      "published_at": "2026-10-14T14:16:32Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/keithsmithnba.bsky.social/post/3mxtqdzzoks2w",
+      "title": "The Sacramento Kings have re-signed Viktor Lakhin to a non-guaranteed camp contract, a league source told @spotrac.com.",
+      "author": {
+        "handle": "keithsmithnba.bsky.social",
+        "display_name": "KeithSmithNBA",
+        "url": "https://bsky.app/profile/keithsmithnba.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:luofuy2uw7g4vsd2vbwidtel/bafkreicvdayh6d2lkowdik5bvsakvqnw4c2y7ohsvrfhy5yhzgpm7ekjbm"
+      },
+      "body_excerpt": "The Sacramento Kings have re-signed Viktor Lakhin to a non-guaranteed camp contract, a league source told @spotrac.com.\n\nSacramento had previously cut Lakhin, but with injuries to several other bigs, he's back with the team. Lakhin is also competing for the Kings open two-way spot.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 6,
+        "reposts": 1
+      },
+      "players": [],
+      "teams": [
+        "sacramento-kings"
+      ],
+      "enriched": true,
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:hkyduehroabfhtqiz63qxpgw"
+            }
+          ],
+          "index": {
+            "byteEnd": 118,
+            "byteStart": 106
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Ank756gkpj52ryc6gaorkvctp%2Fapp.bsky.feed.post%2F3mxtql2nt322i",
+      "source": "bluesky",
+      "published_at": "2026-10-14T14:20:28Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/nbacobwebs.bsky.social/post/3mxtql2nt322i",
+      "title": "October 14, 1988: The Lakers improve to 2-0 in the NBA Preseason with a 130-110 win over the Warriors in Honolulu, HI.",
+      "author": {
+        "handle": "nbacobwebs.bsky.social",
+        "display_name": "NBA Cobwebs",
+        "url": "https://bsky.app/profile/nbacobwebs.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:nk756gkpj52ryc6gaorkvctp/bafkreieq3iqdy6qdoesofi4f472fwr4vyjo2u43ttwf2uwp7kz6ghu73ra"
+      },
+      "body_excerpt": "October 14, 1988: The Lakers improve to 2-0 in the NBA Preseason with a 130-110 win over the Warriors in Honolulu, HI.\n\nMagic Johnson had 24 PTS/11 REB for Los Angeles. Golden State's Chris Mullin scored 25 PTS and teammate Mitch Richmond added 21 PTS.\n\n📺 KNBC-TV",
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ank756gkpj52ryc6gaorkvctp/bafkreibefghvl5hy3kclqsieiodwyvzaiukvf2bllupf5hztlr24a7oyo4/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Ank756gkpj52ryc6gaorkvctp/bafkreibefghvl5hy3kclqsieiodwyvzaiukvf2bllupf5hztlr24a7oyo4/playlist.m3u8"
+      },
+      "engagement": {
+        "likes": 3,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [
+        "golden-state-warriors",
+        "los-angeles-lakers",
+        "orlando-magic"
+      ],
+      "enriched": true,
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ank756gkpj52ryc6gaorkvctp/bafkreibefghvl5hy3kclqsieiodwyvzaiukvf2bllupf5hztlr24a7oyo4/thumbnail.jpg"
+    },
+    {
+      "id": "bs-did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao%2Fapp.bsky.feed.post%2F3mxtr3i2vms2h",
+      "source": "bluesky",
+      "published_at": "2026-10-14T14:29:39Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/hoopinformatics.com/post/3mxtr3i2vms2h",
+      "title": "This @nateduncannba.bsky.social podcast episode is essentially my Super Bowl",
+      "author": {
+        "handle": "hoopinformatics.com",
+        "display_name": "Hoop Informatics",
+        "url": "https://bsky.app/profile/hoopinformatics.com",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:s42iw2fbfmgsgh7hdtvvoaao/bafkreigsdsi76pwfd4djiiibz7oeluixl4fqpbwx7moknvryv4bd5yvniu"
+      },
+      "body_excerpt": "This @nateduncannba.bsky.social podcast episode is essentially my Super Bowl",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:s42iw2fbfmgsgh7hdtvvoaao/bafkreihadn7oy3jovh3afxx2pxefy4x3adnpy7nmo25zse4tabgpux3gpi",
+            "alt": "Screenshot of a podcast episode page in dark mode. Gray date text reads \"October 13.\" The bold white title reads \"Inside the Brain of Kostya Medvedovsky.\" Below is the show name, \"Dunc'd On Prime,\" beside a small black-and-white logo of a player dunking, with \"DUNC'D\" written vertically. A purple play button shows a 51-minute runtime, followed by circular download and bookmark buttons. The episode description reads: \"Kostya Medvedovsky, creator of DARKO, joins Nate to explain how his projections work, what we can learn from preseason, and where his team and player evaluations differ from conventional wisdom. They also explore aging curves for the NBA's veteran stars, the impact of tanking reform, and which player profiles translate best to the playoffs.\""
+          }
+        ]
+      },
+      "engagement": {
+        "likes": 0,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:s42iw2fbfmgsgh7hdtvvoaao/bafkreihadn7oy3jovh3afxx2pxefy4x3adnpy7nmo25zse4tabgpux3gpi",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:mtyaifw46xppbvcxeo6tl6wf"
+            }
+          ],
+          "index": {
+            "byteEnd": 31,
+            "byteStart": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Avcumvue2gcsxexermtdg6cr7%2Fapp.bsky.feed.post%2F3mxtr5sddjk2m",
+      "source": "bluesky",
+      "published_at": "2026-10-14T14:30:57Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/tommybeernba.bsky.social/post/3mxtr5sddjk2m",
+      "title": "🚨 New Words 🚨",
+      "author": {
+        "handle": "tommybeernba.bsky.social",
+        "display_name": "Tommy Beer",
+        "url": "https://bsky.app/profile/tommybeernba.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:vcumvue2gcsxexermtdg6cr7/bafkreifi5xitqwmihnc6t7jaskafbqemysh5klbfju44ks527gz43xw6pe"
+      },
+      "body_excerpt": "🚨 New Words 🚨\n\nKnicks Reserves Get Roughed Up by the Raps\n\nEven amid the carnage, a couple of players managed to make their case for a roster spot… \n\nPacome Dadiet, however, had laid another egg.\n\n📬 Freshly Delivered to Inboxes 📬\n\ntommybeer.substack.com/p/knicks-res...",
+      "media": {
+        "type": "link",
+        "uri": "https://tommybeer.substack.com/p/knicks-reserves-get-roughed-up-by",
+        "title": "Knicks Reserves Get Roughed Up by the Raps",
+        "description": "Even amid the carnage, a couple of players managed to make their case for a roster spot… Pacome Dadiet, however, had laid another egg.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:vcumvue2gcsxexermtdg6cr7/bafkreiciynn7nqxv7krmor55ouzw6spvg3dejg4yrgkccwrecyaw333r54"
+      },
+      "engagement": {
+        "likes": 1,
+        "reposts": 0
+      },
+      "players": [
+        "pacome-dadiet"
+      ],
+      "teams": [
+        "new-york-knicks",
+        "toronto-raptors"
+      ],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:vcumvue2gcsxexermtdg6cr7/bafkreiciynn7nqxv7krmor55ouzw6spvg3dejg4yrgkccwrecyaw333r54",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://tommybeer.substack.com/p/knicks-reserves-get-roughed-up-by"
+            }
+          ],
+          "index": {
+            "byteEnd": 283,
+            "byteStart": 245
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Avcumvue2gcsxexermtdg6cr7%2Fapp.bsky.feed.post%2F3mxtrmziba22m",
+      "source": "bluesky",
+      "published_at": "2026-10-14T14:39:28Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/tommybeernba.bsky.social/post/3mxtrmziba22m",
+      "title": "Was last night Pacome Dadiet's last, best chance?",
+      "author": {
+        "handle": "tommybeernba.bsky.social",
+        "display_name": "Tommy Beer",
+        "url": "https://bsky.app/profile/tommybeernba.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:vcumvue2gcsxexermtdg6cr7/bafkreifi5xitqwmihnc6t7jaskafbqemysh5klbfju44ks527gz43xw6pe"
+      },
+      "body_excerpt": "Was last night Pacome Dadiet's last, best chance?\n\nThe Knicks have until October 31 to exercise Dadiet's $5.4 million option for the 2027-28 season, and it's becoming increasingly likely they will decline it.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 0,
+        "reposts": 0
+      },
+      "players": [
+        "pacome-dadiet"
+      ],
+      "teams": [
+        "new-york-knicks"
+      ],
+      "enriched": true,
+      "is_quote_post": true,
+      "quote": {
+        "author": "Tommy Beer",
+        "handle": "tommybeernba.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:vcumvue2gcsxexermtdg6cr7/bafkreifi5xitqwmihnc6t7jaskafbqemysh5klbfju44ks527gz43xw6pe",
+        "text": "🚨 New Words 🚨\n\nKnicks Reserves Get Roughed Up by the Raps\n\nEven amid the carnage, a couple of players managed to make their case for a roster spot… \n\nPacome Dadiet, however, had laid another egg.\n\n📬 Freshly Delivered to Inboxes 📬\n\ntommybeer.substack.com/p/knicks-res...",
+        "url": "https://bsky.app/profile/tommybeernba.bsky.social/post/3mxtr5sddjk2m",
+        "facets": [
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": "https://tommybeer.substack.com/p/knicks-reserves-get-roughed-up-by"
+              }
+            ],
+            "index": {
+              "byteEnd": 283,
+              "byteStart": 245
+            }
+          }
+        ],
+        "media": {
+          "type": "link",
+          "uri": "https://tommybeer.substack.com/p/knicks-reserves-get-roughed-up-by",
+          "title": "Knicks Reserves Get Roughed Up by the Raps",
+          "description": "Even amid the carnage, a couple of players managed to make their case for a roster spot… Pacome Dadiet, however, had laid another egg.",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:vcumvue2gcsxexermtdg6cr7/bafkreiciynn7nqxv7krmor55ouzw6spvg3dejg4yrgkccwrecyaw333r54"
+        }
+      }
+    },
+    {
+      "id": "bs-did%3Aplc%3Awmqeyoxhxyod73wcot4sqhe7%2Fapp.bsky.feed.post%2F3mxtrqml3ss25",
+      "source": "bluesky",
+      "published_at": "2026-10-14T14:41:28Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/jonhamm.bsky.social/post/3mxtrqml3ss25",
+      "title": "For Thunder fans, or general NBA observers, that missed this last night… brutal. ",
+      "author": {
+        "handle": "jonhamm.bsky.social",
+        "display_name": "Jon Hamm",
+        "url": "https://bsky.app/profile/jonhamm.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:wmqeyoxhxyod73wcot4sqhe7/bafkreicgbxcxaroryqulu7dexbv7y4c7fepcct46s7zi3cvstkwaov23um"
+      },
+      "body_excerpt": "For Thunder fans, or general NBA observers, that missed this last night… brutal. \n\nNo official update from the Thunder yet, but this showed all the signs of a torn Achilles tendon. And it happened shortly after the start of overtime in a meaningless preseason game.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 7,
+        "reposts": 1
+      },
+      "players": [],
+      "teams": [
+        "oklahoma-city-thunder"
+      ],
+      "enriched": true,
+      "is_quote_post": true,
+      "quote": {
+        "author": "Hoops Rumors",
+        "handle": "hoopsrumors.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:3tvj23lkgwfnbmfpfrdgmnyx/bafkreicv2o3q7nswm2cgufanicuzsc7jn7rq5ewdtxuw43kjpcnexywl6a",
+        "text": "",
+        "url": "https://bsky.app/profile/hoopsrumors.bsky.social/post/3mxsng5e2zh2u",
+        "media": {
+          "type": "link",
+          "uri": "http://dlvr.it/TVvYXj",
+          "title": "Thunder Rookie Otega Oweh Suffers Potentially Serious Injury",
+          "description": "Thunder rookie guard Otega Oweh suffered an apparent serious leg injury during overtime of Oklahoma City’s preseason victory over the Pacers on Tuesday night, according to Justin Martinez of The Oklahoman. Oweh, the 41st pick of this year’s draft, dropped to the court during a non-contact injury. He was unable to put any weight on […]",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:3tvj23lkgwfnbmfpfrdgmnyx/bafkreidgzfirnxagy2r47l36nujqqc5ncnr2akw465lugmei25bsfot5mm"
+        }
+      }
+    },
+    {
+      "id": "bs-did%3Aplc%3Ank756gkpj52ryc6gaorkvctp%2Fapp.bsky.feed.post%2F3mxtsid5g522i",
+      "source": "bluesky",
+      "published_at": "2026-10-14T14:54:44Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/nbacobwebs.bsky.social/post/3mxtsid5g522i",
+      "title": "October 14, 2001: Sacramento's Peja Stojaković with a 50-foot, behind the back pass to Bobby Jackson during a 107-88 preseason win over Dallas.",
+      "author": {
+        "handle": "nbacobwebs.bsky.social",
+        "display_name": "NBA Cobwebs",
+        "url": "https://bsky.app/profile/nbacobwebs.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:nk756gkpj52ryc6gaorkvctp/bafkreieq3iqdy6qdoesofi4f472fwr4vyjo2u43ttwf2uwp7kz6ghu73ra"
+      },
+      "body_excerpt": "October 14, 2001: Sacramento's Peja Stojaković with a 50-foot, behind the back pass to Bobby Jackson during a 107-88 preseason win over Dallas.\n\nStojaković finished with 21 PTS/4 AST and Vlade Divac had 16 PTS/10 REB for the Kings. The Mavericks' Adrian Griffin had 14 PTS/8 REB.",
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ank756gkpj52ryc6gaorkvctp/bafkreieawaiii2szsgrhlrm6tsvp6ln4wveomc7hlywazb2pdlesv2q76y/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Ank756gkpj52ryc6gaorkvctp/bafkreieawaiii2szsgrhlrm6tsvp6ln4wveomc7hlywazb2pdlesv2q76y/playlist.m3u8"
+      },
+      "engagement": {
+        "likes": 9,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [
+        "dallas-mavericks",
+        "sacramento-kings"
+      ],
+      "enriched": true,
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ank756gkpj52ryc6gaorkvctp/bafkreieawaiii2szsgrhlrm6tsvp6ln4wveomc7hlywazb2pdlesv2q76y/thumbnail.jpg"
+    },
+    {
+      "id": "bs-did%3Aplc%3As2ibun2lfcftexxcqsr4ryce%2Fapp.bsky.feed.post%2F3mxtslukxnc2o",
+      "source": "bluesky",
+      "published_at": "2026-10-14T14:56:43Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/michaelvpina.bsky.social/post/3mxtslukxnc2o",
+      "title": "The Ringer's NBA Top 100 is back! ",
+      "author": {
+        "handle": "michaelvpina.bsky.social",
+        "display_name": "Michael Pina",
+        "url": "https://bsky.app/profile/michaelvpina.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:s2ibun2lfcftexxcqsr4ryce/bafkreiegsljctlnzi52l56wsfenftdfde3b5rtw7ytmwio7nrpbylhlaqy"
+      },
+      "body_excerpt": "The Ringer's NBA Top 100 is back! \n\nPer usual, please direct all complaints and comments to @howardbeck.bsky.social, who is directly responsible for everything about this list that made you angry: www.theringer.com/nba-ranked/t...",
+      "media": {
+        "type": "link",
+        "uri": "https://www.theringer.com/nba-ranked/top-100",
+        "title": "The NBA Top 100 — The Ringer",
+        "description": "The Ringer's ranking of the 100 best players in the NBA, with a scouting report on every one of them from The Ringer's NBA staff.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:s2ibun2lfcftexxcqsr4ryce/bafkreich6sl6kux4iw2muqbybbxosadxdjzturcsgkzieffla6hpt4bxzq"
+      },
+      "engagement": {
+        "likes": 10,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:s2ibun2lfcftexxcqsr4ryce/bafkreich6sl6kux4iw2muqbybbxosadxdjzturcsgkzieffla6hpt4bxzq",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:rkpzrwxex34r36ypejhew7ml"
+            }
+          ],
+          "index": {
+            "byteEnd": 115,
+            "byteStart": 92
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.theringer.com/nba-ranked/top-100"
+            }
+          ],
+          "index": {
+            "byteEnd": 230,
+            "byteStart": 197
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Alyrhzsfcnpthqs3t5ks6pqzv%2Fapp.bsky.feed.post%2F3mxtsnqp3vs2h",
+      "source": "bluesky",
+      "published_at": "2026-10-14T14:57:46Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/marcjspears.bsky.social/post/3mxtsnqp3vs2h",
+      "title": "De’Aaron Fox isn’t dwelling on past, only getting back to #NBA Finals. Healthy and motivated, San Antonio #Spurs guard explains why he played hurt against New York #Knicks. @andscape tinyurl.com/ykmfn4sd",
+      "author": {
+        "handle": "marcjspears.bsky.social",
+        "display_name": "MarcJSpears",
+        "url": "https://bsky.app/profile/marcjspears.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:lyrhzsfcnpthqs3t5ks6pqzv/bafkreideuik5va7nedwh5gxbpgn4jgeurlfaddkqd4nunn5zjwfooc6p6e"
+      },
+      "body_excerpt": "De’Aaron Fox isn’t dwelling on past, only getting back to #NBA Finals. Healthy and motivated, San Antonio #Spurs guard explains why he played hurt against New York #Knicks. @andscape tinyurl.com/ykmfn4sd",
+      "media": {
+        "type": "link",
+        "uri": "https://tinyurl.com/ykmfn4sd",
+        "title": "De'Aaron Fox isn't dwelling on past, only getting back to NBA Finals - Andscape",
+        "description": "Healthy and motivated, the San Antonio Spurs guard Fox explains why he played hurt against the New York Knicks.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:lyrhzsfcnpthqs3t5ks6pqzv/bafkreif67exil4amdrtl7ps6uvkexm5bxjdgh67lx7ayzcsc6frhlqktt4"
+      },
+      "engagement": {
+        "likes": 3,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [
+        "new-york-knicks",
+        "san-antonio-spurs"
+      ],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:lyrhzsfcnpthqs3t5ks6pqzv/bafkreif67exil4amdrtl7ps6uvkexm5bxjdgh67lx7ayzcsc6frhlqktt4",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "NBA"
+            }
+          ],
+          "index": {
+            "byteEnd": 66,
+            "byteStart": 62
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Spurs"
+            }
+          ],
+          "index": {
+            "byteEnd": 116,
+            "byteStart": 110
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Knicks"
+            }
+          ],
+          "index": {
+            "byteEnd": 175,
+            "byteStart": 168
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://tinyurl.com/ykmfn4sd"
+            }
+          ],
+          "index": {
+            "byteEnd": 207,
+            "byteStart": 187
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3A6k2l2zk4prog4khdtzbafugo%2Fapp.bsky.feed.post%2F3mxtsthj25k2j",
+      "source": "bluesky",
+      "published_at": "2026-10-14T15:00:57Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/sportsmediawatch.bsky.social/post/3mxtsthj25k2j",
+      "title": "Nantz, addressing Romo exit for the first time, says he is confident his ex-partner will work again in interview with Jimmy Traina.",
+      "author": {
+        "handle": "sportsmediawatch.bsky.social",
+        "display_name": "Sports Media Watch",
+        "url": "https://bsky.app/profile/sportsmediawatch.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:6k2l2zk4prog4khdtzbafugo/bafkreidrpvr4hcdnzq4lh7joarinab2iuq5lrvtdipqbmdc3jlpnbwexd4"
+      },
+      "body_excerpt": "Nantz, addressing Romo exit for the first time, says he is confident his ex-partner will work again in interview with Jimmy Traina.\n\nAlso says he is back to a \"more traditional\" play-by-play role with JJ Watt: www.sportsmediawatch.com/2026/10/jim-...",
+      "media": {
+        "type": "link",
+        "uri": "https://www.sportsmediawatch.com/2026/10/jim-nantz-addresses-tony-romo-exit-traditional-role-jj-watt/",
+        "title": "Nantz confident Romo will work again, says he's back to \"traditional\" role with Watt",
+        "description": "For the first time since Tony Romo's arrest and departure from CBS, his longtime NFL partner Jim Nantz spoke publicly about the situation.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:6k2l2zk4prog4khdtzbafugo/bafkreiaqzxovqcfkadxbyxk7462f7wdg35vlqrjz3ucya4rrier4bhygma"
+      },
+      "engagement": {
+        "likes": 1,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:6k2l2zk4prog4khdtzbafugo/bafkreiaqzxovqcfkadxbyxk7462f7wdg35vlqrjz3ucya4rrier4bhygma",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.sportsmediawatch.com/2026/10/jim-nantz-addresses-tony-romo-exit-traditional-role-jj-watt/"
+            }
+          ],
+          "index": {
+            "byteEnd": 250,
+            "byteStart": 210
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3A42qm4nzol5bkpulya64jnskm%2Fapp.bsky.feed.post%2F3mxttdqb73c2x",
+      "source": "bluesky",
+      "published_at": "2026-10-14T15:10:03Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/richarddeitsch.bsky.social/post/3mxttdqb73c2x",
+      "title": "The WNBA says 51 telecasts during its regular season averaged at least one million viewers, the most in WNBA history and up from 19 in 2025. Nine telecasts averaged more than two million viewers, also a league record.",
+      "author": {
+        "handle": "richarddeitsch.bsky.social",
+        "display_name": "Richard Deitsch",
+        "url": "https://bsky.app/profile/richarddeitsch.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:42qm4nzol5bkpulya64jnskm/bafkreigdxttgytbcak6tmpdea6h6tbynpsjd7ns6c5jdsyoqzooqzg3jhm"
+      },
+      "body_excerpt": "The WNBA says 51 telecasts during its regular season averaged at least one million viewers, the most in WNBA history and up from 19 in 2025. Nine telecasts averaged more than two million viewers, also a league record.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 5,
+        "reposts": 2
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Arkpzrwxex34r36ypejhew7ml%2Fapp.bsky.feed.post%2F3mxttf6nvt222",
+      "source": "bluesky",
+      "published_at": "2026-10-14T15:10:52Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/howardbeck.bsky.social/post/3mxttf6nvt222",
+      "title": "It was only a matter of time before @michaelvpina.bsky.social turned this bit back on me! Dastardly move.",
+      "author": {
+        "handle": "howardbeck.bsky.social",
+        "display_name": "Howard Beck",
+        "url": "https://bsky.app/profile/howardbeck.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:rkpzrwxex34r36ypejhew7ml/bafkreiaphp45z27romgnmooaan4gaj2g3ew6lr45y6w3uddhjyxdboykoe"
+      },
+      "body_excerpt": "It was only a matter of time before @michaelvpina.bsky.social turned this bit back on me! Dastardly move.\n\nBut rest assured, Pina, I will be forwarding every last gripe and grievance to you, the *actual Ringer 100 voter*.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 7,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:s2ibun2lfcftexxcqsr4ryce"
+            }
+          ],
+          "index": {
+            "byteEnd": 61,
+            "byteStart": 36
+          }
+        }
+      ],
+      "is_quote_post": true,
+      "quote": {
+        "author": "Michael Pina",
+        "handle": "michaelvpina.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:s2ibun2lfcftexxcqsr4ryce/bafkreiegsljctlnzi52l56wsfenftdfde3b5rtw7ytmwio7nrpbylhlaqy",
+        "text": "The Ringer's NBA Top 100 is back! \n\nPer usual, please direct all complaints and comments to @howardbeck.bsky.social, who is directly responsible for everything about this list that made you angry: www.theringer.com/nba-ranked/t...",
+        "url": "https://bsky.app/profile/michaelvpina.bsky.social/post/3mxtslukxnc2o",
+        "facets": [
+          {
+            "$type": "app.bsky.richtext.facet",
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#mention",
+                "did": "did:plc:rkpzrwxex34r36ypejhew7ml"
+              }
+            ],
+            "index": {
+              "byteEnd": 115,
+              "byteStart": 92
+            }
+          },
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": "https://www.theringer.com/nba-ranked/top-100"
+              }
+            ],
+            "index": {
+              "byteEnd": 230,
+              "byteStart": 197
+            }
+          }
+        ],
+        "media": {
+          "type": "link",
+          "uri": "https://www.theringer.com/nba-ranked/top-100",
+          "title": "The NBA Top 100 — The Ringer",
+          "description": "The Ringer's ranking of the 100 best players in the NBA, with a scouting report on every one of them from The Ringer's NBA staff.",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:s2ibun2lfcftexxcqsr4ryce/bafkreich6sl6kux4iw2muqbybbxosadxdjzturcsgkzieffla6hpt4bxzq"
+        }
+      }
+    },
+    {
+      "id": "bs-did%3Aplc%3Asgoisgg5ihykk4rkmleqcsuu%2Fapp.bsky.feed.post%2F3mxttgtqyw22f",
+      "source": "bluesky",
+      "published_at": "2026-10-14T15:11:48Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/levakabas.bsky.social/post/3mxttgtqyw22f",
+      "title": "The Golden State Warriors' value is up 178% since 2020",
+      "author": {
+        "handle": "levakabas.bsky.social",
+        "display_name": "Lev Akabas",
+        "url": "https://bsky.app/profile/levakabas.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:sgoisgg5ihykk4rkmleqcsuu/bafkreie6ihqx6qsedvvk7ss2y6qvwpdgv3jqrac6bmt6w755rw4eoazxmq"
+      },
+      "body_excerpt": "The Golden State Warriors' value is up 178% since 2020\n\nIt is up 32x since Joe Lacob bought the team for $450 million in 2010",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:sgoisgg5ihykk4rkmleqcsuu/bafkreigqdzlyukrb4uzixxaqwraaulhgf7csy6vxrymkvzcxy4s4kcav4m",
+            "alt": ""
+          }
+        ]
+      },
+      "engagement": {
+        "likes": 2,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [
+        "golden-state-warriors"
+      ],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:sgoisgg5ihykk4rkmleqcsuu/bafkreigqdzlyukrb4uzixxaqwraaulhgf7csy6vxrymkvzcxy4s4kcav4m"
+    },
+    {
+      "id": "bs-did%3Aplc%3Acrcybmshorvvegmbkp5rvgjv%2Fapp.bsky.feed.post%2F3mxttlgtt3c2s",
+      "source": "bluesky",
+      "published_at": "2026-10-14T15:14:22Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/nbcswarriors.bsky.social/post/3mxttlgtt3c2s",
+      "title": "\"I like parity, but I'd like to see teams be able to stick together too.\"",
+      "author": {
+        "handle": "nbcswarriors.bsky.social",
+        "display_name": "Warriors on NBC Sports Bay Area",
+        "url": "https://bsky.app/profile/nbcswarriors.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:crcybmshorvvegmbkp5rvgjv/bafkreicnwnxnmxmxr2uko53p2eh7hv7sebqduk3c72vrxykxk2y3hschrm"
+      },
+      "body_excerpt": "\"I like parity, but I'd like to see teams be able to stick together too.\"\n\nSteve Kerr spoke to @daltonjohnson.bsky.social and @bontahill.bsky.social about the current and future state of the NBA",
+      "media": {
+        "type": "link",
+        "uri": "https://www.nbcsportsbayarea.com/nba/golden-state-warriors/steve-kerr-questions-state-of-league/1971227/",
+        "title": "Warriors coach Steve Kerr answers five questions about the current and future state of the NBA",
+        "description": "Golden State Warriors coach Steve Kerr answers questions about the current and future state of the NBA.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:crcybmshorvvegmbkp5rvgjv/bafkreieeiuwt7442iipol4atfnj7km34vdhhohfcea53qy5fvzxuprrpqq"
+      },
+      "engagement": {
+        "likes": 0,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:crcybmshorvvegmbkp5rvgjv/bafkreieeiuwt7442iipol4atfnj7km34vdhhohfcea53qy5fvzxuprrpqq",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:5dwbpojkp6wykwcafasvwroi"
+            }
+          ],
+          "index": {
+            "byteEnd": 121,
+            "byteStart": 95
+          }
+        },
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:5lmvbz2f2hiamlyqgupb44kk"
+            }
+          ],
+          "index": {
+            "byteEnd": 148,
+            "byteStart": 126
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Akr33fajyxpy2voxwsthydewq%2Fapp.bsky.feed.post%2F3mxtu3alsrk2l",
+      "source": "bluesky",
+      "published_at": "2026-10-14T15:23:12Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/samdigiovanni.bsky.social/post/3mxtu3alsrk2l",
+      "title": "NBA season predictions. Don’t bother yelling at me, I’m right about all of this",
+      "author": {
+        "handle": "samdigiovanni.bsky.social",
+        "display_name": "Sam DiGiovanni",
+        "url": "https://bsky.app/profile/samdigiovanni.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:kr33fajyxpy2voxwsthydewq/bafkreia7hovzss2b53qvolnrm2vn3dswc2ot2rowzbll3ntn32g7tajpsy"
+      },
+      "body_excerpt": "NBA season predictions. Don’t bother yelling at me, I’m right about all of this",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:kr33fajyxpy2voxwsthydewq/bafkreid7cikz6xh2r647co26pysojmgj46f4y5mf7gwpmqfa3nfgw55ovi",
+            "alt": ""
+          },
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:kr33fajyxpy2voxwsthydewq/bafkreibzvmvabkhk6pcg43soyym6isy2uonk4eqjr27brnohcpymnmotp4",
+            "alt": ""
+          },
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:kr33fajyxpy2voxwsthydewq/bafkreifcnm4u75kkbnabzjprfc7cf4e6bquc2gukv64q5gpkmtkhr6pqki",
+            "alt": ""
+          }
+        ]
+      },
+      "engagement": {
+        "likes": 2,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:kr33fajyxpy2voxwsthydewq/bafkreid7cikz6xh2r647co26pysojmgj46f4y5mf7gwpmqfa3nfgw55ovi"
+    },
+    {
+      "id": "bs-did%3Aplc%3Ahb5s4bd5ctk6inznrn6gf6hx%2Fapp.bsky.feed.post%2F3mxtuajoq6sjv",
+      "source": "bluesky",
+      "published_at": "2026-10-14T15:26:10Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/basketballtalk.bsky.social/post/3mxtuajoq6sjv",
+      "title": "2026-27 NBA Championship predictions roundtable: We get NBC Sports NBA writers together to ask: Can Knicks repeat? Is this Wemby and the Spurs’ year?  Can the Pacers surprise everyone again? Or Minnesota? Or Toronto?",
+      "author": {
+        "handle": "basketballtalk.bsky.social",
+        "display_name": "Kurt Helin",
+        "url": "https://bsky.app/profile/basketballtalk.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:hb5s4bd5ctk6inznrn6gf6hx/bafkreicew6cnah57fkltfde2ieoa2m62tiwjhewn7ptpayloebpzvm3k5a"
+      },
+      "body_excerpt": "2026-27 NBA Championship predictions roundtable: We get NBC Sports NBA writers together to ask: Can Knicks repeat? Is this Wemby and the Spurs’ year?  Can the Pacers surprise everyone again? Or Minnesota? Or Toronto?\n\nwww.nbcsports.com/nba/news/202...",
+      "media": {
+        "type": "link",
+        "uri": "https://www.nbcsports.com/nba/news/2026-27-nba-championship-predictions-roundtable-can-knicks-repeat-is-this-wemby-and-the-spurs-year",
+        "title": "2026-27 NBA Championship predictions roundtable: Can Knicks repeat? Is this Wemby and the Spurs’ year?",
+        "description": "The Spurs, Thunder and Knicks are the obvious contenders, but which teams can challenge them?",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:hb5s4bd5ctk6inznrn6gf6hx/bafkreifbqz4e67sfd6cp67eci65zq2pmtny2qxsvnbfhzsa2kxu7ojzilm"
+      },
+      "engagement": {
+        "likes": 0,
+        "reposts": 0
+      },
+      "players": [
+        "victor-wembanyama"
+      ],
+      "teams": [
+        "indiana-pacers",
+        "new-york-knicks",
+        "san-antonio-spurs"
+      ],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:hb5s4bd5ctk6inznrn6gf6hx/bafkreifbqz4e67sfd6cp67eci65zq2pmtny2qxsvnbfhzsa2kxu7ojzilm",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.nbcsports.com/nba/news/2026-27-nba-championship-predictions-roundtable-can-knicks-repeat-is-this-wemby-and-the-spurs-year"
+            }
+          ],
+          "index": {
+            "$type": "app.bsky.richtext.facet#byteSlice",
+            "byteEnd": 253,
+            "byteStart": 220
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Ayvy5ax23zpmoearxn6xsgqzf%2Fapp.bsky.feed.post%2F3mxtulgsl7k2b",
+      "source": "bluesky",
+      "published_at": "2026-10-14T15:32:16Z",
+      "ingested_at": "2026-10-14T15:31:18Z",
+      "url": "https://bsky.app/profile/btrowland.bsky.social/post/3mxtulgsl7k2b",
+      "title": "The Hawks signed Giorgi Bezhanishvili to an Ex. 10 deal. ",
+      "author": {
+        "handle": "btrowland.bsky.social",
+        "display_name": "Brad Rowland",
+        "url": "https://bsky.app/profile/btrowland.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:yvy5ax23zpmoearxn6xsgqzf/bafkreiewn3wnzotxikw45yiyzwfvo5jnimmrouiltejje4xehzcup6dc5i"
+      },
+      "body_excerpt": "The Hawks signed Giorgi Bezhanishvili to an Ex. 10 deal. \n\nThe 6'9 forward played last season for the Windy City Bulls in the G League and played four years at Illinois.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 0,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [
+        "atlanta-hawks",
+        "chicago-bulls"
+      ],
       "enriched": true
     }
   ]
