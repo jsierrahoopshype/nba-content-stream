@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T05:29:35Z",
+  "generated_at": "2026-10-14T10:33:26Z",
   "window_hours": 72,
   "weights": {
     "youtube": 1.3,
@@ -10,6 +10,564 @@
   },
   "count": 40,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Adopbstmnsij5ipmn6sr3fd43%2Fapp.bsky.feed.post%2F3mxtdhy6vos2e",
+      "source": "bluesky",
+      "published_at": "2026-10-14T10:26:06Z",
+      "title": "every now and then I watch the morning news with my father in law and see Tina Cervasio in bigger and bigger jobs. Shoutout to Tina",
+      "url": "https://bsky.app/profile/sethrosenthal.bsky.social/post/3mxtdhy6vos2e",
+      "author": "Seth Rosenthal",
+      "thumbnail": null,
+      "body_excerpt": "every now and then I watch the morning news with my father in law and see Tina Cervasio in bigger and bigger jobs. Shoutout to Tina",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:dopbstmnsij5ipmn6sr3fd43/bafkreif2nalttdyf2va4pskcdsbq7rji2mggz44j5ccd4sfput37ivsj6q",
+      "enriched": true,
+      "trending_score": 0.3234
+    },
+    {
+      "id": "bs-did%3Aplc%3As2ahnyyou2ocsnkyjai3u3na%2Fapp.bsky.feed.post%2F3mxtcuwatks2c",
+      "source": "bluesky",
+      "published_at": "2026-10-14T10:15:27Z",
+      "title": "Tyrese Haliburton and Ivica Zubac were unstoppable in the first half against OKC last night. ",
+      "url": "https://bsky.app/profile/alexgoldennba.bsky.social/post/3mxtcuwatks2c",
+      "author": "Alex Golden",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:s2ahnyyou2ocsnkyjai3u3na/bafkreihpvwhlneoveosvwamxk2jvqk3mfnetdkup5tirpzljoqu3bdkvqa",
+      "body_excerpt": "Tyrese Haliburton and Ivica Zubac were unstoppable in the first half against OKC last night. \n\nHere are my takeaways from the Pacers third exhibition game of the preseason. \nwww.si.com/nba/pacers/o...",
+      "players": [
+        "ivica-zubac",
+        "tyrese-haliburton"
+      ],
+      "teams": [
+        "oklahoma-city-thunder"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://www.si.com/nba/pacers/onsi/tyrese-haliburton-makes-a-statement-in-return-to-scene-of-nba-finals-heartbreak-01m4vzgjy2mq",
+        "title": "Tyrese Haliburton Makes a Statement in Return to Scene of NBA Finals Heartbreak",
+        "description": "The Indiana Pacers had their third preseason game of the season against the Oklahoma City Thunder and Tyrese Haliburton made his return to action after missing",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:s2ahnyyou2ocsnkyjai3u3na/bafkreihpvwhlneoveosvwamxk2jvqk3mfnetdkup5tirpzljoqu3bdkvqa"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:s2ahnyyou2ocsnkyjai3u3na/bafkreifjxzdseagu5z2afcys3p55aqchnuifez4jmeiuhpbkxsajhmuo5u",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.si.com/nba/pacers/onsi/tyrese-haliburton-makes-a-statement-in-return-to-scene-of-nba-finals-heartbreak-01m4vzgjy2mq"
+            }
+          ],
+          "index": {
+            "byteEnd": 200,
+            "byteStart": 174
+          }
+        }
+      ],
+      "enriched": true,
+      "trending_score": 0.2867
+    },
+    {
+      "id": "gn-8f91b461ff63ea37",
+      "source": "google-news",
+      "published_at": "2026-10-14T10:00:36Z",
+      "title": "Today in Boston Celtics history: Siegfried inked; Brown, Schintzius, Williams born",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNSEI4MjctU01ybDJUWlo4X1JmNEtyX1ZJTEx0SnBwYzZPaGZya1RsZTFKN1NsY3lHS3FlRHlhbXZTZGJYZ1VaTndYR1g5UGVVZ25EcU5uVS13QThsOGZHWm9CVV9ab2ZjdlpLZkwzSmZ6b0ZqTExjeGVMNzhlR2pXRnhESkExeldscXNCbjVKRTY?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Today in Boston Celtics history: Siegfried inked; Brown, Schintzius, Williams born Yahoo Sports",
+      "players": [],
+      "teams": [
+        "boston-celtics"
+      ],
+      "trending_score": 0.2706
+    },
+    {
+      "id": "gn-5cc9aa3ff4b03d67",
+      "source": "google-news",
+      "published_at": "2026-10-14T09:43:00Z",
+      "title": "YouTube Gold: Dave Bing",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE05RjhQTVVtM0owaVZrU1RuemctNW42SHQxNlRpMGNJSkxrdEFsSDBNaFh3cXB3ZERDeGx4R2ZVb3lObTFIcDB4VzNwd2xMWlg0RzJiUXhoRVJCakZ6WWpVT0Mxa2NaWWxrUVlrcGlzdkhWX0NLNTAxcmEwdw?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "YouTube Gold: Dave Bing Yahoo Sports",
+      "players": [],
+      "teams": [],
+      "trending_score": 0.2297
+    },
+    {
+      "id": "gn-8368674a597ed027",
+      "source": "google-news",
+      "published_at": "2026-10-14T09:36:50Z",
+      "title": "Tyrese Haliburton Makes a Statement in Return to Scene of NBA Finals Heartbreak",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQbEh6VDQtOXFpdWlvQ0tZOF9KZEVqRDhUZjZCdkdLb1dEeWFlS2dYVzJJcDM3aktWWTFoMmJ2UGRReXFJd0NrTldnMEhndTF0RlhIZFhSVUEzQmhvMWg2RGVhWU80OWtRZUkxWmFudlJXNy04LXpwUEtyckhwakZtZVdfREtjRjk5WjZRS1RoWmdmM1ZPTXczdGVUelRqSkNxd3pIRzc5NWw3Z1pTQmx6SHZwQzVXa0lMX252aGZRTW55aU1DMHc?oc=5",
+      "author": "Sports Illustrated",
+      "thumbnail": null,
+      "body_excerpt": "Tyrese Haliburton Makes a Statement in Return to Scene of NBA Finals Heartbreak Sports Illustrated",
+      "players": [
+        "tyrese-haliburton"
+      ],
+      "teams": [],
+      "trending_score": 0.2178
+    },
+    {
+      "id": "gn-c1c5419c0a41b801",
+      "source": "google-news",
+      "published_at": "2026-10-14T09:28:22Z",
+      "title": "How to Watch Dallas Mavericks Games in 2026-27: Everything to Know About MavsTV+ and More",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNbHh3VjhpdndWTnlGNWpxdkdPaWMwZmNtQVRJNFNDYUx6SWdfbmRLYmg4Ykx2Q2ZlbEtOV2wwcHhnUzVZRTlZS3VUZjhjOGRlUFdaZjBEbkxXdVJEaENuRGdJTGQ2NkR5cDFmajdVQnBMYmRNR0M5am9NX3RUZklqNHFLMFBIQmR4WGc?oc=5",
+      "author": "Yahoo",
+      "thumbnail": null,
+      "body_excerpt": "How to Watch Dallas Mavericks Games in 2026-27: Everything to Know About MavsTV+ and More Yahoo",
+      "players": [],
+      "teams": [
+        "dallas-mavericks"
+      ],
+      "trending_score": 0.203
+    },
+    {
+      "id": "gn-bb48fc72952e99b0",
+      "source": "google-news",
+      "published_at": "2026-10-14T08:34:50Z",
+      "title": "Pablo Torre on LeBron James’ helicopter trips: 'We are very interested. We’re getting tips from NBA owners'",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOVUI5cEN5VFlRVEpPUS1WVmQxbEZjOG9PdU96Qklvek53ZENSQ1dIR2V6YlZ4VFhhNVhnZTl4d0tEdHBLcG53TGxtd0lqX2FhWENNNy1OQWtsYm1JQ3BMY0Mya2VQTThsdjVpSkxUQWVEeER3RW4wdmtPQkItdjAwY0g1d0NQN1dCVkhVNA?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Pablo Torre on LeBron James’ helicopter trips: 'We are very interested. We’re getting tips from NBA owners' Yahoo Sports",
+      "players": [
+        "lebron-james"
+      ],
+      "teams": [],
+      "trending_score": 0.1387
+    },
+    {
+      "id": "gn-e4ddf7eddd6dd4cd",
+      "source": "google-news",
+      "published_at": "2026-10-14T08:34:47Z",
+      "title": "Nikola Jokic names his four greatest NBA players: Bill Russell, Michael Jordan, Wilt Chamberlain and Steph Curry",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPd21GdkxibVVBZzZpWG1MRnVrdUN1Y0NwWC03cDNQODhUQnV0QlJ4ck5TeVJTRWVUcFRiUms5MGNrcUNqM1lyLVh1YVZWQW81c0M2ODRsT3lwaE5USEVIVWZWSkVyNEowdzRQQVZBVENUZWZUckh4N1M3YU9BRTFmR2p1UTVVMklC?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Nikola Jokic names his four greatest NBA players: Bill Russell, Michael Jordan, Wilt Chamberlain and Steph Curry Yahoo Sports",
+      "players": [
+        "nikola-jokic",
+        "stephen-curry"
+      ],
+      "teams": [],
+      "trending_score": 0.1387
+    },
+    {
+      "id": "gn-43085499f1f94b7a",
+      "source": "google-news",
+      "published_at": "2026-10-14T08:34:46Z",
+      "title": "\"They was too busy bashing Bronny for nepotism that …",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPZDBtVU12dXZGT0xRRWVwM2t5OUYxbnNUN1pGSjhGTWZRWjRVelJPZTEzODFRcGVqNTkwYjhTMTZ5REVrU0tFOHc4NWxZTVd5MjBDVE5NWXVTcWh4SHplNzU5dnlncHg4a0RvTnJKTlZmNmR1cDZNcXVHREg3bFJyLTdPRnFycS1i?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "\"They was too busy bashing Bronny for nepotism that … Yahoo Sports",
+      "players": [],
+      "teams": [],
+      "trending_score": 0.1386
+    },
+    {
+      "id": "gn-c99b09de9b9291c8",
+      "source": "google-news",
+      "published_at": "2026-10-14T08:30:59Z",
+      "title": "Trayce Jackson-Davis with the slam",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPdm5ick91SXF6S0E5c3h4WDhpdlkxZFJ6MEY3ZXk0V1FZY2FOb1cxRVFxQWs4OEZnSjhwREVyeTYxTzhWVnJFNlRUb0hVanhRcThWS1hJWHEzYkJseTJVLW96Rk9zNUNoRVhOMVRzZWlZdUlyUzNYTFplSkFCNWg2SnV0X2x5ZVJMbHg5UU9CdVZFU2JkNnlRR1o1Qm1IYmxyaEItaXoydXg?oc=5",
+      "author": "NBA.com",
+      "thumbnail": null,
+      "body_excerpt": "Trayce Jackson-Davis with the slam NBA.com",
+      "players": [
+        "trayce-jackson-davis"
+      ],
+      "teams": [],
+      "trending_score": 0.1354
+    },
+    {
+      "id": "gn-30af1bbf29e107e8",
+      "source": "google-news",
+      "published_at": "2026-10-14T07:32:01Z",
+      "title": "Southwest Division Download: Dallas Mavericks",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOX3pKZ3pTZ1BHVkg0YlNhREJIbGc5RllwSkRkU0lhbmZydWRyekRWMi1UcU1zN0Q1WlgtRzdWVEl0QUFPSHhRNk5QYXhWUzBzMkg1ejhtUGJIZDNPN0tZSVdEZUgzdDNGVERYUVBYZ1BhZ3drRk56UkJSdHdtZ3J4b0VycEFyUUMyNmdJWnFPdDB6bnpPWDhJNVdwRFBnZkRhS2c?oc=5",
+      "author": "NBA.com",
+      "thumbnail": null,
+      "body_excerpt": "Southwest Division Download: Dallas Mavericks NBA.com",
+      "players": [],
+      "teams": [
+        "dallas-mavericks"
+      ],
+      "trending_score": 0.0977
+    },
+    {
+      "id": "gn-d221c13b266ab4b6",
+      "source": "google-news",
+      "published_at": "2026-10-14T07:30:05Z",
+      "title": "Warriors win over Lakers in Vegas, 101-89",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQLXFiQjZWSmdyRDBUN1I1bmhEUFlONmE4LWExcEt2Z1dCWXlzMFVrSXRFU3d0Y1c5T21qdDhJZWhaZ0dFZzZyR256eVEzYjdWOTJnZ3ExN21MR29UalpTN25pUlFOamdvRUl6d2g0RGlQanJTa0JvcVJjVFlUYXNHcVJIWndyQQ?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Warriors win over Lakers in Vegas, 101-89 Yahoo Sports",
+      "players": [],
+      "teams": [
+        "golden-state-warriors",
+        "los-angeles-lakers"
+      ],
+      "trending_score": 0.0968
+    },
+    {
+      "id": "gn-04755546be77333a",
+      "source": "google-news",
+      "published_at": "2026-10-14T07:11:33Z",
+      "title": "Golden State Warriors 101 - Los Angeles Lakers 89: Final score, results, recap, box score, stats",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPTUxWWHRiaE9xemlGQXJEZTh0Zjk5TEp4V3BqM3VVaDlTVzNNY2Z3NWpzRnZieXRHMzFoMEo1MHhOUEVoZHRzMm5Sb0JYM1dONXVpNFZ1NU8xcUJCZGdkS1hXYVNlS09rdm0yTjRaLWxPblo5VkhUQzRsakhNdl9uMGx6QlFEM0Rx?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Golden State Warriors 101 - Los Angeles Lakers 89: Final score, results, recap, box score, stats Yahoo Sports",
+      "players": [],
+      "teams": [
+        "golden-state-warriors",
+        "los-angeles-lakers"
+      ],
+      "trending_score": 0.0885
+    },
+    {
+      "id": "gn-99a9695292b0fbec",
+      "source": "google-news",
+      "published_at": "2026-10-14T07:08:26Z",
+      "title": "“They was too busy bashing Bronny for nepotism” - Gilbert Arenas calls out NBA media for overlooking European draft busts",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPNDhqU0JUclBGMG1xbHloZkJXWVE2RG5tNUNfQXY4M2lwYWRHVHVEZEhtdnBwYVJVR1VxNlZwTzBhYXdVaEFtcDhBMlg4QWRXUk1IdEdfSnlYQlRLR0NhNUNMeFlEVkFSQ1FQbXBNVXF3WUh4MVNiU3hnd1F2OHdYNjBqYTR1ZEcy?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "“They was too busy bashing Bronny for nepotism” - Gilbert Arenas calls out NBA media for overlooking European draft busts Yahoo Sports",
+      "players": [],
+      "teams": [],
+      "trending_score": 0.0873
+    },
+    {
+      "id": "ss-thirdapron-teams-with-the-most-pressure-ahead",
+      "source": "substack",
+      "published_at": "2026-10-14T06:26:26Z",
+      "title": "Teams with the Most Pressure Ahead of the 2026-27 NBA Season | Third Apron Podcast",
+      "url": "https://www.thirdapron.com/p/teams-with-the-most-pressure-ahead",
+      "author": "Third Apron",
+      "thumbnail": null,
+      "body_excerpt": "The start of the 2026-27 NBA regular season is one week away. Sam and I preview it by going over the teams we believe have the highest stakes. We also discuss the Brandin Podziemski and Peyton Pritchard extensions. You can follow Yossi on: Twitter:…",
+      "players": [],
+      "teams": [],
+      "trending_score": 0.0859
+    },
+    {
+      "id": "yt-pjyufqgxoQ4",
+      "source": "youtube",
+      "published_at": "2026-10-14T06:01:39Z",
+      "title": "Lakers-Warriors Reaction: Walker Kessler Delivers In Debut, LA's Offense Collapses In Second Half",
+      "url": "https://www.youtube.com/watch?v=pjyufqgxoQ4",
+      "author": "Jovan Buha",
+      "thumbnail": "https://i.ytimg.com/vi/pjyufqgxoQ4/maxresdefault_live.jpg",
+      "body_excerpt": "Jovan Buha reacts to the Los Angeles Lakers' 101-89 preseason loss to the Golden State Warriors on Tuesday, October 13, 2026. If you enjoyed this video, please consider subscribing, commenting, and liking it. Buha's Block merch is LIVE!!!: https://jovanbuha-shop.fourthwall.com/…",
+      "players": [
+        "walker-kessler"
+      ],
+      "teams": [
+        "golden-state-warriors",
+        "los-angeles-lakers"
+      ],
+      "media": {
+        "type": "video"
+      },
+      "trending_score": 0.0779
+    },
+    {
+      "id": "gn-4e4c9f9c33a64aa1",
+      "source": "google-news",
+      "published_at": "2026-10-14T06:42:00Z",
+      "title": "Kristaps Porzingis Finally Shows Up To Warriors Practice But Bad News Remains",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPcGVaOXBaUjJVN2lXWEZYcHBvREoxTXgyMF9IZFZmUE14THJ1RXdKT3ZQeERyUzR4c2ZhUTZfdHE3Y1RJUHZEclVQTVpWVEw4U2FpRk5vaTBETkwtZ3E5cmlBZzhxLThOQm9GQXhZdnR0cjBXSDBiaUtUUVFHd3VyQlpfZzFxelZoMHB2WHctMnp6MFA5?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Kristaps Porzingis Finally Shows Up To Warriors Practice But Bad News Remains Yahoo Sports",
+      "players": [
+        "kristaps-porzingis"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ],
+      "trending_score": 0.0776
+    },
+    {
+      "id": "gn-5bbf83e237f63fcc",
+      "source": "google-news",
+      "published_at": "2026-10-14T06:33:07Z",
+      "title": "Doctor shares best-,worst-case scenarios for Kings center Max Raynaud's injury",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQN1E3MkxlNEhscGdESTFOU1IxWlVuckhFRmtyQ2NoaDV5cGZONVlOOWlHWWM4VHF1RXplajg3S1ctQkdIUm5lNGRMNE9xWllMekUtTEpEaDRCVFlrODFLVnh5Q3NpRzl0ZkRaQWJIMGZuYlY4ekpoTFg5bEJvbl9iZGs4RE8zbEY5dW1uOWp3NElDUlowenJpMlN0UmZMXzFDR1B4bm9aU1VqdWlld2x3cHhDcW7SAbwBQVVfeXFMTW1Uc0wtZjNtNzM5amdUUE1UY0JpRXYyNEYyckdtREpIa2NkQXZGTWtQTGxELWhzNmY5OC1HMkI3d1VyRTBGVXQwTDlkNXNDZVdNTkVJaWZKdzZtM0d2aTVQbHRRcldXaXhFaEpfaUo0S0RLQjl2UHBKcE5JcHRWQm9xYmpnSG5sbVlWV3ktZFZlWm85b2RzMGxMOV8xWXpqNHBCTmdwWThYakZTM21aQTY3d2NkTlF5R0ZGS0U?oc=5",
+      "author": "NBC Sports Bay Area & California",
+      "thumbnail": null,
+      "body_excerpt": "Doctor shares best-,worst-case scenarios for Kings center Max Raynaud's injury NBC Sports Bay Area & California",
+      "players": [],
+      "teams": [
+        "sacramento-kings"
+      ],
+      "trending_score": 0.0747
+    },
+    {
+      "id": "gn-bbf207c0ff06a137",
+      "source": "google-news",
+      "published_at": "2026-10-14T06:30:00Z",
+      "title": "Where to watch Hornets vs. Celtics today: Channel, live stream, time, TV schedule for NBA preseason game",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOT1ZnQWk0YXNKWU8tcVk1NUtkTm4wTEdrMC0zVEw0NFRjSVFpZjdOdkxVeGVTcHFtcFlkdnF5eVJKQk40R2pSeWF3enJXdTVKWUlkNl9GZFlKVFhRbk85bXJGYk1OSUtxZEhENVViR011aW9rYzlGS08tamtjYl9GeVdXX3dyQQ?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Where to watch Hornets vs. Celtics today: Channel, live stream, time, TV schedule for NBA preseason game Yahoo Sports",
+      "players": [],
+      "teams": [
+        "boston-celtics",
+        "charlotte-hornets"
+      ],
+      "trending_score": 0.0738
+    },
+    {
+      "id": "bs-did%3Aplc%3A6md2o5aobb6i5rvbpx35g5yq%2Fapp.bsky.feed.post%2F3mxswxpt73k2o",
+      "source": "bluesky",
+      "published_at": "2026-10-14T06:42:16Z",
+      "title": "fantastic primer on how the tech industry co-opted democratic language to push AI, and why we don’t have to accept AI proliferation as inevitable",
+      "url": "https://bsky.app/profile/wtevs.bsky.social/post/3mxswxpt73k2o",
+      "author": "Katie Heindl",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:6md2o5aobb6i5rvbpx35g5yq/bafkreiekbktvdvdqaz2tqdctwqgfajubp7ajxuc2hwkkjzebhcfzylvggi",
+      "body_excerpt": "fantastic primer on how the tech industry co-opted democratic language to push AI, and why we don’t have to accept AI proliferation as inevitable",
+      "players": [],
+      "teams": [],
+      "media": {
+        "type": "link",
+        "uri": "https://open.spotify.com/episode/56p8xOBF8w4uA8J4cOWnLh?si=7op1EN2GQF6ZGPRM6nOpTg",
+        "title": "Is AI inevitable? Jill Lepore says no",
+        "description": "Front Burner · Episode",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:6md2o5aobb6i5rvbpx35g5yq/bafkreiekbktvdvdqaz2tqdctwqgfajubp7ajxuc2hwkkjzebhcfzylvggi"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:6md2o5aobb6i5rvbpx35g5yq/bafkreihoxkxe7oajxn4hzfib7icbnekg3bop72ej7z4c4yqi2w3pxqwlfi",
+      "enriched": true,
+      "trending_score": 0.0706
+    },
+    {
+      "id": "bs-did%3Aplc%3Afqsmj7o5mbb7n7oav2kkjuid%2Fapp.bsky.feed.post%2F3mxswushmkc2v",
+      "source": "bluesky",
+      "published_at": "2026-10-14T06:40:38Z",
+      "title": "Podz is learning Steph’s mannerisms 😂",
+      "url": "https://bsky.app/profile/nbastat.bsky.social/post/3mxswushmkc2v",
+      "author": "NBA Stat",
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Afqsmj7o5mbb7n7oav2kkjuid/bafkreiakmqgvx6sw22jf3iwuj7kca4m2vlggl37oxgkoofwzpqdu7uo2si/thumbnail.jpg",
+      "body_excerpt": "Podz is learning Steph’s mannerisms 😂\n\n#NBA",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [],
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Afqsmj7o5mbb7n7oav2kkjuid/bafkreiakmqgvx6sw22jf3iwuj7kca4m2vlggl37oxgkoofwzpqdu7uo2si/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Afqsmj7o5mbb7n7oav2kkjuid/bafkreiakmqgvx6sw22jf3iwuj7kca4m2vlggl37oxgkoofwzpqdu7uo2si/playlist.m3u8"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:fqsmj7o5mbb7n7oav2kkjuid/bafkreic3g44bm3orae6dkm4npna6phnodi74whhp6rkohxpe32x2hht27u",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "NBA"
+            }
+          ],
+          "index": {
+            "byteEnd": 48,
+            "byteStart": 44
+          }
+        }
+      ],
+      "enriched": true,
+      "trending_score": 0.0701
+    },
+    {
+      "id": "yt-64fvUlOC5Ms",
+      "source": "youtube",
+      "published_at": "2026-10-14T05:31:58Z",
+      "title": "Teams with the Most Pressure Ahead of the 2026-27 NBA Season | Third Apron Podcast",
+      "url": "https://www.youtube.com/watch?v=64fvUlOC5Ms",
+      "author": "Yossi Gozlan",
+      "thumbnail": "https://i.ytimg.com/vi/64fvUlOC5Ms/maxresdefault_live.jpg",
+      "body_excerpt": "The start of the 2026-27 NBA regular season is one week away. Sam and I preview it by going over the teams we believe have the highest stakes. We also discuss the Brandin Podziemski and Peyton Pritchard extensions. You can follow Yossi on: Twitter:…",
+      "players": [],
+      "teams": [],
+      "media": {
+        "type": "video"
+      },
+      "trending_score": 0.0698
+    },
+    {
+      "id": "gn-6a961d587bddc0b8",
+      "source": "google-news",
+      "published_at": "2026-10-14T06:16:00Z",
+      "title": "LeBron James explains why OG Anunoby was the real Finals MVP for the NY Knicks: \"He was the most steady person\"",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQR2t6SW9MSXpaOFpiZjFYYThSZmJWY3Z3ejVfejg0X1RTdjZfeDZXYkR3NDFnbmdQY1dvcnRtbEFQQjVWWlNBdkJWRjllLUxReFdRakEtYU1SaFUzYmkyVWhIaU1TQlJVTkF0MHdPX0pvWmVOX3VJLXk3TDhYV2FWSjJEMA?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "LeBron James explains why OG Anunoby was the real Finals MVP for the NY Knicks: \"He was the most steady person\" Yahoo Sports",
+      "players": [
+        "lebron-james",
+        "og-anunoby"
+      ],
+      "teams": [
+        "new-york-knicks"
+      ],
+      "trending_score": 0.0697
+    },
+    {
+      "id": "yt-KDCAxah87kA",
+      "source": "youtube",
+      "published_at": "2026-10-14T05:29:58Z",
+      "title": "Three takeaways from the Lakers’ preseason loss to the Warriors",
+      "url": "https://www.youtube.com/watch?v=KDCAxah87kA",
+      "author": "Jovan Buha",
+      "thumbnail": "https://i.ytimg.com/vi/KDCAxah87kA/maxresdefault.jpg",
+      "body_excerpt": null,
+      "players": [],
+      "teams": [
+        "golden-state-warriors",
+        "los-angeles-lakers"
+      ],
+      "media": {
+        "type": "video"
+      },
+      "trending_score": 0.0693
+    },
+    {
+      "id": "gn-2ce647476ba0c60c",
+      "source": "google-news",
+      "published_at": "2026-10-14T06:11:48Z",
+      "title": "Steve Kerr makes honest admission about state of Warriors' new offense after win",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNWlJCb3ZHM3pCemJxRU9NajlGZlZmUllsdVg2ZWNzV3VkSm5hcDM1M3F0Y3BvQnN0Nzcyelp4cDZMVzRITkhGTkN2T25iT1NEeVB0NGxKZEVsZFNNLXVDdU05cXRvOG5zVG51X0oxTzVrUnFsdTZGOU11c0o5N1VVN0RYTFpNQVNuQkpqTDFuYVAyd0xUbnVOOW9BcFYyZWpQUWZpSlFn0gGuAUFVX3lxTFBsNktuOHd4MUZSYXJCbFJDOVRtRE52WHo1QzRfQjVTUkdBUGppWUNUNm92M3diZWRLa3JLbFZERndpUENjbi1BRXFWU1VONkFOY1l4cER1NV8wVEVKTDU2ZXFSamdjdHZVVlhFTXc2TkxHdmVyekF5c0xaQ0xhdGlleXJEaE9NbEZGc2c0dlVwMlBQZy13RE5mdm4zaWxDYTlXOHRHTHVTN2lmWmhQUQ?oc=5",
+      "author": "NBC Sports Bay Area & California",
+      "thumbnail": null,
+      "body_excerpt": "Steve Kerr makes honest admission about state of Warriors' new offense after win NBC Sports Bay Area & California",
+      "players": [],
+      "teams": [
+        "golden-state-warriors"
+      ],
+      "trending_score": 0.0686
+    },
+    {
+      "id": "gn-9ab98a6fa93cdef1",
+      "source": "google-news",
+      "published_at": "2026-10-14T06:00:00Z",
+      "title": "Where to watch Nets vs. Heat today: Channel, live stream, time, TV schedule for NBA preseason game",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFAzZ0k4QUM3aVBQWDZMQ3BfU0ZiTVBhTVBRT1B4RWR4NnpNWHlzUGRFbDJCWi16RmtTS25tVlMwUWdLN1VMN0NMdUxzay1PX2x5ZDlTVnhVUjRza3prUTJCbUtUOWttYWQ0bEtxWTFUTFdrN0FsWUhjeWdZd08yQQ?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Where to watch Nets vs. Heat today: Channel, live stream, time, TV schedule for NBA preseason game Yahoo Sports",
+      "players": [],
+      "teams": [
+        "brooklyn-nets",
+        "miami-heat"
+      ],
+      "trending_score": 0.0655
+    },
+    {
+      "id": "bs-did%3Aplc%3Acrcybmshorvvegmbkp5rvgjv%2Fapp.bsky.feed.post%2F3mxsvx2e6k22a",
+      "source": "bluesky",
+      "published_at": "2026-10-14T06:23:59Z",
+      "title": "\"We’re not anywhere close to where we want to be.\"",
+      "url": "https://bsky.app/profile/nbcswarriors.bsky.social/post/3mxsvx2e6k22a",
+      "author": "Warriors on NBC Sports Bay Area",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:crcybmshorvvegmbkp5rvgjv/bafkreighhvu4wbpvnc6agfptndxh2ygqpae2kvzjojnf2fccil7xfs2mry",
+      "body_excerpt": "\"We’re not anywhere close to where we want to be.\"\n\nThe Warriors have more to critique than celebrate despite tonight's preseason win, @montepoole.bsky.social writes",
+      "players": [],
+      "teams": [],
+      "media": {
+        "type": "link",
+        "uri": "https://www.nbcsportsbayarea.com/nba/golden-state-warriors/steve-kerr-offense-preseason-lakers/1971181/",
+        "title": "Steve Kerr makes honest admission about Warriors' revamped offense after preseason win vs. Lakers",
+        "description": "Coming off a preseason win over the Los Angeles Lakers on Tuesday night, the Golden State Warriors have more to critique than celebrate.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:crcybmshorvvegmbkp5rvgjv/bafkreighhvu4wbpvnc6agfptndxh2ygqpae2kvzjojnf2fccil7xfs2mry"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:crcybmshorvvegmbkp5rvgjv/bafkreicnwnxnmxmxr2uko53p2eh7hv7sebqduk3c72vrxykxk2y3hschrm",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:nrzonytvdybfyy7t7b3jr6le"
+            }
+          ],
+          "index": {
+            "byteEnd": 160,
+            "byteStart": 137
+          }
+        }
+      ],
+      "enriched": true,
+      "trending_score": 0.0654
+    },
+    {
+      "id": "bs-did%3Aplc%3Adf2gzsny4y5khzaa5rsfrblr%2Fapp.bsky.feed.post%2F3mxsvi2meq22k",
+      "source": "bluesky",
+      "published_at": "2026-10-14T06:15:36Z",
+      "title": "The latest on @lockedonkings.bsky.social --",
+      "url": "https://bsky.app/profile/jameshamnba.bsky.social/post/3mxsvi2meq22k",
+      "author": "James Ham",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:df2gzsny4y5khzaa5rsfrblr/bafkreifipnd2sasdhh32jvjmtfmswkmqjds3oa4uelu3cl5ty5w2ns3bqq",
+      "body_excerpt": "The latest on @lockedonkings.bsky.social --\n🏀 Kings continue to play with a DEPLETED ROSTER, will they be healthy in time for the regular season next week? \n🏀 Keegan Murray jumps from 8 minutes to 19 in second game\n🏀 Six Quick Thoughts from loss \nyoutu.be/CQqs-hqapuk?...",
+      "players": [],
+      "teams": [],
+      "media": {
+        "type": "link",
+        "uri": "https://youtu.be/CQqs-hqapuk?si=-se7PqHtQPKR40Kx",
+        "title": "Kings continue to play with a DEPLETED ROSTER, will they be healthy in time for the season opener?",
+        "description": "YouTube video by Locked On Kings (Sacramento)",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:df2gzsny4y5khzaa5rsfrblr/bafkreifipnd2sasdhh32jvjmtfmswkmqjds3oa4uelu3cl5ty5w2ns3bqq"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:df2gzsny4y5khzaa5rsfrblr/bafkreihd6r3qqcbqfpmfa624obuqiybrfzlz7ckrfc5364am5heocwqjla",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:hxxnziw4wkw3qdmoczhr4srx"
+            }
+          ],
+          "index": {
+            "byteEnd": 40,
+            "byteStart": 14
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://youtu.be/CQqs-hqapuk?si=-se7PqHtQPKR40Kx"
+            }
+          ],
+          "index": {
+            "byteEnd": 280,
+            "byteStart": 256
+          }
+        }
+      ],
+      "enriched": true,
+      "trending_score": 0.0633
+    },
+    {
+      "id": "gn-7485351a296f1328",
+      "source": "google-news",
+      "published_at": "2026-10-14T05:50:13Z",
+      "title": "“I'm not in Denver anymore” - Michael Porter Jr. reveals the game that transformed his confidence in Brooklyn",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOZk4tajdnMzJGLXA0TjZXMHoya05laU5OS3NUUlpjV3FOaDIxVGdtQXN6M2RfQjU4bkZQMVduZXlTTlpxR0dKUXlOSzVqTHgxQnoyeGtNYzRfa19HZWVDRWk2ZS10dFVxNFJORjRoaE43d2I4ZGlEWS1UT1JNWDE0UXRxUXM?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "“I'm not in Denver anymore” - Michael Porter Jr. reveals the game that transformed his confidence in Brooklyn Yahoo Sports",
+      "players": [
+        "michael-porter-jr"
+      ],
+      "teams": [],
+      "trending_score": 0.0631
+    },
     {
       "id": "gn-0647e878a23cca09",
       "source": "google-news",
@@ -25,7 +583,38 @@
       "teams": [
         "portland-trail-blazers"
       ],
-      "trending_score": 0.3627
+      "trending_score": 0.0574
+    },
+    {
+      "id": "gn-fa91066271cf2f75",
+      "source": "google-news",
+      "published_at": "2026-10-14T05:20:00Z",
+      "title": "Tyrese Maxey’s daughter shares adorable moment with ‘Papa’ LeBron James",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPVy1hZHdjdmItdUZtSVZMem9hNVpsd1VJNEdEdkdhMjFSTmRLN0tubnBTYThVQWFsZjZndGRRQ1RFcFRLc1huTnNQN3l5QlVmdzBkcXNHaU9nckpBU3gwUkhETW5Za0twcFpHQktYYkRrb0NNcmlEU21Yb1pYd1p1RU9QWHJLTnl3YmplRGVDQQ?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Tyrese Maxey’s daughter shares adorable moment with ‘Papa’ LeBron James Yahoo Sports",
+      "players": [
+        "lebron-james",
+        "tyrese-maxey"
+      ],
+      "teams": [],
+      "trending_score": 0.0567
+    },
+    {
+      "id": "gn-ef0553703b472664",
+      "source": "google-news",
+      "published_at": "2026-10-14T05:20:00Z",
+      "title": "\"Larry was cold as F; he wasn't getting to the rim like that\" - DeMarcus Cousins claims Cooper Flagg is different than any other white player",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQYlZFU05jQXZjV190bzlIMWc1cWFPUTd6bzYyeFhORGZHeUpjcDYta3FvaHJ2OXNTWWswV2c3QnZFQmwtc056TU9JYVg0VkRVMzIxT2thNjFEcEEzWjI1VWFNRTFabHVpWXJmTm1hdG9WMmJYS2VSczJlOFV0bUoyZw?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "\"Larry was cold as F; he wasn't getting to the rim like that\" - DeMarcus Cousins claims Cooper Flagg is different than any other white player Yahoo Sports",
+      "players": [
+        "cooper-flagg"
+      ],
+      "teams": [],
+      "trending_score": 0.0567
     },
     {
       "id": "gn-7c622d21388cceb0",
@@ -41,69 +630,56 @@
         "indiana-pacers",
         "oklahoma-city-thunder"
       ],
-      "trending_score": 0.2828
+      "trending_score": 0.0532
     },
     {
-      "id": "bs-did%3Aplc%3A5dwbpojkp6wykwcafasvwroi%2Fapp.bsky.feed.post%2F3mxsqyhupzs2x",
-      "source": "bluesky",
-      "published_at": "2026-10-14T04:55:18Z",
-      "title": "Three takeaways from the Warriors' comeback preseason win against the Lakers in Las Vegas ",
-      "url": "https://bsky.app/profile/daltonjohnson.bsky.social/post/3mxsqyhupzs2x",
-      "author": "Dalton Johnson",
-      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:5dwbpojkp6wykwcafasvwroi/bafkreiakct3tkdulosnlfbb6jfluiwuuzw7gxjwsgay65piu7uha2ajv4a",
-      "body_excerpt": "Three takeaways from the Warriors' comeback preseason win against the Lakers in Las Vegas \n\nOn Charles Bassey in the starting lineup, Steph Curry bumping up his minutes, and a limping Yaxel Lendeborg",
+      "id": "gn-3406f7d027b6a193",
+      "source": "google-news",
+      "published_at": "2026-10-14T04:53:00Z",
+      "title": "Brandon Miller gets brutally honest about how he feels after the LaMelo Ball trade",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOdEFrRDlEbDNRYTZoMFVlc2dJVkczeUZ6RnZKTy1JZUU1R0lHTmNzTlJkWEt4N1B6ZVdpNFVPUHhmWGswbGlrWU51andKazVhYlBhTkloR2ZqdHUtdEw3ZUk3MUN6WHk3Rm1KeWowR2wwZWRQTlo1ME9ZZms1aEVJd1lOQ3VoWDY1a0VsVg?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Brandon Miller gets brutally honest about how he feels after the LaMelo Ball trade Yahoo Sports",
+      "players": [
+        "brandon-miller",
+        "lamelo-ball"
+      ],
+      "teams": [],
+      "trending_score": 0.0517
+    },
+    {
+      "id": "gn-70ab496cb11e294d",
+      "source": "google-news",
+      "published_at": "2026-10-14T04:52:56Z",
+      "title": "Takeaways from Warriors' Win Over Lakers: Yaxel Passes Kessler Test",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQTjY5ei1pRy1CUkhZMlllaFNnQTVHS3RLQ3dvUWNPeXhTYUFvWm9VdDlVaFZGNUhDT3piNE1ycUhtX3hCT0haNG1zbUtZek94a3Y1OXc0WmdZMzdmZTZzUHBoNUVEQVB1UV94U0xnNzVOWEw3VDFlMW9YZTJQWG9BdzBFWG50Z0tleXhmYm1yN0plOGxmbmhmZjluRHFZNTlPOU5oUkFNMzBEUzVjM1UzczI1UjkzUQ?oc=5",
+      "author": "Sports Illustrated",
+      "thumbnail": null,
+      "body_excerpt": "Takeaways from Warriors' Win Over Lakers: Yaxel Passes Kessler Test Sports Illustrated",
       "players": [],
       "teams": [
         "golden-state-warriors",
         "los-angeles-lakers"
       ],
-      "media": {
-        "type": "link",
-        "uri": "https://www.nbcsportsbayarea.com/nba/golden-state-warriors/brandin-podziemski-yaxel-lendeborg-lakers/1971144/",
-        "title": "What we learned as Warriors storm back in fourth quarter to steal preseason win vs. Lakers",
-        "description": "The Golden State Warriors held the Los Angeles Lakers to 13 points in the third quarter and another lowly 13 points in the fourth for a 101-89 win.",
-        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:5dwbpojkp6wykwcafasvwroi/bafkreiakct3tkdulosnlfbb6jfluiwuuzw7gxjwsgay65piu7uha2ajv4a"
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:5dwbpojkp6wykwcafasvwroi/bafkreidhwdyekurk3jktwzgtwhupkld4cqnttl7no4vahioehgjhignf3m",
-      "enriched": true,
-      "trending_score": 0.2425
+      "trending_score": 0.0517
     },
     {
-      "id": "bs-did%3Aplc%3Acrcybmshorvvegmbkp5rvgjv%2Fapp.bsky.feed.post%2F3mxsqwwiybk2g",
-      "source": "bluesky",
-      "published_at": "2026-10-14T04:54:27Z",
-      "title": "Second-half storm ⚡️",
-      "url": "https://bsky.app/profile/nbcswarriors.bsky.social/post/3mxsqwwiybk2g",
-      "author": "Warriors on NBC Sports Bay Area",
-      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:crcybmshorvvegmbkp5rvgjv/bafkreiakct3tkdulosnlfbb6jfluiwuuzw7gxjwsgay65piu7uha2ajv4a",
-      "body_excerpt": "Second-half storm ⚡️\n\n@daltonjohnson.bsky.social delivers the takeaways from the Warriors' preseason win over the Lakers:",
-      "players": [],
-      "teams": [],
-      "media": {
-        "type": "link",
-        "uri": "https://www.nbcsportsbayarea.com/nba/golden-state-warriors/brandin-podziemski-yaxel-lendeborg-lakers/1971144/",
-        "title": "What we learned as Warriors storm back in fourth quarter to steal preseason win vs. Lakers",
-        "description": "The Golden State Warriors held the Los Angeles Lakers to 13 points in the third quarter and another lowly 13 points in the fourth for a 101-89 win.",
-        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:crcybmshorvvegmbkp5rvgjv/bafkreiakct3tkdulosnlfbb6jfluiwuuzw7gxjwsgay65piu7uha2ajv4a"
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:crcybmshorvvegmbkp5rvgjv/bafkreicnwnxnmxmxr2uko53p2eh7hv7sebqduk3c72vrxykxk2y3hschrm",
-      "facets": [
-        {
-          "$type": "app.bsky.richtext.facet",
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#mention",
-              "did": "did:plc:5dwbpojkp6wykwcafasvwroi"
-            }
-          ],
-          "index": {
-            "byteEnd": 52,
-            "byteStart": 26
-          }
-        }
+      "id": "rd-t3_1x5iucq",
+      "source": "reddit",
+      "published_at": "2026-10-14T05:18:10Z",
+      "title": "Luka Doncic seems to be impressed by a Lakers fan dancing, wearing his jersey. \"He's good\"",
+      "url": "https://www.reddit.com/r/nba/comments/1x5iucq/luka_doncic_seems_to_be_impressed_by_a_lakers_fan/",
+      "author": "MrBuckBuck",
+      "thumbnail": "https://external-preview.redd.it/Dxueq_Dw2isT_tvYCe6FfHJ_jt7SPMDCfBA-X-jB-qA.jpeg?width=640&crop=smart&auto=webp&s=541e0e917067dd3f41a10e2d6d21b661406f5800",
+      "body_excerpt": null,
+      "players": [
+        "luka-doncic"
       ],
-      "enriched": true,
-      "trending_score": 0.2405
+      "teams": [
+        "los-angeles-lakers"
+      ],
+      "trending_score": 0.0512
     },
     {
       "id": "gn-c5c4d675e519c889",
@@ -119,7 +695,7 @@
         "indiana-pacers",
         "oklahoma-city-thunder"
       ],
-      "trending_score": 0.234
+      "trending_score": 0.0498
     },
     {
       "id": "gn-7a1276f204b753e0",
@@ -134,29 +710,7 @@
         "jrue-holiday"
       ],
       "teams": [],
-      "trending_score": 0.2315
-    },
-    {
-      "id": "bs-did%3Aplc%3Aszxkt3ekyjatlwd7jknsmtv4%2Fapp.bsky.feed.post%2F3mxsqonwfmc26",
-      "source": "bluesky",
-      "published_at": "2026-10-14T04:49:49Z",
-      "title": "With his increased quickness it’s pretty clear Hansen should be the third big. Carlson’s hustle is notable but he’s not a factor at the rim like Hansen. Throw in the playmaking for Hansen and it’s clear he should be the third center.",
-      "url": "https://bsky.app/profile/erikg503.bsky.social/post/3mxsqonwfmc26",
-      "author": "Erik García Gundersen",
-      "thumbnail": null,
-      "body_excerpt": "With his increased quickness it’s pretty clear Hansen should be the third big. Carlson’s hustle is notable but he’s not a factor at the rim like Hansen. Throw in the playmaking for Hansen and it’s clear he should be the third center.",
-      "players": [],
-      "teams": [],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:szxkt3ekyjatlwd7jknsmtv4/bafkreibpd7dzgvm63a7dcmeqzqqjfvfgmmjxkqjrdr3m3bd7qehbq2ggk4",
-      "quote": {
-        "author": "Sean Highkin",
-        "handle": "highkin.bsky.social",
-        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:t2fqrxpw2yko4xlifv7y6hsi/bafkreicw4qlttkmbpfm2psjahoaqyivndvlxkyku37ubpdgr4wdxyiay34",
-        "text": "Based purely on minutes in preseason games Yang Hansen seems to have the edge over Branden Carlson in the third center battle for the non-Clingan/Timelord minutes. He looks so much more comfortable on the floor against NBA players than he did at any point last season.",
-        "url": "https://bsky.app/profile/highkin.bsky.social/post/3mxsopobais23"
-      },
-      "enriched": true,
-      "trending_score": 0.2301
+      "trending_score": 0.0496
     },
     {
       "id": "gn-4eef1b986c20ed20",
@@ -172,7 +726,7 @@
         "golden-state-warriors",
         "los-angeles-lakers"
       ],
-      "trending_score": 0.2294
+      "trending_score": 0.0495
     },
     {
       "id": "gn-7b18f787058248ae",
@@ -188,769 +742,7 @@
         "portland-trail-blazers",
         "sacramento-kings"
       ],
-      "trending_score": 0.2278
-    },
-    {
-      "id": "gn-5c18f6e92b953bba",
-      "source": "google-news",
-      "published_at": "2026-10-14T04:35:15Z",
-      "title": "Portland Trail Blazers vs. Sacramento Kings: Game Highlights",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1mNHFiS1kzc3EwM3NiaUxnZXctbTM5V09PcXBEWmZQV3ZGWXBlc1l3YTJoUkJUMUs3NlhTUWxaLUdianpxbUtZVmxUQndQRUlrOWNObktOWFVTLWMzRU00bU4zS1JMUWpDLUpqN2hR?oc=5",
-      "author": "ESPN",
-      "thumbnail": null,
-      "body_excerpt": "Portland Trail Blazers vs. Sacramento Kings: Game Highlights ESPN",
-      "players": [],
-      "teams": [
-        "portland-trail-blazers",
-        "sacramento-kings"
-      ],
-      "trending_score": 0.2221
-    },
-    {
-      "id": "gn-984429e9fafa534c",
-      "source": "google-news",
-      "published_at": "2026-10-14T04:35:00Z",
-      "title": "Ja Morant with the 2 Pt",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1ndW1NY2o2OXE3c2x5X1V0TzBWcmpORVF3VjZMY0hEdThlV3BKenZvb1ptRFZZcXRWVVAxU3V1RzZ6cFViNEhyR3VOaFRrT1N3ZkIySEEycUtQRzBtNjBvNVo3SklxNERINkhxckZR?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Ja Morant with the 2 Pt Yahoo Sports",
-      "players": [
-        "ja-morant"
-      ],
-      "teams": [],
-      "trending_score": 0.2216
-    },
-    {
-      "id": "gn-fda11ceaa77f1148",
-      "source": "google-news",
-      "published_at": "2026-10-14T04:34:11Z",
-      "title": "Three Takeaways From Kings BLANK Loss to Trail Blazers",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQUnVoeVI4LXdTV284QnVsUDF4aTJSQWZFNko5bzI4bVBPcFJwZ05wY0tNcWlZNGxPR3RWd0VKR3RIOTdiVmtSNkVITUdpWkNhdkZlRmF5MWhITDlXSV95RjZ1NEo4ek5Bc3VYLVJ5dUU0eHFxRndlN25wbGNHNTFPanMtYWx1c2haZG05YWVwWWJuS0dQ?oc=5",
-      "author": "Sports Illustrated",
-      "thumbnail": null,
-      "body_excerpt": "Three Takeaways From Kings BLANK Loss to Trail Blazers Sports Illustrated",
-      "players": [],
-      "teams": [
-        "portland-trail-blazers",
-        "sacramento-kings"
-      ],
-      "trending_score": 0.2201
-    },
-    {
-      "id": "bs-did%3Aplc%3A5dwbpojkp6wykwcafasvwroi%2Fapp.bsky.feed.post%2F3mxspzx7lh22x",
-      "source": "bluesky",
-      "published_at": "2026-10-14T04:38:14Z",
-      "title": "At least the Warriors only had 20 turnovers compared to the Lakers' 30, but ... that's now 104 turnovers in five preseason games",
-      "url": "https://bsky.app/profile/daltonjohnson.bsky.social/post/3mxspzx7lh22x",
-      "author": "Dalton Johnson",
-      "thumbnail": null,
-      "body_excerpt": "At least the Warriors only had 20 turnovers compared to the Lakers' 30, but ... that's now 104 turnovers in five preseason games",
-      "players": [],
-      "teams": [
-        "golden-state-warriors",
-        "los-angeles-lakers"
-      ],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:5dwbpojkp6wykwcafasvwroi/bafkreidhwdyekurk3jktwzgtwhupkld4cqnttl7no4vahioehgjhignf3m",
-      "enriched": true,
-      "trending_score": 0.2072
-    },
-    {
-      "id": "gn-a2f444b2510cac65",
-      "source": "google-news",
-      "published_at": "2026-10-14T04:21:00Z",
-      "title": "Photos: Best images from Thunder's 114-112 OT preseason win over Pacers",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQWVpMNGd1T1R0RDVQWVpZVXlYUktGX2t5N0JNNmNqRGZnTWRiRDhPZDdNMTBzN05jQ0JBeG9uMk9VaXE5TjdkaWVsdlNEeEo0VFJBMnlieTV3NWRzVWlpVGNqSHN2RF9HdzdzYnBhX3hvX0RBOGN5ZGRuOGlZNy14bVhZZGVfS2c?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Photos: Best images from Thunder's 114-112 OT preseason win over Pacers Yahoo Sports",
-      "players": [],
-      "teams": [
-        "indiana-pacers",
-        "oklahoma-city-thunder"
-      ],
-      "trending_score": 0.1974
-    },
-    {
-      "id": "bs-did%3Aplc%3Axyzeyymd5k2hu7tvbn6xa7yy%2Fapp.bsky.feed.post%2F3mxspodqlns2l",
-      "source": "bluesky",
-      "published_at": "2026-10-14T04:31:45Z",
-      "title": "Well, lets talk about this one.",
-      "url": "https://bsky.app/profile/deucemason.bsky.social/post/3mxspodqlns2l",
-      "author": "Deuce Mason",
-      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:xyzeyymd5k2hu7tvbn6xa7yy/bafkreie4tqezfycbeusg3e24vnm5ym5bn4sjsvq6d643aslnamzwlucii4",
-      "body_excerpt": "Well, lets talk about this one.\n\nWe are liiiiiiiiiiiive:\nwww.youtube.com/watch?v=Lurn...",
-      "players": [],
-      "teams": [],
-      "media": {
-        "type": "image",
-        "images": [
-          {
-            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:xyzeyymd5k2hu7tvbn6xa7yy/bafkreie4tqezfycbeusg3e24vnm5ym5bn4sjsvq6d643aslnamzwlucii4",
-            "alt": ""
-          }
-        ]
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:xyzeyymd5k2hu7tvbn6xa7yy/bafkreibelitnmqctluvrzvwaxhi6cofa557yudtyz2fltqgmzvyedyqbnu",
-      "facets": [
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://www.youtube.com/watch?v=LurnpOBX3Lc"
-            }
-          ],
-          "index": {
-            "byteEnd": 88,
-            "byteStart": 57
-          }
-        }
-      ],
-      "enriched": true,
-      "trending_score": 0.196
-    },
-    {
-      "id": "bs-did%3Aplc%3Adf2gzsny4y5khzaa5rsfrblr%2Fapp.bsky.feed.post%2F3mxspit6sos2l",
-      "source": "bluesky",
-      "published_at": "2026-10-14T04:28:40Z",
-      "title": "Will the Sacramento Kings win a preseason game? Do they want to win a preseason game?They have one more shot to avoid getting skunked after dropping to 0-4 Tuesday night against the Portland Trail Blazers. Here are six quick thoughts from a lopsided 110-98 loss:",
-      "url": "https://bsky.app/profile/jameshamnba.bsky.social/post/3mxspit6sos2l",
-      "author": "James Ham",
-      "thumbnail": null,
-      "body_excerpt": "Will the Sacramento Kings win a preseason game? Do they want to win a preseason game?They have one more shot to avoid getting skunked after dropping to 0-4 Tuesday night against the Portland Trail Blazers. Here are six quick thoughts from a lopsided 110-98 loss:",
-      "players": [],
-      "teams": [
-        "portland-trail-blazers",
-        "sacramento-kings"
-      ],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:df2gzsny4y5khzaa5rsfrblr/bafkreihd6r3qqcbqfpmfa624obuqiybrfzlz7ckrfc5364am5heocwqjla",
-      "enriched": true,
-      "trending_score": 0.191
-    },
-    {
-      "id": "bs-did%3Aplc%3Ad7jo2dgltk635ycukifq3qjx%2Fapp.bsky.feed.post%2F3mxspfajrj223",
-      "source": "bluesky",
-      "published_at": "2026-10-14T04:26:39Z",
-      "title": "The Warriors beat the Lakers 101-89 in Las Vegas. Golden State came back and flipped this game during garbage time. ",
-      "url": "https://bsky.app/profile/ecreates88.bsky.social/post/3mxspfajrj223",
-      "author": "Edwin Garcia",
-      "thumbnail": null,
-      "body_excerpt": "The Warriors beat the Lakers 101-89 in Las Vegas. Golden State came back and flipped this game during garbage time. \n\nAustin Reaves: 28 points, 4 rebounds, and 7 assists\nWalker Kessler: 11 points, 9 rebounds \nSandro Mamukelashvili: 10 points, 7 rebounds",
-      "players": [],
-      "teams": [
-        "golden-state-warriors",
-        "los-angeles-lakers"
-      ],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:d7jo2dgltk635ycukifq3qjx/bafkreifa3o4kggb4kkkapmo6xwsfne7fp2yn3tpmkbrvxclmejjrfawqke",
-      "enriched": true,
-      "trending_score": 0.1878
-    },
-    {
-      "id": "bs-did%3Aplc%3Apaf4vetn26bu7uggsie3vyrc%2Fapp.bsky.feed.post%2F3mxspeya5j22n",
-      "source": "bluesky",
-      "published_at": "2026-10-14T04:26:31Z",
-      "title": "Warriors beat Lakers 101-89",
-      "url": "https://bsky.app/profile/lawmurraythenu.bsky.social/post/3mxspeya5j22n",
-      "author": "Law Murray 📘",
-      "thumbnail": null,
-      "body_excerpt": "Warriors beat Lakers 101-89\n\nSome of the most dogshit offense after halftime you'll ever see from Lakers (26 points, 10/34 FGs, 1/15 3s, 5 assists, 18 turnovers)",
-      "players": [],
-      "teams": [
-        "golden-state-warriors",
-        "los-angeles-lakers"
-      ],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:paf4vetn26bu7uggsie3vyrc/bafkreihylt4ajsybck7u6howz6ols7nfjinjfis65c2mhouyyyga7bjfbi",
-      "enriched": true,
-      "trending_score": 0.1876
-    },
-    {
-      "id": "bs-did%3Aplc%3A75z3gabuwl6uvv7pootuuvgn%2Fapp.bsky.feed.post%2F3mxspedawtc22",
-      "source": "bluesky",
-      "published_at": "2026-10-14T04:26:08Z",
-      "title": "RECAP: Austin Reaves, Walker Kessler and the #Lakers starters looked great against the Warriors. The end of the bench... not so much.",
-      "url": "https://bsky.app/profile/lakersnation.bsky.social/post/3mxspedawtc22",
-      "author": "LakersNation.com",
-      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreicm6sjv22fxuedyqikvmugyvnhfk4nj3ojpcflnazfm7oygbtjzoq",
-      "body_excerpt": "RECAP: Austin Reaves, Walker Kessler and the #Lakers starters looked great against the Warriors. The end of the bench... not so much.\nlakersnation.com/recap-austin...",
-      "players": [
-        "austin-reaves",
-        "walker-kessler"
-      ],
-      "teams": [
-        "golden-state-warriors",
-        "los-angeles-lakers"
-      ],
-      "media": {
-        "type": "link",
-        "uri": "https://lakersnation.com/recap-austin-reaves-walker-kessler-shine-in-lakers-preseason-loss-to-warriors/",
-        "title": "Recap: Austin Reaves & Walker Kessler Shine In Lakers Preseason Loss To Warriors",
-        "description": "The Los Angeles Lakers lost to the Golden State Warriors but got quality outings from Austin Reaves and Walker Kessler, among others.",
-        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreicm6sjv22fxuedyqikvmugyvnhfk4nj3ojpcflnazfm7oygbtjzoq"
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreiha6wdd65xjneeckcurw4zgpgcfrick6hylxlxoe5owj2kjxzu42e",
-      "facets": [
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#tag",
-              "tag": "Lakers"
-            }
-          ],
-          "index": {
-            "byteEnd": 52,
-            "byteStart": 45
-          }
-        },
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://lakersnation.com/recap-austin-reaves-walker-kessler-shine-in-lakers-preseason-loss-to-warriors/"
-            }
-          ],
-          "index": {
-            "byteEnd": 166,
-            "byteStart": 134
-          }
-        }
-      ],
-      "enriched": true,
-      "trending_score": 0.187
-    },
-    {
-      "id": "bs-did%3Aplc%3Ai2bbb5awcdev32y34gcfjhgz%2Fapp.bsky.feed.post%2F3mxspdwz6uc2n",
-      "source": "bluesky",
-      "published_at": "2026-10-14T04:25:56Z",
-      "title": "NEW LOUNGE: @faignews.bsky.social joins to talk about that game:",
-      "url": "https://bsky.app/profile/anthonyirwinla.bsky.social/post/3mxspdwz6uc2n",
-      "author": "Anthony Irwin",
-      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:i2bbb5awcdev32y34gcfjhgz/bafkreiho3sip2lkv5hwzxgcfom24hq3p47pzrrjkg5w5dkju26rmh5ullu",
-      "body_excerpt": "NEW LOUNGE: @faignews.bsky.social joins to talk about that game:\n\n- Kessler looks great\n- Austin does too\n- Mamu!\n- Injury info mismanagement (again)\n- Q&A\n\nyoutube.com/live/CPKvf0v...",
-      "players": [],
-      "teams": [],
-      "media": {
-        "type": "link",
-        "uri": "https://youtube.com/live/CPKvf0v24nw?feature=share",
-        "title": "LAKERS - WARRIORS RECAP: Walker Kessler DOMINATES Debut; Austin Reaves Ready For Season; Luka Sits",
-        "description": "YouTube video by Lakers Lounge",
-        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:i2bbb5awcdev32y34gcfjhgz/bafkreiho3sip2lkv5hwzxgcfom24hq3p47pzrrjkg5w5dkju26rmh5ullu"
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:i2bbb5awcdev32y34gcfjhgz/bafkreienzwlts7gzglwzjnfxswdd2w6pb4gldveafemubgotmloxkuwja4",
-      "facets": [
-        {
-          "$type": "app.bsky.richtext.facet",
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#mention",
-              "did": "did:plc:ne344shcm2jowdwh5whzkgfn"
-            }
-          ],
-          "index": {
-            "byteEnd": 33,
-            "byteStart": 12
-          }
-        },
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://youtube.com/live/CPKvf0v24nw?feature=share"
-            }
-          ],
-          "index": {
-            "byteEnd": 184,
-            "byteStart": 157
-          }
-        }
-      ],
-      "enriched": true,
-      "trending_score": 0.1867
-    },
-    {
-      "id": "bs-did%3Aplc%3A5dwbpojkp6wykwcafasvwroi%2Fapp.bsky.feed.post%2F3mxspd22bq22x",
-      "source": "bluesky",
-      "published_at": "2026-10-14T04:25:25Z",
-      "title": "The Warriors hold the Lakers to 13 points in the third quarter and another 13 in the fourth for a 101-89 win in Las Vegas @nbcswarriors.bsky.social ",
-      "url": "https://bsky.app/profile/daltonjohnson.bsky.social/post/3mxspd22bq22x",
-      "author": "Dalton Johnson",
-      "thumbnail": null,
-      "body_excerpt": "The Warriors hold the Lakers to 13 points in the third quarter and another 13 in the fourth for a 101-89 win in Las Vegas @nbcswarriors.bsky.social \n\nWarriors are now 3-2 this preseason. Their final game is Friday night at Chase Center against the Blazers",
-      "players": [],
-      "teams": [
-        "golden-state-warriors",
-        "los-angeles-lakers"
-      ],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:5dwbpojkp6wykwcafasvwroi/bafkreidhwdyekurk3jktwzgtwhupkld4cqnttl7no4vahioehgjhignf3m",
-      "facets": [
-        {
-          "$type": "app.bsky.richtext.facet",
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#mention",
-              "did": "did:plc:crcybmshorvvegmbkp5rvgjv"
-            }
-          ],
-          "index": {
-            "byteEnd": 147,
-            "byteStart": 122
-          }
-        }
-      ],
-      "enriched": true,
-      "trending_score": 0.1859
-    },
-    {
-      "id": "gn-a827bb9be5ad27c6",
-      "source": "google-news",
-      "published_at": "2026-10-14T04:12:00Z",
-      "title": "Tyrese Haliburton 'felt just like normal' in return to OKC for Pacers-Thunder game",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOM2tnckJvYnZwRkFNS3RsSFN4YTk2QXBkLU13NmR3VTROaUNpSzkxWnA0MXU5YVRzdFRXQUFFQjQwRldpcVJRVFpHSEszSXlwWnd5bnh6Mm1RZzdQaTBnd1EtOGNzQ1ZXQlNHQVM0TVY3VlhsV0RJcjZoNk5YV21IUHFUbkQzZDFOdkJZ?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Tyrese Haliburton 'felt just like normal' in return to OKC for Pacers-Thunder game Yahoo Sports",
-      "players": [
-        "tyrese-haliburton"
-      ],
-      "teams": [
-        "indiana-pacers",
-        "oklahoma-city-thunder"
-      ],
-      "trending_score": 0.1841
-    },
-    {
-      "id": "bs-did%3Aplc%3Apaf4vetn26bu7uggsie3vyrc%2Fapp.bsky.feed.post%2F3mxsp6jhe7c2n",
-      "source": "bluesky",
-      "published_at": "2026-10-14T04:22:54Z",
-      "title": "Lakers 3-point shooting tonight",
-      "url": "https://bsky.app/profile/lawmurraythenu.bsky.social/post/3mxsp6jhe7c2n",
-      "author": "Law Murray 📘",
-      "thumbnail": null,
-      "body_excerpt": "Lakers 3-point shooting tonight\n\nAustin Reaves: 4/7\nRest of team: 5/27 (55 seconds left)",
-      "players": [],
-      "teams": [
-        "los-angeles-lakers"
-      ],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:paf4vetn26bu7uggsie3vyrc/bafkreihylt4ajsybck7u6howz6ols7nfjinjfis65c2mhouyyyga7bjfbi",
-      "enriched": true,
-      "trending_score": 0.1822
-    },
-    {
-      "id": "bs-did%3Aplc%3Apaf4vetn26bu7uggsie3vyrc%2Fapp.bsky.feed.post%2F3mxsp2yq7ik2n",
-      "source": "bluesky",
-      "published_at": "2026-10-14T04:20:56Z",
-      "title": "32-point turnaround in Viva Las Vegas",
-      "url": "https://bsky.app/profile/lawmurraythenu.bsky.social/post/3mxsp2yq7ik2n",
-      "author": "Law Murray 📘",
-      "thumbnail": null,
-      "body_excerpt": "32-point turnaround in Viva Las Vegas",
-      "players": [],
-      "teams": [],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:paf4vetn26bu7uggsie3vyrc/bafkreihylt4ajsybck7u6howz6ols7nfjinjfis65c2mhouyyyga7bjfbi",
-      "enriched": true,
-      "trending_score": 0.1793
-    },
-    {
-      "id": "gn-bbf80870e06873a4",
-      "source": "google-news",
-      "published_at": "2026-10-14T04:06:25Z",
-      "title": "Portland Trail Blazers 100 - Sacramento Kings 73: 4th 9:04",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOaUJ4SncxWlkxU0h4UC1DQ0lKcFFpcm1wWEpGeHlJVG5ybXJrU0hKSWpNVnQ1TU1hRlZqRUJONDkybVA3QVBQdmpRYVU1Si1uR3dRNFRWQ2NhU252clVOdGZWYzZERWJ1TkNwMmE4LU4wT3Q4dV9ERmRFSm4xWi1hcmJRMzFkcmc?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Portland Trail Blazers 100 - Sacramento Kings 73: 4th 9:04 Yahoo Sports",
-      "players": [],
-      "teams": [
-        "portland-trail-blazers",
-        "sacramento-kings"
-      ],
-      "trending_score": 0.1765
-    },
-    {
-      "id": "bs-did%3Aplc%3Apaf4vetn26bu7uggsie3vyrc%2Fapp.bsky.feed.post%2F3mxsopz3ucc2n",
-      "source": "bluesky",
-      "published_at": "2026-10-14T04:14:47Z",
-      "title": "The Lakers third string has been dreadful this preseason",
-      "url": "https://bsky.app/profile/lawmurraythenu.bsky.social/post/3mxsopz3ucc2n",
-      "author": "Law Murray 📘",
-      "thumbnail": null,
-      "body_excerpt": "The Lakers third string has been dreadful this preseason\n\nWarriors have held Lakers to 10 points in 16 minutes of game time. 13 turnovers since they led by 20, and now Warriors lead 88-80",
-      "players": [],
-      "teams": [
-        "los-angeles-lakers"
-      ],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:paf4vetn26bu7uggsie3vyrc/bafkreihylt4ajsybck7u6howz6ols7nfjinjfis65c2mhouyyyga7bjfbi",
-      "enriched": true,
-      "trending_score": 0.1709
-    },
-    {
-      "id": "bs-did%3Aplc%3At2fqrxpw2yko4xlifv7y6hsi%2Fapp.bsky.feed.post%2F3mxsopobais23",
-      "source": "bluesky",
-      "published_at": "2026-10-14T04:14:36Z",
-      "title": "Based purely on minutes in preseason games Yang Hansen seems to have the edge over Branden Carlson in the third center battle for the non-Clingan/Timelord minutes. He looks so much more comfortable on the floor against NBA players than he did at any point last season.",
-      "url": "https://bsky.app/profile/highkin.bsky.social/post/3mxsopobais23",
-      "author": "Sean Highkin",
-      "thumbnail": null,
-      "body_excerpt": "Based purely on minutes in preseason games Yang Hansen seems to have the edge over Branden Carlson in the third center battle for the non-Clingan/Timelord minutes. He looks so much more comfortable on the floor against NBA players than he did at any point last season.",
-      "players": [
-        "branden-carlson",
-        "yang-hansen"
-      ],
-      "teams": [],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:t2fqrxpw2yko4xlifv7y6hsi/bafkreicw4qlttkmbpfm2psjahoaqyivndvlxkyku37ubpdgr4wdxyiay34",
-      "enriched": true,
-      "trending_score": 0.1707
-    },
-    {
-      "id": "bs-did%3Aplc%3Akvf6pnfrtgek6jqlkpqhgacv%2Fapp.bsky.feed.post%2F3mxsoht232g2f",
-      "source": "bluesky",
-      "published_at": "2026-10-14T04:10:12Z",
-      "title": "Teams with the Most Pressure Ahead of the 2026-27 NBA Season | Third Apron Podcast with Sam Quinn",
-      "url": "https://bsky.app/profile/yossigozlan.bsky.social/post/3mxsoht232g2f",
-      "author": "Yossi Gozlan",
-      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:kvf6pnfrtgek6jqlkpqhgacv/bafkreicehjcczolfykv26yhxhfuyn5exqjqrnylozpyn6tdcoqhqep47my",
-      "body_excerpt": "Teams with the Most Pressure Ahead of the 2026-27 NBA Season | Third Apron Podcast with Sam Quinn\nyoutube.com/live/64fvUlO...",
-      "players": [],
-      "teams": [],
-      "media": {
-        "type": "link",
-        "uri": "https://youtube.com/live/64fvUlOC5Ms",
-        "title": "Teams with the Most Pressure Ahead of the 2026-27 NBA Season | Third Apron Podcast",
-        "description": "The start of the 2026-27 NBA regular season is one week away. Sam and I preview it by going over the teams we believe have the highest stakes.You can follow ...",
-        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:kvf6pnfrtgek6jqlkpqhgacv/bafkreicehjcczolfykv26yhxhfuyn5exqjqrnylozpyn6tdcoqhqep47my"
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:kvf6pnfrtgek6jqlkpqhgacv/bafkreihdcpnidk5avxf7rlzcamycvhlujrgyl7ujriydh7cvhgipfvmefq",
-      "facets": [
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://youtube.com/live/64fvUlOC5Ms"
-            }
-          ],
-          "index": {
-            "byteEnd": 125,
-            "byteStart": 98
-          }
-        }
-      ],
-      "enriched": true,
-      "trending_score": 0.1651
-    },
-    {
-      "id": "bs-did%3Aplc%3Ad7jo2dgltk635ycukifq3qjx%2Fapp.bsky.feed.post%2F3mxsofxsalc23",
-      "source": "bluesky",
-      "published_at": "2026-10-14T04:09:10Z",
-      "title": "This game has entered the silly zone. The Warriors have gone on a 12-2 run and now lead 84-78.",
-      "url": "https://bsky.app/profile/ecreates88.bsky.social/post/3mxsofxsalc23",
-      "author": "Edwin Garcia",
-      "thumbnail": null,
-      "body_excerpt": "This game has entered the silly zone. The Warriors have gone on a 12-2 run and now lead 84-78.",
-      "players": [],
-      "teams": [
-        "golden-state-warriors"
-      ],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:d7jo2dgltk635ycukifq3qjx/bafkreifa3o4kggb4kkkapmo6xwsfne7fp2yn3tpmkbrvxclmejjrfawqke",
-      "enriched": true,
-      "trending_score": 0.1638
-    },
-    {
-      "id": "bs-did%3Aplc%3Apaf4vetn26bu7uggsie3vyrc%2Fapp.bsky.feed.post%2F3mxsoafmv7s2n",
-      "source": "bluesky",
-      "published_at": "2026-10-14T04:06:03Z",
-      "title": "Brandin Podziemski gets a 3 after three Warriors offensive rebounds",
-      "url": "https://bsky.app/profile/lawmurraythenu.bsky.social/post/3mxsoafmv7s2n",
-      "author": "Law Murray 📘",
-      "thumbnail": null,
-      "body_excerpt": "Brandin Podziemski gets a 3 after three Warriors offensive rebounds\n\nGui Santos gets a 3 after fifth straight scoreless Lakers possession\n\nTimeout Lakers -- Warriors lead 84-78\n\nA 26-point turnaround in just under 13 minutes of game time",
-      "players": [
-        "brandin-podziemski"
-      ],
-      "teams": [
-        "golden-state-warriors"
-      ],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:paf4vetn26bu7uggsie3vyrc/bafkreihylt4ajsybck7u6howz6ols7nfjinjfis65c2mhouyyyga7bjfbi",
-      "enriched": true,
-      "trending_score": 0.16
-    },
-    {
-      "id": "bs-did%3Aplc%3Apz2e6pmf64ey4zpgyjuvpdfj%2Fapp.bsky.feed.post%2F3mxso53zwbc2p",
-      "source": "bluesky",
-      "published_at": "2026-10-14T04:04:12Z",
-      "title": "Idk man, the new season of Ted Lasso was better than S3, but as much as I hate calling any art \"unnecessary,\" it does feel like the show is spinning its wheels for the sake of holding up the illusion that it's got any real movement left",
-      "url": "https://bsky.app/profile/geraldbourguet.bsky.social/post/3mxso53zwbc2p",
-      "author": "Gerald Bourguet",
-      "thumbnail": null,
-      "body_excerpt": "Idk man, the new season of Ted Lasso was better than S3, but as much as I hate calling any art \"unnecessary,\" it does feel like the show is spinning its wheels for the sake of holding up the illusion that it's got any real movement left",
-      "players": [],
-      "teams": [],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:pz2e6pmf64ey4zpgyjuvpdfj/bafkreics2n2et46jeqi2kk2q2fsu3ytun3eyxjaqnyubjwzdcmfwzvdvze",
-      "enriched": true,
-      "trending_score": 0.1579
-    },
-    {
-      "id": "bs-did%3Aplc%3Apaf4vetn26bu7uggsie3vyrc%2Fapp.bsky.feed.post%2F3mxsnz2kkes2n",
-      "source": "bluesky",
-      "published_at": "2026-10-14T04:01:57Z",
-      "title": "Dalton Knecht is the last available standard contract Laker to enter tonight's game",
-      "url": "https://bsky.app/profile/lawmurraythenu.bsky.social/post/3mxsnz2kkes2n",
-      "author": "Law Murray 📘",
-      "thumbnail": null,
-      "body_excerpt": "Dalton Knecht is the last available standard contract Laker to enter tonight's game",
-      "players": [
-        "dalton-knecht"
-      ],
-      "teams": [],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:paf4vetn26bu7uggsie3vyrc/bafkreihylt4ajsybck7u6howz6ols7nfjinjfis65c2mhouyyyga7bjfbi",
-      "enriched": true,
-      "trending_score": 0.1553
-    },
-    {
-      "id": "bs-did%3Aplc%3Apaf4vetn26bu7uggsie3vyrc%2Fapp.bsky.feed.post%2F3mxsnuqqyvs2n",
-      "source": "bluesky",
-      "published_at": "2026-10-14T03:59:32Z",
-      "title": "20-point Los Angeles Lakers lead GONE",
-      "url": "https://bsky.app/profile/lawmurraythenu.bsky.social/post/3mxsnuqqyvs2n",
-      "author": "Law Murray 📘",
-      "thumbnail": null,
-      "body_excerpt": "20-point Los Angeles Lakers lead GONE",
-      "players": [],
-      "teams": [
-        "los-angeles-lakers"
-      ],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:paf4vetn26bu7uggsie3vyrc/bafkreihylt4ajsybck7u6howz6ols7nfjinjfis65c2mhouyyyga7bjfbi",
-      "enriched": true,
-      "trending_score": 0.1527
-    },
-    {
-      "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3mxsnsyyam22d",
-      "source": "bluesky",
-      "published_at": "2026-10-14T03:58:34Z",
-      "title": "My @orlandosentinel.com recap as the #Magic bounce back against the Cavs in a preseason rematch:",
-      "url": "https://bsky.app/profile/jbeede.bsky.social/post/3mxsnsyyam22d",
-      "author": "Jason Beede",
-      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreia75nh2bnczrs7apvcxqifmsg5klvkeqyemzm63ztycklpqz5lgqu",
-      "body_excerpt": "My @orlandosentinel.com recap as the #Magic bounce back against the Cavs in a preseason rematch:\n\n“I loved the way the ball moved,” Orlando coach Sean Sweeney said. “I thought we did a really good job of playing extremely aggressively…” www.orlandosentinel.com/2026/10/13/o...",
-      "players": [],
-      "teams": [
-        "cleveland-cavaliers",
-        "orlando-magic"
-      ],
-      "media": {
-        "type": "link",
-        "uri": "https://www.orlandosentinel.com/2026/10/13/orlando-magic-cleveland-cavaliers-cavs-jalen-suggs-paolo-banchero-franz-wagner-nba-preseason-game-recap-kia-center-sean-sweeney/",
-        "title": "Beede’s Breakdown: Magic bounce back against Cavaliers in preseason",
-        "description": "After facing the Cavaliers twice in three days, the Magic will wrap up the NBA preseason Friday against the Heat at Kia Center.",
-        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreia75nh2bnczrs7apvcxqifmsg5klvkeqyemzm63ztycklpqz5lgqu"
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiey3powizzh2yl5k4eyoftbxztccx6pgnmdozyhyyjqybjhhnc2ne",
-      "facets": [
-        {
-          "$type": "app.bsky.richtext.facet",
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#mention",
-              "did": "did:plc:g5n6tmh54utzmwjregfbb7ul"
-            }
-          ],
-          "index": {
-            "byteEnd": 23,
-            "byteStart": 3
-          }
-        },
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#tag",
-              "tag": "Magic"
-            }
-          ],
-          "index": {
-            "byteEnd": 43,
-            "byteStart": 37
-          }
-        },
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://www.orlandosentinel.com/2026/10/13/orlando-magic-cleveland-cavaliers-cavs-jalen-suggs-paolo-banchero-franz-wagner-nba-preseason-game-recap-kia-center-sean-sweeney/"
-            }
-          ],
-          "index": {
-            "byteEnd": 286,
-            "byteStart": 247
-          }
-        }
-      ],
-      "enriched": true,
-      "trending_score": 0.1516
-    },
-    {
-      "id": "bs-did%3Aplc%3Apaf4vetn26bu7uggsie3vyrc%2Fapp.bsky.feed.post%2F3mxsnssidbs2n",
-      "source": "bluesky",
-      "published_at": "2026-10-14T03:58:27Z",
-      "title": "Rafael Castro is making his preseason debut in a lineup with James, Hardy, Mañon, Kaluma",
-      "url": "https://bsky.app/profile/lawmurraythenu.bsky.social/post/3mxsnssidbs2n",
-      "author": "Law Murray 📘",
-      "thumbnail": null,
-      "body_excerpt": "Rafael Castro is making his preseason debut in a lineup with James, Hardy, Mañon, Kaluma",
-      "players": [],
-      "teams": [],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:paf4vetn26bu7uggsie3vyrc/bafkreihylt4ajsybck7u6howz6ols7nfjinjfis65c2mhouyyyga7bjfbi",
-      "enriched": true,
-      "trending_score": 0.1515
-    },
-    {
-      "id": "bs-did%3Aplc%3Apaf4vetn26bu7uggsie3vyrc%2Fapp.bsky.feed.post%2F3mxsnozztjs2n",
-      "source": "bluesky",
-      "published_at": "2026-10-14T03:56:21Z",
-      "title": "Lakers took a 20-point third quarter lead and Warriors responded with a 14-0 run",
-      "url": "https://bsky.app/profile/lawmurraythenu.bsky.social/post/3mxsnozztjs2n",
-      "author": "Law Murray 📘",
-      "thumbnail": null,
-      "body_excerpt": "Lakers took a 20-point third quarter lead and Warriors responded with a 14-0 run\n\n76-72 Lakers lead through 3 quarters\n\nReaves: 28 points, 10/18 FGs, 4 rebounds, 7 assists (7 turnovers)\n\nWarriors defense kept Lakers off free throw line entirely in 3rd quarter while permitting a 2:6 AST-TO ratio",
-      "players": [],
-      "teams": [
-        "golden-state-warriors",
-        "los-angeles-lakers"
-      ],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:paf4vetn26bu7uggsie3vyrc/bafkreihylt4ajsybck7u6howz6ols7nfjinjfis65c2mhouyyyga7bjfbi",
-      "enriched": true,
-      "trending_score": 0.1492
-    },
-    {
-      "id": "bs-did%3Aplc%3A7uahugigvixjvxd5s2hidpad%2Fapp.bsky.feed.post%2F3mxsnmvx2tc2w",
-      "source": "bluesky",
-      "published_at": "2026-10-14T03:55:09Z",
-      "title": "Rick Carlisle on Tyrese Haliburton's outing in OKC: \"Coming back in here and being undaunted by anything that's happened in the past, he really came in and played his game.\"",
-      "url": "https://bsky.app/profile/tonyreast.bsky.social/post/3mxsnmvx2tc2w",
-      "author": "Tony East",
-      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreics6ei6ytshwjb7coxkttuwktuxmarwxheqh2osckw72suv3lvtei",
-      "body_excerpt": "Rick Carlisle on Tyrese Haliburton's outing in OKC: \"Coming back in here and being undaunted by anything that's happened in the past, he really came in and played his game.\"\n\nMore: www.circlecityspin.com/tyrese-halib...",
-      "players": [
-        "tyrese-haliburton"
-      ],
-      "teams": [
-        "oklahoma-city-thunder"
-      ],
-      "media": {
-        "type": "image",
-        "images": [
-          {
-            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreics6ei6ytshwjb7coxkttuwktuxmarwxheqh2osckw72suv3lvtei",
-            "alt": ""
-          }
-        ]
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreibcezoefeniffictxya32ce54pxckgbi6tyrpl5atugj63b6c25ei",
-      "facets": [
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://www.circlecityspin.com/tyrese-haliburton-shines-as-pacers-lose-to-thunder-four-things-learned/"
-            }
-          ],
-          "index": {
-            "byteEnd": 219,
-            "byteStart": 181
-          }
-        }
-      ],
-      "enriched": true,
-      "trending_score": 0.148
-    },
-    {
-      "id": "bs-did%3Aplc%3A6k2l2zk4prog4khdtzbafugo%2Fapp.bsky.feed.post%2F3mxsnimkeik2z",
-      "source": "bluesky",
-      "published_at": "2026-10-14T03:52:45Z",
-      "title": "Weekend ratings delayed. In the meantime, a couple of playoff updates on the SMW Ratings Tracker: WNBA Liberty-Dream last week and MLB ALDS. www.sportsmediawatch.com/sports-ratin...",
-      "url": "https://bsky.app/profile/sportsmediawatch.bsky.social/post/3mxsnimkeik2z",
-      "author": "Sports Media Watch",
-      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:6k2l2zk4prog4khdtzbafugo/bafkreih44x7jfua3ii5r5wfso7tyexmq52wfeamofh3ovz4leth4eq4ipi",
-      "body_excerpt": "Weekend ratings delayed. In the meantime, a couple of playoff updates on the SMW Ratings Tracker: WNBA Liberty-Dream last week and MLB ALDS. www.sportsmediawatch.com/sports-ratin...",
-      "players": [],
-      "teams": [],
-      "media": {
-        "type": "link",
-        "uri": "https://www.sportsmediawatch.com/sports-ratings-tracker/",
-        "title": "Sports Ratings Tracker",
-        "description": "A one-stop page for sports TV ratings news as it arrives, covering all sports and networks for which information is available.",
-        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:6k2l2zk4prog4khdtzbafugo/bafkreih44x7jfua3ii5r5wfso7tyexmq52wfeamofh3ovz4leth4eq4ipi"
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:6k2l2zk4prog4khdtzbafugo/bafkreidrpvr4hcdnzq4lh7joarinab2iuq5lrvtdipqbmdc3jlpnbwexd4",
-      "facets": [
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://www.sportsmediawatch.com/sports-ratings-tracker/"
-            }
-          ],
-          "index": {
-            "byteEnd": 181,
-            "byteStart": 141
-          }
-        }
-      ],
-      "enriched": true,
-      "trending_score": 0.1455
-    },
-    {
-      "id": "bs-did%3Aplc%3Apaf4vetn26bu7uggsie3vyrc%2Fapp.bsky.feed.post%2F3mxsndokldk2h",
-      "source": "bluesky",
-      "published_at": "2026-10-14T03:49:59Z",
-      "title": "(no text)",
-      "url": "https://bsky.app/profile/lawmurraythenu.bsky.social/post/3mxsndokldk2h",
-      "author": "Law Murray 📘",
-      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:paf4vetn26bu7uggsie3vyrc/bafkreihxmk6h5fattfsltw2sw2adfilkhmzur4hf2rwpjvusbjgsfcyv6i",
-      "body_excerpt": "",
-      "players": [],
-      "teams": [],
-      "media": {
-        "type": "image",
-        "images": [
-          {
-            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:paf4vetn26bu7uggsie3vyrc/bafkreihxmk6h5fattfsltw2sw2adfilkhmzur4hf2rwpjvusbjgsfcyv6i",
-            "alt": ""
-          }
-        ]
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:paf4vetn26bu7uggsie3vyrc/bafkreihylt4ajsybck7u6howz6ols7nfjinjfis65c2mhouyyyga7bjfbi",
-      "quote": {
-        "author": "Erik García Gundersen",
-        "handle": "erikg503.bsky.social",
-        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:szxkt3ekyjatlwd7jknsmtv4/bafkreibpd7dzgvm63a7dcmeqzqqjfvfgmmjxkqjrdr3m3bd7qehbq2ggk4",
-        "text": "Scoot and Dame",
-        "url": "https://bsky.app/profile/erikg503.bsky.social/post/3mxsmsafatk2x",
-        "media": {
-          "type": "image",
-          "images": [
-            {
-              "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:szxkt3ekyjatlwd7jknsmtv4/bafkreiesentuhc4335oigxcfyibuo6faih7ynfxdxxjdbb5jq4wj467ihm",
-              "alt": "Obi Wan Kenobi and Qui Gon Jinn"
-            }
-          ]
-        }
-      },
-      "enriched": true,
-      "trending_score": 0.1428
-    },
-    {
-      "id": "gn-1d3ad1e246eb6e6a",
-      "source": "google-news",
-      "published_at": "2026-10-14T03:35:23Z",
-      "title": "The Cleveland Cavaliers End the Pre-season with Lack of Effort vs the Orlando Magic",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQclNuaDVEWDVvQktYYzFjOWZSZUlVbFM0Z1gyazZLTTlEaXhFcFBBdGdBMkF2aTZISjlDZWMwcHk0cTJsQnJyamxTcGx0ZEdyS0JIVmZuZ21vNG9LMWJKdy1fRXJyNG9jdjNvQVJqeEhYWlVoY05oVUJOLUhwU1RpZ25DYjBwdjhRSXY1Sjd4NlBjeXV6djJ2Rkw1cTM3bDZtYk1KbVozVlJDclRYbmdtOHdDT25tbkYtcGJrbTQzQ2J0Zjh5NExGd3JfLUFGTzQ?oc=5",
-      "author": "Sports Illustrated",
-      "thumbnail": null,
-      "body_excerpt": "The Cleveland Cavaliers End the Pre-season with Lack of Effort vs the Orlando Magic Sports Illustrated",
-      "players": [],
-      "teams": [
-        "cleveland-cavaliers",
-        "orlando-magic"
-      ],
-      "trending_score": 0.1426
+      "trending_score": 0.0493
     }
   ]
 }
