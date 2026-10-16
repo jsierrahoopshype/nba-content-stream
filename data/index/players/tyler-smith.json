@@ -1,9 +1,63 @@
 {
   "slug": "tyler-smith",
   "name": "Tyler Smith",
-  "generated_at": "2026-10-16T14:55:35Z",
-  "count": 3,
+  "generated_at": "2026-10-16T18:44:37Z",
+  "count": 4,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3A7uahugigvixjvxd5s2hidpad%2Fapp.bsky.feed.post%2F3mxytp46llc2f",
+      "source": "bluesky",
+      "published_at": "2026-10-16T14:59:44Z",
+      "title": "Tyler Smith joined me to talk about Jarace Walker and the preseason, but we got derailed by the NBA GM survey. Pretty normal Pacers stuff there outside of one answer...",
+      "url": "https://bsky.app/profile/tonyreast.bsky.social/post/3mxytp46llc2f",
+      "author": "Tony East",
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreia4jcw3d3dtqr2hbgtgenivxzrnji3573xokynu6flba62bgswknu",
+      "body_excerpt": "Tyler Smith joined me to talk about Jarace Walker and the preseason, but we got derailed by the NBA GM survey. Pretty normal Pacers stuff there outside of one answer...\n\nListen: locked-on-pacers-daily-podcast-on-the-indiana-pacers.simplecast.com\nWatch: www.youtube.com/watch?v=7zyk...",
+      "players": [
+        "jarace-walker",
+        "tyler-smith"
+      ],
+      "teams": [
+        "indiana-pacers"
+      ],
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreia4jcw3d3dtqr2hbgtgenivxzrnji3573xokynu6flba62bgswknu",
+            "alt": ""
+          }
+        ]
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreibcezoefeniffictxya32ce54pxckgbi6tyrpl5atugj63b6c25ei",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://locked-on-pacers-daily-podcast-on-the-indiana-pacers.simplecast.com/"
+            }
+          ],
+          "index": {
+            "byteEnd": 245,
+            "byteStart": 178
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.youtube.com/watch?v=7zykWSd5CvQ"
+            }
+          ],
+          "index": {
+            "byteEnd": 284,
+            "byteStart": 253
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-2a1f530b3c771c7c",
       "source": "google-news",
