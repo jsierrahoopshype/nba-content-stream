@@ -1,9 +1,72 @@
 {
   "slug": "miami-heat",
   "name": "Miami Heat",
-  "generated_at": "2026-10-17T04:12:26Z",
-  "count": 568,
+  "generated_at": "2026-10-17T08:37:44Z",
+  "count": 570,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3my2abvdxz22p",
+      "source": "bluesky",
+      "published_at": "2026-10-17T04:17:39Z",
+      "title": "My @orlandosentinel.com recap as the #Magic top the Heat to end the preseason, but injuries to Wagner, Penda, Richardson dampen win: www.orlandosentinel.com/2026/10/16/o...",
+      "url": "https://bsky.app/profile/jbeede.bsky.social/post/3my2abvdxz22p",
+      "author": "Jason Beede",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreidsdjyboa75lhlde6777jl4qw4ldhbtpz3qmcjbplzw7yhxrwxqom",
+      "body_excerpt": "My @orlandosentinel.com recap as the #Magic top the Heat to end the preseason, but injuries to Wagner, Penda, Richardson dampen win: www.orlandosentinel.com/2026/10/16/o...",
+      "players": [],
+      "teams": [
+        "miami-heat",
+        "orlando-magic"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://www.orlandosentinel.com/2026/10/16/orlando-magic-miami-heat-franz-wagner-anthony-black-jonathan-isaac-jase-richardson-noah-penda-nba-preseason-game-recap-kia-center-sean-sweeney/",
+        "title": "Beede’s Breakdown: Magic top Heat to end preseason; injuries to Wagner, Richardson, Penda dampen win",
+        "description": "After wrapping up the preseason Friday night against the Heat, up next for the Magic is opening night Wednesday against the Hawks inside Kia Center.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreidsdjyboa75lhlde6777jl4qw4ldhbtpz3qmcjbplzw7yhxrwxqom"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiey3powizzh2yl5k4eyoftbxztccx6pgnmdozyhyyjqybjhhnc2ne",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:g5n6tmh54utzmwjregfbb7ul"
+            }
+          ],
+          "index": {
+            "byteEnd": 23,
+            "byteStart": 3
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Magic"
+            }
+          ],
+          "index": {
+            "byteEnd": 43,
+            "byteStart": 37
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.orlandosentinel.com/2026/10/16/orlando-magic-miami-heat-franz-wagner-anthony-black-jonathan-isaac-jase-richardson-noah-penda-nba-preseason-game-recap-kia-center-sean-sweeney/"
+            }
+          ],
+          "index": {
+            "byteEnd": 172,
+            "byteStart": 133
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-3d969656c09bd4fe",
       "source": "google-news",
@@ -576,6 +639,23 @@
       ],
       "teams": [
         "miami-heat"
+      ]
+    },
+    {
+      "id": "gn-70e03829c079ebd1",
+      "source": "google-news",
+      "published_at": "2026-10-16T15:54:59Z",
+      "title": "Heat Pregame: Wendell Carter Jr. | Orlando Magic",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQWU1sZ0NRYTBwb3lBVWIyLW9mcEt4NGRnSnBWeUR5Tk5aampPVTRMM3ljYU4zMWktRFpVeFJjbmJraXBfR2xub1RXbkQwUXJxakRaZWVTMnh0dWRZYWJkcVFnempzT1ZrT0lHUVo3NUlkalFjZTdpVjdpWDhPa0t2dElTTFRleElndEx2cTUwV2stR0ZTYWRhZ1BsZ3QtTzI2d2w4NE1R?oc=5",
+      "author": "NBA.com",
+      "thumbnail": null,
+      "body_excerpt": "Heat Pregame: Wendell Carter Jr. | Orlando Magic NBA.com",
+      "players": [
+        "wendell-carter-jr"
+      ],
+      "teams": [
+        "miami-heat",
+        "orlando-magic"
       ]
     },
     {
