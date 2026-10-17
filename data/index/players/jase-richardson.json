@@ -1,9 +1,75 @@
 {
   "slug": "jase-richardson",
   "name": "Jase Richardson",
-  "generated_at": "2026-10-17T20:54:07Z",
-  "count": 12,
+  "generated_at": "2026-10-17T23:00:11Z",
+  "count": 13,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3my46ucqnw22r",
+      "source": "bluesky",
+      "published_at": "2026-10-17T22:57:29Z",
+      "title": "My full @orlandosentinel.com story on the latest surrounding #Magic teammates Franz Wagner, Noah Penda and Jase Richardson following Friday’s preseason finale: www.orlandosentinel.com/2026/10/17/o...",
+      "url": "https://bsky.app/profile/jbeede.bsky.social/post/3my46ucqnw22r",
+      "author": "Jason Beede",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreigkjfiqjtsbo5ezyox5ghecuw7iy7vf5nykns5p2gmb7wugg6wkv4",
+      "body_excerpt": "My full @orlandosentinel.com story on the latest surrounding #Magic teammates Franz Wagner, Noah Penda and Jase Richardson following Friday’s preseason finale: www.orlandosentinel.com/2026/10/17/o...",
+      "players": [
+        "franz-wagner",
+        "jase-richardson",
+        "noah-penda"
+      ],
+      "teams": [
+        "orlando-magic"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://www.orlandosentinel.com/2026/10/17/orlando-magic-injury-updates-franz-wagner-jase-richardson-noah-penda-nba-preseason-sean-sweeney-kia-center/?share=sz2eaaosrwuat2pi7ke7",
+        "title": "Magic injury updates: Latest on Franz Wagner, Noah Penda, Jase Richardson",
+        "description": "The Magic learned more about the injuries of Franz Wagner, Noah Penda and Jase Richardson on Saturday after the three left the court Friday night against the Heat.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreigkjfiqjtsbo5ezyox5ghecuw7iy7vf5nykns5p2gmb7wugg6wkv4"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiey3powizzh2yl5k4eyoftbxztccx6pgnmdozyhyyjqybjhhnc2ne",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:g5n6tmh54utzmwjregfbb7ul"
+            }
+          ],
+          "index": {
+            "byteEnd": 28,
+            "byteStart": 8
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Magic"
+            }
+          ],
+          "index": {
+            "byteEnd": 67,
+            "byteStart": 61
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.orlandosentinel.com/2026/10/17/orlando-magic-injury-updates-franz-wagner-jase-richardson-noah-penda-nba-preseason-sean-sweeney-kia-center/?share=sz2eaaosrwuat2pi7ke7"
+            }
+          ],
+          "index": {
+            "byteEnd": 201,
+            "byteStart": 162
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3mxzxori6us27",
       "source": "bluesky",
