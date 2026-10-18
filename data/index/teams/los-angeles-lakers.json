@@ -1,9 +1,60 @@
 {
   "slug": "los-angeles-lakers",
   "name": "Los Angeles Lakers",
-  "generated_at": "2026-10-17T23:00:11Z",
+  "generated_at": "2026-10-18T00:53:17Z",
   "count": 1000,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3A75z3gabuwl6uvv7pootuuvgn%2Fapp.bsky.feed.post%2F3my4cou7yoi2d",
+      "source": "bluesky",
+      "published_at": "2026-10-18T00:06:00Z",
+      "title": "Quentin Grimes is liking the chemistry the #Lakers are building.",
+      "url": "https://bsky.app/profile/lakersnation.bsky.social/post/3my4cou7yoi2d",
+      "author": "LakersNation.com",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreiddnjou3q2lhzravvbhz225g3dgpuut2d3cxpjbo7j33h577o5mum",
+      "body_excerpt": "Quentin Grimes is liking the chemistry the #Lakers are building.\nlakersnation.com/quentin-grim...",
+      "players": [
+        "quentin-grimes"
+      ],
+      "teams": [
+        "los-angeles-lakers"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://lakersnation.com/quentin-grimes-likes-that-lakers-have-each-others-backs/",
+        "title": "Quentin Grimes is already seeing one aspect of the Lakers he likes",
+        "description": "Quentin Grimes discussed the Los Angeles Lakers' early chemistry, liking how well they have one another's backs.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreiddnjou3q2lhzravvbhz225g3dgpuut2d3cxpjbo7j33h577o5mum"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreiha6wdd65xjneeckcurw4zgpgcfrick6hylxlxoe5owj2kjxzu42e",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Lakers"
+            }
+          ],
+          "index": {
+            "byteEnd": 50,
+            "byteStart": 43
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://lakersnation.com/quentin-grimes-likes-that-lakers-have-each-others-backs/"
+            }
+          ],
+          "index": {
+            "byteEnd": 97,
+            "byteStart": 65
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "rd-t3_1x8mvoe",
       "source": "reddit",
@@ -16,6 +67,20 @@
       "players": [
         "koa-peat"
       ],
+      "teams": [
+        "los-angeles-lakers"
+      ]
+    },
+    {
+      "id": "gn-c5e4430e461833bb",
+      "source": "google-news",
+      "published_at": "2026-10-17T22:04:04Z",
+      "title": "Lakers gave us plenty to get excited about this preseason",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNZ3VkWWZpak1CRjdGM09aSU55NXp0S3ZoRHNwSGhvcy1RejlLV011bm1TV3haV203am1FQmktNnF6YmxuXzRVVHMySkNlMGhYbkNRRnZ4QjJCa1ZZMjI1RDkxdF93UDhBRVRqWDZiM2RFSTRqNV9lcmpQaDVUd0Q5N0JwT0Y?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Lakers gave us plenty to get excited about this preseason Yahoo Sports",
+      "players": [],
       "teams": [
         "los-angeles-lakers"
       ]
@@ -511,6 +576,21 @@
         }
       ],
       "enriched": true
+    },
+    {
+      "id": "gn-3c0dd97f81c4db96",
+      "source": "google-news",
+      "published_at": "2026-10-17T15:45:07Z",
+      "title": "“Welcome to the Starting Group”: Lakers Fans Rally Behind $2.8M Wing to Cement His Spot as a Starter After Exceptional Game vs. Nuggets",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPY0poaUtuV2NQbUtQQzBjYUMxOVltRHJ6YjZTT2lMU2JtUEprS3B3enVKV1BRWHQzZHV3VWh4enZQNkh3RmRiS0dpRzFXOGhUaWFGcHE0Q0lteU5mWE1SRmVYQ0dxY2QwMlpiTUFCZmFMaWQzbXpmWEI3dGdiSHl4eDBmaXNndlJOY0J3?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "“Welcome to the Starting Group”: Lakers Fans Rally Behind $2.8M Wing to Cement His Spot as a Starter After Exceptional Game vs. Nuggets Yahoo Sports",
+      "players": [],
+      "teams": [
+        "denver-nuggets",
+        "los-angeles-lakers"
+      ]
     },
     {
       "id": "gn-241ed8337d375759",
@@ -20606,59 +20686,6 @@
       "teams": [
         "los-angeles-lakers",
         "philadelphia-76ers"
-      ]
-    },
-    {
-      "id": "gn-33b33b9e569c2880",
-      "source": "google-news",
-      "published_at": "2026-09-28T21:29:04Z",
-      "title": "Everything Bronny James Said About LeBron Leaving Lakers for 76ers in NBA Free Agency",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQZGVqUWhmeGcxSVJRd0t2cXVxZWFSWFplcHNYNk9mNnRXYzhjd0JsWml4T2pYLUlEQ3pRMURiLWJ0Ukhqa1k3R3pjNlNVOWh0WGJlNFJaQVI4d21KekpPSHYwck14S1F2aXNRSnFFZTNjTEQ5c292MDNhYjVuV1hCTS1BZ3Q3c2dBT09YaDlKcEFkYWw5OTcwdlVhNWVGM2w2X2IzTEgzQ25rOFJYZjJ5VzNSWDdUclYxaExYbVU1MXk?oc=5",
-      "author": "Bleacher Report",
-      "thumbnail": null,
-      "body_excerpt": "Everything Bronny James Said About LeBron Leaving Lakers for 76ers in NBA Free Agency Bleacher Report",
-      "players": [
-        "bronny-james",
-        "lebron-james"
-      ],
-      "teams": [
-        "los-angeles-lakers",
-        "philadelphia-76ers"
-      ]
-    },
-    {
-      "id": "bs-did%3Aplc%3Ad7jo2dgltk635ycukifq3qjx%2Fapp.bsky.feed.post%2F3mwm53b4l7c2n",
-      "source": "bluesky",
-      "published_at": "2026-09-28T20:17:47Z",
-      "title": "\"I made the right choice,\" Ziaire Williams said regarding joining the Lakers.",
-      "url": "https://bsky.app/profile/ecreates88.bsky.social/post/3mwm53b4l7c2n",
-      "author": "Edwin Garcia",
-      "thumbnail": null,
-      "body_excerpt": "\"I made the right choice,\" Ziaire Williams said regarding joining the Lakers.",
-      "players": [
-        "ziaire-williams"
-      ],
-      "teams": [
-        "los-angeles-lakers"
-      ],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:d7jo2dgltk635ycukifq3qjx/bafkreif6eoqex4bxrb77djctaxt62cgrnuycwifh4jbthi5p77cmz6xx2y",
-      "enriched": true
-    },
-    {
-      "id": "gn-84c67bf68cafb794",
-      "source": "google-news",
-      "published_at": "2026-09-28T19:57:28Z",
-      "title": "Lakers' Luka Doncic Drops Quote on NBA Championship Goal After LeBron James' Free Agency Exit",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOenB0cDU4SXU0N3ZUNkVncDgyMHpzODlyYl9tMGpicXJFVzc4LTdXdG4xNW1jQ1VPQ000bDY0MXBSdGdiRld2VGgxOXY0X2ItSjNVdFFkc21uNHRCQUlaaGplVjlEcXVMSEstc1E4ejZIcXFQcXNpeGlILVRrRkdJTzlYUjRLb0ZrWTd6MEpHcE5kQWVMWHBXYVE5ZnlzTk8xX296bFBFbzhsUmpPOEpUdnBWVG9FbFh3VzhwNjFKTjRkTWl4TFBGMzF5WndLUQ?oc=5",
-      "author": "Bleacher Report",
-      "thumbnail": null,
-      "body_excerpt": "Lakers' Luka Doncic Drops Quote on NBA Championship Goal After LeBron James' Free Agency Exit Bleacher Report",
-      "players": [
-        "lebron-james",
-        "luka-doncic"
-      ],
-      "teams": [
-        "los-angeles-lakers"
       ]
     }
   ]
