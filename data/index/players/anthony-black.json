@@ -1,9 +1,105 @@
 {
   "slug": "anthony-black",
   "name": "Anthony Black",
-  "generated_at": "2026-10-19T20:35:19Z",
-  "count": 43,
+  "generated_at": "2026-10-19T23:59:52Z",
+  "count": 45,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3myb6dnjxac23",
+      "source": "bluesky",
+      "published_at": "2026-10-19T22:31:28Z",
+      "title": "My full @orlandosentinel.com story on the #Magic and Anthony Black not reaching agreement on a rookie-scale contract extension ahead of Monday’s deadline and what it means moving forward: www.orlandosentinel.com/2026/10/19/o...",
+      "url": "https://bsky.app/profile/jbeede.bsky.social/post/3myb6dnjxac23",
+      "author": "Jason Beede",
+      "thumbnail": null,
+      "body_excerpt": "My full @orlandosentinel.com story on the #Magic and Anthony Black not reaching agreement on a rookie-scale contract extension ahead of Monday’s deadline and what it means moving forward: www.orlandosentinel.com/2026/10/19/o...",
+      "players": [
+        "anthony-black"
+      ],
+      "teams": [
+        "orlando-magic"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://www.orlandosentinel.com/2026/10/19/orlando-magic-anthony-black-jeff-weltman-nba-contract-extension-restricted-free-agency-kia-center-sean-sweeney/",
+        "title": "Magic, Anthony Black unable to agree on contract extension | What it means",
+        "description": "The Magic and Anthony Black had until 6 p.m. on Monday to reach an agreement on a rookie-scale extension ahead of the NBA regular season. Here’s what it means moving forward.",
+        "thumb": null
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiey3powizzh2yl5k4eyoftbxztccx6pgnmdozyhyyjqybjhhnc2ne",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:g5n6tmh54utzmwjregfbb7ul"
+            }
+          ],
+          "index": {
+            "byteEnd": 28,
+            "byteStart": 8
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Magic"
+            }
+          ],
+          "index": {
+            "byteEnd": 48,
+            "byteStart": 42
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.orlandosentinel.com/2026/10/19/orlando-magic-anthony-black-jeff-weltman-nba-contract-extension-restricted-free-agency-kia-center-sean-sweeney/"
+            }
+          ],
+          "index": {
+            "byteEnd": 229,
+            "byteStart": 190
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3myb4wh6a522m",
+      "source": "bluesky",
+      "published_at": "2026-10-19T22:06:12Z",
+      "title": "The #Magic and Anthony Black were unable to reach agreement on a rookie-scale contract extension ahead of Monday’s 6 p.m. deadline. Black is headed towards restricted free agency following the season.",
+      "url": "https://bsky.app/profile/jbeede.bsky.social/post/3myb4wh6a522m",
+      "author": "Jason Beede",
+      "thumbnail": null,
+      "body_excerpt": "The #Magic and Anthony Black were unable to reach agreement on a rookie-scale contract extension ahead of Monday’s 6 p.m. deadline. Black is headed towards restricted free agency following the season.",
+      "players": [
+        "anthony-black"
+      ],
+      "teams": [
+        "orlando-magic"
+      ],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiey3powizzh2yl5k4eyoftbxztccx6pgnmdozyhyyjqybjhhnc2ne",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Magic"
+            }
+          ],
+          "index": {
+            "byteEnd": 10,
+            "byteStart": 4
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-e16befb64b712557",
       "source": "google-news",
