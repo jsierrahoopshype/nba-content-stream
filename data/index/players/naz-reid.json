@@ -1,9 +1,60 @@
 {
   "slug": "naz-reid",
   "name": "Naz Reid",
-  "generated_at": "2026-10-19T15:03:01Z",
+  "generated_at": "2026-10-19T20:35:19Z",
   "count": 26,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3A75z3gabuwl6uvv7pootuuvgn%2Fapp.bsky.feed.post%2F3myasvkarnd2s",
+      "source": "bluesky",
+      "published_at": "2026-10-19T19:06:44Z",
+      "title": "#Lakers reportedly attempted to trade for Naz Reid this past offseason.",
+      "url": "https://bsky.app/profile/lakersnation.bsky.social/post/3myasvkarnd2s",
+      "author": "LakersNation.com",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreidaxvsagn4ftvjlzgq5jjtt4znszfms26oysptytaswfvznwlnwom",
+      "body_excerpt": "#Lakers reportedly attempted to trade for Naz Reid this past offseason.\nlakersnation.com/lakers-repor...",
+      "players": [
+        "naz-reid"
+      ],
+      "teams": [
+        "los-angeles-lakers"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://lakersnation.com/lakers-reportedly-inquired-about-naz-reid-before-timberwolves-traded-him-to-hornets/",
+        "title": "Lakers tried to acquire an interesting player this past offseason",
+        "description": "The Los Angeles Lakers reportedly inquired about Naz Reid before he was traded from the Minnesota Timberwolves to the Charlotte Hornets.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreidaxvsagn4ftvjlzgq5jjtt4znszfms26oysptytaswfvznwlnwom"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreiha6wdd65xjneeckcurw4zgpgcfrick6hylxlxoe5owj2kjxzu42e",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Lakers"
+            }
+          ],
+          "index": {
+            "byteEnd": 7,
+            "byteStart": 0
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://lakersnation.com/lakers-reportedly-inquired-about-naz-reid-before-timberwolves-traded-him-to-hornets/"
+            }
+          ],
+          "index": {
+            "byteEnd": 104,
+            "byteStart": 72
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-bd12889c49413482",
       "source": "google-news",
@@ -457,22 +508,6 @@
       "teams": [
         "los-angeles-lakers",
         "minnesota-timberwolves"
-      ]
-    },
-    {
-      "id": "gn-c9d25fcee9b2549e",
-      "source": "google-news",
-      "published_at": "2026-09-19T19:19:07Z",
-      "title": "Naz Reid is already gaining popularity among his new Hornets teammates",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPTVZBRk90anV3RmY2WWkyeGFzYkhzUlMxNFZEak9BWUVuMVdaUGY2Mmg2MEJVWngzbE5jWUgzWmw4NG9DelVuUnlqZE0waS05bWNNRURDWll6bUtNWFM1Z18zRUEyRk1KNlk3WVd5Q2piUHJYMDlFNXZoZmdfS0RQZmV2Mm44RGlpSW1HbQ?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Naz Reid is already gaining popularity among his new Hornets teammates Yahoo Sports",
-      "players": [
-        "naz-reid"
-      ],
-      "teams": [
-        "charlotte-hornets"
       ]
     }
   ]
