@@ -1,9 +1,74 @@
 {
   "slug": "noah-penda",
   "name": "Noah Penda",
-  "generated_at": "2026-10-18T23:46:38Z",
-  "count": 26,
+  "generated_at": "2026-10-19T01:52:39Z",
+  "count": 27,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3my6s3bdtw22k",
+      "source": "bluesky",
+      "published_at": "2026-10-18T23:46:43Z",
+      "title": "My latest for @orlandosentinel.com: Noah Penda said Sunday he’s frustrated by the timing of his latest hamstring injury, as the #Magic continue to evaluate Franz Wagner.",
+      "url": "https://bsky.app/profile/jbeede.bsky.social/post/3my6s3bdtw22k",
+      "author": "Jason Beede",
+      "thumbnail": null,
+      "body_excerpt": "My latest for @orlandosentinel.com: Noah Penda said Sunday he’s frustrated by the timing of his latest hamstring injury, as the #Magic continue to evaluate Franz Wagner.\n\nPlus, the latest on Jonathan Isaac, who I spoke with about his left knee injury recovery: www.orlandosentinel.com/2026/10/18/o...",
+      "players": [
+        "franz-wagner",
+        "noah-penda"
+      ],
+      "teams": [
+        "orlando-magic"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://www.orlandosentinel.com/2026/10/18/orlando-magic-practice-franz-wagner-noah-penda-jonathan-isaac-anthony-black-injury-updates-nba-preseason-kia-center-sean-sweeney/",
+        "title": "Penda frustrated by timing of injury as Magic continue to evaluate Wagner",
+        "description": "Magic forward Noah Penda spoke for the first time Sunday morning at practice after he suffered a partially torn right hamstring injury during Friday’s preseason finale against Miami.",
+        "thumb": null
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiey3powizzh2yl5k4eyoftbxztccx6pgnmdozyhyyjqybjhhnc2ne",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:g5n6tmh54utzmwjregfbb7ul"
+            }
+          ],
+          "index": {
+            "byteEnd": 34,
+            "byteStart": 14
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Magic"
+            }
+          ],
+          "index": {
+            "byteEnd": 136,
+            "byteStart": 130
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.orlandosentinel.com/2026/10/18/orlando-magic-practice-franz-wagner-noah-penda-jonathan-isaac-anthony-black-injury-updates-nba-preseason-kia-center-sean-sweeney/"
+            }
+          ],
+          "index": {
+            "byteEnd": 302,
+            "byteStart": 263
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-7a506a420d8936eb",
       "source": "google-news",
