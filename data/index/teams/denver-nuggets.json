@@ -1,9 +1,62 @@
 {
   "slug": "denver-nuggets",
   "name": "Denver Nuggets",
-  "generated_at": "2026-10-20T18:43:01Z",
-  "count": 458,
+  "generated_at": "2026-10-20T21:57:44Z",
+  "count": 459,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3A5goy74ed3awtl5fyowo3xtjn%2Fapp.bsky.feed.post%2F3mydjnnqg5k25",
+      "source": "bluesky",
+      "published_at": "2026-10-20T20:59:15Z",
+      "title": "Going LIVE on Locked On with NBA and Nuggets predictions!",
+      "url": "https://bsky.app/profile/ryanblackburn.bsky.social/post/3mydjnnqg5k25",
+      "author": "Ryan Blackburn",
+      "thumbnail": null,
+      "body_excerpt": "Going LIVE on Locked On with NBA and Nuggets predictions!\nyoutube.com/live/xpUyheT...",
+      "players": [],
+      "teams": [
+        "denver-nuggets"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://youtube.com/live/xpUyheTwBOQ",
+        "title": "",
+        "description": "YouTube video",
+        "thumb": null
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:5goy74ed3awtl5fyowo3xtjn/bafkreidtph3ji6eplt23nuv23knc64yq3phk2gwtsacc3ll6ucxo7p33ni",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://youtube.com/live/xpUyheTwBOQ"
+            }
+          ],
+          "index": {
+            "byteEnd": 85,
+            "byteStart": 58
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "gn-3a0b63de8216aafa",
+      "source": "google-news",
+      "published_at": "2026-10-20T17:00:05Z",
+      "title": "Nuggets made the right call passing on Julian Strawther's extension",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxONXc4dXVjcHc0VlRQV0k2TW5idWw3V0dhM25GWlliMThsd1NFdnQ0R0ZKM1VTZlpBUEZLemVlYlhfV0pTemMyX01VZjJmRW9vdDJMUF9ITzNZYnp0cHpIRGpWZ1NORnFSRWZaOGFQU2M0VlhiWUo1ZkY3SnRXdmswWXhqdDM3Vnh2?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Nuggets made the right call passing on Julian Strawther's extension Yahoo Sports",
+      "players": [
+        "julian-strawther"
+      ],
+      "teams": [
+        "denver-nuggets"
+      ]
+    },
     {
       "id": "rd-t3_1xau053",
       "source": "reddit",
@@ -8793,58 +8846,6 @@
       "teams": [
         "denver-nuggets"
       ]
-    },
-    {
-      "id": "bs-did%3Aplc%3A75z3gabuwl6uvv7pootuuvgn%2Fapp.bsky.feed.post%2F3mvxv7zonc32r",
-      "source": "bluesky",
-      "published_at": "2026-09-20T19:04:01Z",
-      "title": "On this day in #Lakers history, Anthony Davis hit a buzzer-beater to beat the Nuggets in the Bubble.",
-      "url": "https://bsky.app/profile/lakersnation.bsky.social/post/3mvxv7zonc32r",
-      "author": "LakersNation.com",
-      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreifhzkvib6b5wap6vx7hmy2e4lap4kxnlvvswbtflt7w57ilwwgaqq",
-      "body_excerpt": "On this day in #Lakers history, Anthony Davis hit a buzzer-beater to beat the Nuggets in the Bubble.\nlakersnation.com/this-day-in-...",
-      "players": [
-        "anthony-davis"
-      ],
-      "teams": [
-        "denver-nuggets",
-        "los-angeles-lakers"
-      ],
-      "media": {
-        "type": "link",
-        "uri": "https://lakersnation.com/this-day-in-lakers-history-anthony-davis-sinks-buzzer-beater-in-western-conference-finals-against-nuggets/",
-        "title": "This Day In Lakers History: Anthony Davis Sinks Buzzer-Beater In Western Conference Finals Against Nuggets",
-        "description": "On this day in Los Angeles Lakers history, Anthony Davis hit a buzzer-beating 3-pointer to beat the Denver Nuggets in the WCF.",
-        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreifhzkvib6b5wap6vx7hmy2e4lap4kxnlvvswbtflt7w57ilwwgaqq"
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreiha6wdd65xjneeckcurw4zgpgcfrick6hylxlxoe5owj2kjxzu42e",
-      "facets": [
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#tag",
-              "tag": "Lakers"
-            }
-          ],
-          "index": {
-            "byteEnd": 22,
-            "byteStart": 15
-          }
-        },
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://lakersnation.com/this-day-in-lakers-history-anthony-davis-sinks-buzzer-beater-in-western-conference-finals-against-nuggets/"
-            }
-          ],
-          "index": {
-            "byteEnd": 133,
-            "byteStart": 101
-          }
-        }
-      ],
-      "enriched": true
     }
   ]
 }
