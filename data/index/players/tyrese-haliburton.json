@@ -1,9 +1,115 @@
 {
   "slug": "tyrese-haliburton",
   "name": "Tyrese Haliburton",
-  "generated_at": "2026-10-21T10:18:01Z",
+  "generated_at": "2026-10-21T15:33:42Z",
   "count": 314,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3A7uahugigvixjvxd5s2hidpad%2Fapp.bsky.feed.post%2F3myfftt5wu22o",
+      "source": "bluesky",
+      "published_at": "2026-10-21T14:56:26Z",
+      "title": "Sharing today's pod with @caitlinmaycooper.bsky.social again, previewing the Pacers season. Competitive basketball is back. Haliburton, Zubac, the changes coming. Also, win predictions.",
+      "url": "https://bsky.app/profile/tonyreast.bsky.social/post/3myfftt5wu22o",
+      "author": "Tony East",
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreigjdc7fyqlu7xh2fytp5alqecpd7tqotr4cth6ujhvsjo53lzz7ei",
+      "body_excerpt": "Sharing today's pod with @caitlinmaycooper.bsky.social again, previewing the Pacers season. Competitive basketball is back. Haliburton, Zubac, the changes coming. Also, win predictions.\nListen: locked-on-pacers-daily-podcast-on-the-indiana-pacers.simplecast.com\nWatch: www.youtube.com/watch?v=om9x...",
+      "players": [
+        "ivica-zubac",
+        "tyrese-haliburton"
+      ],
+      "teams": [
+        "indiana-pacers"
+      ],
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreigjdc7fyqlu7xh2fytp5alqecpd7tqotr4cth6ujhvsjo53lzz7ei",
+            "alt": ""
+          }
+        ]
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreibcezoefeniffictxya32ce54pxckgbi6tyrpl5atugj63b6c25ei",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:e7n6cs5ayz4tuab43rr5lh3m"
+            }
+          ],
+          "index": {
+            "byteEnd": 54,
+            "byteStart": 25
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://locked-on-pacers-daily-podcast-on-the-indiana-pacers.simplecast.com/"
+            }
+          ],
+          "index": {
+            "byteEnd": 261,
+            "byteStart": 194
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.youtube.com/watch?v=om9x0e9LdHU"
+            }
+          ],
+          "index": {
+            "byteEnd": 300,
+            "byteStart": 269
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3A7uahugigvixjvxd5s2hidpad%2Fapp.bsky.feed.post%2F3myfdd4szhs2u",
+      "source": "bluesky",
+      "published_at": "2026-10-21T14:11:18Z",
+      "title": "Tyrese Haliburton can’t go a day without thinking about the 2025 Finals. Reminders are everywhere. Friends on other teams tell him they think about Finals series they lost more than ones they won.",
+      "url": "https://bsky.app/profile/tonyreast.bsky.social/post/3myfdd4szhs2u",
+      "author": "Tony East",
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreieg7jso6fppx2kroahpb4vpfkd4mx2r6djlo7ijgnwukz4dayqwxq",
+      "body_excerpt": "Tyrese Haliburton can’t go a day without thinking about the 2025 Finals. Reminders are everywhere. Friends on other teams tell him they think about Finals series they lost more than ones they won.\n\nSadness. Guilt. Rage. How emotions will guide these Pacers: www.forbes.com/sites/tonyea...",
+      "players": [
+        "tyrese-haliburton"
+      ],
+      "teams": [],
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreieg7jso6fppx2kroahpb4vpfkd4mx2r6djlo7ijgnwukz4dayqwxq",
+            "alt": ""
+          }
+        ]
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreibcezoefeniffictxya32ce54pxckgbi6tyrpl5atugj63b6c25ei",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.forbes.com/sites/tonyeast/2026/10/21/pacers-fueled-by-memories-of-2025-finals-loss-as-they-return-to-contender-status/"
+            }
+          ],
+          "index": {
+            "byteEnd": 290,
+            "byteStart": 260
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "bs-did%3Aplc%3A6ahv2jk7wea2fql74oiisng6%2Fapp.bsky.feed.post%2F3mye6jjeizk2a",
       "source": "bluesky",
@@ -6735,46 +6841,6 @@
       "media": {
         "type": "video"
       }
-    },
-    {
-      "id": "yt-fXOHK6r5XhE",
-      "source": "youtube",
-      "published_at": "2026-09-21T15:00:19Z",
-      "title": "Tyrese Haliburton on Losing the NBA Finals, His Achilles & Proving People Wrong",
-      "url": "https://www.youtube.com/watch?v=fXOHK6r5XhE",
-      "author": "Boardroom",
-      "thumbnail": "https://i.ytimg.com/vi/fXOHK6r5XhE/maxresdefault.jpg",
-      "body_excerpt": "In the latest episode of Boardroom Talks, Tyrese Haliburton sits down with Speedy Morman for an unfiltered conversation about his journey from Wisconsin to the NBA Finals, the 2024 Olympics, his Achilles injury, money, music, fashion, and life off the court. Haliburton opens up…",
-      "players": [
-        "tyrese-haliburton"
-      ],
-      "teams": [],
-      "media": {
-        "type": "video"
-      }
-    },
-    {
-      "id": "bs-did%3Aplc%3Aeensm34x6vktvhoffhe2e35f%2Fapp.bsky.feed.post%2F3mvztzuksn22l",
-      "source": "bluesky",
-      "published_at": "2026-09-21T13:48:01Z",
-      "title": "#21 Tyrese Haliburton",
-      "url": "https://bsky.app/profile/alejandroggo.com/post/3mvztzuksn22l",
-      "author": "Alejandro Gaitán",
-      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:eensm34x6vktvhoffhe2e35f/bafkreiecb6sfja7jpukxfhcwsov5w4miaz6hhkmonauedf3esbwzehw6nm",
-      "body_excerpt": "#21 Tyrese Haliburton\n#20 Cooper Flagg\n#19 LeBron James\n\nSegunda parte del top-50 de la NBA. Ya tenemos todos los nombres menos el los diez primeros. Y sorpresas grandes.",
-      "players": [
-        "tyrese-haliburton"
-      ],
-      "teams": [],
-      "media": {
-        "type": "link",
-        "uri": "https://alejandroggo.com/p/top-50-nba-parte-2",
-        "title": "Top 50 NBA: Parte 2 | LeBron, Durant, Kawhi... y Flagg",
-        "description": "Segunda parte del serial, hoy con otros 15 nombres: del 25 al 11. Aparecen viejos conocidos que llevan dos décadas en esta lista... y debutantes. Que volveremos a ver, seguro.",
-        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:eensm34x6vktvhoffhe2e35f/bafkreiecb6sfja7jpukxfhcwsov5w4miaz6hhkmonauedf3esbwzehw6nm"
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:eensm34x6vktvhoffhe2e35f/bafkreihqxysfvf2zetxu7ntuzw6rmohbpsp466g2lqrmfphfmpf2rsdksy",
-      "enriched": true
     }
   ]
 }
