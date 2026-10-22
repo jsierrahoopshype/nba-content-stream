@@ -1,9 +1,60 @@
 {
   "slug": "walker-kessler",
   "name": "Walker Kessler",
-  "generated_at": "2026-10-22T17:32:49Z",
+  "generated_at": "2026-10-22T20:53:09Z",
   "count": 212,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3A75z3gabuwl6uvv7pootuuvgn%2Fapp.bsky.feed.post%2F3myiathuezy2p",
+      "source": "bluesky",
+      "published_at": "2026-10-22T18:04:44Z",
+      "title": "Walker Kessler joined Wilt Chamberlain in #Lakers history with his perfect debut.",
+      "url": "https://bsky.app/profile/lakersnation.bsky.social/post/3myiathuezy2p",
+      "author": "LakersNation.com",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreibbc26ntxonxvtd7cqmw7vqrculubi2hv2pgrght4pzcjdm5wnddq",
+      "body_excerpt": "Walker Kessler joined Wilt Chamberlain in #Lakers history with his perfect debut.\nlakersnation.com/walker-kessl...",
+      "players": [
+        "walker-kessler"
+      ],
+      "teams": [
+        "los-angeles-lakers"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://lakersnation.com/walker-kessler-joins-wilt-chamberlain-in-lakers-history-with-perfect-debut/",
+        "title": "Walker Kessler Joins Wilt Chamberlain In Lakers History With Perfect Debut",
+        "description": "Los Angeles Lakers center Walker Kessler did something in his debut that hadn't been done since Wilt Chamberlain.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreibbc26ntxonxvtd7cqmw7vqrculubi2hv2pgrght4pzcjdm5wnddq"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreiha6wdd65xjneeckcurw4zgpgcfrick6hylxlxoe5owj2kjxzu42e",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Lakers"
+            }
+          ],
+          "index": {
+            "byteEnd": 49,
+            "byteStart": 42
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://lakersnation.com/walker-kessler-joins-wilt-chamberlain-in-lakers-history-with-perfect-debut/"
+            }
+          ],
+          "index": {
+            "byteEnd": 114,
+            "byteStart": 82
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "bs-did%3Aplc%3Ad7jo2dgltk635ycukifq3qjx%2Fapp.bsky.feed.post%2F3myhyxdd5ws2e",
       "source": "bluesky",
@@ -4839,43 +4890,6 @@
       "teams": [
         "los-angeles-lakers"
       ]
-    },
-    {
-      "id": "bs-did%3Aplc%3A75z3gabuwl6uvv7pootuuvgn%2Fapp.bsky.feed.post%2F3mw4w5tgfc22w",
-      "source": "bluesky",
-      "published_at": "2026-09-22T19:04:00Z",
-      "title": "Walker Kessler made the cut in ESPN's annual NBA Rank list.",
-      "url": "https://bsky.app/profile/lakersnation.bsky.social/post/3mw4w5tgfc22w",
-      "author": "LakersNation.com",
-      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreieutwjgxj5awpesmm2wef5chzujhxhqohztmyjvspxgn4et5c65de",
-      "body_excerpt": "Walker Kessler made the cut in ESPN's annual NBA Rank list.\nlakersnation.com/espn-nba-ran...",
-      "players": [
-        "walker-kessler"
-      ],
-      "teams": [],
-      "media": {
-        "type": "link",
-        "uri": "https://lakersnation.com/espn-nba-rank-walker-kessler-comes-in-at-no-73/",
-        "title": "See where Walker Kessler ranked in the annual ESPN NBA Rank survey",
-        "description": "Los Angeles Lakers center Walker Kessler made the cut in the annual ESPN NBA Rank survey, detailing the 100 best players in the league.",
-        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreieutwjgxj5awpesmm2wef5chzujhxhqohztmyjvspxgn4et5c65de"
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreiha6wdd65xjneeckcurw4zgpgcfrick6hylxlxoe5owj2kjxzu42e",
-      "facets": [
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://lakersnation.com/espn-nba-rank-walker-kessler-comes-in-at-no-73/"
-            }
-          ],
-          "index": {
-            "byteEnd": 92,
-            "byteStart": 60
-          }
-        }
-      ],
-      "enriched": true
     }
   ]
 }
