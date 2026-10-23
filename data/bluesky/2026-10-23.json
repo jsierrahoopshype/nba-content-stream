@@ -1,7 +1,7 @@
 {
   "date": "2026-10-23",
   "source": "bluesky",
-  "generated_at": "2026-10-23T18:38:29Z",
+  "generated_at": "2026-10-23T21:43:40Z",
   "items": [
     {
       "id": "bs-did%3Aplc%3Ahb5s4bd5ctk6inznrn6gf6hx%2Fapp.bsky.feed.post%2F3mygryxni72mx",
@@ -31764,6 +31764,3346 @@
       "teams": [],
       "enriched": true,
       "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:crcybmshorvvegmbkp5rvgjv/bafkreiddo6vor7hgckzplc6qhtxcykyvdljnxiljda4sanmlgjocs2g2qm"
+    },
+    {
+      "id": "bs-did%3Aplc%3Arkpzrwxex34r36ypejhew7ml%2Fapp.bsky.feed.post%2F3myktcsn3r22t",
+      "source": "bluesky",
+      "published_at": "2026-10-23T18:40:46Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/howardbeck.bsky.social/post/3myktcsn3r22t",
+      "title": "NYC peeps, come out and support my pal @jpdabrams.bsky.social on Nov. 5!",
+      "author": {
+        "handle": "howardbeck.bsky.social",
+        "display_name": "Howard Beck",
+        "url": "https://bsky.app/profile/howardbeck.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:rkpzrwxex34r36ypejhew7ml/bafkreiaphp45z27romgnmooaan4gaj2g3ew6lr45y6w3uddhjyxdboykoe"
+      },
+      "body_excerpt": "NYC peeps, come out and support my pal @jpdabrams.bsky.social on Nov. 5!\n\n(Also, the Squawkin' Sports series is excellent.)",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 6,
+        "reposts": 2
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:pchxl5yogswjyrq46xm72hyd"
+            }
+          ],
+          "index": {
+            "byteEnd": 61,
+            "byteStart": 39
+          }
+        }
+      ],
+      "is_quote_post": true,
+      "quote": {
+        "author": "Patrick Sauer",
+        "handle": "pjsauer.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:osm6m7fbpcketne46phru4ii/bafkreihnk6bpxo6mgjmm3lcivlcmn6s6lnfaryrkqaz2pxliakaewsjvyi",
+        "text": "SQUAWKIN’ SPORTS XXV & XVI WRAP UP ‘26\n\n11/5 “GLOBAL HOOPS”\n@jpdabrams.bsky.social \n@alexsquadron.bsky.social \nTix: shorturl.at/luztZ\n\n12/8 “BLOODY MOUTHS” @mikesielski.bsky.social  @laurentheisen.bsky.social \nTix: short.do/BPygN-\n\nSpend the holidays w/ @davidjroth.bsky.social of @defector.com & I!",
+        "url": "https://bsky.app/profile/pjsauer.bsky.social/post/3myksyxusbs2y",
+        "facets": [
+          {
+            "$type": "app.bsky.richtext.facet",
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#mention",
+                "did": "did:plc:pchxl5yogswjyrq46xm72hyd"
+              }
+            ],
+            "index": {
+              "byteEnd": 90,
+              "byteStart": 68
+            }
+          },
+          {
+            "$type": "app.bsky.richtext.facet",
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#mention",
+                "did": "did:plc:jyjl6djf332cxpq7s2ttz57m"
+              }
+            ],
+            "index": {
+              "byteEnd": 117,
+              "byteStart": 92
+            }
+          },
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": "https://shorturl.at/luztZ"
+              }
+            ],
+            "index": {
+              "byteEnd": 141,
+              "byteStart": 124
+            }
+          },
+          {
+            "$type": "app.bsky.richtext.facet",
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#mention",
+                "did": "did:plc:hnbo7pnxqi3naevoul47s5h5"
+              }
+            ],
+            "index": {
+              "byteEnd": 192,
+              "byteStart": 168
+            }
+          },
+          {
+            "$type": "app.bsky.richtext.facet",
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#mention",
+                "did": "did:plc:b7azniyvowrqdz3pugsmh4x5"
+              }
+            ],
+            "index": {
+              "byteEnd": 220,
+              "byteStart": 194
+            }
+          },
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": "https://short.do/BPygN-"
+              }
+            ],
+            "index": {
+              "byteEnd": 242,
+              "byteStart": 227
+            }
+          },
+          {
+            "$type": "app.bsky.richtext.facet",
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#mention",
+                "did": "did:plc:occa6kzqgepazfwcyzzfljbr"
+              }
+            ],
+            "index": {
+              "byteEnd": 289,
+              "byteStart": 266
+            }
+          },
+          {
+            "$type": "app.bsky.richtext.facet",
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#mention",
+                "did": "did:plc:n2kurkne2vwpccuqwz37ggdm"
+              }
+            ],
+            "index": {
+              "byteEnd": 306,
+              "byteStart": 293
+            }
+          }
+        ],
+        "media": {
+          "type": "image",
+          "images": [
+            {
+              "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:osm6m7fbpcketne46phru4ii/bafkreiaf2uzxwq5iop3jsfivw3rdvsrn2yizpzvfcnulsik6zycrdd5pme",
+              "alt": ""
+            },
+            {
+              "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:osm6m7fbpcketne46phru4ii/bafkreia3tg2csh3bxcw2satjg5fklg5ydfos6adyvkeawkop5egmlhuk54",
+              "alt": ""
+            },
+            {
+              "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:osm6m7fbpcketne46phru4ii/bafkreifcxookqtqfg4ho3mm7cln55hgumkaaidrrxhlbjtmnhg6rt63jxm",
+              "alt": ""
+            },
+            {
+              "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:osm6m7fbpcketne46phru4ii/bafkreiafcdyjdtwqrbrehin63hy6ee2ix6f4ulochwoa5x27kxp3i3izvu",
+              "alt": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "bs-did%3Aplc%3Ab5s7pvomuo3xwd3wgdpnohtt%2Fapp.bsky.feed.post%2F3myktkheyu223",
+      "source": "bluesky",
+      "published_at": "2026-10-23T18:45:03Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/bullsjay.bsky.social/post/3myktkheyu223",
+      "title": "OH NOOO",
+      "author": {
+        "handle": "bullsjay.bsky.social",
+        "display_name": "Jason Patt",
+        "url": "https://bsky.app/profile/bullsjay.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:b5s7pvomuo3xwd3wgdpnohtt/bafkreig42lzcclk6qltt6b7cohurpm4sf5nti2xd3ws57wlwwx3zatwleu"
+      },
+      "body_excerpt": "OH NOOO",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 6,
+        "reposts": 3
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "is_quote_post": true,
+      "quote": {
+        "author": "MLB Trade Rumors",
+        "handle": "mlbtraderumors.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:krtgzfixmfafx4ndpywlfmsm/bafkreieludpyd66nc24lkf5ucdylncn77zmv2adovxodwjessqlq3k6er4",
+        "text": "",
+        "url": "https://bsky.app/profile/mlbtraderumors.bsky.social/post/3myktfh5y7h2e",
+        "media": {
+          "type": "link",
+          "uri": "http://dlvr.it/TW2RD8",
+          "title": "Cardinals, Hitting Coach Brant Brown Part Ways",
+          "description": "The Cardinals are moving on from hitting coach Brant Brown, as first reported by Katie Woo of The Athletic. Brown has been with the club for the past two seasons. St. Louis ranked 16th in scoring this past season. The club finished in the bottom five in OPS, wOBA, and wRC+. The Cardinals were similarly […]",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:krtgzfixmfafx4ndpywlfmsm/bafkreieipupu235utibvuv44lla7gfezxvgnlq2i54zqczgr6et3s3eqvm"
+        }
+      }
+    },
+    {
+      "id": "bs-did%3Aplc%3Ank756gkpj52ryc6gaorkvctp%2Fapp.bsky.feed.post%2F3myktpf4bkc2z",
+      "source": "bluesky",
+      "published_at": "2026-10-23T18:47:48Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/nbacobwebs.bsky.social/post/3myktpf4bkc2z",
+      "title": "October 23, 2000: This acrobatic reverse layup by Vince Carter during Toronto's 91-80 preseason win over Indiana.",
+      "author": {
+        "handle": "nbacobwebs.bsky.social",
+        "display_name": "NBA Cobwebs",
+        "url": "https://bsky.app/profile/nbacobwebs.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:nk756gkpj52ryc6gaorkvctp/bafkreieq3iqdy6qdoesofi4f472fwr4vyjo2u43ttwf2uwp7kz6ghu73ra"
+      },
+      "body_excerpt": "October 23, 2000: This acrobatic reverse layup by Vince Carter during Toronto's 91-80 preseason win over Indiana.\n\nCarter had 33 PTS/7 REB/2 BLK and Kevin Willis added 14 PTS/9 REB for the Raptors. Austin Croshere had 22 PTS/3 STL to lead the Pacers.\n\n📺 NBA Action",
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ank756gkpj52ryc6gaorkvctp/bafkreiapbv7ke3fvaj6cg4e4e2csnr6tvru3x6ghdokxwncozuog6bgez4/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Ank756gkpj52ryc6gaorkvctp/bafkreiapbv7ke3fvaj6cg4e4e2csnr6tvru3x6ghdokxwncozuog6bgez4/playlist.m3u8"
+      },
+      "engagement": {
+        "likes": 13,
+        "reposts": 6
+      },
+      "players": [],
+      "teams": [
+        "indiana-pacers",
+        "toronto-raptors"
+      ],
+      "enriched": true,
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ank756gkpj52ryc6gaorkvctp/bafkreiapbv7ke3fvaj6cg4e4e2csnr6tvru3x6ghdokxwncozuog6bgez4/thumbnail.jpg"
+    },
+    {
+      "id": "bs-did%3Aplc%3Arohc2dntuoghb2yg2kav4yyh%2Fapp.bsky.feed.post%2F3myktvwjtqk2h",
+      "source": "bluesky",
+      "published_at": "2026-10-23T18:51:28Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/howardmegdal.bsky.social/post/3myktvwjtqk2h",
+      "title": "#Sixers",
+      "author": {
+        "handle": "howardmegdal.bsky.social",
+        "display_name": "Howard Megdal",
+        "url": "https://bsky.app/profile/howardmegdal.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:rohc2dntuoghb2yg2kav4yyh/bafkreia7wk5wpdjvyxb76fmdxmc764mf363dofb2hv224ehju34pzdzham"
+      },
+      "body_excerpt": "#Sixers",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 2,
+        "reposts": 1
+      },
+      "players": [],
+      "teams": [
+        "philadelphia-76ers"
+      ],
+      "enriched": true,
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Sixers"
+            }
+          ],
+          "index": {
+            "byteEnd": 7,
+            "byteStart": 0
+          }
+        }
+      ],
+      "is_quote_post": true,
+      "quote": {
+        "author": "Vertical 76",
+        "handle": "vertical76.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:mmzbz4zyw7rvri7wyxwxho5x/bafkreibpjfyn6qrd3vo4jdpc747pyekqumjhrsxoovp7engnbknqilcmnu",
+        "text": "Down 29 in the home opener. Won by 8. 🔥\n\nNow it’s your turn to get in the game: we’re giving away 2 tickets to Sixers vs. Bucks (11/21) + a halftime Q&A with \n@austinkrell.bsky.social \n\nFollow @vertical76 on IG + fill out the entry form in our linktree.\n\nCloses 11/9. Rules found on form",
+        "url": "https://bsky.app/profile/vertical76.bsky.social/post/3myktu74vek2n",
+        "facets": [
+          {
+            "$type": "app.bsky.richtext.facet",
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#mention",
+                "did": "did:plc:zfxkhiy2lyomncn3lykkwzi7"
+              }
+            ],
+            "index": {
+              "byteEnd": 190,
+              "byteStart": 166
+            }
+          }
+        ],
+        "media": {
+          "type": "image",
+          "images": [
+            {
+              "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:mmzbz4zyw7rvri7wyxwxho5x/bafkreiej5aiajccotfbgl5bjl7fqvz3zb4yxqcd44zc6b6y4gc5mht7zwy",
+              "alt": ""
+            },
+            {
+              "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:mmzbz4zyw7rvri7wyxwxho5x/bafkreihetj7xg5zfhiozxilelqz7xdowwhw34qttkpkm5fuhyvxd5syzky",
+              "alt": ""
+            },
+            {
+              "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:mmzbz4zyw7rvri7wyxwxho5x/bafkreihsytzwtgir2dcaskwvtygij6gpsuopfnnanhn3pwdtjtrjt3xwii",
+              "alt": ""
+            },
+            {
+              "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:mmzbz4zyw7rvri7wyxwxho5x/bafkreih53mbrff7s32fexpj66w6s5qoynlhcyaylvor22k6eiaplcgujgy",
+              "alt": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "bs-did%3Aplc%3Azlu4qb4lp3oazzwzp5rwmn3n%2Fapp.bsky.feed.post%2F3myktzhmxbc27",
+      "source": "bluesky",
+      "published_at": "2026-10-23T18:53:27Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/bbstats.bsky.social/post/3myktzhmxbc27",
+      "title": "openRAPM is now \"pretty good\"",
+      "author": {
+        "handle": "bbstats.bsky.social",
+        "display_name": "Nathan Walker",
+        "url": "https://bsky.app/profile/bbstats.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:zlu4qb4lp3oazzwzp5rwmn3n/bafkreidwjp6jxennh2dykj4sl3vexiv7rr2cdugw4zyx7k2javbn7glgrm"
+      },
+      "body_excerpt": "openRAPM is now \"pretty good\"\n\ncheck it out at openRAPM.com",
+      "media": {
+        "type": "link",
+        "uri": "https://openRAPM.com",
+        "title": "OpenRAPM",
+        "description": "",
+        "thumb": null
+      },
+      "engagement": {
+        "likes": 5,
+        "reposts": 2
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://openRAPM.com"
+            }
+          ],
+          "index": {
+            "byteEnd": 59,
+            "byteStart": 47
+          }
+        }
+      ],
+      "is_quote_post": true,
+      "quote": {
+        "author": "Nathan Walker",
+        "handle": "bbstats.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:zlu4qb4lp3oazzwzp5rwmn3n/bafkreidwjp6jxennh2dykj4sl3vexiv7rr2cdugw4zyx7k2javbn7glgrm",
+        "text": "soft-launching openRAPM\n\na new - hopefully less-noisy - single year PI-RAPM\n\ndefense is a bit too strong at the moment\n\nenjoy\n\nopenrapm.com",
+        "url": "https://bsky.app/profile/bbstats.bsky.social/post/3mycrw4zul227",
+        "facets": [
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": "https://openrapm.com/"
+              }
+            ],
+            "index": {
+              "byteEnd": 139,
+              "byteStart": 127
+            }
+          }
+        ],
+        "media": {
+          "type": "link",
+          "uri": "https://openrapm.com/",
+          "title": "OpenRAPM",
+          "description": "",
+          "thumb": null
+        }
+      }
+    },
+    {
+      "id": "bs-did%3Aplc%3A4xpj3xjxsxxcuh3ghaulzdqu%2Fapp.bsky.feed.post%2F3mykubvkqh22w",
+      "source": "bluesky",
+      "published_at": "2026-10-23T18:58:10Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/yourmandevine.bsky.social/post/3mykubvkqh22w",
+      "title": "Now that the team has acknowledged this whole episode as an \"unfortunate mistake,\" I think we can all agree that this morning's pro bono cybersecurity ethics seminar was time well spent for everyone.",
+      "author": {
+        "handle": "yourmandevine.bsky.social",
+        "display_name": "Dan Devine",
+        "url": "https://bsky.app/profile/yourmandevine.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:4xpj3xjxsxxcuh3ghaulzdqu/bafkreigm45dsvquniojijnj2fr7rugcyejicn3yrbgts6gagvmtkhwfxfi"
+      },
+      "body_excerpt": "Now that the team has acknowledged this whole episode as an \"unfortunate mistake,\" I think we can all agree that this morning's pro bono cybersecurity ethics seminar was time well spent for everyone.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 39,
+        "reposts": 1
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "is_quote_post": true,
+      "quote": {
+        "author": "New York Post Sports",
+        "handle": "nypostsports.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:yaofg6zwpsdp26f5cnf6wnx5/bafkreiftffaz4zp2l4u6bti3jkr33fjvl6fxrbhhkenbaed6d52dc4bdvq",
+        "text": "Knicks reveal $3.7 million plan for employee championship rings after coming under fire for phishing email 'mistake'",
+        "url": "https://bsky.app/profile/nypostsports.bsky.social/post/3mykrxzmadb2z",
+        "media": {
+          "type": "link",
+          "uri": "https://trib.al/7BRZQc4",
+          "title": "Knicks reveal $3.7 million plan for employee championship rings after coming under fire for phishing email 'mistake'",
+          "description": "Assistant coaches will get their real rings “shortly,” said a league source, who added that the distribution of 275 championship rings was always the plan.",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:yaofg6zwpsdp26f5cnf6wnx5/bafkreigmmehdvrxtutljkzdfwkdfzyvez4v3wprc67q6ho4xjnwblmh5mq"
+        }
+      }
+    },
+    {
+      "id": "bs-did%3Aplc%3A75z3gabuwl6uvv7pootuuvgn%2Fapp.bsky.feed.post%2F3mykuodtceh2j",
+      "source": "bluesky",
+      "published_at": "2026-10-23T19:05:06Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/lakersnation.bsky.social/post/3mykuodtceh2j",
+      "title": "Having been in Yaxel Lendeborg's shoes, Ziaire Williams was happy to be on Luka Doncic's side for this confrontation.",
+      "author": {
+        "handle": "lakersnation.bsky.social",
+        "display_name": "LakersNation.com",
+        "url": "https://bsky.app/profile/lakersnation.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreiha6wdd65xjneeckcurw4zgpgcfrick6hylxlxoe5owj2kjxzu42e"
+      },
+      "body_excerpt": "Having been in Yaxel Lendeborg's shoes, Ziaire Williams was happy to be on Luka Doncic's side for this confrontation.\nlakersnation.com/ziaire-willi...",
+      "media": {
+        "type": "link",
+        "uri": "https://lakersnation.com/ziaire-williams-happy-to-be-on-luka-doncic-side-of-confrontation-with-yaxel-lendeborg/",
+        "title": "Ziaire Williams Happy To Be On Luka Doncic's Side Of Confrontation With Yaxel Lendeborg",
+        "description": "Los Angeles Lakers forward Ziaire Williams commented on the back and forth between Luka Doncic and Yaxel Lendeborg.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreia3vqidbpjknln77ml6rbjlmss2kr63esqeoodugwioehnwugrpoy"
+      },
+      "engagement": {
+        "likes": 5,
+        "reposts": 0
+      },
+      "players": [
+        "luka-doncic",
+        "yaxel-lendeborg",
+        "ziaire-williams"
+      ],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreia3vqidbpjknln77ml6rbjlmss2kr63esqeoodugwioehnwugrpoy",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://lakersnation.com/ziaire-williams-happy-to-be-on-luka-doncic-side-of-confrontation-with-yaxel-lendeborg/"
+            }
+          ],
+          "index": {
+            "byteEnd": 150,
+            "byteStart": 118
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Ao7nvaeky6b42dplp2ssdudvw%2Fapp.bsky.feed.post%2F3mykuwefqyk2q",
+      "source": "bluesky",
+      "published_at": "2026-10-23T19:09:36Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/ohnohedidnt24.bsky.social/post/3mykuwefqyk2q",
+      "title": "Cleveland yall got a problem 😭",
+      "author": {
+        "handle": "ohnohedidnt24.bsky.social",
+        "display_name": "Oh No He Didn't 🤯",
+        "url": "https://bsky.app/profile/ohnohedidnt24.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:o7nvaeky6b42dplp2ssdudvw/bafkreie3xikpqt2e2rng6s3ujtfukf6aph2p4ohgs6dmksoift3eazeium"
+      },
+      "body_excerpt": "Cleveland yall got a problem 😭",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:o7nvaeky6b42dplp2ssdudvw/bafkreihq3pn5h4jsyus4geqkwqgss5cxvtj774plrocqtv5ccukkiwv364",
+            "alt": ""
+          }
+        ]
+      },
+      "engagement": {
+        "likes": 9,
+        "reposts": 1
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:o7nvaeky6b42dplp2ssdudvw/bafkreihq3pn5h4jsyus4geqkwqgss5cxvtj774plrocqtv5ccukkiwv364"
+    },
+    {
+      "id": "bs-did%3Aplc%3A2xsglqhivkgdxplo6224ymyk%2Fapp.bsky.feed.post%2F3mykuzkhltc2j",
+      "source": "bluesky",
+      "published_at": "2026-10-23T19:11:23Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/cbergin.bsky.social/post/3mykuzkhltc2j",
+      "title": "Still buzzing with positivity after the Blazers season opener? Listen to @brandonmullen.bsky.social @terenceonline.bsky.social and me break down all the good vibes from Night 1 as an appetizer before Portland faced Sacramento tonight!",
+      "author": {
+        "handle": "cbergin.bsky.social",
+        "display_name": "Conor Bergin",
+        "url": "https://bsky.app/profile/cbergin.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2xsglqhivkgdxplo6224ymyk/bafkreigkggn6lfpeprctv2ump45zrrtj7cn2z54zxjdsorfvsz3yltuiwq"
+      },
+      "body_excerpt": "Still buzzing with positivity after the Blazers season opener? Listen to @brandonmullen.bsky.social @terenceonline.bsky.social and me break down all the good vibes from Night 1 as an appetizer before Portland faced Sacramento tonight!",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 5,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [
+        "portland-trail-blazers"
+      ],
+      "enriched": true,
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:t6ir6tophcozpmz2d74slsx4"
+            }
+          ],
+          "index": {
+            "byteEnd": 99,
+            "byteStart": 73
+          }
+        },
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:53ckw3l5knowiwdunld3etfz"
+            }
+          ],
+          "index": {
+            "byteEnd": 126,
+            "byteStart": 100
+          }
+        }
+      ],
+      "is_quote_post": true,
+      "quote": {
+        "author": "terry",
+        "handle": "terenceonline.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:53ckw3l5knowiwdunld3etfz/bafkreidff6fsp2nmc4t2zqo6z5le52kqbhiumxodooh57foptt5uwbyc6q",
+        "text": "opening night recap with myself, @cbergin.bsky.social, and @brandonmullen.bsky.social is up on youtube with audio hitting your apps soon.  listen to it and then text it to your mom like i did :)",
+        "url": "https://bsky.app/profile/terenceonline.bsky.social/post/3mykmfeiaz222",
+        "facets": [
+          {
+            "$type": "app.bsky.richtext.facet",
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#mention",
+                "did": "did:plc:2xsglqhivkgdxplo6224ymyk"
+              }
+            ],
+            "index": {
+              "byteEnd": 53,
+              "byteStart": 33
+            }
+          },
+          {
+            "$type": "app.bsky.richtext.facet",
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#mention",
+                "did": "did:plc:t6ir6tophcozpmz2d74slsx4"
+              }
+            ],
+            "index": {
+              "byteEnd": 85,
+              "byteStart": 59
+            }
+          }
+        ],
+        "media": {
+          "type": "link",
+          "uri": "https://www.youtube.com/watch?v=GOFEA1EGBs4",
+          "title": "Opening Night Report",
+          "description": "YouTube video by We Like The Blazers",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:53ckw3l5knowiwdunld3etfz/bafkreidml4cvxwoydcoxs46bhrld3kkjngyg4tj3yndu6lwracnui5jdbq"
+        }
+      }
+    },
+    {
+      "id": "bs-did%3Aplc%3Acrcybmshorvvegmbkp5rvgjv%2Fapp.bsky.feed.post%2F3mykvh4pvhs2j",
+      "source": "bluesky",
+      "published_at": "2026-10-23T19:18:59Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/nbcswarriors.bsky.social/post/3mykvh4pvhs2j",
+      "title": "NBA legend Kevin Garnett sees big things ahead for Warriors rookie Yaxel Lendeborg 💪",
+      "author": {
+        "handle": "nbcswarriors.bsky.social",
+        "display_name": "Warriors on NBC Sports Bay Area",
+        "url": "https://bsky.app/profile/nbcswarriors.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:crcybmshorvvegmbkp5rvgjv/bafkreicnwnxnmxmxr2uko53p2eh7hv7sebqduk3c72vrxykxk2y3hschrm"
+      },
+      "body_excerpt": "NBA legend Kevin Garnett sees big things ahead for Warriors rookie Yaxel Lendeborg 💪",
+      "media": {
+        "type": "link",
+        "uri": "https://www.nbcsportsbayarea.com/nba/golden-state-warriors/kevin-garnett-yaxel-lendeborg-warriors-rebuild/1973515/",
+        "title": "NBA great Kevin Garnett believes rookie Yaxel Lendeborg is first part of Warriors' long-term rebuild",
+        "description": "Even after just one NBA game, Hall of Fame big man Kevin Garnett already is impressed by Golden State Warriors rookie Yaxel Lendeborg.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:crcybmshorvvegmbkp5rvgjv/bafkreifhxnjcopnj6lka7owbte3yjghhafoykxumwc4mfxlckkupqospie"
+      },
+      "engagement": {
+        "likes": 7,
+        "reposts": 0
+      },
+      "players": [
+        "yaxel-lendeborg"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:crcybmshorvvegmbkp5rvgjv/bafkreifhxnjcopnj6lka7owbte3yjghhafoykxumwc4mfxlckkupqospie"
+    },
+    {
+      "id": "bs-did%3Aplc%3A7uahugigvixjvxd5s2hidpad%2Fapp.bsky.feed.post%2F3mykvxwj4rs2o",
+      "source": "bluesky",
+      "published_at": "2026-10-23T19:28:23Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/tonyreast.bsky.social/post/3mykvxwj4rs2o",
+      "title": "Rick Carlisle led an aninated halftime discussion Wednesday after poor effort in the 1st half. Ivica Zubac loved it, and it fueled him in the 2nd half. “That’s the first time I experienced that side of him,\" Zubac told me. \"Honestly, I like it.”",
+      "author": {
+        "handle": "tonyreast.bsky.social",
+        "display_name": "Tony East",
+        "url": "https://bsky.app/profile/tonyreast.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreibcezoefeniffictxya32ce54pxckgbi6tyrpl5atugj63b6c25ei"
+      },
+      "body_excerpt": "Rick Carlisle led an aninated halftime discussion Wednesday after poor effort in the 1st half. Ivica Zubac loved it, and it fueled him in the 2nd half. “That’s the first time I experienced that side of him,\" Zubac told me. \"Honestly, I like it.”\n\nMore: www.forbes.com/sites/tonyea...",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreifpc7dr7yzguetbarknmjq7xfcagrqpgkoeny3gcr6pvlqr6jm4wi",
+            "alt": ""
+          }
+        ]
+      },
+      "engagement": {
+        "likes": 6,
+        "reposts": 0
+      },
+      "players": [
+        "ivica-zubac"
+      ],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreifpc7dr7yzguetbarknmjq7xfcagrqpgkoeny3gcr6pvlqr6jm4wi",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.forbes.com/sites/tonyeast/2026/10/23/fueled-by-halftime-message-ivica-zubac-shows-why-pacers-traded-for-him/"
+            }
+          ],
+          "index": {
+            "byteEnd": 289,
+            "byteStart": 259
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Ao7nvaeky6b42dplp2ssdudvw%2Fapp.bsky.feed.post%2F3mykvz3y3xs22",
+      "source": "bluesky",
+      "published_at": "2026-10-23T19:29:02Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/ohnohedidnt24.bsky.social/post/3mykvz3y3xs22",
+      "title": "Battle of LA going down tonight.",
+      "author": {
+        "handle": "ohnohedidnt24.bsky.social",
+        "display_name": "Oh No He Didn't 🤯",
+        "url": "https://bsky.app/profile/ohnohedidnt24.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:o7nvaeky6b42dplp2ssdudvw/bafkreie3xikpqt2e2rng6s3ujtfukf6aph2p4ohgs6dmksoift3eazeium"
+      },
+      "body_excerpt": "Battle of LA going down tonight.\n\nWilbon: \"Clippers still have a team?\" 💀",
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ao7nvaeky6b42dplp2ssdudvw/bafkreia7lez23yz6cxccoycbp3wwm3b6xnex6nzqbjsxnadiy67iagzwxe/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Ao7nvaeky6b42dplp2ssdudvw/bafkreia7lez23yz6cxccoycbp3wwm3b6xnex6nzqbjsxnadiy67iagzwxe/playlist.m3u8"
+      },
+      "engagement": {
+        "likes": 5,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [
+        "los-angeles-clippers"
+      ],
+      "enriched": true,
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ao7nvaeky6b42dplp2ssdudvw/bafkreia7lez23yz6cxccoycbp3wwm3b6xnex6nzqbjsxnadiy67iagzwxe/thumbnail.jpg"
+    },
+    {
+      "id": "bs-did%3Aplc%3Ax5ws4443357brulpdp7zl2qt%2Fapp.bsky.feed.post%2F3mykw3ujgxk2k",
+      "source": "bluesky",
+      "published_at": "2026-10-23T19:30:35Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/mikefinger.bsky.social/post/3mykw3ujgxk2k",
+      "title": "(no text)",
+      "author": {
+        "handle": "mikefinger.bsky.social",
+        "display_name": "Mike Finger",
+        "url": "https://bsky.app/profile/mikefinger.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:x5ws4443357brulpdp7zl2qt/bafkreifxwlc4xazbdd3f4hf2yp77njyedfaou67caxdofl2wftlg637tzu"
+      },
+      "body_excerpt": "",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:x5ws4443357brulpdp7zl2qt/bafkreigq2gvc27eexrony3vmhmgg2posh6atobuuzif2bnm7elmeukek3a",
+            "alt": "Text Message • SMS\nToday 1:37PM\nHey Michael, my name is Amy with TX\nPermanent Lighting.\nWe're offering huge discounts on permanent holiday and outdoor lighting installations. Would you like a free quote?\n\nNo but I appreciate you not telling me who to vote for.\n"
+          }
+        ]
+      },
+      "engagement": {
+        "likes": 25,
+        "reposts": 2
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:x5ws4443357brulpdp7zl2qt/bafkreigq2gvc27eexrony3vmhmgg2posh6atobuuzif2bnm7elmeukek3a"
+    },
+    {
+      "id": "bs-did%3Aplc%3At5pdaa4ft35prjjwt22aw5fj%2Fapp.bsky.feed.post%2F3mykw7osdu227",
+      "source": "bluesky",
+      "published_at": "2026-10-23T19:32:43Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/nekiasnba.bsky.social/post/3mykw7osdu227",
+      "title": "🚨NEW POD ALERT🚨",
+      "author": {
+        "handle": "nekiasnba.bsky.social",
+        "display_name": "Nuh-KAI-us Duncan",
+        "url": "https://bsky.app/profile/nekiasnba.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:t5pdaa4ft35prjjwt22aw5fj/bafkreihbhw2eotfqvc2ma7teeomwinzxpgpmfse2dnctlpt65fcdmji5wq"
+      },
+      "body_excerpt": "🚨NEW POD ALERT🚨\n\n@stevejones20.bsky.social & I are BYKE w more Dunker Spot! \n\n-Sixers ahead of schedule on defense\n-Early OKC statements\n-Whew, MIN’s offense\n-Welcome back, Hali\n-TY JEROME\n-Game 3 live reaction\n\nand more!\n\nNBA: youtu.be/2Asdpet8u2o?...\n\nWNBA: www.youtube.com/live/GmzfnPE...",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:t5pdaa4ft35prjjwt22aw5fj/bafkreid7fq5w6zfa7piqhczbsou3dxmxdfcmst2h7grv3mycwju7igug5a",
+            "alt": ""
+          }
+        ]
+      },
+      "engagement": {
+        "likes": 5,
+        "reposts": 0
+      },
+      "players": [
+        "ty-jerome",
+        "tyrese-haliburton"
+      ],
+      "teams": [
+        "minnesota-timberwolves",
+        "oklahoma-city-thunder",
+        "philadelphia-76ers"
+      ],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:t5pdaa4ft35prjjwt22aw5fj/bafkreid7fq5w6zfa7piqhczbsou3dxmxdfcmst2h7grv3mycwju7igug5a",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:mx62ni2prhriaagd7jfa65zk"
+            }
+          ],
+          "index": {
+            "byteEnd": 48,
+            "byteStart": 23
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://youtu.be/2Asdpet8u2o?is=8MjdnAJGMwcW5yCV"
+            }
+          ],
+          "index": {
+            "byteEnd": 260,
+            "byteStart": 236
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.youtube.com/live/GmzfnPEJq3Q?is=xbP2he0pJzDUaKb5"
+            }
+          ],
+          "index": {
+            "byteEnd": 299,
+            "byteStart": 268
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Aluofuy2uw7g4vsd2vbwidtel%2Fapp.bsky.feed.post%2F3mykwcskjbc2v",
+      "source": "bluesky",
+      "published_at": "2026-10-23T19:34:28Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/keithsmithnba.bsky.social/post/3mykwcskjbc2v",
+      "title": "We'll be starting in just a few minutes! Be there for when we do, because we've got new opening for the show!",
+      "author": {
+        "handle": "keithsmithnba.bsky.social",
+        "display_name": "KeithSmithNBA",
+        "url": "https://bsky.app/profile/keithsmithnba.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:luofuy2uw7g4vsd2vbwidtel/bafkreicvdayh6d2lkowdik5bvsakvqnw4c2y7ohsvrfhy5yhzgpm7ekjbm"
+      },
+      "body_excerpt": "We'll be starting in just a few minutes! Be there for when we do, because we've got new opening for the show!\n\nwww.youtube.com/live/OioZ0AZ...",
+      "media": {
+        "type": "link",
+        "uri": "https://www.youtube.com/live/OioZ0AZqrUw?si=Yi2pJY455T_otUQi",
+        "title": "",
+        "description": "YouTube video",
+        "thumb": null
+      },
+      "engagement": {
+        "likes": 4,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.youtube.com/live/OioZ0AZqrUw?si=Yi2pJY455T_otUQi"
+            }
+          ],
+          "index": {
+            "byteEnd": 142,
+            "byteStart": 111
+          }
+        }
+      ],
+      "is_quote_post": true,
+      "quote": {
+        "author": "KeithSmithNBA",
+        "handle": "keithsmithnba.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:luofuy2uw7g4vsd2vbwidtel/bafkreicvdayh6d2lkowdik5bvsakvqnw4c2y7ohsvrfhy5yhzgpm7ekjbm",
+        "text": "LIVE @FrontOfficeShow will start around 3:30 PM ET today! Join @TrevorLane to talk the opening few days of the NBA season. See you there!\n\nLink to come when show is live.",
+        "url": "https://bsky.app/profile/keithsmithnba.bsky.social/post/3mykrn2svz22p"
+      }
+    },
+    {
+      "id": "bs-did%3Aplc%3Azgw663lwxmujmen5k4jmjair%2Fapp.bsky.feed.post%2F3mykwfhp5qk2l",
+      "source": "bluesky",
+      "published_at": "2026-10-23T19:35:57Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/danfavale.bsky.social/post/3mykwfhp5qk2l",
+      "title": "👇",
+      "author": {
+        "handle": "danfavale.bsky.social",
+        "display_name": "dan favale",
+        "url": "https://bsky.app/profile/danfavale.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:zgw663lwxmujmen5k4jmjair/bafkreiheejgmzt4f5tjemx2yzsscee6a4giqqmnsv66puktug3b7hsipnm"
+      },
+      "body_excerpt": "👇",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:zgw663lwxmujmen5k4jmjair/bafkreido5upqmbth3bx4fttdt2neoq6axg3vm3hdya4clyvksl2wyvtd2y",
+            "alt": "paolo banchero is florida man's jaylen brown"
+          }
+        ]
+      },
+      "engagement": {
+        "likes": 1,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:zgw663lwxmujmen5k4jmjair/bafkreido5upqmbth3bx4fttdt2neoq6axg3vm3hdya4clyvksl2wyvtd2y",
+      "is_quote_post": true,
+      "quote": {
+        "author": "Hardwood Knocks",
+        "handle": "hardwoodknocksnba.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:inouuyp7aeagit37xn7zehmb/bafkreiewyns3u3zpzbhwl6d2xzpgdrjpc6orvwlmfrhxoldd6ut5nlaz7a",
+        "text": "‼️WE ARE LIVE ‼️\n\n👉The 2026-27 NBA Season Overreactions Draft\n\nCOME HANG⤵️\n\n📺 youtube.com/live/5c1VLpB...",
+        "url": "https://bsky.app/profile/hardwoodknocksnba.bsky.social/post/3mykuljfj2k2e",
+        "facets": [
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": "https://youtube.com/live/5c1VLpBoQMs"
+              }
+            ],
+            "index": {
+              "byteEnd": 123,
+              "byteStart": 96
+            }
+          }
+        ],
+        "media": {
+          "type": "link",
+          "uri": "https://youtube.com/live/5c1VLpBoQMs",
+          "title": "The 2026-27 NBA Season OVERREACTIONS Draft",
+          "description": "YouTube video by Hardwood Knocks",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:inouuyp7aeagit37xn7zehmb/bafkreidgvw23ttpxzghtkxx3tp3kpwq75jwl42hzpwnfalp3ll43rol3iq"
+        }
+      }
+    },
+    {
+      "id": "bs-did%3Aplc%3Av6xd7qcm4tsgb4ndo547vh4n%2Fapp.bsky.feed.post%2F3mykwgyxrvc24",
+      "source": "bluesky",
+      "published_at": "2026-10-23T19:36:48Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/jeskeets.bsky.social/post/3mykwgyxrvc24",
+      "title": "Love all my @trailblazers.bsky.social fans ❤️",
+      "author": {
+        "handle": "jeskeets.bsky.social",
+        "display_name": "J.E. Skeets",
+        "url": "https://bsky.app/profile/jeskeets.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreidntfbgr4kn6b2nevpvhddp5xltzzb24dgq7msnh52llmzzqzi6r4"
+      },
+      "body_excerpt": "Love all my @trailblazers.bsky.social fans ❤️\n\nYouTube 📺: bit.ly/4smZxd8\nApple 🍎: apple.co/3CUsJOD\nSpotify ✳️: bit.ly/44kso6Y",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreibu5jzuoifwnddg2eejcmndbxupxnoepoejqysczpredryuypmd6y",
+            "alt": ""
+          }
+        ]
+      },
+      "engagement": {
+        "likes": 6,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreibu5jzuoifwnddg2eejcmndbxupxnoepoejqysczpredryuypmd6y",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:j64nn3udzk2hst4uxggpd2cv"
+            }
+          ],
+          "index": {
+            "byteEnd": 37,
+            "byteStart": 12
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://bit.ly/4smZxd8"
+            }
+          ],
+          "index": {
+            "byteEnd": 79,
+            "byteStart": 65
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://apple.co/3CUsJOD"
+            }
+          ],
+          "index": {
+            "byteEnd": 108,
+            "byteStart": 92
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://bit.ly/44kso6Y"
+            }
+          ],
+          "index": {
+            "byteEnd": 139,
+            "byteStart": 125
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Ay3xahfdgzxpjsqogokmi43bt%2Fapp.bsky.feed.post%2F3mykx5nku7s2j",
+      "source": "bluesky",
+      "published_at": "2026-10-23T19:49:28Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/blakemurphy.bsky.social/post/3mykx5nku7s2j",
+      "title": "People keep sharing Matt Yglesias clips that I’m fairly sure are Colin Robinson from What We Do in the Shadows",
+      "author": {
+        "handle": "blakemurphy.bsky.social",
+        "display_name": "Blake Murphy",
+        "url": "https://bsky.app/profile/blakemurphy.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:y3xahfdgzxpjsqogokmi43bt/bafkreiaqlur4c4jaie7c6dico5vncvaskkiphyhpkqzwuco5praatpfzve"
+      },
+      "body_excerpt": "People keep sharing Matt Yglesias clips that I’m fairly sure are Colin Robinson from What We Do in the Shadows",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 16,
+        "reposts": 1
+      },
+      "players": [],
+      "teams": [
+        "los-angeles-clippers"
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3A6k2l2zk4prog4khdtzbafugo%2Fapp.bsky.feed.post%2F3mykxma7qr22l",
+      "source": "bluesky",
+      "published_at": "2026-10-23T19:57:38Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/sportsmediawatch.bsky.social/post/3mykxma7qr22l",
+      "title": "On the latest \"On the Air,\" Armand Broady examines why CBS chose to play it safe and make JJ Watt its permanent lead NFL analyst: www.sportsmediawatch.com/2026/10/on-t...",
+      "author": {
+        "handle": "sportsmediawatch.bsky.social",
+        "display_name": "Sports Media Watch",
+        "url": "https://bsky.app/profile/sportsmediawatch.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:6k2l2zk4prog4khdtzbafugo/bafkreidrpvr4hcdnzq4lh7joarinab2iuq5lrvtdipqbmdc3jlpnbwexd4"
+      },
+      "body_excerpt": "On the latest \"On the Air,\" Armand Broady examines why CBS chose to play it safe and make JJ Watt its permanent lead NFL analyst: www.sportsmediawatch.com/2026/10/on-t...",
+      "media": {
+        "type": "link",
+        "uri": "https://www.sportsmediawatch.com/2026/10/on-the-air-cbs-plays-it-safe-with-j-j-watt/",
+        "title": "On the Air: CBS plays it safe with J.J. Watt",
+        "description": "On the latest \"On the Air,\" Armand Broady examines why CBS Sports' decided to play it safe by making JJ Watt its permanent lead NFL analyst.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:6k2l2zk4prog4khdtzbafugo/bafkreid7b7k4bxdhwq6xev2swkyl3k4bghqxjlote7uhhw76rbtagsiixy"
+      },
+      "engagement": {
+        "likes": 0,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:6k2l2zk4prog4khdtzbafugo/bafkreid7b7k4bxdhwq6xev2swkyl3k4bghqxjlote7uhhw76rbtagsiixy",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.sportsmediawatch.com/2026/10/on-the-air-cbs-plays-it-safe-with-j-j-watt/"
+            }
+          ],
+          "index": {
+            "byteEnd": 170,
+            "byteStart": 130
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Ab5s7pvomuo3xwd3wgdpnohtt%2Fapp.bsky.feed.post%2F3mykxnvyo3s2g",
+      "source": "bluesky",
+      "published_at": "2026-10-23T19:58:34Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/bullsjay.bsky.social/post/3mykxnvyo3s2g",
+      "title": "Okay Bulls let’s win a 3 pm Friday basketball game against a fellow crappy team",
+      "author": {
+        "handle": "bullsjay.bsky.social",
+        "display_name": "Jason Patt",
+        "url": "https://bsky.app/profile/bullsjay.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:b5s7pvomuo3xwd3wgdpnohtt/bafkreig42lzcclk6qltt6b7cohurpm4sf5nti2xd3ws57wlwwx3zatwleu"
+      },
+      "body_excerpt": "Okay Bulls let’s win a 3 pm Friday basketball game against a fellow crappy team",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 1,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [
+        "chicago-bulls"
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3All23rgrkk7tvdjey3kflygoq%2Fapp.bsky.feed.post%2F3mykxpma3cc2n",
+      "source": "bluesky",
+      "published_at": "2026-10-23T19:59:31Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/anthonyvslater.bsky.social/post/3mykxpma3cc2n",
+      "title": "Brandin Podziemski has been upgraded to probable tonight for the Warriors home opener against the Grizzlies. Trending toward making season debut after missing opener with back soreness.",
+      "author": {
+        "handle": "anthonyvslater.bsky.social",
+        "display_name": "Anthony Slater",
+        "url": "https://bsky.app/profile/anthonyvslater.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:ll23rgrkk7tvdjey3kflygoq/bafkreiboudagjsnpjnz7nixe53q3scq2ngyozyoxehb5rgywfh26exkq5e"
+      },
+      "body_excerpt": "Brandin Podziemski has been upgraded to probable tonight for the Warriors home opener against the Grizzlies. Trending toward making season debut after missing opener with back soreness.\n\nCharles Bassey remains out. GSW depleted at center spot.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 15,
+        "reposts": 2
+      },
+      "players": [
+        "brandin-podziemski"
+      ],
+      "teams": [
+        "golden-state-warriors",
+        "memphis-grizzlies"
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Apaf4vetn26bu7uggsie3vyrc%2Fapp.bsky.feed.post%2F3mykxqdg6ek2a",
+      "source": "bluesky",
+      "published_at": "2026-10-23T19:59:55Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/lawmurraythenu.bsky.social/post/3mykxqdg6ek2a",
+      "title": "Jake LaRavia (ankle) is out tonight vs Clippers",
+      "author": {
+        "handle": "lawmurraythenu.bsky.social",
+        "display_name": "Law Murray 📘",
+        "url": "https://bsky.app/profile/lawmurraythenu.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:paf4vetn26bu7uggsie3vyrc/bafkreihylt4ajsybck7u6howz6ols7nfjinjfis65c2mhouyyyga7bjfbi"
+      },
+      "body_excerpt": "Jake LaRavia (ankle) is out tonight vs Clippers",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 1,
+        "reposts": 0
+      },
+      "players": [
+        "jake-laravia"
+      ],
+      "teams": [
+        "los-angeles-clippers"
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Ad7jo2dgltk635ycukifq3qjx%2Fapp.bsky.feed.post%2F3mykxs2lhms2z",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:00:53Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/ecreates88.bsky.social/post/3mykxs2lhms2z",
+      "title": "Via the Lakers: Jake LaRavia, right ankle sprain, has been downgraded to out for tonight’s game against the Clippers.",
+      "author": {
+        "handle": "ecreates88.bsky.social",
+        "display_name": "Edwin Garcia",
+        "url": "https://bsky.app/profile/ecreates88.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:d7jo2dgltk635ycukifq3qjx/bafkreifa3o4kggb4kkkapmo6xwsfne7fp2yn3tpmkbrvxclmejjrfawqke"
+      },
+      "body_excerpt": "Via the Lakers: Jake LaRavia, right ankle sprain, has been downgraded to out for tonight’s game against the Clippers.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 4,
+        "reposts": 1
+      },
+      "players": [
+        "jake-laravia"
+      ],
+      "teams": [
+        "los-angeles-clippers",
+        "los-angeles-lakers"
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3A75z3gabuwl6uvv7pootuuvgn%2Fapp.bsky.feed.post%2F3mykxy5y53n22",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:04:17Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/lakersnation.bsky.social/post/3mykxy5y53n22",
+      "title": "Draymond Green doesn't think Luka Doncic will ever win MVP and explained his reasoning.",
+      "author": {
+        "handle": "lakersnation.bsky.social",
+        "display_name": "LakersNation.com",
+        "url": "https://bsky.app/profile/lakersnation.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreiha6wdd65xjneeckcurw4zgpgcfrick6hylxlxoe5owj2kjxzu42e"
+      },
+      "body_excerpt": "Draymond Green doesn't think Luka Doncic will ever win MVP and explained his reasoning.\nlakersnation.com/draymond-gre...",
+      "media": {
+        "type": "link",
+        "uri": "https://lakersnation.com/draymond-green-explains-why-he-thinks-luka-doncic-will-never-win-mvp/",
+        "title": "Draymond Green doesn't think Luka Doncic will ever win MVP",
+        "description": "Draymond Green believes Los Angeles Lakers superstar Luka Doncic will never win an MVP award, despite having the talent and ability to do so.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreiebahh3q7h5f3pujdvhfaxie3winqo34wea5lbu4sgetfi4ckg3ba"
+      },
+      "engagement": {
+        "likes": 1,
+        "reposts": 0
+      },
+      "players": [
+        "draymond-green",
+        "luka-doncic"
+      ],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreiebahh3q7h5f3pujdvhfaxie3winqo34wea5lbu4sgetfi4ckg3ba",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://lakersnation.com/draymond-green-explains-why-he-thinks-luka-doncic-will-never-win-mvp/"
+            }
+          ],
+          "index": {
+            "byteEnd": 120,
+            "byteStart": 88
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3A5dwbpojkp6wykwcafasvwroi%2Fapp.bsky.feed.post%2F3mykxyzf5zc2b",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:04:47Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/daltonjohnson.bsky.social/post/3mykxyzf5zc2b",
+      "title": "Charles Bassey is now OUT for a second straight game ",
+      "author": {
+        "handle": "daltonjohnson.bsky.social",
+        "display_name": "Dalton Johnson",
+        "url": "https://bsky.app/profile/daltonjohnson.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:5dwbpojkp6wykwcafasvwroi/bafkreidhwdyekurk3jktwzgtwhupkld4cqnttl7no4vahioehgjhignf3m"
+      },
+      "body_excerpt": "Charles Bassey is now OUT for a second straight game \n@nbcswarriors.bsky.social \n\nBrandin Podziemski has been upgraded to probable for the Warriors' home opener tonight",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 8,
+        "reposts": 0
+      },
+      "players": [
+        "brandin-podziemski"
+      ],
+      "teams": [
+        "golden-state-warriors"
+      ],
+      "enriched": true,
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:crcybmshorvvegmbkp5rvgjv"
+            }
+          ],
+          "index": {
+            "byteEnd": 79,
+            "byteStart": 54
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Adl45gvyrkbqt7xwowhh4aa6j%2Fapp.bsky.feed.post%2F3myky42ns4b2f",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:06:29Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/adamtaylornba.bsky.social/post/3myky42ns4b2f",
+      "title": "Yeah, it's time to let go of this JT and JB thing.",
+      "author": {
+        "handle": "adamtaylornba.bsky.social",
+        "display_name": "AdamTaylorNBA",
+        "url": "https://bsky.app/profile/adamtaylornba.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:dl45gvyrkbqt7xwowhh4aa6j/bafkreifemflgxbl2ovfl576l5qyfxsruqhgrfv6gqkgzq2hxmfg7qx3gei"
+      },
+      "body_excerpt": "Yeah, it's time to let go of this JT and JB thing.\n\nIt's done. \n\nThe best thing to do (imo) is to get behind the team and focus on what they're building toward now.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 17,
+        "reposts": 1
+      },
+      "players": [
+        "jayson-tatum"
+      ],
+      "teams": [],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3A42qm4nzol5bkpulya64jnskm%2Fapp.bsky.feed.post%2F3mykymklqxc2j",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:15:42Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/richarddeitsch.bsky.social/post/3mykymklqxc2j",
+      "title": "CONTROL ROOM: \"CODE RED! CODE RED! GET THE FUCK OUT OF THERE!\"",
+      "author": {
+        "handle": "richarddeitsch.bsky.social",
+        "display_name": "Richard Deitsch",
+        "url": "https://bsky.app/profile/richarddeitsch.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:42qm4nzol5bkpulya64jnskm/bafkreigdxttgytbcak6tmpdea6h6tbynpsjd7ns6c5jdsyoqzooqzg3jhm"
+      },
+      "body_excerpt": "CONTROL ROOM: \"CODE RED! CODE RED! GET THE FUCK OUT OF THERE!\"",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 698,
+        "reposts": 92
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "is_quote_post": true,
+      "quote": {
+        "author": "Aaron Rupar",
+        "handle": "atrupar.com",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:4llrhdclvdlmmynkwsmg5tdc/bafkreibmhm3h6ar52pogvolisrzjdhwa2myras5vkxzj67twxn2l6pogwu",
+        "text": "this answer about what issues matter to him from a college student waiting in line at the Trump rally wasn't what the Fox correspondent expected to hear. She moved on with swiftness ",
+        "url": "https://bsky.app/profile/atrupar.com/post/3mykfh22obs2m",
+        "media": {
+          "type": "video",
+          "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3A4llrhdclvdlmmynkwsmg5tdc/bafkreickx2ax553e3v26i7d5qdj7sazzh3tkxins5tckrkjt2swxrhtf4y/thumbnail.jpg",
+          "playlist": "https://video.bsky.app/watch/did%3Aplc%3A4llrhdclvdlmmynkwsmg5tdc/bafkreickx2ax553e3v26i7d5qdj7sazzh3tkxins5tckrkjt2swxrhtf4y/playlist.m3u8"
+        }
+      }
+    },
+    {
+      "id": "bs-did%3Aplc%3Ae7n6cs5ayz4tuab43rr5lh3m%2Fapp.bsky.feed.post%2F3mykyztx7ec2w",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:23:08Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/caitlinmaycooper.bsky.social/post/3mykyztx7ec2w",
+      "title": "Wish creative labor would stop being treated like a free vending machine or readily available food recipe. Using the same ingredients ignores the time and mental energy that goes into crafting the recipe in the first place.",
+      "author": {
+        "handle": "caitlinmaycooper.bsky.social",
+        "display_name": "Caitlin Cooper",
+        "url": "https://bsky.app/profile/caitlinmaycooper.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7n6cs5ayz4tuab43rr5lh3m/bafkreicfoxyvbfa65zuaecox5d4cdvbkxky6xpqkgnrsvfn4ajhuxosnhq"
+      },
+      "body_excerpt": "Wish creative labor would stop being treated like a free vending machine or readily available food recipe. Using the same ingredients ignores the time and mental energy that goes into crafting the recipe in the first place.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 30,
+        "reposts": 1
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao%2Fapp.bsky.feed.post%2F3mykz7b5ju22l",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:26:10Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/hoopinformatics.com/post/3mykz7b5ju22l",
+      "title": "I’m going to mention this a lot, but Jalen Smith should be a sought after trade piece this season for contending teams",
+      "author": {
+        "handle": "hoopinformatics.com",
+        "display_name": "Hoop Informatics",
+        "url": "https://bsky.app/profile/hoopinformatics.com",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:s42iw2fbfmgsgh7hdtvvoaao/bafkreigsdsi76pwfd4djiiibz7oeluixl4fqpbwx7moknvryv4bd5yvniu"
+      },
+      "body_excerpt": "I’m going to mention this a lot, but Jalen Smith should be a sought after trade piece this season for contending teams\n\nCan play the 4 or 5 off the bench.  Provides size on defense but also some shooting to space the floor on offense. Efficient player/Plus rebounder\n\nCan never have enough bigs",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 10,
+        "reposts": 0
+      },
+      "players": [
+        "jalen-smith"
+      ],
+      "teams": [],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Amx62ni2prhriaagd7jfa65zk%2Fapp.bsky.feed.post%2F3mykzeypbss2y",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:29:22Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/stevejones20.bsky.social/post/3mykzeypbss2y",
+      "title": "NEW Dunker Spot with @nekiasnba.bsky.social ",
+      "author": {
+        "handle": "stevejones20.bsky.social",
+        "display_name": "Steve Jones",
+        "url": "https://bsky.app/profile/stevejones20.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:mx62ni2prhriaagd7jfa65zk/bafkreibsasqbomwgwfh2pcbppafnejcmsib2rcnagdsyaeenusuzh5zfqa"
+      },
+      "body_excerpt": "NEW Dunker Spot with @nekiasnba.bsky.social \n\nNBA Opening Week Thoughts\n-What is behind the Sixers start? \n-So, uh, Cleveland\n-How the Thunder are evolving\n-Rapid fire: Pistons, Dame, Tyrese and *sigh* Ty\n\nyoutu.be/2Asdpet8u2o",
+      "media": {
+        "type": "link",
+        "uri": "https://youtu.be/2Asdpet8u2o",
+        "title": "Sixers Already Ahead Of Schedule? + Dame & Hali Return In A Big Way!",
+        "description": "YouTube video by Yahoo! Sports NBA",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:mx62ni2prhriaagd7jfa65zk/bafkreihewxve3yag2skhnf33k33bf4dxyb5hdbov6l2o474dovcn4zswiy"
+      },
+      "engagement": {
+        "likes": 5,
+        "reposts": 1
+      },
+      "players": [
+        "damian-lillard",
+        "tyrese-haliburton"
+      ],
+      "teams": [
+        "detroit-pistons",
+        "oklahoma-city-thunder",
+        "philadelphia-76ers"
+      ],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:mx62ni2prhriaagd7jfa65zk/bafkreihewxve3yag2skhnf33k33bf4dxyb5hdbov6l2o474dovcn4zswiy",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:t5pdaa4ft35prjjwt22aw5fj"
+            }
+          ],
+          "index": {
+            "byteEnd": 43,
+            "byteStart": 21
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://youtu.be/2Asdpet8u2o"
+            }
+          ],
+          "index": {
+            "byteEnd": 226,
+            "byteStart": 206
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Abvn5oncrh2mie4nxuzbiqjmi%2Fapp.bsky.feed.post%2F3mykzloebyk23",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:33:06Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/juliapoe.bsky.social/post/3mykzloebyk23",
+      "title": "Another pretty terrible start for the Bulls. Can't control their dribble, can't hit from behind the arc, can't contest on the boards.",
+      "author": {
+        "handle": "juliapoe.bsky.social",
+        "display_name": "Julia Poe",
+        "url": "https://bsky.app/profile/juliapoe.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:bvn5oncrh2mie4nxuzbiqjmi/bafkreih5ysaka7fgotfe2wpbs3dfjwjaiz62skmnqzvsejld26hnbcvuc4"
+      },
+      "body_excerpt": "Another pretty terrible start for the Bulls. Can't control their dribble, can't hit from behind the arc, can't contest on the boards.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 3,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [
+        "chicago-bulls"
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao%2Fapp.bsky.feed.post%2F3mykzm7vqs22r",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:33:25Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/hoopinformatics.com/post/3mykzm7vqs22r",
+      "title": "(no text)",
+      "author": {
+        "handle": "hoopinformatics.com",
+        "display_name": "Hoop Informatics",
+        "url": "https://bsky.app/profile/hoopinformatics.com",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:s42iw2fbfmgsgh7hdtvvoaao/bafkreigsdsi76pwfd4djiiibz7oeluixl4fqpbwx7moknvryv4bd5yvniu"
+      },
+      "body_excerpt": "",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:s42iw2fbfmgsgh7hdtvvoaao/bafkreicyvxheqiuu2gozn3dyh6rsbo5kmiwoc5nntbegr7dddw2jptmzcy",
+            "alt": "Bucks lead the Bulls 24-11 with 2:53 left in the first quarter. \n\nThe Bulls may be Ralph Wiggum "
+          }
+        ]
+      },
+      "engagement": {
+        "likes": 4,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:s42iw2fbfmgsgh7hdtvvoaao/bafkreicyvxheqiuu2gozn3dyh6rsbo5kmiwoc5nntbegr7dddw2jptmzcy"
+    },
+    {
+      "id": "bs-did%3Aplc%3Abvn5oncrh2mie4nxuzbiqjmi%2Fapp.bsky.feed.post%2F3mykznbcpt223",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:34:00Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/juliapoe.bsky.social/post/3mykznbcpt223",
+      "title": "Think it's notable that Matas Buzelis is getting a short leash once again to start this season. Pulled after roughly four minutes on the court, didn't get put back in during the first quarter. Bad foul and turnover in that span, plus some very questionable ball-handling in the pa",
+      "author": {
+        "handle": "juliapoe.bsky.social",
+        "display_name": "Julia Poe",
+        "url": "https://bsky.app/profile/juliapoe.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:bvn5oncrh2mie4nxuzbiqjmi/bafkreih5ysaka7fgotfe2wpbs3dfjwjaiz62skmnqzvsejld26hnbcvuc4"
+      },
+      "body_excerpt": "Think it's notable that Matas Buzelis is getting a short leash once again to start this season. Pulled after roughly four minutes on the court, didn't get put back in during the first quarter. Bad foul and turnover in that span, plus some very questionable ball-handling in the paint.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 2,
+        "reposts": 1
+      },
+      "players": [
+        "matas-buzelis"
+      ],
+      "teams": [],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Awj222j7j4agz3k4ikhxrbb4r%2Fapp.bsky.feed.post%2F3mykzunxynh2l",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:38:08Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/ekoreen.bsky.social/post/3mykzunxynh2l",
+      "title": "In 57 minutes, the Bulls are 5 for 48 from 3.",
+      "author": {
+        "handle": "ekoreen.bsky.social",
+        "display_name": "Eric Koreen",
+        "url": "https://bsky.app/profile/ekoreen.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:wj222j7j4agz3k4ikhxrbb4r/bafkreic6dyjpvks3zzghqr5qko7lcks6tlow6jajr4uc4vztjayqf3qebu"
+      },
+      "body_excerpt": "In 57 minutes, the Bulls are 5 for 48 from 3.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 5,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [
+        "chicago-bulls"
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao%2Fapp.bsky.feed.post%2F3mykzvxbxbs2r",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:38:51Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/hoopinformatics.com/post/3mykzvxbxbs2r",
+      "title": "(no text)",
+      "author": {
+        "handle": "hoopinformatics.com",
+        "display_name": "Hoop Informatics",
+        "url": "https://bsky.app/profile/hoopinformatics.com",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:s42iw2fbfmgsgh7hdtvvoaao/bafkreigsdsi76pwfd4djiiibz7oeluixl4fqpbwx7moknvryv4bd5yvniu"
+      },
+      "body_excerpt": "",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:s42iw2fbfmgsgh7hdtvvoaao/bafkreicg3xundy4gu6tl3clylwu7oft6ymjov2ncajqon2njugsaf4z2ge",
+            "alt": "Milwaukee Bucks fan holding up a sign that says \"put us on tv please\" and the Buck producers did. The thing is, there was hardly any effort put into this sign. Do we really want to reward this bare minimum effort with an appearance on tv. Then again, who and I to judge, it is just penmanship after all and mine is quite horrid. Still, this sign could have used a little more pizzaz. "
+          }
+        ]
+      },
+      "engagement": {
+        "likes": 3,
+        "reposts": 1
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:s42iw2fbfmgsgh7hdtvvoaao/bafkreicg3xundy4gu6tl3clylwu7oft6ymjov2ncajqon2njugsaf4z2ge"
+    },
+    {
+      "id": "bs-did%3Aplc%3Amx62ni2prhriaagd7jfa65zk%2Fapp.bsky.feed.post%2F3mykzx6usds2y",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:39:33Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/stevejones20.bsky.social/post/3mykzx6usds2y",
+      "title": "Fun set from the Bulls to start the game",
+      "author": {
+        "handle": "stevejones20.bsky.social",
+        "display_name": "Steve Jones",
+        "url": "https://bsky.app/profile/stevejones20.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:mx62ni2prhriaagd7jfa65zk/bafkreibsasqbomwgwfh2pcbppafnejcmsib2rcnagdsyaeenusuzh5zfqa"
+      },
+      "body_excerpt": "Fun set from the Bulls to start the game\n-Powell with a cross screen for Caleb Wilson, Buzelis cuts from right corner\n-Get it to Wilson who hands it off\n-Looks like Smith is going to screen for Wilson, instead he's off a backscreen from Powell",
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Amx62ni2prhriaagd7jfa65zk/bafkreib5zp2mu5wpgz6je3ubmee2m2cy4q3v7jqukyhd3mvjomf44ykg5e/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Amx62ni2prhriaagd7jfa65zk/bafkreib5zp2mu5wpgz6je3ubmee2m2cy4q3v7jqukyhd3mvjomf44ykg5e/playlist.m3u8"
+      },
+      "engagement": {
+        "likes": 7,
+        "reposts": 1
+      },
+      "players": [
+        "caleb-wilson"
+      ],
+      "teams": [
+        "chicago-bulls"
+      ],
+      "enriched": true,
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Amx62ni2prhriaagd7jfa65zk/bafkreib5zp2mu5wpgz6je3ubmee2m2cy4q3v7jqukyhd3mvjomf44ykg5e/thumbnail.jpg"
+    },
+    {
+      "id": "bs-did%3Aplc%3Asa73fbx3vxzh2fw5pu5wmief%2Fapp.bsky.feed.post%2F3myl233nuc326",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:41:13Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/shamsbot.bsky.social/post/3myl233nuc326",
+      "title": "Guard Sean Pedulla has agreed on a two-way NBA contract with the Sacramento Kings, his agent George S. Langberg of @GSLSportsGroup tells ESPN. Pedulla was the 2025-26 G League Rookie of the Year.",
+      "author": {
+        "handle": "shamsbot.bsky.social",
+        "display_name": "Shams Charania Tweets",
+        "url": "https://bsky.app/profile/shamsbot.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:sa73fbx3vxzh2fw5pu5wmief/bafkreia3wn6jntgttuf3wogeyx32epvpdupys5t3qul6sdj62q2tfw2pni"
+      },
+      "body_excerpt": "Guard Sean Pedulla has agreed on a two-way NBA contract with the Sacramento Kings, his agent George S. Langberg of @GSLSportsGroup tells ESPN. Pedulla was the 2025-26 G League Rookie of the Year.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 11,
+        "reposts": 1
+      },
+      "players": [
+        "sean-pedulla"
+      ],
+      "teams": [
+        "sacramento-kings"
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Akhkkkhl5yezvfymz4g4tnukt%2Fapp.bsky.feed.post%2F3myl236jefk2y",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:41:47Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/johnschuhmann.bsky.social/post/3myl236jefk2y",
+      "title": "The Bulls have lost their two 1st quarters (one of them vs. the Bucks) by a combined score of 75-40.",
+      "author": {
+        "handle": "johnschuhmann.bsky.social",
+        "display_name": "John Schuhmann",
+        "url": "https://bsky.app/profile/johnschuhmann.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:khkkkhl5yezvfymz4g4tnukt/bafkreigez4sk24rikgcjnq3qou3hpmtnvi3c5xi43ginkbmnd3s3s7qhgy"
+      },
+      "body_excerpt": "The Bulls have lost their two 1st quarters (one of them vs. the Bucks) by a combined score of 75-40.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 4,
+        "reposts": 2
+      },
+      "players": [],
+      "teams": [
+        "chicago-bulls",
+        "milwaukee-bucks"
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3A6ahv2jk7wea2fql74oiisng6%2Fapp.bsky.feed.post%2F3myl27j3b622w",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:44:12Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/scottagness.bsky.social/post/3myl27j3b622w",
+      "title": "Pacers' home opener tonight vs the Mavericks is a 'gold out' so all fans will receive a gold t-shirt. They have several other special things planned too.",
+      "author": {
+        "handle": "scottagness.bsky.social",
+        "display_name": "Scott Agness",
+        "url": "https://bsky.app/profile/scottagness.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:6ahv2jk7wea2fql74oiisng6/bafkreieffqhybolyulhec5j5zhlhtqdcvqtqhgs774fyy7ha5j2k462szi"
+      },
+      "body_excerpt": "Pacers' home opener tonight vs the Mavericks is a 'gold out' so all fans will receive a gold t-shirt. They have several other special things planned too.\n\nwww.fieldhousefiles.com/p/pacers-gol...",
+      "media": {
+        "type": "link",
+        "uri": "https://www.fieldhousefiles.com/p/pacers-gold-out-home-opener-mavericks-2026",
+        "title": "Pacers plan 'Gold Out' for home opener, Haliburton's return to Gainbridge Fieldhouse",
+        "description": "491 days after his last meaningful home game, Tyrese Haliburton returns to Gainbridge Fieldhouse for Friday’s home opener against Dallas. All fans will receive gold T-shirts.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:6ahv2jk7wea2fql74oiisng6/bafkreifkvssyvay4acdpflgccmjggrt42cenu3we7o52t4cfmkjwhh673e"
+      },
+      "engagement": {
+        "likes": 5,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [
+        "dallas-mavericks",
+        "indiana-pacers"
+      ],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:6ahv2jk7wea2fql74oiisng6/bafkreifkvssyvay4acdpflgccmjggrt42cenu3we7o52t4cfmkjwhh673e",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.fieldhousefiles.com/p/pacers-gold-out-home-opener-mavericks-2026"
+            }
+          ],
+          "index": {
+            "byteEnd": 194,
+            "byteStart": 155
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Amx62ni2prhriaagd7jfa65zk%2Fapp.bsky.feed.post%2F3myl2azu5fs2y",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:45:03Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/stevejones20.bsky.social/post/3myl2azu5fs2y",
+      "title": "Bulls 7 of 28 from the field in the first, 1 of 14 from 3 with 6 turnovers. Need a thing to stick. Not making shots to play quick, other teams out in transition, struggles in half court. ",
+      "author": {
+        "handle": "stevejones20.bsky.social",
+        "display_name": "Steve Jones",
+        "url": "https://bsky.app/profile/stevejones20.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:mx62ni2prhriaagd7jfa65zk/bafkreibsasqbomwgwfh2pcbppafnejcmsib2rcnagdsyaeenusuzh5zfqa"
+      },
+      "body_excerpt": "Bulls 7 of 28 from the field in the first, 1 of 14 from 3 with 6 turnovers. Need a thing to stick. Not making shots to play quick, other teams out in transition, struggles in half court. \n\nBucks 11 of 21 from the field, 6 of 12 from 3, they had 7 turnovers\n\nInteresting quarter",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 5,
+        "reposts": 1
+      },
+      "players": [],
+      "teams": [
+        "chicago-bulls",
+        "milwaukee-bucks"
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Ank756gkpj52ryc6gaorkvctp%2Fapp.bsky.feed.post%2F3myl2cnd5j22d",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:45:57Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/nbacobwebs.bsky.social/post/3myl2cnd5j22d",
+      "title": "October 23, 1984: The Jazz defeat the Celtics, 105-104, in the Hall of Fame Game (Springfield, MA).",
+      "author": {
+        "handle": "nbacobwebs.bsky.social",
+        "display_name": "NBA Cobwebs",
+        "url": "https://bsky.app/profile/nbacobwebs.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:nk756gkpj52ryc6gaorkvctp/bafkreieq3iqdy6qdoesofi4f472fwr4vyjo2u43ttwf2uwp7kz6ghu73ra"
+      },
+      "body_excerpt": "October 23, 1984: The Jazz defeat the Celtics, 105-104, in the Hall of Fame Game (Springfield, MA).\n\nJohn Drew scored 21 PTS (including the game-winning FG) and Thurl Bailey added 18 PTS/12 REB for Utah. Boston's Dennis Johnson scored 24 PTS and Robert Parish had 23 PTS/12 REB.",
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ank756gkpj52ryc6gaorkvctp/bafkreic72a4tby2ii4kalwl4wkzu54e5obonpia76zeujhd7qwma2iv76i/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Ank756gkpj52ryc6gaorkvctp/bafkreic72a4tby2ii4kalwl4wkzu54e5obonpia76zeujhd7qwma2iv76i/playlist.m3u8"
+      },
+      "engagement": {
+        "likes": 3,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [
+        "boston-celtics",
+        "utah-jazz"
+      ],
+      "enriched": true,
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ank756gkpj52ryc6gaorkvctp/bafkreic72a4tby2ii4kalwl4wkzu54e5obonpia76zeujhd7qwma2iv76i/thumbnail.jpg"
+    },
+    {
+      "id": "bs-did%3Aplc%3Av6xd7qcm4tsgb4ndo547vh4n%2Fapp.bsky.feed.post%2F3myl2dvoomc24",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:46:39Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/jeskeets.bsky.social/post/3myl2dvoomc24",
+      "title": "Jeremy Lin discovers PAPER during his ESPN debut 📄",
+      "author": {
+        "handle": "jeskeets.bsky.social",
+        "display_name": "J.E. Skeets",
+        "url": "https://bsky.app/profile/jeskeets.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreidntfbgr4kn6b2nevpvhddp5xltzzb24dgq7msnh52llmzzqzi6r4"
+      },
+      "body_excerpt": "Jeremy Lin discovers PAPER during his ESPN debut 📄",
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Av6xd7qcm4tsgb4ndo547vh4n/bafkreie6isz4lldn7xhjzb7w7aaajbejpq7lqtrgmpzs5pw7vkq34kde2i/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Av6xd7qcm4tsgb4ndo547vh4n/bafkreie6isz4lldn7xhjzb7w7aaajbejpq7lqtrgmpzs5pw7vkq34kde2i/playlist.m3u8"
+      },
+      "engagement": {
+        "likes": 6,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Av6xd7qcm4tsgb4ndo547vh4n/bafkreie6isz4lldn7xhjzb7w7aaajbejpq7lqtrgmpzs5pw7vkq34kde2i/thumbnail.jpg"
+    },
+    {
+      "id": "bs-did%3Aplc%3Abvn5oncrh2mie4nxuzbiqjmi%2Fapp.bsky.feed.post%2F3myl2qutgw223",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:53:55Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/juliapoe.bsky.social/post/3myl2qutgw223",
+      "title": "!!!!!",
+      "author": {
+        "handle": "juliapoe.bsky.social",
+        "display_name": "Julia Poe",
+        "url": "https://bsky.app/profile/juliapoe.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:bvn5oncrh2mie4nxuzbiqjmi/bafkreih5ysaka7fgotfe2wpbs3dfjwjaiz62skmnqzvsejld26hnbcvuc4"
+      },
+      "body_excerpt": "!!!!!",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 14,
+        "reposts": 1
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "is_quote_post": true,
+      "quote": {
+        "author": "Annie Costabile",
+        "handle": "anniecostabile.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:5kr2nptf4czozfccrjmxl3w7/bafkreidrmiwc6a2j5hfrjq4z6nu4hg3oyvf6z6ak27pm23c36j755wfkr4",
+        "text": "BREAKING: The Indiana Fever are firing general manager Amber Cox, multiple sources who have knowledge of the decision told The Athletic.\n\nwww.nytimes.com/athletic/771...",
+        "url": "https://bsky.app/profile/anniecostabile.bsky.social/post/3myl2nwloz22f",
+        "facets": [
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": "https://www.nytimes.com/athletic/7718252/2026/10/23/fever-gm-amber-cox-leadership-change-wnba/"
+              }
+            ],
+            "index": {
+              "byteEnd": 169,
+              "byteStart": 138
+            }
+          }
+        ],
+        "media": {
+          "type": "link",
+          "uri": "https://www.nytimes.com/athletic/7718252/2026/10/23/fever-gm-amber-cox-leadership-change-wnba/",
+          "title": "Amber Cox out as Indiana Fever general manager: Sources",
+          "description": "",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:5kr2nptf4czozfccrjmxl3w7/bafkreiduq2wkepwykt7k2w3fwply7arbkjtkuu5z4xrbmxjwhv24n44dnq"
+        }
+      }
+    },
+    {
+      "id": "bs-did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao%2Fapp.bsky.feed.post%2F3myl2s6ukuc2r",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:54:39Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/hoopinformatics.com/post/3myl2s6ukuc2r",
+      "title": "Kasparas Jakucionis --> Kel'el Ware",
+      "author": {
+        "handle": "hoopinformatics.com",
+        "display_name": "Hoop Informatics",
+        "url": "https://bsky.app/profile/hoopinformatics.com",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:s42iw2fbfmgsgh7hdtvvoaao/bafkreigsdsi76pwfd4djiiibz7oeluixl4fqpbwx7moknvryv4bd5yvniu"
+      },
+      "body_excerpt": "Kasparas Jakucionis --> Kel'el Ware",
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao/bafkreie734eh4dli3oylqxjladzs3dcgcyycy7q54so5saeze4uzttjjrm/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao/bafkreie734eh4dli3oylqxjladzs3dcgcyycy7q54so5saeze4uzttjjrm/playlist.m3u8"
+      },
+      "engagement": {
+        "likes": 1,
+        "reposts": 0
+      },
+      "players": [
+        "kasparas-jakucionis",
+        "kelel-ware"
+      ],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao/bafkreie734eh4dli3oylqxjladzs3dcgcyycy7q54so5saeze4uzttjjrm/thumbnail.jpg"
+    },
+    {
+      "id": "bs-did%3Aplc%3Amx62ni2prhriaagd7jfa65zk%2Fapp.bsky.feed.post%2F3myl2sdgqls2y",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:54:43Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/stevejones20.bsky.social/post/3myl2sdgqls2y",
+      "title": "One easy thing that would help the Chicago Bulls is talking to each other on defense in transition because...",
+      "author": {
+        "handle": "stevejones20.bsky.social",
+        "display_name": "Steve Jones",
+        "url": "https://bsky.app/profile/stevejones20.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:mx62ni2prhriaagd7jfa65zk/bafkreibsasqbomwgwfh2pcbppafnejcmsib2rcnagdsyaeenusuzh5zfqa"
+      },
+      "body_excerpt": "One easy thing that would help the Chicago Bulls is talking to each other on defense in transition because...",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 8,
+        "reposts": 1
+      },
+      "players": [],
+      "teams": [
+        "chicago-bulls"
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Apgrqrtjyigyi3h4ygzkhxwkj%2Fapp.bsky.feed.post%2F3myl2t6eftk2f",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:55:12Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/mikevorkunov.bsky.social/post/3myl2t6eftk2f",
+      "title": "Big scoop from Annie",
+      "author": {
+        "handle": "mikevorkunov.bsky.social",
+        "display_name": "Mike Vorkunov",
+        "url": "https://bsky.app/profile/mikevorkunov.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:pgrqrtjyigyi3h4ygzkhxwkj/bafkreicdumllig6oujl6ukh77j4ssr2utyqudic6qzbhy3mxelwyn4pkcq"
+      },
+      "body_excerpt": "Big scoop from Annie",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 3,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "is_quote_post": true,
+      "quote": {
+        "author": "Annie Costabile",
+        "handle": "anniecostabile.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:5kr2nptf4czozfccrjmxl3w7/bafkreidrmiwc6a2j5hfrjq4z6nu4hg3oyvf6z6ak27pm23c36j755wfkr4",
+        "text": "BREAKING: The Indiana Fever are firing general manager Amber Cox, multiple sources who have knowledge of the decision told The Athletic.\n\nwww.nytimes.com/athletic/771...",
+        "url": "https://bsky.app/profile/anniecostabile.bsky.social/post/3myl2nwloz22f",
+        "facets": [
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": "https://www.nytimes.com/athletic/7718252/2026/10/23/fever-gm-amber-cox-leadership-change-wnba/"
+              }
+            ],
+            "index": {
+              "byteEnd": 169,
+              "byteStart": 138
+            }
+          }
+        ],
+        "media": {
+          "type": "link",
+          "uri": "https://www.nytimes.com/athletic/7718252/2026/10/23/fever-gm-amber-cox-leadership-change-wnba/",
+          "title": "Amber Cox out as Indiana Fever general manager: Sources",
+          "description": "",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:5kr2nptf4czozfccrjmxl3w7/bafkreiduq2wkepwykt7k2w3fwply7arbkjtkuu5z4xrbmxjwhv24n44dnq"
+        }
+      }
+    },
+    {
+      "id": "bs-did%3Aplc%3Adnxkqc6rsqossh7uhyobkeua%2Fapp.bsky.feed.post%2F3myl32d7wes2y",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:59:12Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/bobbykrivitsky.bsky.social/post/3myl32d7wes2y",
+      "title": "Here’s a look at the towels awaiting fans at TD Garden ahead of the Celtics’ home opener tonight against the Knicks.",
+      "author": {
+        "handle": "bobbykrivitsky.bsky.social",
+        "display_name": "Bobby Krivitsky",
+        "url": "https://bsky.app/profile/bobbykrivitsky.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:dnxkqc6rsqossh7uhyobkeua/bafkreico5zyufbnodb5nzc2crnx7rm453722niv7tsvca3u2mrjotqiasq"
+      },
+      "body_excerpt": "Here’s a look at the towels awaiting fans at TD Garden ahead of the Celtics’ home opener tonight against the Knicks.",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:dnxkqc6rsqossh7uhyobkeua/bafkreieujjwjw3qpmlctexx77molt7p4rgsqzh3lfazdwpstdm37wn45iu",
+            "alt": ""
+          }
+        ]
+      },
+      "engagement": {
+        "likes": 4,
+        "reposts": 1
+      },
+      "players": [],
+      "teams": [
+        "boston-celtics",
+        "new-york-knicks"
+      ],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:dnxkqc6rsqossh7uhyobkeua/bafkreieujjwjw3qpmlctexx77molt7p4rgsqzh3lfazdwpstdm37wn45iu"
+    },
+    {
+      "id": "bs-did%3Aplc%3Adnxkqc6rsqossh7uhyobkeua%2Fapp.bsky.feed.post%2F3myl33ikd3c2y",
+      "source": "bluesky",
+      "published_at": "2026-10-23T20:59:51Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/bobbykrivitsky.bsky.social/post/3myl33ikd3c2y",
+      "title": "Here’s a look into Jordan Walsh’s pregame work with Amile Jefferson before the Celtics’ season opener against the Knicks.",
+      "author": {
+        "handle": "bobbykrivitsky.bsky.social",
+        "display_name": "Bobby Krivitsky",
+        "url": "https://bsky.app/profile/bobbykrivitsky.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:dnxkqc6rsqossh7uhyobkeua/bafkreico5zyufbnodb5nzc2crnx7rm453722niv7tsvca3u2mrjotqiasq"
+      },
+      "body_excerpt": "Here’s a look into Jordan Walsh’s pregame work with Amile Jefferson before the Celtics’ season opener against the Knicks.",
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Adnxkqc6rsqossh7uhyobkeua/bafkreihghm6ccs673dzdls4vzbyqwa4ybeo4az4qmsio2ilkxyl5ymclnm/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Adnxkqc6rsqossh7uhyobkeua/bafkreihghm6ccs673dzdls4vzbyqwa4ybeo4az4qmsio2ilkxyl5ymclnm/playlist.m3u8"
+      },
+      "engagement": {
+        "likes": 3,
+        "reposts": 0
+      },
+      "players": [
+        "jordan-walsh",
+        "joshua-jefferson"
+      ],
+      "teams": [
+        "boston-celtics",
+        "new-york-knicks"
+      ],
+      "enriched": true,
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Adnxkqc6rsqossh7uhyobkeua/bafkreihghm6ccs673dzdls4vzbyqwa4ybeo4az4qmsio2ilkxyl5ymclnm/thumbnail.jpg"
+    },
+    {
+      "id": "bs-did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao%2Fapp.bsky.feed.post%2F3myl34i7a622r",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:00:24Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/hoopinformatics.com/post/3myl34i7a622r",
+      "title": "Bulls can't get matched up in transition. Poor communication. Looks like Jalen Smith is going to take Kel'el Ware and Caleb Wilson likely needs to pick up Ryan Rollins but doesn't.",
+      "author": {
+        "handle": "hoopinformatics.com",
+        "display_name": "Hoop Informatics",
+        "url": "https://bsky.app/profile/hoopinformatics.com",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:s42iw2fbfmgsgh7hdtvvoaao/bafkreigsdsi76pwfd4djiiibz7oeluixl4fqpbwx7moknvryv4bd5yvniu"
+      },
+      "body_excerpt": "Bulls can't get matched up in transition. Poor communication. Looks like Jalen Smith is going to take Kel'el Ware and Caleb Wilson likely needs to pick up Ryan Rollins but doesn't.\n\nBatting practice three and a Chicago Timeout",
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao/bafkreiaoasvicdcp3ahrknklsv4au5xhy2iekztnvs64modfyouprpeely/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao/bafkreiaoasvicdcp3ahrknklsv4au5xhy2iekztnvs64modfyouprpeely/playlist.m3u8"
+      },
+      "engagement": {
+        "likes": 1,
+        "reposts": 0
+      },
+      "players": [
+        "caleb-wilson",
+        "jalen-smith",
+        "kelel-ware",
+        "ryan-rollins"
+      ],
+      "teams": [
+        "chicago-bulls"
+      ],
+      "enriched": true,
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao/bafkreiaoasvicdcp3ahrknklsv4au5xhy2iekztnvs64modfyouprpeely/thumbnail.jpg"
+    },
+    {
+      "id": "bs-did%3Aplc%3Arrh5me656wmncolysevqhc4y%2Fapp.bsky.feed.post%2F3myl34pqyik2f",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:00:32Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/adamaaronson.bsky.social/post/3myl34pqyik2f",
+      "title": "The Sixers have an injury report for tomorrow's game vs. Milwaukee:",
+      "author": {
+        "handle": "adamaaronson.bsky.social",
+        "display_name": "Adam Aaronson",
+        "url": "https://bsky.app/profile/adamaaronson.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:rrh5me656wmncolysevqhc4y/bafkreic5e2dbeyhtbdt345o3qcnp36uydttbs6bstqatp6aketr6u6glva"
+      },
+      "body_excerpt": "The Sixers have an injury report for tomorrow's game vs. Milwaukee:\n\nLeBron James — back management — QUESTIONABLE\n\nDean Wade – ankle – QUESTIONABLE\n\nDominick Barlow – back – OUT\n\nTacko Fall – quad – OUT\n\nThis is the front end of a back-to-back.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 2,
+        "reposts": 0
+      },
+      "players": [
+        "dean-wade",
+        "dominick-barlow",
+        "lebron-james"
+      ],
+      "teams": [
+        "philadelphia-76ers"
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Adnxkqc6rsqossh7uhyobkeua%2Fapp.bsky.feed.post%2F3myl34uwhg22y",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:00:37Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/bobbykrivitsky.bsky.social/post/3myl34uwhg22y",
+      "title": "Here’s a look into Baylor Scheierman’s pregame routine, as he works with Tyler Lashbrook before the Celtics’ home opener against the Knicks.",
+      "author": {
+        "handle": "bobbykrivitsky.bsky.social",
+        "display_name": "Bobby Krivitsky",
+        "url": "https://bsky.app/profile/bobbykrivitsky.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:dnxkqc6rsqossh7uhyobkeua/bafkreico5zyufbnodb5nzc2crnx7rm453722niv7tsvca3u2mrjotqiasq"
+      },
+      "body_excerpt": "Here’s a look into Baylor Scheierman’s pregame routine, as he works with Tyler Lashbrook before the Celtics’ home opener against the Knicks.",
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Adnxkqc6rsqossh7uhyobkeua/bafkreicf6exl36mqkqta5icx2v64ikwo2clvxfhga6gehhmbywxkfdrqqe/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Adnxkqc6rsqossh7uhyobkeua/bafkreicf6exl36mqkqta5icx2v64ikwo2clvxfhga6gehhmbywxkfdrqqe/playlist.m3u8"
+      },
+      "engagement": {
+        "likes": 5,
+        "reposts": 1
+      },
+      "players": [
+        "baylor-scheierman"
+      ],
+      "teams": [
+        "boston-celtics",
+        "new-york-knicks"
+      ],
+      "enriched": true,
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Adnxkqc6rsqossh7uhyobkeua/bafkreicf6exl36mqkqta5icx2v64ikwo2clvxfhga6gehhmbywxkfdrqqe/thumbnail.jpg"
+    },
+    {
+      "id": "bs-did%3Aplc%3Arrh5me656wmncolysevqhc4y%2Fapp.bsky.feed.post%2F3myl362hf422f",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:01:17Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/adamaaronson.bsky.social/post/3myl362hf422f",
+      "title": "LeBron James' full injury designation: \"Low back/ Sciatica management.\"",
+      "author": {
+        "handle": "adamaaronson.bsky.social",
+        "display_name": "Adam Aaronson",
+        "url": "https://bsky.app/profile/adamaaronson.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:rrh5me656wmncolysevqhc4y/bafkreic5e2dbeyhtbdt345o3qcnp36uydttbs6bstqatp6aketr6u6glva"
+      },
+      "body_excerpt": "LeBron James' full injury designation: \"Low back/ Sciatica management.\"\n\nJoel Embiid is not listed.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 2,
+        "reposts": 0
+      },
+      "players": [
+        "joel-embiid",
+        "lebron-james"
+      ],
+      "teams": [],
+      "enriched": true,
+      "is_quote_post": true,
+      "quote": {
+        "author": "Adam Aaronson",
+        "handle": "adamaaronson.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:rrh5me656wmncolysevqhc4y/bafkreic5e2dbeyhtbdt345o3qcnp36uydttbs6bstqatp6aketr6u6glva",
+        "text": "The Sixers have an injury report for tomorrow's game vs. Milwaukee:\n\nLeBron James — back management — QUESTIONABLE\n\nDean Wade – ankle – QUESTIONABLE\n\nDominick Barlow – back – OUT\n\nTacko Fall – quad – OUT\n\nThis is the front end of a back-to-back.",
+        "url": "https://bsky.app/profile/adamaaronson.bsky.social/post/3myl34pqyik2f"
+      }
+    },
+    {
+      "id": "bs-did%3Aplc%3Arvgw6lzk6p7k34bnkilsykrc%2Fapp.bsky.feed.post%2F3myl36u6osk2h",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:01:44Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/jadande.bsky.social/post/3myl36u6osk2h",
+      "title": "Does this story have a basis in reality?",
+      "author": {
+        "handle": "jadande.bsky.social",
+        "display_name": "J.A. Adande",
+        "url": "https://bsky.app/profile/jadande.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:rvgw6lzk6p7k34bnkilsykrc/bafkreihhuambovl3vl6jp7nz2dqn2fu5dod6c5ialiis5lkwsrqb2rkanm"
+      },
+      "body_excerpt": "Does this story have a basis in reality?",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 12,
+        "reposts": 2
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "is_quote_post": true,
+      "quote": {
+        "author": "Annie Costabile",
+        "handle": "anniecostabile.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:5kr2nptf4czozfccrjmxl3w7/bafkreidrmiwc6a2j5hfrjq4z6nu4hg3oyvf6z6ak27pm23c36j755wfkr4",
+        "text": "BREAKING: The Indiana Fever are firing general manager Amber Cox, multiple sources who have knowledge of the decision told The Athletic.\n\nwww.nytimes.com/athletic/771...",
+        "url": "https://bsky.app/profile/anniecostabile.bsky.social/post/3myl2nwloz22f",
+        "facets": [
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": "https://www.nytimes.com/athletic/7718252/2026/10/23/fever-gm-amber-cox-leadership-change-wnba/"
+              }
+            ],
+            "index": {
+              "byteEnd": 169,
+              "byteStart": 138
+            }
+          }
+        ],
+        "media": {
+          "type": "link",
+          "uri": "https://www.nytimes.com/athletic/7718252/2026/10/23/fever-gm-amber-cox-leadership-change-wnba/",
+          "title": "Amber Cox out as Indiana Fever general manager: Sources",
+          "description": "",
+          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:5kr2nptf4czozfccrjmxl3w7/bafkreiduq2wkepwykt7k2w3fwply7arbkjtkuu5z4xrbmxjwhv24n44dnq"
+        }
+      }
+    },
+    {
+      "id": "bs-did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao%2Fapp.bsky.feed.post%2F3myl3bnjcfc2r",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:03:17Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/hoopinformatics.com/post/3myl3bnjcfc2r",
+      "title": "(no text)",
+      "author": {
+        "handle": "hoopinformatics.com",
+        "display_name": "Hoop Informatics",
+        "url": "https://bsky.app/profile/hoopinformatics.com",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:s42iw2fbfmgsgh7hdtvvoaao/bafkreigsdsi76pwfd4djiiibz7oeluixl4fqpbwx7moknvryv4bd5yvniu"
+      },
+      "body_excerpt": "",
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao/bafkreibhgraqqymfhvr37rhpldebnxqi42fv3asxlhoisn5h2huuxd6pdi/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao/bafkreibhgraqqymfhvr37rhpldebnxqi42fv3asxlhoisn5h2huuxd6pdi/playlist.m3u8"
+      },
+      "engagement": {
+        "likes": 4,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao/bafkreibhgraqqymfhvr37rhpldebnxqi42fv3asxlhoisn5h2huuxd6pdi/thumbnail.jpg"
+    },
+    {
+      "id": "bs-did%3Aplc%3A6ahv2jk7wea2fql74oiisng6%2Fapp.bsky.feed.post%2F3myl3bz4wxs2r",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:03:30Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/scottagness.bsky.social/post/3myl3bz4wxs2r",
+      "title": "Emergency Podcast: Kelly Krauskopf Steps Down as Indiana Fever President: Why Now, and More Coming?",
+      "author": {
+        "handle": "scottagness.bsky.social",
+        "display_name": "Scott Agness",
+        "url": "https://bsky.app/profile/scottagness.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:6ahv2jk7wea2fql74oiisng6/bafkreieffqhybolyulhec5j5zhlhtqdcvqtqhgs774fyy7ha5j2k462szi"
+      },
+      "body_excerpt": "Emergency Podcast: Kelly Krauskopf Steps Down as Indiana Fever President: Why Now, and More Coming?\n\nwww.youtube.com/watch?v=M2VT...",
+      "media": {
+        "type": "link",
+        "uri": "https://www.youtube.com/watch?v=M2VTtnF1HT8",
+        "title": "Kelly Krauskopf Steps Down as Indiana Fever President: Why Now, and More Coming?",
+        "description": "YouTube video by Scott Agness | Fieldhouse Files",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:6ahv2jk7wea2fql74oiisng6/bafkreie3wzplbidnlbg23izzzg56tvk2madpb3cdy7mk5fmqr2jg4veu4a"
+      },
+      "engagement": {
+        "likes": 0,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:6ahv2jk7wea2fql74oiisng6/bafkreie3wzplbidnlbg23izzzg56tvk2madpb3cdy7mk5fmqr2jg4veu4a",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.youtube.com/watch?v=M2VTtnF1HT8"
+            }
+          ],
+          "index": {
+            "byteEnd": 132,
+            "byteStart": 101
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Arrh5me656wmncolysevqhc4y%2Fapp.bsky.feed.post%2F3myl3cb2ias2f",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:03:38Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/adamaaronson.bsky.social/post/3myl3cb2ias2f",
+      "title": "A very surprising injury report for the front end of the Sixers' first back-to-back... www.phillyvoice.com/sixers-news-...",
+      "author": {
+        "handle": "adamaaronson.bsky.social",
+        "display_name": "Adam Aaronson",
+        "url": "https://bsky.app/profile/adamaaronson.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:rrh5me656wmncolysevqhc4y/bafkreic5e2dbeyhtbdt345o3qcnp36uydttbs6bstqatp6aketr6u6glva"
+      },
+      "body_excerpt": "A very surprising injury report for the front end of the Sixers' first back-to-back... www.phillyvoice.com/sixers-news-...",
+      "media": {
+        "type": "link",
+        "uri": "https://www.phillyvoice.com/sixers-news-analysis-injury-report-vs-bucks-joel-embiid-lebron-james-status-dean-wade-nba-rumors-schedule/",
+        "title": "Full injury report for Sixers-Bucks on Saturday",
+        "description": "Joel Embiid said on Thursday night that he would not play in both legs of the Sixers' weekend back-to-back.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:rrh5me656wmncolysevqhc4y/bafkreietnag76m5xvhxsknylenqe5p564uu3p6ranf3rn5r3rueo4kgmge"
+      },
+      "engagement": {
+        "likes": 1,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [
+        "philadelphia-76ers"
+      ],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:rrh5me656wmncolysevqhc4y/bafkreietnag76m5xvhxsknylenqe5p564uu3p6ranf3rn5r3rueo4kgmge",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.phillyvoice.com/sixers-news-analysis-injury-report-vs-bucks-joel-embiid-lebron-james-status-dean-wade-nba-rumors-schedule/"
+            }
+          ],
+          "index": {
+            "byteEnd": 122,
+            "byteStart": 87
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3A75z3gabuwl6uvv7pootuuvgn%2Fapp.bsky.feed.post%2F3myl3cy5l6s2a",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:04:01Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/lakersnation.bsky.social/post/3myl3cy5l6s2a",
+      "title": "Luka Doncic was impressed with his new teammate in the #Lakers season opener.",
+      "author": {
+        "handle": "lakersnation.bsky.social",
+        "display_name": "LakersNation.com",
+        "url": "https://bsky.app/profile/lakersnation.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreiha6wdd65xjneeckcurw4zgpgcfrick6hylxlxoe5owj2kjxzu42e"
+      },
+      "body_excerpt": "Luka Doncic was impressed with his new teammate in the #Lakers season opener.\nlakersnation.com/luka-doncic-...",
+      "media": {
+        "type": "link",
+        "uri": "https://lakersnation.com/luka-doncic-impressed-with-walker-kessler-in-lakers-debut/",
+        "title": "Luka Doncic was impressed with his new teammate",
+        "description": "Los Angeles Lakers star Luka Doncic came away very impressed from Walker Kessler's 26-point performance on Opening Night.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreiefntpikpewhhdofcvifpfjhw422ibwgejx6gbnsshih6qwked7he"
+      },
+      "engagement": {
+        "likes": 0,
+        "reposts": 0
+      },
+      "players": [
+        "luka-doncic"
+      ],
+      "teams": [
+        "los-angeles-lakers"
+      ],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreiefntpikpewhhdofcvifpfjhw422ibwgejx6gbnsshih6qwked7he",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Lakers"
+            }
+          ],
+          "index": {
+            "byteEnd": 62,
+            "byteStart": 55
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://lakersnation.com/luka-doncic-impressed-with-walker-kessler-in-lakers-debut/"
+            }
+          ],
+          "index": {
+            "byteEnd": 110,
+            "byteStart": 78
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Arwx7lnjebqrm6cozzjqobqvd%2Fapp.bsky.feed.post%2F3myl3ew2kak2r",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:05:07Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/alexaphilippou.bsky.social/post/3myl3ew2kak2r",
+      "title": "Can confirm Indiana Fever GM Amber Cox has been fired. (Confirming @AnnieCostabile). More TK.",
+      "author": {
+        "handle": "alexaphilippou.bsky.social",
+        "display_name": "Alexa Philippou",
+        "url": "https://bsky.app/profile/alexaphilippou.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:rwx7lnjebqrm6cozzjqobqvd/bafkreiaaw63r6ai7wz7nkqxf7tgtk3pqtmnapwxketvr3sw663hbklfdqq"
+      },
+      "body_excerpt": "Can confirm Indiana Fever GM Amber Cox has been fired. (Confirming @AnnieCostabile). More TK.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 33,
+        "reposts": 10
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Ahl273o7bfegotspjc5dqfzmq%2Fapp.bsky.feed.post%2F3myl3jkaoc22j",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:07:42Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/ginamizell.bsky.social/post/3myl3jkaoc22j",
+      "title": "LeBron James (sciatica management) is listed as questionable to play tomorrow vs. Milwaukee, while Joel Embiid is not on the report. Was curious if they would sit both players the same night or stagger them on this upcoming back-to-back.",
+      "author": {
+        "handle": "ginamizell.bsky.social",
+        "display_name": "Gina Mizell",
+        "url": "https://bsky.app/profile/ginamizell.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:hl273o7bfegotspjc5dqfzmq/bafkreihmmmwxzidje55mmnr76fkkxovmtgdviib2ajhy75jukxr3uuc44q"
+      },
+      "body_excerpt": "LeBron James (sciatica management) is listed as questionable to play tomorrow vs. Milwaukee, while Joel Embiid is not on the report. Was curious if they would sit both players the same night or stagger them on this upcoming back-to-back.",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:hl273o7bfegotspjc5dqfzmq/bafkreicyh6oay6mec5d3ugu5hk22e4ehsrfejreq4be2brjcbsusa3pt4m",
+            "alt": ""
+          }
+        ]
+      },
+      "engagement": {
+        "likes": 3,
+        "reposts": 0
+      },
+      "players": [
+        "joel-embiid",
+        "lebron-james"
+      ],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:hl273o7bfegotspjc5dqfzmq/bafkreicyh6oay6mec5d3ugu5hk22e4ehsrfejreq4be2brjcbsusa3pt4m"
+    },
+    {
+      "id": "bs-did%3Aplc%3Abvn5oncrh2mie4nxuzbiqjmi%2Fapp.bsky.feed.post%2F3myl3kteqkc23",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:08:26Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/juliapoe.bsky.social/post/3myl3kteqkc23",
+      "title": "Leonard Miller is hooping",
+      "author": {
+        "handle": "juliapoe.bsky.social",
+        "display_name": "Julia Poe",
+        "url": "https://bsky.app/profile/juliapoe.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:bvn5oncrh2mie4nxuzbiqjmi/bafkreih5ysaka7fgotfe2wpbs3dfjwjaiz62skmnqzvsejld26hnbcvuc4"
+      },
+      "body_excerpt": "Leonard Miller is hooping",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 4,
+        "reposts": 0
+      },
+      "players": [
+        "leonard-miller"
+      ],
+      "teams": [],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Afqsmj7o5mbb7n7oav2kkjuid%2Fapp.bsky.feed.post%2F3myl3mdnm3s2r",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:09:16Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/nbastat.bsky.social/post/3myl3mdnm3s2r",
+      "title": "The OKC FLOP tape just dropped...",
+      "author": {
+        "handle": "nbastat.bsky.social",
+        "display_name": "NBA Stat",
+        "url": "https://bsky.app/profile/nbastat.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:fqsmj7o5mbb7n7oav2kkjuid/bafkreic3g44bm3orae6dkm4npna6phnodi74whhp6rkohxpe32x2hht27u"
+      },
+      "body_excerpt": "The OKC FLOP tape just dropped...\n\n#NBA",
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Afqsmj7o5mbb7n7oav2kkjuid/bafkreid5fwwyzgg47kzbejhvxfqmtccw7b5tkrc5rmipruhntpbffno4ou/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Afqsmj7o5mbb7n7oav2kkjuid/bafkreid5fwwyzgg47kzbejhvxfqmtccw7b5tkrc5rmipruhntpbffno4ou/playlist.m3u8"
+      },
+      "engagement": {
+        "likes": 12,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [
+        "oklahoma-city-thunder"
+      ],
+      "enriched": true,
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Afqsmj7o5mbb7n7oav2kkjuid/bafkreid5fwwyzgg47kzbejhvxfqmtccw7b5tkrc5rmipruhntpbffno4ou/thumbnail.jpg",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "NBA"
+            }
+          ],
+          "index": {
+            "byteEnd": 39,
+            "byteStart": 35
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Ard3xjqinklzohadsvnwyuui3%2Fapp.bsky.feed.post%2F3myl3ogknrc2l",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:10:26Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/yoleo.bsky.social/post/3myl3ogknrc2l",
+      "title": "Wolves fans watching Lenny cook in Chicago 🥲",
+      "author": {
+        "handle": "yoleo.bsky.social",
+        "display_name": "Leo S",
+        "url": "https://bsky.app/profile/yoleo.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:rd3xjqinklzohadsvnwyuui3/bafkreifwcuw2zd6n6igceneze5joxitkqejbzn7sp2amnge75mydg6nozq"
+      },
+      "body_excerpt": "Wolves fans watching Lenny cook in Chicago 🥲",
+      "media": {
+        "type": "link",
+        "uri": "https://static.klipy.com/ii/d7aec6f6f171607374b2065c836f92f4/2e/2a/s8jZi1S7.gif?hh=256&ww=244&mp4=ONjIH0vOZyxMmVQT&webm=0vlrlnbDQDSo10SjE",
+        "title": "Robert Redford Smiles and Nods",
+        "description": "ALT: Robert Redford Smiles and Nods",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:rd3xjqinklzohadsvnwyuui3/bafkreibj24sdrzva3gm7of2riwfmwefeq32rqfiiikbdv7inu6cp5elpgi"
+      },
+      "engagement": {
+        "likes": 13,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [
+        "minnesota-timberwolves"
+      ],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:rd3xjqinklzohadsvnwyuui3/bafkreibj24sdrzva3gm7of2riwfmwefeq32rqfiiikbdv7inu6cp5elpgi"
+    },
+    {
+      "id": "bs-did%3Aplc%3Abvn5oncrh2mie4nxuzbiqjmi%2Fapp.bsky.feed.post%2F3myl3ph6vrs23",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:11:01Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/juliapoe.bsky.social/post/3myl3ph6vrs23",
+      "title": "This game was moved to accommodate Game 1 of the World Series, which is being hosted in Milwaukee tonight at 7 p.m. CT (the original tip-off time of the Bucks home opener).",
+      "author": {
+        "handle": "juliapoe.bsky.social",
+        "display_name": "Julia Poe",
+        "url": "https://bsky.app/profile/juliapoe.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:bvn5oncrh2mie4nxuzbiqjmi/bafkreih5ysaka7fgotfe2wpbs3dfjwjaiz62skmnqzvsejld26hnbcvuc4"
+      },
+      "body_excerpt": "This game was moved to accommodate Game 1 of the World Series, which is being hosted in Milwaukee tonight at 7 p.m. CT (the original tip-off time of the Bucks home opener).",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 3,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [
+        "milwaukee-bucks"
+      ],
+      "enriched": true,
+      "is_quote_post": true,
+      "quote": {
+        "author": "Nerd Of The Midway",
+        "handle": "nerdofthemidway.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:3ms5jbbvh7thprs7i4ijmqyi/bafkreic2hy2yzsytdoyeofgcb5hhxf74pag7q45ubtjsyreggbgqemny2e",
+        "text": "Is this a camp day or something? Why are they playing at 1 PM west coast time? I guess the good news is no one was watching their terrible start",
+        "url": "https://bsky.app/profile/nerdofthemidway.bsky.social/post/3myl3l7rrms2u"
+      }
+    },
+    {
+      "id": "bs-did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao%2Fapp.bsky.feed.post%2F3myl3pnodi22r",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:11:07Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/hoopinformatics.com/post/3myl3pnodi22r",
+      "title": "Leonard Miller with 10-points in 10-minutes to give the Chicago Bulls the lead",
+      "author": {
+        "handle": "hoopinformatics.com",
+        "display_name": "Hoop Informatics",
+        "url": "https://bsky.app/profile/hoopinformatics.com",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:s42iw2fbfmgsgh7hdtvvoaao/bafkreigsdsi76pwfd4djiiibz7oeluixl4fqpbwx7moknvryv4bd5yvniu"
+      },
+      "body_excerpt": "Leonard Miller with 10-points in 10-minutes to give the Chicago Bulls the lead",
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao/bafkreifn5a4o3bpjv66bknqth3zsetvg5v24ucdai2qto5nrymkx6vmbty/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao/bafkreifn5a4o3bpjv66bknqth3zsetvg5v24ucdai2qto5nrymkx6vmbty/playlist.m3u8"
+      },
+      "engagement": {
+        "likes": 6,
+        "reposts": 2
+      },
+      "players": [
+        "leonard-miller"
+      ],
+      "teams": [
+        "chicago-bulls"
+      ],
+      "enriched": true,
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao/bafkreifn5a4o3bpjv66bknqth3zsetvg5v24ucdai2qto5nrymkx6vmbty/thumbnail.jpg"
+    },
+    {
+      "id": "bs-did%3Aplc%3A7uahugigvixjvxd5s2hidpad%2Fapp.bsky.feed.post%2F3myl3pp6y4k23",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:11:09Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/tonyreast.bsky.social/post/3myl3pp6y4k23",
+      "title": "League sources confirm reports that the Fever have moved on from GM Amber Cox. More to come @theixsports.bsky.social  @anniecostabile.bsky.social  was first to it.",
+      "author": {
+        "handle": "tonyreast.bsky.social",
+        "display_name": "Tony East",
+        "url": "https://bsky.app/profile/tonyreast.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreibcezoefeniffictxya32ce54pxckgbi6tyrpl5atugj63b6c25ei"
+      },
+      "body_excerpt": "League sources confirm reports that the Fever have moved on from GM Amber Cox. More to come @theixsports.bsky.social  @anniecostabile.bsky.social  was first to it.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 8,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:2talt3msahtgmd52hjx2weld"
+            }
+          ],
+          "index": {
+            "byteEnd": 116,
+            "byteStart": 92
+          }
+        },
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:5kr2nptf4czozfccrjmxl3w7"
+            }
+          ],
+          "index": {
+            "byteEnd": 145,
+            "byteStart": 118
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Ahl273o7bfegotspjc5dqfzmq%2Fapp.bsky.feed.post%2F3myl3wlimyc2j",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:15:00Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/ginamizell.bsky.social/post/3myl3wlimyc2j",
+      "title": "We’ve also seen far too many injury report shenanigans over the years, so plenty of things could change between now and 7pm tomorrow.",
+      "author": {
+        "handle": "ginamizell.bsky.social",
+        "display_name": "Gina Mizell",
+        "url": "https://bsky.app/profile/ginamizell.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:hl273o7bfegotspjc5dqfzmq/bafkreihmmmwxzidje55mmnr76fkkxovmtgdviib2ajhy75jukxr3uuc44q"
+      },
+      "body_excerpt": "We’ve also seen far too many injury report shenanigans over the years, so plenty of things could change between now and 7pm tomorrow.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 4,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "is_quote_post": true,
+      "quote": {
+        "author": "Gina Mizell",
+        "handle": "ginamizell.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:hl273o7bfegotspjc5dqfzmq/bafkreihmmmwxzidje55mmnr76fkkxovmtgdviib2ajhy75jukxr3uuc44q",
+        "text": "LeBron James (sciatica management) is listed as questionable to play tomorrow vs. Milwaukee, while Joel Embiid is not on the report. Was curious if they would sit both players the same night or stagger them on this upcoming back-to-back.",
+        "url": "https://bsky.app/profile/ginamizell.bsky.social/post/3myl3jkaoc22j",
+        "media": {
+          "type": "image",
+          "images": [
+            {
+              "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:hl273o7bfegotspjc5dqfzmq/bafkreicyh6oay6mec5d3ugu5hk22e4ehsrfejreq4be2brjcbsusa3pt4m",
+              "alt": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "bs-did%3Aplc%3Afor72tiy5r7qmr4yq44372dd%2Fapp.bsky.feed.post%2F3myl3y3shey2z",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:15:51Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/basketball-reference.com/post/3myl3y3shey2z",
+      "title": "The 2001 Lakers went 15–1 in the playoffs, and Shaq and Kobe combined for an NBA-record 59.8 points per game that postseason. Was this the most dominant playoff run in NBA history?",
+      "author": {
+        "handle": "basketball-reference.com",
+        "display_name": "Basketball Reference",
+        "url": "https://bsky.app/profile/basketball-reference.com",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:for72tiy5r7qmr4yq44372dd/bafkreid57cbqxvcloqhzzkusowhg3acbcwsxd6u2dn376r6wpi5lv4r3vi"
+      },
+      "body_excerpt": "The 2001 Lakers went 15–1 in the playoffs, and Shaq and Kobe combined for an NBA-record 59.8 points per game that postseason. Was this the most dominant playoff run in NBA history?\n\nWatch our full YouTube video on the best NBA teams of the 2000s: https://youtu.be/UIBB4y-OnB0",
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Afor72tiy5r7qmr4yq44372dd/bafkreibhrz6htdjkbhcgeupqyfhqm7kwazrdvouhrrbclxeix7weu5tpdm/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Afor72tiy5r7qmr4yq44372dd/bafkreibhrz6htdjkbhcgeupqyfhqm7kwazrdvouhrrbclxeix7weu5tpdm/playlist.m3u8"
+      },
+      "engagement": {
+        "likes": 2,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [
+        "los-angeles-lakers"
+      ],
+      "enriched": true,
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Afor72tiy5r7qmr4yq44372dd/bafkreibhrz6htdjkbhcgeupqyfhqm7kwazrdvouhrrbclxeix7weu5tpdm/thumbnail.jpg",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "did": null,
+              "tag": null,
+              "uri": "https://youtu.be/UIBB4y-OnB0"
+            }
+          ],
+          "index": {
+            "byteEnd": 277,
+            "byteStart": 249
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3Asa73fbx3vxzh2fw5pu5wmief%2Fapp.bsky.feed.post%2F3myl45lcstk23",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:16:06Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/shamsbot.bsky.social/post/3myl45lcstk23",
+      "title": "Former Pelicans second-rounder Micah Peavy has agreed on a two-way NBA deal with the Oklahoma City Thunder, sources tell ESPN.",
+      "author": {
+        "handle": "shamsbot.bsky.social",
+        "display_name": "Shams Charania Tweets",
+        "url": "https://bsky.app/profile/shamsbot.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:sa73fbx3vxzh2fw5pu5wmief/bafkreia3wn6jntgttuf3wogeyx32epvpdupys5t3qul6sdj62q2tfw2pni"
+      },
+      "body_excerpt": "Former Pelicans second-rounder Micah Peavy has agreed on a two-way NBA deal with the Oklahoma City Thunder, sources tell ESPN.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 3,
+        "reposts": 0
+      },
+      "players": [
+        "micah-peavy"
+      ],
+      "teams": [
+        "new-orleans-pelicans",
+        "oklahoma-city-thunder"
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao%2Fapp.bsky.feed.post%2F3myl3ywrzl22r",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:16:19Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/hoopinformatics.com/post/3myl3ywrzl22r",
+      "title": "Why is Josh Giddey playing through a wrist injury?",
+      "author": {
+        "handle": "hoopinformatics.com",
+        "display_name": "Hoop Informatics",
+        "url": "https://bsky.app/profile/hoopinformatics.com",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:s42iw2fbfmgsgh7hdtvvoaao/bafkreigsdsi76pwfd4djiiibz7oeluixl4fqpbwx7moknvryv4bd5yvniu"
+      },
+      "body_excerpt": "Why is Josh Giddey playing through a wrist injury?",
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao/bafkreifcx3yvb4wazobhgjipxgdzbd26x7onc45f6lc36g3f4n2nck3m5i/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao/bafkreifcx3yvb4wazobhgjipxgdzbd26x7onc45f6lc36g3f4n2nck3m5i/playlist.m3u8"
+      },
+      "engagement": {
+        "likes": 10,
+        "reposts": 0
+      },
+      "players": [
+        "josh-giddey"
+      ],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao/bafkreifcx3yvb4wazobhgjipxgdzbd26x7onc45f6lc36g3f4n2nck3m5i/thumbnail.jpg"
+    },
+    {
+      "id": "bs-did%3Aplc%3Ard3xjqinklzohadsvnwyuui3%2Fapp.bsky.feed.post%2F3myl436z6m224",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:17:35Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/yoleo.bsky.social/post/3myl436z6m224",
+      "title": "In the 2010s, I hated the Harden/CP3 pandemic of \"rip through\" grifting.",
+      "author": {
+        "handle": "yoleo.bsky.social",
+        "display_name": "Leo S",
+        "url": "https://bsky.app/profile/yoleo.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:rd3xjqinklzohadsvnwyuui3/bafkreifwcuw2zd6n6igceneze5joxitkqejbzn7sp2amnge75mydg6nozq"
+      },
+      "body_excerpt": "In the 2010s, I hated the Harden/CP3 pandemic of \"rip through\" grifting.\n\nIn the 2020s, I hate the SGA/Reaves/Avdija pandemic of \"driving into contact\"/snapping their head back grifting.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 12,
+        "reposts": 3
+      },
+      "players": [
+        "james-harden",
+        "shai-gilgeous-alexander"
+      ],
+      "teams": [],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Ae3ktrbooe3mildj4hhwhsvtc%2Fapp.bsky.feed.post%2F3myl43u6u5k2a",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:17:57Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/mikeascotto.bsky.social/post/3myl43u6u5k2a",
+      "title": "The Oklahoma City Thunder and Micah Peavy have agreed to a two-way deal, league sources told HoopsHype. Peavy, the 40th pick of the 2025 NBA Draft, played in 61 games for the New Orleans Pelicans last season.",
+      "author": {
+        "handle": "mikeascotto.bsky.social",
+        "display_name": "Michael Scotto",
+        "url": "https://bsky.app/profile/mikeascotto.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e3ktrbooe3mildj4hhwhsvtc/bafkreiegqo54izmuc42h4iy5zzmdw4gvwbtwiayjruoqxy3tifeofydl2q"
+      },
+      "body_excerpt": "The Oklahoma City Thunder and Micah Peavy have agreed to a two-way deal, league sources told HoopsHype. Peavy, the 40th pick of the 2025 NBA Draft, played in 61 games for the New Orleans Pelicans last season.",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:e3ktrbooe3mildj4hhwhsvtc/bafkreiaknm54ytsnkcgnjeirvpr7kkbkrn3e6vyu53uge3dzvzjq3obzaa",
+            "alt": ""
+          }
+        ]
+      },
+      "engagement": {
+        "likes": 1,
+        "reposts": 0
+      },
+      "players": [
+        "micah-peavy"
+      ],
+      "teams": [
+        "new-orleans-pelicans",
+        "oklahoma-city-thunder"
+      ],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:e3ktrbooe3mildj4hhwhsvtc/bafkreiaknm54ytsnkcgnjeirvpr7kkbkrn3e6vyu53uge3dzvzjq3obzaa"
+    },
+    {
+      "id": "bs-did%3Aplc%3Amx62ni2prhriaagd7jfa65zk%2Fapp.bsky.feed.post%2F3myl475shmc2y",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:19:48Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/stevejones20.bsky.social/post/3myl475shmc2y",
+      "title": "28 of the Bucks 46 first half shots came from 3. I know this is today's game but my lingering \"hey can they generate other shots\" point is burning in my brain",
+      "author": {
+        "handle": "stevejones20.bsky.social",
+        "display_name": "Steve Jones",
+        "url": "https://bsky.app/profile/stevejones20.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:mx62ni2prhriaagd7jfa65zk/bafkreibsasqbomwgwfh2pcbppafnejcmsib2rcnagdsyaeenusuzh5zfqa"
+      },
+      "body_excerpt": "28 of the Bucks 46 first half shots came from 3. I know this is today's game but my lingering \"hey can they generate other shots\" point is burning in my brain",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 2,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [
+        "milwaukee-bucks"
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Ab5s7pvomuo3xwd3wgdpnohtt%2Fapp.bsky.feed.post%2F3myl476pbic2g",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:19:48Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/bullsjay.bsky.social/post/3myl476pbic2g",
+      "title": "SMALL SAMPLE SIZE ALERT: The Bulls are +15 in Tre Jones’ 24 minutes this season and -59 in his minutes on the bench.",
+      "author": {
+        "handle": "bullsjay.bsky.social",
+        "display_name": "Jason Patt",
+        "url": "https://bsky.app/profile/bullsjay.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:b5s7pvomuo3xwd3wgdpnohtt/bafkreig42lzcclk6qltt6b7cohurpm4sf5nti2xd3ws57wlwwx3zatwleu"
+      },
+      "body_excerpt": "SMALL SAMPLE SIZE ALERT: The Bulls are +15 in Tre Jones’ 24 minutes this season and -59 in his minutes on the bench.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 6,
+        "reposts": 0
+      },
+      "players": [
+        "tre-jones"
+      ],
+      "teams": [
+        "chicago-bulls"
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3A7uahugigvixjvxd5s2hidpad%2Fapp.bsky.feed.post%2F3myl4aivrck23",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:20:33Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/tonyreast.bsky.social/post/3myl4aivrck23",
+      "title": "Ben Sheppard has a left meniscus injury that happened in the New Orleans game. He’s going to be out “a little bit,” Rick Carlisle says. Happened in New Orleans. Unsure on timeline but said it could be “a few weeks”.",
+      "author": {
+        "handle": "tonyreast.bsky.social",
+        "display_name": "Tony East",
+        "url": "https://bsky.app/profile/tonyreast.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreibcezoefeniffictxya32ce54pxckgbi6tyrpl5atugj63b6c25ei"
+      },
+      "body_excerpt": "Ben Sheppard has a left meniscus injury that happened in the New Orleans game. He’s going to be out “a little bit,” Rick Carlisle says. Happened in New Orleans. Unsure on timeline but said it could be “a few weeks”.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 5,
+        "reposts": 0
+      },
+      "players": [
+        "ben-sheppard"
+      ],
+      "teams": [],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3A22fudzaxnal4ddodzv2o6mwk%2Fapp.bsky.feed.post%2F3myl4aw2qyc2y",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:20:46Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/jmcdonaldsa.bsky.social/post/3myl4aw2qyc2y",
+      "title": "\"It's a different kind of platform.\"",
+      "author": {
+        "handle": "jmcdonaldsa.bsky.social",
+        "display_name": "Jeff McDonald",
+        "url": "https://bsky.app/profile/jmcdonaldsa.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:22fudzaxnal4ddodzv2o6mwk/bafkreieti3sh5fxorvs4tvyyunv6qjk6jnsvw4ogiqtligkspif3l2ypk4"
+      },
+      "body_excerpt": "\"It's a different kind of platform.\"\n\nWhy are the Spurs in Austin for their second home game of the season? Thank hundreds of thousands of racing fans set to invade the city for the F1 Grand Prix.\n\nOn a mega-sports weekend in Austin, and the Spurs' place in it:\n\nwww.expressnews.com/sports/spurs...",
+      "media": {
+        "type": "link",
+        "uri": "https://www.expressnews.com/sports/spurs/article/spurs-formula-1-grand-prix-longhorns-mississippi-22491322.php",
+        "title": "Why are the Spurs in Austin this weekend? Thank F1",
+        "description": "By joining the bill in a massive sports weekend in Austin, the Spurs are hoping to attract international eyeballs and corporate sponsorship dollars",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:22fudzaxnal4ddodzv2o6mwk/bafkreifgitc5w7iahz5e3zx4iq6ykbr5dopti6ugmminfn7prlukvfvvuy"
+      },
+      "engagement": {
+        "likes": 6,
+        "reposts": 1
+      },
+      "players": [],
+      "teams": [
+        "san-antonio-spurs"
+      ],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:22fudzaxnal4ddodzv2o6mwk/bafkreifgitc5w7iahz5e3zx4iq6ykbr5dopti6ugmminfn7prlukvfvvuy",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.expressnews.com/sports/spurs/article/spurs-formula-1-grand-prix-longhorns-mississippi-22491322.php"
+            }
+          ],
+          "index": {
+            "byteEnd": 298,
+            "byteStart": 263
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs-did%3Aplc%3A7uahugigvixjvxd5s2hidpad%2Fapp.bsky.feed.post%2F3myl4b2df2k23",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:20:51Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/tonyreast.bsky.social/post/3myl4b2df2k23",
+      "title": "Aaron Nesmith will play tonight, Rick Carlisle says.",
+      "author": {
+        "handle": "tonyreast.bsky.social",
+        "display_name": "Tony East",
+        "url": "https://bsky.app/profile/tonyreast.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreibcezoefeniffictxya32ce54pxckgbi6tyrpl5atugj63b6c25ei"
+      },
+      "body_excerpt": "Aaron Nesmith will play tonight, Rick Carlisle says.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 10,
+        "reposts": 1
+      },
+      "players": [
+        "aaron-nesmith"
+      ],
+      "teams": [],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Adnxkqc6rsqossh7uhyobkeua%2Fapp.bsky.feed.post%2F3myl4h2zmfc2y",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:24:13Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/bobbykrivitsky.bsky.social/post/3myl4h2zmfc2y",
+      "title": "Joe Mazzulla on what the Celtics have taken from the top teams around the NBA in recent years:",
+      "author": {
+        "handle": "bobbykrivitsky.bsky.social",
+        "display_name": "Bobby Krivitsky",
+        "url": "https://bsky.app/profile/bobbykrivitsky.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:dnxkqc6rsqossh7uhyobkeua/bafkreico5zyufbnodb5nzc2crnx7rm453722niv7tsvca3u2mrjotqiasq"
+      },
+      "body_excerpt": "Joe Mazzulla on what the Celtics have taken from the top teams around the NBA in recent years:\n\n“You have to take some of what your opponents do and make it yours in some capacity.”\n\nSpecifically, he cited the emphasis on things like generating extra possessions.",
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Adnxkqc6rsqossh7uhyobkeua/bafkreibfcgesgklgtzxlf776s7dutadnv5z3xxu3jcokgojuesdzck5e7e/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Adnxkqc6rsqossh7uhyobkeua/bafkreibfcgesgklgtzxlf776s7dutadnv5z3xxu3jcokgojuesdzck5e7e/playlist.m3u8"
+      },
+      "engagement": {
+        "likes": 0,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [
+        "boston-celtics"
+      ],
+      "enriched": true,
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Adnxkqc6rsqossh7uhyobkeua/bafkreibfcgesgklgtzxlf776s7dutadnv5z3xxu3jcokgojuesdzck5e7e/thumbnail.jpg"
+    },
+    {
+      "id": "bs-did%3Aplc%3A7uahugigvixjvxd5s2hidpad%2Fapp.bsky.feed.post%2F3myl4t4i3jc22",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:30:57Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/tonyreast.bsky.social/post/3myl4t4i3jc22",
+      "title": "🟡",
+      "author": {
+        "handle": "tonyreast.bsky.social",
+        "display_name": "Tony East",
+        "url": "https://bsky.app/profile/tonyreast.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreibcezoefeniffictxya32ce54pxckgbi6tyrpl5atugj63b6c25ei"
+      },
+      "body_excerpt": "🟡",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreih5azoekuwvznci3qgrde4daij2j3pauqrjxaij5gvewglteunh5m",
+            "alt": ""
+          },
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreihsifak32y25opjxegmiv6kk527r3lvivc2ohnqrh3dbg4g6s5jnq",
+            "alt": ""
+          }
+        ]
+      },
+      "engagement": {
+        "likes": 5,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreih5azoekuwvznci3qgrde4daij2j3pauqrjxaij5gvewglteunh5m"
+    },
+    {
+      "id": "bs-did%3Aplc%3Adl5qk5kkrd4tcdskgc5soow2%2Fapp.bsky.feed.post%2F3myl4vqowuk2t",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:32:26Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/rodboone.bsky.social/post/3myl4vqowuk2t",
+      "title": "Season 9 anyone?",
+      "author": {
+        "handle": "rodboone.bsky.social",
+        "display_name": "Rod Boone",
+        "url": "https://bsky.app/profile/rodboone.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:dl5qk5kkrd4tcdskgc5soow2/bafkreibsit7dclh6v3forewi26dtrrmselyvnuwix7kndwtqbpwfq7chgu"
+      },
+      "body_excerpt": "Season 9 anyone?",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:dl5qk5kkrd4tcdskgc5soow2/bafkreicwg4e7qix7f3qykwz5lgczh3437e5udzgfgq5z2pq7oqm7vtc6lm",
+            "alt": ""
+          },
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:dl5qk5kkrd4tcdskgc5soow2/bafkreid64dvtowmmrrfajhc6gzw6iqlk7qfsryr4oltzoejrhn5i4jzkq4",
+            "alt": ""
+          }
+        ]
+      },
+      "engagement": {
+        "likes": 5,
+        "reposts": 0
+      },
+      "players": [],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:dl5qk5kkrd4tcdskgc5soow2/bafkreicwg4e7qix7f3qykwz5lgczh3437e5udzgfgq5z2pq7oqm7vtc6lm"
+    },
+    {
+      "id": "bs-did%3Aplc%3Ashbrsjbjrqrsnjxwniprp6s6%2Fapp.bsky.feed.post%2F3myl4wroeck2q",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:33:00Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/rickyodonn.bsky.social/post/3myl4wroeck2q",
+      "title": "I’m in Indy for Pacers-Mavericks tonight. It’s going to be rocking for Tyrese Haliburton’s home return. ",
+      "author": {
+        "handle": "rickyodonn.bsky.social",
+        "display_name": "Ricky O'Donnell",
+        "url": "https://bsky.app/profile/rickyodonn.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:shbrsjbjrqrsnjxwniprp6s6/bafkreid5363tyzbbk5j43jy4i6og7nhxjgemgvycb4ftdozqfcxdjk73su"
+      },
+      "body_excerpt": "I’m in Indy for Pacers-Mavericks tonight. It’s going to be rocking for Tyrese Haliburton’s home return. \n\nCooper Flagg getting loose pre-game:",
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ashbrsjbjrqrsnjxwniprp6s6/bafkreibe66owxonmluwgbqa7flekfwj4tar6iiym7owiahan7aqmrhrwle/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Ashbrsjbjrqrsnjxwniprp6s6/bafkreibe66owxonmluwgbqa7flekfwj4tar6iiym7owiahan7aqmrhrwle/playlist.m3u8"
+      },
+      "engagement": {
+        "likes": 0,
+        "reposts": 0
+      },
+      "players": [
+        "cooper-flagg",
+        "tyrese-haliburton"
+      ],
+      "teams": [
+        "dallas-mavericks",
+        "indiana-pacers"
+      ],
+      "enriched": true,
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ashbrsjbjrqrsnjxwniprp6s6/bafkreibe66owxonmluwgbqa7flekfwj4tar6iiym7owiahan7aqmrhrwle/thumbnail.jpg"
+    },
+    {
+      "id": "bs-did%3Aplc%3Amx62ni2prhriaagd7jfa65zk%2Fapp.bsky.feed.post%2F3myl53spokk2y",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:35:49Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/stevejones20.bsky.social/post/3myl53spokk2y",
+      "title": "Well that's a smooth drive and finish from Caleb Wilson",
+      "author": {
+        "handle": "stevejones20.bsky.social",
+        "display_name": "Steve Jones",
+        "url": "https://bsky.app/profile/stevejones20.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:mx62ni2prhriaagd7jfa65zk/bafkreibsasqbomwgwfh2pcbppafnejcmsib2rcnagdsyaeenusuzh5zfqa"
+      },
+      "body_excerpt": "Well that's a smooth drive and finish from Caleb Wilson",
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Amx62ni2prhriaagd7jfa65zk/bafkreia72scqiywpbigqscuu6zvyj7gm2iiyw7m43ftnhumg7obnpqbxeq/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Amx62ni2prhriaagd7jfa65zk/bafkreia72scqiywpbigqscuu6zvyj7gm2iiyw7m43ftnhumg7obnpqbxeq/playlist.m3u8"
+      },
+      "engagement": {
+        "likes": 3,
+        "reposts": 0
+      },
+      "players": [
+        "caleb-wilson"
+      ],
+      "teams": [],
+      "enriched": true,
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Amx62ni2prhriaagd7jfa65zk/bafkreia72scqiywpbigqscuu6zvyj7gm2iiyw7m43ftnhumg7obnpqbxeq/thumbnail.jpg"
+    },
+    {
+      "id": "bs-did%3Aplc%3Adnxkqc6rsqossh7uhyobkeua%2Fapp.bsky.feed.post%2F3myl55fuy4c2y",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:36:43Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/bobbykrivitsky.bsky.social/post/3myl55fuy4c2y",
+      "title": "Will Mike Brown instruct the Knicks to hack-a-Mitch?",
+      "author": {
+        "handle": "bobbykrivitsky.bsky.social",
+        "display_name": "Bobby Krivitsky",
+        "url": "https://bsky.app/profile/bobbykrivitsky.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:dnxkqc6rsqossh7uhyobkeua/bafkreico5zyufbnodb5nzc2crnx7rm453722niv7tsvca3u2mrjotqiasq"
+      },
+      "body_excerpt": "Will Mike Brown instruct the Knicks to hack-a-Mitch?",
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Adnxkqc6rsqossh7uhyobkeua/bafkreiai33zonfpmo4ynj7rotnslt5xkwa7cdac7zlh7yoxzqiampuzkn4/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Adnxkqc6rsqossh7uhyobkeua/bafkreiai33zonfpmo4ynj7rotnslt5xkwa7cdac7zlh7yoxzqiampuzkn4/playlist.m3u8"
+      },
+      "engagement": {
+        "likes": 1,
+        "reposts": 1
+      },
+      "players": [],
+      "teams": [
+        "new-york-knicks"
+      ],
+      "enriched": true,
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Adnxkqc6rsqossh7uhyobkeua/bafkreiai33zonfpmo4ynj7rotnslt5xkwa7cdac7zlh7yoxzqiampuzkn4/thumbnail.jpg"
+    },
+    {
+      "id": "bs-did%3Aplc%3A7uahugigvixjvxd5s2hidpad%2Fapp.bsky.feed.post%2F3myl5e6erks2t",
+      "source": "bluesky",
+      "published_at": "2026-10-23T21:40:30Z",
+      "ingested_at": "2026-10-23T21:42:05Z",
+      "url": "https://bsky.app/profile/tonyreast.bsky.social/post/3myl5e6erks2t",
+      "title": "Kyrie Irving will be on a minutes restriction for Dallas tonight, Dusty May confirms.",
+      "author": {
+        "handle": "tonyreast.bsky.social",
+        "display_name": "Tony East",
+        "url": "https://bsky.app/profile/tonyreast.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreibcezoefeniffictxya32ce54pxckgbi6tyrpl5atugj63b6c25ei"
+      },
+      "body_excerpt": "Kyrie Irving will be on a minutes restriction for Dallas tonight, Dusty May confirms.",
+      "media": {
+        "type": "text"
+      },
+      "engagement": {
+        "likes": 0,
+        "reposts": 0
+      },
+      "players": [
+        "kyrie-irving"
+      ],
+      "teams": [],
+      "enriched": true
     }
   ]
 }
