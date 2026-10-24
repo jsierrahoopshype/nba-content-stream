@@ -1,9 +1,151 @@
 {
   "slug": "toronto-raptors",
   "name": "Toronto Raptors",
-  "generated_at": "2026-10-24T09:11:34Z",
-  "count": 516,
+  "generated_at": "2026-10-24T13:23:41Z",
+  "count": 518,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Afqsmj7o5mbb7n7oav2kkjuid%2Fapp.bsky.feed.post%2F3mymp7bcvak2g",
+      "source": "bluesky",
+      "published_at": "2026-10-24T12:32:32Z",
+      "title": "Raptors are 2-0 to start the NBA season for the first time since 2018-19, when they started 6-0. ",
+      "url": "https://bsky.app/profile/nbastat.bsky.social/post/3mymp7bcvak2g",
+      "author": "NBA Stat",
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:fqsmj7o5mbb7n7oav2kkjuid/bafkreiepvzkryexr6gnd2mgfuskejk5wwlovggkiwxfnbr5dewd4rame5y",
+      "body_excerpt": "Raptors are 2-0 to start the NBA season for the first time since 2018-19, when they started 6-0. \n\nTheir opponents through 2 games: 57 made shots, 50 turnovers\n\n(via @keerthikau.bsky.social)\n#NBA",
+      "players": [],
+      "teams": [
+        "toronto-raptors"
+      ],
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:fqsmj7o5mbb7n7oav2kkjuid/bafkreiepvzkryexr6gnd2mgfuskejk5wwlovggkiwxfnbr5dewd4rame5y",
+            "alt": ""
+          }
+        ]
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:fqsmj7o5mbb7n7oav2kkjuid/bafkreic3g44bm3orae6dkm4npna6phnodi74whhp6rkohxpe32x2hht27u",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:blrk2gk5dq32snk2kthu3cnn"
+            }
+          ],
+          "index": {
+            "byteEnd": 189,
+            "byteStart": 166
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "NBA"
+            }
+          ],
+          "index": {
+            "byteEnd": 195,
+            "byteStart": 191
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Ag3fvb2cxn4yxcq3rjd2llqv5%2Fapp.bsky.feed.post%2F3mymlx3ane22w",
+      "source": "bluesky",
+      "published_at": "2026-10-24T11:34:16Z",
+      "title": "Kawhi Leonard was at the center of the NBA’s investigation into salary cap circumvention by the Clippers, on his behalf. But the league, basically, let him walk. Now he’s back with the Raptors, whom he led to a 2019 title. Free to read, in @theathletic.com:",
+      "url": "https://bsky.app/profile/davidaldridgedc.bsky.social/post/3mymlx3ane22w",
+      "author": "David Aldridge",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:g3fvb2cxn4yxcq3rjd2llqv5/bafkreihs354i5m55oidagf3iuz5gr7agliqnla7aeyrb4vq6yixb4t55gm",
+      "body_excerpt": "Kawhi Leonard was at the center of the NBA’s investigation into salary cap circumvention by the Clippers, on his behalf. But the league, basically, let him walk. Now he’s back with the Raptors, whom he led to a 2019 title. Free to read, in @theathletic.com:\n\nwww.nytimes.com/athletic/771...",
+      "players": [
+        "kawhi-leonard"
+      ],
+      "teams": [
+        "los-angeles-clippers",
+        "toronto-raptors"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://www.nytimes.com/athletic/7718340/2026/10/24/kawhi-leonard-toronto-raptors-return/?unlocked_article_code=1.LFE.5ph3.oE03IqqRORu3&source=emp_shared_article&smid=ta-ios-share",
+        "title": "Kawhi Leonard, back in Toronto, hopes to help these new Raptors get to where he’s been (Gift Article)",
+        "description": "As Kawhi Leonard returns to Toronto, the city is familiar but his teammates are not.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:g3fvb2cxn4yxcq3rjd2llqv5/bafkreihs354i5m55oidagf3iuz5gr7agliqnla7aeyrb4vq6yixb4t55gm"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:g3fvb2cxn4yxcq3rjd2llqv5/bafkreicfakiuq6ad6ziqda4c2rwoti7btaz4xhi4u455ucqodwcv7f3loa",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:b2kutgxqlltwc6lhs724cfwr"
+            }
+          ],
+          "index": {
+            "byteEnd": 260,
+            "byteStart": 244
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.nytimes.com/athletic/7718340/2026/10/24/kawhi-leonard-toronto-raptors-return/?unlocked_article_code=1.LFE.5ph3.oE03IqqRORu3&source=emp_shared_article&smid=ta-ios-share"
+            }
+          ],
+          "index": {
+            "byteEnd": 294,
+            "byteStart": 263
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3Afhyu4zjougtr3emjwdulollt%2Fapp.bsky.feed.post%2F3mymlh54fes2f",
+      "source": "bluesky",
+      "published_at": "2026-10-24T11:25:21Z",
+      "title": "The Raptors handled a big job, now a smaller, probably more difficult, test awaits",
+      "url": "https://bsky.app/profile/smithraptorsbeat.bsky.social/post/3mymlh54fes2f",
+      "author": "Doug Smith",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:fhyu4zjougtr3emjwdulollt/bafkreiclht6apwxxxi7qlal32mc2aebroe3ezmjhjzvawa26qpfqd26tju",
+      "body_excerpt": "The Raptors handled a big job, now a smaller, probably more difficult, test awaits\n\nwww.thestar.com/sports/rapto...",
+      "players": [],
+      "teams": [
+        "toronto-raptors"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://www.thestar.com/sports/raptors/can-raptors-defence-the-darko-way-handle-anthony-edwards-and-lamelo-ball-they-re-about-to-find-out/article_c968f6c6-c7e9-40c0-adc9-dc0fc47bc2d4.html",
+        "title": "Can Raptors defence the Darko way handle Anthony Edwards and LaMelo Ball? They’re about to find out",
+        "description": "The Raptors, looking to go 3-0 in Minnesota, did not trail for a second in their first two games.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:fhyu4zjougtr3emjwdulollt/bafkreiclht6apwxxxi7qlal32mc2aebroe3ezmjhjzvawa26qpfqd26tju"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:fhyu4zjougtr3emjwdulollt/bafkreiajribnpdrs22kkygn2qxwwowyitv7otscl6mebx6kty7uijwrk3i",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.thestar.com/sports/raptors/can-raptors-defence-the-darko-way-handle-anthony-edwards-and-lamelo-ball-they-re-about-to-find-out/article_c968f6c6-c7e9-40c0-adc9-dc0fc47bc2d4.html"
+            }
+          ],
+          "index": {
+            "byteEnd": 115,
+            "byteStart": 84
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-f3f8f43394530255",
       "source": "google-news",
@@ -18,6 +160,23 @@
       ],
       "teams": [
         "dallas-mavericks",
+        "toronto-raptors"
+      ]
+    },
+    {
+      "id": "gn-fa41db54c8fabe22",
+      "source": "google-news",
+      "published_at": "2026-10-24T06:12:00Z",
+      "title": "Warriors predicted to trade for Raptors' $107M physical guard fan favorite to pair with Steph Curry",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNQktsNG1TQ2xsUlVNWTIxcjdIdm5xMDFLZUZGdVdwT1RYcHNNb1AzTGdQNVJzdDMzSnFKTkFKTXFHWnI1MXY2dXc0VjNzS3lVUEF3Zm90R2t3ZFBGdHotVFhuMW9qc2ZXbkozVmU2Z19xNmFmbFd2emU1ZlBzTTNwc2x3eGYwWERCYXJHa211NA?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Warriors predicted to trade for Raptors' $107M physical guard fan favorite to pair with Steph Curry Yahoo Sports",
+      "players": [
+        "stephen-curry"
+      ],
+      "teams": [
+        "golden-state-warriors",
         "toronto-raptors"
       ]
     },
@@ -53,6 +212,21 @@
       "enriched": true
     },
     {
+      "id": "gn-1482725322d152ae",
+      "source": "google-news",
+      "published_at": "2026-10-24T02:05:35Z",
+      "title": "Raptors 112-102 Wizards (Oct 23, 2026) Game Recap",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBhRE44cFpNc1F3R29Ed1g5QkNFSFd3aFNJeXIyUFNLNThDYlB4aGUtOWNHVG5NQVhJdjJVcXVMUGVWaE9SU3ZxeVMtdkM5QUZsMzZHVnlaaFkzeFU?oc=5",
+      "author": "ESPN",
+      "thumbnail": null,
+      "body_excerpt": "Raptors 112-102 Wizards (Oct 23, 2026) Game Recap ESPN 3 Takeaways from Raptors Big Win vs. Wizards Sports Illustrated Too many turnovers, not enough rebounds — Wizards lose to Raptors Bullets Forever",
+      "players": [],
+      "teams": [
+        "toronto-raptors",
+        "washington-wizards"
+      ]
+    },
+    {
       "id": "gn-c4260483691f6420",
       "source": "google-news",
       "published_at": "2026-10-24T02:05:27Z",
@@ -61,6 +235,21 @@
       "author": "Sports Illustrated",
       "thumbnail": null,
       "body_excerpt": "Studs and Duds from Wizards Brutal Loss to Raptors Sports Illustrated",
+      "players": [],
+      "teams": [
+        "toronto-raptors",
+        "washington-wizards"
+      ]
+    },
+    {
+      "id": "gn-57c57a2fa8234950",
+      "source": "google-news",
+      "published_at": "2026-10-24T01:54:00Z",
+      "title": "Barnes, Barrett pace stingy Raptors to a 112-102 win over the Wizards",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQU1Y5LUlnWHhnZEI0a3AybWhadDc1bXVMMDltek84SXN0S3hfRGlNaGFzbE5vR2FSb1pza2IxeHNqenNneWZFVVVhZUs5WDJuMXFuQjJhbk5TaEozWjlkd2VUcUxpLS1SbTVleXk5a1htTlBldmt0RkJuNFYzNng4QW1pY3RhQllQRGVZ?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Barnes, Barrett pace stingy Raptors to a 112-102 win over the Wizards Yahoo Sports",
       "players": [],
       "teams": [
         "toronto-raptors",
@@ -216,6 +405,21 @@
       ],
       "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:fhyu4zjougtr3emjwdulollt/bafkreiajribnpdrs22kkygn2qxwwowyitv7otscl6mebx6kty7uijwrk3i",
       "enriched": true
+    },
+    {
+      "id": "gn-88979c5eb8983c65",
+      "source": "google-news",
+      "published_at": "2026-10-23T23:42:55Z",
+      "title": "Toronto Raptors vs Washington Wizards Oct 23, 2026 Play-by-Play",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1MLURuM1JJZVMzczhpOGFMLUVjMHZOQ2Z5UGkyR1Bfd1NpR183SkhicFNISEF5R3d5MmdvOHVuVHlyNG5qWVR3eVZrcExvRzZjSDZ3LUZ2REtlSHVfUTFwQjRSNFIwTmFpX2Jn?oc=5",
+      "author": "NBA.com",
+      "thumbnail": null,
+      "body_excerpt": "Toronto Raptors vs Washington Wizards Oct 23, 2026 Play-by-Play NBA.com",
+      "players": [],
+      "teams": [
+        "toronto-raptors",
+        "washington-wizards"
+      ]
     },
     {
       "id": "gn-961d5e0b00604c07",
@@ -9031,110 +9235,6 @@
       ],
       "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:y3xahfdgzxpjsqogokmi43bt/bafkreiaqlur4c4jaie7c6dico5vncvaskkiphyhpkqzwuco5praatpfzve",
       "enriched": true
-    },
-    {
-      "id": "gn-1a95c9c70e6fb48e",
-      "source": "google-news",
-      "published_at": "2026-09-24T13:00:04Z",
-      "title": "Should Clippers Feel Relieved After Kawhi Leonard’s $115 Million Raptors Contract?",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOUmZ1MElPOV9SeVpOcGZzWG4wekM0bzhNX05TUzBLQlRUc1h5c0V4dWc3TURVNFUwRFMxWnEtMDBBZVNSR3IzRWVlbDB0UnpMdFVrN3FqbTQ2MFNoTVI2X0RmbDJGZFNCaS16SmVzV0tZbngtLWw5dFpsLWFlaWxmaG4zRkdhUGJqTGFrdURR?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Should Clippers Feel Relieved After Kawhi Leonard’s $115 Million Raptors Contract? Yahoo Sports",
-      "players": [
-        "kawhi-leonard"
-      ],
-      "teams": [
-        "los-angeles-clippers",
-        "toronto-raptors"
-      ]
-    },
-    {
-      "id": "gn-46ac20253168cc72",
-      "source": "google-news",
-      "published_at": "2026-09-24T12:00:00Z",
-      "title": "Preview: Will RJ Barrett be the Raptors’ saviour or scapegoat?",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPXzM4WHU3YXhpeXRRMTh3LTdCclZSTWxId25NZ3UwNmtYcGtSVWdpNzktZnVkUWZzNVRfSkNiVl9MVWdoVkxYTFZwenV1c2k3NU81STBVRFFrWEtmd1J4NVVTU2lIMktPNWVCd2JZUTFGT1A5WFNzQ0RIYm1MUDBXdHdFUnFoUTRFMmhr?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Preview: Will RJ Barrett be the Raptors’ saviour or scapegoat? Yahoo Sports",
-      "players": [
-        "rj-barrett"
-      ],
-      "teams": [
-        "toronto-raptors"
-      ]
-    },
-    {
-      "id": "bs-did%3Aplc%3Av6xd7qcm4tsgb4ndo547vh4n%2Fapp.bsky.feed.post%2F3mwb6jins4s26",
-      "source": "bluesky",
-      "published_at": "2026-09-24T11:44:21Z",
-      "title": "• Kawhi signs two-year, $115 million deal with Raptors",
-      "url": "https://bsky.app/profile/jeskeets.bsky.social/post/3mwb6jins4s26",
-      "author": "J.E. Skeets",
-      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreiau3pxdej7sazijiffl7pru27n2pku5olr65ptjch2amap3i6lsf4",
-      "body_excerpt": "• Kawhi signs two-year, $115 million deal with Raptors\n• Karl-Anthony Towns' Knicks contract talks\n• And a Wikipedia deep dive on the insane '15-16 NBA season\n\nNew No Dunks live at 10 a.m. ET ➡️ bit.ly/4hlI27F",
-      "players": [
-        "kawhi-leonard"
-      ],
-      "teams": [
-        "toronto-raptors"
-      ],
-      "media": {
-        "type": "image",
-        "images": [
-          {
-            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreiau3pxdej7sazijiffl7pru27n2pku5olr65ptjch2amap3i6lsf4",
-            "alt": ""
-          }
-        ]
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:v6xd7qcm4tsgb4ndo547vh4n/bafkreidntfbgr4kn6b2nevpvhddp5xltzzb24dgq7msnh52llmzzqzi6r4",
-      "facets": [
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://bit.ly/4hlI27F"
-            }
-          ],
-          "index": {
-            "byteEnd": 219,
-            "byteStart": 205
-          }
-        }
-      ],
-      "enriched": true
-    },
-    {
-      "id": "gn-d155e0982f74eec4",
-      "source": "google-news",
-      "published_at": "2026-09-24T11:30:00Z",
-      "title": "Kawhi Leonard’s NBA contract extension with Raptors will look terrible in 2 years",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPeXkxSy1rcjc3VC1EVDliSXRMb1MwbEZiVkdGRHlTUmw2c3VFV0xtSGE3UkM4Si1NYkhkeW5JMFVwVm80RXdHNnV1Q1ZIdHhPTmZ3bUFkQ1VUbkljMXJDYTlvM05rLTYweGRnN0l5R0RTOWJjbXdYM0VLaHExOWdNeVhZbDhqc2NWd1JuUm1R?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Kawhi Leonard’s NBA contract extension with Raptors will look terrible in 2 years Yahoo Sports",
-      "players": [
-        "kawhi-leonard"
-      ],
-      "teams": [
-        "toronto-raptors"
-      ]
-    },
-    {
-      "id": "gn-7dc3426c2bba6e21",
-      "source": "google-news",
-      "published_at": "2026-09-24T11:00:07Z",
-      "title": "The 3 Burning Questions the Raptors Must Address in Training Camp",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOODd4TkNCRDBZYTZKQWRjVDFfWElqRGhDQTNhcHRkcXZoRExac05FMXc2d2ZfVnpOeGN1YU5QWmlOMXJ5T2hTQzZSQzlacnVqMW10dlI2S0tKckpfUjMzQjlKR1N2VVI5VEpnQ1l5OWR1U3pMUk1OZ2ZxQzd4OHJzckpYeDY4VThE?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "The 3 Burning Questions the Raptors Must Address in Training Camp Yahoo Sports",
-      "players": [],
-      "teams": [
-        "toronto-raptors"
-      ]
     }
   ]
 }
