@@ -1,9 +1,77 @@
 {
   "slug": "los-angeles-lakers",
   "name": "Los Angeles Lakers",
-  "generated_at": "2026-10-24T21:49:57Z",
+  "generated_at": "2026-10-25T00:09:03Z",
   "count": 1000,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3A75z3gabuwl6uvv7pootuuvgn%2Fapp.bsky.feed.post%2F3mynskacq2b2s",
+      "source": "bluesky",
+      "published_at": "2026-10-24T23:05:00Z",
+      "title": "Collin Sexton's teammates loved the energy he brought in his #Lakers debut.",
+      "url": "https://bsky.app/profile/lakersnation.bsky.social/post/3mynskacq2b2s",
+      "author": "LakersNation.com",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreibdxnssft7chmltch7tlx6taou7umnfdmn4svqpznfv3bjr3g436a",
+      "body_excerpt": "Collin Sexton's teammates loved the energy he brought in his #Lakers debut.\nlakersnation.com/austin-reave...",
+      "players": [
+        "collin-sexton"
+      ],
+      "teams": [
+        "los-angeles-lakers"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://lakersnation.com/austin-reaves-and-walker-kessler-praise-collin-sexton-energy-in-lakers-debut/",
+        "title": "Collin Sexton's teammates loved his energy in his Lakers debut",
+        "description": "Austin Reaves and Walker Kessler praised the energy of guard Collin Sexton in his Los Angeles Lakers debut.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreibdxnssft7chmltch7tlx6taou7umnfdmn4svqpznfv3bjr3g436a"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreiha6wdd65xjneeckcurw4zgpgcfrick6hylxlxoe5owj2kjxzu42e",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Lakers"
+            }
+          ],
+          "index": {
+            "byteEnd": 68,
+            "byteStart": 61
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://lakersnation.com/austin-reaves-and-walker-kessler-praise-collin-sexton-energy-in-lakers-debut/"
+            }
+          ],
+          "index": {
+            "byteEnd": 108,
+            "byteStart": 76
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "yt-OzniWeGnRd8",
+      "source": "youtube",
+      "published_at": "2026-10-24T22:04:31Z",
+      "title": "Nancy Lieberman played for the Lakers' summer league team in 1981. Pat Riley didn’t want her there.",
+      "url": "https://www.youtube.com/watch?v=OzniWeGnRd8",
+      "author": "ALL THE SMOKE",
+      "thumbnail": "https://i.ytimg.com/vi/OzniWeGnRd8/maxresdefault.jpg",
+      "body_excerpt": "Nancy Lieberman played for the Lakers' summer league team in 1981. Pat Riley didn’t want her there. 45 years later, she told us the story of how she won him over.",
+      "players": [],
+      "teams": [
+        "los-angeles-lakers"
+      ],
+      "media": {
+        "type": "video"
+      }
+    },
     {
       "id": "bs-did%3Aplc%3A75z3gabuwl6uvv7pootuuvgn%2Fapp.bsky.feed.post%2F3mynlxbi7ev2t",
       "source": "bluesky",
@@ -20281,36 +20349,6 @@
       "author": "Bleacher Report",
       "thumbnail": null,
       "body_excerpt": "Los Angeles Lakers vs. Sacramento Kings Live NBA Preseason Updates, Scores and Highlights Bleacher Report",
-      "players": [],
-      "teams": [
-        "los-angeles-lakers",
-        "sacramento-kings"
-      ]
-    },
-    {
-      "id": "gn-dcc55d66433909f8",
-      "source": "google-news",
-      "published_at": "2026-10-09T02:28:00Z",
-      "title": "Lakers reveal injury report for Thursday's game vs. Kings",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOTlprdGRUUEZLVTFCakEyNVpmT3gwZEFXYkh3UVdqa3RKQWhfaWVHQ1NJbUlyQVBMYkFaUFFKUkZXWFBTeWFsaEdsRFQ0QVI1ZTR0Z2xsZFJlR0picWJNZnM0RU1xdVNMVnlDWFhuZUVHV0JWSzFncHYwMGE0ZXU4ZERHeEM5NkJ3U1l2djdLYw?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Lakers reveal injury report for Thursday's game vs. Kings Yahoo Sports",
-      "players": [],
-      "teams": [
-        "los-angeles-lakers",
-        "sacramento-kings"
-      ]
-    },
-    {
-      "id": "gn-5cccab06fba63ef0",
-      "source": "google-news",
-      "published_at": "2026-10-09T02:11:21Z",
-      "title": "Sacramento Kings vs Los Angeles Lakers Oct 8, 2026 Box Scores",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFB0eDJWUXF5akZBRUMzTVhsMWJHOHBBOUlwaTZqRFVPUU5GUlNnWVdSeGxEd1ZnZDBsOXBRei00ZFpMR1VzdVhRYkxqT0RVa0E1OUVOQWp5cGRCRlNhWGl2NnBGX0pNYVE?oc=5",
-      "author": "NBA.com",
-      "thumbnail": null,
-      "body_excerpt": "Sacramento Kings vs Los Angeles Lakers Oct 8, 2026 Box Scores NBA.com",
       "players": [],
       "teams": [
         "los-angeles-lakers",
