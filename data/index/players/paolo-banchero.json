@@ -1,9 +1,66 @@
 {
   "slug": "paolo-banchero",
   "name": "Paolo Banchero",
-  "generated_at": "2026-10-25T17:33:04Z",
-  "count": 103,
+  "generated_at": "2026-10-25T20:01:32Z",
+  "count": 104,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3mypulqrrr22k",
+      "source": "bluesky",
+      "published_at": "2026-10-25T18:46:59Z",
+      "title": "My latest for @orlandosentinel.com: #Magic forward Paolo Banchero said Sunday he’s “pissed off” by a right ankle injury that could keep him out “at least a month.”",
+      "url": "https://bsky.app/profile/jbeede.bsky.social/post/3mypulqrrr22k",
+      "author": "Jason Beede",
+      "thumbnail": null,
+      "body_excerpt": "My latest for @orlandosentinel.com: #Magic forward Paolo Banchero said Sunday he’s “pissed off” by a right ankle injury that could keep him out “at least a month.”\n\n“You don’t want to feel sorry for yourself … I’m just upset,” he said.\n\nMore from New York: www.orlandosentinel.com/2026/10/25/o...",
+      "players": [
+        "paolo-banchero"
+      ],
+      "teams": [
+        "orlando-magic"
+      ],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiey3powizzh2yl5k4eyoftbxztccx6pgnmdozyhyyjqybjhhnc2ne",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:g5n6tmh54utzmwjregfbb7ul"
+            }
+          ],
+          "index": {
+            "byteEnd": 34,
+            "byteStart": 14
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Magic"
+            }
+          ],
+          "index": {
+            "byteEnd": 42,
+            "byteStart": 36
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.orlandosentinel.com/2026/10/25/orlando-magic-new-york-knicks-paolo-banchero-injury-update-anthony-black-tristan-dasilva-nba-sean-sweeney/"
+            }
+          ],
+          "index": {
+            "byteEnd": 316,
+            "byteStart": 277
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3mypplgybnk2o",
       "source": "bluesky",
