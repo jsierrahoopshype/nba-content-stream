@@ -529,9 +529,10 @@ def test_run_dry_run_does_not_write_shard(
 
 
 def test_run_writes_shard_and_dedupes_on_rerun(
-    tmp_path, monkeypatch, channels_response, playlist_items_response
+    tmp_path, monkeypatch, channels_response, playlist_items_response, pin_poll_clock
 ):
     overrides_path, cache_path = _setup_run_env(tmp_path, monkeypatch)
+    pin_poll_clock(poll_youtube)
     from scripts.lib import sources
 
     fake_app_py = f"CHANNELS = ['{CHANNEL_ID}']"

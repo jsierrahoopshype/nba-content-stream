@@ -375,13 +375,18 @@ def build_feed(
     generated_at: str,
     window_days: Optional[int] = None,
     cap: Optional[int] = None,
+    now: Optional[datetime] = None,
 ) -> dict:
-    """Merged recent stream — all sources, newest-first, capped."""
+    """Merged recent stream — all sources, newest-first, capped.
+
+    `now` is the same clock `build_indexes` uses for every other index,
+    so the feed window and the player/team/trending windows agree.
+    """
     if window_days is None:
         window_days = FEED_WINDOW_DAYS
     if cap is None:
         cap = MAX_FEED_ITEMS
-    cutoff = _cutoff_iso(window_days)
+    cutoff = _cutoff_iso(window_days, now)
     windowed = [it for it in items if it.get("published_at", "") >= cutoff]
     capped = windowed[:cap]
     return {
@@ -554,7 +559,7 @@ def build_indexes(
         items, teams_dict, "teams", entity_cutoff, generated_at
     )
     trending = build_trending(items, generated_at, now=now)
-    feed = build_feed(items, generated_at)
+    feed = build_feed(items, generated_at, now=now)
     manifest = build_manifest(
         items, player_indexes, team_indexes, window_days, generated_at
     )

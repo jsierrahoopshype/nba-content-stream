@@ -1007,4 +1007,9 @@ a.when:hover{ color:var(--text); text-decoration:underline }
      chart isn't squeezed to ~120px and the rail has room to breathe. */
   .header-row{ flex-direction:column; gap:.4rem }
   .header-row .chart-wrap{ flex:1 1 auto; width:100% }
+  /* Stacked, the rail is sized across the column, and with the row's
+     align-items:flex-start it grew to the full length of its pill rows
+     (~1,750px), pushing the whole page sideways. Pin it to the column
+     width so the pill rows scroll inside their own box instead. */
+  .header-row .nav-rail{ flex:0 0 auto; width:100% }
 }

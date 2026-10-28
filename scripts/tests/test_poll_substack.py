@@ -353,8 +353,11 @@ def test_run_dry_run_writes_nothing(tmp_path, monkeypatch, capsys, feed):
     assert not (tmp_path / "substack").exists()
 
 
-def test_run_writes_shard_and_dedupes_on_rerun(tmp_path, monkeypatch, feed):
+def test_run_writes_shard_and_dedupes_on_rerun(
+    tmp_path, monkeypatch, feed, pin_poll_clock
+):
     monkeypatch.setattr(shards, "DATA_DIR", tmp_path)
+    pin_poll_clock(poll_substack)
     config_path = tmp_path / "subs.json"
     _write_test_config(config_path)
 

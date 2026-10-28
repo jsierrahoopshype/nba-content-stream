@@ -654,8 +654,12 @@ def test_run_dry_run_does_not_write_shard_or_advance_cursor(
     assert load_rotation_state(state_path) == (0, 0)
 
 
-def test_run_writes_shards_and_advances_cursor(tmp_path, monkeypatch, feed):
+def test_run_writes_shards_and_advances_cursor(
+    tmp_path, monkeypatch, feed, pin_poll_clock
+):
     monkeypatch.setattr(shards, "DATA_DIR", tmp_path)
+    # --since-hours 999 is measured from the fixtures' day, not today.
+    pin_poll_clock(poll_google_news)
     queries_path = tmp_path / "q.json"
     _write_test_config(queries_path)
     state_path = tmp_path / "state.json"
@@ -689,10 +693,11 @@ def test_run_writes_shards_and_advances_cursor(tmp_path, monkeypatch, feed):
 
 
 def test_run_writes_old_items_to_their_own_date_shard(
-    tmp_path, monkeypatch, feed
+    tmp_path, monkeypatch, feed, pin_poll_clock
 ):
     """A May-14 entry must land in `2026-05-14.json`, not today's shard."""
     monkeypatch.setattr(shards, "DATA_DIR", tmp_path)
+    pin_poll_clock(poll_google_news)
     queries_path = tmp_path / "q.json"
     _write_test_config(queries_path)
     state_path = tmp_path / "state.json"
