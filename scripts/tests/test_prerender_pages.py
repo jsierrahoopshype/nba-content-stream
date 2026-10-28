@@ -552,3 +552,90 @@ def test_run_dry_run_zero_exit(tmp_path, monkeypatch, capsys):
     captured = capsys.readouterr().out
     assert "DRY RUN" in captured
     assert not (tmp_path / "players").exists()
+
+
+# ---------------------------------------------------------------------------
+# Sitemap lastmod: moves only when that page's content changes
+# ---------------------------------------------------------------------------
+
+
+def _lastmods(sitemap: Path) -> dict:
+    import re
+
+    return dict(
+        re.findall(r"<loc>([^<]+)</loc><lastmod>([^<]+)</lastmod>", sitemap.read_text())
+    )
+
+
+def _site(tmp_path: Path, team_items: dict, feed_ids=("f1",)) -> dict:
+    """Minimal site root: static pages, feed.json, per-team index files."""
+    (tmp_path / "index.html").write_text("<html>home</html>")
+    (tmp_path / "players.html").write_text("<html>players</html>")
+    (tmp_path / "teams.html").write_text("<html>teams</html>")
+    idx = tmp_path / "data" / "index"
+    (idx / "teams").mkdir(parents=True, exist_ok=True)
+    (idx / "feed.json").write_text(
+        json.dumps({"generated_at": "x", "items": [{"id": i} for i in feed_ids]})
+    )
+    for slug, ids in team_items.items():
+        (idx / "teams" / f"{slug}.json").write_text(
+            json.dumps({"slug": slug, "generated_at": "x", "items": [{"id": i} for i in ids]})
+        )
+    teams = [{"slug": s, "name": s.title(), "count": len(ids)} for s, ids in team_items.items()]
+    return {"generated_at": "x", "window_days": 30, "players": [], "teams": teams}
+
+
+def _build(tmp_path: Path, manifest: dict, today: str) -> dict:
+    sitemap = tmp_path / "sitemap.xml"
+    prerender_pages.generate_pages(
+        manifest,
+        players_out=tmp_path / "players",
+        teams_out=tmp_path / "teams",
+        sitemap_path=sitemap,
+        players_canonical_path=tmp_path / "no-canonical.json",
+        today=today,
+    )
+    return _lastmods(sitemap)
+
+
+def test_sitemap_lastmod_unchanged_content_keeps_every_date(tmp_path):
+    manifest = _site(tmp_path, {"boston-celtics": ["a", "b"], "miami-heat": ["c"]})
+    first = _build(tmp_path, manifest, "2026-10-01")
+    assert set(first.values()) == {"2026-10-01"}
+    assert (tmp_path / "data" / "page_hashes.json").exists()
+
+    # Same content, later run (generated_at stamps differ): no date moves.
+    manifest["generated_at"] = "later"
+    second = _build(tmp_path, manifest, "2026-10-28")
+    assert second == first
+
+
+def test_sitemap_lastmod_changed_page_moves_only_its_own(tmp_path):
+    manifest = _site(tmp_path, {"boston-celtics": ["a", "b"], "miami-heat": ["c"]})
+    first = _build(tmp_path, manifest, "2026-10-01")
+
+    # A new item reaches the Heat page only (team page content changes;
+    # the Celtics' items and the homepage feed don't).
+    (tmp_path / "data" / "index" / "teams" / "miami-heat.json").write_text(
+        json.dumps({"slug": "miami-heat", "items": [{"id": "c"}, {"id": "d"}]})
+    )
+    second = _build(tmp_path, manifest, "2026-10-28")
+
+    heat = prerender_pages.SITE_BASE_URL + "/teams/miami-heat.html"
+    assert second[heat] == "2026-10-28"
+    for url, date in second.items():
+        if url != heat:
+            assert date == first[url], url
+
+
+def test_sitemap_lastmod_first_run_seeds_from_existing_sitemap(tmp_path):
+    """No page_hashes.json yet: seed from the older existing lastmod
+    instead of stamping every page with today."""
+    manifest = _site(tmp_path, {"boston-celtics": ["a"]})
+    base = prerender_pages.SITE_BASE_URL
+    (tmp_path / "sitemap.xml").write_text(
+        f"<urlset><url><loc>{base}/teams/boston-celtics.html</loc>"
+        "<lastmod>2026-09-15</lastmod></url></urlset>"
+    )
+    dates = _build(tmp_path, manifest, "2026-10-28")
+    assert dates[base + "/teams/boston-celtics.html"] == "2026-09-15"

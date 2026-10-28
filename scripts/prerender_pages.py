@@ -9,6 +9,9 @@ duplicate the items into the HTML — the JS pulls them.
 
 Also writes `sitemap.xml` listing the homepage, directory pages, and
 team pages. Player pages carry `noindex` and are left out of it.
+Each sitemap URL's <lastmod> moves only when that page's content
+changes: a content hash per URL is kept in `data/page_hashes.json`
+(committed alongside the pages) and compared on every build.
 
 The script is idempotent: every run wipes `players/` and `teams/`
 under the repo root (the public HTML, not the JSON indexes) and
@@ -22,15 +25,18 @@ CLI:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import html
 import json
 import logging
+import re
 import shutil
+import subprocess
 import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import List, Tuple
+from typing import Dict, List, Optional, Tuple
 
 logger = logging.getLogger("prerender_pages")
 
@@ -327,30 +333,190 @@ def _render_page(
 # ---------------------------------------------------------------------------
 
 
-def _render_sitemap(player_slugs: List[str], team_slugs: List[str]) -> str:
+def _sitemap_urls(team_slugs: List[str]) -> List[str]:
+    """Every URL the sitemap lists, in sitemap order."""
+    urls = [
+        SITE_BASE_URL + "/",
+        SITE_BASE_URL + "/index.html",
+        SITE_BASE_URL + "/players.html",
+        SITE_BASE_URL + "/teams.html",
+    ]
+    # Player pages are noindex, so they're deliberately left out of the
+    # sitemap.
+    urls += [f"{SITE_BASE_URL}/teams/{slug}.html" for slug in team_slugs]
+    return urls
+
+
+def _render_sitemap(
+    player_slugs: List[str],
+    team_slugs: List[str],
+    lastmods: Optional[Dict[str, str]] = None,
+) -> str:
+    """`lastmods` maps URL -> YYYY-MM-DD (from `update_page_hashes`).
+    `player_slugs` is kept in the signature for callers."""
+    lastmods = lastmods or {}
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
-    for url in (
-        SITE_BASE_URL + "/",
-        SITE_BASE_URL + "/index.html",
-        SITE_BASE_URL + "/players.html",
-        SITE_BASE_URL + "/teams.html",
-    ):
+    for url in _sitemap_urls(team_slugs):
         lines.append(
-            f"  <url><loc>{url}</loc><lastmod>{today}</lastmod><changefreq>hourly</changefreq></url>"
-        )
-    # Player pages are noindex, so they're deliberately left out of the
-    # sitemap. `player_slugs` is kept in the signature for callers.
-    for slug in team_slugs:
-        lines.append(
-            f"  <url><loc>{SITE_BASE_URL}/teams/{slug}.html</loc>"
-            f"<lastmod>{today}</lastmod><changefreq>hourly</changefreq></url>"
+            f"  <url><loc>{url}</loc><lastmod>{lastmods.get(url, today)}</lastmod>"
+            "<changefreq>hourly</changefreq></url>"
         )
     lines.append("</urlset>")
     return "\n".join(lines) + "\n"
+
+
+# ---------------------------------------------------------------------------
+# Per-URL content hashes -> honest <lastmod>
+# ---------------------------------------------------------------------------
+#
+# What gets hashed is what a visitor actually sees on the page, never
+# anything that changes on every run (generated_at stamps, build ids):
+#   - team pages: the prerendered HTML + the ids of the items in
+#     data/index/teams/<slug>.json (the cards the page loads);
+#   - / and /index.html: index.html + the ids in data/index/feed.json;
+#   - players.html / teams.html: the HTML file + the directory roster
+#     (slug, name, count) from the manifest.
+
+
+def _sha(parts: List[str]) -> str:
+    h = hashlib.sha256()
+    for part in parts:
+        h.update(part.encode("utf-8"))
+        h.update(b"\x00")
+    return h.hexdigest()
+
+
+def _read_text(path: Path) -> str:
+    try:
+        return path.read_text(encoding="utf-8")
+    except OSError:
+        return ""
+
+
+def _item_ids(path: Path) -> List[str]:
+    try:
+        with path.open(encoding="utf-8") as f:
+            blob = json.load(f)
+    except (OSError, ValueError):
+        return []
+    return [str(it.get("id", "")) for it in blob.get("items", [])]
+
+
+def page_content_hashes(
+    manifest: dict,
+    team_html: Dict[str, str],
+    site_root: Path,
+) -> Dict[str, str]:
+    """URL -> sha256 of that page's meaningful content."""
+    index_dir = site_root / "data" / "index"
+    index_html = _read_text(site_root / "index.html")
+    feed_ids = _item_ids(index_dir / "feed.json")
+    home = _sha([index_html] + feed_ids)
+    roster = lambda key: [  # noqa: E731
+        f"{e.get('slug')}|{e.get('name')}|{e.get('count')}" for e in manifest.get(key, [])
+    ]
+    hashes = {
+        SITE_BASE_URL + "/": home,
+        SITE_BASE_URL + "/index.html": home,
+        SITE_BASE_URL + "/players.html": _sha(
+            [_read_text(site_root / "players.html")] + roster("players")
+        ),
+        SITE_BASE_URL + "/teams.html": _sha(
+            [_read_text(site_root / "teams.html")] + roster("teams")
+        ),
+    }
+    for slug, page in team_html.items():
+        hashes[f"{SITE_BASE_URL}/teams/{slug}.html"] = _sha(
+            [page] + _item_ids(index_dir / "teams" / f"{slug}.json")
+        )
+    return hashes
+
+
+def _url_source_file(url: str) -> str:
+    """Repo-relative file behind a sitemap URL (for git-date seeding)."""
+    rel = url[len(SITE_BASE_URL) + 1:]
+    return rel or "index.html"
+
+
+def _git_last_commit_date(site_root: Path, rel_path: str) -> Optional[str]:
+    try:
+        out = subprocess.run(
+            ["git", "log", "-1", "--format=%cs", "--", rel_path],
+            cwd=site_root, capture_output=True, text=True, timeout=30,
+        )
+    except (OSError, subprocess.SubprocessError):
+        return None
+    date = out.stdout.strip()
+    return date if out.returncode == 0 and re.fullmatch(r"\d{4}-\d{2}-\d{2}", date) else None
+
+
+def _existing_sitemap_lastmods(sitemap_path: Path) -> Dict[str, str]:
+    text = _read_text(sitemap_path)
+    return dict(
+        re.findall(r"<loc>([^<]+)</loc><lastmod>(\d{4}-\d{2}-\d{2})</lastmod>", text)
+    )
+
+
+def update_page_hashes(
+    hashes: Dict[str, str],
+    hashes_path: Path,
+    today: str,
+    seed_dates: Optional[Dict[str, str]] = None,
+) -> Dict[str, str]:
+    """Compare `hashes` to the committed JSON and return URL -> lastmod.
+
+    A URL keeps its stored lastmod while its hash is unchanged; a
+    changed hash moves it to `today`; a URL never seen before gets its
+    `seed_dates` entry (first run) or `today` (a genuinely new page).
+    Writes the updated JSON back (only URLs still in the sitemap).
+    """
+    try:
+        with hashes_path.open(encoding="utf-8") as f:
+            stored = json.load(f).get("pages", {})
+    except (OSError, ValueError):
+        stored = {}
+    seed_dates = seed_dates or {}
+    out: Dict[str, dict] = {}
+    for url, digest in hashes.items():
+        prev = stored.get(url)
+        if prev and prev.get("hash") == digest and prev.get("lastmod"):
+            lastmod = prev["lastmod"]
+        elif prev:
+            lastmod = today
+        else:
+            lastmod = seed_dates.get(url, today)
+        out[url] = {"hash": digest, "lastmod": lastmod}
+    blob = {
+        "_note": (
+            "Sitemap <lastmod> per URL. A date moves only when that page's "
+            "content hash changes. Written by scripts/prerender_pages.py."
+        ),
+        "pages": dict(sorted(out.items())),
+    }
+    hashes_path.parent.mkdir(parents=True, exist_ok=True)
+    hashes_path.write_text(json.dumps(blob, indent=1) + "\n", encoding="utf-8")
+    return {url: v["lastmod"] for url, v in out.items()}
+
+
+def _seed_dates(urls: List[str], site_root: Path, sitemap_path: Path, today: str) -> Dict[str, str]:
+    """First run only: the older of the page file's last git commit date
+    and the lastmod already in sitemap.xml, so seeding never makes every
+    page look changed today."""
+    current = _existing_sitemap_lastmods(sitemap_path)
+    seeds = {}
+    for url in urls:
+        candidates = [
+            d for d in (
+                _git_last_commit_date(site_root, _url_source_file(url)),
+                current.get(url),
+            ) if d
+        ]
+        seeds[url] = min(candidates) if candidates else today
+    return seeds
 
 
 # ---------------------------------------------------------------------------
@@ -403,11 +569,21 @@ def generate_pages(
     dry_run: bool = False,
     players_canonical_path: Path = PLAYERS_CANONICAL_PATH,
     teams_canonical_path: Path = TEAMS_CANONICAL_PATH,
+    page_hashes_path: Optional[Path] = None,
+    today: Optional[str] = None,
 ) -> Tuple[int, int]:
     """Generate all player and team HTML pages + sitemap.xml.
 
+    The site root (home of index.html, data/index/ and, by default,
+    data/page_hashes.json) is the folder holding `sitemap_path`.
+
     Returns `(num_player_pages, num_team_pages)`.
     """
+    site_root = sitemap_path.parent
+    if page_hashes_path is None:
+        page_hashes_path = site_root / "data" / "page_hashes.json"
+    today = today or datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    team_html: Dict[str, str] = {}
     if not dry_run:
         players_out.mkdir(parents=True, exist_ok=True)
         teams_out.mkdir(parents=True, exist_ok=True)
@@ -470,14 +646,26 @@ def generate_pages(
         count = t["count"]
         info = teams_canon.get(slug)
         html_text = _render_page("team", slug, name, count, info, cap)
+        team_html[slug] = html_text
         if not dry_run:
             (teams_out / f"{slug}.html").write_text(html_text, encoding="utf-8")
         n_teams += 1
 
     if not dry_run:
+        team_slugs = [t["slug"] for t in manifest.get("teams", [])]
+        seeds = None
+        if not page_hashes_path.exists():
+            seeds = _seed_dates(_sitemap_urls(team_slugs), site_root, sitemap_path, today)
+        lastmods = update_page_hashes(
+            page_content_hashes(manifest, team_html, site_root),
+            page_hashes_path,
+            today,
+            seed_dates=seeds,
+        )
         sitemap = _render_sitemap(
             [p["slug"] for p in manifest.get("players", [])],
-            [t["slug"] for t in manifest.get("teams", [])],
+            team_slugs,
+            lastmods,
         )
         sitemap_path.write_text(sitemap, encoding="utf-8")
 
