@@ -513,8 +513,9 @@ def test_run_dry_run_writes_nothing(tmp_path, monkeypatch, capsys, top_feed):
     assert not (tmp_path / "reddit").exists()
 
 
-def test_run_writes_shard(tmp_path, monkeypatch, top_feed, hot_feed):
+def test_run_writes_shard(tmp_path, monkeypatch, top_feed, hot_feed, pin_poll_clock):
     monkeypatch.setattr(shards, "DATA_DIR", tmp_path)
+    pin_poll_clock(poll_reddit)
     config_path = tmp_path / "reddit_config.json"
     _write_test_config(config_path)
 
@@ -523,8 +524,8 @@ def test_run_writes_shard(tmp_path, monkeypatch, top_feed, hot_feed):
             return list(top_feed.entries)
         return list(hot_feed.entries)
 
-    # Use a wide --since window so the test isn't time-fragile relative
-    # to the fixture timestamps (the fixtures are dated 2026-05-21).
+    # Wide --since window, measured from the pinned fixture clock above
+    # (the fixtures are dated 2026-05-21), so the test never ages out.
     rc = poll_reddit.run(
         ["--since-hours", "8760"],
         feed_fetcher=fetcher,
