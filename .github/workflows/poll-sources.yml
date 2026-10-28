@@ -83,7 +83,8 @@ jobs:
 
       # Regenerate the per-player and per-team HTML pages + sitemap so
       # GitHub Pages serves the latest counts in the SEO meta + the
-      # baked-in entity-hero. The JS still hydrates the cards client-
+      # baked-in entity-hero. Sitemap <lastmod> only moves for pages
+      # whose content hash changed (data/page_hashes.json). The JS still hydrates the cards client-
       # side from data/index/{players,teams}/{slug}.json on load.
       - name: Pre-render entity pages
         continue-on-error: true
@@ -99,7 +100,10 @@ jobs:
           # so we never commit a stray .pyc, IDE file, or hand-edited
           # asset accidentally.
           git add data/
-          git add players/ teams/ sitemap.xml 2>/dev/null || true
+          # data/page_hashes.json (per-URL content hashes behind the
+          # sitemap <lastmod> dates) must land in the same commit as
+          # the pages and sitemap.xml it describes.
+          git add players/ teams/ sitemap.xml data/page_hashes.json 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "No data changes this cycle."
             exit 0
