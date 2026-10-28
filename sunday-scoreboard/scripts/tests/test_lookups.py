@@ -52,7 +52,9 @@ def test_lookup_player_returns_team_context_and_headshot():
     assert info.kind == "player"
     assert info.name == "Victor Wembanyama"
     assert info.team_context == "San Antonio Spurs"
-    assert info.portrait_url and info.portrait_url.endswith("1641705-victor-wembanyama.png")
+    assert info.portrait_url == (
+        "https://jsierrahoopshype.github.io/nba-headshots/players/headshots/"
+        "face-fill-320/1641705-victor-wembanyama.webp")
     assert info.initials == "VW"
 
 

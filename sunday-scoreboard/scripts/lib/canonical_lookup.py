@@ -112,7 +112,8 @@ def headshot_url(player_slug: str) -> Optional[str]:
     p = players().get(player_slug)
     if not p or not p.get("headshot_filename"):
         return None
-    return f"{archive_client.HEADSHOTS_BASE}/{p['headshot_filename']}"
+    stem = p["headshot_filename"].rsplit(".", 1)[0]
+    return f"{archive_client.HEADSHOTS_BASE}/{stem}.webp"
 
 
 def team_logo_url(team_slug: str) -> Optional[str]:

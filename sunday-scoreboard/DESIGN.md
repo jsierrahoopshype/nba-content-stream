@@ -139,7 +139,7 @@ the upstream ever moves, only that file needs to change.
 | Per-team | `data/index/teams/{slug}.json` |
 | Canonical players | `data/canonical/players.json` |
 | Canonical teams | `data/canonical/teams.json` |
-| Headshots | `nba-headshots/main/players/headshots/face/{filename}` |
+| Headshots | `jsierrahoopshype.github.io/nba-headshots/players/headshots/face-fill-320/{stem}.webp` (face-fill, on a light grey disc) |
 | Team logos | ESPN CDN — `a.espncdn.com/i/teamlogos/nba/500/{abbr}.png` |
 | Bluesky avatars | `cdn.bsky.app/img/avatar/plain/{did}/{cid}@jpeg` |
 

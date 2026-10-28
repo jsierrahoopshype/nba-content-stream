@@ -612,6 +612,11 @@ a.when:hover{ color:var(--text); text-decoration:underline }
   position:absolute; inset:0; width:100%; height:100%;
 }
 .img-fallback-content .initials-avatar{ width:100%; height:100%; }
+/* Player headshots — the one HoopsMatic look: nba-headshots face-fill
+   (the face fills the circle) on a light grey disc; no photo = the
+   player's initials in grey on the same disc. */
+.visual-headshot{ background:#e8e8ed; object-fit:cover }
+.initials-avatar--player{ background:#e8e8ed; color:#55555c }
 
 /* Fix B1: quoted-post inline box. Bordered, slightly inset, lighter
    surface; readable but visually subordinate to the parent post. The
@@ -748,6 +753,11 @@ a.when:hover{ color:var(--text); text-decoration:underline }
 .entity-portrait-img--team{
   object-fit:contain; padding:.5rem; background:var(--surface);
 }
+/* Player portrait: face-fill headshot on a light grey disc; no photo =
+   the player's initials in grey on the same disc. */
+.entity-portrait--player{ background:#e8e8ed }
+.entity-portrait--player .entity-portrait-img{ object-position:center }
+.entity-portrait--player .entity-portrait-initials{ background:#e8e8ed; color:#55555c }
 .entity-portrait-initials{
   position:absolute; inset:0; width:100%; height:100%;
   display:none;  /* revealed by inline onerror when the image 404s */
@@ -913,6 +923,9 @@ a.when:hover{ color:var(--text); text-decoration:underline }
   display:block; width:100%; height:100%;
   object-fit:cover; object-position:center top;
 }
+.lb-portrait-wrap--player{ background:#e8e8ed }
+.lb-portrait-wrap--player .lb-portrait{ object-position:center }
+.lb-portrait-wrap--player .lb-portrait-fallback{ background:#e8e8ed; color:#55555c }
 .lb-portrait--team{
   object-fit:contain; padding:.2rem; background:var(--surface);
 }

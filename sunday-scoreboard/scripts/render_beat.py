@@ -90,14 +90,17 @@ def _draw_title_card(
             fill=fs.ACCENT, alpha=46, anchor="lt",
         )
 
-    # Portrait (circular, with initials fallback).
+    # Portrait (circular, with initials fallback). Players: face-fill
+    # headshot on a light grey disc; no photo = grey initials on that disc.
+    is_player = beat.entity.kind == "player"
     portrait = draw.circle_image(
         beat.portrait_bytes,
         spec.portrait_size,
         fallback_initials=beat.entity.initials,
-        fallback_bg=fs.ACCENT_DIM,
-        fallback_fg=fs.ACCENT,
+        fallback_bg="#e8e8ed" if is_player else fs.ACCENT_DIM,
+        fallback_fg="#55555c" if is_player else fs.ACCENT,
         contain=(beat.entity.kind == "team"),
+        disc="#e8e8ed" if is_player else None,
     )
 
     # Per-format placement

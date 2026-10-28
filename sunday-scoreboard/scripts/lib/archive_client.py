@@ -34,10 +34,12 @@ RAW_BASE = (
     f"{UPSTREAM_BRANCH}"
 )
 
-# Headshots live in a separate repo with a flat directory.
+# Headshots live in a separate repo with a flat directory. The one
+# HoopsMatic headshot look: face-fill (face fills the circle, transparent
+# WebP); the 320px set because video portraits are drawn large.
 HEADSHOTS_BASE = (
-    "https://raw.githubusercontent.com/jsierrahoopshype/"
-    "nba-headshots/main/players/headshots/face"
+    "https://jsierrahoopshype.github.io/"
+    "nba-headshots/players/headshots/face-fill-320"
 )
 
 # ESPN CDN team logos.
