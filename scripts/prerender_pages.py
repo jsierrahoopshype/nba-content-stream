@@ -47,12 +47,27 @@ SITEMAP_PATH = REPO_ROOT / "sitemap.xml"
 SITE_BASE_URL = "https://hoopsmatic.com/content-stream"
 
 # Polish-9 (Fix 3): portrait sources. Matches the JS helpers in
-# assets/common.js exactly so the prerendered HTML and live JS
-# produce the same URLs.
+# assets/common.js so the prerendered HTML and live JS agree. Player
+# headshots are the one HoopsMatic look: nba-headshots face-fill (the
+# face fills the circle). The hero portrait is drawn bigger than 80px,
+# so it uses the 320px set. FACE_FILL_STEMS_PATH (vendored from
+# nba-headshots) lists the players that have a file; anyone else gets
+# their initials at build time.
 NBA_HEADSHOTS_BASE = (
-    "https://raw.githubusercontent.com/jsierrahoopshype/"
-    "nba-headshots/main/players/headshots/face/"
+    "https://jsierrahoopshype.github.io/"
+    "nba-headshots/players/headshots/face-fill-320/"
 )
+FACE_FILL_STEMS_PATH = REPO_ROOT / "data" / "canonical" / "face_fill_stems.txt"
+
+
+def _load_face_stems() -> set:
+    try:
+        return set(FACE_FILL_STEMS_PATH.read_text(encoding="utf-8").split())
+    except OSError:
+        return set()
+
+
+FACE_STEMS = _load_face_stems()
 ESPN_TEAM_LOGO_BASE = "https://a.espncdn.com/i/teamlogos/nba/500/"
 # Slug → ESPN URL abbreviation. Mirror of _ESPN_ABBREV_OVERRIDES in
 # common.js; the two sources of truth must stay in sync (a missing
@@ -133,7 +148,9 @@ def _portrait_url(kind: str, slug: str, entity_info: dict | None) -> str | None:
     """
     if kind == "player":
         if entity_info and entity_info.get("headshot_filename"):
-            return NBA_HEADSHOTS_BASE + entity_info["headshot_filename"]
+            stem = entity_info["headshot_filename"].rsplit(".", 1)[0]
+            if stem in FACE_STEMS:
+                return NBA_HEADSHOTS_BASE + stem + ".webp"
         return None
     if kind == "team":
         abbr = _ESPN_TEAM_ABBR.get(slug)
@@ -155,19 +172,23 @@ def _portrait_html(kind: str, slug: str, name: str, entity_info: dict | None) ->
     initials, color = _avatar(name)
     safe_initials = html.escape(initials)
     portrait_url = _portrait_url(kind, slug, entity_info)
+    # Players: grey initials on the same light grey disc as the headshot
+    # (styled by .entity-portrait--player), not a colored avatar.
+    wrap_cls = "entity-portrait entity-portrait--player" if kind == "player" else "entity-portrait"
+    bg = "" if kind == "player" else f"background:{color}"
     if not portrait_url:
         # No image source known — render the initials directly at
         # portrait size. Inline display:flex overrides the
         # default-hidden state of .entity-portrait-initials (which is
         # hidden so the onerror fallback can reveal it).
         return (
-            f'<div class="entity-portrait">'
+            f'<div class="{wrap_cls}">'
             f'<div class="entity-portrait-initials" '
-            f'style="display:flex;background:{color}">{safe_initials}</div>'
+            f'style="display:flex;{bg}">{safe_initials}</div>'
             f"</div>"
         )
     initials_html = (
-        f'<div class="entity-portrait-initials" style="background:{color}">'
+        f'<div class="entity-portrait-initials"' + (f' style="{bg}"' if bg else "") + '>'
         f"{safe_initials}</div>"
     )
     portrait_cls = "entity-portrait-img"
@@ -177,7 +198,7 @@ def _portrait_html(kind: str, slug: str, name: str, entity_info: dict | None) ->
         # without cropping it like a player headshot.
         portrait_cls += " entity-portrait-img--team"
     return (
-        f'<div class="entity-portrait">'
+        f'<div class="{wrap_cls}">'
         f'<img class="{portrait_cls}" src="{portrait_url}" '
         f'alt="{html.escape(name)}" loading="eager" decoding="async" '
         f"onerror=\"this.style.display='none';"

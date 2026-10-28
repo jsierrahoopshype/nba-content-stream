@@ -89,7 +89,7 @@
     return `
       <a class="lb-row" href="players/${ncs.escapeHtml(p.slug)}.html" data-rank="${rank}">
         <span class="lb-rank">${rank}</span>
-        <span class="lb-portrait-wrap">${portraitHtml}</span>
+        <span class="lb-portrait-wrap lb-portrait-wrap--player">${portraitHtml}</span>
         <span class="lb-name">${ncs.escapeHtml(p.name)}</span>
         <span class="lb-secondary">${teamCellHtml(p.slug)}</span>
         <span class="lb-count">${ncs.escapeHtml(ncs.formatCappedCount(p.count, cap))}</span>

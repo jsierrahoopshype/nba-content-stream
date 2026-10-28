@@ -225,6 +225,7 @@ def circle_image(
     fallback_bg: str = fs.ACCENT_DIM,
     fallback_fg: str = fs.ACCENT,
     contain: bool = False,
+    disc: str | None = None,
 ) -> Image.Image:
     """Return an RGBA image of `diameter`x`diameter` containing the
     decoded `src` cropped to a circle, OR — if `src` is None or
@@ -233,6 +234,9 @@ def circle_image(
     `contain=True` switches the inner image from cover (object-fit:
     cover) to contain — used for transparent team logos so they
     don't get cropped to the face of the logo like a player headshot.
+
+    `disc` (hex) paints a solid circle behind the image — used for the
+    transparent face-fill player headshots (light grey #e8e8ed).
     """
     out = Image.new("RGBA", (diameter, diameter), (0, 0, 0, 0))
     if src:
@@ -273,6 +277,10 @@ def circle_image(
         # straight-center crops the player's chin out on tall poses.
         top = 0
         inner = inner.crop((left, top, left + diameter, top + diameter))
+        if disc:
+            under = Image.new("RGBA", (diameter, diameter), rgb(disc, 255))
+            under.alpha_composite(inner)
+            inner = under
 
     mask = Image.new("L", (diameter, diameter), 0)
     ImageDraw.Draw(mask).ellipse((0, 0, diameter, diameter), fill=255)

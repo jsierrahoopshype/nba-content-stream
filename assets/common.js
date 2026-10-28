@@ -251,13 +251,14 @@
 
   // Cluster C: headshot + team-logo URL helpers.
   //
-  // Player headshots live in the nba-headshots repo, at
-  // players/headshots/face/{filename}, where {filename} is the EXACT
-  // filename stored by upstream (e.g. "203999-nikola-joki.png"). The
-  // file is keyed by NBA-ID + upstream slug, NOT our cleaner slug,
-  // because the upstream slugify dropped diacritics; we store the
-  // raw filename verbatim under canonical[slug].headshot_filename
-  // and look it up here.
+  // Player headshots are the one HoopsMatic headshot look: nba-headshots'
+  // players/headshots/face-fill/{stem}.webp (160px; face-fill-320/ for
+  // anything drawn bigger than 80px), where {stem} is the EXACT upstream
+  // filename minus its extension (e.g. "203999-nikola-joki"). The file is
+  // keyed by NBA-ID + upstream slug, NOT our cleaner slug, because the
+  // upstream slugify dropped diacritics; we store the raw filename
+  // verbatim under canonical[slug].headshot_filename and look it up here.
+  // A player with no file shows their initials (onerror fallback).
   //
   // Team logos come from ESPN's public CDN. Slug→ESPN-abbrev mapping
   // is mostly the team's `abbr` field; a few teams use a different
@@ -323,13 +324,22 @@
   }
 
   const NBA_HEADSHOTS_BASE =
-    "https://raw.githubusercontent.com/jsierrahoopshype/nba-headshots/main/players/headshots/face/";
+    "https://jsierrahoopshype.github.io/nba-headshots/players/headshots/";
 
-  function headshotUrl(playerSlug, players) {
+  function headshotUrl(playerSlug, players, big) {
     if (!playerSlug || !players) return null;
     const entry = players[playerSlug];
     if (!entry || !entry.headshot_filename) return null;
-    return NBA_HEADSHOTS_BASE + entry.headshot_filename;
+    const stem = entry.headshot_filename.replace(/\.[a-z]+$/i, "");
+    return NBA_HEADSHOTS_BASE + (big ? "face-fill-320/" : "face-fill/") + stem + ".webp";
+  }
+
+  // Player initials for the no-photo circle ("Stephen Curry" -> "SC").
+  function playerInitials(name) {
+    const parts = String(name || "").split(/\s+/).filter(Boolean);
+    if (!parts.length) return "?";
+    if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
   }
 
   function teamLogoUrl(teamSlug) {
@@ -384,7 +394,8 @@
 
   // Cluster C: visual integration. For a non-Bluesky non-YouTube card
   // with NO thumbnail, prefer (in order):
-  //   1. first tagged player's headshot
+  //   1. first tagged player's face-fill headshot (that player's initials
+  //      in the same grey circle if there is no file or it fails to load)
   //   2. first tagged team's ESPN logo
   //   3. NBA league logo (generic-NBA fallback)
   //   4. the initials-avatar fallback (existing behavior, only if the
@@ -423,11 +434,14 @@
     const canonical = window.NCS_Canonical;
     if (!canonical) return initialsHtml;
 
-    // Prefer a tagged player's headshot.
+    // Prefer a tagged player's headshot; no photo -> the player's initials.
     const firstPlayer = (item.players || [])[0];
-    if (firstPlayer) {
+    const playerEntry = firstPlayer && canonical.players && canonical.players[firstPlayer];
+    if (playerEntry) {
+      const ini = `<span class="initials-avatar initials-avatar--player" aria-hidden="true">${escapeHtml(playerInitials(playerEntry.name))}</span>`;
       const url = headshotUrl(firstPlayer, canonical.players);
-      if (url) return _imgWithFallback(url, initialsHtml, "visual-avatar visual-headshot");
+      if (url) return _imgWithFallback(url, ini, "visual-avatar visual-headshot");
+      return ini;
     }
     // Fall back to a tagged team's logo.
     const firstTeam = (item.teams || [])[0];
@@ -1944,6 +1958,7 @@
     mergeItems,
     loadCanonical,
     headshotUrl,
+    playerInitials,
     teamLogoUrl,
     teamConference,
     formatCappedCount,

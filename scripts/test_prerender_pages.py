@@ -336,9 +336,15 @@ def test_player_portrait_url_uses_headshot_filename():
     info = {"headshot_filename": "2544-lebron-james.png"}
     url = prerender_pages._portrait_url("player", "lebron-james", info)
     assert url == (
-        "https://raw.githubusercontent.com/jsierrahoopshype/"
-        "nba-headshots/main/players/headshots/face/2544-lebron-james.png"
+        "https://jsierrahoopshype.github.io/"
+        "nba-headshots/players/headshots/face-fill-320/2544-lebron-james.webp"
     )
+
+
+def test_player_portrait_url_none_when_no_face_fill_file():
+    # A filename with no face-fill file -> no URL, so the page shows initials.
+    info = {"headshot_filename": "0-not-a-real-player.png"}
+    assert prerender_pages._portrait_url("player", "nobody", info) is None
 
 
 def test_player_portrait_url_returns_none_without_filename():
@@ -375,9 +381,9 @@ def test_player_page_includes_real_headshot_url():
         "player", "victor-wembanyama", "Victor Wembanyama", 99, info
     )
     assert (
-        "https://raw.githubusercontent.com/jsierrahoopshype/"
-        "nba-headshots/main/players/headshots/face/"
-        "1641705-victor-wembanyama.png"
+        "https://jsierrahoopshype.github.io/"
+        "nba-headshots/players/headshots/face-fill-320/"
+        "1641705-victor-wembanyama.webp"
     ) in html_text
     # Initials fallback is still in the DOM, hidden by default.
     assert 'class="entity-portrait-initials"' in html_text
@@ -403,7 +409,10 @@ def test_player_page_without_canonical_info_falls_back_to_initials():
         "player", "unknown-player", "Unknown Player", 5, None
     )
     assert "raw.githubusercontent.com" not in html_text
-    assert 'style="display:flex;background:' in html_text
+    assert "nba-headshots" not in html_text
+    # Players: grey initials on the grey headshot disc (no colored avatar).
+    assert 'class="entity-portrait entity-portrait--player"' in html_text
+    assert 'style="display:flex;"' in html_text
     assert ">UP</div>" in html_text  # initials
 
 
@@ -449,7 +458,7 @@ def test_generate_pages_threads_canonical_info_into_pages(tmp_path):
     assert n_p == 1 and n_t == 1
     p_html = (players_out / "lebron-james.html").read_text()
     t_html = (teams_out / "los-angeles-lakers.html").read_text()
-    assert "2544-lebron-james.png" in p_html
+    assert "2544-lebron-james.webp" in p_html
     assert "/nba/500/lal.png" in t_html
 
 
