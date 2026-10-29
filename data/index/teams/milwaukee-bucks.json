@@ -1,9 +1,76 @@
 {
   "slug": "milwaukee-bucks",
   "name": "Milwaukee Bucks",
-  "generated_at": "2026-10-28T23:59:22Z",
-  "count": 687,
+  "generated_at": "2026-10-29T05:29:33Z",
+  "count": 684,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3A6jpqgc6d4tplxcioxuh7khmr%2Fapp.bsky.feed.post%2F3myy7swjdqs2b",
+      "source": "bluesky",
+      "published_at": "2026-10-29T02:29:09Z",
+      "title": "#Bucks lose",
+      "url": "https://bsky.app/profile/jimowczarski.bsky.social/post/3myy7swjdqs2b",
+      "author": "Jim Owczarski",
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:6jpqgc6d4tplxcioxuh7khmr/bafkreiaskfbouoo4cclqa55fjh5v6nxctk3oty2dvev7szcfjcfvvwucyq",
+      "body_excerpt": "#Bucks lose",
+      "players": [],
+      "teams": [
+        "milwaukee-bucks"
+      ],
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:6jpqgc6d4tplxcioxuh7khmr/bafkreiaskfbouoo4cclqa55fjh5v6nxctk3oty2dvev7szcfjcfvvwucyq",
+            "alt": ""
+          }
+        ]
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:6jpqgc6d4tplxcioxuh7khmr/bafkreigdgpen526icgd3bkitiwfq7q6jjqpjsekj4uuu7czcpu2jhonjvi",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Bucks"
+            }
+          ],
+          "index": {
+            "byteEnd": 6,
+            "byteStart": 0
+          }
+        }
+      ],
+      "quote": {
+        "author": "Jim Owczarski",
+        "handle": "jimowczarski.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:6jpqgc6d4tplxcioxuh7khmr/bafkreigdgpen526icgd3bkitiwfq7q6jjqpjsekj4uuu7czcpu2jhonjvi",
+        "text": "The Milwaukee Bucks play basketball today.\n\nThey host the Houston Rockets:\n\n🏀 An emergency rebounding identity will be challenged.\n⛑️ Injury report\n📺 How to watch this game (and that OTHER one tonight😏)\n5️⃣ Projected starters\n💰 Odds\n\n📌 Our live file\n\nwww.jsonline.com/story/sports...",
+        "url": "https://bsky.app/profile/jimowczarski.bsky.social/post/3myxsx4pz5s2s",
+        "facets": [
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": "https://www.jsonline.com/story/sports/nba/bucks/2026/10/28/milwaukee-bucks-vs-houston-rockets-rebounding-identity-projected-starters-injury-report/92472884007/"
+              }
+            ],
+            "index": {
+              "byteEnd": 306,
+              "byteStart": 274
+            }
+          }
+        ],
+        "media": {
+          "type": "link",
+          "uri": "https://www.jsonline.com/story/sports/nba/bucks/2026/10/28/milwaukee-bucks-vs-houston-rockets-rebounding-identity-projected-starters-injury-report/92472884007/",
+          "title": "Bucks vs. Rockets, rebounding identities will be challenged",
+          "description": "The Milwaukee Bucks look to knock off the unbeaten Houston Rockets at Fiserv Forum on Oct. 28, 2026.",
+          "thumb": null
+        }
+      },
+      "enriched": true
+    },
     {
       "id": "bs-did%3Aplc%3A6jpqgc6d4tplxcioxuh7khmr%2Fapp.bsky.feed.post%2F3myxsx4pz5s2s",
       "source": "bluesky",
@@ -190,6 +257,23 @@
       "players": [],
       "teams": [
         "houston-rockets",
+        "milwaukee-bucks"
+      ]
+    },
+    {
+      "id": "gn-8d50ef3ff57f830e",
+      "source": "google-news",
+      "published_at": "2026-10-28T14:00:46Z",
+      "title": "Milwaukee Bucks find first win while Giannis Antetokounmpo’s winless-Heat struggle",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQYWRNU2dGTDZwM3BIODh5MDgwMTZMY2NqTlJreG9sM0d6OU1tMl94OEVTM01YOUNXaGxXaVoxNjJNLW9iWGFVNWVrU3Y0NFgwMHAyRk81YVNDMEwwZTd3MWhOelppLV80cE1DTGl3U2FVczlJUW5GT2E5cmZ4bHNsVlFHbUd6bW8?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Milwaukee Bucks find first win while Giannis Antetokounmpo’s winless-Heat struggle Yahoo Sports",
+      "players": [
+        "giannis-antetokounmpo"
+      ],
+      "teams": [
+        "miami-heat",
         "milwaukee-bucks"
       ]
     },
@@ -13166,166 +13250,6 @@
       "teams": [
         "milwaukee-bucks"
       ]
-    },
-    {
-      "id": "gn-e3c27b7af7d72419",
-      "source": "google-news",
-      "published_at": "2026-09-29T04:51:00Z",
-      "title": "Heat news: Giannis reveals major adjustments after long Bucks stint",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPaGsweEw0MVJVT2xPcTlLRDJQRTNGeTFGMjE1VE55MFVTTkhmNmd6U1pOa1czNThKZWE4YXlmZVR2V3paT0c3MGVfWC16bWZnTzc0Vy0wb0ZHTnNSaGU5WWo0ZnVSMWpsQm00SDA3MzM4UWZqVWItTTdHcFZlSk5ia2JfOG8ySTQ?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Heat news: Giannis reveals major adjustments after long Bucks stint Yahoo Sports",
-      "players": [
-        "giannis-antetokounmpo"
-      ],
-      "teams": [
-        "miami-heat",
-        "milwaukee-bucks"
-      ]
-    },
-    {
-      "id": "gn-31243233b3dba753",
-      "source": "google-news",
-      "published_at": "2026-09-29T03:02:00Z",
-      "title": "Milwaukee Bucks media day portraits offer first look at 2026 season",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNNEQ5VENDM1o3NEU0SW1yT1J6VU1obTV1V0J4WmRJc1ZXcmZfN3MwWWtPSmhQMWkwZU5KeFFncWRGSi0tSHY5V2szTU94Y0k4bTdSUWhiNlMyTE9XVUpiRnN3UmZTY2ZFeWpBVnAzZGFWMmoxVUNkR3ZLa2xCenVsU2ZtVXdJZUtWa0QwQw?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Milwaukee Bucks media day portraits offer first look at 2026 season Yahoo Sports",
-      "players": [],
-      "teams": [
-        "milwaukee-bucks"
-      ]
-    },
-    {
-      "id": "bs-did%3Aplc%3A6jpqgc6d4tplxcioxuh7khmr%2Fapp.bsky.feed.post%2F3mwmm2quvx22p",
-      "source": "bluesky",
-      "published_at": "2026-09-29T00:45:56Z",
-      "title": "And Lori Nickel gets to the point: She writes if we’re going to talk Bucks, let's start with accountability.",
-      "url": "https://bsky.app/profile/jimowczarski.bsky.social/post/3mwmm2quvx22p",
-      "author": "Jim Owczarski",
-      "thumbnail": null,
-      "body_excerpt": "And Lori Nickel gets to the point: She writes if we’re going to talk Bucks, let's start with accountability.\n🔖\n\nwww.jsonline.com/story/sports...",
-      "players": [
-        "tyler-nickel"
-      ],
-      "teams": [
-        "milwaukee-bucks"
-      ],
-      "media": {
-        "type": "link",
-        "uri": "https://www.jsonline.com/story/sports/nba/bucks/2026/09/28/if-were-going-to-talk-bucks-lets-start-with-accountability-nickel/91984777007/",
-        "title": "If we're going to talk Bucks, let's start with accountability | Nickel",
-        "description": "While so many of the 2026-27 Milwaukee Bucks say they have all bought in to the Bucks New Deal, some of us need a longer grace period to adapt.",
-        "thumb": null
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:6jpqgc6d4tplxcioxuh7khmr/bafkreigdgpen526icgd3bkitiwfq7q6jjqpjsekj4uuu7czcpu2jhonjvi",
-      "facets": [
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://www.jsonline.com/story/sports/nba/bucks/2026/09/28/if-were-going-to-talk-bucks-lets-start-with-accountability-nickel/91984777007/"
-            }
-          ],
-          "index": {
-            "byteEnd": 149,
-            "byteStart": 117
-          }
-        }
-      ],
-      "enriched": true
-    },
-    {
-      "id": "bs-did%3Aplc%3A6jpqgc6d4tplxcioxuh7khmr%2Fapp.bsky.feed.post%2F3mwmlqe4rpk2p",
-      "source": "bluesky",
-      "published_at": "2026-09-29T00:40:07Z",
-      "title": "Ex-Heat players are speeding up integration process with Bucks via @bensteelemjs.bsky.social ",
-      "url": "https://bsky.app/profile/jimowczarski.bsky.social/post/3mwmlqe4rpk2p",
-      "author": "Jim Owczarski",
-      "thumbnail": null,
-      "body_excerpt": "Ex-Heat players are speeding up integration process with Bucks via @bensteelemjs.bsky.social \n\nwww.jsonline.com/story/sports...",
-      "players": [],
-      "teams": [
-        "miami-heat",
-        "milwaukee-bucks"
-      ],
-      "media": {
-        "type": "link",
-        "uri": "https://www.jsonline.com/story/sports/nba/bucks/2026/09/28/tyler-herro-kelel-ware-jamie-jaquez-and-kas-jakuionis-bucks-trade-from-miami-heat/91984897007/",
-        "title": "Ex-Heat players are speeding up integration process with Bucks",
-        "description": "The four players acquired by the Bucks in the Giannis Antetokounmpo trade are going to be key early pieces in the team's new era.",
-        "thumb": null
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:6jpqgc6d4tplxcioxuh7khmr/bafkreigdgpen526icgd3bkitiwfq7q6jjqpjsekj4uuu7czcpu2jhonjvi",
-      "facets": [
-        {
-          "$type": "app.bsky.richtext.facet",
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#mention",
-              "did": "did:plc:tt5qbgnyrjxkpa2fc5ybbcef"
-            }
-          ],
-          "index": {
-            "byteEnd": 92,
-            "byteStart": 67
-          }
-        },
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://www.jsonline.com/story/sports/nba/bucks/2026/09/28/tyler-herro-kelel-ware-jamie-jaquez-and-kas-jakuionis-bucks-trade-from-miami-heat/91984897007/"
-            }
-          ],
-          "index": {
-            "byteEnd": 127,
-            "byteStart": 95
-          }
-        }
-      ],
-      "enriched": true
-    },
-    {
-      "id": "bs-did%3Aplc%3A6jpqgc6d4tplxcioxuh7khmr%2Fapp.bsky.feed.post%2F3mwmlhfb7mk2r",
-      "source": "bluesky",
-      "published_at": "2026-09-29T00:35:06Z",
-      "title": "With training camp beginning tomorrow, the Bucks await the result of an NBA investigation into Gary Trent Jr.’s contract.",
-      "url": "https://bsky.app/profile/jimowczarski.bsky.social/post/3mwmlhfb7mk2r",
-      "author": "Jim Owczarski",
-      "thumbnail": null,
-      "body_excerpt": "With training camp beginning tomorrow, the Bucks await the result of an NBA investigation into Gary Trent Jr.’s contract.\n\nwww.jsonline.com/story/sports...",
-      "players": [
-        "gary-trent-jr"
-      ],
-      "teams": [
-        "milwaukee-bucks"
-      ],
-      "media": {
-        "type": "link",
-        "uri": "https://www.jsonline.com/story/sports/nba/bucks/2026/09/28/milwaukee-bucks-await-result-nba-investigation-into-gary-trent-jr-contract/91984832007/",
-        "title": "Bucks still await result of NBA investigation into Gary Trent Jr. contract",
-        "description": "The Milwaukee Bucks head into training camp still awaiting the result of an NBA investigation into Gary Trent Jr.'s contract.",
-        "thumb": null
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:6jpqgc6d4tplxcioxuh7khmr/bafkreigdgpen526icgd3bkitiwfq7q6jjqpjsekj4uuu7czcpu2jhonjvi",
-      "facets": [
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://www.jsonline.com/story/sports/nba/bucks/2026/09/28/milwaukee-bucks-await-result-nba-investigation-into-gary-trent-jr-contract/91984832007/"
-            }
-          ],
-          "index": {
-            "byteEnd": 157,
-            "byteStart": 125
-          }
-        }
-      ],
-      "enriched": true
     }
   ]
 }
