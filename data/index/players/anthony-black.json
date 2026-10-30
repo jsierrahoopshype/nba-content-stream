@@ -1,9 +1,46 @@
 {
   "slug": "anthony-black",
   "name": "Anthony Black",
-  "generated_at": "2026-10-30T20:04:53Z",
+  "generated_at": "2026-10-30T23:57:17Z",
   "count": 73,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3mz4v6q5p6s2f",
+      "source": "bluesky",
+      "published_at": "2026-10-30T23:02:12Z",
+      "title": "The #Magic are starting Jase Richardson, Desmond Bane, Anthony Black, Franz Wagner and Wendell Carter Jr. for tonight’s NBA Cup game against the Raptors. No change from Wednesday’s game at Toronto.",
+      "url": "https://bsky.app/profile/jbeede.bsky.social/post/3mz4v6q5p6s2f",
+      "author": "Jason Beede",
+      "thumbnail": null,
+      "body_excerpt": "The #Magic are starting Jase Richardson, Desmond Bane, Anthony Black, Franz Wagner and Wendell Carter Jr. for tonight’s NBA Cup game against the Raptors. No change from Wednesday’s game at Toronto.",
+      "players": [
+        "anthony-black",
+        "desmond-bane",
+        "franz-wagner",
+        "jase-richardson",
+        "wendell-carter-jr"
+      ],
+      "teams": [
+        "orlando-magic",
+        "toronto-raptors"
+      ],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiey3powizzh2yl5k4eyoftbxztccx6pgnmdozyhyyjqybjhhnc2ne",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Magic"
+            }
+          ],
+          "index": {
+            "byteEnd": 10,
+            "byteStart": 4
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-a5d4a15299231606",
       "source": "google-news",
@@ -1842,70 +1879,6 @@
         "anthony-black"
       ],
       "teams": []
-    },
-    {
-      "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3mwrcgtcfnk25",
-      "source": "bluesky",
-      "published_at": "2026-09-30T21:37:03Z",
-      "title": "My latest for @orlandosentinel.com: The #Magic hope to reach an extension with Anthony Black, who suffered a minor ankle sprain: www.orlandosentinel.com/2026/09/30/o...",
-      "url": "https://bsky.app/profile/jbeede.bsky.social/post/3mwrcgtcfnk25",
-      "author": "Jason Beede",
-      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreih5yf3ca6olrjd5ebvkvyrbkhzfhw6b5w35s3j4zwqi7s2wahzt5m",
-      "body_excerpt": "My latest for @orlandosentinel.com: The #Magic hope to reach an extension with Anthony Black, who suffered a minor ankle sprain: www.orlandosentinel.com/2026/09/30/o...",
-      "players": [
-        "anthony-black"
-      ],
-      "teams": [
-        "orlando-magic"
-      ],
-      "media": {
-        "type": "link",
-        "uri": "https://www.orlandosentinel.com/2026/09/30/orlando-magic-anthony-black-contract-extension-update-jeff-weltman-nba/",
-        "title": "Magic hope to reach extension with Anthony Black, who suffers minor ankle sprain",
-        "description": "Both Anthony Black and Magic president Jeff Weltman expressed interest in a contract extension while also acknowledging the financial reality facing the team.",
-        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreih5yf3ca6olrjd5ebvkvyrbkhzfhw6b5w35s3j4zwqi7s2wahzt5m"
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiey3powizzh2yl5k4eyoftbxztccx6pgnmdozyhyyjqybjhhnc2ne",
-      "facets": [
-        {
-          "$type": "app.bsky.richtext.facet",
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#mention",
-              "did": "did:plc:g5n6tmh54utzmwjregfbb7ul"
-            }
-          ],
-          "index": {
-            "byteEnd": 34,
-            "byteStart": 14
-          }
-        },
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#tag",
-              "tag": "Magic"
-            }
-          ],
-          "index": {
-            "byteEnd": 46,
-            "byteStart": 40
-          }
-        },
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://www.orlandosentinel.com/2026/09/30/orlando-magic-anthony-black-contract-extension-update-jeff-weltman-nba/"
-            }
-          ],
-          "index": {
-            "byteEnd": 168,
-            "byteStart": 129
-          }
-        }
-      ],
-      "enriched": true
     }
   ]
 }
