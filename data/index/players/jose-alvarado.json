@@ -1,9 +1,68 @@
 {
   "slug": "jose-alvarado",
   "name": "Jose Alvarado",
-  "generated_at": "2026-10-31T16:01:35Z",
+  "generated_at": "2026-10-31T19:55:46Z",
   "count": 17,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Aluofuy2uw7g4vsd2vbwidtel%2Fapp.bsky.feed.post%2F3mz6zoiigmc2z",
+      "source": "bluesky",
+      "published_at": "2026-10-31T19:27:56Z",
+      "title": "This has now been fixed. Both Dalton Knecht and Tyler Nickel were inactive alongside Jose Alvarado.",
+      "url": "https://bsky.app/profile/keithsmithnba.bsky.social/post/3mz6zoiigmc2z",
+      "author": "KeithSmithNBA",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:luofuy2uw7g4vsd2vbwidtel/bafkreiamfartuwetwyuhy2pumpdbzypnonx6l2ibykcd3whkdfwabnmg7a",
+      "body_excerpt": "This has now been fixed. Both Dalton Knecht and Tyler Nickel were inactive alongside Jose Alvarado.\n\nI know this seems super trivial, but we're trying to stay accurate with tracking two-way availability and Under-15 games on @spotrac.com. Glad it updated!\n\nwww.spotrac.com/nba/contract...",
+      "players": [
+        "dalton-knecht",
+        "jose-alvarado",
+        "tyler-nickel"
+      ],
+      "teams": [],
+      "media": {
+        "type": "link",
+        "uri": "https://www.spotrac.com/nba/contracts/two-way",
+        "title": "NBA Contract: Two-Way",
+        "description": "A list of NBA Two-Way Contracts signed in 2026.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:luofuy2uw7g4vsd2vbwidtel/bafkreiamfartuwetwyuhy2pumpdbzypnonx6l2ibykcd3whkdfwabnmg7a"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:luofuy2uw7g4vsd2vbwidtel/bafkreicvdayh6d2lkowdik5bvsakvqnw4c2y7ohsvrfhy5yhzgpm7ekjbm",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:hkyduehroabfhtqiz63qxpgw"
+            }
+          ],
+          "index": {
+            "byteEnd": 237,
+            "byteStart": 225
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.spotrac.com/nba/contracts/two-way"
+            }
+          ],
+          "index": {
+            "byteEnd": 288,
+            "byteStart": 257
+          }
+        }
+      ],
+      "quote": {
+        "author": "KeithSmithNBA",
+        "handle": "keithsmithnba.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:luofuy2uw7g4vsd2vbwidtel/bafkreicvdayh6d2lkowdik5bvsakvqnw4c2y7ohsvrfhy5yhzgpm7ekjbm",
+        "text": "Every Knicks-Sixers box score from last night lists the Knicks as having 16 active players for the game. Teams can't have more than 15 players active for a game.\n\nAnyone have any idea what happened here? Jose Alvarado was inactive. The other inactive matters for two-way counts.",
+        "url": "https://bsky.app/profile/keithsmithnba.bsky.social/post/3mz6lacu5nk2z"
+      },
+      "enriched": true
+    },
     {
       "id": "gn-5dce04a9a07b7822",
       "source": "google-news",
@@ -264,23 +323,6 @@
       "teams": [
         "new-york-knicks"
       ]
-    },
-    {
-      "id": "yt-wPoOW9x77wo",
-      "source": "youtube",
-      "published_at": "2026-10-01T19:00:32Z",
-      "title": "BLOCK PARTY LIVE PT. 1 🗽 Jose Alvarado, Mariska Join Jalen, Josh for Championship Celebration",
-      "url": "https://www.youtube.com/watch?v=wPoOW9x77wo",
-      "author": "Roommates Show",
-      "thumbnail": "https://i.ytimg.com/vi/wPoOW9x77wo/maxresdefault.jpg",
-      "body_excerpt": "The champs are BACK! Jalen and Josh kick off the third annual Roommates Show Block Party with the largest live podcast recording in U.S. history! Jose Alvarado, Mariska Hartigay and Landry Shamet join the guys to share untold stories from the Knicks’ NBA championship run in…",
-      "players": [
-        "jose-alvarado"
-      ],
-      "teams": [],
-      "media": {
-        "type": "video"
-      }
     }
   ]
 }
