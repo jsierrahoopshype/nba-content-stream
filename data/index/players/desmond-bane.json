@@ -1,9 +1,46 @@
 {
   "slug": "desmond-bane",
   "name": "Desmond Bane",
-  "generated_at": "2026-11-01T16:29:00Z",
-  "count": 39,
+  "generated_at": "2026-11-01T20:47:27Z",
+  "count": 40,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3mzblz3wpsk2v",
+      "source": "bluesky",
+      "published_at": "2026-11-01T20:01:18Z",
+      "title": "The #Magic are starting Jase Richardson, Desmond Bane, Anthony Black, Franz Wagner and Wendell Carter Jr. against the Celtics today.",
+      "url": "https://bsky.app/profile/jbeede.bsky.social/post/3mzblz3wpsk2v",
+      "author": "Jason Beede",
+      "thumbnail": null,
+      "body_excerpt": "The #Magic are starting Jase Richardson, Desmond Bane, Anthony Black, Franz Wagner and Wendell Carter Jr. against the Celtics today.",
+      "players": [
+        "anthony-black",
+        "desmond-bane",
+        "franz-wagner",
+        "jase-richardson",
+        "wendell-carter-jr"
+      ],
+      "teams": [
+        "boston-celtics",
+        "orlando-magic"
+      ],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiey3powizzh2yl5k4eyoftbxztccx6pgnmdozyhyyjqybjhhnc2ne",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Magic"
+            }
+          ],
+          "index": {
+            "byteEnd": 10,
+            "byteStart": 4
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-6d99260d3c7bfbf3",
       "source": "google-news",

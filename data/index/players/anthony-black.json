@@ -1,9 +1,46 @@
 {
   "slug": "anthony-black",
   "name": "Anthony Black",
-  "generated_at": "2026-11-01T16:29:00Z",
+  "generated_at": "2026-11-01T20:47:27Z",
   "count": 73,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3mzblz3wpsk2v",
+      "source": "bluesky",
+      "published_at": "2026-11-01T20:01:18Z",
+      "title": "The #Magic are starting Jase Richardson, Desmond Bane, Anthony Black, Franz Wagner and Wendell Carter Jr. against the Celtics today.",
+      "url": "https://bsky.app/profile/jbeede.bsky.social/post/3mzblz3wpsk2v",
+      "author": "Jason Beede",
+      "thumbnail": null,
+      "body_excerpt": "The #Magic are starting Jase Richardson, Desmond Bane, Anthony Black, Franz Wagner and Wendell Carter Jr. against the Celtics today.",
+      "players": [
+        "anthony-black",
+        "desmond-bane",
+        "franz-wagner",
+        "jase-richardson",
+        "wendell-carter-jr"
+      ],
+      "teams": [
+        "boston-celtics",
+        "orlando-magic"
+      ],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiey3powizzh2yl5k4eyoftbxztccx6pgnmdozyhyyjqybjhhnc2ne",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Magic"
+            }
+          ],
+          "index": {
+            "byteEnd": 10,
+            "byteStart": 4
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-d75d9fbfdc73f697",
       "source": "google-news",
@@ -1854,38 +1891,6 @@
       "teams": [
         "orlando-magic"
       ]
-    },
-    {
-      "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3mwvt4q5qs226",
-      "source": "bluesky",
-      "published_at": "2026-10-02T16:46:16Z",
-      "title": "#Magic coach Sean Sweeney said Anthony Black (sprained ankle) has “definitely made progress” throughout the week. Black has done non-contact work at a “high, full-speed level as of today.”",
-      "url": "https://bsky.app/profile/jbeede.bsky.social/post/3mwvt4q5qs226",
-      "author": "Jason Beede",
-      "thumbnail": null,
-      "body_excerpt": "#Magic coach Sean Sweeney said Anthony Black (sprained ankle) has “definitely made progress” throughout the week. Black has done non-contact work at a “high, full-speed level as of today.”\n\n“So, we feel pretty good about where he's at,” Sweeney said.",
-      "players": [
-        "anthony-black"
-      ],
-      "teams": [
-        "orlando-magic"
-      ],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiey3powizzh2yl5k4eyoftbxztccx6pgnmdozyhyyjqybjhhnc2ne",
-      "facets": [
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#tag",
-              "tag": "Magic"
-            }
-          ],
-          "index": {
-            "byteEnd": 6,
-            "byteStart": 0
-          }
-        }
-      ],
-      "enriched": true
     }
   ]
 }
