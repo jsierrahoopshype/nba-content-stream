@@ -1,9 +1,67 @@
 {
   "slug": "peyton-watson",
   "name": "Peyton Watson",
-  "generated_at": "2026-11-03T18:39:41Z",
+  "generated_at": "2026-11-03T23:46:32Z",
   "count": 55,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Au3zuvwlvfrhhg2s75er7sw3b%2Fapp.bsky.feed.post%2F3mzgueg7tu22o",
+      "source": "bluesky",
+      "published_at": "2026-11-03T22:14:07Z",
+      "title": "#Cavs Peyton Watson (hamstring) and Jaylon Tyson (ankle) are again OUT for Wednesday’s game against Oklahoma City. The Thunder have yet to release their full list of injuries for tomorrow. #nbasky #letemknow",
+      "url": "https://bsky.app/profile/ejelite1.bsky.social/post/3mzgueg7tu22o",
+      "author": "Ethan Sands",
+      "thumbnail": null,
+      "body_excerpt": "#Cavs Peyton Watson (hamstring) and Jaylon Tyson (ankle) are again OUT for Wednesday’s game against Oklahoma City. The Thunder have yet to release their full list of injuries for tomorrow. #nbasky #letemknow",
+      "players": [
+        "jaylon-tyson",
+        "peyton-watson"
+      ],
+      "teams": [
+        "cleveland-cavaliers",
+        "oklahoma-city-thunder"
+      ],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:u3zuvwlvfrhhg2s75er7sw3b/bafkreigt6xomznc264wb5xffld3klhl7cvost2bec77db2wzf22efozcp4",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Cavs"
+            }
+          ],
+          "index": {
+            "byteEnd": 5,
+            "byteStart": 0
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "nbasky"
+            }
+          ],
+          "index": {
+            "byteEnd": 198,
+            "byteStart": 191
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "letemknow"
+            }
+          ],
+          "index": {
+            "byteEnd": 209,
+            "byteStart": 199
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-ffc62331ee45c3b8",
       "source": "google-news",
@@ -1193,23 +1251,6 @@
       ],
       "teams": [
         "los-angeles-clippers"
-      ]
-    },
-    {
-      "id": "gn-f67c5ac984449aa9",
-      "source": "google-news",
-      "published_at": "2026-10-04T20:00:10Z",
-      "title": "Cavaliers' Peyton Watson Gets Honest on Lakers Interest in Free Agency",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPWUF2OVlwZ0NoZHp4QjZJdWpET3M3R3dyOUZDWWhRMHhtTlQtQThlci1WdkNSTVRlVG5raVg2YWVfVlRaRUFqWFJUYkEyUWJKV0F1UFgzNWo1UmdVSERQQWhUX3ZiYTY3VEdMSFhmR0YxOVlWVFd4RGpLNVI0ODNTSXRoRkF6aEVfLWtzZg?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Cavaliers' Peyton Watson Gets Honest on Lakers Interest in Free Agency Yahoo Sports",
-      "players": [
-        "peyton-watson"
-      ],
-      "teams": [
-        "cleveland-cavaliers",
-        "los-angeles-lakers"
       ]
     }
   ]
