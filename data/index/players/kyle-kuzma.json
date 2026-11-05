@@ -1,9 +1,44 @@
 {
   "slug": "kyle-kuzma",
   "name": "Kyle Kuzma",
-  "generated_at": "2026-11-05T00:16:42Z",
-  "count": 28,
+  "generated_at": "2026-11-05T07:00:42Z",
+  "count": 27,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Afqsmj7o5mbb7n7oav2kkjuid%2Fapp.bsky.feed.post%2F3mzjtwtgeck2d",
+      "source": "bluesky",
+      "published_at": "2026-11-05T02:44:30Z",
+      "title": "Pritchard drops kuz.",
+      "url": "https://bsky.app/profile/nbastat.bsky.social/post/3mzjtwtgeck2d",
+      "author": "NBA Stat",
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Afqsmj7o5mbb7n7oav2kkjuid/bafkreigikn3b6dbn3ztokcroz7dboar4jk3tr3iybxwbff4dibgp3kvsdu/thumbnail.jpg",
+      "body_excerpt": "Pritchard drops kuz.\n\n#NBA",
+      "players": [
+        "kyle-kuzma"
+      ],
+      "teams": [],
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Afqsmj7o5mbb7n7oav2kkjuid/bafkreigikn3b6dbn3ztokcroz7dboar4jk3tr3iybxwbff4dibgp3kvsdu/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Afqsmj7o5mbb7n7oav2kkjuid/bafkreigikn3b6dbn3ztokcroz7dboar4jk3tr3iybxwbff4dibgp3kvsdu/playlist.m3u8"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:fqsmj7o5mbb7n7oav2kkjuid/bafkreic3g44bm3orae6dkm4npna6phnodi74whhp6rkohxpe32x2hht27u",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "NBA"
+            }
+          ],
+          "index": {
+            "byteEnd": 26,
+            "byteStart": 22
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-35b25fd8cdc7f971",
       "source": "google-news",
@@ -450,44 +485,6 @@
       "teams": [
         "milwaukee-bucks"
       ]
-    },
-    {
-      "id": "bs-did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao%2Fapp.bsky.feed.post%2F3mx6eenclfk2h",
-      "source": "bluesky",
-      "published_at": "2026-10-06T02:16:13Z",
-      "title": "Kyle Kuzma is in playoff form:",
-      "url": "https://bsky.app/profile/hoopinformatics.com/post/3mx6eenclfk2h",
-      "author": "Hoop Informatics",
-      "thumbnail": null,
-      "body_excerpt": "Kyle Kuzma is in playoff form:\n\n20 minutes\n1 point\n0/4 2p\n0/2 3p\n1/2 ft\n(-12)",
-      "players": [
-        "kyle-kuzma"
-      ],
-      "teams": [],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:s42iw2fbfmgsgh7hdtvvoaao/bafkreigsdsi76pwfd4djiiibz7oeluixl4fqpbwx7moknvryv4bd5yvniu",
-      "enriched": true
-    },
-    {
-      "id": "bs-did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao%2Fapp.bsky.feed.post%2F3mx65y5ud4k25",
-      "source": "bluesky",
-      "published_at": "2026-10-06T00:21:52Z",
-      "title": "Kyle Kuzma to Tyler Herro",
-      "url": "https://bsky.app/profile/hoopinformatics.com/post/3mx65y5ud4k25",
-      "author": "Hoop Informatics",
-      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao/bafkreihmgqjpwzhghnokzfw4x23joxmewmnykzz445sn6sflavibbobp7y/thumbnail.jpg",
-      "body_excerpt": "Kyle Kuzma to Tyler Herro\n\nYes, those two are on the same team. The 2023 CBA failed us.",
-      "players": [
-        "kyle-kuzma",
-        "tyler-herro"
-      ],
-      "teams": [],
-      "media": {
-        "type": "video",
-        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao/bafkreihmgqjpwzhghnokzfw4x23joxmewmnykzz445sn6sflavibbobp7y/thumbnail.jpg",
-        "playlist": "https://video.bsky.app/watch/did%3Aplc%3As42iw2fbfmgsgh7hdtvvoaao/bafkreihmgqjpwzhghnokzfw4x23joxmewmnykzz445sn6sflavibbobp7y/playlist.m3u8"
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:s42iw2fbfmgsgh7hdtvvoaao/bafkreigsdsi76pwfd4djiiibz7oeluixl4fqpbwx7moknvryv4bd5yvniu",
-      "enriched": true
     }
   ]
 }
