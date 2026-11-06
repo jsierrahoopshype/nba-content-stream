@@ -255,7 +255,9 @@ def test_sitemap_includes_homepage_and_all_entities(tmp_path):
     assert "<?xml" in text
     assert "<urlset" in text
     # Homepage + directory pages
-    assert "/index.html</loc>" in text
+    assert "<loc>https://hoopsmatic.com/content-stream</loc>" in text
+    assert "/index.html</loc>" not in text
+    assert "<loc>https://hoopsmatic.com/content-stream/</loc>" not in text
     assert "/players.html</loc>" in text
     assert "/teams.html</loc>" in text
     # Entity pages: teams listed, players excluded (they're noindex)
@@ -639,3 +641,22 @@ def test_sitemap_lastmod_first_run_seeds_from_existing_sitemap(tmp_path):
     )
     dates = _build(tmp_path, manifest, "2026-10-28")
     assert dates[base + "/teams/boston-celtics.html"] == "2026-09-15"
+
+
+def test_sitemap_hub_matches_canonical_and_keeps_legacy_lastmod(tmp_path):
+    manifest = _site(tmp_path, {"boston-celtics": ["a"]})
+    hub = prerender_pages.SITE_BASE_URL
+    # page_hashes.json from before the rename: hub stored under ".../".
+    first = _build(tmp_path, manifest, "2026-10-01")
+    hashes_path = tmp_path / "data" / "page_hashes.json"
+    blob = json.loads(hashes_path.read_text())
+    blob["pages"][hub + "/"] = blob["pages"].pop(hub)
+    hashes_path.write_text(json.dumps(blob))
+
+    second = _build(tmp_path, manifest, "2026-10-28")
+    assert second[hub] == first[hub] == "2026-10-01"
+    assert hub + "/" not in second and hub + "/index.html" not in second
+    canonical = '<link rel="canonical" href="https://hoopsmatic.com/content-stream">'
+    assert canonical in (Path(prerender_pages.__file__).resolve().parent.parent / "index.html").read_text()
+    pages = json.loads(hashes_path.read_text())["pages"]
+    assert hub in pages and hub + "/" not in pages and hub + "/index.html" not in pages

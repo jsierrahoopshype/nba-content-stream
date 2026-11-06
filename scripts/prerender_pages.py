@@ -333,8 +333,9 @@ def _render_page(
 def _sitemap_urls(team_slugs: List[str]) -> List[str]:
     """Every URL the sitemap lists, in sitemap order."""
     urls = [
-        SITE_BASE_URL + "/",
-        SITE_BASE_URL + "/index.html",
+        # The hub is listed once, exactly as index.html's canonical
+        # (no trailing slash, no /index.html variant).
+        SITE_BASE_URL,
         SITE_BASE_URL + "/players.html",
         SITE_BASE_URL + "/teams.html",
     ]
@@ -374,7 +375,7 @@ def _render_sitemap(
 # anything that changes on every run (generated_at stamps, build ids):
 #   - team pages: the prerendered HTML + the ids of the items in
 #     data/index/teams/<slug>.json (the cards the page loads);
-#   - / and /index.html: index.html + the ids in data/index/feed.json;
+#   - the hub (SITE_BASE_URL): index.html + the ids in data/index/feed.json;
 #   - players.html / teams.html: the HTML file + the directory roster
 #     (slug, name, count) from the manifest.
 
@@ -417,8 +418,7 @@ def page_content_hashes(
         f"{e.get('slug')}|{e.get('name')}|{e.get('count')}" for e in manifest.get(key, [])
     ]
     hashes = {
-        SITE_BASE_URL + "/": home,
-        SITE_BASE_URL + "/index.html": home,
+        SITE_BASE_URL: home,
         SITE_BASE_URL + "/players.html": _sha(
             [_read_text(site_root / "players.html")] + roster("players")
         ),
@@ -435,7 +435,7 @@ def page_content_hashes(
 
 def _url_source_file(url: str) -> str:
     """Repo-relative file behind a sitemap URL (for git-date seeding)."""
-    rel = url[len(SITE_BASE_URL) + 1:]
+    rel = url[len(SITE_BASE_URL):].lstrip("/")
     return rel or "index.html"
 
 
@@ -456,6 +456,11 @@ def _existing_sitemap_lastmods(sitemap_path: Path) -> Dict[str, str]:
     return dict(
         re.findall(r"<loc>([^<]+)</loc><lastmod>(\d{4}-\d{2}-\d{2})</lastmod>", text)
     )
+
+
+# New URL -> the URL it was stored under before, so a rename doesn't
+# reset that page's lastmod.
+_LEGACY_URLS = {SITE_BASE_URL: SITE_BASE_URL + "/"}
 
 
 def update_page_hashes(
@@ -480,6 +485,10 @@ def update_page_hashes(
     out: Dict[str, dict] = {}
     for url, digest in hashes.items():
         prev = stored.get(url)
+        if prev is None and url in _LEGACY_URLS:
+            # Hub moved from ".../content-stream/" to the canonical
+            # ".../content-stream": keep its stored hash + lastmod.
+            prev = stored.get(_LEGACY_URLS[url])
         if prev and prev.get("hash") == digest and prev.get("lastmod"):
             lastmod = prev["lastmod"]
         elif prev:

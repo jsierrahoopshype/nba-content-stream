@@ -255,7 +255,9 @@ def test_sitemap_includes_homepage_and_all_entities(tmp_path):
     assert "<?xml" in text
     assert "<urlset" in text
     # Homepage + directory pages
-    assert "/index.html</loc>" in text
+    assert "<loc>https://hoopsmatic.com/content-stream</loc>" in text
+    assert "/index.html</loc>" not in text
+    assert "<loc>https://hoopsmatic.com/content-stream/</loc>" not in text
     assert "/players.html</loc>" in text
     assert "/teams.html</loc>" in text
     # Entity pages: teams listed, players excluded (they're noindex)
