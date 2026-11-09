@@ -1,9 +1,77 @@
 {
   "slug": "jalen-slawson",
   "name": "Jalen Slawson",
-  "generated_at": "2026-11-09T14:25:59Z",
-  "count": 26,
+  "generated_at": "2026-11-09T23:34:18Z",
+  "count": 27,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3A7uahugigvixjvxd5s2hidpad%2Fapp.bsky.feed.post%2F3mzvuctuits2p",
+      "source": "bluesky",
+      "published_at": "2026-11-09T21:23:10Z",
+      "title": "Today, with @ipacers.bsky.social, should the Pacers be THIS bad without Tyrese Haliburton? Plus, I think Zubac has been better than fans and Jalen Slawson should play every night.",
+      "url": "https://bsky.app/profile/tonyreast.bsky.social/post/3mzvuctuits2p",
+      "author": "Tony East",
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreihkagyuouxr6xxeyq3pqtneunmtnbszwewpozumhazyo5ksccgdau",
+      "body_excerpt": "Today, with @ipacers.bsky.social, should the Pacers be THIS bad without Tyrese Haliburton? Plus, I think Zubac has been better than fans and Jalen Slawson should play every night.\n\nListen: locked-on-pacers-daily-podcast-on-the-indiana-pacers.simplecast.com\nWatch: www.youtube.com/watch?v=wd6Q...",
+      "players": [
+        "ivica-zubac",
+        "jalen-slawson",
+        "tyrese-haliburton"
+      ],
+      "teams": [
+        "indiana-pacers"
+      ],
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreihkagyuouxr6xxeyq3pqtneunmtnbszwewpozumhazyo5ksccgdau",
+            "alt": ""
+          }
+        ]
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:7uahugigvixjvxd5s2hidpad/bafkreibcezoefeniffictxya32ce54pxckgbi6tyrpl5atugj63b6c25ei",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:hhv67ydqswmrizaz5dqlz336"
+            }
+          ],
+          "index": {
+            "byteEnd": 32,
+            "byteStart": 12
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://locked-on-pacers-daily-podcast-on-the-indiana-pacers.simplecast.com/"
+            }
+          ],
+          "index": {
+            "byteEnd": 256,
+            "byteStart": 189
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.youtube.com/watch?v=wd6QgbuzXeY"
+            }
+          ],
+          "index": {
+            "byteEnd": 295,
+            "byteStart": 264
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "bs-did%3Aplc%3A6ahv2jk7wea2fql74oiisng6%2Fapp.bsky.feed.post%2F3mzr2ygggjs2m",
       "source": "bluesky",
