@@ -1,9 +1,74 @@
 {
   "slug": "jalen-suggs",
   "name": "Jalen Suggs",
-  "generated_at": "2026-11-09T23:34:18Z",
-  "count": 52,
+  "generated_at": "2026-11-10T04:50:31Z",
+  "count": 53,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3mzwar77sv22q",
+      "source": "bluesky",
+      "published_at": "2026-11-10T01:05:57Z",
+      "title": "My latest for @orlandosentinel.com: #Magic face Kings aiming to snap four-game skid; Jalen Suggs makes progress but no return set:",
+      "url": "https://bsky.app/profile/jbeede.bsky.social/post/3mzwar77sv22q",
+      "author": "Jason Beede",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreidqb37onuxeo6tjk4lkgnwj5eltsy5nb4f2xorrucm4jjg5yydnee",
+      "body_excerpt": "My latest for @orlandosentinel.com: #Magic face Kings aiming to snap four-game skid; Jalen Suggs makes progress but no return set:\n\n“What’s being asked of us is something that we’re capable of,” Orlando’s Desmond Bane said.\n\nMore: www.orlandosentinel.com/2026/11/09/o...",
+      "players": [
+        "jalen-suggs"
+      ],
+      "teams": [
+        "orlando-magic",
+        "sacramento-kings"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://www.orlandosentinel.com/2026/11/09/orlando-magic-sacramento-kings-preview-jalen-suggs-desmond-bane-nba-sean-sweeney/",
+        "title": "Magic face Kings aiming to snap skid; Suggs makes progress but no return set",
+        "description": "The Magic provided an injury update about Jalen Suggs on Monday ahead of Tuesday’s road game against the Kings.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreidqb37onuxeo6tjk4lkgnwj5eltsy5nb4f2xorrucm4jjg5yydnee"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiey3powizzh2yl5k4eyoftbxztccx6pgnmdozyhyyjqybjhhnc2ne",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:g5n6tmh54utzmwjregfbb7ul"
+            }
+          ],
+          "index": {
+            "byteEnd": 34,
+            "byteStart": 14
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Magic"
+            }
+          ],
+          "index": {
+            "byteEnd": 42,
+            "byteStart": 36
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.orlandosentinel.com/2026/11/09/orlando-magic-sacramento-kings-preview-jalen-suggs-desmond-bane-nba-sean-sweeney/"
+            }
+          ],
+          "index": {
+            "byteEnd": 280,
+            "byteStart": 241
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3mzvtezjzfk23",
       "source": "bluesky",

@@ -1,9 +1,78 @@
 {
   "slug": "milwaukee-bucks",
   "name": "Milwaukee Bucks",
-  "generated_at": "2026-11-09T23:34:18Z",
-  "count": 805,
+  "generated_at": "2026-11-10T04:50:31Z",
+  "count": 808,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3A6jpqgc6d4tplxcioxuh7khmr%2Fapp.bsky.feed.post%2F3mzw5sy4e6k2v",
+      "source": "bluesky",
+      "published_at": "2026-11-10T00:13:15Z",
+      "title": "Tyler Herro suffered a bruise on his right knee last night, so he’s questionable for the #Bucks in New York tomorrow. ",
+      "url": "https://bsky.app/profile/jimowczarski.bsky.social/post/3mzw5sy4e6k2v",
+      "author": "Jim Owczarski",
+      "thumbnail": null,
+      "body_excerpt": "Tyler Herro suffered a bruise on his right knee last night, so he’s questionable for the #Bucks in New York tomorrow. \n\nIf he can’t go it will be the first game missed by a rotation player this season.",
+      "players": [
+        "tyler-herro"
+      ],
+      "teams": [
+        "milwaukee-bucks"
+      ],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:6jpqgc6d4tplxcioxuh7khmr/bafkreigdgpen526icgd3bkitiwfq7q6jjqpjsekj4uuu7czcpu2jhonjvi",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Bucks"
+            }
+          ],
+          "index": {
+            "byteEnd": 97,
+            "byteStart": 91
+          }
+        }
+      ],
+      "enriched": true
+    },
+    {
+      "id": "bs-did%3Aplc%3A6jpqgc6d4tplxcioxuh7khmr%2Fapp.bsky.feed.post%2F3mzw4htbios2s",
+      "source": "bluesky",
+      "published_at": "2026-11-09T23:49:07Z",
+      "title": "City of Milwaukee, Bucks, lose out to Miami for 2028 NBA all-star game.",
+      "url": "https://bsky.app/profile/jimowczarski.bsky.social/post/3mzw4htbios2s",
+      "author": "Jim Owczarski",
+      "thumbnail": null,
+      "body_excerpt": "City of Milwaukee, Bucks, lose out to Miami for 2028 NBA all-star game.\n\nwww.jsonline.com/story/sports...",
+      "players": [],
+      "teams": [
+        "milwaukee-bucks"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://www.jsonline.com/story/sports/nba/bucks/2026/11/09/city-of-milwaukee-bucks-lose-out-miami-2028-nba-all-star-game/92698488007/",
+        "title": "City of Milwaukee, Bucks, lose out to Miami for 2028 NBA all-star game",
+        "description": "City of Milwaukee, Bucks, lose out to Miami for 2028 NBA all-star game.",
+        "thumb": null
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:6jpqgc6d4tplxcioxuh7khmr/bafkreigdgpen526icgd3bkitiwfq7q6jjqpjsekj4uuu7czcpu2jhonjvi",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.jsonline.com/story/sports/nba/bucks/2026/11/09/city-of-milwaukee-bucks-lose-out-miami-2028-nba-all-star-game/92698488007/"
+            }
+          ],
+          "index": {
+            "byteEnd": 105,
+            "byteStart": 73
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-8ff2b75478618c3f",
       "source": "google-news",
@@ -14,6 +83,41 @@
       "thumbnail": null,
       "body_excerpt": "City of Milwaukee, Bucks, lose out to Miami for 2028 NBA all-star game Yahoo Sports",
       "players": [],
+      "teams": [
+        "milwaukee-bucks"
+      ]
+    },
+    {
+      "id": "rd-t3_1xs6h0f",
+      "source": "reddit",
+      "published_at": "2026-11-09T22:53:21Z",
+      "title": "[Siegel] “While willing to give up Myles Turner for Porzingis’ contract, the Bucks have wanted draft compensation from the Warriors. Golden State has held firm that if it were to absorb Turner’s contract for Porzingis… the team would need extra compensation from Milwaukee”",
+      "url": "https://www.reddit.com/r/nba/comments/1xs6h0f/siegel_while_willing_to_give_up_myles_turner_for/",
+      "author": "Krios29",
+      "thumbnail": null,
+      "body_excerpt": "source: https://sports.yahoo.com/articles/report-warriors-hold-trade-talks-183822209.html “While willing to give up Myles Turner for Porzingis' contract, the Bucks have wanted draft compensation from the Warriors, something that isn't on the table. Golden State has held firm…",
+      "players": [
+        "myles-turner"
+      ],
+      "teams": [
+        "golden-state-warriors",
+        "milwaukee-bucks"
+      ]
+    },
+    {
+      "id": "rd-t3_1xs51vj",
+      "source": "reddit",
+      "published_at": "2026-11-09T21:56:37Z",
+      "title": "Joe Mazzulla let Jayson Tatum and Derrick White decide the starting lineup against the Bucks, leading to Mike Conley's first start of the season. Conley had only played 22 minutes total the whole season to that point",
+      "url": "https://www.reddit.com/r/nba/comments/1xs51vj/joe_mazzulla_let_jayson_tatum_and_derrick_white/",
+      "author": "refreshing_yogurt",
+      "thumbnail": null,
+      "body_excerpt": "MILWAUKEE — Mike Conley didn’t hear from his coach that he was starting in Sunday’s game. He heard it from the very Celtics teammates who picked him. The 39-year-old point guard, in his 20th NBA season, got his first start of the year against the Milwaukee Bucks after Joe…",
+      "players": [
+        "derrick-white",
+        "jayson-tatum",
+        "mike-conley"
+      ],
       "teams": [
         "milwaukee-bucks"
       ]
@@ -15798,37 +15902,6 @@
         "charlotte-hornets",
         "milwaukee-bucks"
       ]
-    },
-    {
-      "id": "bs-did%3Aplc%3Agqgnr2obuwossobfnxw5xnxg%2Fapp.bsky.feed.post%2F3mxktgtavls2k",
-      "source": "bluesky",
-      "published_at": "2026-10-11T01:17:50Z",
-      "title": "Hollinger POTD Desmond Mason. Oklahoma ST SG/SF drafted 17th by SEA in 2000. Explosive leaper peaked at 17.2 ppg w/MIL in 04-05. Rebounded well for his size but not a passer or shooter . Also played w/NO, OKC & SAC thru 2010. Has had a career as an artist post-NBA.",
-      "url": "https://bsky.app/profile/hoopsanalyst.bsky.social/post/3mxktgtavls2k",
-      "author": "HoopsAnalyst",
-      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:gqgnr2obuwossobfnxw5xnxg/bafkreiaz75zjb6n5zo23ar3ajge2cqg54ul55zmz3yes7y3otsz2nzldv4",
-      "body_excerpt": "Hollinger POTD Desmond Mason. Oklahoma ST SG/SF drafted 17th by SEA in 2000. Explosive leaper peaked at 17.2 ppg w/MIL in 04-05. Rebounded well for his size but not a passer or shooter . Also played w/NO, OKC & SAC thru 2010. Has had a career as an artist post-NBA.",
-      "players": [],
-      "teams": [
-        "milwaukee-bucks",
-        "oklahoma-city-thunder",
-        "sacramento-kings"
-      ],
-      "media": {
-        "type": "image",
-        "images": [
-          {
-            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:gqgnr2obuwossobfnxw5xnxg/bafkreiaz75zjb6n5zo23ar3ajge2cqg54ul55zmz3yes7y3otsz2nzldv4",
-            "alt": ""
-          },
-          {
-            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:gqgnr2obuwossobfnxw5xnxg/bafkreiastp2mmkaykdgimakj5tzsopablr423dhscvw27m7zuu6k3napu4",
-            "alt": ""
-          }
-        ]
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:gqgnr2obuwossobfnxw5xnxg/bafkreig4bh4i4zvhl35mv4rk7rz65fusy6wyc6acr3z7kye4n4sv4n5ypq",
-      "enriched": true
     }
   ]
 }
