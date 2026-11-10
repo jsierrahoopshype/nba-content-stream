@@ -1,9 +1,61 @@
 {
   "slug": "cj-mccollum",
   "name": "CJ McCollum",
-  "generated_at": "2026-11-10T13:22:53Z",
-  "count": 38,
+  "generated_at": "2026-11-10T20:35:59Z",
+  "count": 39,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Afqsmj7o5mbb7n7oav2kkjuid%2Fapp.bsky.feed.post%2F3mzxnw7dwic23",
+      "source": "bluesky",
+      "published_at": "2026-11-10T14:34:03Z",
+      "title": "Last night, CJ McCollum reached 17,000 points for his career.",
+      "url": "https://bsky.app/profile/nbastat.bsky.social/post/3mzxnw7dwic23",
+      "author": "NBA Stat",
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:fqsmj7o5mbb7n7oav2kkjuid/bafkreib5isnlcargzckafi6zwd6rdcydjmpp4fli55zer5psfay2xpyxny",
+      "body_excerpt": "Last night, CJ McCollum reached 17,000 points for his career.\n\nHe’s just the second player from the 2013 NBA Draft class to attain that milestone, joining Giannis Antetokounmpo.\n\n(via @statitudes.com)\n#NBA",
+      "players": [
+        "cj-mccollum"
+      ],
+      "teams": [],
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:fqsmj7o5mbb7n7oav2kkjuid/bafkreib5isnlcargzckafi6zwd6rdcydjmpp4fli55zer5psfay2xpyxny",
+            "alt": ""
+          }
+        ]
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:fqsmj7o5mbb7n7oav2kkjuid/bafkreic3g44bm3orae6dkm4npna6phnodi74whhp6rkohxpe32x2hht27u",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:rldxxd4625riymt4b5bwbmpf"
+            }
+          ],
+          "index": {
+            "byteEnd": 201,
+            "byteStart": 186
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "NBA"
+            }
+          ],
+          "index": {
+            "byteEnd": 207,
+            "byteStart": 203
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "bs-did%3Aplc%3Ayvy5ax23zpmoearxn6xsgqzf%2Fapp.bsky.feed.post%2F3mzwerr7v622j",
       "source": "bluesky",
