@@ -1,9 +1,59 @@
 {
   "slug": "atlanta-hawks",
   "name": "Atlanta Hawks",
-  "generated_at": "2026-11-11T07:39:30Z",
+  "generated_at": "2026-11-11T15:41:10Z",
   "count": 1000,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Aj24jtz7xkt5ttdsk32mmpkvn%2Fapp.bsky.feed.post%2F3n2236rq2vc2t",
+      "source": "bluesky",
+      "published_at": "2026-11-11T13:36:49Z",
+      "title": "New for @theathletic.com - The Hawks are what we thought they were. Can they be anything more?",
+      "url": "https://bsky.app/profile/johnhollinger.bsky.social/post/3n2236rq2vc2t",
+      "author": "John Hollinger",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:j24jtz7xkt5ttdsk32mmpkvn/bafkreig7etocjharzrydx34ffk4genj56qvyzjc74wvf57cuw4phnfeace",
+      "body_excerpt": "New for @theathletic.com - The Hawks are what we thought they were. Can they be anything more?\n\nwww.nytimes.com/athletic/777...",
+      "players": [],
+      "teams": [
+        "atlanta-hawks"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://www.nytimes.com/athletic/7770146/2026/11/11/atlanta-hawks-start-dyson-daniels-aaron-wiggins-nba/",
+        "title": "Can the Hawks be more than average? Here are reasons for optimism (and worry)",
+        "description": "Atlanta’s future is bright given its youth and draft assets, but what can this group accomplish this season?",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:j24jtz7xkt5ttdsk32mmpkvn/bafkreig7etocjharzrydx34ffk4genj56qvyzjc74wvf57cuw4phnfeace"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:j24jtz7xkt5ttdsk32mmpkvn/bafkreibg2mc7xjffmstasj2odaeoyoq3hdyjm47gpaiquip7ndgqgubrby",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:b2kutgxqlltwc6lhs724cfwr"
+            }
+          ],
+          "index": {
+            "byteEnd": 24,
+            "byteStart": 8
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.nytimes.com/athletic/7770146/2026/11/11/atlanta-hawks-start-dyson-daniels-aaron-wiggins-nba/"
+            }
+          ],
+          "index": {
+            "byteEnd": 127,
+            "byteStart": 96
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "bs-did%3Aplc%3Amtyaifw46xppbvcxeo6tl6wf%2Fapp.bsky.feed.post%2F3mzzfd6hmci2w",
       "source": "bluesky",
@@ -19008,34 +19058,6 @@
       "teams": [
         "atlanta-hawks"
       ]
-    },
-    {
-      "id": "bs-did%3Aplc%3Agqgnr2obuwossobfnxw5xnxg%2Fapp.bsky.feed.post%2F3mxtwti3ok22t",
-      "source": "bluesky",
-      "published_at": "2026-10-14T16:12:33Z",
-      "title": "Hollander POTD Reggie Theus. UNLV SG drafted 9th in  78 by CHI. Was CHI star pre-MJ, peaking at 24 ppg but wasn't known for D. Made 2x all-star but was benched by + sent to KC/SAC where he was solid. Also played w/ATL, ORL+NJ before going abroad. Coached and did TV work after.",
-      "url": "https://bsky.app/profile/hoopsanalyst.bsky.social/post/3mxtwti3ok22t",
-      "author": "HoopsAnalyst",
-      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:gqgnr2obuwossobfnxw5xnxg/bafkreigjyxn775ltlriqr77mcg7tjtbxi5cch3xvtcvuxtl2nunzpmqafy",
-      "body_excerpt": "Hollander POTD Reggie Theus. UNLV SG drafted 9th in  78 by CHI. Was CHI star pre-MJ, peaking at 24 ppg but wasn't known for D. Made 2x all-star but was benched by + sent to KC/SAC where he was solid. Also played w/ATL, ORL+NJ before going abroad. Coached and did TV work after.",
-      "players": [],
-      "teams": [
-        "atlanta-hawks",
-        "chicago-bulls",
-        "orlando-magic",
-        "sacramento-kings"
-      ],
-      "media": {
-        "type": "image",
-        "images": [
-          {
-            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:gqgnr2obuwossobfnxw5xnxg/bafkreigjyxn775ltlriqr77mcg7tjtbxi5cch3xvtcvuxtl2nunzpmqafy",
-            "alt": ""
-          }
-        ]
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:gqgnr2obuwossobfnxw5xnxg/bafkreig4bh4i4zvhl35mv4rk7rz65fusy6wyc6acr3z7kye4n4sv4n5ypq",
-      "enriched": true
     }
   ]
 }
