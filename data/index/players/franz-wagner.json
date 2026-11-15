@@ -1,9 +1,73 @@
 {
   "slug": "franz-wagner",
   "name": "Franz Wagner",
-  "generated_at": "2026-11-14T23:59:14Z",
-  "count": 91,
+  "generated_at": "2026-11-15T06:01:08Z",
+  "count": 92,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3n2ctsvxqdk2v",
+      "source": "bluesky",
+      "published_at": "2026-11-15T01:18:52Z",
+      "title": "My latest for @orlandosentinel.com: Franz Wagner is on a historic heater as the #Magic begin to piece the puzzle together:",
+      "url": "https://bsky.app/profile/jbeede.bsky.social/post/3n2ctsvxqdk2v",
+      "author": "Jason Beede",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreigfffcnsigeor5iu6z6u4kkbx435b2mhrrwyrrh2sdxa6b2yjzngi",
+      "body_excerpt": "My latest for @orlandosentinel.com: Franz Wagner is on a historic heater as the #Magic begin to piece the puzzle together:\n\n“He’s a competitive guy that wants to win … and he’s being rewarded for all the work that he’s put in,” Desmond Bane said.\n\nMore: www.orlandosentinel.com/2026/11/14/o...",
+      "players": [
+        "franz-wagner"
+      ],
+      "teams": [
+        "orlando-magic"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://www.orlandosentinel.com/2026/11/14/orlando-magic-milwaukee-bucks-franz-wagner-desmond-bane-noah-penda-injury-update-jalen-suggs-nba-cup-folo-kia-center-sean-sweeney/",
+        "title": "Franz Wagner on historic heater as Magic begin to piece puzzle together",
+        "description": "Franz Wagner became the fifth player in Magic history to score 30-plus points in four straight games on Friday night at Kia Center.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreigfffcnsigeor5iu6z6u4kkbx435b2mhrrwyrrh2sdxa6b2yjzngi"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiey3powizzh2yl5k4eyoftbxztccx6pgnmdozyhyyjqybjhhnc2ne",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:g5n6tmh54utzmwjregfbb7ul"
+            }
+          ],
+          "index": {
+            "byteEnd": 34,
+            "byteStart": 14
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Magic"
+            }
+          ],
+          "index": {
+            "byteEnd": 86,
+            "byteStart": 80
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.orlandosentinel.com/2026/11/14/orlando-magic-milwaukee-bucks-franz-wagner-desmond-bane-noah-penda-injury-update-jalen-suggs-nba-cup-folo-kia-center-sean-sweeney/"
+            }
+          ],
+          "index": {
+            "byteEnd": 305,
+            "byteStart": 266
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-1e0770614c6966b5",
       "source": "google-news",
