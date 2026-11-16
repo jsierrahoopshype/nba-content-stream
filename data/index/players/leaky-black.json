@@ -1,9 +1,58 @@
 {
   "slug": "leaky-black",
   "name": "Leaky Black",
-  "generated_at": "2026-11-16T11:30:29Z",
-  "count": 6,
+  "generated_at": "2026-11-16T21:14:39Z",
+  "count": 7,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Azlu4qb4lp3oazzwzp5rwmn3n%2Fapp.bsky.feed.post%2F3n2h3dws4ik2s",
+      "source": "bluesky",
+      "published_at": "2026-11-16T17:44:19Z",
+      "title": "It's early but - Leaky Black is #22 in OpenRAPM's defensive per-100 rating this season",
+      "url": "https://bsky.app/profile/bbstats.bsky.social/post/3n2h3dws4ik2s",
+      "author": "Nathan Walker",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:zlu4qb4lp3oazzwzp5rwmn3n/bafkreihcgwy2slmutg2zzylq43bgcdjywfvlfsokrxmqzkavtp2yowvahy",
+      "body_excerpt": "It's early but - Leaky Black is #22 in OpenRAPM's defensive per-100 rating this season\n\nPer-36 defensive numbers: 2.9 STL, 1.0 BLK, 4.7 DRB\n\nopenrapm.com\n\n#STEALZZZ",
+      "players": [
+        "leaky-black"
+      ],
+      "teams": [],
+      "media": {
+        "type": "link",
+        "uri": "https://openrapm.com",
+        "title": "OpenRAPM",
+        "description": "",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:zlu4qb4lp3oazzwzp5rwmn3n/bafkreihcgwy2slmutg2zzylq43bgcdjywfvlfsokrxmqzkavtp2yowvahy"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:zlu4qb4lp3oazzwzp5rwmn3n/bafkreidwjp6jxennh2dykj4sl3vexiv7rr2cdugw4zyx7k2javbn7glgrm",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://openrapm.com"
+            }
+          ],
+          "index": {
+            "byteEnd": 153,
+            "byteStart": 141
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "STEALZZZ"
+            }
+          ],
+          "index": {
+            "byteEnd": 164,
+            "byteStart": 155
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "bs-did%3Aplc%3A4xpj3xjxsxxcuh3ghaulzdqu%2Fapp.bsky.feed.post%2F3mzz26pwn6s22",
       "source": "bluesky",
