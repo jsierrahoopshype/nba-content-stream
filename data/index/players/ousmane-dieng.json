@@ -1,9 +1,82 @@
 {
   "slug": "ousmane-dieng",
   "name": "Ousmane Dieng",
-  "generated_at": "2026-11-17T21:49:32Z",
-  "count": 5,
+  "generated_at": "2026-11-18T03:30:04Z",
+  "count": 6,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3A6jpqgc6d4tplxcioxuh7khmr%2Fapp.bsky.feed.post%2F3n2kklhdw4k25",
+      "source": "bluesky",
+      "published_at": "2026-11-18T02:54:56Z",
+      "title": "Ousmane Dieng is the only player unavailable for the #Bucks due to injury for tomorrow’s game vs. the #Heat",
+      "url": "https://bsky.app/profile/jimowczarski.bsky.social/post/3n2kklhdw4k25",
+      "author": "Jim Owczarski",
+      "thumbnail": null,
+      "body_excerpt": "Ousmane Dieng is the only player unavailable for the #Bucks due to injury for tomorrow’s game vs. the #Heat",
+      "players": [
+        "ousmane-dieng"
+      ],
+      "teams": [
+        "miami-heat",
+        "milwaukee-bucks"
+      ],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:6jpqgc6d4tplxcioxuh7khmr/bafkreigdgpen526icgd3bkitiwfq7q6jjqpjsekj4uuu7czcpu2jhonjvi",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Bucks"
+            }
+          ],
+          "index": {
+            "byteEnd": 59,
+            "byteStart": 53
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Heat"
+            }
+          ],
+          "index": {
+            "byteEnd": 109,
+            "byteStart": 104
+          }
+        }
+      ],
+      "quote": {
+        "author": "Jim Owczarski",
+        "handle": "jimowczarski.bsky.social",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:6jpqgc6d4tplxcioxuh7khmr/bafkreigdgpen526icgd3bkitiwfq7q6jjqpjsekj4uuu7czcpu2jhonjvi",
+        "text": "🤕Milwaukee Bucks' Ousmane Dieng to have surgery on finger\n\nwww.jsonline.com/story/sports...",
+        "url": "https://bsky.app/profile/jimowczarski.bsky.social/post/3n2ft3sdy322s",
+        "facets": [
+          {
+            "features": [
+              {
+                "$type": "app.bsky.richtext.facet#link",
+                "uri": "https://www.jsonline.com/story/sports/nba/bucks/2026/11/15/milwaukee-bucks-ousmane-dieng-surgery-finger/92768343007/"
+              }
+            ],
+            "index": {
+              "byteEnd": 94,
+              "byteStart": 62
+            }
+          }
+        ],
+        "media": {
+          "type": "link",
+          "uri": "https://www.jsonline.com/story/sports/nba/bucks/2026/11/15/milwaukee-bucks-ousmane-dieng-surgery-finger/92768343007/",
+          "title": "Milwaukee Bucks' Ousmane Dieng to have surgery on finger",
+          "description": "Milwaukee Bucks forward Ousmane Dieng is set to have surgery on a fractured finger on his left hand.",
+          "thumb": null
+        }
+      },
+      "enriched": true
+    },
     {
       "id": "bs-did%3Aplc%3A6jpqgc6d4tplxcioxuh7khmr%2Fapp.bsky.feed.post%2F3n2ft3sdy322s",
       "source": "bluesky",
