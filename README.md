@@ -2,7 +2,7 @@
 
 HoopsMatic feature that aggregates NBA content from YouTube, Substack, Bluesky, Reddit, and Google News into a single browsable interface, with cross-cutting player and team pages and an automated data-viz social video pipeline.
 
-Live at: [jsierrahoopshype.github.io/nba-content-stream](https://jsierrahoopshype.github.io/nba-content-stream/)
+Live on HoopsMatic: https://hoopsmatic.com/content-stream
 
 See [DESIGN.md](./DESIGN.md) for the full design doc.
 
