@@ -1,9 +1,74 @@
 {
   "slug": "franz-wagner",
   "name": "Franz Wagner",
-  "generated_at": "2026-11-22T00:13:01Z",
-  "count": 111,
+  "generated_at": "2026-11-22T06:56:12Z",
+  "count": 112,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3n2udqlnxzc2n",
+      "source": "bluesky",
+      "published_at": "2026-11-22T00:19:10Z",
+      "title": "My latest for @orlandosentinel.com: Franz Wagner saves the day for the #Magic, who travel to Wizards next:",
+      "url": "https://bsky.app/profile/jbeede.bsky.social/post/3n2udqlnxzc2n",
+      "author": "Jason Beede",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreicdckqaz7j7a76dm5cqho6tblpd5nimx7l46knohrybxgl5qu7rkq",
+      "body_excerpt": "My latest for @orlandosentinel.com: Franz Wagner saves the day for the #Magic, who travel to Wizards next:\n\n“It came down to one play — a big shot by Franz — but I think we were really poised to close out the game, which was huge,” Nikola Vucevic said.\n\nMore: www.orlandosentinel.com/2026/11/21/o...",
+      "players": [
+        "franz-wagner"
+      ],
+      "teams": [
+        "orlando-magic",
+        "washington-wizards"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://www.orlandosentinel.com/2026/11/21/orlando-magic-brooklyn-nets-franz-wagner-game-winner-moe-moritz-wagner-wendell-carter-desmond-bane-nikola-vucevic-nba-barclays-center-sean-sweeney/",
+        "title": "Facing brother, Franz Wagner saves day for Magic, who travel to Wizards next",
+        "description": "The Magic were far from perfect Friday night against the Nets at Barclays Center, but Orlando found a way to win late on the road thanks to Franz Wagner.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreicdckqaz7j7a76dm5cqho6tblpd5nimx7l46knohrybxgl5qu7rkq"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiey3powizzh2yl5k4eyoftbxztccx6pgnmdozyhyyjqybjhhnc2ne",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:g5n6tmh54utzmwjregfbb7ul"
+            }
+          ],
+          "index": {
+            "byteEnd": 34,
+            "byteStart": 14
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Magic"
+            }
+          ],
+          "index": {
+            "byteEnd": 77,
+            "byteStart": 71
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.orlandosentinel.com/2026/11/21/orlando-magic-brooklyn-nets-franz-wagner-game-winner-moe-moritz-wagner-wendell-carter-desmond-bane-nikola-vucevic-nba-barclays-center-sean-sweeney/"
+            }
+          ],
+          "index": {
+            "byteEnd": 307,
+            "byteStart": 268
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-73cabc700bfda6be",
       "source": "google-news",

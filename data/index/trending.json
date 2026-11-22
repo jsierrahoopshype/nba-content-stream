@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T00:13:01Z",
+  "generated_at": "2026-11-22T06:56:12Z",
   "window_hours": 72,
   "weights": {
     "youtube": 1.3,
@@ -11,734 +11,265 @@
   "count": 40,
   "items": [
     {
-      "id": "bs-did%3Aplc%3Aj24jtz7xkt5ttdsk32mmpkvn%2Fapp.bsky.feed.post%2F3n2udbud7lc2e",
+      "id": "bs-did%3Aplc%3Axyzeyymd5k2hu7tvbn6xa7yy%2Fapp.bsky.feed.post%2F3n2uyx2qofs2d",
       "source": "bluesky",
-      "published_at": "2026-11-22T00:10:55Z",
-      "title": "Don't wanna brag too much but my alma mater is now BOWL ELIGIBLE and I feel like very few people can say that #wahoowa",
-      "url": "https://bsky.app/profile/johnhollinger.bsky.social/post/3n2udbud7lc2e",
-      "author": "John Hollinger",
-      "thumbnail": null,
-      "body_excerpt": "Don't wanna brag too much but my alma mater is now BOWL ELIGIBLE and I feel like very few people can say that #wahoowa",
+      "published_at": "2026-11-22T06:38:35Z",
+      "title": "THE BEAM WORKS.",
+      "url": "https://bsky.app/profile/deucemason.bsky.social/post/3n2uyx2qofs2d",
+      "author": "Deuce Mason",
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:xyzeyymd5k2hu7tvbn6xa7yy/bafkreifi52atc7bxdjaww5c2wubrut3l24aw4ypacsqn7rh5ihtffm2hqi",
+      "body_excerpt": "THE BEAM WORKS.\n\nWE ARE LIIIIIIIIIIIIIIIIIIIVE:\nwww.youtube.com/watch?v=LIy0...",
       "players": [],
       "teams": [],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:j24jtz7xkt5ttdsk32mmpkvn/bafkreibg2mc7xjffmstasj2odaeoyoq3hdyjm47gpaiquip7ndgqgubrby",
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:xyzeyymd5k2hu7tvbn6xa7yy/bafkreifi52atc7bxdjaww5c2wubrut3l24aw4ypacsqn7rh5ihtffm2hqi",
+            "alt": ""
+          }
+        ]
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:xyzeyymd5k2hu7tvbn6xa7yy/bafkreibelitnmqctluvrzvwaxhi6cofa557yudtyz2fltqgmzvyedyqbnu",
       "facets": [
         {
           "features": [
             {
-              "$type": "app.bsky.richtext.facet#tag",
-              "tag": "wahoowa"
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.youtube.com/watch?v=LIy0YuZWOEw"
             }
           ],
           "index": {
-            "byteEnd": 118,
-            "byteStart": 110
+            "byteEnd": 79,
+            "byteStart": 48
           }
         }
       ],
       "enriched": true,
-      "trending_score": 0.3444
+      "trending_score": 0.2878
     },
     {
-      "id": "gn-1eaf024a8648c531",
+      "id": "gn-8eaff004fbf3b938",
       "source": "google-news",
-      "published_at": "2026-11-22T00:00:01Z",
-      "title": "With Harper Hurt, Spurs Turn Again to Julian Champagnie",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxONVFFY0V6SW5XNEdfWjFlcmNwU2FBTXpROE1RUjREZjRsOWN4SkFBb01SMTdPeVEza05hZkpZLVZ1LURSeXl6b0hIMFpqWU0wX2Rva0kyTW5YTUk4T1hsTUFGcnNld2RITXJBY21lVVV3T2tvSDM0R1VUQWRCc19rcjFjbERqb3ZqV2hPVkVvNlVkandsNHZNZ0t4eWFTOWFYVElSVUQxemp2Rmg5bndha3Y2Z1Vvb2lEYzRwc3d3NVV0T1E?oc=5",
-      "author": "Sports Illustrated",
+      "published_at": "2026-11-22T06:28:00Z",
+      "title": "Keys to the Game: Kings 97, Celtics 96",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE13bnVxMjgyaTY1Z18zdzg2VnNoSk9wazNiZ25lVXd5NUJkd0VSdEMzR0FSTWNvUGdvQlMxS00zaVhQUmIxMnluZnhVcUp5TnBmVVdrU2NOOVQwUy1wM3l1QmlsVWxtYl9wbU5fNWFlRFpxUQ?oc=5",
+      "author": "NBA.com",
       "thumbnail": null,
-      "body_excerpt": "With Harper Hurt, Spurs Turn Again to Julian Champagnie Sports Illustrated",
+      "body_excerpt": "Keys to the Game: Kings 97, Celtics 96 NBA.com",
+      "players": [],
+      "teams": [
+        "boston-celtics",
+        "sacramento-kings"
+      ],
+      "trending_score": 0.2833
+    },
+    {
+      "id": "gn-b9c3edb33780c4c2",
+      "source": "google-news",
+      "published_at": "2026-11-22T06:26:00Z",
+      "title": "The Mavericks' Depth Showed Out In Win Over Clippers",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNQk1vZ0NFNU8wU2N6ejNLUkZhSEFUR1VXUmREbU11c21Pc3lxVUZBYll6dXdfN0lpZlFQSHoyVXB3MGxqc0hkdGFua1FDbjh4eDdueDJuSm9ISzZ2Tkt0NjJjUklqTlJjTG5BQmNoV0ZJcTI0U3ZhNHBrQU51ODhPNHJSNVA?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "The Mavericks' Depth Showed Out In Win Over Clippers Yahoo Sports",
+      "players": [],
+      "teams": [
+        "dallas-mavericks",
+        "los-angeles-clippers"
+      ],
+      "trending_score": 0.2777
+    },
+    {
+      "id": "gn-54e801ff5b958f16",
+      "source": "google-news",
+      "published_at": "2026-11-22T06:11:15Z",
+      "title": "Looking set for an easy road win, Celtics crumble in third quarter in stunning loss to NBA-worst Kings",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQd3Rfbm15aVZONnNhMU9KSjNrZkV5TDJseFhXWFcyS2MyY2p5cXR1Q3N3elJPS1JQUG5WWk9QaHBGRkR6SnhVdEw0VkhDRFI5YWVFOHl6LXRxZXh1NnlWWGM4Um52QWlrRjFSc2xfaTNPVmozSGJNbGNwX2h3RDdvcVhCRW1xZE5mQ0d4RW1zY0o?oc=5",
+      "author": "The Boston Globe",
+      "thumbnail": null,
+      "body_excerpt": "Looking set for an easy road win, Celtics crumble in third quarter in stunning loss to NBA-worst Kings The Boston Globe",
+      "players": [],
+      "teams": [
+        "boston-celtics",
+        "sacramento-kings"
+      ],
+      "trending_score": 0.2413
+    },
+    {
+      "id": "gn-b8a73e351359ede2",
+      "source": "google-news",
+      "published_at": "2026-11-22T06:06:00Z",
+      "title": "Kings edge Celtics on Keegan Murray putback to snap 8-game skid",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPQkF0SVo1SDhZbm1VMDNpR2Y4a05yeEo4VkI5UXlnZEVyVjA2clM0M010Tkd4MnVkR3JsczlqN1pPdEloaEpsV25hSWx0X2pXZ3JoNHh1cVBlSmU3aFlJLXVNRmZuTE9TY29keUoxOVh6dUMzdzJMVDFUUTFTdVliS3NjMmZPc2RMZkRBeTNYRXF6SjZLcjdOSUx0MXV0YWsz?oc=5",
+      "author": "CBS Sports",
+      "thumbnail": null,
+      "body_excerpt": "Kings edge Celtics on Keegan Murray putback to snap 8-game skid CBS Sports",
       "players": [
-        "julian-champagnie"
+        "keegan-murray"
       ],
       "teams": [
-        "san-antonio-spurs"
+        "boston-celtics",
+        "sacramento-kings"
       ],
-      "trending_score": 0.3333
+      "trending_score": 0.2302
     },
     {
-      "id": "gn-47abd35d3262aa5d",
-      "source": "google-news",
-      "published_at": "2026-11-22T00:00:00Z",
-      "title": "OKC Thunder's NBA Cup Path Becomes Clearer After Win vs. Pelicans",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNM0N4VGc0OGtaVlZTUlNMVXdpT0pSQ2N4SVhyMnpITmRFbl9lMExIbzVsQnpXWU1ndU1aOWUtX1JEanJGQWc1TWxGZTFvOWpMMkZKU0w1ak5mYThvVW1lb2JrYTZKS056bVRkblFheXQzS2hEcWpkME55OXU0cnpVdDlQWmZlZlV2VEItWGh2S0ROM0JRTjI2ajY1R1hKMkVXNHc?oc=5",
-      "author": "Sports Illustrated",
-      "thumbnail": null,
-      "body_excerpt": "OKC Thunder's NBA Cup Path Becomes Clearer After Win vs. Pelicans Sports Illustrated Thunder 126-120 Pelicans (Nov 20, 2026) Game Recap ESPN 1 Good, 2 Bad Box Score Surprises for Pelicans in Loss to Thunder Sports Illustrated",
+      "id": "bs-did%3Aplc%3A22fudzaxnal4ddodzv2o6mwk%2Fapp.bsky.feed.post%2F3n2uxnsoghc2s",
+      "source": "bluesky",
+      "published_at": "2026-11-22T06:15:31Z",
+      "title": "The (another 50-piece) triple take: Spurs 114, Pelicans 91",
+      "url": "https://bsky.app/profile/jmcdonaldsa.bsky.social/post/3n2uxnsoghc2s",
+      "author": "Jeff McDonald",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:22fudzaxnal4ddodzv2o6mwk/bafkreibgvqwjf7srzgxil6vmqwy6vkpyy2jiyqqo7hdl5n4mdxr5a4o2li",
+      "body_excerpt": "The (another 50-piece) triple take: Spurs 114, Pelicans 91\n\n1. Wemby's on/off splits are beginning to become absurd.\n\n2. Fox not sweating low scoring nights, even with Harper out.\n\n3. It's a tried and true formula. 30 assists = victory. \n\nwww.expressnews.com/sports/spurs...",
       "players": [],
       "teams": [
         "new-orleans-pelicans",
-        "oklahoma-city-thunder"
+        "san-antonio-spurs"
       ],
-      "trending_score": 0.3332
-    },
-    {
-      "id": "bs-did%3Aplc%3Apgok625ocobq7t3decm3o5vu%2Fapp.bsky.feed.post%2F3n2ud2pl6ek5a",
-      "source": "bluesky",
-      "published_at": "2026-11-22T00:06:55Z",
-      "title": "Go Canes.",
-      "url": "https://bsky.app/profile/jadubin5.bsky.social/post/3n2ud2pl6ek5a",
-      "author": "Jared Dubin",
-      "thumbnail": null,
-      "body_excerpt": "Go Canes.",
-      "players": [],
-      "teams": [],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:pgok625ocobq7t3decm3o5vu/bafkreibzev32m2ogs6r3qxy7nsub4iv4ussiesz5rxnsmxvnzy2oaanlvq",
-      "enriched": true,
-      "trending_score": 0.3282
-    },
-    {
-      "id": "bs-did%3Aplc%3Ayvy5ax23zpmoearxn6xsgqzf%2Fapp.bsky.feed.post%2F3n2ucvlh2yc2s",
-      "source": "bluesky",
-      "published_at": "2026-11-22T00:04:03Z",
-      "title": "Using Cleaning the Glass data, the Hawks are up to 7th in the NBA in defense for the season.",
-      "url": "https://bsky.app/profile/btrowland.bsky.social/post/3n2ucvlh2yc2s",
-      "author": "Brad Rowland",
-      "thumbnail": null,
-      "body_excerpt": "Using Cleaning the Glass data, the Hawks are up to 7th in the NBA in defense for the season.\n\n5th in the month of November behind MIN, SA, BOS, NYK.",
-      "players": [],
-      "teams": [
-        "atlanta-hawks"
-      ],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:yvy5ax23zpmoearxn6xsgqzf/bafkreiewn3wnzotxikw45yiyzwfvo5jnimmrouiltejje4xehzcup6dc5i",
-      "quote": {
-        "author": "Brad Rowland",
-        "handle": "btrowland.bsky.social",
-        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:yvy5ax23zpmoearxn6xsgqzf/bafkreiewn3wnzotxikw45yiyzwfvo5jnimmrouiltejje4xehzcup6dc5i",
-        "text": "new locked on hawks from overnight...\n\n- 3rd straight win\n- NBA Cup\n- Excellent defense (except DREB)\n- Good Jalen\n- Dyson being Dyson\n- etc. etc.\n\n🎧 Apple: apple.co/3xGpUhr\n🎧 YouTube: tinyurl.com/4fnjpma2\n🎧 Spotify: tinyurl.com/vycdm5ye",
-        "url": "https://bsky.app/profile/btrowland.bsky.social/post/3n2tmdjr2es23",
-        "facets": [
-          {
-            "features": [
-              {
-                "$type": "app.bsky.richtext.facet#link",
-                "uri": "http://apple.co/3xGpUhr"
-              }
-            ],
-            "index": {
-              "byteEnd": 176,
-              "byteStart": 160
+      "media": {
+        "type": "link",
+        "uri": "https://www.expressnews.com/sports/spurs/article/3-takeaways-wembanyama-s-50-point-night-leads-22543303.php",
+        "title": "3 Takeaways as Wembanyama's 50-point night leads Spurs past Pelicans",
+        "description": "With 50 points, 19 rebounds, five blocks and four steals, Wembanyama made more NBA history.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:22fudzaxnal4ddodzv2o6mwk/bafkreibgvqwjf7srzgxil6vmqwy6vkpyy2jiyqqo7hdl5n4mdxr5a4o2li"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:22fudzaxnal4ddodzv2o6mwk/bafkreieti3sh5fxorvs4tvyyunv6qjk6jnsvw4ogiqtligkspif3l2ypk4",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://www.expressnews.com/sports/spurs/article/3-takeaways-wembanyama-s-50-point-night-leads-22543303.php"
             }
-          },
-          {
-            "features": [
-              {
-                "$type": "app.bsky.richtext.facet#link",
-                "uri": "https://tinyurl.com/4fnjpma2"
-              }
-            ],
-            "index": {
-              "byteEnd": 211,
-              "byteStart": 191
-            }
-          },
-          {
-            "features": [
-              {
-                "$type": "app.bsky.richtext.facet#link",
-                "uri": "https://tinyurl.com/vycdm5ye"
-              }
-            ],
-            "index": {
-              "byteEnd": 246,
-              "byteStart": 226
-            }
+          ],
+          "index": {
+            "byteEnd": 274,
+            "byteStart": 239
           }
-        ],
-        "media": {
-          "type": "link",
-          "uri": "http://apple.co/3xGpUhr",
-          "title": "Locked On Hawks - Daily Podcast On The Atlanta Hawks",
-          "description": "Basketball Podcast · Updated Daily · Locked On Hawks podcast is your daily ticket to stay ahead of the game and the first to know the latest news, analysis, and insider info for the Atlanta Hawks and ...",
-          "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:yvy5ax23zpmoearxn6xsgqzf/bafkreid6dz2uy3ibbwvlg4dmrd7drbagjczl3jngymo5pbf2pucgyu62yi"
         }
-      },
+      ],
       "enriched": true,
-      "trending_score": 0.3173
+      "trending_score": 0.2281
     },
     {
-      "id": "bs-did%3Aplc%3A6y3zulpfknfey5qemwhc4frl%2Fapp.bsky.feed.post%2F3n2ucud2lmc2w",
+      "id": "bs-did%3Aplc%3Aszxkt3ekyjatlwd7jknsmtv4%2Fapp.bsky.feed.post%2F3n2uwxsiflk2y",
       "source": "bluesky",
-      "published_at": "2026-11-22T00:03:21Z",
-      "title": "Knicks starters: Brunson, Bridges, Hart, Shamet and Drummond",
-      "url": "https://bsky.app/profile/jledwardsiii.bsky.social/post/3n2ucud2lmc2w",
-      "author": "James L. Edwards III",
+      "published_at": "2026-11-22T06:03:13Z",
+      "title": "Boise St is playing with fire",
+      "url": "https://bsky.app/profile/erikg503.bsky.social/post/3n2uwxsiflk2y",
+      "author": "Erik García Gundersen",
       "thumbnail": null,
-      "body_excerpt": "Knicks starters: Brunson, Bridges, Hart, Shamet and Drummond",
-      "players": [
-        "andre-drummond"
-      ],
-      "teams": [
-        "new-york-knicks"
-      ],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:6y3zulpfknfey5qemwhc4frl/bafkreifhtnxhta5dy2tekna4lqrvlxjwyim4e2fvat5bxdfhr7o5qqjmze",
+      "body_excerpt": "Boise St is playing with fire",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:szxkt3ekyjatlwd7jknsmtv4/bafkreibpd7dzgvm63a7dcmeqzqqjfvfgmmjxkqjrdr3m3bd7qehbq2ggk4",
       "enriched": true,
-      "trending_score": 0.3147
+      "trending_score": 0.2043
     },
     {
-      "id": "gn-82deb46ef3ad2941",
+      "id": "bs-did%3Aplc%3Aluofuy2uw7g4vsd2vbwidtel%2Fapp.bsky.feed.post%2F3n2uwtjarec2d",
+      "source": "bluesky",
+      "published_at": "2026-11-22T06:00:49Z",
+      "title": "I was having such a good day too. Leeds had an awesome win. BC won. I got a bunch of work done. Finished some stuff around the house.",
+      "url": "https://bsky.app/profile/keithsmithnba.bsky.social/post/3n2uwtjarec2d",
+      "author": "KeithSmithNBA",
+      "thumbnail": null,
+      "body_excerpt": "I was having such a good day too. Leeds had an awesome win. BC won. I got a bunch of work done. Finished some stuff around the house.\n\nUgh. I'd ask when baseball season starts again, but I know the answer is sometime in 2028 or something.\n\nOh well. Sports, huh?",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:luofuy2uw7g4vsd2vbwidtel/bafkreicvdayh6d2lkowdik5bvsakvqnw4c2y7ohsvrfhy5yhzgpm7ekjbm",
+      "enriched": true,
+      "trending_score": 0.2001
+    },
+    {
+      "id": "gn-73fa27490d391d80",
       "source": "google-news",
-      "published_at": "2026-11-21T23:52:38Z",
-      "title": "Bucks Lose to 76ers in Controversial Fashion Despite Tyler Herro’s 50-Point Performance",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPOHdyd0NvZlpSUGRPWHNMQUlZRWMxZmtHb0dqZzhuMDNDVVREQ3ltT1JLYkNwY0FqX3pKcDl4bnlycGt0QTJYVVdqWnpnM1B0ZlVRd1ZkMDJYRnJOTmxUMWFYOTFUV0QzOUdyeUptVmVSVUNEeEl3b0NnaGpfcTMtT2xVbXNaWXdxaEJnV1lNaXM?oc=5",
+      "published_at": "2026-11-22T05:46:00Z",
+      "title": "Warriors Coach Steve Kerr Shares Blunt Yaxel Lendeborg Message on Vulnerability",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTG1haHMtRHlaVGJQTmVYcDFGRGFkRTQtMl8wYloxbmNRY1J5WFNldjVvUGxNUW56S0w4UnhKdTlLRkYzQ0pDSUFHV1d6U2pDc3NLTEZzZk13T1kyV0tYS1JhUUQyaVl6ekIzR2NIWGhBT1NMWjM0M0V5bHBOSjZReHlENTV5aG1J?oc=5",
       "author": "Yahoo Sports",
       "thumbnail": null,
-      "body_excerpt": "Bucks Lose to 76ers in Controversial Fashion Despite Tyler Herro’s 50-Point Performance Yahoo Sports",
+      "body_excerpt": "Warriors Coach Steve Kerr Shares Blunt Yaxel Lendeborg Message on Vulnerability Yahoo Sports",
       "players": [
-        "tyler-herro"
+        "yaxel-lendeborg"
       ],
       "teams": [
-        "milwaukee-bucks",
-        "philadelphia-76ers"
+        "golden-state-warriors"
       ],
-      "trending_score": 0.3073
+      "trending_score": 0.1949
     },
     {
-      "id": "bs-did%3Aplc%3Awmqeyoxhxyod73wcot4sqhe7%2Fapp.bsky.feed.post%2F3n2ucc7g4tc24",
+      "id": "bs-did%3Aplc%3A7sfnardo5xxznxc6esxc5ooe%2Fapp.bsky.feed.post%2F3n2uwkyswns2f",
       "source": "bluesky",
-      "published_at": "2026-11-21T23:53:13Z",
-      "title": "Freezing Cold Take material.",
-      "url": "https://bsky.app/profile/jonhamm.bsky.social/post/3n2ucc7g4tc24",
-      "author": "Jon Hamm",
+      "published_at": "2026-11-22T05:56:03Z",
+      "title": "FINAL: Kings beat Celtics 97-96. 👑",
+      "url": "https://bsky.app/profile/nba.com/post/3n2uwkyswns2f",
+      "author": "NBA",
       "thumbnail": null,
-      "body_excerpt": "Freezing Cold Take material.\n\nI take ownership of it.",
-      "players": [],
-      "teams": [],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:wmqeyoxhxyod73wcot4sqhe7/bafkreicgbxcxaroryqulu7dexbv7y4c7fepcct46s7zi3cvstkwaov23um",
-      "quote": {
-        "author": "Jon Hamm",
-        "handle": "jonhamm.bsky.social",
-        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:wmqeyoxhxyod73wcot4sqhe7/bafkreicgbxcxaroryqulu7dexbv7y4c7fepcct46s7zi3cvstkwaov23um",
-        "text": "That should do it for Mateer. \n\nIt probably won’t. \n\nBut it should.",
-        "url": "https://bsky.app/profile/jonhamm.bsky.social/post/3n2u46oumq22l"
-      },
-      "enriched": true,
-      "trending_score": 0.2811
-    },
-    {
-      "id": "bs-did%3Aplc%3Azfxkhiy2lyomncn3lykkwzi7%2Fapp.bsky.feed.post%2F3n2ucbh26t222",
-      "source": "bluesky",
-      "published_at": "2026-11-21T23:52:48Z",
-      "title": "Asked Tyrese Maxey if he made it to LeBron’s team movie night last night.",
-      "url": "https://bsky.app/profile/austinkrell.bsky.social/post/3n2ucbh26t222",
-      "author": "Austin Krell",
-      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:zfxkhiy2lyomncn3lykkwzi7/bafkreididrnp2npykp5ue3tsv3famoo6zslymr2gqni4xo2c3ga666zusi",
-      "body_excerpt": "Asked Tyrese Maxey if he made it to LeBron’s team movie night last night.\n\n“I was doing this. I wish I was there but I was doing this literally right here. This exact thing.”",
-      "players": [
-        "lebron-james",
-        "tyrese-maxey"
-      ],
-      "teams": [],
-      "media": {
-        "type": "image",
-        "images": [
-          {
-            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:zfxkhiy2lyomncn3lykkwzi7/bafkreididrnp2npykp5ue3tsv3famoo6zslymr2gqni4xo2c3ga666zusi",
-            "alt": ""
-          },
-          {
-            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:zfxkhiy2lyomncn3lykkwzi7/bafkreibaqwy7wl6qcdnxabqe4ntfpkb6a7ou2h5fauxl57ep3q7dglasnq",
-            "alt": ""
-          }
-        ]
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:zfxkhiy2lyomncn3lykkwzi7/bafkreie4gcdbcoxhttqo3scazerpix4rwwrzyz3kdfidospalquur6ehaq",
-      "enriched": true,
-      "trending_score": 0.2799
-    },
-    {
-      "id": "bs-did%3Aplc%3Awmqeyoxhxyod73wcot4sqhe7%2Fapp.bsky.feed.post%2F3n2uc7s7bh224",
-      "source": "bluesky",
-      "published_at": "2026-11-21T23:51:52Z",
-      "title": "based on sheer volume of opportunity alone... OU was bound to get an INT in this one eventually",
-      "url": "https://bsky.app/profile/jonhamm.bsky.social/post/3n2uc7s7bh224",
-      "author": "Jon Hamm",
-      "thumbnail": null,
-      "body_excerpt": "based on sheer volume of opportunity alone... OU was bound to get an INT in this one eventually",
-      "players": [],
-      "teams": [],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:wmqeyoxhxyod73wcot4sqhe7/bafkreicgbxcxaroryqulu7dexbv7y4c7fepcct46s7zi3cvstkwaov23um",
-      "enriched": true,
-      "trending_score": 0.2771
-    },
-    {
-      "id": "gn-a2f6d0501254d948",
-      "source": "google-news",
-      "published_at": "2026-11-21T23:42:14Z",
-      "title": "Bucks Projected To Have Worst Season in NBA History After 76ers Loss",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMlFoNTNhT0R4RW40UktOcEFkeDNfcHFicTJwUlJtVERpYXF0V0ttOUgyT0NSdmxsVC1wSGtKSlpUTkllNDRic2pqSzE2RTVuV19haXRRVDdFd0RTMnpxbGVpcGl2YnZvMk81XzVpM1daUDB3bTA1SEowYXNmXy0zT2pZZ1UwYnZ0?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Bucks Projected To Have Worst Season in NBA History After 76ers Loss Yahoo Sports",
+      "body_excerpt": "FINAL: Kings beat Celtics 97-96. 👑\n\nKeegan Murray tipped in the winner with five seconds left, giving Sacramento its first home win of the season and snapping an eight-game skid.\n\nKeegan Murray: 15 PTS, 12 REB\nDarius Acuff Jr.: 21 PTS, 8 AST",
       "players": [],
       "teams": [
-        "milwaukee-bucks",
-        "philadelphia-76ers"
+        "boston-celtics",
+        "sacramento-kings"
       ],
-      "trending_score": 0.2761
-    },
-    {
-      "id": "bs-did%3Aplc%3Apgok625ocobq7t3decm3o5vu%2Fapp.bsky.feed.post%2F3n2uc5oe3vs5a",
-      "source": "bluesky",
-      "published_at": "2026-11-21T23:50:41Z",
-      "title": "How does Michigan not see that pop pass coming when UCLA has no timeouts left and it's still third down?",
-      "url": "https://bsky.app/profile/jadubin5.bsky.social/post/3n2uc5oe3vs5a",
-      "author": "Jared Dubin",
-      "thumbnail": null,
-      "body_excerpt": "How does Michigan not see that pop pass coming when UCLA has no timeouts left and it's still third down?",
-      "players": [],
-      "teams": [],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:pgok625ocobq7t3decm3o5vu/bafkreibzev32m2ogs6r3qxy7nsub4iv4ussiesz5rxnsmxvnzy2oaanlvq",
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:7sfnardo5xxznxc6esxc5ooe/bafkreig6xtmygtnua747egtxge2xijxztvqilapwgqfydjw4ud3vy4aqeq",
       "enriched": true,
-      "trending_score": 0.2737
+      "trending_score": 0.1922
     },
     {
-      "id": "bs-did%3Aplc%3Agqgnr2obuwossobfnxw5xnxg%2Fapp.bsky.feed.post%2F3n2ubnonsek2m",
+      "id": "bs-did%3Aplc%3Azvgi4eon2fvlemnmaqnmayuk%2Fapp.bsky.feed.post%2F3n2uw6wv24p22",
       "source": "bluesky",
-      "published_at": "2026-11-21T23:41:45Z",
-      "title": "Bonus Hollander POTD Reggie Lewis. Dunbar HS grad was drafted 22nd by BOS from Northeastern in 87. After 1 yr on bench, turned into star. Had 18 ppg from 88-93 & was all-star in 92. Good all-around player who did everything well. Sadly died in 93. RIP.",
-      "url": "https://bsky.app/profile/hoopsanalyst.bsky.social/post/3n2ubnonsek2m",
-      "author": "HoopsAnalyst",
-      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:gqgnr2obuwossobfnxw5xnxg/bafkreieph3symte6t667fuwmsdtmrhlvz4ug74puqjin5qlwws2briewse",
-      "body_excerpt": "Bonus Hollander POTD Reggie Lewis. Dunbar HS grad was drafted 22nd by BOS from Northeastern in 87. After 1 yr on bench, turned into star. Had 18 ppg from 88-93 & was all-star in 92. Good all-around player who did everything well. Sadly died in 93. RIP.",
-      "players": [
-        "malique-lewis"
-      ],
-      "teams": [
-        "boston-celtics"
-      ],
-      "media": {
-        "type": "image",
-        "images": [
-          {
-            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:gqgnr2obuwossobfnxw5xnxg/bafkreieph3symte6t667fuwmsdtmrhlvz4ug74puqjin5qlwws2briewse",
-            "alt": ""
-          }
-        ]
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:gqgnr2obuwossobfnxw5xnxg/bafkreig4bh4i4zvhl35mv4rk7rz65fusy6wyc6acr3z7kye4n4sv4n5ypq",
-      "enriched": true,
-      "trending_score": 0.2498
-    },
-    {
-      "id": "gn-cf290857efdaeee2",
-      "source": "google-news",
-      "published_at": "2026-11-21T23:31:03Z",
-      "title": "Portland Trail Blazers vs New York Knicks Nov 21, 2026 Box Scores",
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE4tdGhaSS16YU8zRy1FSFBuVDZCczVpVHBkOG5HVHRMS2NPNnZhcWZoeDFOdGtYLXI4NDEyYlF1OGtsMFQzRmVyQVl5LWw4Z2pqWXNNTFZYMzk?oc=5",
-      "author": "NBA.com",
-      "thumbnail": null,
-      "body_excerpt": "Portland Trail Blazers vs New York Knicks Nov 21, 2026 Box Scores NBA.com",
-      "players": [],
-      "teams": [
-        "new-york-knicks",
-        "portland-trail-blazers"
-      ],
-      "trending_score": 0.248
-    },
-    {
-      "id": "bs-did%3Aplc%3Awmqeyoxhxyod73wcot4sqhe7%2Fapp.bsky.feed.post%2F3n2ubknqaek2t",
-      "source": "bluesky",
-      "published_at": "2026-11-21T23:40:03Z",
-      "title": "::Hinder voice::",
-      "url": "https://bsky.app/profile/jonhamm.bsky.social/post/3n2ubknqaek2t",
-      "author": "Jon Hamm",
-      "thumbnail": null,
-      "body_excerpt": "::Hinder voice::\n\n🎶GET STONED🎶",
-      "players": [],
-      "teams": [],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:wmqeyoxhxyod73wcot4sqhe7/bafkreicgbxcxaroryqulu7dexbv7y4c7fepcct46s7zi3cvstkwaov23um",
-      "enriched": true,
-      "trending_score": 0.2456
-    },
-    {
-      "id": "gn-9820432435e1a94c",
-      "source": "google-news",
-      "published_at": "2026-11-21T23:25:00Z",
-      "title": "76ers survive in clutch again despite Herro's 50: 'Got to finish better'",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPTGhnajlJeEdtdE13ZkVGUmhCc1ZkcG9NdVFMSVF1WXZQN1lqTHMtd0owZjBIdmRPTmZrcFphaTJza3dZMFVJenA1TUdCdmo4bk1QY1VodHQxbGZSZ1hLQlpiY3NtZDlRUlQxQlZoQnhBZWZ3SXVGc3lnSE1SQVFKZXJ4M2Y1VlJ5bFd2eFlsUQ?oc=5",
-      "author": "ESPN",
-      "thumbnail": null,
-      "body_excerpt": "76ers survive in clutch again despite Herro's 50: 'Got to finish better' ESPN",
-      "players": [],
-      "teams": [
-        "philadelphia-76ers"
-      ],
-      "trending_score": 0.2347
-    },
-    {
-      "id": "bs-did%3Aplc%3Awmqeyoxhxyod73wcot4sqhe7%2Fapp.bsky.feed.post%2F3n2uaygov7k2t",
-      "source": "bluesky",
-      "published_at": "2026-11-21T23:29:52Z",
-      "title": "rejoice",
-      "url": "https://bsky.app/profile/jonhamm.bsky.social/post/3n2uaygov7k2t",
-      "author": "Jon Hamm",
-      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:wmqeyoxhxyod73wcot4sqhe7/bafkreigvtwmgs42cwaoapgqng4hctj66e6b3jw2kxws4e7skewp43fekvy",
-      "body_excerpt": "rejoice",
-      "players": [],
-      "teams": [],
-      "media": {
-        "type": "link",
-        "uri": "https://static.klipy.com/ii/d7aec6f6f171607374b2065c836f92f4/e4/d6/wK5RtNlS.gif?hh=379&ww=498&mp4=cXhlPJj3r8wVdb9wuS&webm=4NdwhuMDjPNyqYF",
-        "title": "Expectations Subverted: Exploding Watermelon",
-        "description": "ALT: Expectations Subverted: Exploding Watermelon",
-        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:wmqeyoxhxyod73wcot4sqhe7/bafkreigvtwmgs42cwaoapgqng4hctj66e6b3jw2kxws4e7skewp43fekvy"
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:wmqeyoxhxyod73wcot4sqhe7/bafkreicgbxcxaroryqulu7dexbv7y4c7fepcct46s7zi3cvstkwaov23um",
-      "enriched": true,
-      "trending_score": 0.223
-    },
-    {
-      "id": "bs-did%3Aplc%3Azvgi4eon2fvlemnmaqnmayuk%2Fapp.bsky.feed.post%2F3n2uaudufk42u",
-      "source": "bluesky",
-      "published_at": "2026-11-21T23:27:34Z",
-      "title": "Derrick White's shooting slump comes down to two different types of 3s. He's shooting 2-12 on each, and it's dragging his whole percentage down. ",
-      "url": "https://bsky.app/profile/johnkaralis.com/post/3n2uaudufk42u",
+      "published_at": "2026-11-22T05:49:18Z",
+      "title": "An absolutely brutal loss where no one could make a shot, no one would attack the worst defender on the floor, and the guys they count on to step up had rough nights. Here's initial reaction, full podcast coming up",
+      "url": "https://bsky.app/profile/johnkaralis.com/post/3n2uw6wv24p22",
       "author": "John Karalis",
-      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:zvgi4eon2fvlemnmaqnmayuk/bafkreidr2sw3ykgaycuj2s2j3galhwcmicj5mnxcaq67fq6sjnrbzz7j2y",
-      "body_excerpt": "Derrick White's shooting slump comes down to two different types of 3s. He's shooting 2-12 on each, and it's dragging his whole percentage down. \n\nMore: \nhttps://www.si.com/nba/celtics/onsi/derrick-white-s-slump-isn-t-as-bad-as-it-looks-and-it-comes-down-to-24-shots-01m7znrrjf94",
-      "players": [
-        "derrick-white"
-      ],
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Azvgi4eon2fvlemnmaqnmayuk/bafkreid2enydmhsbll52i6tv2umombnfmezunbvdzvvlrpt65qg6m44swa/thumbnail.jpg",
+      "body_excerpt": "An absolutely brutal loss where no one could make a shot, no one would attack the worst defender on the floor, and the guys they count on to step up had rough nights. Here's initial reaction, full podcast coming up",
+      "players": [],
       "teams": [],
       "media": {
-        "type": "link",
-        "uri": "https://www.si.com/nba/celtics/onsi/derrick-white-s-slump-isn-t-as-bad-as-it-looks-and-it-comes-down-to-24-shots-01m7znrrjf94",
-        "title": "Derrick White's Slump Isn't as Bad as It Looks, and It Comes Down to 24 Shots",
-        "description": "On the surface, it looks like Derrick White is stuck in a two-year shooting slump from deep. His 30.6% shooting from three has been a roller coaster: 1-13 over",
-        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:zvgi4eon2fvlemnmaqnmayuk/bafkreidr2sw3ykgaycuj2s2j3galhwcmicj5mnxcaq67fq6sjnrbzz7j2y"
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Azvgi4eon2fvlemnmaqnmayuk/bafkreid2enydmhsbll52i6tv2umombnfmezunbvdzvvlrpt65qg6m44swa/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Azvgi4eon2fvlemnmaqnmayuk/bafkreid2enydmhsbll52i6tv2umombnfmezunbvdzvvlrpt65qg6m44swa/playlist.m3u8"
       },
       "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:zvgi4eon2fvlemnmaqnmayuk/bafkreie25sf2n2mx2ht6afy4ee5tleltyliuytufixcf4meo23dploz5iu",
+      "enriched": true,
+      "trending_score": 0.1819
+    },
+    {
+      "id": "bs-did%3Aplc%3At2fqrxpw2yko4xlifv7y6hsi%2Fapp.bsky.feed.post%2F3n2uw4yvfsk2c",
+      "source": "bluesky",
+      "published_at": "2026-11-22T05:48:13Z",
+      "title": "For the second time in three games, the Blazers had to dig themselves out of a hole on the road against a contender, only to fall short.",
+      "url": "https://bsky.app/profile/highkin.bsky.social/post/3n2uw4yvfsk2c",
+      "author": "Sean Highkin",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:t2fqrxpw2yko4xlifv7y6hsi/bafkreifl3t2r6msek4qv5h5ippgmxiod67u4m7zh25mfj57fprp6ws55ou",
+      "body_excerpt": "For the second time in three games, the Blazers had to dig themselves out of a hole on the road against a contender, only to fall short.\n\nStory from MSG: www.rosegardenreport.com/unfocused-st...",
+      "players": [],
+      "teams": [
+        "portland-trail-blazers"
+      ],
+      "media": {
+        "type": "link",
+        "uri": "https://www.rosegardenreport.com/unfocused-starts-continue-to-burn-trail-blazers/",
+        "title": "Unfocused Starts Continue to Burn Trail Blazers",
+        "description": "Portland came back from a 26-point deficit in New York, only to lose on a Mikal Bridges buzzer-beater.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:t2fqrxpw2yko4xlifv7y6hsi/bafkreifl3t2r6msek4qv5h5ippgmxiod67u4m7zh25mfj57fprp6ws55ou"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:t2fqrxpw2yko4xlifv7y6hsi/bafkreicw4qlttkmbpfm2psjahoaqyivndvlxkyku37ubpdgr4wdxyiay34",
       "facets": [
         {
           "features": [
             {
               "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://www.si.com/nba/celtics/onsi/derrick-white-s-slump-isn-t-as-bad-as-it-looks-and-it-comes-down-to-24-shots-01m7znrrjf94"
+              "uri": "https://www.rosegardenreport.com/unfocused-starts-continue-to-burn-trail-blazers/"
             }
           ],
           "index": {
-            "byteEnd": 279,
+            "byteEnd": 194,
             "byteStart": 154
-          }
-        }
-      ],
-      "enriched": true,
-      "trending_score": 0.2184
-    },
-    {
-      "id": "bs-did%3Aplc%3A5dwbpojkp6wykwcafasvwroi%2Fapp.bsky.feed.post%2F3n2uam6gdl22d",
-      "source": "bluesky",
-      "published_at": "2026-11-21T23:23:00Z",
-      "title": "Al Horford tells us how Mike Budenholzer, Kenny Atkinson and Kyle Korver were huge in him being a 3-point pioneer ",
-      "url": "https://bsky.app/profile/daltonjohnson.bsky.social/post/3n2uam6gdl22d",
-      "author": "Dalton Johnson",
-      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3A5dwbpojkp6wykwcafasvwroi/bafkreih5gepndgd4x2swyskzhzob63dq44qgannozry65mrr6iajjrfdqi/thumbnail.jpg",
-      "body_excerpt": "Al Horford tells us how Mike Budenholzer, Kenny Atkinson and Kyle Korver were huge in him being a 3-point pioneer \n\nWatch our full interview on YouTube and airing on NBC Sports Bay Area on Sunday night before Pregame Live @bontahill.bsky.social @nbcswarriors.bsky.social youtu.be/TwnzUese-jc?...",
-      "players": [
-        "al-horford"
-      ],
-      "teams": [],
-      "media": {
-        "type": "video",
-        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3A5dwbpojkp6wykwcafasvwroi/bafkreih5gepndgd4x2swyskzhzob63dq44qgannozry65mrr6iajjrfdqi/thumbnail.jpg",
-        "playlist": "https://video.bsky.app/watch/did%3Aplc%3A5dwbpojkp6wykwcafasvwroi/bafkreih5gepndgd4x2swyskzhzob63dq44qgannozry65mrr6iajjrfdqi/playlist.m3u8"
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:5dwbpojkp6wykwcafasvwroi/bafkreidhwdyekurk3jktwzgtwhupkld4cqnttl7no4vahioehgjhignf3m",
-      "facets": [
-        {
-          "$type": "app.bsky.richtext.facet",
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#mention",
-              "did": "did:plc:5lmvbz2f2hiamlyqgupb44kk"
-            }
-          ],
-          "index": {
-            "byteEnd": 244,
-            "byteStart": 222
-          }
-        },
-        {
-          "$type": "app.bsky.richtext.facet",
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#mention",
-              "did": "did:plc:crcybmshorvvegmbkp5rvgjv"
-            }
-          ],
-          "index": {
-            "byteEnd": 270,
-            "byteStart": 245
-          }
-        },
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://youtu.be/TwnzUese-jc?is=RtlJkiCzMGAKjadh"
-            }
-          ],
-          "index": {
-            "byteEnd": 295,
-            "byteStart": 271
-          }
-        }
-      ],
-      "enriched": true,
-      "trending_score": 0.2096
-    },
-    {
-      "id": "gn-9247f49b321bf191",
-      "source": "google-news",
-      "published_at": "2026-11-21T23:11:22Z",
-      "title": "Celtics Notes: Cenac, Carter, Tatum, White, Robinson",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQYUV2dFRxVHdRb1NsT1dXUXJsM3JJbm91aUxTTWRzd1FOZEZjbUxOdVdEWUpMcUt2emJDanlibjlSSi16QThSaHpMLUpHMTNpUF9qTERSRk15N3I4SVhBbjlRVVAzWnNKZE5pSnVmT0NNMWxPZV9LbTBaUDhuU2Z5YUUzckJMYUFHb1lLZXBsdUdPdw?oc=5",
-      "author": "Hoops Rumors",
-      "thumbnail": null,
-      "body_excerpt": "Celtics Notes: Cenac, Carter, Tatum, White, Robinson Hoops Rumors",
-      "players": [
-        "chris-cenac",
-        "jayson-tatum"
-      ],
-      "teams": [
-        "boston-celtics"
-      ],
-      "trending_score": 0.2088
-    },
-    {
-      "id": "bs-did%3Aplc%3Ank756gkpj52ryc6gaorkvctp%2Fapp.bsky.feed.post%2F3n2uahwpjts2g",
-      "source": "bluesky",
-      "published_at": "2026-11-21T23:20:38Z",
-      "title": "November 21, 2000: Portland's Damon Stoudamire lobs to Rasheed Wallace in transition.",
-      "url": "https://bsky.app/profile/nbacobwebs.bsky.social/post/3n2uahwpjts2g",
-      "author": "NBA Cobwebs",
-      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ank756gkpj52ryc6gaorkvctp/bafkreiarmxb25riyhncpifqrkrgk765eolsa6krwkl4gsdowpu6pq3qfzm/thumbnail.jpg",
-      "body_excerpt": "November 21, 2000: Portland's Damon Stoudamire lobs to Rasheed Wallace in transition.\n\nWallace scored 14 PTS, Stoudamire scored 11 PTS and Steve Smith had a team-high 22 PTS as the Blazers downed Washington, 104-94. Mitch Richmond had 24 PTS/9 REB for the Wizards.\n\n📺 NBA Action",
-      "players": [],
-      "teams": [],
-      "media": {
-        "type": "video",
-        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ank756gkpj52ryc6gaorkvctp/bafkreiarmxb25riyhncpifqrkrgk765eolsa6krwkl4gsdowpu6pq3qfzm/thumbnail.jpg",
-        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Ank756gkpj52ryc6gaorkvctp/bafkreiarmxb25riyhncpifqrkrgk765eolsa6krwkl4gsdowpu6pq3qfzm/playlist.m3u8"
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:nk756gkpj52ryc6gaorkvctp/bafkreieq3iqdy6qdoesofi4f472fwr4vyjo2u43ttwf2uwp7kz6ghu73ra",
-      "enriched": true,
-      "trending_score": 0.2053
-    },
-    {
-      "id": "gn-6be6e5b71c15f57e",
-      "source": "google-news",
-      "published_at": "2026-11-21T23:09:10Z",
-      "title": "NBA officials miss Joel Embiid stepping out of bounds late in Bucks' loss",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOT2FqaEpNZ2ZvYmlaSjRsWUYxOWNLeWdhSHd4OURCU1NvSkw0TG1lQktXekVwdDg3UFp4T21ic2c0R0dISkNyQm11cy1Gd1FlakI0RGE0Nzhra2duaFcwUnN6UUtsVndqTUtuUEQzb1dFcUNLb2tKZjNLWGZDMVRKLXRLQ2ljUQ?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "NBA officials miss Joel Embiid stepping out of bounds late in Bucks' loss Yahoo Sports",
-      "players": [
-        "joel-embiid"
-      ],
-      "teams": [
-        "milwaukee-bucks"
-      ],
-      "trending_score": 0.2051
-    },
-    {
-      "id": "bs-did%3Aplc%3A6jpqgc6d4tplxcioxuh7khmr%2Fapp.bsky.feed.post%2F3n2ua4tktwc2x",
-      "source": "bluesky",
-      "published_at": "2026-11-21T23:14:26Z",
-      "title": "Refs miss Joel Embiid stepping out of bounds late - but more than the slight hesitation from Tyler Herro afterward may have kept the team from making it to overtime.",
-      "url": "https://bsky.app/profile/jimowczarski.bsky.social/post/3n2ua4tktwc2x",
-      "author": "Jim Owczarski",
-      "thumbnail": null,
-      "body_excerpt": "Refs miss Joel Embiid stepping out of bounds late - but more than the slight hesitation from Tyler Herro afterward may have kept the team from making it to overtime.\n\nThat said, the Bucks were fairly diplomatic about a no-call that sent them to 13 straight losses.\n\nwww.jsonline.com/story/sports...",
-      "players": [
-        "joel-embiid",
-        "tyler-herro"
-      ],
-      "teams": [],
-      "media": {
-        "type": "link",
-        "uri": "https://www.jsonline.com/story/sports/nba/bucks/2026/11/21/nba-officials-miss-joel-embiid-stepping-out-of-bounds-late-in-milwaukee-bucks-loss/92902478007/",
-        "title": "NBA officials miss Joel Embiid stepping out of bounds late in Bucks' loss",
-        "description": "NBA officials missed Joel Embiid stepping out of bounds late in Bucks' loss to the 76ers on Nov. 21, 2026.",
-        "thumb": null
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:6jpqgc6d4tplxcioxuh7khmr/bafkreigdgpen526icgd3bkitiwfq7q6jjqpjsekj4uuu7czcpu2jhonjvi",
-      "facets": [
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://www.jsonline.com/story/sports/nba/bucks/2026/11/21/nba-officials-miss-joel-embiid-stepping-out-of-bounds-late-in-milwaukee-bucks-loss/92902478007/"
-            }
-          ],
-          "index": {
-            "byteEnd": 298,
-            "byteStart": 266
-          }
-        }
-      ],
-      "enriched": true,
-      "trending_score": 0.1947
-    },
-    {
-      "id": "bs-did%3Aplc%3Ayvy5ax23zpmoearxn6xsgqzf%2Fapp.bsky.feed.post%2F3n2ua4bobns27",
-      "source": "bluesky",
-      "published_at": "2026-11-21T23:14:07Z",
-      "title": "a… michigan touchdown?",
-      "url": "https://bsky.app/profile/btrowland.bsky.social/post/3n2ua4bobns27",
-      "author": "Brad Rowland",
-      "thumbnail": null,
-      "body_excerpt": "a… michigan touchdown?\n\nis that what that was?",
-      "players": [],
-      "teams": [],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:yvy5ax23zpmoearxn6xsgqzf/bafkreiewn3wnzotxikw45yiyzwfvo5jnimmrouiltejje4xehzcup6dc5i",
-      "enriched": true,
-      "trending_score": 0.1942
-    },
-    {
-      "id": "bs-did%3Aplc%3Awmqeyoxhxyod73wcot4sqhe7%2Fapp.bsky.feed.post%2F3n2ua44vb6c2l",
-      "source": "bluesky",
-      "published_at": "2026-11-21T23:14:02Z",
-      "title": "“I’m not sure what happened there. That’s just a bad throw”",
-      "url": "https://bsky.app/profile/jonhamm.bsky.social/post/3n2ua44vb6c2l",
-      "author": "Jon Hamm",
-      "thumbnail": null,
-      "body_excerpt": "“I’m not sure what happened there. That’s just a bad throw”\n\nThe 2026 Sooners Story",
-      "players": [],
-      "teams": [],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:wmqeyoxhxyod73wcot4sqhe7/bafkreicgbxcxaroryqulu7dexbv7y4c7fepcct46s7zi3cvstkwaov23um",
-      "enriched": true,
-      "trending_score": 0.1941
-    },
-    {
-      "id": "gn-2dbda4caed7ffd7b",
-      "source": "google-news",
-      "published_at": "2026-11-21T23:00:00Z",
-      "title": "This 4-Player Trade Idea Helps Raptors, Jazz",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNVE1QVmphenhLR3dzUFFiSDVCV3hiYjJwQ0d0Z1p6MmdvMWlRVUhreHJRUmRqNzhlZ0UtVWlZTVZLM25jcS1JYlVOa0s0aEtmWl9HZ3BaYXZDeXQtMktyVDdjY1ZoWWthMF8tZVladVJmTnU0MUZ5V3EyMWxsVGM2a0VtRGMwQQ?oc=5",
-      "author": "Sports Illustrated",
-      "thumbnail": null,
-      "body_excerpt": "This 4-Player Trade Idea Helps Raptors, Jazz Sports Illustrated",
-      "players": [],
-      "teams": [
-        "toronto-raptors",
-        "utah-jazz"
-      ],
-      "trending_score": 0.1906
-    },
-    {
-      "id": "bs-did%3Aplc%3Afqsmj7o5mbb7n7oav2kkjuid%2Fapp.bsky.feed.post%2F3n2u7ua2nr22d",
-      "source": "bluesky",
-      "published_at": "2026-11-21T23:09:37Z",
-      "title": "Joe Mazzulla is one win shy of the 250th victory of his career. Mazzulla would be the second-fastest coach to reach 250 wins in NBA History (Steve Kerr) and one of four coaches to record 250 wins in 350 games or fewer (Phil Jackson, Steve Kerr, Pat Riley).",
-      "url": "https://bsky.app/profile/nbastat.bsky.social/post/3n2u7ua2nr22d",
-      "author": "NBA Stat",
-      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:fqsmj7o5mbb7n7oav2kkjuid/bafkreifolqlmchudkiwd5fj54shutksgryiriwl3lspmgt6gin6nb5gfpu",
-      "body_excerpt": "Joe Mazzulla is one win shy of the 250th victory of his career. Mazzulla would be the second-fastest coach to reach 250 wins in NBA History (Steve Kerr) and one of four coaches to record 250 wins in 350 games or fewer (Phil Jackson, Steve Kerr, Pat Riley).\n\n(via OptaSports)\n#NBA",
-      "players": [],
-      "teams": [],
-      "media": {
-        "type": "image",
-        "images": [
-          {
-            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:fqsmj7o5mbb7n7oav2kkjuid/bafkreifolqlmchudkiwd5fj54shutksgryiriwl3lspmgt6gin6nb5gfpu",
-            "alt": ""
-          }
-        ]
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:fqsmj7o5mbb7n7oav2kkjuid/bafkreic3g44bm3orae6dkm4npna6phnodi74whhp6rkohxpe32x2hht27u",
-      "facets": [
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#tag",
-              "tag": "NBA"
-            }
-          ],
-          "index": {
-            "byteEnd": 279,
-            "byteStart": 275
-          }
-        }
-      ],
-      "enriched": true,
-      "trending_score": 0.1871
-    },
-    {
-      "id": "bs-did%3Aplc%3A6jpqgc6d4tplxcioxuh7khmr%2Fapp.bsky.feed.post%2F3n2u7ps4i5k2k",
-      "source": "bluesky",
-      "published_at": "2026-11-21T23:07:08Z",
-      "title": "From watching Brandon Jennings drop 50 as a kid to doing it himself, Tyler Herro joins rare Milwaukee Bucks air with a career-high 50 points in Philadelphia.",
-      "url": "https://bsky.app/profile/jimowczarski.bsky.social/post/3n2u7ps4i5k2k",
-      "author": "Jim Owczarski",
-      "thumbnail": null,
-      "body_excerpt": "From watching Brandon Jennings drop 50 as a kid to doing it himself, Tyler Herro joins rare Milwaukee Bucks air with a career-high 50 points in Philadelphia.\n\nwww.jsonline.com/story/sports...",
-      "players": [
-        "tyler-herro"
-      ],
-      "teams": [
-        "milwaukee-bucks"
-      ],
-      "media": {
-        "type": "link",
-        "uri": "https://www.jsonline.com/story/sports/nba/bucks/2026/11/21/tyler-herro-stats-50-points-bucks-vs-76ers/92855570007/",
-        "title": "Tyler Herro has career-high 50 points in Bucks' 132-129 loss to 76ers",
-        "description": "Milwaukee Bucks guard Tyler Herro scored a career-high 50 points in the 132-129 loss to the Philadelphia 76ers Nov. 21.",
-        "thumb": null
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:6jpqgc6d4tplxcioxuh7khmr/bafkreigdgpen526icgd3bkitiwfq7q6jjqpjsekj4uuu7czcpu2jhonjvi",
-      "facets": [
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://www.jsonline.com/story/sports/nba/bucks/2026/11/21/tyler-herro-stats-50-points-bucks-vs-76ers/92855570007/"
-            }
-          ],
-          "index": {
-            "byteEnd": 191,
-            "byteStart": 159
-          }
-        }
-      ],
-      "enriched": true,
-      "trending_score": 0.1834
-    },
-    {
-      "id": "bs-did%3Aplc%3A75z3gabuwl6uvv7pootuuvgn%2Fapp.bsky.feed.post%2F3n2u7m2kfbr2b",
-      "source": "bluesky",
-      "published_at": "2026-11-21T23:05:02Z",
-      "title": "Walker Kessler believes Luka Doncic doesn't get enough credit for his defense.",
-      "url": "https://bsky.app/profile/lakersnation.bsky.social/post/3n2u7m2kfbr2b",
-      "author": "LakersNation.com",
-      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreifj5tldygz4m7kf5mjh5bbhgmyb26obw3fpd4lvoksrhniznwnxkq",
-      "body_excerpt": "Walker Kessler believes Luka Doncic doesn't get enough credit for his defense.\nlakersnation.com/lakers-news-...",
-      "players": [
-        "luka-doncic",
-        "walker-kessler"
-      ],
-      "teams": [],
-      "media": {
-        "type": "link",
-        "uri": "https://lakersnation.com/lakers-news-walker-kessler-believes-luka-doncic-is-underrated-defender/",
-        "title": "Walker Kessler believes one aspect of Luka Doncic's game is underrated",
-        "description": "Los Angeles Lakers center Walker Kessler believes Luka Doncic is a better defender than people give him credit for.",
-        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreifj5tldygz4m7kf5mjh5bbhgmyb26obw3fpd4lvoksrhniznwnxkq"
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreiha6wdd65xjneeckcurw4zgpgcfrick6hylxlxoe5owj2kjxzu42e",
-      "facets": [
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://lakersnation.com/lakers-news-walker-kessler-believes-luka-doncic-is-underrated-defender/"
-            }
-          ],
-          "index": {
-            "byteEnd": 111,
-            "byteStart": 79
           }
         }
       ],
@@ -746,230 +277,521 @@
       "trending_score": 0.1803
     },
     {
-      "id": "gn-220432c89bb1cc48",
-      "source": "google-news",
-      "published_at": "2026-11-21T22:49:07Z",
-      "title": "Late-game controversial Joel Embiid call draws strong NBA world reactions",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPdXMtMV9YbnNiTzhkVTZzak9HWlpDOEhKa2dfUUVpWTVLOU4xRk1iUm5JaFFGeDBJUUhxY0ExZ2xMYktlYmxYOXp3UEtwNnkxT2s2NFdGbDNZU2xOZVFXWUMtejhONlVPV0hTZE9BZDA0NndHVWlmdnpHSk9fc1JtOVJCNFRlUW5Ga3Y3ZA?oc=5",
-      "author": "Yahoo Sports",
+      "id": "bs-did%3Aplc%3Aluofuy2uw7g4vsd2vbwidtel%2Fapp.bsky.feed.post%2F3n2uw2s6lnk2d",
+      "source": "bluesky",
+      "published_at": "2026-11-22T05:46:59Z",
+      "title": "This loss was very avoidable by Boston.",
+      "url": "https://bsky.app/profile/keithsmithnba.bsky.social/post/3n2uw2s6lnk2d",
+      "author": "KeithSmithNBA",
       "thumbnail": null,
-      "body_excerpt": "Late-game controversial Joel Embiid call draws strong NBA world reactions Yahoo Sports",
-      "players": [
-        "joel-embiid"
-      ],
-      "teams": [],
-      "trending_score": 0.1756
-    },
-    {
-      "id": "gn-80a6e6ef5c20665d",
-      "source": "google-news",
-      "published_at": "2026-11-21T22:48:25Z",
-      "title": "Michael Wilson Jr. gets the hoop and the harm",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQeGVJR1Y2amFDQXhHNm9yT2g5cUo2RGxCRE11LXNfQzA2c3M1V0hPaXJxQUplalA2dWJPdWh5SnRuZk5TMVZxLXIzeTJibVl6VkNWNENGRThYaDVmT3duUzFJQ3lNYloyVlVYS0hhMGJEYVFPbzZKMjlZWjllLVVQSE03QTE?oc=5",
-      "author": "ESPN",
-      "thumbnail": null,
-      "body_excerpt": "Michael Wilson Jr. gets the hoop and the harm ESPN",
+      "body_excerpt": "This loss was very avoidable by Boston.\n\nYou don't rest guys coming off two days off AND consecutive losses. Back-to-back or not, there's no reason for that. Respect your opponent.\n\nJoe Mazzulla got cute with lineups once again. This is starting to become a bad trend.\n\nBack to Square 1. Just a mess.",
       "players": [],
       "teams": [],
-      "trending_score": 0.1747
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:luofuy2uw7g4vsd2vbwidtel/bafkreicvdayh6d2lkowdik5bvsakvqnw4c2y7ohsvrfhy5yhzgpm7ekjbm",
+      "enriched": true,
+      "trending_score": 0.1785
     },
     {
-      "id": "gn-2bab1ce4af937a45",
-      "source": "google-news",
-      "published_at": "2026-11-21T22:44:47Z",
-      "title": "76ers’ Tyrese Maxey receives ‘happy’ praise from analyst",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPMlpwMHF4MC1keF96cjc4RTl3NVdDZUJsandWbkI5M3lZeWlRbzctUWk4NW9ROUtzTGFNakNMcHEtTVJTaW8zb3hoY2F2MV9TRFQzM2pBQXlJZURCTEZ3RWNTMHNOV0xjc2ZWOG9aSWMxNUNNQjNDbHdmUnVaT2tJVVFwZGlKWmZ0cHc?oc=5",
-      "author": "Yahoo Sports",
+      "id": "bs-did%3Aplc%3All23rgrkk7tvdjey3kflygoq%2Fapp.bsky.feed.post%2F3n2uw2peazk2n",
+      "source": "bluesky",
+      "published_at": "2026-11-22T05:46:56Z",
+      "title": "Kings become the last team this season to get a home win with upset of Celtics. First beam in more than 200 days. Keegan Murray game-winning putback. Darius Acuff with a jumper and two free throws down the stretch. Celtics took 59 3s but only made 13.",
+      "url": "https://bsky.app/profile/anthonyvslater.bsky.social/post/3n2uw2peazk2n",
+      "author": "Anthony Slater",
       "thumbnail": null,
-      "body_excerpt": "76ers’ Tyrese Maxey receives ‘happy’ praise from analyst Yahoo Sports",
+      "body_excerpt": "Kings become the last team this season to get a home win with upset of Celtics. First beam in more than 200 days. Keegan Murray game-winning putback. Darius Acuff with a jumper and two free throws down the stretch. Celtics took 59 3s but only made 13.",
       "players": [
-        "tyrese-maxey"
+        "darius-acuff",
+        "keegan-murray"
       ],
       "teams": [
-        "philadelphia-76ers"
+        "boston-celtics",
+        "sacramento-kings"
       ],
-      "trending_score": 0.1701
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:ll23rgrkk7tvdjey3kflygoq/bafkreiboudagjsnpjnz7nixe53q3scq2ngyozyoxehb5rgywfh26exkq5e",
+      "enriched": true,
+      "trending_score": 0.1785
     },
     {
-      "id": "bs-did%3Aplc%3Akdvkohfy7btmsdkg5mwuzjbw%2Fapp.bsky.feed.post%2F3n2u6ynoqwk2u",
+      "id": "bs-did%3Aplc%3Apg3zlnog4fdtsy4yu6nh46fi%2Fapp.bsky.feed.post%2F3n2uvvjbftc25",
       "source": "bluesky",
-      "published_at": "2026-11-21T22:54:11Z",
-      "title": "Injury Report ahead of tomorrow’s game against the Bulls:",
-      "url": "https://bsky.app/profile/nuggets.bsky.social/post/3n2u6ynoqwk2u",
-      "author": "Denver Nuggets",
-      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:kdvkohfy7btmsdkg5mwuzjbw/bafkreievvomxktszunzzkwxtsgntgm6uciyqfo57nnadevnpt576paefte",
-      "body_excerpt": "Injury Report ahead of tomorrow’s game against the Bulls:\n\nOUT:\nJulian Strawther (Left Knee Sprain)",
+      "published_at": "2026-11-22T05:44:02Z",
+      "title": "Minnesota's defense leads Timberwolves to win over Grizzlies dailymemphian.com/section/spor...",
+      "url": "https://bsky.app/profile/chrisherrington.bsky.social/post/3n2uvvjbftc25",
+      "author": "Chris Herrington",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:pg3zlnog4fdtsy4yu6nh46fi/bafkreicnxm6utt2hnabxsivlglyrnbpjx6q6uepuzu46u6qpxrh4tn5cdi",
+      "body_excerpt": "Minnesota's defense leads Timberwolves to win over Grizzlies dailymemphian.com/section/spor...",
       "players": [],
       "teams": [
-        "chicago-bulls"
-      ],
-      "media": {
-        "type": "image",
-        "images": [
-          {
-            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:kdvkohfy7btmsdkg5mwuzjbw/bafkreievvomxktszunzzkwxtsgntgm6uciyqfo57nnadevnpt576paefte",
-            "alt": ""
-          }
-        ]
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:kdvkohfy7btmsdkg5mwuzjbw/bafkreiazwwadzp2nbdtl6gfso4wi7lqa53vuhgsnnrh4gay6nkjn6mjgom",
-      "enriched": true,
-      "trending_score": 0.1658
-    },
-    {
-      "id": "bs-did%3Aplc%3Ank756gkpj52ryc6gaorkvctp%2Fapp.bsky.feed.post%2F3n2u6x7vee22g",
-      "source": "bluesky",
-      "published_at": "2026-11-21T22:53:23Z",
-      "title": "November 21, 1984: Paul Pressey had 27 PTS (10-16 FG)/7 AST/3 STL and Terry Cummings had 22 PTS/15 REB in the Bucks' 108-98 win over the Bulls in Milwaukee.",
-      "url": "https://bsky.app/profile/nbacobwebs.bsky.social/post/3n2u6x7vee22g",
-      "author": "NBA Cobwebs",
-      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ank756gkpj52ryc6gaorkvctp/bafkreibeepigx2bg3iyqjrqmaaepo4mn5nkel47igyk4gioniongkaa6bu/thumbnail.jpg",
-      "body_excerpt": "November 21, 1984: Paul Pressey had 27 PTS (10-16 FG)/7 AST/3 STL and Terry Cummings had 22 PTS/15 REB in the Bucks' 108-98 win over the Bulls in Milwaukee.\n\nRookie Michael Jordan scored a game-high 35 PTS and grabbed 13 REB, and Orlando Woolridge added 24 PTS for Chicago.",
-      "players": [],
-      "teams": [
-        "chicago-bulls",
-        "milwaukee-bucks"
-      ],
-      "media": {
-        "type": "video",
-        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ank756gkpj52ryc6gaorkvctp/bafkreibeepigx2bg3iyqjrqmaaepo4mn5nkel47igyk4gioniongkaa6bu/thumbnail.jpg",
-        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Ank756gkpj52ryc6gaorkvctp/bafkreibeepigx2bg3iyqjrqmaaepo4mn5nkel47igyk4gioniongkaa6bu/playlist.m3u8"
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:nk756gkpj52ryc6gaorkvctp/bafkreieq3iqdy6qdoesofi4f472fwr4vyjo2u43ttwf2uwp7kz6ghu73ra",
-      "enriched": true,
-      "trending_score": 0.1648
-    },
-    {
-      "id": "bs-did%3Aplc%3As2ahnyyou2ocsnkyjai3u3na%2Fapp.bsky.feed.post%2F3n2u6vqzfdc2z",
-      "source": "bluesky",
-      "published_at": "2026-11-21T22:52:34Z",
-      "title": "Quick story on T.J. McConnell’s injury status for Pacers-Knicks. ",
-      "url": "https://bsky.app/profile/alexgoldennba.bsky.social/post/3n2u6vqzfdc2z",
-      "author": "Alex Golden",
-      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:s2ahnyyou2ocsnkyjai3u3na/bafkreicbsfl37aokj7wxnelv66gdfl3ride6ww44ge7ojqlqklmzx4seba",
-      "body_excerpt": "Quick story on T.J. McConnell’s injury status for Pacers-Knicks. \nwww.si.com/nba/pacers/o...",
-      "players": [
-        "tj-mcconnell"
-      ],
-      "teams": [
-        "indiana-pacers",
-        "new-york-knicks"
+        "memphis-grizzlies",
+        "minnesota-timberwolves"
       ],
       "media": {
         "type": "link",
-        "uri": "https://www.si.com/nba/pacers/onsi/pacers-suffer-another-injury-to-key-guard-ahead-of-knicks-matchup-01m7zvqszefp",
-        "title": "Pacers suffer another injury to key guard ahead of Knicks matchup",
-        "description": "The Indiana Pacers' injury problems continue to pile up, and now another key member of their backcourt is dealing with a concerning setback.  Veteran point guar",
-        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:s2ahnyyou2ocsnkyjai3u3na/bafkreicbsfl37aokj7wxnelv66gdfl3ride6ww44ge7ojqlqklmzx4seba"
+        "uri": "https://dailymemphian.com/section/sportsmemphis-grizzlies/article/68802/minnesotas-defense-timberwolves-win-over-memphis",
+        "title": "Minnesota's defense leads Timberwolves to win over Grizzlies",
+        "description": "Minnesota held Memphis to a season-low points total and handed the upstart Grizzlies a 104-95 loss.",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:pg3zlnog4fdtsy4yu6nh46fi/bafkreicnxm6utt2hnabxsivlglyrnbpjx6q6uepuzu46u6qpxrh4tn5cdi"
       },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:s2ahnyyou2ocsnkyjai3u3na/bafkreifjxzdseagu5z2afcys3p55aqchnuifez4jmeiuhpbkxsajhmuo5u",
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:pg3zlnog4fdtsy4yu6nh46fi/bafkreif6ft2uhyttaamyub4monf6lmhbfdm2dldbvipdczup6n7dfuyjye",
       "facets": [
         {
           "features": [
             {
               "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://www.si.com/nba/pacers/onsi/pacers-suffer-another-injury-to-key-guard-ahead-of-knicks-matchup-01m7zvqszefp"
+              "uri": "https://dailymemphian.com/section/sportsmemphis-grizzlies/article/68802/minnesotas-defense-timberwolves-win-over-memphis"
             }
           ],
           "index": {
             "byteEnd": 94,
-            "byteStart": 68
+            "byteStart": 61
           }
         }
       ],
       "enriched": true,
+      "trending_score": 0.1744
+    },
+    {
+      "id": "gn-d309df1740fcaae7",
+      "source": "google-news",
+      "published_at": "2026-11-22T05:28:44Z",
+      "title": "Skyforce stay undefeated with sweep of Bulls",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQbXpHRkZGM19qZDdKdkhiV0d6RzBxQmFEWENkTkQzemp6dW9mLUo4cm9ORG9ud1Q3NFhzSVBTR2pORzZmbUQtbWl5WDBlN1B1bWdjRV9qaTloc05XQlQ1VG1xQzRJd1lKVzEtM0l1cU9qa0RMODQ1ME9zQU8wdFFadFhMQmdfUXJiMzlqLWV3?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Skyforce stay undefeated with sweep of Bulls Yahoo Sports",
+      "players": [],
+      "teams": [
+        "chicago-bulls"
+      ],
+      "trending_score": 0.1711
+    },
+    {
+      "id": "bs-did%3Aplc%3Adf2gzsny4y5khzaa5rsfrblr%2Fapp.bsky.feed.post%2F3n2uvqmlhk22g",
+      "source": "bluesky",
+      "published_at": "2026-11-22T05:41:18Z",
+      "title": "The losing streak is over. After nearly upsetting the Lakers on Friday night, the Kings gave the Boston Celtics everything they could handle on the second night of a back-to-back. Looking for their first home win, the Kings showed grit and came away with a 97-96 victory. Here are",
+      "url": "https://bsky.app/profile/jameshamnba.bsky.social/post/3n2uvqmlhk22g",
+      "author": "James Ham",
+      "thumbnail": null,
+      "body_excerpt": "The losing streak is over. After nearly upsetting the Lakers on Friday night, the Kings gave the Boston Celtics everything they could handle on the second night of a back-to-back. Looking for their first home win, the Kings showed grit and came away with a 97-96 victory. Here are six quick thoughts:",
+      "players": [],
+      "teams": [
+        "boston-celtics",
+        "los-angeles-lakers",
+        "sacramento-kings"
+      ],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:df2gzsny4y5khzaa5rsfrblr/bafkreihd6r3qqcbqfpmfa624obuqiybrfzlz7ckrfc5364am5heocwqjla",
+      "enriched": true,
+      "trending_score": 0.1708
+    },
+    {
+      "id": "gn-1f701a09827e9e1d",
+      "source": "google-news",
+      "published_at": "2026-11-22T05:28:00Z",
+      "title": "Luka Doncic’s injury nightmare has Austin Reaves taking extra precautions with Lakers",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQWlFZNFJUODhDcDhsNHpFc2ZMVGRSWVROWlEwUDZfaFgxWHc1SXVmUXAyeWozdm93ZWZYMkFaRlU5X3ZoalptRnJCVE9OUnpIbVRNZ0ZWSlh1MUNnR3ctY3d1S3VCaWdDQWItX0gtMTZ5WGtnWjBuYXd5aFZ4ODFDYVZoejBJVllDV1ZTYg?oc=5",
+      "author": "Yahoo Sports",
+      "thumbnail": null,
+      "body_excerpt": "Luka Doncic’s injury nightmare has Austin Reaves taking extra precautions with Lakers Yahoo Sports",
+      "players": [
+        "austin-reaves",
+        "luka-doncic"
+      ],
+      "teams": [
+        "los-angeles-lakers"
+      ],
+      "trending_score": 0.1702
+    },
+    {
+      "id": "bs-did%3Aplc%3Azvgi4eon2fvlemnmaqnmayuk%2Fapp.bsky.feed.post%2F3n2uvl3buvz2f",
+      "source": "bluesky",
+      "published_at": "2026-11-22T05:38:12Z",
+      "title": "Disgusting. Gross. Embarrassing. Pick your description. ",
+      "url": "https://bsky.app/profile/johnkaralis.com/post/3n2uvl3buvz2f",
+      "author": "John Karalis",
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:zvgi4eon2fvlemnmaqnmayuk/bafkreihi57d4txv7pq4xrd76jabqfqiaarkbh343ht26cg2tp5ut4tauke",
+      "body_excerpt": "Disgusting. Gross. Embarrassing. Pick your description. ",
+      "players": [],
+      "teams": [],
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:zvgi4eon2fvlemnmaqnmayuk/bafkreihi57d4txv7pq4xrd76jabqfqiaarkbh343ht26cg2tp5ut4tauke",
+            "alt": ""
+          }
+        ]
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:zvgi4eon2fvlemnmaqnmayuk/bafkreie25sf2n2mx2ht6afy4ee5tleltyliuytufixcf4meo23dploz5iu",
+      "enriched": true,
+      "trending_score": 0.1668
+    },
+    {
+      "id": "bs-did%3Aplc%3Adnxkqc6rsqossh7uhyobkeua%2Fapp.bsky.feed.post%2F3n2uvkdpj7c2o",
+      "source": "bluesky",
+      "published_at": "2026-11-22T05:37:47Z",
+      "title": "56-42 Kings in the second half. They outscored the Celtics 35-13 in a disastrous 3rd Qtr. for Boston.",
+      "url": "https://bsky.app/profile/bobbykrivitsky.bsky.social/post/3n2uvkdpj7c2o",
+      "author": "Bobby Krivitsky",
+      "thumbnail": null,
+      "body_excerpt": "56-42 Kings in the second half. They outscored the Celtics 35-13 in a disastrous 3rd Qtr. for Boston.\n\nThe Celtics shot 4/26 (15.4%) from beyond the arc. They were 15/50 from the field.\n\nSacramento's second win this season and first one at home.",
+      "players": [],
+      "teams": [
+        "boston-celtics",
+        "sacramento-kings"
+      ],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:dnxkqc6rsqossh7uhyobkeua/bafkreico5zyufbnodb5nzc2crnx7rm453722niv7tsvca3u2mrjotqiasq",
+      "enriched": true,
+      "trending_score": 0.1663
+    },
+    {
+      "id": "bs-did%3Aplc%3Aluofuy2uw7g4vsd2vbwidtel%2Fapp.bsky.feed.post%2F3n2uvjqyo4k2d",
+      "source": "bluesky",
+      "published_at": "2026-11-22T05:37:28Z",
+      "title": "Absolute garbage loss from the Celtics.",
+      "url": "https://bsky.app/profile/keithsmithnba.bsky.social/post/3n2uvjqyo4k2d",
+      "author": "KeithSmithNBA",
+      "thumbnail": null,
+      "body_excerpt": "Absolute garbage loss from the Celtics.\n\nWay overthought things with resting players coming off two days off.\n\nOffensive process was terrible all game. No idea what they tried to run on the final play, but it had no chance.\n\nOther than Mike Conley, no Celtic showed up.",
+      "players": [],
+      "teams": [
+        "boston-celtics"
+      ],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:luofuy2uw7g4vsd2vbwidtel/bafkreicvdayh6d2lkowdik5bvsakvqnw4c2y7ohsvrfhy5yhzgpm7ekjbm",
+      "enriched": true,
+      "trending_score": 0.1659
+    },
+    {
+      "id": "bs-did%3Aplc%3Auq4rl5ozgfkyujw4ejela3l7%2Fapp.bsky.feed.post%2F3n2uvhpi6a22j",
+      "source": "bluesky",
+      "published_at": "2026-11-22T05:36:19Z",
+      "title": "Had me saying GOOD JOB KINGS!!!",
+      "url": "https://bsky.app/profile/kerithburke.bsky.social/post/3n2uvhpi6a22j",
+      "author": "Kerith Burke",
+      "thumbnail": null,
+      "body_excerpt": "Had me saying GOOD JOB KINGS!!!",
+      "players": [],
+      "teams": [
+        "sacramento-kings"
+      ],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:uq4rl5ozgfkyujw4ejela3l7/bafkreidccpyq2juh4mxkffbs3h5r5vttrt2kspuj5dyu2lrjzytbmyalnm",
+      "enriched": true,
+      "trending_score": 0.1644
+    },
+    {
+      "id": "bs-did%3Aplc%3Amx62ni2prhriaagd7jfa65zk%2Fapp.bsky.feed.post%2F3n2uvhm2lfc2v",
+      "source": "bluesky",
+      "published_at": "2026-11-22T05:36:15Z",
+      "title": "The Kings won a home game! The beam will be lit.",
+      "url": "https://bsky.app/profile/stevejones20.bsky.social/post/3n2uvhm2lfc2v",
+      "author": "Steve Jones",
+      "thumbnail": null,
+      "body_excerpt": "The Kings won a home game! The beam will be lit.",
+      "players": [],
+      "teams": [
+        "sacramento-kings"
+      ],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:mx62ni2prhriaagd7jfa65zk/bafkreibsasqbomwgwfh2pcbppafnejcmsib2rcnagdsyaeenusuzh5zfqa",
+      "enriched": true,
+      "trending_score": 0.1644
+    },
+    {
+      "id": "bs-did%3Aplc%3A3iu4lqha2u6ucmxmtds2j4sf%2Fapp.bsky.feed.post%2F3n2uvh6qims2m",
+      "source": "bluesky",
+      "published_at": "2026-11-22T05:36:01Z",
+      "title": "My landlord rn, probs",
+      "url": "https://bsky.app/profile/justinquinnn.bsky.social/post/3n2uvh6qims2m",
+      "author": "Dr. Justin Quinn",
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:3iu4lqha2u6ucmxmtds2j4sf/bafkreigfnxr2vs4ww7ixw375hdwtsm4aky4o6rjm26ys3hzorrxkqef2yu",
+      "body_excerpt": "My landlord rn, probs",
+      "players": [],
+      "teams": [],
+      "media": {
+        "type": "link",
+        "uri": "https://static.klipy.com/ii/d7aec6f6f171607374b2065c836f92f4/69/33/D43rtiJJ.gif?hh=498&ww=435&mp4=JWaVEGqmX8Etk&webm=iPAyqmdnqxDies4",
+        "title": "Angry Girl Demands 'Go To Sleep!!! NOW!!!'",
+        "description": "ALT: Angry Girl Demands 'Go To Sleep!!! NOW!!!'",
+        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:3iu4lqha2u6ucmxmtds2j4sf/bafkreigfnxr2vs4ww7ixw375hdwtsm4aky4o6rjm26ys3hzorrxkqef2yu"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:3iu4lqha2u6ucmxmtds2j4sf/bafkreifvdphgklvtbok2urcycmf6kyetk6e66weozkpxx6oob4lrivbhke",
+      "enriched": true,
+      "trending_score": 0.1641
+    },
+    {
+      "id": "bs-did%3Aplc%3Apaf4vetn26bu7uggsie3vyrc%2Fapp.bsky.feed.post%2F3n2uvgqdvek2x",
+      "source": "bluesky",
+      "published_at": "2026-11-22T05:35:46Z",
+      "title": "Look at the Sacramento KINGS",
+      "url": "https://bsky.app/profile/lawmurraythenu.bsky.social/post/3n2uvgqdvek2x",
+      "author": "Law Murray 📘",
+      "thumbnail": null,
+      "body_excerpt": "Look at the Sacramento KINGS",
+      "players": [],
+      "teams": [
+        "sacramento-kings"
+      ],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:paf4vetn26bu7uggsie3vyrc/bafkreihylt4ajsybck7u6howz6ols7nfjinjfis65c2mhouyyyga7bjfbi",
+      "enriched": true,
       "trending_score": 0.1638
     },
     {
-      "id": "gn-d08c1809780a751a",
-      "source": "google-news",
-      "published_at": "2026-11-21T22:37:42Z",
-      "title": "NBA Rumors: Jazz’s Kyrie Irving Trade Interest Could Lead To Another Realistic Target",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOVWMwMTF1RklKcFZnbERhQUlNdUxKSTFUM3U3S1N5WGdnUDVfMThyempNTzFTZlJYcG81R1dpYlRZVVl2LWhfZ19ZeTc0N1RLUXVtNENOeUloUUFzSHgxYk1tWFhDNmhlOC13d3NQdlFtQVN1V0xaN3B2NXhSV3dZclBVYw?oc=5",
-      "author": "Yahoo Sports",
+      "id": "bs-did%3Aplc%3Aluofuy2uw7g4vsd2vbwidtel%2Fapp.bsky.feed.post%2F3n2uvfglolc2d",
+      "source": "bluesky",
+      "published_at": "2026-11-22T05:35:03Z",
+      "title": "Celtics got the miss, but no one blocked out and Keegan Murray put in the putback to put the Kings on top.",
+      "url": "https://bsky.app/profile/keithsmithnba.bsky.social/post/3n2uvfglolc2d",
+      "author": "KeithSmithNBA",
       "thumbnail": null,
-      "body_excerpt": "NBA Rumors: Jazz’s Kyrie Irving Trade Interest Could Lead To Another Realistic Target Yahoo Sports",
+      "body_excerpt": "Celtics got the miss, but no one blocked out and Keegan Murray put in the putback to put the Kings on top.\n\nNot sure why Devin Carter is on the floor there. That feels like getting too cute.",
       "players": [
-        "kyrie-irving"
+        "keegan-murray"
       ],
       "teams": [
-        "utah-jazz"
+        "boston-celtics",
+        "sacramento-kings"
       ],
-      "trending_score": 0.1618
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:luofuy2uw7g4vsd2vbwidtel/bafkreicvdayh6d2lkowdik5bvsakvqnw4c2y7ohsvrfhy5yhzgpm7ekjbm",
+      "enriched": true,
+      "trending_score": 0.1629
     },
     {
-      "id": "bs-did%3Aplc%3Aeonekhi5niboa7setutracbc%2Fapp.bsky.feed.post%2F3n2u6pbovmk23",
+      "id": "bs-did%3Aplc%3Aluofuy2uw7g4vsd2vbwidtel%2Fapp.bsky.feed.post%2F3n2uvbhqvps2d",
       "source": "bluesky",
-      "published_at": "2026-11-21T22:48:57Z",
-      "title": "For once, Matt is on the right side of history.",
-      "url": "https://bsky.app/profile/kenpom.com/post/3n2u6pbovmk23",
-      "author": "kenpom",
+      "published_at": "2026-11-22T05:32:50Z",
+      "title": "Big-time shot from Payton Pritchard. Celtics couldn't find anything and Pritchard created something out of nothing.",
+      "url": "https://bsky.app/profile/keithsmithnba.bsky.social/post/3n2uvbhqvps2d",
+      "author": "KeithSmithNBA",
       "thumbnail": null,
-      "body_excerpt": "For once, Matt is on the right side of history.",
+      "body_excerpt": "Big-time shot from Payton Pritchard. Celtics couldn't find anything and Pritchard created something out of nothing.",
+      "players": [
+        "payton-pritchard"
+      ],
+      "teams": [
+        "boston-celtics"
+      ],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:luofuy2uw7g4vsd2vbwidtel/bafkreicvdayh6d2lkowdik5bvsakvqnw4c2y7ohsvrfhy5yhzgpm7ekjbm",
+      "enriched": true,
+      "trending_score": 0.1602
+    },
+    {
+      "id": "bs-did%3Aplc%3Ard3xjqinklzohadsvnwyuui3%2Fapp.bsky.feed.post%2F3n2uvba4y2k2u",
+      "source": "bluesky",
+      "published_at": "2026-11-22T05:32:42Z",
+      "title": "Neemy revenge game?",
+      "url": "https://bsky.app/profile/yoleo.bsky.social/post/3n2uvba4y2k2u",
+      "author": "Leo S",
+      "thumbnail": null,
+      "body_excerpt": "Neemy revenge game?",
       "players": [],
       "teams": [],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:eonekhi5niboa7setutracbc/bafkreifxo2i5ajhizjo7rqlfi4he6ghpcrd6gszntnrepzc75pp5zpeuvu",
-      "quote": {
-        "author": "Matt Norlander",
-        "handle": "norlander.bsky.social",
-        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:eltikd6go53huetqxq5hsikx/bafkreichnhwweh7h2tztedcjac5tutshx5x5c6eqp7yd23kcufj6l7xshe",
-        "text": "We all have our silly little sports hills we will die on and one of mine is that college football's overtime protocol is terrible.",
-        "url": "https://bsky.app/profile/norlander.bsky.social/post/3n2txxmqzxc2i"
-      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:rd3xjqinklzohadsvnwyuui3/bafkreifwcuw2zd6n6igceneze5joxitkqejbzn7sp2amnge75mydg6nozq",
       "enriched": true,
-      "trending_score": 0.1594
+      "trending_score": 0.1601
     },
     {
-      "id": "gn-a79f7c2134d9cc7f",
-      "source": "google-news",
-      "published_at": "2026-11-21T22:34:40Z",
-      "title": "Thunder's Jaylin Williams: Won't play Sunday",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOclBNZTlqY0JFb3ZUSkNtb0tjZkRTeFptMFJ3XzhDa1YtTEtyel9LUDFPcGRVdE5VbXVlMGtTS1JoakpDdGdvU0xGbnZxLURnMDAxV0gtbUhRWE9iM21kX29hMndNY1ptMXpfM0RfeGlLOGNwT3VaeGJsOEtfSmtVUVNrZ3BfeXdxSG9SQkdkbUllUVl4d1R0dzhqdG9JVFFo?oc=5",
-      "author": "CBS Sports",
+      "id": "bs-did%3Aplc%3Azvgi4eon2fvlemnmaqnmayuk%2Fapp.bsky.feed.post%2F3n2uv3jwilg2r",
+      "source": "bluesky",
+      "published_at": "2026-11-22T05:29:30Z",
+      "title": "Mazzulla calls the timeout to get the 2-for-1. C's need as many chances to score as they can the way they're shooting. They'll get this shot up quick",
+      "url": "https://bsky.app/profile/johnkaralis.com/post/3n2uv3jwilg2r",
+      "author": "John Karalis",
       "thumbnail": null,
-      "body_excerpt": "Thunder's Jaylin Williams: Won't play Sunday CBS Sports",
-      "players": [
-        "jaylin-williams"
-      ],
-      "teams": [
-        "oklahoma-city-thunder"
-      ],
-      "trending_score": 0.1584
+      "body_excerpt": "Mazzulla calls the timeout to get the 2-for-1. C's need as many chances to score as they can the way they're shooting. They'll get this shot up quick",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:zvgi4eon2fvlemnmaqnmayuk/bafkreie25sf2n2mx2ht6afy4ee5tleltyliuytufixcf4meo23dploz5iu",
+      "enriched": true,
+      "trending_score": 0.1564
     },
     {
-      "id": "gn-59a997492659a1e4",
-      "source": "google-news",
-      "published_at": "2026-11-21T22:33:03Z",
-      "title": "Raptors Notes: Losing Streak, Graves, Barnes, Leonard",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNSkNIZF9EY0t2dTdpMldsYmc1eHV6VnlNMXlMdFUyUU04NnJqRlZiVTV4TTg1Z0ZxWDRnaWZMYzBXQ0R6UWZsd2Q1THM4QmU0cXNLdmNURkppYmw0NGlqc1lkWHhMZWxNb3hVcG96TXVrNHMzNFQzSVNRZmRERGtLM2V3OGI3M09rVzNDbUsydWR2Wnho?oc=5",
-      "author": "Hoops Rumors",
+      "id": "bs-did%3Aplc%3Aluofuy2uw7g4vsd2vbwidtel%2Fapp.bsky.feed.post%2F3n2uv32xhr22d",
+      "source": "bluesky",
+      "published_at": "2026-11-22T05:29:15Z",
+      "title": "13-for-57 on three-pointers",
+      "url": "https://bsky.app/profile/keithsmithnba.bsky.social/post/3n2uv32xhr22d",
+      "author": "KeithSmithNBA",
       "thumbnail": null,
-      "body_excerpt": "Raptors Notes: Losing Streak, Graves, Barnes, Leonard Hoops Rumors",
-      "players": [
-        "allen-graves"
-      ],
-      "teams": [
-        "toronto-raptors"
-      ],
-      "trending_score": 0.1567
+      "body_excerpt": "13-for-57 on three-pointers\n20-for-40 on two-pointers\n13-for-23 on free throws\n\nMiserable shooting night for the Celtics from everywhere on the floor.",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:luofuy2uw7g4vsd2vbwidtel/bafkreicvdayh6d2lkowdik5bvsakvqnw4c2y7ohsvrfhy5yhzgpm7ekjbm",
+      "enriched": true,
+      "trending_score": 0.1561
     },
     {
-      "id": "gn-9ac27464b7935b1e",
+      "id": "gn-da30f4a410772197",
       "source": "google-news",
-      "published_at": "2026-11-21T22:28:40Z",
-      "title": "Shai Gilgeous-Alexander injury update: Will OKC Thunder guard play vs Heat?",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQM1I4ZHc2Q1lUcXQzVWM4Qk8xdl9LVmtHSVBDMWtYVWhVVnVwUk9PNlJZVF9JTmV2V0g0OEdoMTFnMlNZWDNfZ1dSSEFpcElLeF9WU09aQ0ExWnNydEVCT0JyaUlIRUtDd0Z0VXhmbm9BRXBSWU5Zb0VpSDJXdkNGTnR1eG9HOThlOVlR?oc=5",
+      "published_at": "2026-11-22T05:12:00Z",
+      "title": "Dwight Howard makes shocking NBA trade admission that would have sent Stephen Curry to Magic",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMDRQZjlQNk1nLW8za2JRekJ2MWVOYVZsZWg5cXh5NTlNTE1sNkxleFpuWlQwWmh3dUtHaXhLXy12akpFXzQ4VVVzVHBleDdFWVZ3Q3N0SnQ2M3doVHNQcVhYbk9pYXRzNklRNzlSOHM4bk5hQlotTWx0WHZEWTBCa0VGZWI0S0wt?oc=5",
       "author": "Yahoo Sports",
       "thumbnail": null,
-      "body_excerpt": "Shai Gilgeous-Alexander injury update: Will OKC Thunder guard play vs Heat? Yahoo Sports",
+      "body_excerpt": "Dwight Howard makes shocking NBA trade admission that would have sent Stephen Curry to Magic Yahoo Sports",
       "players": [
-        "shai-gilgeous-alexander"
+        "stephen-curry"
       ],
       "teams": [
-        "miami-heat",
-        "oklahoma-city-thunder"
+        "orlando-magic"
       ],
-      "trending_score": 0.1521
+      "trending_score": 0.1523
+    },
+    {
+      "id": "bs-did%3Aplc%3Azvgi4eon2fvlemnmaqnmayuk%2Fapp.bsky.feed.post%2F3n2uutfwwof2v",
+      "source": "bluesky",
+      "published_at": "2026-11-22T05:24:58Z",
+      "title": "Incredible defense on Acuff by Hauser",
+      "url": "https://bsky.app/profile/johnkaralis.com/post/3n2uutfwwof2v",
+      "author": "John Karalis",
+      "thumbnail": null,
+      "body_excerpt": "Incredible defense on Acuff by Hauser",
+      "players": [
+        "darius-acuff"
+      ],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:zvgi4eon2fvlemnmaqnmayuk/bafkreie25sf2n2mx2ht6afy4ee5tleltyliuytufixcf4meo23dploz5iu",
+      "enriched": true,
+      "trending_score": 0.1514
+    },
+    {
+      "id": "bs-did%3Aplc%3Azvgi4eon2fvlemnmaqnmayuk%2Fapp.bsky.feed.post%2F3n2uurxynhs2m",
+      "source": "bluesky",
+      "published_at": "2026-11-22T05:24:10Z",
+      "title": "(no text)",
+      "url": "https://bsky.app/profile/johnkaralis.com/post/3n2uurxynhs2m",
+      "author": "John Karalis",
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Azvgi4eon2fvlemnmaqnmayuk/bafkreige46aua2go45l4eytdlcxng2fbwacgqhmgy3uag2ogkgjtk73jby/thumbnail.jpg",
+      "body_excerpt": "",
+      "players": [],
+      "teams": [],
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Azvgi4eon2fvlemnmaqnmayuk/bafkreige46aua2go45l4eytdlcxng2fbwacgqhmgy3uag2ogkgjtk73jby/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Azvgi4eon2fvlemnmaqnmayuk/bafkreige46aua2go45l4eytdlcxng2fbwacgqhmgy3uag2ogkgjtk73jby/playlist.m3u8"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:zvgi4eon2fvlemnmaqnmayuk/bafkreie25sf2n2mx2ht6afy4ee5tleltyliuytufixcf4meo23dploz5iu",
+      "enriched": true,
+      "trending_score": 0.1505
+    },
+    {
+      "id": "bs-did%3Aplc%3Anatglytz2yjptlzsrl7r656m%2Fapp.bsky.feed.post%2F3n2uurnvbss2d",
+      "source": "bluesky",
+      "published_at": "2026-11-22T05:23:59Z",
+      "title": "Queta showing the bench what he had tucked was such a good 3-point celebration lol",
+      "url": "https://bsky.app/profile/tomwesterholm.bsky.social/post/3n2uurnvbss2d",
+      "author": "Tom Westerholm",
+      "thumbnail": null,
+      "body_excerpt": "Queta showing the bench what he had tucked was such a good 3-point celebration lol",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:natglytz2yjptlzsrl7r656m/bafkreiem67zxhobeto2wjq35yikjc35lezywl4bccy3xt5r7jjwmhd4qdi",
+      "enriched": true,
+      "trending_score": 0.1503
+    },
+    {
+      "id": "bs-did%3Aplc%3Aluofuy2uw7g4vsd2vbwidtel%2Fapp.bsky.feed.post%2F3n2uuqpv2bk2d",
+      "source": "bluesky",
+      "published_at": "2026-11-22T05:23:28Z",
+      "title": "Nine missed free throws for Boston.",
+      "url": "https://bsky.app/profile/keithsmithnba.bsky.social/post/3n2uuqpv2bk2d",
+      "author": "KeithSmithNBA",
+      "thumbnail": null,
+      "body_excerpt": "Nine missed free throws for Boston.\n\nJust leaving points off the board.",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:luofuy2uw7g4vsd2vbwidtel/bafkreicvdayh6d2lkowdik5bvsakvqnw4c2y7ohsvrfhy5yhzgpm7ekjbm",
+      "enriched": true,
+      "trending_score": 0.1498
+    },
+    {
+      "id": "bs-did%3Aplc%3Apaf4vetn26bu7uggsie3vyrc%2Fapp.bsky.feed.post%2F3n2uuosbw422x",
+      "source": "bluesky",
+      "published_at": "2026-11-22T05:22:23Z",
+      "title": "simply a disturbing way to go from a close game to a blowout when playing five of your most experienced players",
+      "url": "https://bsky.app/profile/lawmurraythenu.bsky.social/post/3n2uuosbw422x",
+      "author": "Law Murray 📘",
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:paf4vetn26bu7uggsie3vyrc/bafkreidpy2vtx5lguezwvcsulffnrkxdobbigecqx7cwar72nld56nl7ie",
+      "body_excerpt": "simply a disturbing way to go from a close game to a blowout when playing five of your most experienced players",
+      "players": [],
+      "teams": [],
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:paf4vetn26bu7uggsie3vyrc/bafkreidpy2vtx5lguezwvcsulffnrkxdobbigecqx7cwar72nld56nl7ie",
+            "alt": ""
+          }
+        ]
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:paf4vetn26bu7uggsie3vyrc/bafkreihylt4ajsybck7u6howz6ols7nfjinjfis65c2mhouyyyga7bjfbi",
+      "enriched": true,
+      "trending_score": 0.1486
+    },
+    {
+      "id": "bs-did%3Aplc%3Azvgi4eon2fvlemnmaqnmayuk%2Fapp.bsky.feed.post%2F3n2uulf4j7y2b",
+      "source": "bluesky",
+      "published_at": "2026-11-22T05:20:28Z",
+      "title": "lmao all the shooting issues and it's Queta who drills the corner 3",
+      "url": "https://bsky.app/profile/johnkaralis.com/post/3n2uulf4j7y2b",
+      "author": "John Karalis",
+      "thumbnail": null,
+      "body_excerpt": "lmao all the shooting issues and it's Queta who drills the corner 3",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:zvgi4eon2fvlemnmaqnmayuk/bafkreie25sf2n2mx2ht6afy4ee5tleltyliuytufixcf4meo23dploz5iu",
+      "enriched": true,
+      "trending_score": 0.1467
+    },
+    {
+      "id": "bs-did%3Aplc%3Aluofuy2uw7g4vsd2vbwidtel%2Fapp.bsky.feed.post%2F3n2uul3y2nc2d",
+      "source": "bluesky",
+      "published_at": "2026-11-22T05:20:19Z",
+      "title": "Queta quorner three! It was quontested too!",
+      "url": "https://bsky.app/profile/keithsmithnba.bsky.social/post/3n2uul3y2nc2d",
+      "author": "KeithSmithNBA",
+      "thumbnail": null,
+      "body_excerpt": "Queta quorner three! It was quontested too!",
+      "players": [],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:luofuy2uw7g4vsd2vbwidtel/bafkreicvdayh6d2lkowdik5bvsakvqnw4c2y7ohsvrfhy5yhzgpm7ekjbm",
+      "enriched": true,
+      "trending_score": 0.1465
+    },
+    {
+      "id": "bs-did%3Aplc%3A3iu4lqha2u6ucmxmtds2j4sf%2Fapp.bsky.feed.post%2F3n2uuikql2c2m",
+      "source": "bluesky",
+      "published_at": "2026-11-22T05:18:54Z",
+      "title": "This Conley guy might have a future in this league",
+      "url": "https://bsky.app/profile/justinquinnn.bsky.social/post/3n2uuikql2c2m",
+      "author": "Dr. Justin Quinn",
+      "thumbnail": null,
+      "body_excerpt": "This Conley guy might have a future in this league",
+      "players": [
+        "mike-conley"
+      ],
+      "teams": [],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:3iu4lqha2u6ucmxmtds2j4sf/bafkreifvdphgklvtbok2urcycmf6kyetk6e66weozkpxx6oob4lrivbhke",
+      "enriched": true,
+      "trending_score": 0.1451
+    },
+    {
+      "id": "bs-did%3Aplc%3Aluofuy2uw7g4vsd2vbwidtel%2Fapp.bsky.feed.post%2F3n2uuifs4qc2d",
+      "source": "bluesky",
+      "published_at": "2026-11-22T05:18:49Z",
+      "title": "Keegan Murray just went coast-to-coast with no Celtics even making an effort to stop the ball.",
+      "url": "https://bsky.app/profile/keithsmithnba.bsky.social/post/3n2uuifs4qc2d",
+      "author": "KeithSmithNBA",
+      "thumbnail": null,
+      "body_excerpt": "Keegan Murray just went coast-to-coast with no Celtics even making an effort to stop the ball.\n\nThankfully Mike Conley is here, or Boston would be getting blown out.",
+      "players": [
+        "keegan-murray"
+      ],
+      "teams": [
+        "boston-celtics"
+      ],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:luofuy2uw7g4vsd2vbwidtel/bafkreicvdayh6d2lkowdik5bvsakvqnw4c2y7ohsvrfhy5yhzgpm7ekjbm",
+      "enriched": true,
+      "trending_score": 0.145
     }
   ]
 }
