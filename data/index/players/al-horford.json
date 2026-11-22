@@ -1,9 +1,70 @@
 {
   "slug": "al-horford",
   "name": "Al Horford",
-  "generated_at": "2026-11-21T19:52:43Z",
+  "generated_at": "2026-11-22T00:13:01Z",
   "count": 40,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3A5dwbpojkp6wykwcafasvwroi%2Fapp.bsky.feed.post%2F3n2uam6gdl22d",
+      "source": "bluesky",
+      "published_at": "2026-11-21T23:23:00Z",
+      "title": "Al Horford tells us how Mike Budenholzer, Kenny Atkinson and Kyle Korver were huge in him being a 3-point pioneer ",
+      "url": "https://bsky.app/profile/daltonjohnson.bsky.social/post/3n2uam6gdl22d",
+      "author": "Dalton Johnson",
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3A5dwbpojkp6wykwcafasvwroi/bafkreih5gepndgd4x2swyskzhzob63dq44qgannozry65mrr6iajjrfdqi/thumbnail.jpg",
+      "body_excerpt": "Al Horford tells us how Mike Budenholzer, Kenny Atkinson and Kyle Korver were huge in him being a 3-point pioneer \n\nWatch our full interview on YouTube and airing on NBC Sports Bay Area on Sunday night before Pregame Live @bontahill.bsky.social @nbcswarriors.bsky.social youtu.be/TwnzUese-jc?...",
+      "players": [
+        "al-horford"
+      ],
+      "teams": [],
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3A5dwbpojkp6wykwcafasvwroi/bafkreih5gepndgd4x2swyskzhzob63dq44qgannozry65mrr6iajjrfdqi/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3A5dwbpojkp6wykwcafasvwroi/bafkreih5gepndgd4x2swyskzhzob63dq44qgannozry65mrr6iajjrfdqi/playlist.m3u8"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:5dwbpojkp6wykwcafasvwroi/bafkreidhwdyekurk3jktwzgtwhupkld4cqnttl7no4vahioehgjhignf3m",
+      "facets": [
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:5lmvbz2f2hiamlyqgupb44kk"
+            }
+          ],
+          "index": {
+            "byteEnd": 244,
+            "byteStart": 222
+          }
+        },
+        {
+          "$type": "app.bsky.richtext.facet",
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#mention",
+              "did": "did:plc:crcybmshorvvegmbkp5rvgjv"
+            }
+          ],
+          "index": {
+            "byteEnd": 270,
+            "byteStart": 245
+          }
+        },
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#link",
+              "uri": "https://youtu.be/TwnzUese-jc?is=RtlJkiCzMGAKjadh"
+            }
+          ],
+          "index": {
+            "byteEnd": 295,
+            "byteStart": 271
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "bs-did%3Aplc%3Acrcybmshorvvegmbkp5rvgjv%2Fapp.bsky.feed.post%2F3n2tq5knwik2r",
       "source": "bluesky",
@@ -864,24 +925,6 @@
       ],
       "teams": [
         "golden-state-warriors"
-      ]
-    },
-    {
-      "id": "gn-2fe823ea2e05a467",
-      "source": "google-news",
-      "published_at": "2026-10-22T20:10:41Z",
-      "title": "Warriors' Stephen Curry details Al Horford impact after Lakers loss",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPRG8wTzI0SWhUb1BKN0xKUUxMU2NNb3dtb05wQlk5c21Rd2hHOV9KdkNBUUJPSzIyM3BZVHVOTTJwUjRWLUYzUW5TemF2cUpUWWczT21XVEsxaU1NSUFWS1VRTEdIaVZnWlkxUTZQNU9XWFczS3JiMElpem1GaXdnenkzYjBLWEhfVlE?oc=5",
-      "author": "Yahoo Sports",
-      "thumbnail": null,
-      "body_excerpt": "Warriors' Stephen Curry details Al Horford impact after Lakers loss Yahoo Sports",
-      "players": [
-        "al-horford",
-        "stephen-curry"
-      ],
-      "teams": [
-        "golden-state-warriors",
-        "los-angeles-lakers"
       ]
     }
   ]
