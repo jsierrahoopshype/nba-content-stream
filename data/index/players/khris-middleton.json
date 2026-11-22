@@ -1,9 +1,52 @@
 {
   "slug": "khris-middleton",
   "name": "Khris Middleton",
-  "generated_at": "2026-11-22T06:56:12Z",
+  "generated_at": "2026-11-22T15:11:24Z",
   "count": 20,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Afqsmj7o5mbb7n7oav2kkjuid%2Fapp.bsky.feed.post%2F3n2volijd2c2d",
+      "source": "bluesky",
+      "published_at": "2026-11-22T13:05:49Z",
+      "title": "Tyler Herro is the fourth player in Milwaukee Bucks history to record a 50-point, 10-rebound game, joining Kareem Abdul-Jabbar (8 times), Giannis Antetokounmpo (9 times) and Khris Middleton.",
+      "url": "https://bsky.app/profile/nbastat.bsky.social/post/3n2volijd2c2d",
+      "author": "NBA Stat",
+      "thumbnail": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:fqsmj7o5mbb7n7oav2kkjuid/bafkreifcbvfcvcbv73hrncnyskmmsqk6vvwepgyjb7nsz4veh5abknb6nq",
+      "body_excerpt": "Tyler Herro is the fourth player in Milwaukee Bucks history to record a 50-point, 10-rebound game, joining Kareem Abdul-Jabbar (8 times), Giannis Antetokounmpo (9 times) and Khris Middleton.\n\n#NBA",
+      "players": [
+        "giannis-antetokounmpo",
+        "khris-middleton",
+        "tyler-herro"
+      ],
+      "teams": [
+        "milwaukee-bucks"
+      ],
+      "media": {
+        "type": "image",
+        "images": [
+          {
+            "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:fqsmj7o5mbb7n7oav2kkjuid/bafkreifcbvfcvcbv73hrncnyskmmsqk6vvwepgyjb7nsz4veh5abknb6nq",
+            "alt": ""
+          }
+        ]
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:fqsmj7o5mbb7n7oav2kkjuid/bafkreic3g44bm3orae6dkm4npna6phnodi74whhp6rkohxpe32x2hht27u",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "NBA"
+            }
+          ],
+          "index": {
+            "byteEnd": 196,
+            "byteStart": 192
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "bs-did%3Aplc%3Ao7nvaeky6b42dplp2ssdudvw%2Fapp.bsky.feed.post%2F3n2s6cmus4c2d",
       "source": "bluesky",
@@ -350,24 +393,6 @@
         "toronto-raptors",
         "washington-wizards"
       ]
-    },
-    {
-      "id": "yt-bgiKYW5p4o0",
-      "source": "youtube",
-      "published_at": "2026-10-23T11:45:23Z",
-      "title": "“I loved Kris Middleton, just the way he played. Ray [Allen] was an awesome shooter\" - Kon Knueppel",
-      "url": "https://www.youtube.com/watch?v=bgiKYW5p4o0",
-      "author": "The Old Man and The Three",
-      "thumbnail": "https://i.ytimg.com/vi/bgiKYW5p4o0/maxresdefault.jpg",
-      "body_excerpt": "Subscribe to The Young Man and The Three podcast aka YM3 YouTube channel today for more NBA analysis, player interviews and highlights. Previously The Old Man and the Three w/ JJ Redick (ESPN / First Take) and Tommy Alter",
-      "players": [
-        "khris-middleton",
-        "kon-knueppel"
-      ],
-      "teams": [],
-      "media": {
-        "type": "video"
-      }
     }
   ]
 }
