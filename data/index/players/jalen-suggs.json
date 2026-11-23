@@ -1,9 +1,45 @@
 {
   "slug": "jalen-suggs",
   "name": "Jalen Suggs",
-  "generated_at": "2026-11-22T21:07:52Z",
+  "generated_at": "2026-11-23T01:48:52Z",
   "count": 71,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3n2wrv5kchs2c",
+      "source": "bluesky",
+      "published_at": "2026-11-22T23:37:34Z",
+      "title": "The #Magic are starting Jalen Suggs, Desmond Bane, Anthony Black, Franz Wagner and Wendell Carter Jr. at Washington tonight.",
+      "url": "https://bsky.app/profile/jbeede.bsky.social/post/3n2wrv5kchs2c",
+      "author": "Jason Beede",
+      "thumbnail": null,
+      "body_excerpt": "The #Magic are starting Jalen Suggs, Desmond Bane, Anthony Black, Franz Wagner and Wendell Carter Jr. at Washington tonight.\n\nThis is the fourth game in a row for Orlando with the same starting lineup after it utilized 8 different starting lineups in the team’s first 12 games.",
+      "players": [
+        "anthony-black",
+        "desmond-bane",
+        "franz-wagner",
+        "jalen-suggs",
+        "wendell-carter-jr"
+      ],
+      "teams": [
+        "orlando-magic"
+      ],
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiey3powizzh2yl5k4eyoftbxztccx6pgnmdozyhyyjqybjhhnc2ne",
+      "facets": [
+        {
+          "features": [
+            {
+              "$type": "app.bsky.richtext.facet#tag",
+              "tag": "Magic"
+            }
+          ],
+          "index": {
+            "byteEnd": 10,
+            "byteStart": 4
+          }
+        }
+      ],
+      "enriched": true
+    },
     {
       "id": "gn-9f73052c3932c9eb",
       "source": "google-news",
@@ -1707,43 +1743,6 @@
         "jalen-suggs"
       ],
       "teams": []
-    },
-    {
-      "id": "bs-did%3Aplc%3Ae7fdktkwv37ws6rljgnoljfz%2Fapp.bsky.feed.post%2F3myla6p7jw22q",
-      "source": "bluesky",
-      "published_at": "2026-10-23T22:31:07Z",
-      "title": "The #Magic are starting Jalen Suggs, Desmond Bane, Franz Wagner, Paolo Banchero and Wendell Carter Jr. against the Timberwolves tonight.",
-      "url": "https://bsky.app/profile/jbeede.bsky.social/post/3myla6p7jw22q",
-      "author": "Jason Beede",
-      "thumbnail": null,
-      "body_excerpt": "The #Magic are starting Jalen Suggs, Desmond Bane, Franz Wagner, Paolo Banchero and Wendell Carter Jr. against the Timberwolves tonight.",
-      "players": [
-        "desmond-bane",
-        "franz-wagner",
-        "jalen-suggs",
-        "paolo-banchero",
-        "wendell-carter-jr"
-      ],
-      "teams": [
-        "minnesota-timberwolves",
-        "orlando-magic"
-      ],
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e7fdktkwv37ws6rljgnoljfz/bafkreiey3powizzh2yl5k4eyoftbxztccx6pgnmdozyhyyjqybjhhnc2ne",
-      "facets": [
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#tag",
-              "tag": "Magic"
-            }
-          ],
-          "index": {
-            "byteEnd": 10,
-            "byteStart": 4
-          }
-        }
-      ],
-      "enriched": true
     }
   ]
 }
