@@ -79,12 +79,12 @@
   function rowHtml(rank, p) {
     const info = players[p.slug] || {};
     const headshot = ncs.headshotUrl(p.slug, players);
+    // No photo (or one that fails to load): the slot stays empty, no initials circle.
     const portraitHtml = headshot
       ? `<img class="lb-portrait" src="${ncs.escapeHtml(headshot)}"
            alt="" loading="lazy" decoding="async"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-         <span class="lb-portrait-fallback" aria-hidden="true">${ncs.escapeHtml(initials(p.name))}</span>`
-      : `<span class="lb-portrait-fallback" style="display:flex" aria-hidden="true">${ncs.escapeHtml(initials(p.name))}</span>`;
+           onerror="this.remove()">`
+      : "";
     return `
       <a class="lb-row" href="players/${ncs.escapeHtml(p.slug)}.html" data-rank="${rank}">
         <span class="lb-rank">${rank}</span>
@@ -94,13 +94,6 @@
         <span class="lb-count">${ncs.escapeHtml(ncs.formatCappedCount(p.count, cap))}</span>
       </a>
     `;
-  }
-
-  function initials(name) {
-    const parts = String(name || "").split(/\s+/).filter(Boolean);
-    if (!parts.length) return "?";
-    if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
-    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
   }
 
   // Single render() that takes a filter string. The list is already

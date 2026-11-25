@@ -433,11 +433,9 @@ def test_player_page_includes_real_headshot_url():
         "nba-headshots/players/headshots/face-fill-320/"
         "1641705-victor-wembanyama.webp"
     ) in html_text
-    # Initials fallback is still in the DOM, hidden by default.
-    assert 'class="entity-portrait-initials"' in html_text
-    # The onerror swap is what reveals the initials when the image 404s.
-    assert "this.style.display='none'" in html_text
-    assert "this.nextElementSibling.style.display='flex'" in html_text
+    # No initials fallback for players: a photo that 404s removes its circle.
+    assert 'class="entity-portrait-initials"' not in html_text
+    assert "this.parentNode.remove()" in html_text
 
 
 def test_team_page_includes_espn_logo_url_with_team_class():
@@ -449,19 +447,15 @@ def test_team_page_includes_espn_logo_url_with_team_class():
     assert "entity-portrait-img--team" in html_text
 
 
-def test_player_page_without_canonical_info_falls_back_to_initials():
-    # No `entity_info` means no headshot URL; render the initials
-    # standalone with inline display:flex (otherwise it would be
-    # hidden under the default-hidden class).
+def test_player_page_without_canonical_info_shows_no_picture():
+    # No `entity_info` means no headshot URL: no picture at all, never initials.
     html_text = prerender_pages._render_page(
         "player", "unknown-player", "Unknown Player", 5, None
     )
     assert "raw.githubusercontent.com" not in html_text
     assert "nba-headshots" not in html_text
-    # Players: grey initials on the grey headshot disc (no colored avatar).
-    assert 'class="entity-portrait entity-portrait--player"' in html_text
-    assert 'style="display:flex;"' in html_text
-    assert ">UP</div>" in html_text  # initials
+    assert "entity-portrait" not in html_text
+    assert ">UP</div>" not in html_text  # no initials
 
 
 def test_team_page_with_unknown_slug_falls_back_to_initials():
@@ -530,10 +524,10 @@ def test_generate_pages_missing_canonical_falls_back_gracefully(tmp_path, caplog
             teams_canonical_path=tmp_path / "also-missing.json",
         )
     assert n_p == 1
-    # Page must still render — initials avatar in the portrait slot.
+    # Page must still render, with no picture (never initials) for the player.
     p_html = (players_out / "any-player.html").read_text()
     assert "raw.githubusercontent.com" not in p_html
-    assert 'class="entity-portrait-initials"' in p_html
+    assert 'class="entity-portrait-initials"' not in p_html
     # The warning fired so an operator notices the missing canonical.
     assert any("canonical not found" in r.message for r in caplog.records)
 

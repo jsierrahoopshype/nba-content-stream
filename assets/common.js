@@ -258,7 +258,7 @@
   // keyed by NBA-ID + upstream slug, NOT our cleaner slug, because the
   // upstream slugify dropped diacritics; we store the raw filename
   // verbatim under canonical[slug].headshot_filename and look it up here.
-  // A player with no file shows their initials (onerror fallback).
+  // A player with no file gets no picture at all (no initials circle).
   //
   // Team logos come from ESPN's public CDN. Slug→ESPN-abbrev mapping
   // is mostly the team's `abbr` field; a few teams use a different
@@ -334,14 +334,6 @@
     return NBA_HEADSHOTS_BASE + (big ? "face-fill-320/" : "face-fill/") + stem + ".webp";
   }
 
-  // Player initials for the no-photo circle ("Stephen Curry" -> "SC").
-  function playerInitials(name) {
-    const parts = String(name || "").split(/\s+/).filter(Boolean);
-    if (!parts.length) return "?";
-    if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
-    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
-  }
-
   function teamLogoUrl(teamSlug) {
     if (!teamSlug) return null;
     const abbrev = _ESPN_ABBREV_OVERRIDES[teamSlug];
@@ -394,8 +386,8 @@
 
   // Cluster C: visual integration. For a non-Bluesky non-YouTube card
   // with NO thumbnail, prefer (in order):
-  //   1. first tagged player's face-fill headshot (that player's initials
-  //      in the same grey circle if there is no file or it fails to load)
+  //   1. first tagged player's face-fill headshot (no file: skip to the
+  //      team logo; a file that fails to load: nothing, never initials)
   //   2. first tagged team's ESPN logo
   //   3. NBA league logo (generic-NBA fallback)
   //   4. the initials-avatar fallback (existing behavior, only if the
@@ -434,14 +426,12 @@
     const canonical = window.NCS_Canonical;
     if (!canonical) return initialsHtml;
 
-    // Prefer a tagged player's headshot; no photo -> the player's initials.
+    // Prefer a tagged player's headshot. No photo: no initials circle, go on to the team logo.
     const firstPlayer = (item.players || [])[0];
     const playerEntry = firstPlayer && canonical.players && canonical.players[firstPlayer];
     if (playerEntry) {
-      const ini = `<span class="initials-avatar initials-avatar--player" aria-hidden="true">${escapeHtml(playerInitials(playerEntry.name))}</span>`;
       const url = headshotUrl(firstPlayer, canonical.players);
-      if (url) return _imgWithFallback(url, ini, "visual-avatar visual-headshot");
-      return ini;
+      if (url) return _imgWithFallback(url, "", "visual-avatar visual-headshot");
     }
     // Fall back to a tagged team's logo.
     const firstTeam = (item.teams || [])[0];
@@ -1958,7 +1948,6 @@
     mergeItems,
     loadCanonical,
     headshotUrl,
-    playerInitials,
     teamLogoUrl,
     teamConference,
     formatCappedCount,

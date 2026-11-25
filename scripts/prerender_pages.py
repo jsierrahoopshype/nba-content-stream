@@ -58,7 +58,7 @@ SITE_BASE_URL = "https://hoopsmatic.com/content-stream"
 # face fills the circle). The hero portrait is drawn bigger than 80px,
 # so it uses the 320px set. FACE_FILL_STEMS_PATH (vendored from
 # nba-headshots) lists the players that have a file; anyone else gets
-# their initials at build time.
+# no picture at all (no initials circle) at build time.
 NBA_HEADSHOTS_BASE = (
     "https://jsierrahoopshype.github.io/"
     "nba-headshots/players/headshots/face-fill-320/"
@@ -169,7 +169,8 @@ def _portrait_url(kind: str, slug: str, entity_info: dict | None) -> str | None:
 def _portrait_html(kind: str, slug: str, name: str, entity_info: dict | None) -> str:
     """Render the entity-hero portrait block.
 
-    Layers a real headshot/logo on top of an initials avatar; the
+    Players: the headshot alone, or nothing when there is none (never
+    initials). Teams: layers the logo on top of an initials avatar; the
     inline `onerror` swaps the image's display:none and reveals the
     initials underneath if the upstream image 404s. When no portrait
     URL is known (missing canonical entry, unknown team abbr) the
@@ -178,10 +179,20 @@ def _portrait_html(kind: str, slug: str, name: str, entity_info: dict | None) ->
     initials, color = _avatar(name)
     safe_initials = html.escape(initials)
     portrait_url = _portrait_url(kind, slug, entity_info)
-    # Players: grey initials on the same light grey disc as the headshot
-    # (styled by .entity-portrait--player), not a colored avatar.
-    wrap_cls = "entity-portrait entity-portrait--player" if kind == "player" else "entity-portrait"
-    bg = "" if kind == "player" else f"background:{color}"
+    if kind == "player":
+        # Players with no photo get no picture at all (no initials circle);
+        # a photo that fails to load removes its whole circle.
+        if not portrait_url:
+            return ""
+        return (
+            f'<div class="entity-portrait entity-portrait--player">'
+            f'<img class="entity-portrait-img" src="{portrait_url}" '
+            f'alt="{html.escape(name)}" loading="eager" decoding="async" '
+            f'onerror="this.parentNode.remove()">'
+            f'</div>'
+        )
+    wrap_cls = "entity-portrait"
+    bg = f"background:{color}"
     if not portrait_url:
         # No image source known — render the initials directly at
         # portrait size. Inline display:flex overrides the

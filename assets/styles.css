@@ -925,7 +925,7 @@ a.when:hover{ color:var(--text); text-decoration:underline }
 }
 .lb-portrait-wrap--player{ background:#e8e8ed }
 .lb-portrait-wrap--player .lb-portrait{ object-position:center }
-.lb-portrait-wrap--player .lb-portrait-fallback{ background:#e8e8ed; color:#55555c }
+.lb-portrait-wrap--player:empty{ background:none }  /* no photo: no circle at all */
 .lb-portrait--team{
   object-fit:contain; padding:.2rem; background:var(--surface);
 }
