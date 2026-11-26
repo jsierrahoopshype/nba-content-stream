@@ -1,9 +1,33 @@
 {
   "slug": "collin-sexton",
   "name": "Collin Sexton",
-  "generated_at": "2026-11-25T20:38:39Z",
+  "generated_at": "2026-11-26T03:12:54Z",
   "count": 81,
   "items": [
+    {
+      "id": "bs-did%3Aplc%3Ad7jo2dgltk635ycukifq3qjx%2Fapp.bsky.feed.post%2F3n35z7gwl722k",
+      "source": "bluesky",
+      "published_at": "2026-11-25T20:37:14Z",
+      "title": "Lakers practice featuring some racing between Collin Sexton and Cameron Carr.",
+      "url": "https://bsky.app/profile/ecreates88.bsky.social/post/3n35z7gwl722k",
+      "author": "Edwin Garcia",
+      "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ad7jo2dgltk635ycukifq3qjx/bafkreicyzhwlrfjv3sia6rbdzmoly4jsdxgwrffvuymk24lf6is5v6vtfq/thumbnail.jpg",
+      "body_excerpt": "Lakers practice featuring some racing between Collin Sexton and Cameron Carr.",
+      "players": [
+        "cameron-carr",
+        "collin-sexton"
+      ],
+      "teams": [
+        "los-angeles-lakers"
+      ],
+      "media": {
+        "type": "video",
+        "thumbnail": "https://video.bsky.app/watch/did%3Aplc%3Ad7jo2dgltk635ycukifq3qjx/bafkreicyzhwlrfjv3sia6rbdzmoly4jsdxgwrffvuymk24lf6is5v6vtfq/thumbnail.jpg",
+        "playlist": "https://video.bsky.app/watch/did%3Aplc%3Ad7jo2dgltk635ycukifq3qjx/bafkreicyzhwlrfjv3sia6rbdzmoly4jsdxgwrffvuymk24lf6is5v6vtfq/playlist.m3u8"
+      },
+      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:d7jo2dgltk635ycukifq3qjx/bafkreifa3o4kggb4kkkapmo6xwsfne7fp2yn3tpmkbrvxclmejjrfawqke",
+      "enriched": true
+    },
     {
       "id": "bs-did%3Aplc%3Ad7jo2dgltk635ycukifq3qjx%2Fapp.bsky.feed.post%2F3n2zvs65lkk2y",
       "source": "bluesky",
@@ -1776,57 +1800,6 @@
       "teams": [
         "los-angeles-lakers"
       ]
-    },
-    {
-      "id": "bs-did%3Aplc%3A75z3gabuwl6uvv7pootuuvgn%2Fapp.bsky.feed.post%2F3mystekgdbc2n",
-      "source": "bluesky",
-      "published_at": "2026-10-26T23:03:02Z",
-      "title": "Collin Sexton is focused on providing energy off the bench for the #Lakers.",
-      "url": "https://bsky.app/profile/lakersnation.bsky.social/post/3mystekgdbc2n",
-      "author": "LakersNation.com",
-      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreibrnmxvfdttub3vzw3wyvfiykegzbmcojd6vyzsuhji6f4re3en5a",
-      "body_excerpt": "Collin Sexton is focused on providing energy off the bench for the #Lakers.\nlakersnation.com/collin-sexto...",
-      "players": [
-        "collin-sexton"
-      ],
-      "teams": [
-        "los-angeles-lakers"
-      ],
-      "media": {
-        "type": "link",
-        "uri": "https://lakersnation.com/collin-sexton-sees-opportunity-to-provide-consistent-energy-off-bench-for-lakers/",
-        "title": "Collin Sexton revealed his focus when he comes off the bench",
-        "description": "Los Angeles Lakers guard Collin Sexton is focused on providing an energy boost when he comes off the bench.",
-        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreibrnmxvfdttub3vzw3wyvfiykegzbmcojd6vyzsuhji6f4re3en5a"
-      },
-      "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:75z3gabuwl6uvv7pootuuvgn/bafkreiha6wdd65xjneeckcurw4zgpgcfrick6hylxlxoe5owj2kjxzu42e",
-      "facets": [
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#tag",
-              "tag": "Lakers"
-            }
-          ],
-          "index": {
-            "byteEnd": 74,
-            "byteStart": 67
-          }
-        },
-        {
-          "features": [
-            {
-              "$type": "app.bsky.richtext.facet#link",
-              "uri": "https://lakersnation.com/collin-sexton-sees-opportunity-to-provide-consistent-energy-off-bench-for-lakers/"
-            }
-          ],
-          "index": {
-            "byteEnd": 108,
-            "byteStart": 76
-          }
-        }
-      ],
-      "enriched": true
     }
   ]
 }
